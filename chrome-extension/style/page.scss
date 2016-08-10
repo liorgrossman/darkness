@@ -1,0 +1,111 @@
+//====================================================================================================================================================
+// Minimal CSS for the moon icon on the top-right corner of websites
+// The CSS is injected to supported websites only, upon page load
+// Does not include the settings panel and other dialog, which are loaded upon click
+//====================================================================================================================================================
+
+$darkness-z-index-base: 2147400000;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Moon icon
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+div.drk_settings_icon {
+	z-index: $darkness-z-index-base !important;
+	cursor: pointer !important;
+	position: fixed !important;
+	right: 10px !important;
+	top: 10px !important;
+	width: 29px !important;
+	height: 29px !important;
+	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page.png') no-repeat center !important;
+	background-size: cover !important;
+	opacity: 0.85 !important;
+	transition: opacity .25s ease-in-out !important;
+	&:hover {
+		opacity: 1 !important;
+		transition: opacity 0s !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Position the moon icon in the toolbar, adjust the toolbar (based on website)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.drk_body_google, .drk_body_gmail {
+	// If logged in: the avatar on the right side of toolbar
+	.gb_8a {
+		margin-right: 25px !important;
+	}
+
+	// If logged out: the "Sign in" button in the right side of the toolbar
+	.gb_Ha {
+		margin-right: 25px !important;
+	}
+
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 15px !important;
+	}
+}
+
+.drk_body_google {
+	div.drk_settings_icon {
+		position: absolute !important;
+	}
+}
+
+.drk_body_youtube {
+	// If logged in: user controls on the right side of toolbar
+	#yt-masthead-user {
+		margin-right: 28px !important;
+	}
+
+	// If logged out: the "Sign in" button in the right side of the toolbar
+	.signin-container {
+		margin-right: 28px !important;
+	}
+
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 9px !important;
+	}
+}
+
+.drk_body_facebook {
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 7px !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Global message to user (e.g. conflict found with another extension)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.drk_settings_global_msg {
+	-webkit-filter: invert(100%) !important;
+	display: none !important;
+	z-index: $darkness-z-index-base !important;
+	cursor: pointer !important;
+	position: fixed !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	background: rgba(60, 60, 60, 0.97) !important;
+	box-shadow: 0 -2px -4px rgba(0, 0, 0, 1) !important;
+	text-shadow: none !important;
+	color: White !important;
+	font-size: 14px !important;
+	font-family: Arial, sans-serif !important;
+	font-weight: normal !important;
+	padding: 15px 20px !important;
+	transition: opacity .25s ease-in-out !important;
+	&.visible {
+		display: block !important;
+	}
+	.drk_settings_global_msg_close {
+		float: right;
+		padding-left: 30px !important;
+		color: #ddd !important;
+		display: inline-block !important;
+		text-decoration: underline !important;
+	}
+}

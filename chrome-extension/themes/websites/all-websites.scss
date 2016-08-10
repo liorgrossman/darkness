@@ -1,0 +1,110 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Common styling that is applied to ALL websites, before any other styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+html {
+	// Set the HTML background. Since only the BODY is inverted, we need to invert the background here matnually
+	background-color: invert($theme-background) !important;
+	// min-height is important so there is no white padding below the page
+	min-height: 100% !important;
+	// Don't add -webkit-filters in the HTML, it causes touchpad scrolling problems
+}
+
+body {
+	// Set the BODY background
+	background-color: $theme-background !important;
+	// min-height is important so there is no white padding below the page
+	min-height: 100% !important;
+	// Invert the colors of the entire page (as a baseline)
+	@include invert();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Un-invert elements that shouldn't be inverted
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Un-invert images and video
+img,
+iframe,
+video,
+embed:not([type$="pdf"]),
+object,
+canvas,
+[style*="url"]:not(input),
+[background*="http"] {
+	@include invert-back()
+}
+
+// Un-invert all Darkness elements
+div.drk_settings,
+div.drk_settings_icon,
+div.drk_dialog,
+.addthis_sharing_toolbox,
+.drk_invert_back {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Skin Generic HTML Elements
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Buttons
+button, input[type="submit"], input[type="button"] {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+	span {
+		color: $theme-button-text !important;
+	}
+}
+
+// Textareas and input boxes
+textarea, input[type="text"] {
+	background-color: $theme-textbox-background !important;
+	color: $theme-textbox-text !important;
+	border-color: $theme-border !important;
+}
+
+// Make fonts more "bold" after conversion by adding a subtle text shadow
+html { text-shadow: 0 0 0 !important; }
+
+a {
+	color: $theme-link !important;
+}
+
+a:visited {
+	color: $theme-link-visited !important;
+}
+
+a:active {
+	color: $theme-link-active !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Skin Scrollbars
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+$track-background: lighten(invert($theme-background), 5%);
+
+::-webkit-scrollbar {
+	background: invert($theme-background);
+}
+
+::-webkit-scrollbar-button { }
+
+::-webkit-scrollbar-track {
+	background: $track-background;
+}
+
+::-webkit-scrollbar-track-piece { }
+
+::-webkit-scrollbar-thumb {
+	background: lighten(invert($theme-background-toolbar), 5%);
+	border-left: 2px solid $track-background;
+	border-right: 1px solid $track-background;
+	box-shadow: inset 1px 1px 0 rgba(100, 100, 100, 0.2), inset -1px -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-corner { }
+
+::-webkit-resizer { }
