@@ -2,6 +2,7 @@
 # Ignores specific to Darkness
 /chrome-production
 *.zip
+/.idea
 
 # =======
 # Created by https://www.gitignore.io/api/node,sass,linux,macos,windows,jetbrains,git
