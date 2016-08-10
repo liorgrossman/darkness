@@ -1,12 +1,14 @@
 # Darkness: Dark Themes for Popular Websites
 
-<img src="" align="left" hspace="10" vspace="10">
+<img alt="Darkness Logo" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-icon-48px.png" align="left" style="padding: 0 10px 5px 0">
 
 **Darkness** is a Chrome extension that provides **dark themes** for popular websites such as Google, Facebook, Gmail and YouTube.
 
 Using dark themes reduces the eye strain and fatigue caused by a bright screen, helps you sleep faster and better at night, and generally makes you awesome :)
 
-<img src="" align="center" hspace="10" vspace="10">
+<div style="text-align:center">
+<img alt="Screenshot" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-screenshot.png">
+</div>
 
 ## Features
 * Supports 4 websites: Google, Facebook, Gmail, YouTube (help us add more)
