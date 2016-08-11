@@ -4,7 +4,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 var ENVIRONMENT = 'development';
 if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production'; // Chrome Web Store version
-if (chrome.runtime.id == 'fidfeedckoenebfkikjngkidedbgombg') ENVIRONMENT = 'staging'; // Testing before deployment to Chrome Web Store
+if (chrome.runtime.id == 'kggllcjcknlclegojnkkomchhpjebgpo') ENVIRONMENT = 'staging'; // Testing before deployment to Chrome Web Store
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global vars

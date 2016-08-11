@@ -20,7 +20,9 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 ## Installation
 #####  Installing Darkness Developer Edition:
 1. Fork the Darkness repo: https://github.com/liorgrossman/darkness/fork
-1. Clone your fork locally: `git clone git@github.com:YourGitHubUsername/darkness.git`
+1. Clone your fork locally:
+	* via SSH: `git clone git@github.com:YOUR_GITHUB_USER/darkness.git`
+ 	* or no SSH: `git clone https://github.com/YOUR_GITHUB_USER/darkness.git`
 1. `cd darkness`
 1. Set up a the original repo as a remote: `git remote add upstream git@github.com:liorgrossman/darkness.git`
 1. Get the code: `git fetch upstream`
@@ -31,7 +33,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 1. If you have already Darkness installed, disable it
 1. Check **Developer mode** in the top of the Extensions page
 1. Click **Load unpacked extension...**
-1. Choose the directory **darkness-chrome** (same dir as manifest.json)
+1. Choose the sub-directory **darkness/darkness-chrome** (where manifest.json resides)
 
 ##### To keep Darkness up-to-date, please pull occasionally:
 ```bash
