@@ -35,10 +35,13 @@ var _readFileUsingHttp = function(debug, filename, callback) {
 
 // Read a single file from disk (or from cache in production mode), save it to cache
 var readFileFromDisk = function(debug, filename, callback) {
+	logWarn("Reading file from Disk: " + filename);
 	_readFileUsingHttp(debug, filename, function(err, content) {
 		if (err) {
+			logWarn("Reading file from Disk: " + filename + " - error: " + err);
 			callback(err);
 		} else {
+			logWarn("Reading file from Disk: " + filename + " - success: " + typeof(callback));
 			FILE_CACHE[filename] = content;
 			callback(null, content)
 		}

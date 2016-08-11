@@ -731,7 +731,9 @@ var loadAllAssetsToCache = function(debug, callback) {
 	}
 
 	// Load all files from disk to cache
+	if (debug) logWarn("loadAllAssetsToCache: 20 about to call readFilesFromDisk: " + JSON.stringify(filesToLoad));
 	readFilesFromDisk(debug, filesToLoad, function() {
+		if (debug) logWarn("loadAllAssetsToCache: 30 readFilesFromDisk callback invoked");
 		callback();
 	});
 };
@@ -779,7 +781,9 @@ var initializeBackgroundScript = function() {
 				initializeAnalyticsAfterLoad();
 
 				// Load all assets (JS/HTML/CSS) from disk to cache
+				logWarn("loadAllAssetsToCache: 10 about to be called");
 				loadAllAssetsToCache(true, function() {
+					logWarn("loadAllAssetsToCache: 40 callback called");
 					// Load darkenss to all future tabs
 					addTabListeners();
 					// Load darkness to all existing tabs
