@@ -15,18 +15,18 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 * Boasts 3 color schemes: Iceberg, Tomorrow, Material (help us add more)
 * Written in Javascript and SCSS (basically CSS with variables)
 * Self-hosted. Easy to install on Windows, Mac, Linux
-* Available commercially on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm). Read about the difference.  
+* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm).  
 
 ## Installation
 #####  Installing Darkness Developer Edition:
 1. Fork the Darkness repo: https://github.com/liorgrossman/darkness/fork
 1. Clone your fork locally:
-	* via SSH: `git clone git@github.com:YOUR_GITHUB_USER/darkness.git`
- 	* or no SSH: `git clone https://github.com/YOUR_GITHUB_USER/darkness.git`
-1. `cd darkness`
+	* If you use SSH: `git clone git@github.com:YOUR_GITHUB_USER/darkness.git`
+ 	* or using HTTPS: `git clone https://github.com/YOUR_GITHUB_USER/darkness.git`
+1. Go to the root Darkness directory: `cd darkness`
 1. Set up a the original repo as a remote: `git remote add upstream git@github.com:liorgrossman/darkness.git`
 1. Get the code: `git fetch upstream`
-1. To compile all SCSS files to CSS `npm install` (may take a couple of minutes)
+1. Install packages and compile all SCSS files to CSS (required): `npm install`
 
 ##### Loading it in Chrome:
 1. On Chrome, browse to [chrome://extensions](chrome://extensions)
