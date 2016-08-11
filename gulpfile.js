@@ -86,8 +86,8 @@ gulp.task('sass:compile', function() {
 gulp.task('sass:watch', function() {
 	gutil.log("Watching for changes in .scss files");
 	gulp.start('sass:compile');
-	gulp.watch(chromeDevelopmentDir + '/themes/**/*.scss', ['sass']);
-	gulp.watch(chromeDevelopmentDir + '/css/**/*.scss', ['sass']);
+	gulp.watch(chromeDevelopmentDir + '/themes/**/*.scss', ['sass:compile']);
+	gulp.watch(chromeDevelopmentDir + '/css/**/*.scss', ['sass:compile']);
 });
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
