@@ -35,13 +35,13 @@ var _readFileUsingHttp = function(debug, filename, callback) {
 
 // Read a single file from disk (or from cache in production mode), save it to cache
 var readFileFromDisk = function(debug, filename, callback) {
-	logWarn("Reading file from Disk: " + filename);
+	logWarn("readFileFromDisk: " + filename + " - started");
 	_readFileUsingHttp(debug, filename, function(err, content) {
 		if (err) {
-			logWarn("Reading file from Disk: " + filename + " - error: " + err);
+			if (debug) logWarn("readFileFromDisk: " + filename + " - error: " + err);
 			callback(err);
 		} else {
-			logWarn("Reading file from Disk: " + filename + " - success: " + typeof(callback));
+			if (debug) logWarn("readFileFromDisk: " + filename + " - success: " + typeof(callback) + " (" + content.length + " bytes)");
 			FILE_CACHE[filename] = content;
 			callback(null, content)
 		}
@@ -50,13 +50,18 @@ var readFileFromDisk = function(debug, filename, callback) {
 
 
 // Read several files from disk (or from cache in production mode), save them to cache
-var readFilesFromDisk = function(debug, files, callback) {
-	if (files.length == 0) return callback();
+var readFilesFromDisk = function(debug, files, cb) {
+	if (debug) logWarn("-----------------------");
+	if (debug) logWarn("READFILES with length: " + files.length);
+	if (files.length == 0) {
+		if (debug) logWarn("READFILES returning callback: " + typeof(cb));
+		return cb();
+	}
 	// Pick 1 file every time and read it
 	var file = files.shift();
 	readFileFromDisk(debug, file, function() {
 		// Recursion
-		readFilesFromDisk(debug, files, callback);
+		readFilesFromDisk(debug, files, cb);
 	});
 };
 
