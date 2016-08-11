@@ -617,10 +617,18 @@ if (!DarknessSettingsLoader) {
 				$('.drk_get_pro').addClass('visible');
 			});
 
+			// Developer Button #1 ("Developer? Help us fix the CSS")
+			$('.drk_settings .drk_developer_fix').unbind('click').click(function() {
+				repEventByUser('user-action', 'dev-fix-btn-click');
+				// Close all dialogs
+				$('.drk_dialog').removeClass('visible');
+				// Open developer dialog
+				$('.drk_join_developers').addClass('visible');
+			});
 
-			// Developer button
-			$('.drk_settings .drk_developer_help_improve').unbind('click').click(function() {
-				repEventByUser('user-action', 'dev-help-improve-btn-click');
+			// Developer Button #2 ("Develop skins for more website")
+			$('.drk_settings .drk_developer_add').unbind('click').click(function() {
+				repEventByUser('user-action', 'dev-add-btn-fix');
 				// Close all dialogs
 				$('.drk_dialog').removeClass('visible');
 				// Open developer dialog
@@ -766,8 +774,13 @@ if (!DarknessSettingsLoader) {
 
 			// Developers Dialog -> "Join us" click
 			$('.drk_join_developers .drk_join_developers_community_btn').unbind('click').click(function() {
-				repEventByUser('user-action', 'dev-join-community-btn-click');
-				var url = 'https://goo.gl/zaa4Ew'; // Facebook Darkness Developers Community
+				repEventByUser('user-action', 'dev-dialog-github-click');
+				var url;
+				if (ENVIRONMENT == 'development') {
+					url = 'https://goo.gl/zTEwPP'; // CONTRIBUTING.md on GitHub
+				} else {
+					url = 'https://goo.gl/ECly1c'; // Darkness on GitHub
+				}
 				var win = window.open(url, '_blank');
 				win.focus();
 			});
