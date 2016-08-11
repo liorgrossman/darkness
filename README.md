@@ -26,7 +26,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 1. `cd darkness`
 1. Set up a the original repo as a remote: `git remote add upstream git@github.com:liorgrossman/darkness.git`
 1. Get the code: `git fetch upstream`
-1. To compile all SCSS files to CSS (required): `npm install`
+1. To compile all SCSS files to CSS `npm install` (may take a couple of minutes)
 
 ##### Loading it in Chrome:
 1. On Chrome, browse to [chrome://extensions](chrome://extensions)
@@ -43,7 +43,7 @@ git pull upstream master
 
 ## Contributing Code
 Pull requests are welcome!
-Please see our [contribution guide](./CONTRIBUTING.MD) to us improve existing skins and create new ones.
+Please see our [contribution guide](./CONTRIBUTING.md) to help us improve and extend Darkness.
 
 
 ## Got more questions?
