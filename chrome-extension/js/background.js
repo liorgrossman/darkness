@@ -128,8 +128,16 @@ var reloadUser = function(callback) {
 		// Check Google Payments
 		checkGooglePayments(function(err, type) {
 			// if (ENVIRONMENT == 'staging') type = true;
-			stats.set('type', type === true ? 'p' : 'n');
-			if (err) logError('checkGooglePayments error: ', err);
+			if (err) {
+				logError('checkGooglePayments error: ', err);
+			} else { // no error
+				var pro = (type === true);
+				stats.set('type', pro ? 'p' : 'n');
+				if (pro) {
+					// No need to keep on checking with Google Payments
+					settings.global.set('override', 'google');
+				}
+			}
 			if (callback) callback(type);
 		});
 	}
