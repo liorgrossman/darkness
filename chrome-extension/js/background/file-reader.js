@@ -14,7 +14,7 @@ var _readFileUsingHttp = function(debug, filename, callback) {
 	}
 
 	// Convert 'themes/google-iceberg.css' to 'chrome-extension://imilbobhamcfahccagbncamhpnbkaenm/themes/facebook-iceberg.css'
-	var url = chrome.extension.getURL(filename);
+	var url = chrome.extension.getURL(filename) + '?v=' + (new Date()).getTime();
 	var httpRequest = new XMLHttpRequest();
 	var startTime = (new Date()).getTime();
 	httpRequest.onreadystatechange = function() {
@@ -35,7 +35,7 @@ var _readFileUsingHttp = function(debug, filename, callback) {
 
 // Read a single file from disk (or from cache in production mode), save it to cache
 var readFileFromDisk = function(debug, filename, callback) {
-	logWarn("readFileFromDisk: " + filename + " - started");
+	if (debug) logWarn("readFileFromDisk: " + filename + " - started");
 	_readFileUsingHttp(debug, filename, function(err, content) {
 		if (err) {
 			if (debug) logWarn("readFileFromDisk: " + filename + " - error: " + err);
@@ -51,10 +51,9 @@ var readFileFromDisk = function(debug, filename, callback) {
 
 // Read several files from disk (or from cache in production mode), save them to cache
 var readFilesFromDisk = function(debug, files, cb) {
-	if (debug) logWarn("-----------------------");
-	if (debug) logWarn("READFILES with length: " + files.length);
+	if (debug) logWarn("---> readFilesFromDisk with length: " + files.length);
 	if (files.length == 0) {
-		if (debug) logWarn("READFILES returning callback: " + typeof(cb));
+		if (debug) logWarn("---> readFilesFromDisk returning callback: " + typeof(cb));
 		return cb();
 	}
 	// Pick 1 file every time and read it
