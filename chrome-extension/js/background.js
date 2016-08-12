@@ -732,16 +732,19 @@ var loadAllAssetsToCache = function(debug, callback) {
 
 	// Which files should we load?
 	var filesToLoad = ["js/page.js", "style-css/page.css", "html/page.html"];
+	var alreadyIncluded = {};
 	// Add the active theme for each website (e.g. facebook-iceberg, google-monokai, etc.)
 	for (i in siteKeys) {
 		var selectedTheme = whichThemeForSite(debug, siteKeys[i], false);
-		filesToLoad.push(getThemeCssFilename(siteKeys[i], selectedTheme));
+		var filename = getThemeCssFilename(siteKeys[i], selectedTheme);
+		if (!alreadyIncluded[filename]) {
+			alreadyIncluded[filename] = true;
+			filesToLoad.push(filename);
+		}
 	}
 
 	// Load all files from disk to cache
-	if (debug) logWarn("loadAllAssetsToCache: 20 about to call readFilesFromDisk: " + JSON.stringify(filesToLoad));
 	readFilesFromDisk(debug, filesToLoad, function() {
-		if (debug) logWarn("loadAllAssetsToCache: 30 readFilesFromDisk callback invoked");
 		callback();
 	});
 };
@@ -789,9 +792,7 @@ var initializeBackgroundScript = function() {
 				initializeAnalyticsAfterLoad();
 
 				// Load all assets (JS/HTML/CSS) from disk to cache
-				logWarn("loadAllAssetsToCache: 10 about to be called");
 				loadAllAssetsToCache(true, function() {
-					logWarn("loadAllAssetsToCache: 40 callback called");
 					// Load darkenss to all future tabs
 					addTabListeners();
 					// Load darkness to all existing tabs
