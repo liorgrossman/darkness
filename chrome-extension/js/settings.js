@@ -402,7 +402,7 @@ if (!DarknessSettingsLoader) {
 				} else {
 					defaultTheme = settings.global.defaultTheme;
 				}
-				loadTheme(SITE, defaultTheme);
+				loadTheme(defaultTheme);
 			}
 		};
 
