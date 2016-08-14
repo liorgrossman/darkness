@@ -42,7 +42,7 @@ var CONFIG = {
 		'facebook': {
 			key: 'facebook', // Must be the same as the object key
 			name: 'Facebook',
-			hostRegExp: new RegExp('^(www|web)\.facebook\.com$', 'i'),
+			hostRegExp: new RegExp('^(www|web|beta)\.facebook\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Marco Cazzaro', link: 'http://www.marcocazzaro.com/'}
 			],
