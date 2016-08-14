@@ -35,13 +35,10 @@ var _readFileUsingHttp = function(debug, filename, callback) {
 
 // Read a single file from disk (or from cache in production mode), save it to cache
 var readFileFromDisk = function(debug, filename, callback) {
-	if (debug) logWarn("readFileFromDisk: " + filename + " - started");
 	_readFileUsingHttp(debug, filename, function(err, content) {
 		if (err) {
-			if (debug) logWarn("readFileFromDisk: " + filename + " - error: " + err);
 			callback(err);
 		} else {
-			if (debug) logWarn("readFileFromDisk: " + filename + " - success: " + typeof(callback) + " (" + content.length + " bytes)");
 			FILE_CACHE[filename] = content;
 			callback(null, content)
 		}
@@ -51,9 +48,7 @@ var readFileFromDisk = function(debug, filename, callback) {
 
 // Read several files from disk (or from cache in production mode), save them to cache
 var readFilesFromDisk = function(debug, files, cb) {
-	if (debug) logWarn("---> readFilesFromDisk with length: " + files.length);
 	if (files.length == 0) {
-		if (debug) logWarn("---> readFilesFromDisk returning callback: " + typeof(cb));
 		return cb();
 	}
 	// Pick 1 file every time and read it
