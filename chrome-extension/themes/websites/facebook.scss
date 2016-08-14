@@ -10,7 +10,7 @@ body {
 }
 
 // Buttons
-button {
+button, ._517h {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
@@ -172,9 +172,6 @@ path {
 	}
 }
 
-._517h { // share visibility button
-	background-color: $theme-faint-button-background !important;
-}
 
 .__MenuItem { // dropdown list
 	background-color: $theme-background-box !important;

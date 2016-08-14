@@ -238,6 +238,25 @@ input
 	@include invert-back();
 }
 
+// Gmail internal scrollbar for email list
+.Tm {
+	&::-webkit-scrollbar {
+		background: $theme-background;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: invert($track-background);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: lighten(invert($theme-background-toolbar), 5%);
+		border-left: 2px solid $track-background;
+		border-right: 1px solid $track-background;
+		box-shadow: inset 1px 1px 0 rgba(100, 100, 100, 0.2), inset -1px -1px 0 rgba(0, 0, 0, 0.4);
+	}
+
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // OPENED EMAIL
 //----------------------------------------------------------------------------------------------------------------------------------------------------
