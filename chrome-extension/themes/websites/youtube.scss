@@ -215,17 +215,13 @@ a.yt-uix-button-epic-nav-item:hover {
 .html5-video-player video  {
 	-webkit-filter: none !important; // Parent is already inverted, don't invert again
 }
-// Context menu when right clicking video
-.ytp-popup {
-	background: rgba(230,230,230,0.9) !important; // Dark black - after inversion
-}
 
 // Tooltips when hovering over seek bar (with thumbnails)
 .ytp-tooltip-bg {
 	@include invert-back()
 }
 .ytp-tooltip-text {
-	color: $theme-text !important;
+	color: invert-back-color($theme-text) !important;
 }
 
 // Share buttons
@@ -309,11 +305,28 @@ a.yt-uix-button-epic-nav-item:hover {
 }
 
 // fix black fonts for the video menu
-.ytp-menuitem-label,
-.ytp-menuitem-label span,
-.ytp-menuitem-content,
-.ytp-menuitem-content span {
+.html5-video-player .ytp-menuitem-label,
+.html5-video-player .ytp-menuitem-label span,
+.html5-video-player .ytp-menuitem-content,
+.html5-video-player .ytp-menuitem-content span {
+	color: invert-back-color($theme-text) !important;
+}
+
+// Context menu when right clicking video
+.ytp-contextmenu {
+	background: rgba(230,230,230,0.9) !important; // Dark black - after inversion
 	color: $theme-text !important;
+	.ytp-panel-menu {
+		color: $theme-text !important;
+	}
+	a.ytp-menuitem {
+		color: $theme-text !important;
+	}
+}
+
+// Autoplay toggle (on off)
+.yt-uix-checkbox-on-off {
+	@include invert-back()
 }
 
 // Fix playlist video titles color
