@@ -127,7 +127,7 @@ var reloadUser = function(callback) {
 	} else {
 		// Check Google Payments
 		checkGooglePayments(function(err, type) {
-			// if (ENVIRONMENT == 'staging') type = true;
+			if (ENVIRONMENT == 'staging') type = true;
 			if (err) {
 				logError('checkGooglePayments error: ', err);
 			} else { // no error
