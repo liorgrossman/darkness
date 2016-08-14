@@ -7,6 +7,15 @@
 // GENERAL
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Generic text color
+span,
+div,
+em,
+input
+{
+	color: $theme-text !important;
+}
+
 // Loading progress bar
 .lpb {
 	@include invert-back();
@@ -70,7 +79,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Google logo
-.gb_Rb {
+.gb_Rb, .gb_Sb {
 	@include invert-back();
 }
 
@@ -342,6 +351,11 @@
 // Recipient tabs in "To" input box
 .vN {
 	background: $theme-background-toolbar !important;
+}
+
+// Images of recepients
+.aFf .ak {
+	@include invert-back();
 }
 
 // Selected item in autocomplete (e.g. when typing in "To" input box)

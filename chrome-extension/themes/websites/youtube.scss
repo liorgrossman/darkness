@@ -199,31 +199,38 @@ a.yt-uix-button-epic-nav-item:hover {
 
 .yt-uix-tooltip-tip-content {
 	color: $theme-text !important;
-	@include invert-back()
+	background: $theme-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Video page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Invert Player info bar
-.ytp-hide-info-bar {
-	@include invert-back()
+// Video player background (padding of the video)
+.html5-video-player:not(.ytp-fullscreen) {
+	@include invert-back();
 }
 
-// Invert Video
-.ytp-hide-info-bar .html5-video-container {
-	@include invert-back()
+// Video player (<video> element)
+.html5-video-player video  {
+	-webkit-filter: none !important; // Parent is already inverted, don't invert again
+}
+// Context menu when right clicking video
+.ytp-popup {
+	background: rgba(230,230,230,0.9) !important; // Dark black - after inversion
 }
 
-// Invert when paused
-a.videowall-still {
+// Tooltips when hovering over seek bar (with thumbnails)
+.ytp-tooltip-bg {
 	@include invert-back()
 }
+.ytp-tooltip-text {
+	color: $theme-text !important;
+}
 
-// Invert when video ends
-.ended-mode {
-	@include invert-back()
+// Share buttons
+.share-service-button {
+	@include invert-back();
 }
 
 // Transparent BG for the player control buttons
@@ -266,8 +273,9 @@ a.videowall-still {
 	background: transparent !important;
 }
 
+// Video time
 .ytp-time-display span {
-	color: $theme-text !important;
+	color: invert-back-color($theme-text) !important;
 }
 
 // Change text color for video title links on the sidebar (related videos)
@@ -286,8 +294,8 @@ a.videowall-still {
 }
 
 // Video likes bar color
-.video-extras-sparkbar-likes {
-	background: $theme-url !important;
+.video-extras-sparkbars {
+	-webkit-filter: invert(100%) !important;
 }
 
 //

@@ -7,19 +7,6 @@
 	@include invert-back()
 }
 
-// Set text color for all span, div, em and input (but exclude YouTube captions)
-#main span:not(.captions-text):not([style~="color:"]),
-#body-container span:not(.captions-text):not([style~="color:"]),
-#main div:not(.caption-window),
-#body-container div:not(.caption-window),
-#main em,
-#body-container em,
-#main input
-#body-container input
-{
-	color: $theme-text !important;
-}
-
 // Skin blackout while loading
 .flyr-o, .flyr-w {
 	background-color: $theme-background !important;

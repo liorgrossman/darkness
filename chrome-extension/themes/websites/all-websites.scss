@@ -30,7 +30,6 @@ video,
 embed:not([type$="pdf"]),
 object,
 canvas,
-[style*="url"]:not(input),
 [background*="http"] {
 	@include invert-back()
 }
