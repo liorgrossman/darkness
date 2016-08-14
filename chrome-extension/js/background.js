@@ -127,7 +127,7 @@ var reloadUser = function(callback) {
 	} else {
 		// Check Google Payments
 		checkGooglePayments(function(err, type) {
-			if (ENVIRONMENT == 'staging') type = true;
+			// if (ENVIRONMENT == 'staging') type = true;
 			if (err) {
 				logError('checkGooglePayments error: ', err);
 			} else { // no error
@@ -295,7 +295,7 @@ var notifyOnPayPalTransactionComplete = function(callbackToNotifyClient) {
 			// Don't even send a response to client, keep the dialog open...
 		} else {
 			setTimeout(function() {
-				reloadPayPalUserUntilSuccess(callbackToNotifyClient);
+				notifyOnPayPalTransactionComplete(callbackToNotifyClient);
 			}, 1000);
 		}
 	}
