@@ -182,9 +182,9 @@ if (!DarknessLoader) { // Don't load twice
 
 		// CURRENTLY NOT IN USE:
 		// Determine whether to enable themes now (by time of day + settings panel open) then enable/disable themes it if necessary
-		var enableOrDisableThemesNow = function() {
+		var enableOrDisableThemesNow = function(debug) {
 			var shouldBeEnabled = shouldEnableThemesNow();
-			log("Enable or disable themes now?", shouldBeEnabled);
+			if (debug) log("Enable or disable themes now?", shouldBeEnabled);
 			if (currentlyEnabled && !shouldBeEnabled) {
 				// Turn it off
 				switchStyleOff();
@@ -199,20 +199,20 @@ if (!DarknessLoader) { // Don't load twice
 		// Enable/disable themes by time of day
 		var initPeriodicTimeCheck = function() {
 			setInterval(function() {
-				enableOrDisableThemesNow();
+				enableOrDisableThemesNow(false);
 			}, 1000 * 10);
 		};
 
 		// Public method, called by settings.js when user changes time settings
 		DarknessLoader.prototype.onSettingsEnableAtChanged = function(enableAt) {
 			settings.global.enableAt = enableAt;
-			enableOrDisableThemesNow();
+			enableOrDisableThemesNow(true);
 		};
 
 		// Called when the settings panel is shown or hidden
 		DarknessLoader.prototype.onSettingsPanelVisiblityChanged = function(visible) {
 			settingsPanelVisible = visible;
-			enableOrDisableThemesNow();
+			enableOrDisableThemesNow(true);
 		};
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------
