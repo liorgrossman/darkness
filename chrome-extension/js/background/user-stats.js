@@ -106,6 +106,7 @@ var StatsFactory = function() {
 		_stats[key] = val;
 		_saveStats();
 	};
+
 	Stats.prototype.get = function(key) {
 		// Migration of older users without analyticsId: create analyticsId on the fly
 		if (key == 'analyticsId' && typeof(_stats[key]) == 'undefined') {
@@ -113,10 +114,30 @@ var StatsFactory = function() {
 		}
 		return _stats[key];
 	};
+
 	Stats.prototype.remove = function(key) {
 		if (typeof(_stats[key]) != 'undefined') delete _stats[key];
 		_saveStats();
 	};
+
+	Stats.prototype.resetAllStats = function(callback) {
+		var oldStats = stats.getAllStatsClone();
+		chrome.storage.sync.remove(['stats'], function() {
+			if (chrome.runtime.lastError) {
+				logError("Error deleting all stats:", chrome.runtime.lastError);
+				callback(chrome.runtime.lastError, oldStats);
+			} else {
+				log("Deleted all stats. Old stats were: ", oldStats);
+				// _loadSettings will reset all settings to default ones
+				_loadStats(function() {
+					_saveStats(function() {
+						callback(null, oldStats);
+					});
+				});
+			}
+		});
+	};
+
 	Stats.prototype.getAllStatsClone = function() {
 		return JSON.parse(JSON.stringify(_stats))
 	};
