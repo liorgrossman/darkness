@@ -10,10 +10,19 @@ body {
 }
 
 // Buttons
-button, ._517h {
+button {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
+}
+
+// Faint (gray) buttons
+._517h {
+	background-color: $theme-faint-button-background !important;
+	color: $theme-text !important;
+	i {
+		-webkit-filter: none !important;
+	}
 }
 
 // Boxes in homepage and timeline (boxes with posts, sidebar, etc.)
@@ -345,14 +354,6 @@ path {
 	background-color: $theme-background !important;
 }
 
-//-------------------------------------------------------------------------
-// Suggested pages
-._42ft {
-	i {
-		@include invert-back();
-	}
-}
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Timeline (mine or other people's profiles)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -629,6 +630,11 @@ div[aria-label*="sticker"] {
 // Green "online" status dot - in chat windows
 ._2nlt, ._3olv._2nlt {
 	@include invert-back();
+}
+
+// Earth button on bottom for translations
+.sp_7uF0Nxk6_De.sx_5f8e6c {
+	border-radius: 50% !important; // Otherwise earth looks aliased
 }
 
 
