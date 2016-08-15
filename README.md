@@ -29,7 +29,9 @@ Please [join our developers community on Facebook](https://www.facebook.com/grou
 1. Go to the root Darkness directory: `cd darkness`
 1. Set up a the original repo as a remote: `git remote add upstream git@github.com:liorgrossman/darkness.git`
 1. Get the code: `git fetch upstream`
-1. Install packages and compile all SCSS files to CSS (required): `npm install`
+1. [Install Node.js](https://nodejs.org/), unless you already have it installed
+1. Install packages and compile all SCSS files to CSS: `npm install` (run it from the same directory as package.json)
+
 
 ##### Loading it in Chrome:
 1. On Chrome, browse to [chrome://extensions](chrome://extensions)
