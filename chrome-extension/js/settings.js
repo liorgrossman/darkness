@@ -824,6 +824,7 @@ if (!DarknessSettingsLoader) {
 
 		// Reload the settings panel with the most up-to-date user settings and assets (HTML, JS, CSS)
 		var reloadSettingsPanel = function(callback) {
+			log("Reloading settings panel");
 			// Load lotest user settings
 			chrome.runtime.sendMessage({action: "getSettings"}, function(response) {
 				settings = response.newSettings;

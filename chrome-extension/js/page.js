@@ -265,11 +265,16 @@ if (!DarknessLoader) { // Don't load twice
 				setTimeout(function() {
 					findConflictsWithOtherExtensions();
 				}, 500);
-				// Upon click on icon, open the settings panel
-				document.getElementById(ID_FOR_SETTINGS_ICON).addEventListener('click', function() {
+				var onSettingsIconClick = function() {
+					log("Settings icon click from page.js");
+					// Unbind click event, next click will be handles by settings.js
+					document.getElementById(ID_FOR_SETTINGS_ICON).removeEventListener('click', onSettingsIconClick);
+					// Trigger opening of the settings panel
 					darknessLoader.onSettingsPanelVisiblityChanged(true);
 					chrome.runtime.sendMessage({action: "openSettings"}, function(response) {});
-				})
+				};
+				// Upon click on icon, open the settings panel
+				document.getElementById(ID_FOR_SETTINGS_ICON).addEventListener('click', onSettingsIconClick)
 			});
 			initPeriodicTimeCheck();
 		}
