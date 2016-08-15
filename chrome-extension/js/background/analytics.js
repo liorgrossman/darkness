@@ -51,18 +51,23 @@ var initializeAnalyticsAfterLoad = function() {
 // Private helpers methods
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Print analytics debug prints?
+var DEBUG_ANALYTICS = false;
+
 // Private helper method: report a pageview to Google Analytics
 var _reportPageview = function(path, title) {
-	// logWarn('Sending pageview:', path);
-	if (typeof(ga) != 'undefined') {
+	var analyticsLoaded = typeof(ga) != 'undefined';
+	if (DEBUG_ANALYTICS) logWarn((analyticsLoaded ? 'Sending pageview:' : 'Not sending pageview:'), path);
+	if (analyticsLoaded) {
 		ga('send', {hitType: 'pageview', page: path, title: title});
 	}
 };
 
 // Private helper method: report an event to Google Analytics
 var _reportEvent = function(category, action, label, value) {
-	// logWarn('Sending event:', category, action, label, value);
-	if (typeof(ga) != 'undefined') {
+	var analyticsLoaded = typeof(ga) != 'undefined';
+	if (DEBUG_ANALYTICS) logWarn((analyticsLoaded ? 'Sending event:' : 'Not sending event:'), category, action, label, value);
+	if (analyticsLoaded) {
 		if (ga) ga('send', 'event', category, action, label, value);
 	}
 };
