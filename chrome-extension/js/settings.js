@@ -579,7 +579,23 @@ if (!DarknessSettingsLoader) {
 				toggleShare();
 			});
 
-			// Feedback button
+			// Send skin bug report button
+			$('.drk_settings .drk_bug_report_btn').unbind('click').click(function() {
+				repEventByUser('user-action', 'bug-report-btn-click');
+				var to = 'Darkness Support <darkness@improvver.com>';
+				var subj = 'Darkness Bug Report';
+				var body = '[Please send your bug report in English]\n\n________\nSystem Information:\nDarkness Version: ' +
+					chrome.runtime.getManifest().version +
+					(ASSETS.TYPE == 'p' ? '[2]' : '[1]') + '\nCurrent Website: ' + SITE + '\nCurrent URL: ' + document.location.href +
+					'\nCurrent Theme: ' + THEME;
+				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
+					'&body=' +
+					encodeURIComponent(body);
+				var win = window.open(url, '_blank');
+				win.focus();
+			});
+
+			// Send feedback button
 			$('.drk_settings .drk_feedback_btn').unbind('click').click(function() {
 				repEventByUser('user-action', 'feedback-btn-click');
 				var to = 'Darkness Support <darkness@improvver.com>';
