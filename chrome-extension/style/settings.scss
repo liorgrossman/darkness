@@ -484,6 +484,9 @@ div.drk_share_placeholder {
 	&.on {
 		display: block !important;
 	}
+	svg {
+		-webkit-filter: none !important; // Undo the inversion done in all-websites.scss
+	}
 }
 
 // AddThis lightbox when sharing a URL
