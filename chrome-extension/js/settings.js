@@ -556,18 +556,21 @@ if (!DarknessSettingsLoader) {
 
 				// Hotkeys - for developers only
 				if (ENVIRONMENT != 'production') {
-					if ((e.metaKey || e.ctrlKey) && e.altKey && e.shiftKey) {
-						// Holding Ctrl+Alt+Shift while clicking on X will reset all user settings, and reload the settings panel
-						chrome.runtime.sendMessage({action: "resetAllSettings", theme: THEME}, function(err, oldSettings) {
+					if (e.altKey && e.shiftKey) {
+						// Holding Alt+Shift while clicking on X will reset all user settings, and reload the settings panel
+						log("Dev shortcut: resetting settings + reloading panel");
+						chrome.runtime.sendMessage({action: "resetAllSettings", theme: THEME}, function(err, res) {
 							if (err)
 								log("Error deleting all settings: ", err);
 							else
-								log("Deleted all settings: ", oldSettings);
+								log("Deleted all settings", res);
+							// This will replace both ASSETS and SETTINGS before loading the settings panel
 							reloadSettingsPanel();
 						});
 					}
-					if (e.metaKey || e.ctrlKey) {
-						// Holding Ctrl while clicking on X will reload the settings panel (good for developing the settings panel)
+					else if (e.metaKey || e.ctrlKey) {
+						// Holding Ctrl/Cmd while clicking on X will reload the settings panel (good for developing the settings panel)
+						log("Dev shortcut: reloading panel");
 						reloadSettingsPanel();
 					}
 				}

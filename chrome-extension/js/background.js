@@ -435,7 +435,6 @@ chrome.runtime.onMessage.addListener(
 					stats.resetAllStats(function(err, oldStats) {
 						sendResponse(err, oldSettings);
 					});
-					sendResponse(err, oldSettings);
 				});
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
