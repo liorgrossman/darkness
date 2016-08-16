@@ -822,57 +822,61 @@ if (!DarknessSettingsLoader) {
 		};
 
 
-		// Reload the settings panel with the most up-to-date user settings and assets (HTML, JS, CSS)
-		var reloadSettingsPanel = function(callback) {
-			log("Reloading settings panel");
-			// Load lotest user settings
-			chrome.runtime.sendMessage({action: "getSettings"}, function(response) {
-				settings = response.newSettings;
-				var newTheme = response.newTheme;
-				log("Got new settings from background: ", settings, newTheme);
-				if (newTheme != THEME) {
-					// If user switched to another theme on Tab A, then clicked the moon icon on an old Tab B,
-					// Tab B will change to the new theme upon clicking the moon icon
-					loadTheme(newTheme);
-				}
-				// Load latest assets (HTML, JS, CSS)
-				chrome.runtime.sendMessage({action: "getAssetsForSettingsPanel"}, function(assets) {
-					log("Got assets:", assets);
-					ASSETS = assets; // Replace assets
-					loadAndShowSettingsPanel(); // This will reload the latest assets (HTML, CSS) into the DOM
-					if (callback) callback();
-				});
-			});
+		// Reload the settings panel
+		var reloadSettingsPanel = function() {
+			loadAndShowSettingsPanel();
 		};
 
 
 		// Loads and shows the settings panel (incl. analytics, filling the UI elements, event handlers, etc.)
 		var loadAndShowSettingsPanel = function() {
-			log("Loading darkness settings in " + ENVIRONMENT + " mode. Payment platform is: " + PAYMENT_PLATFORM);
+			log("Loading settings panel");
 
 			// Send analytics
 			repToFunnel('settings-opened');
 			repEventByUser('user-action', 'settings-opened');
 
-			// Load latest settings panel HTML and CSS from ASSETS
-			$('.drk_settings').removeClass('visible'); // Hide while we build the UI
-			putStyleInHead();
-			putHtmlInBody();
+			// Hide while we build the UI
+			$('.drk_settings').removeClass('visible');
 
-			// Fill all the UI elements and settings
-			initializeSettingsPanelInterfaceElements();
+			// Load latest user settings
+			chrome.runtime.sendMessage({action: "getSettings"}, function(response) {
+				settings = response.newSettings;
+				var newTheme = response.newTheme;
+				log("Got new settings from background: ", settings, newTheme);
 
-			// Wire event handlers
-			loadSettingsPanelEventHandlers();
-			loadUpgradeDialogEventHandlers();
-			loadOtherDialogsEventHandlers();
+				// If user switched to another theme on Tab A, then clicked the moon icon on an old Tab B,
+				// Tab B will change to the new theme upon clicking the moon icon
+				loadTheme(newTheme);
 
-			// All done, show the dialog
-			$('.drk_settings').addClass('visible');
+				// Load latest assets (HTML, JS, CSS)
+				chrome.runtime.sendMessage({action: "getAssetsForSettingsPanel"}, function(assets) {
+					log("Got assets:", assets);
+
+					// Replace ASSETS and load HTML and CSS from ASSETS
+					ASSETS = assets;
+					putStyleInHead();
+					putHtmlInBody();
+
+					// Fill all the UI elements and settings
+					initializeSettingsPanelInterfaceElements();
+
+					// Wire event handlers
+					loadSettingsPanelEventHandlers();
+					loadUpgradeDialogEventHandlers();
+					loadOtherDialogsEventHandlers();
+
+					// All done, show the dialog
+					$('.drk_settings').addClass('visible');
+
+				});
+			});
+
 		};
 
 		// Constructor
 		function DarknessSettingsLoader() {
+			log("Loading darkness settings in " + ENVIRONMENT + " mode. Payment platform is: " + PAYMENT_PLATFORM);
 			loadAndShowSettingsPanel();
 		}
 
