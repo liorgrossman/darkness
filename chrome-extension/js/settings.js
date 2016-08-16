@@ -756,11 +756,11 @@ if (!DarknessSettingsLoader) {
 				else {
 					// PayPal AND Google failed? Send a support email
 					var to = 'Darkness Support <darkness@improvver.com>';
-					var subj = 'Problem paying for Darkness Pro';
-					var paymentMethodName = PAYMENT_PLATFORM == 'paypal' ? 'PayPal' : 'Google';
+					var paymentMethodName = PAYMENT_PLATFORM == 'paypal' ? 'PayPal' : 'Google Payment';
+					var subj = 'Problem paying with ' + paymentMethodName;
 					var body =
 						"Please help us solve this problem by answering the following questions (in English, please):\n\n" +
-						"1. Did the " + paymentMethodName + " payment window load properly? (If not, what error message did you receive?)\n\n" +
+						"1. Did the " + paymentMethodName + " window load properly? (If not, what error message did you receive?)\n\n" +
 						"2. Can you please describe your problem with payment?\n\n" +
 						"3. Is there any other payment platform you would prefer instead?\n\n" +
 						'Darkness version: ' + chrome.runtime.getManifest().version + (ASSETS.TYPE == 'p' ? '[2]' : '[1]');
