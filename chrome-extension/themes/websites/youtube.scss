@@ -252,6 +252,7 @@ a.yt-uix-button-epic-nav-item:hover {
 .ytp-progress-bar {
 	@include invert-back();
 }
+
 // Any popup (e.g. context menu)
 .ytp-popup {
 	@include invert-back();
@@ -385,6 +386,32 @@ a.yt-uix-button-epic-nav-item:hover {
 // Grid of videos after playback ends: hover over a single video
 .videowall-still-info-bg {
 	background: rgba(255, 255, 255, 0.86) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Video ads
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// "You can skin to video in 3 seconds..." message
+.videoAdUiPreSkipContainer {
+	background: rgba(255,255,255,0.4) !important;
+}
+
+// Advertiser link on the bottom: Ad 1:38 advertiser.com
+.videoAdUiBottomBar {
+	@include invert-back();
+}
+
+// Text inside "Skip ad" messages
+.videoAdUiRedesign .videoAdUi {
+	text-shadow: 0 0 4px rgba(255,255,255,0.75) !important;
+}
+// "Skip Ad" button
+#player-api button.videoAdUiSkipButton {
+	background: rgba(255,255,255,0.7) !important;
+	.videoAdUiSkipIcon {
+		@include invert-back();
+	}
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
