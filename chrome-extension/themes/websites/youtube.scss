@@ -206,26 +206,66 @@ a.yt-uix-button-epic-nav-item:hover {
 // Video page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Video player background (padding of the video)
-.html5-video-player:not(.ytp-fullscreen) {
-	@include invert-back();
-}
-
-// Video player (<video> element)
-.html5-video-player video  {
-	-webkit-filter: none !important; // Parent is already inverted, don't invert again
-}
-
-// Tooltips when hovering over seek bar (with thumbnails)
-.ytp-tooltip-bg {
-	@include invert-back()
-}
-.ytp-tooltip-text {
-	color: invert-back-color($theme-text) !important;
+// The video player wrapper (and padded background)
+.html5-video-player {
+	color: $theme-text !important;
+	background: invert-back-color(#000) !important;
 }
 
 // Share buttons
 .share-service-button {
+	@include invert-back();
+}
+
+// Tooltips when hover over cogwheel, cc, etc.
+.ytp-tooltip {
+	@include invert-back();
+}
+// Tooltips when hovering over seek bar (with thumbnails)
+.ytp-tooltip-text-wrapper {
+	@include invert-back();
+}
+
+// Captions
+.html5-video-player .captions-text {
+	@include invert-back();
+}
+
+.ytp-volume-panel {
+	@include invert-back();
+}
+// Fadeout gradient at the top & bottom of every video
+.ytp-gradient-top, .ytp-gradient-bottom {
+	// Instead of fadeout to white, make it fadeout to black
+	@include invert-back();
+}
+
+// Video time display
+.ytp-time-display {
+	@include invert-back();
+	.ytp-time-current {
+		color: #eee !important;
+	}
+}
+
+// Video progress bar
+.ytp-progress-bar {
+	@include invert-back();
+}
+// Any popup (e.g. context menu)
+.ytp-popup {
+	@include invert-back();
+	.ytp-menuitem, .ytp-menuitem-label {
+		color: invert-back-color($theme-text) !important;
+	}
+}
+// Branding image (bottom right corner), like in https://www.youtube.com/watch?v=QTf-HMT7SCg
+.branding-img-container img {
+	-webkit-filter: none !important;
+}
+
+// Badge on cogwheel
+.ytp-settings-button.ytp-hd-quality-badge:after {
 	@include invert-back();
 }
 
@@ -269,11 +309,6 @@ a.yt-uix-button-epic-nav-item:hover {
 	background: transparent !important;
 }
 
-// Video time
-.ytp-time-display span {
-	color: invert-back-color($theme-text) !important;
-}
-
 // Change text color for video title links on the sidebar (related videos)
 #watch7-sidebar-modules span.title {
 	color: $theme-link !important;
@@ -302,26 +337,6 @@ a.yt-uix-button-epic-nav-item:hover {
 // Change BG color for theater mode
 #theater-background {
 	background-color: invert-back-color(#000) !important;
-}
-
-// fix black fonts for the video menu
-.html5-video-player .ytp-menuitem-label,
-.html5-video-player .ytp-menuitem-label span,
-.html5-video-player .ytp-menuitem-content,
-.html5-video-player .ytp-menuitem-content span {
-	color: invert-back-color($theme-text) !important;
-}
-
-// Context menu when right clicking video
-.ytp-contextmenu {
-	background: rgba(230,230,230,0.9) !important; // Dark black - after inversion
-	color: $theme-text !important;
-	.ytp-panel-menu {
-		color: $theme-text !important;
-	}
-	a.ytp-menuitem {
-		color: $theme-text !important;
-	}
 }
 
 // Autoplay toggle (on off)

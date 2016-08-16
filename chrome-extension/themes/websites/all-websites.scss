@@ -29,8 +29,14 @@ iframe,
 video,
 embed:not([type$="pdf"]),
 object,
+svg,
 canvas,
 [background*="http"] {
+	@include invert-back()
+}
+
+// All elements with a background image
+*[style*="background-image:"] {
 	@include invert-back()
 }
 
@@ -40,6 +46,11 @@ div.drk_settings_icon,
 div.drk_dialog,
 .addthis_sharing_toolbox,
 .drk_invert_back {
+	@include invert-back()
+}
+
+// Apply in full screen too (e.g. YouTube)
+*:-webkit-full-screen {
 	@include invert-back()
 }
 
