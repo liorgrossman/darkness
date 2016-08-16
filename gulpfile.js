@@ -1,5 +1,6 @@
 "use strict";
 
+var fs = require('fs');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
@@ -7,9 +8,11 @@ var gutil = require('gulp-util');
 var del = require('del');
 var zip = require('gulp-zip');
 
-const zipFilename = 'Darkness-for-CWS.zip';
+const zipFilename = 'Darkness-CWS-latest.zip';
 const chromeDevelopmentDir = 'chrome-extension';
 const chromeProductionDir = 'chrome-production';
+const chromeZipsDir = 'chrome-zips';
+var manifestJson = JSON.parse(fs.readFileSync(chromeDevelopmentDir + '/manifest.json'));
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Preapre a ZIP that is uploaded to Chrome Web Store:
@@ -29,21 +32,28 @@ gulp.task('cws:replicate', function() {
 // Clean up unnecessary files
 gulp.task('cws:cleanup', ['cws:replicate'], function() {
 	gutil.log("Cleanup started");
-	gutil.log("Deleting scss files");
 	var deletedFiles = del.sync(
-		[chromeProductionDir + '/**/*.scss',
-			chromeProductionDir + '/**/*.map',
-			chromeProductionDir + '/themes/themes',
-			chromeProductionDir + '/themes/websites'],
+		[chromeProductionDir + '/themes',
+		chromeProductionDir + '/style'],
 		{force: true, dryRun: false});
-	for (var i in deletedFiles) gutil.log("Deleted: ", deletedFiles[i]);
+	for (var i in deletedFiles) gutil.log("Deleted directory: ", deletedFiles[i]);
+
+	deletedFiles = del.sync(
+		[chromeProductionDir + '/**/*.scss',
+			chromeProductionDir + '/**/*.map'],
+		{force: true, dryRun: false});
+	for (var i in deletedFiles) gutil.log("Deleted file: ", deletedFiles[i]);
 });
 
 // Zip the production directory
 gulp.task('cws:zip', ['cws:cleanup'], function() {
+	var archiveFilename = 'Darkness-CWS-v' + manifestJson.version + '_(' + (new Date()).toISOString().slice(0,19).replace('T', '__').replace(/:/g, '-') + ').zip';
+	gutil.log("Saving to archive: " + archiveFilename);
 	return gulp.src(chromeProductionDir + '/**/*')
 		.pipe(zip(zipFilename))
-		.pipe(gulp.dest('./'));
+		.pipe(gulp.dest(chromeZipsDir))
+		.pipe(zip(archiveFilename))
+		.pipe(gulp.dest(chromeZipsDir));
 });
 
 gulp.task('cws', ['cws:replicate', 'cws:cleanup', 'cws:zip']);

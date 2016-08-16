@@ -3,7 +3,12 @@
 // Set the environment
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 var ENVIRONMENT = 'development';
+
+// Important - don't touch this:
 if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production'; // Chrome Web Store version
+
+// Local testing versions
+if (chrome.runtime.id == 'nhppbahodjffdfdbndcoinbbfjlfkmoc') ENVIRONMENT = 'production'; // Local CWS version
 if (chrome.runtime.id == 'kggllcjcknlclegojnkkomchhpjebgpo') ENVIRONMENT = 'staging'; // Testing before deployment to Chrome Web Store
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

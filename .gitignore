@@ -1,6 +1,7 @@
 # =======
 # Ignores specific to Darkness
 /chrome-production
+/chrome-zips
 *.zip
 /.idea
 
