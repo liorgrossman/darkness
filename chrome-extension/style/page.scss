@@ -30,7 +30,8 @@ div.drk_settings_icon {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Position the moon icon in the toolbar, adjust the toolbar (based on website)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-.drk_body_google, .drk_body_gmail {
+body[data-drk-site="google"],
+body[data-drk-site="gmail"] {
 	// If logged in: the avatar on the right side of toolbar
 	.gb_8a {
 		margin-right: 25px !important;
@@ -47,13 +48,13 @@ div.drk_settings_icon {
 	}
 }
 
-.drk_body_google {
+body[data-drk-site="google"] {
 	div.drk_settings_icon {
 		position: absolute !important;
 	}
 }
 
-.drk_body_youtube {
+body[data-drk-site="youtube"] {
 	// If logged in: user controls on the right side of toolbar
 	#yt-masthead-account-picker {
 		margin-right: 28px !important;
@@ -70,7 +71,7 @@ div.drk_settings_icon {
 	}
 }
 
-.drk_body_facebook {
+body[data-drk-site="facebook"] {
 	div.drk_settings_icon {
 		position: fixed !important;
 		top: 7px !important;

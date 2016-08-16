@@ -140,10 +140,10 @@ if (!DarknessLoader) { // Don't load twice
 				return log("NOT appending HTML using " + method);
 			}
 			log("Appending HTML using " + method);
+			document.body.setAttribute('data-drk-site', SITE);
 			var d = document.createElement('div');
 			d.setAttribute('id', ID_FOR_INJECTED_DIV);
 			d.setAttribute('class', SITE);
-			document.body.className += " drk_body_" + SITE + " ";
 			d.innerHTML = ASSETS.HTML;
 			document.body.appendChild(d);
 		};
