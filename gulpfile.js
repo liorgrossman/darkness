@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
+var rename = require('gulp-rename');
 var del = require('del');
 var zip = require('gulp-zip');
 
@@ -23,7 +24,7 @@ var manifestJson = JSON.parse(fs.readFileSync(chromeDevelopmentDir + '/manifest.
 gulp.task('cws:replicate', function() {
 	gutil.log("Replicate started");
 	// Delete any existing production dir
-	var deletedFiles = del.sync([chromeProductionDir, zipFilename], {force: true, dryRun: false});
+	var deletedFiles = del.sync([chromeProductionDir, chromeZipsDir + '/' + zipFilename], {force: true, dryRun: false});
 	for (var i in deletedFiles) gutil.log("Deleted: ", deletedFiles[i]);
 	// Copy dev dir recursively to production dir
 	return gulp.src([chromeDevelopmentDir + '/**/*']).pipe(gulp.dest(chromeProductionDir));
@@ -47,16 +48,22 @@ gulp.task('cws:cleanup', ['cws:replicate'], function() {
 
 // Zip the production directory
 gulp.task('cws:zip', ['cws:cleanup'], function() {
-	var archiveFilename = 'Darkness-CWS-v' + manifestJson.version + '_(' + (new Date()).toISOString().slice(0,19).replace('T', '__').replace(/:/g, '-') + ').zip';
-	gutil.log("Saving to archive: " + archiveFilename);
+	gutil.log("Zipping...");
+	// Create a zip file
 	return gulp.src(chromeProductionDir + '/**/*')
 		.pipe(zip(zipFilename))
-		.pipe(gulp.dest(chromeZipsDir))
-		.pipe(zip(archiveFilename))
 		.pipe(gulp.dest(chromeZipsDir));
 });
 
-gulp.task('cws', ['cws:replicate', 'cws:cleanup', 'cws:zip']);
+// Zip the production directory
+gulp.task('cws:archive', ['cws:zip'], function() {
+	var archiveFilename = 'Darkness-CWS-v' + manifestJson.version + '_(' + (new Date()).toISOString().slice(0,19).replace('T', '__').replace(/:/g, '-') + ').zip';
+	gutil.log("Copying to archive: " + archiveFilename);
+	// Copy to archive
+	return gulp.src(chromeZipsDir + '/' + zipFilename).pipe(rename(archiveFilename)).pipe(gulp.dest(chromeZipsDir));
+});
+
+gulp.task('cws', ['cws:replicate', 'cws:cleanup', 'cws:zip', 'cws:archive']);
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // SASS compilation

@@ -1,31 +1,32 @@
 {
-	"name": "Darkness",
-	"description": "Dark themes for popular websites",
-	"version": "1.0.0",
-	"private": true,
-	"author": "Lior Grossman",
-	"homepage": "https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm",
-	"contributors": [
-		"Lior Grossman <lior@liorgrossman.com> (https://github.com/liorgrossman)"
-	],
-	"bugs": {
-		"url": ""
-	},
-	"scripts": {
-		"install": "gulp install",
-		"start": "gulp sass:watch"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"del": "2.2.1",
-		"gulp": "3.9.1",
-		"gulp-sass": "2.3.2",
-		"gulp-sourcemaps": "1.6.0",
-		"gulp-util": "3.0.7",
-		"gulp-zip": "3.2.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/liorgrossman/darkness"
-	}
+  "name": "Darkness",
+  "description": "Dark themes for popular websites",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Lior Grossman",
+  "homepage": "https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm",
+  "contributors": [
+    "Lior Grossman <lior@liorgrossman.com> (https://github.com/liorgrossman)"
+  ],
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "install": "gulp install",
+    "start": "gulp sass:watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "del": "2.2.1",
+    "gulp": "3.9.1",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "2.3.2",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-util": "3.0.7",
+    "gulp-zip": "3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liorgrossman/darkness"
+  }
 }
