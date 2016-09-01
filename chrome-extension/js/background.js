@@ -765,6 +765,15 @@ var initializeConfiguration = function() {
 	// Chrome runtime configuration setup
 	chrome.runtime.setUninstallURL("http://improvver.com/darkness/extension/uninstalled");
 
+	chrome.runtime.onInstalled.addListener(function (details) {
+		log("Chrome invoked onInstalled: ", details);
+		if (details && details.reason == "install") {
+			chrome.tabs.create({url: "http://improvver.com/darkness/extension/thank-you"}, function(tab) {
+				log("Thank you page opened");
+			});
+		}
+	});
+
 	// Define which themes are free
 	for (var i in CONFIG.themes) {
 		var key = CONFIG.themes[i].key;
