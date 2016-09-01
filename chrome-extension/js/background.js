@@ -31,7 +31,13 @@ var getSiteKeyForUrl = function(url) {
 					return siteKey;
 				}
 			} else {
-				return siteKey;
+				if (ENVIRONMENT == 'development') {
+					// In development mode, don't show icons that ask developers to contribute
+					return CONFIG.sites[siteKey].support == 'ask-developers' ? null : siteKey;
+				} else {
+					// In staging / production mode, always show icon if website is supported (even icon for devs)
+					return siteKey;
+				}
 			}
 		}
 	}
@@ -568,6 +574,7 @@ var injectSettingsScriptToTab = function(tab) {
 		args['ENVIRONMENT'] = ENVIRONMENT;
 		args['THEME'] = themeKey;
 		args['SITE'] = siteKey;
+		args['SITE_SUPPORT'] = CONFIG.sites[siteKey].support;
 		args['SETTINGS'] = JSON.stringify(settings.getAllSettingsClone());
 		args['CONFIG'] = JSON.stringify(CONFIG);
 
@@ -637,6 +644,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 			'SETTINGS': JSON.stringify(settings.getAllSettingsClone()),
 			'TYPE': stats.get('type'),
 			'SITE': siteKey,
+			'SITE_SUPPORT': CONFIG.sites[siteKey].support,
 
 			'ENVIRONMENT': ENVIRONMENT,
 			'MACHINEID': stats.get('userId')

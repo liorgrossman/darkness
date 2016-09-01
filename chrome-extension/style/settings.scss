@@ -69,6 +69,18 @@ $darkness-listbutton-hover-lighten: 3%;
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // STYLE FOR ICONS (FONTELLO)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Disable Darkness' Fontello icon across the entire website (so we do not affect other websites that use Fontello like Trello)
+body [class^="icon-"]:before, body [class*=" icon-"]:before {
+	font-family: inherit !important;
+}
+
+// Enable Darkness' Fontello icons only within Darkness HTML
+#drk_settings_html [class^="icon-"]:before, #drk_settings_html [class*=" icon-"]:before {
+	font-family: "fontello" !important;
+}
+
+
 a.drk_icon {
 	text-decoration: none !important;
 	i {

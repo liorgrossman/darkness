@@ -18,6 +18,7 @@ if (!DarknessSettingsLoader) {
 		// Currently shown theme & site keys
 		var THEME = '@@THEME@@';
 		var SITE = '@@SITE@@';
+		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
 
 		// Assets (CSS/JS/HTML) that need to be replaced every time the settings panel is opened - for development purposes
 		var ASSETS = {'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@'};
@@ -834,10 +835,15 @@ if (!DarknessSettingsLoader) {
 		// Loads and shows the settings panel (incl. analytics, filling the UI elements, event handlers, etc.)
 		var loadAndShowSettingsPanel = function() {
 			log("Loading settings panel");
+			var onlyAskDevelopers = SITE_SUPPORT == 'ask-developers';
 
 			// Send analytics
-			repToFunnel('settings-opened');
-			repEventByUser('user-action', 'settings-opened');
+			if (onlyAskDevelopers) {
+				repEvent('user-action', 'dev-icon-clicked', SITE);
+			} else {
+				repToFunnel('settings-opened');
+				repEventByUser('user-action', 'settings-opened');
+			}
 
 			// Hide while we build the UI
 			$('.drk_settings').removeClass('visible');
@@ -869,9 +875,13 @@ if (!DarknessSettingsLoader) {
 					loadUpgradeDialogEventHandlers();
 					loadOtherDialogsEventHandlers();
 
-					// All done, show the dialog
-					$('.drk_settings').addClass('visible');
-
+					if (onlyAskDevelopers) {
+						// Show the developers dialog
+						$('.drk_join_developers').addClass('visible');
+					} else {
+						// Show the settings dialog
+						$('.drk_settings').addClass('visible');
+					}
 				});
 			});
 

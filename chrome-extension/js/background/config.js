@@ -28,6 +28,7 @@ var CONFIG = {
 		'google': {
 			key: 'google', // Must be the same as the object key
 			name: 'Google',
+			support: 'full',
 			hostRegExp: new RegExp(GOOGLE_HOST_REGEXP, 'i'),
 			pathRegExp: new RegExp('^/(search|webhp)?$'), // pathRegExp is optional and unnecessary for most websites
 			creators: [ // Who wrote the 80%+ of the skin?
@@ -42,6 +43,7 @@ var CONFIG = {
 		'facebook': {
 			key: 'facebook', // Must be the same as the object key
 			name: 'Facebook',
+			support: 'full',
 			hostRegExp: new RegExp('^(www|web|beta)\.facebook\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Marco Cazzaro', link: 'http://www.marcocazzaro.com/'}
@@ -54,6 +56,7 @@ var CONFIG = {
 		'gmail': {
 			key: 'gmail', // Must be the same as the object key
 			name: 'Gmail',
+			support: 'full',
 			hostRegExp: new RegExp('^mail\.google\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Damian Schmidt', link: 'http://iristormdesign.com/'}
@@ -67,6 +70,7 @@ var CONFIG = {
 		'youtube': {
 			key: 'youtube', // Must be the same as the object key
 			name: 'YouTube',
+			support: 'full',
 			hostRegExp: new RegExp('^www\.youtube\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Kevin Mata'}
@@ -75,6 +79,24 @@ var CONFIG = {
 				{name: 'Mayrun Digmi', link: 'http://www.mayrundigmi.com/'},
 				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
+		},
+		'github': {
+			key: 'github', // Must be the same as the object key
+			name: 'GitHub',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^github\.com$', 'i')
+		},
+		'stackoverflow': {
+			key: 'stackoverflow', // Must be the same as the object key
+			name: 'StackOverflow',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
+		},
+		'trello': {
+			key: 'trello', // Must be the same as the object key
+			name: 'Trello',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^trello\.com$', 'i')
 		}
 	}
 };

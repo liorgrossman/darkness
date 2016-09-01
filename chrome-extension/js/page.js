@@ -21,6 +21,7 @@ if (!DarknessLoader) { // Don't load twice
 		// Various assets provided by the background scripts
 		var ASSETS = {'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@'};
 		var SITE = '@@SITE@@';
+		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
 		var settings = JSON.parse('@@SETTINGS@@'); // User settings
 
 		// Variables
@@ -57,7 +58,9 @@ if (!DarknessLoader) { // Don't load twice
 					var mutation = mutations[i];
 					if (mutation.target.nodeName.toLowerCase() == elementName) {
 						cleanup();
-						callback('observer');
+						setTimeout(function() {
+							callback('observer');
+						}, 0);
 						break;
 					}
 				}
@@ -141,6 +144,7 @@ if (!DarknessLoader) { // Don't load twice
 			}
 			log("Appending HTML using " + method);
 			document.body.setAttribute('data-drk-site', SITE);
+			document.body.setAttribute('data-drk-site-support', SITE_SUPPORT);
 			var d = document.createElement('div');
 			d.setAttribute('id', ID_FOR_INJECTED_DIV);
 			d.setAttribute('class', SITE);
@@ -248,7 +252,7 @@ if (!DarknessLoader) { // Don't load twice
 			log("Loading darkness in " + ENVIRONMENT + " mode. Currently enabled?", currentlyEnabled);
 
 			onElementReady('head', function(method) {
-				log("HEAD is ready");
+				log("HEAD is ready - via " + method);
 				// If document is ready and there is still no head, create it
 				if (!document.head) {
 					var head = document.createElement('head');
@@ -259,7 +263,7 @@ if (!DarknessLoader) { // Don't load twice
 			});
 
 			onElementReady('body', function(method) {
-				log("BODY is ready");
+				log("BODY is ready - via " + method);
 				// Append the Darkness HTML (moon icon)
 				appendHtmlToBody(method);
 				setTimeout(function() {

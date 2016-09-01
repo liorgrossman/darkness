@@ -27,6 +27,10 @@ div.drk_settings_icon {
 	}
 }
 
+body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
+	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-ask-developers.png') no-repeat center !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Position the moon icon in the toolbar, adjust the toolbar (based on website)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,6 +81,34 @@ body[data-drk-site="facebook"] {
 		top: 7px !important;
 	}
 }
+
+body[data-drk-site="github"] {
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 9px !important;
+		right: 12px !important;
+	}
+}
+
+body[data-drk-site="stackoverflow"] {
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 2px !important;
+		right: 5px !important;
+	}
+}
+
+body[data-drk-site="trello"] {
+	.header-user {
+		right: 35px !important;
+	}
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 5px !important;
+		right: 6px !important;
+	}
+}
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global message to user (e.g. conflict found with another extension)
