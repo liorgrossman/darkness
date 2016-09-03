@@ -22,7 +22,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 * Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm).  
 
 ## Installation
-#####  Installing Darkness Developer Edition:
+####  Installing Darkness Developer Edition:
 1. Recommended: [join our developers community](https://www.facebook.com/groups/darkness-developers) to discuss and ask questions.
 1. Fork the Darkness repo: https://github.com/liorgrossman/darkness/fork
 1. Clone your fork locally:
@@ -35,22 +35,22 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 1. Install packages and compile all SCSS files to CSS: `npm install` (run it from the same directory as package.json)
 
 
-##### Loading it in Chrome:
+#### Loading it in Chrome:
 1. On Chrome, browse to [chrome://extensions](chrome://extensions)
 1. If you have already Darkness installed, disable it
 1. Check **Developer mode** in the top of the Extensions page
 1. Click **Load unpacked extension...**
 1. Choose the sub-directory **darkness/darkness-chrome** (where manifest.json resides)
 
-##### To keep Darkness up-to-date, please pull occasionally:
+#### To keep Darkness up-to-date, please pull occasionally:
 ```bash
 git checkout master
 git pull upstream master
 ```
 
-## Contributing Code
-Pull requests are welcome!
-Please see our [contribution guide](./CONTRIBUTING.md) to help us improve and extend Darkness.
+## Contributing fixes and new themes
+**Pull requests are welcome!**
+Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and extend Darkness.
 
 
 ## Got more questions?
