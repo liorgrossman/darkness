@@ -6,7 +6,8 @@
 
 Using dark themes reduces the eye strain and fatigue caused by a bright screen, helps you sleep faster and better at night, and generally makes you awesome!
 
-Please [join our developers community on Facebook](https://www.facebook.com/groups/darkness-developers) to discuss this project and ask questions.
+
+**[Join our growing developers community on Facebook](https://www.facebook.com/groups/darkness-developers) to stay in the loop!**
 
 
 <div style="text-align:center">
@@ -22,6 +23,7 @@ Please [join our developers community on Facebook](https://www.facebook.com/grou
 
 ## Installation
 #####  Installing Darkness Developer Edition:
+1. Recommended: [join our developers community](https://www.facebook.com/groups/darkness-developers) to discuss and ask questions.
 1. Fork the Darkness repo: https://github.com/liorgrossman/darkness/fork
 1. Clone your fork locally:
 	* If you use SSH: `git clone git@github.com:YOUR_GITHUB_USER/darkness.git`
