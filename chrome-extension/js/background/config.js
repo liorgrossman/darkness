@@ -83,8 +83,11 @@ var CONFIG = {
 		'github': {
 			key: 'github', // Must be the same as the object key
 			name: 'GitHub',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^github\.com$', 'i')
+			support: 'full',
+			hostRegExp: new RegExp('^github\.com$', 'i'),
+			creators: [
+				{name: 'Nicolas Botello'}
+			]
 		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
