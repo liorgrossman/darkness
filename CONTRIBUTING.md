@@ -26,13 +26,13 @@ Open `/themes/themes/THEME-TEMPLATE.scss` in your code editor and follow the ins
 ## How to push code back to Darkness?
 1. Please test your changes locally in Chrome
 1. Commit and push:
-	```bash
-	cd darkness
-	git add .
-	git commit -m "Description of Changes"
-	git push origin master
-	```
-1. Go to [GitHub](https://github.com) and navigate to **your fork of Darkness**. 
+```bash
+cd darkness
+git add .
+git commit -m "Description of Changes"
+git push origin master
+```
+3. Go to [GitHub](https://github.com) and navigate to **your fork of Darkness**. 
 1. Click the **New pull request** button (above the file list)
 1. Click the **Create pull request** button.
 1. Add a description for your pull request and click **Create pull request**
