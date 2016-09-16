@@ -37,8 +37,9 @@ input {
 }
 
 // Github logo
- .header-logo-invertocat {
-	@include invert-back();
+.header-logo-invertocat 
+{
+	-webkit-filter: grayscale(100%);
 }
 
 // Links
@@ -57,6 +58,8 @@ a {
 	border-color: $theme-border !important;
 	color: $theme-text !important;
 }
+
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // dashboard page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -69,12 +72,9 @@ a {
 	}
 	.dropdown-caret  {
 		@include invert-back();	
+	}
 }
-}
-//drop down carets
-#users-links > li > .dropdown-caret  {
-	@include invert-back();	
-}
+
 
 // right side repositories sidebar
 .dashboard-sidebar > div,
