@@ -99,6 +99,7 @@ a {
 .repo-filterer > li > button{
 	&.filter-selected {
 		color: $theme-link-active !important;
+		border-color: $theme-border !important;
 	}
 	&:hover {
 		background: $theme-tooltip-text !important;
@@ -111,7 +112,7 @@ a {
 // private repos work differently  
 .dashboard-sidebar > div > div > ul > .private > a
 {
-	background-color: $theme-background-box !important;
+	background-color: $theme-background !important;
 }
 
 //TODO FIX purple button for new repository
