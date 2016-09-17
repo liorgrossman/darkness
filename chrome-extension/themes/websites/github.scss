@@ -39,7 +39,10 @@ input {
 // Github logo
 .header-logo-invertocat 
 {
-	-webkit-filter: grayscale(100%);
+	svg {
+		-webkit-filter: none !important;
+		color: $theme-text !important;
+	}
 }
 
 // Links
@@ -77,7 +80,8 @@ a {
 	}
 }
 //dropdowns
-.dropdown-menu
+.dropdown-menu,
+.dropdown-menu form > button
 {
 	background-color: $theme-background-box !important;
 }
@@ -131,11 +135,32 @@ a {
 		color: $theme-link-active !important;
 	}
 }
+//dashboard context button
+.select-menu > button{
+	background: $theme-faint-button-background !important;
+	color: $theme-text !important;
+	//fix text in button
+	span {
+		color: $theme-text !important;
+	}
+}
 // news feed | pull requests | issues
-// TODO fix icons
 nav > a {
-	color: $theme-textbox-text !important;
-
+	svg {
+		-webkit-filter: none !important;
+		background: $theme-background !important;
+	}
+	&:visited {
+		svg {
+			color: $theme-text !important;	
+		}
+		
+	}
+}
+//view organization button
+nav > div > a {
+	background: $theme-faint-button-background !important;
+	color: $theme-text !important;
 }
 //TODO FIX purple button for new repository
 .boxed-group-action > a{
@@ -154,7 +179,6 @@ nav > a {
 .news blockquote,{
 	color: $theme-text-faint !important;
 }
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
