@@ -65,8 +65,9 @@ a {
 }
 
 //links on top right of bar
-#user-links > li
+#user-links > li > a
 {
+	color: $theme-textbox-text !important;
 	@include invert-back();	
 	img {
 		-webkit-filter: none !important;
@@ -96,7 +97,8 @@ a {
 	color: $theme-text !important;
 }
 //filter buttons for repos
-.repo-filterer > li > button{
+.repo-filterer > li > button,
+.repo-filterer > li > a{
 	&.filter-selected {
 		color: $theme-link-active !important;
 		border-color: $theme-border !important;
@@ -114,7 +116,27 @@ a {
 {
 	background-color: $theme-background !important;
 }
+//Switch dashboard context
+.js-menu-content div,
+.js-menu-content .select-menu-list > div > a, 
+.js-menu-content .select-menu-list > a {
+	background-color: $theme-background-box !important;
+	color: $theme-textbox-text !important;
+	border-color: $theme-border !important;
+	&:hover {
+		background-color: $theme-tooltip-text !important;
+	}
+	&.selected {
+		background-color: $theme-highlighted !important;
+		color: $theme-link-active !important;
+	}
+}
+// news feed | pull requests | issues
+// TODO fix icons
+nav > a {
+	color: $theme-textbox-text !important;
 
+}
 //TODO FIX purple button for new repository
 .boxed-group-action > a{
 	background-color: $theme-button-background !important;
