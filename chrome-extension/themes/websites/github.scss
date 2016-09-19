@@ -85,7 +85,11 @@ a {
 {
 	background-color: $theme-background-box !important;
 }
-
+.svg-tip {
+	background: $theme-tooltip-background !important;
+	border-color: $theme-border !important;
+	color: $theme-tooltip-text !important;
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // dashboard page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -198,7 +202,26 @@ nav > div > a {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Profile Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+.user-profile-nav,
+.profile-timeline-year-list, // time line list at bottom
+.user-profile-sticky-bar, //username and image when scrolling
+{ 
+	background-color: $theme-background !important;
+}
+//pinned repos
+.pinned-repo-item {
+	background: $theme-background-box !important;
+	border-color: $theme-border !important;
+	color: $theme-text !important;
+}
 
+.profile-timeline-card-wrapper > .profile-timeline-card, //time line cards 
+.mb-5
+{
+	background: $theme-background-box !important;
+	border-color: $theme-border !important;
+	color: $theme-text !important;
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Other Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
