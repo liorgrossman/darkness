@@ -11,85 +11,85 @@ You should know: all the website's colors are inverted before skinning even star
 * This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
 * Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
 ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Github skin for Darkness
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 body {
-	background-color: $theme-background !important;
+    background-color: $theme-background !important;
 }
 
 // All buttons
-button{
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
+button {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
 }
 
 // All inputs
 input {
-	color: $theme-textbox-text;
-	background-color: $theme-textbox-background;
-	border-color: $theme-border;
+    color: $theme-textbox-text;
+    background-color: $theme-textbox-background;
+    border-color: $theme-border;
 }
 
 // Github logo
-.header-logo-invertocat 
-{
-	svg {
-		-webkit-filter: none !important;
-		color: $theme-text !important;
-	}
+.header-logo-invertocat {
+    svg {
+        -webkit-filter: none !important;
+        color: $theme-text !important;
+    }
 }
 
 // Links
 a {
-	color: $theme-link !important;
-	&:visited {
-		color: $theme-link-visited !important;
-	}
-	&:active {
-		color: $theme-link-active !important;
-	}
+    color: $theme-link !important;
+    &:visited {
+        color: $theme-link-visited !important;
+    }
+    &:active {
+        color: $theme-link-active !important;
+    }
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //top toolbar
 .header,
 .header > div {
-	background-color: $theme-background-toolbar !important;
-	border-color: $theme-border !important;
-	color: $theme-text !important;
+    background-color: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
 }
 
 //links on top right of bar
-#user-links > li > a
-{
-	color: $theme-textbox-text !important;
-	@include invert-back();	
-	img {
-		-webkit-filter: none !important;
-	}
-	.dropdown-caret  {
-		@include invert-back();	
-	}
+#user-links > li > a {
+    color: $theme-textbox-text !important;
+    @include invert-back();
+    img {
+        -webkit-filter: none !important;
+    }
+    .dropdown-caret {
+        @include invert-back();
+    }
 }
+
 //dropdowns
 .dropdown-menu,
-.dropdown-menu form > button
-{
-	background-color: $theme-background-box !important;
+.dropdown-menu form > button {
+    background-color: $theme-background-box !important;
 }
+
 .svg-tip {
-	background: $theme-tooltip-background !important;
-	border-color: $theme-border !important;
-	color: $theme-tooltip-text !important;
+    background: $theme-tooltip-background !important;
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // dashboard page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -97,171 +97,198 @@ a {
 .dashboard-sidebar > div,
 .dashboard-sidebar > div > h3,
 .dashboard-sidebar > div > div,
-.dashboard-sidebar > div > div > ul > li, 
-.dashboard-sidebar > div > div > div, 
- {
-	background: $theme-background-box !important;
-	border-color: $theme-border !important;
-	color: $theme-text !important;
+.dashboard-sidebar > div > div > ul > li,
+.dashboard-sidebar > div > div > div,
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
 }
+
 //filter buttons for repos
 .repo-filterer > li > button,
-.repo-filterer > li > a{
-	&.filter-selected {
-		color: $theme-link-active !important;
-		border-color: $theme-border !important;
-	}
-	&:hover {
-		background: $theme-tooltip-text !important;
-	}
-	&:active {
-		background-color: $theme-highlighted-darker !important;
-	}
-	background: $theme-background-box !important;
+.repo-filterer > li > a {
+    &.filter-selected {
+        color: $theme-link-active !important;
+        border-color: $theme-border !important;
+    }
+    &:hover {
+        background: $theme-tooltip-text !important;
+    }
+    &:active {
+        background-color: $theme-highlighted-darker !important;
+    }
+    background: $theme-background-box !important;
 }
+
 // private repos work differently  
-.dashboard-sidebar > div > div > ul > .private > a
-{
-	background-color: $theme-background !important;
+.dashboard-sidebar > div > div > ul > .private > a {
+    background-color: $theme-background !important;
 }
+
 //Switch dashboard context
 .js-menu-content div,
-.js-menu-content .select-menu-list > div > a, 
+.js-menu-content .select-menu-list > div > a,
 .js-menu-content .select-menu-list > a {
-	background-color: $theme-background-box !important;
-	color: $theme-textbox-text !important;
-	border-color: $theme-border !important;
-	&:hover {
-		background-color: $theme-tooltip-text !important;
-	}
-	&.selected {
-		background-color: $theme-highlighted !important;
-		color: $theme-link-active !important;
-	}
+    background-color: $theme-background-box !important;
+    color: $theme-textbox-text !important;
+    border-color: $theme-border !important;
+    &:hover {
+        background-color: $theme-tooltip-text !important;
+    }
+    &.selected {
+        background-color: $theme-highlighted !important;
+        color: $theme-link-active !important;
+    }
 }
+
 //dashboard context button
-.select-menu > button{
-	background: $theme-faint-button-background !important;
-	color: $theme-text !important;
-	//fix text in button
-	span {
-		color: $theme-text !important;
-	}
+.select-menu > button {
+    background: $theme-faint-button-background !important;
+    color: $theme-text !important;
+    //fix text in button
+    span {
+        color: $theme-text !important;
+    }
 }
+
 // news feed | pull requests | issues
 nav > a {
-	svg {
-		-webkit-filter: none !important;
-		background: $theme-background !important;
-	}
-	&:visited {
-		svg {
-			color: $theme-text !important;	
-		}
-		
-	}
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+    }
+    &:visited {
+        svg {
+            color: $theme-text !important;
+        }
+    }
 }
+
 //view organization button
 nav > div > a {
-	background: $theme-faint-button-background !important;
-	color: $theme-text !important;
+    background: $theme-faint-button-background !important;
+    color: $theme-text !important;
 }
+
 //TODO FIX purple button for new repository
-.boxed-group-action > a{
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
+.boxed-group-action > a {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
 }
 
 //News column
 .news .alert .body {
-	color: $theme-text !important;
+    color: $theme-text !important;
 }
 
 .news .alert .body .title,
 .news .alert .body .time,
-.news blockquote,{
-	color: $theme-text-faint !important;
+.news blockquote,
+{
+    color: $theme-text-faint !important;
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Search
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Homepage
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Profile Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 .user-profile-nav,
 .profile-timeline-year-list, // time line list at bottom
 .user-profile-sticky-bar, //username and image when scrolling
-.user-profile-sticky-bar:after, 
+.user-profile-sticky-bar:after,
 .profile-timeline-month-heading,
 .contributions-setting-link,
-.profile-rollup-toggle
-{ 
-	background-color: $theme-background !important;
+.profile-rollup-toggle {
+    background-color: $theme-background !important;
 }
+
 //pinned repos
 .pinned-repo-item {
-	background: $theme-background-box !important;
-	border-color: $theme-border !important;
-	color: $theme-text !important;
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
 }
 
 .profile-timeline-card-wrapper > .profile-timeline-card, //time line cards 
-.mb-5
-{
-	background: $theme-background-box !important;
-	border-color: $theme-border !important;
-	color: $theme-text !important;
+.mb-5 {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
 }
+
 //conttribution settings
-.edit_user button 
-{
-	background: $theme-background-box !important;
-	border-color: $theme-border !important;
-	color: $theme-text !important;
+.edit_user button {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
 }
-.filter-item.selected
-{
-	background: $theme-faint-button-background !important;
+
+.filter-item.selected {
+    background: $theme-faint-button-background !important;
 }
+
 //edit profile button
-.btn-block.mb-3{
-	background: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
+.btn,
+.social-count,
+.btn-block.mb-3 {
+    background: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
 }
+
 //contributions legend undo the tile colors
-.legend > li 
-{
-	@include invert-back();
+.legend > li {
+    @include invert-back();
 }
+
 //fix star button
 .starred > button,
 //fix follow and unfollow button
-.user-following-container button
-{
-	background: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
+.user-following-container button {
+    background: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// Other Page
+// Repo Main Page 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+.pagehead.repohead, //main repo head 
+.overall-summary, //stats of repo
+.commit-tease, //last commit message
+.file-wrap > .files, // file directory for repo
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//readme
+.readme,
+.readme > h3,
+.readme > .markdown-body {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.muted-link {
+    background: $theme-background !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // 3rd Party Extensions Support
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
