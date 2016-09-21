@@ -205,6 +205,7 @@ nav > div > a {
 .user-profile-nav,
 .profile-timeline-year-list, // time line list at bottom
 .user-profile-sticky-bar, //username and image when scrolling
+.user-profile-sticky-bar:after
 { 
 	background-color: $theme-background !important;
 }
