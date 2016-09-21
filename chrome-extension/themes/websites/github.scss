@@ -23,7 +23,7 @@ body {
 }
 
 // All buttons
-button {
+button{
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
@@ -205,7 +205,10 @@ nav > div > a {
 .user-profile-nav,
 .profile-timeline-year-list, // time line list at bottom
 .user-profile-sticky-bar, //username and image when scrolling
-.user-profile-sticky-bar:after
+.user-profile-sticky-bar:after, 
+.profile-timeline-month-heading,
+.contributions-setting-link,
+.profile-rollup-toggle
 { 
 	background-color: $theme-background !important;
 }
@@ -222,6 +225,28 @@ nav > div > a {
 	background: $theme-background-box !important;
 	border-color: $theme-border !important;
 	color: $theme-text !important;
+}
+//conttribution settings
+.edit_user button 
+{
+	background: $theme-background-box !important;
+	border-color: $theme-border !important;
+	color: $theme-text !important;
+}
+.filter-item.selected
+{
+	background: $theme-faint-button-background !important;
+}
+//edit profile button
+.btn-block.mb-3{
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+//contributions legend undo the tile colors
+.legend > li 
+{
+	@include invert-back();
 }
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Other Page
