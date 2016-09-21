@@ -248,6 +248,15 @@ nav > div > a {
 {
 	@include invert-back();
 }
+//fix star button
+.starred > button,
+//fix follow and unfollow button
+.user-following-container button
+{
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Other Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
