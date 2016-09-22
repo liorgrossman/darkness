@@ -279,14 +279,28 @@ nav > div > a {
 //readme
 .readme,
 .readme > h3,
-.readme > .markdown-body {
+.readme > .markdown-body,
+.readme > .plain {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
     color: $theme-text !important;
 }
 
+//edit link shows up as a button change background
 .muted-link {
     background: $theme-background !important;
+}
+
+//change how the nav selction looks and the svgs
+.reponav-item {
+    &.selected {
+        background: $theme-faint-button-background !important;
+    }
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -299,6 +313,173 @@ nav > div > a {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
     color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// list of Issues in repo
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.table-list-header,
+.Box-body,
+.blankslate //milestones blank slate 
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//fix table list header icon colors
+.table-list-header {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// specific issue of repo
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.timeline-comment-wrapper,
+.discussion-timeline-actions {
+    background-color: $theme-background !important;
+}
+
+.timeline-comment,
+.comment-form-head, //comment header
+.form-control, //text area for comments
+.drag-and-drop,
+.comment-body {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//selecting them
+.drag-and-drop {
+    .btn-link {
+        background: $theme-background-box !important;
+    }
+}
+
+//header for timeline
+.timeline-comment > .timeline-comment-header,
+.timeline-comment-action {
+    background: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//reactions
+.timeline-comment-action {
+    background: $theme-background-toolbar !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//icons for comments
+.toolbar-group > button,
+.menu-target {
+    background: $theme-background-box !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//mark down icon
+.toolbar-help {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//subcribe color 
+.thread-subscription-status .reason {
+    background: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// pull requests
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.mergeability-details,
+.merge-status-list > div {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//change how the nav selction looks and the svgs
+.tabnav-tab {
+    &.selected {
+        background: $theme-faint-button-background !important;
+    }
+}
+
+.pr-toolbar,
+.diffbar {
+    background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Projects
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.project-header, //main project header bar
+//project headers for columns
+.col-project-custom > .project-column-header {
+    background: $theme-background-toolbar !important;
+}
+
+//cards, columns
+.project-column-inner,
+.issue-card,
+.project-card {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//background of whole page
+.project-columns {
+    background: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Wikipage 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.wiki-pages-box,
+.filter-bar,
+.wiki-auxiliary-content,
+.wiki-pages {
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Pulse 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.boxed-group >h3 {
+    background: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.boxed-group > div,
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//
+.repository-content .select-menu-item .selected {
+    background: $theme-highlighted-darker !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
