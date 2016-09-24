@@ -483,5 +483,96 @@ nav > div > a {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+// Settings
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//sidebar
+.pagehead,
+.column > nav {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//sidebar headings
+.column .menu-heading {
+    background: $theme-background-toolbar !important;
+}
+
+//fix selected blank link
+.menu-item.selected {
+    background: $theme-background-box !important;
+}
+
+//security tap
+.boxed-group-list >li {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//repositories
+.listgroup > div {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//organization selected tab
+.orgnav > a.selected {
+    background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Organization View all repos
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//header bar
+.orghead {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//member box
+.org-module,
+.simple-box-footer //footer
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//small box on right side top bar
+.org-module-title {
+    background: $theme-background-toolbar !important;
+}
+
+//people sub tab
+.table-list-header,
+.table-list-header-toggle .select-menu > button,
+{
+    background: $theme-background-toolbar !important;
+}
+//people table list
+.table-list-item {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+
+}
+
+//team header
+//teams sub tab
+.team-members {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 // 3rd Party Extensions Support
 //----------------------------------------------------------------------------------------------------------------------------------------------------
