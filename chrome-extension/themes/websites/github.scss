@@ -215,6 +215,11 @@ nav > div > a {
     background-color: $theme-background !important;
 }
 
+.site-header //user not logged in 
+{
+    background-color: $theme-background-toolbar !important;
+}
+
 //pinned repos
 .pinned-repo-item {
     background: $theme-background-box !important;
@@ -552,6 +557,7 @@ nav > div > a {
 {
     background: $theme-background-toolbar !important;
 }
+
 //people table list
 .table-list-item {
     background: $theme-background-box !important;
@@ -562,7 +568,6 @@ nav > div > a {
         background: $theme-background !important;
         color: $theme-text !important;
     }
-
 }
 
 //team header
@@ -571,6 +576,12 @@ nav > div > a {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
     color: $theme-text !important;
+}
+
+.boxed-group input {
+    color: $theme-textbox-text;
+    background: $theme-textbox-background;
+    border-color: $theme-border;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
