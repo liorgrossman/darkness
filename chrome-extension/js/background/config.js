@@ -67,6 +67,17 @@ var CONFIG = {
 
 			]
 		},
+		'inbox': {
+			key: 'inbox', // Must be the same as the object key
+			name: 'inbox',
+			support: 'full',
+			hostRegExp: new RegExp('^inbox\.google\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [
+			]
+		},
 		'youtube': {
 			key: 'youtube', // Must be the same as the object key
 			name: 'YouTube',
