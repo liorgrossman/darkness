@@ -58,10 +58,14 @@ input {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Changes the color of icons to a visible one
-.gN, .du > img, .iG > .Kc > img, .iK > li > img {
+.gN, .du > img, .iG > .Kc > img, .iK > li > img, .g-aq-al > img, .bG > img {
 	-webkit-filter: invert(0%) !important;
 }
-// Send button
+// send button
+.qj:not([disabled]) {
+	background-color: $theme-secondary-button-background !important;
+}
+// new mail button
 .hC, .oX{
 	background-color: $theme-button-background !important;
 	box-shadow: 0 0 4px rgba(255,255,255,.14),0 4px 8px rgba(255,255,255,.28) !important;
