@@ -1,0 +1,105 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Google Inbox skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+@import "all-google.scss";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	//background-color: $theme-button-background !important;
+	background-color: transparent !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar areas
+.b4 {
+	background: $theme-background-toolbar !important;
+}
+// Toolbar shadow
+.hn:before {
+	box-shadow: 0 0 4px rgba(255,255,255,.14),0 4px 8px rgba(255,255,255,.28) !important;
+}
+// Menu in right of toolbar
+.k2 {
+	right: 25px !important;
+}
+// User profile image
+.gbii {
+	-webkit-filter: invert(100%) !important;
+}
+
+// The app-drawer
+.gb_ga {
+	-webkit-filter: invert(0%) !important;
+	background-color: $theme-background-box !important;
+}
+// Reverts the different google-logos
+.gb_3, .gb_M {
+	-webkit-filter: invert(100%) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Icons & buttons
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Changes the color of icons to a visible one
+.gN, .du > img, .iG > .Kc > img, .iK > li > img, .g-aq-al > img, .bG > img {
+	-webkit-filter: invert(0%) !important;
+}
+// send button
+.qj:not([disabled]) {
+	background-color: $theme-secondary-button-background !important;
+}
+// new mail button
+.hC, .oX{
+	background-color: $theme-button-background !important;
+	box-shadow: 0 0 4px rgba(255,255,255,.14),0 4px 8px rgba(255,255,255,.28) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background on the buttons near the search bar
+.b4 .at {
+	background-color: $theme-button-background !important;
+}
+// Button on the right of the search field
+.b4 .at::before {
+	box-shadow: inset -24px 0 12px -12px $theme-button-background !important;
+}
+// Button on the left of the search field
+.b2, .gH {
+	background-color: $theme-secondary-button-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// The statusbox in the lower right corner
+.ov {
+	background-color: $theme-button-background !important;
+	box-shadow: 0 0 2px rgba(255,255,255,.12),0 2px 4px rgba(255,255,255,.24) !important;
+}
+.ov > span{
+	color: $theme-text !important;
+}
+.ov > div > span{
+	color: $theme-highlighted !important;
+}
