@@ -16,6 +16,11 @@ input {
 	border-color: $theme-border;
 }
 
+// Toolbar, when writing comments
+.toolbar-group button {
+	background: transparent !important;
+}
+
 // All logos and icons
 svg {
 	color: $theme-button-background !important;
