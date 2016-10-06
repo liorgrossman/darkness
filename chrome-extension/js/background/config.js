@@ -69,7 +69,7 @@ var CONFIG = {
 		},
 		'inbox': {
 			key: 'inbox', // Must be the same as the object key
-			name: 'inbox',
+			name: 'Inbox',
 			support: 'full',
 			hostRegExp: new RegExp('^inbox\.google\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
@@ -94,8 +94,13 @@ var CONFIG = {
 		'github': {
 			key: 'github', // Must be the same as the object key
 			name: 'GitHub',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^github\.com$', 'i')
+			support: 'full',
+			hostRegExp: new RegExp('^github\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [
+			]
 		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
