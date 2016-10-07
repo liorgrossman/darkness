@@ -202,6 +202,21 @@ a.yt-uix-button-epic-nav-item:hover {
 	background: $theme-background !important;
 }
 
+// Fix for "Add to watch later"
+.addto-watch-later-button {
+	background-color: #f8f8f8 !important;
+}
+
+// Fix for "help sprite" and "Live beta"-link
+.health-and-status .yt-uix-clickcard-target, .live-beta-tag {
+	background: transparent !important;
+}
+
+// fix for "Add widget"
+.add-widget-clickcard > button {
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-videomanager-vflTnl7Mo.webp) 0 -228px !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Video page
 //----------------------------------------------------------------------------------------------------------------------------------------------------

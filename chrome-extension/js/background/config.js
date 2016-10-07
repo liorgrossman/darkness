@@ -37,7 +37,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/'},
 				{name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich'}
-
 			]
 		},
 		'facebook': {
@@ -88,7 +87,8 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Mayrun Digmi', link: 'http://www.mayrundigmi.com/'},
-				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
+				{name: 'Lior Grossman', link: 'http://liorgrossman.com'},
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			]
 		},
 		'github': {
