@@ -107,6 +107,9 @@ i {
 		@include invert-back();
 	}
 }
+.searchIcon {
+	padding-right: 14px !important;
+}
 
 // Homepage - user buttons
 ._2s25 {
@@ -190,6 +193,10 @@ i {
 		background-color: $theme-highlighted !important;
 		color: $theme-link-active !important;
 	}
+}
+
+li._54ne, .__MenuItem.selected {
+	background-color: $theme-background-box !important;
 }
 
 ._54nc { // dropdown elements
@@ -413,6 +420,12 @@ textarea._4h98 {
 }
 
 //-------------------------------------------------------------------------
+// Page in a box, hover
+._54ay button {
+	background: $theme-background !important;
+}
+
+//-------------------------------------------------------------------------
 // Friends box in profile -> individual friend box
 ._3s6x {
 	background: linear-gradient(transparent, rgba(255, 255, 255, .8)) !important;
@@ -615,7 +628,19 @@ div[aria-label*="sticker"] {
 
 // Emoticons
 ._1ifu, ._2560 {
+	-webkit-filter: invert(100%) !important;
+}
+// Emoticons in messages
+._1ift._2560 {
 	-webkit-filter: invert(0%) !important;
+}
+// Likes in chat
+._1i1j {
+	-webkit-filter: invert(100%) !important;
+}
+// Bottom bar of emoticons, when inserting emoticons
+._1uw- > img._1ift._2560 {
+	-webkit-filter: invert(100%) !important;
 }
 
 // Like / love / etc. button in the bottom right side of chat

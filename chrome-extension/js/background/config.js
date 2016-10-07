@@ -50,7 +50,8 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Itamar Ostricher', link: 'http://www.ostricher.com/'},
-				{name: 'Oded Noam', link: 'http://www.odednoam.com/'}
+				{name: 'Oded Noam', link: 'http://www.odednoam.com/'},
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			]
 		},
 		'gmail': {
@@ -64,7 +65,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Alon Diamant', link: 'http://www.alondiamant.com/'},
 				{name: 'Gilad Sasson', link: 'http://www.nekuda.co.il/en/'}
-
 			]
 		},
 		'inbox': {
