@@ -95,11 +95,12 @@ var CONFIG = {
 			key: 'github', // Must be the same as the object key
 			name: 'GitHub',
 			support: 'full',
-			hostRegExp: new RegExp('^github\.com$', 'i'),
+			hostRegExp: new RegExp('^(gist\.|)github\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
-			topContributors: [
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
 		},
 		'stackoverflow': {

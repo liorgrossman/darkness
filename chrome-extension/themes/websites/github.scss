@@ -10,10 +10,20 @@ button {
 }
 
 // All inputs
-input {
-	color: $theme-textbox-text;
-	background-color: $theme-textbox-background;
-	border-color: $theme-border;
+textarea,input,input[type="text"] {
+	color: $theme-textbox-text !important;
+	background-color: $theme-textbox-background !important;
+	border-color: $theme-border !important;
+}
+
+// Search bar
+.header-search-wrapper {
+	border-color: invert(rgb(70,70,70)) !important;
+}
+
+// Search bar - scope (when focused)
+.scoped-search .form-control.focus .header-search-scope {
+	color: $theme-textbox-text !important;
 }
 
 // Toolbar, when writing comments
@@ -23,7 +33,7 @@ input {
 
 // All logos and icons
 svg {
-	color: $theme-button-background !important;
+	color: $theme-faint-button-background !important;
 }
 // All counters
 .counter {
@@ -64,6 +74,8 @@ a.btn-link, .js-toggle-range-editor-cross-repo {
 	background: invert($theme-background-box) !important;
 }
 
+
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Profile-stuff
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -99,4 +111,12 @@ a.btn-link, .js-toggle-range-editor-cross-repo {
 .jumbotron-followup-link{
 	color: black !important;
 	background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Misc
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// "Learn Git and GitHub without any code!" message on the homepage
+.intro-shelf, .intro-shelf .shelf-lead {
+	color: $theme-text !important;
 }
