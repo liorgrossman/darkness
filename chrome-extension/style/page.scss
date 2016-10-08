@@ -125,15 +125,12 @@ body[data-drk-site="trello"] {
 	background: rgba(60, 60, 60, 0.97) !important;
 	box-shadow: 0 -2px -4px rgba(0, 0, 0, 1) !important;
 	text-shadow: none !important;
-	color: White !important;
+	color: #ffd400 !important;
 	font-size: 14px !important;
 	font-family: Arial, sans-serif !important;
 	font-weight: normal !important;
 	padding: 15px 20px !important;
 	transition: opacity .25s ease-in-out !important;
-	&.visible {
-		display: block !important;
-	}
 	.drk_settings_global_msg_close {
 		float: right;
 		padding-left: 30px !important;
