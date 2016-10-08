@@ -30,18 +30,20 @@ button {
 }
 
 // All inputs
-input {
-    color: $theme-textbox-text;
-    background-color: $theme-textbox-background;
-    border-color: $theme-border;
+textarea,input,input[type="text"] {
+    color: $theme-textbox-text !important;
+    background-color: $theme-textbox-background !important;
+    border-color: $theme-border !important;
 }
 
-// Github logo
-.header-logo-invertocat {
-    svg {
-        -webkit-filter: none !important;
-        color: $theme-text !important;
-    }
+// All logos and icons
+svg {
+    color: $theme-faint-button-background !important;
+}
+// All counters
+.counter {
+    background: $theme-url !important;
+    color: #fff !important;
 }
 
 // Links
@@ -171,7 +173,6 @@ nav > div > a {
     color: $theme-text !important;
 }
 
-//TODO FIX purple button for new repository
 .boxed-group-action > a {
     background-color: $theme-button-background !important;
     color: $theme-button-text !important;
@@ -238,8 +239,9 @@ nav > div > a {
     border-color: $theme-border !important;
     color: $theme-text !important;
 }
-
-.profile-timeline-card-wrapper > .profile-timeline-card, //time line cards 
+//time line cards 
+.profile-timeline-card-wrapper > .profile-timeline-card, 
+//contribution frame
 .mb-5 {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
@@ -253,6 +255,7 @@ nav > div > a {
     color: $theme-text !important;
 }
 
+//select year
 .filter-item.selected {
     background: $theme-faint-button-background !important;
 }
@@ -613,7 +616,15 @@ nav > div > a {
     }
     a {
         background-color: $theme-background-box !important;
-        color: $theme-textbox-text !important;
         border-color: $theme-border !important;
     }
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Misc
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// "Learn Git and GitHub without any code!" message on the homepage
+.intro-shelf, .intro-shelf .shelf-lead {
+    color: $theme-text !important;
 }

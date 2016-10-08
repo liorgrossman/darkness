@@ -78,9 +78,9 @@ i {
 	-webkit-filter: none !important;
 }
 
-path {
-	@include invert-back();
-}
+//path {
+//	@include invert-back();
+//}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Homepage / Feed
@@ -106,6 +106,9 @@ path {
 	._585_ { // Search button picture
 		@include invert-back();
 	}
+}
+.searchIcon {
+	padding-right: 14px !important;
 }
 
 // Homepage - user buttons
@@ -190,6 +193,10 @@ path {
 		background-color: $theme-highlighted !important;
 		color: $theme-link-active !important;
 	}
+}
+
+li._54ne, .__MenuItem.selected {
+	background-color: $theme-background-box !important;
 }
 
 ._54nc { // dropdown elements
@@ -413,6 +420,12 @@ textarea._4h98 {
 }
 
 //-------------------------------------------------------------------------
+// Page in a box, hover
+._54ay button {
+	background: $theme-background !important;
+}
+
+//-------------------------------------------------------------------------
 // Friends box in profile -> individual friend box
 ._3s6x {
 	background: linear-gradient(transparent, rgba(255, 255, 255, .8)) !important;
@@ -608,14 +621,31 @@ div[aria-label*="sticker"] {
 	@include invert-back();
 }
 
-// Chat boxes with text etc.
-._5wde {
-	@include invert-back("brightness(1.3) contrast(0.8) saturate(0.7)");
+// Bubble: yours
+._1nc6 ._d97, ._1nc6 ._d97 a {
+	background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
+	color: invert-back-color(#ffffff) !important;
 }
 
-// Emoticons
-._1ifu, ._2560 {
-	-webkit-filter: invert(0%) !important;
+// Bubble: the other side
+._1nc7 ._5w1r, ._1nc7 ._5w1r a {
+	background-color: invert-back-color(#404040) !important;
+	color: invert-back-color(#ffffff) !important;
+}
+
+// Big like emoticon
+._576q svg {
+	-webkit-filter: none !important;
+}
+
+// Don't show bubble background for lines which are emoticons only
+._1nc6 ._d97._31xy {
+	background: none !important;
+}
+
+// Bottom bar of emoticons, when inserting emoticons
+._1uw- > img._1ift._2560 {
+	-webkit-filter: invert(100%) !important;
 }
 
 // Like / love / etc. button in the bottom right side of chat
@@ -685,6 +715,11 @@ body ._19u- ._3ixn {
 ._4oyq { // Add photo
 	background-color: rgba($theme-background-box, 0.9) !important;
 	border-color: $theme-border !important;
+}
+
+// Full screen YouTube video
+.iframeEmbed iframe:-webkit-full-screen {
+	-webkit-filter: none !important; // Don't invert
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

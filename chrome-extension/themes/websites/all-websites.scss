@@ -118,3 +118,13 @@ $track-background: lighten(invert($theme-background), 5%);
 ::-webkit-scrollbar-corner { }
 
 ::-webkit-resizer { }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Darkness-specific style
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// The alert messages that are shown in case of a conflict between extensions
+// It should only be shown if a skin is enabled, therefore we do not include it in page.scss but here
+.drk_settings_global_msg.visible {
+	display: block !important;
+}
