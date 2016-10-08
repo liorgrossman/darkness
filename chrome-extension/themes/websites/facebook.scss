@@ -717,6 +717,11 @@ body ._19u- ._3ixn {
 	border-color: $theme-border !important;
 }
 
+// Full screen YouTube video
+.iframeEmbed iframe:-webkit-full-screen {
+	-webkit-filter: none !important; // Don't invert
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Messages (full conversation view)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
