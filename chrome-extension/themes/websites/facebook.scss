@@ -621,23 +621,28 @@ div[aria-label*="sticker"] {
 	@include invert-back();
 }
 
-// Chat boxes with text etc.
-._5wde {
-	@include invert-back("brightness(1.3) contrast(0.8) saturate(0.7)");
+// Bubble: yours
+._1nc6 ._d97, ._1nc6 ._d97 a {
+	background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
+	color: invert-back-color(#ffffff) !important;
 }
 
-// Emoticons
-._1ifu, ._2560 {
-	-webkit-filter: invert(100%) !important;
+// Bubble: the other side
+._1nc7 ._5w1r, ._1nc7 ._5w1r a {
+	background-color: invert-back-color(#404040) !important;
+	color: invert-back-color(#ffffff) !important;
 }
-// Emoticons in messages
-._1ift._2560 {
-	-webkit-filter: invert(0%) !important;
+
+// Big like emoticon
+._576q svg {
+	-webkit-filter: none !important;
 }
-// Likes in chat
-._1i1j {
-	-webkit-filter: invert(100%) !important;
+
+// Don't show bubble background for lines which are emoticons only
+._1nc6 ._d97._31xy {
+	background: none !important;
 }
+
 // Bottom bar of emoticons, when inserting emoticons
 ._1uw- > img._1ift._2560 {
 	-webkit-filter: invert(100%) !important;
