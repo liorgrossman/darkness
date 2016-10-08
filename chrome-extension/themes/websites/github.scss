@@ -1,0 +1,102 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// Toolbar, when writing comments
+.toolbar-group button {
+	background: transparent !important;
+}
+
+// All logos and icons
+svg {
+	color: $theme-button-background !important;
+}
+// All counters
+.counter {
+	background: $theme-url !important;
+	color: #fff !important;
+}
+
+// Menues all over the site
+.btn,
+.flash-action,
+.orgnav > .selected,
+.js-year-link.selected,
+.underline-nav > .selected,
+a.btn, .reponav .reponav-item.selected,
+.subnav-item.selected,
+em.current,
+.intgrs-lstng-categories > .selected,
+.site-header-nav-main > .selected,
+.blog-aside > .menu > .selected,
+.header-nav > .header-nav-item > .selected {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	text-shadow: 0 0 0 black !important;
+}
+.btn span {
+	color: $theme-button-text !important;
+}
+
+// Dropdown menus
+.select-menu-item:hover, a.selected, a.navigation-focus {
+	background: $theme-highlighted !important;
+}
+a.btn-link, .js-toggle-range-editor-cross-repo {
+	background: transparent !important;
+}
+
+.capped-card-content {
+	background: invert($theme-background-box) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile-stuff
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Buttons for selecting what happended on a profile a given year
+.profile-timeline-year-list {
+	background: $theme-background !important;
+}
+.btn-link.js-details-target, .btn-link.js-menu-target {
+	background: transparent !important;
+	color: $theme-text !important;
+}
+
+// Personal list of repos
+#repo_listing > .public > a {
+	//background: $theme-background-toolbar !important;
+}
+#repo_listing > .private > a {
+	background: $theme-faint-button-background !important;
+}
+.repo-filter {
+	background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Pre-login sites
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Proper colors in the jumbotron
+.sn-jumbotron {
+	-webkit-filter: invert(100%) !important;
+}
+.jumbotron-followup-link{
+	color: black !important;
+	background: transparent !important;
+}

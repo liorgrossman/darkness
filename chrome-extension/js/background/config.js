@@ -37,7 +37,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/'},
 				{name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich'}
-
 			]
 		},
 		'facebook': {
@@ -50,7 +49,8 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Itamar Ostricher', link: 'http://www.ostricher.com/'},
-				{name: 'Oded Noam', link: 'http://www.odednoam.com/'}
+				{name: 'Oded Noam', link: 'http://www.odednoam.com/'},
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			]
 		},
 		'gmail': {
@@ -64,12 +64,11 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Alon Diamant', link: 'http://www.alondiamant.com/'},
 				{name: 'Gilad Sasson', link: 'http://www.nekuda.co.il/en/'}
-
 			]
 		},
 		'inbox': {
 			key: 'inbox', // Must be the same as the object key
-			name: 'inbox',
+			name: 'Inbox',
 			support: 'full',
 			hostRegExp: new RegExp('^inbox\.google\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
@@ -88,14 +87,20 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Mayrun Digmi', link: 'http://www.mayrundigmi.com/'},
-				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
+				{name: 'Lior Grossman', link: 'http://liorgrossman.com'},
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			]
 		},
 		'github': {
 			key: 'github', // Must be the same as the object key
 			name: 'GitHub',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^github\.com$', 'i')
+			support: 'full',
+			hostRegExp: new RegExp('^github\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [
+			]
 		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
