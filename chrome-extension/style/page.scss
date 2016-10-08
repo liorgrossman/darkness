@@ -58,6 +58,17 @@ body[data-drk-site="google"] {
 	}
 }
 
+body[data-drk-site="inbox"] {
+	// Menu in the right side of toolbar
+	.k2 {
+		right: 25px !important;
+	}
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 13px !important;
+	}
+}
+
 body[data-drk-site="youtube"] {
 	// If logged in: user controls on the right side of toolbar
 	#yt-masthead-account-picker {
