@@ -597,5 +597,23 @@ nav > div > a {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// 3rd Party Extensions Support
+// Profile Settings
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+.flash {
+    background: $theme-notices !important;
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
+}
+
+.column > nav.menu {
+    .menu-heading {
+        background: $theme-background-toolbar !important;
+        border-color: $theme-border !important;
+        color: $theme-text !important;
+    }
+    a {
+        background-color: $theme-background-box !important;
+        color: $theme-textbox-text !important;
+        border-color: $theme-border !important;
+    }
+}
