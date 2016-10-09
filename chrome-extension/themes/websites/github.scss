@@ -100,7 +100,7 @@ a {
 .dashboard-sidebar > div > h3,
 .dashboard-sidebar > div > div,
 .dashboard-sidebar > div > div > ul > li,
-.dashboard-sidebar > div > div > div,
+.dashboard-sidebar > div > div > div
 {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
@@ -186,7 +186,7 @@ nav > div > a {
 
 .news .alert .body .title,
 .news .alert .body .time,
-.news blockquote,
+.news blockquote
 {
     color: $theme-text-faint !important;
 }
@@ -262,6 +262,7 @@ nav > div > a {
 
 //edit profile button
 .btn,
+a.btn,a.btn:visited,a.btn:hover,
 .social-count,
 .btn-block.mb-3 {
     background: $theme-button-background !important;
@@ -289,7 +290,7 @@ nav > div > a {
 .pagehead.repohead, //main repo head 
 .overall-summary, //stats of repo
 .commit-tease, //last commit message
-.file-wrap > .files, // file directory for repo
+.file-wrap > .files // file directory for repo
 {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
@@ -328,7 +329,7 @@ nav > div > a {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 .commit-tease-contributors,
 .file,
-.file-header, //header of file selected
+.file-header //header of file selected
 {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
@@ -490,7 +491,7 @@ nav > div > a {
     color: $theme-text !important;
 }
 
-.boxed-group > div,
+.boxed-group > div
 {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
@@ -568,7 +569,7 @@ nav > div > a {
 
 //people sub tab
 .table-list-header,
-.table-list-header-toggle .select-menu > button,
+.table-list-header-toggle .select-menu > button
 {
     background: $theme-background-toolbar !important;
 }
