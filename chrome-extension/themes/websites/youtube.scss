@@ -231,6 +231,13 @@ a.yt-uix-button-epic-nav-item:hover {
 .share-service-button {
 	@include invert-back();
 }
+.share-panel button {
+	background: transparent !important;
+	color: $theme-text !important;
+}
+.share-panel button span {
+	color: $theme-text !important;
+}
 
 // Tooltips when hover over cogwheel, cc, etc.
 .ytp-tooltip {
