@@ -1,0 +1,631 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Guidelines:
+* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
+* Please add short comments before each CSS selector to indicate what UI element it refers to
+* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
+
+You should know: all the website's colors are inverted before skinning even starts!
+* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
+* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
+* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
+* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Github skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+body {
+    background-color: $theme-background !important;
+}
+
+// All buttons
+button {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+// All inputs
+textarea,input,input[type="text"] {
+    color: $theme-textbox-text !important;
+    background-color: $theme-textbox-background !important;
+    border-color: $theme-border !important;
+}
+
+// All logos and icons
+svg {
+    color: $theme-faint-button-background !important;
+}
+// All counters
+.counter {
+    background: $theme-url !important;
+    color: #fff !important;
+}
+
+// Links
+a {
+    color: $theme-link !important;
+    &:visited {
+        color: $theme-link-visited !important;
+    }
+    &:active {
+        color: $theme-link-active !important;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//top toolbar
+.header,
+.header > div {
+    background-color: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//links on top right of bar
+#user-links > li > a {
+    color: $theme-textbox-text !important;
+    @include invert-back();
+    img {
+        -webkit-filter: none !important;
+    }
+    .dropdown-caret {
+        @include invert-back();
+    }
+}
+
+//dropdowns
+.dropdown-menu,
+.dropdown-menu form > button {
+    background-color: $theme-background-box !important;
+}
+
+.svg-tip {
+    background: $theme-tooltip-background !important;
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// dashboard page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// right side repositories sidebar
+.dashboard-sidebar > div,
+.dashboard-sidebar > div > h3,
+.dashboard-sidebar > div > div,
+.dashboard-sidebar > div > div > ul > li,
+.dashboard-sidebar > div > div > div
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//filter buttons for repos
+.repo-filterer > li > button,
+.repo-filterer > li > a {
+    &.filter-selected {
+        color: $theme-link-active !important;
+        border-color: $theme-border !important;
+    }
+    &:hover {
+        background: $theme-tooltip-text !important;
+    }
+    &:active {
+        background-color: $theme-highlighted-darker !important;
+    }
+    background: $theme-background-box !important;
+}
+
+// private repos work differently  
+.dashboard-sidebar > div > div > ul > .private > a {
+    background-color: $theme-background !important;
+}
+
+//Switch dashboard context
+.js-menu-content div,
+.js-menu-content .select-menu-list > div > a,
+.js-menu-content .select-menu-list > a {
+    background-color: $theme-background-box !important;
+    color: $theme-textbox-text !important;
+    border-color: $theme-border !important;
+    &:hover {
+        background-color: $theme-tooltip-text !important;
+    }
+    &.selected {
+        background-color: $theme-highlighted !important;
+        color: $theme-link-active !important;
+    }
+}
+
+//dashboard context button
+.select-menu > button {
+    background: $theme-faint-button-background !important;
+    color: $theme-text !important;
+    //fix text in button
+    span {
+        color: $theme-text !important;
+    }
+}
+
+// news feed | pull requests | issues
+nav > a {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+    }
+    &:visited {
+        svg {
+            color: $theme-text !important;
+        }
+    }
+}
+
+//view organization button
+nav > div > a {
+    background: $theme-faint-button-background !important;
+    color: $theme-text !important;
+}
+
+.boxed-group-action > a {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+//News column
+.news .alert .body {
+    color: $theme-text !important;
+}
+
+.news .alert .body .title,
+.news .alert .body .time,
+.news blockquote
+{
+    color: $theme-text-faint !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Main Home Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//main image
+.sn-jumbotron,
+.jumbotron-home {
+    @include invert-back();
+}
+
+//sign in logo
+.header-logo > svg {
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.user-profile-nav,
+.profile-timeline-year-list, // time line list at bottom
+.user-profile-sticky-bar, //username and image when scrolling
+.user-profile-sticky-bar:after,
+.profile-timeline-month-heading,
+.contributions-setting-link,
+.profile-rollup-toggle {
+    background-color: $theme-background !important;
+}
+
+.site-header //user not logged in 
+{
+    background-color: $theme-background-toolbar !important;
+}
+
+//pinned repos
+.pinned-repo-item {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+//time line cards 
+.profile-timeline-card-wrapper > .profile-timeline-card, 
+//contribution frame
+.mb-5 {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//conttribution settings
+.edit_user button {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//select year
+.filter-item.selected {
+    background: $theme-faint-button-background !important;
+}
+
+//edit profile button
+.btn,
+a.btn,a.btn:visited,a.btn:hover,
+.social-count,
+.btn-block.mb-3 {
+    background: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+//contributions legend undo the tile colors
+.legend > li {
+    @include invert-back();
+}
+
+//fix star button
+.starred > button,
+//fix follow and unfollow button
+.user-following-container button {
+    background: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Repo Main Page 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.pagehead.repohead, //main repo head 
+.overall-summary, //stats of repo
+.commit-tease, //last commit message
+.file-wrap > .files // file directory for repo
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//readme
+.readme,
+.readme > h3,
+.readme > .markdown-body,
+.readme > .plain {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//edit link shows up as a button change background
+.muted-link {
+    background: $theme-background !important;
+}
+
+//change how the nav selction looks and the svgs
+.reponav-item {
+    &.selected {
+        background: $theme-faint-button-background !important;
+    }
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Repo selecting a file to view 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.commit-tease-contributors,
+.file,
+.file-header //header of file selected
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// list of Issues in repo
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.table-list-header,
+.Box-body,
+.blankslate //milestones blank slate 
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//fix table list header icon colors
+.table-list-header {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// specific issue of repo
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.timeline-comment-wrapper,
+.discussion-timeline-actions {
+    background-color: $theme-background !important;
+}
+
+.timeline-comment,
+.comment-form-head, //comment header
+.form-control, //text area for comments
+.drag-and-drop,
+.comment-body {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//selecting them
+.drag-and-drop {
+    .btn-link {
+        background: $theme-background-box !important;
+    }
+}
+
+//header for timeline
+.timeline-comment > .timeline-comment-header,
+.timeline-comment-action {
+    background: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//reactions
+.timeline-comment-action {
+    background: $theme-background-toolbar !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//icons for comments
+.toolbar-group > button,
+.menu-target {
+    background: $theme-background-box !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//mark down icon
+.toolbar-help {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//subcribe color 
+.thread-subscription-status .reason {
+    background: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// pull requests
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.mergeability-details,
+.merge-status-list > div {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//change how the nav selction looks and the svgs
+.tabnav-tab {
+    &.selected {
+        background: $theme-faint-button-background !important;
+    }
+}
+
+.pr-toolbar,
+.diffbar {
+    background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Projects
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.project-header, //main project header bar
+//project headers for columns
+.col-project-custom > .project-column-header {
+    background: $theme-background-toolbar !important;
+}
+
+//cards, columns
+.project-column-inner,
+.issue-card,
+.project-card {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//background of whole page
+.project-columns {
+    background: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Wikipage 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.wiki-pages-box,
+.filter-bar,
+.wiki-auxiliary-content,
+.wiki-pages {
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Pulse 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.boxed-group >h3 {
+    background: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.boxed-group > div
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//
+.repository-content .select-menu-item .selected {
+    background: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Settings
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//sidebar
+.pagehead,
+.column > nav {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//sidebar headings
+.column .menu-heading {
+    background: $theme-background-toolbar !important;
+}
+
+//fix selected blank link
+.menu-item.selected {
+    background: $theme-background-box !important;
+}
+
+//security tap
+.boxed-group-list >li {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//repositories
+.listgroup > div {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//organization selected tab
+.orgnav > a.selected {
+    background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Organization View all repos
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//header bar
+.orghead {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//member box
+.org-module,
+.simple-box-footer //footer
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//small box on right side top bar
+.org-module-title {
+    background: $theme-background-toolbar !important;
+}
+
+//people sub tab
+.table-list-header,
+.table-list-header-toggle .select-menu > button
+{
+    background: $theme-background-toolbar !important;
+}
+
+//people table list
+.table-list-item {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//team header
+//teams sub tab
+.team-members {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.boxed-group input {
+    color: $theme-textbox-text;
+    background: $theme-textbox-background;
+    border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile Settings
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.flash {
+    background: $theme-notices !important;
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
+}
+
+.column > nav.menu {
+    .menu-heading {
+        background: $theme-background-toolbar !important;
+        border-color: $theme-border !important;
+        color: $theme-text !important;
+    }
+    a {
+        background-color: $theme-background-box !important;
+        border-color: $theme-border !important;
+    }
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Misc
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// "Learn Git and GitHub without any code!" message on the homepage
+.intro-shelf, .intro-shelf .shelf-lead {
+    color: $theme-text !important;
+}

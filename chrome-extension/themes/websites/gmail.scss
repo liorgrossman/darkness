@@ -79,8 +79,8 @@ input
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Google logo
-.gb_Rb, .gb_Sb {
-	@include invert-back();
+.gb_Rb, .gb_Sb, .gb_Xa {
+	-webkt-filter: none !important;
 }
 
 // Search bar
@@ -114,6 +114,11 @@ input
 // "Google apps" and notifications buttons (in upper-right corner)
 .gb_pc {
 	@include invert-back();
+}
+
+// User avatar on toolbar
+.gb_7a, .gb_8a {
+	@include invert-back()
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

@@ -9,7 +9,7 @@ if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'prod
 
 // Local testing versions
 if (chrome.runtime.id == 'nhppbahodjffdfdbndcoinbbfjlfkmoc') ENVIRONMENT = 'production'; // Local CWS version
-if (chrome.runtime.id == 'kggllcjcknlclegojnkkomchhpjebgpo') ENVIRONMENT = 'staging'; // Testing before deployment to Chrome Web Store
+if (chrome.runtime.id == 'kggllcjcknlclegojnkkomchhpjebgpo') ENVIRONMENT = 'development'; // Testing before deployment to Chrome Web Store
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global vars

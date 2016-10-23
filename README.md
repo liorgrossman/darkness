@@ -46,6 +46,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 ```bash
 git checkout master
 git pull upstream master
+npm install
 ```
 
 ## Contributing fixes and new themes

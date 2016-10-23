@@ -117,6 +117,13 @@ input
 	border-color: $theme-border !important;
 }
 
+
+// User avatar on toolbar
+.gb_7a::before, .gb_8a::before {
+	@include invert-back()
+}
+
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -129,11 +136,6 @@ input
 
 // Gooooooogle pagination on bottom
 #foot #navcnt span.csb {
-	@include invert-back()
-}
-
-// User avatar on toolbar
-.gb_7a::before, .gb_8a::before {
 	@include invert-back()
 }
 
