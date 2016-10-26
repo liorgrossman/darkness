@@ -1,0 +1,51 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// Revert the editor, so that the build in themes work
+#editor {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_gutter-cell {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_line_group {
+	-webkit-filter: invert(100%) !important;
+}
+// Revert the pdf-viewer so that it displays the right way
+.pdf-viewer {
+	-webkit-filter: invert(100%) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.toolbar-header {
+	background: $theme-background !important;
+}
+
+// Making space for the darkness icon
+.toolbar-header > .toolbar-right {
+	margin-right: 40px !important;
+}
+// Aligning the darkness icon
+div.drk_settings_icon {
+	top: 6px !important;
+	right: 8px !important;
+}
