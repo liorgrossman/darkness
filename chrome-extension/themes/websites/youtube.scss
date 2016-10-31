@@ -395,6 +395,11 @@ a.yt-uix-button-epic-nav-item:hover {
 	@include invert-back()
 }
 
+// Fix blue background on add-ticks when adding to playlist
+.playlist-status {
+	background-color: transparent !important;
+}
+
 // Fixe thumbnail preview when skipping video
 .ytp-preview {
 	@include invert-back()
