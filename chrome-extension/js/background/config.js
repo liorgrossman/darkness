@@ -105,9 +105,9 @@ var CONFIG = {
 		},
 		'sharelatex': {
 			key: 'sharelatex', // Must be the same as the object key
-			name: 'Twitter',
+			name: 'ShareLaTeX',
 			support: 'full',
-			hostRegExp: new RegExp('^twitter\.com$', 'i'),
+			hostRegExp: new RegExp('^www\.sharelatex\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
@@ -115,9 +115,9 @@ var CONFIG = {
 		},
 		'twitter': {
 			key: 'twitter', // Must be the same as the object key
-			name: 'ShareLaTeX',
+			name: 'Twitter',
 			support: 'full',
-			hostRegExp: new RegExp('^www\.sharelatex\.com$', 'i'),
+			hostRegExp: new RegExp('^twitter\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
