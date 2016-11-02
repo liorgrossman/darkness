@@ -16,24 +16,79 @@ input {
 	border-color: $theme-border;
 }
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Project site
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
 // Revert the editor, so that the build in themes work
 #editor {
 	-webkit-filter: invert(100%) !important;
 }
 .ace_gutter-cell {
-	-webkit-filter: invert(100%) !important;
+	-webkit-filter: invert(0%) !important;
 }
 .ace_line_group {
 	-webkit-filter: invert(100%) !important;
 }
-// Revert the pdf-viewer so that it displays the right way
-.pdf-viewer {
+.ace_content {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_active-line{
+	-webkit-filter: invert(100%) !important;
+}
+.ace_cursor{
 	-webkit-filter: invert(100%) !important;
 }
 
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Project site
-//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Revert the pdf-viewer so that it displays the right way
+.pdf-page-container {
+	-webkit-filter: invert(0%) !important;
+}
+// The toolbars
+.pdfjs-controls {
+	-webkit-filter: invert(0%) !important;
+}
+.pdfjs-controls .btn {
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+}
+.pdfjs-controls .fa {
+	color: $theme-button-text !important;
+	border-color: black !important;
+}
+.pdf .btn-group {
+	-webkit-filter: invert(100%) !important;
+}
+.pdf .btn-group .btn {
+	-webkit-filter: invert(100%) !important;
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+	color: $theme-button-text !important;
+}
+// The logs
+.pdf-logs .alert-danger {
+	color: invert-back-color(#ae2d05) !important;
+	border-color: invert-back-color(#ae2d05) !important;
+}
+.pdf-logs .alert-warning {
+	color: invert-back-color(#c67605) !important;
+	border-color: invert-back-color(#c67605) !important;
+}
+.pdf-logs .alert-info {
+	color: invert-back-color(#263873) !important;
+	border-color: invert-back-color(#263873) !important;
+}
+
+// File-tree
+.fa {
+	color: $theme-button-background !important;
+}
+.fa.ng-scope {
+	color: $theme-button-text !important;
+}
+li.selected .fa, li.selected .ng-binding {
+	color: $theme-secondary-button-background !important;
+}
 
 // Toolbar background
 .toolbar-header {
@@ -56,4 +111,9 @@ div.drk_settings_icon {
 
 .navbar {
 	background: $theme-background !important;
+}
+
+.loading-screen h3{
+	-webkit-filter: invert(100%) !important;
+	color: invert-back-color($theme-text) !important;
 }
