@@ -76,16 +76,6 @@ var CONFIG = {
 			],
 			topContributors: []
 		},
-		'sharelatex': {
-			key: 'sharelatex', // Must be the same as the object key
-			name: 'ShareLaTeX',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^www\.sharelatex\.com$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
-			],
-			topContributors: []
-		},
 		'youtube': {
 			key: 'youtube', // Must be the same as the object key
 			name: 'YouTube',
@@ -112,6 +102,26 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
+		},
+		'sharelatex': {
+			key: 'sharelatex', // Must be the same as the object key
+			name: 'Twitter',
+			support: 'full',
+			hostRegExp: new RegExp('^twitter\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: []
+		},
+		'twitter': {
+			key: 'twitter', // Must be the same as the object key
+			name: 'ShareLaTeX',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.sharelatex\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: []
 		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
