@@ -21,7 +21,8 @@ input {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Revert the editor, so that the build in themes work
-#editor {
+#editor {}
+.ace-editor-body {
 	-webkit-filter: invert(100%) !important;
 }
 .ace_gutter-cell {
@@ -86,23 +87,40 @@ input {
 .fa.ng-scope {
 	color: $theme-button-text !important;
 }
-li.selected .fa, li.selected .ng-binding {
+// Mark the selected file or folder
+li.selected > .entity > div > .fa,
+li.selected > .entity > div > .ng-binding,
+li.selected > .entity > div > span > a > .fa,
+li.selected > .entity > div > div > .fa,
+li.selected > .entity > div > div > .ng-binding,
+li.selected > .entity > div > div > span > a > .fa {
 	color: $theme-secondary-button-background !important;
+}
+li.selected > .entity > div > span.dropdown,
+li.selected > .entity > div > div > span.dropdown {
+	border-right: 4px solid $theme-secondary-button-background !important;
 }
 
 // Toolbar background
 .toolbar-header {
 	background: $theme-background !important;
 }
-
+// Undoing a.btn background
+.editor header a.btn {
+	background: transparent !important;
+}
 // Making space for the darkness icon
 .toolbar-header > .toolbar-right {
-	margin-right: 40px !important;
+	margin-right: 48px !important;
 }
 // Aligning the darkness icon
 div.drk_settings_icon {
 	top: 6px !important;
 	right: 8px !important;
+}
+// Creating a border, so the darkness icon looks like it belongs in the toolbar
+a[tooltip="Chat"] {
+	border-right: 1px solid #cfcfcf !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -112,8 +130,45 @@ div.drk_settings_icon {
 .navbar {
 	background: $theme-background !important;
 }
+.navbar-nav > li > a {
+	border-color: $theme-button-background !important;
+}
+.navbar-nav > li > a:hover {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
 
 .loading-screen h3{
 	-webkit-filter: invert(100%) !important;
 	color: invert-back-color($theme-text) !important;
+}
+
+a.btn, .folders-menu > li.active {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.folders-menu > li.active > a{
+	color: $theme-button-text !important;
+}
+
+.folders-menu > li > a {
+	color: $theme-link !important;
+}
+
+ul.dropdown-menu > li > a:hover {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Other sites
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.alert-success {
+	color: $theme-highlighted !important;
+	background: $theme-highlighted-darker !important;
+	border-color: $theme-highlighted !important;
 }
