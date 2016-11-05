@@ -44,6 +44,12 @@ a {
     }
 }
 
+// buttonlinks
+.btn-link {
+    background-color: transparent !important;
+    color: $theme-link !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -269,6 +275,38 @@ a.btn,a.btn:visited,a.btn:hover,
     background: $theme-button-background !important;
     color: $theme-button-text !important;
     border-color: $theme-border !important;
+}
+
+// The contributionstab
+rect[fill="#1e6823"]{
+    fill: invert-back-color(#1e6823) !important;
+}
+.legend > li:nth-child(5){
+    background-color: invert-back-color(#1e6823) !important;
+}
+rect[fill="#44a340"], .legend > li:nth-child(4){
+    fill: invert-back-color(#44a340) !important;
+}
+.legend > li:nth-child(4){
+    background-color: invert-back-color(#44a340) !important;
+}
+rect[fill="#8cc665"], .legend > li:nth-child(3){
+    fill: invert-back-color(#8cc665) !important;
+}
+.legend > li:nth-child(3){
+    background-color: invert-back-color(#8cc665) !important;
+}
+rect[fill="#d6e685"], .legend > li:nth-child(2){
+    fill: invert-back-color(#d6e685) !important;
+}
+.legend > li:nth-child(2){
+    background-color: invert-back-color(#d6e685) !important;
+}
+rect[fill="#eeeeee"], .legend > li:nth-child(1){
+    fill: invert-back-color(#eeeeee) !important;
+}
+.legend > li:nth-child(1){
+    background-color: invert-back-color(#eeeeee) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
