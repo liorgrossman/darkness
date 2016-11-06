@@ -121,7 +121,9 @@ var CONFIG = {
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
-			topContributors: []
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
+			]
 		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
