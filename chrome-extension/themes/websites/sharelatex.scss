@@ -1,0 +1,174 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Project site
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Revert the editor, so that the build in themes work
+#editor {}
+.ace-editor-body {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_gutter-cell {
+	-webkit-filter: invert(0%) !important;
+}
+.ace_line_group {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_content {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_active-line{
+	-webkit-filter: invert(100%) !important;
+}
+.ace_cursor{
+	-webkit-filter: invert(100%) !important;
+}
+
+// Revert the pdf-viewer so that it displays the right way
+.pdf-page-container {
+	-webkit-filter: invert(0%) !important;
+}
+// The toolbars
+.pdfjs-controls {
+	-webkit-filter: invert(0%) !important;
+}
+.pdfjs-controls .btn {
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+}
+.pdfjs-controls .fa {
+	color: $theme-button-text !important;
+	border-color: black !important;
+}
+.pdf .btn-group {
+	-webkit-filter: invert(100%) !important;
+}
+.pdf .btn-group .btn {
+	-webkit-filter: invert(100%) !important;
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+	color: $theme-button-text !important;
+}
+// The logs
+.pdf-logs .alert-danger {
+	color: invert-back-color(#ae2d05) !important;
+	border-color: invert-back-color(#ae2d05) !important;
+}
+.pdf-logs .alert-warning {
+	color: invert-back-color(#c67605) !important;
+	border-color: invert-back-color(#c67605) !important;
+}
+.pdf-logs .alert-info {
+	color: invert-back-color(#263873) !important;
+	border-color: invert-back-color(#263873) !important;
+}
+
+// File-tree
+.fa {
+	color: $theme-button-background !important;
+}
+.fa.ng-scope {
+	color: $theme-button-text !important;
+}
+// Mark the selected file or folder
+li.selected > .entity > div > .fa,
+li.selected > .entity > div > .ng-binding,
+li.selected > .entity > div > span > a > .fa,
+li.selected > .entity > div > div > .fa,
+li.selected > .entity > div > div > .ng-binding,
+li.selected > .entity > div > div > span > a > .fa {
+	color: $theme-secondary-button-background !important;
+}
+li.selected > .entity > div > span.dropdown,
+li.selected > .entity > div > div > span.dropdown {
+	border-right: 4px solid $theme-secondary-button-background !important;
+}
+
+// Toolbar background
+.toolbar-header {
+	background: $theme-background !important;
+}
+// Undoing a.btn background
+.editor header a.btn {
+	background: transparent !important;
+}
+// Making space for the darkness icon
+.toolbar-header > .toolbar-right {
+	margin-right: 48px !important;
+}
+// Aligning the darkness icon
+div.drk_settings_icon {
+	top: 6px !important;
+	right: 8px !important;
+}
+// Creating a border, so the darkness icon looks like it belongs in the toolbar
+a[tooltip="Chat"] {
+	border-right: 1px solid #cfcfcf !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Project-list site
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.navbar {
+	background: $theme-background !important;
+}
+.navbar-nav > li > a {
+	border-color: $theme-button-background !important;
+}
+.navbar-nav > li > a:hover {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+.loading-screen h3{
+	-webkit-filter: invert(100%) !important;
+	color: invert-back-color($theme-text) !important;
+}
+
+a.btn, .folders-menu > li.active {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.folders-menu > li.active > a{
+	color: $theme-button-text !important;
+}
+
+.folders-menu > li > a {
+	color: $theme-link !important;
+}
+
+ul.dropdown-menu > li > a:hover {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Other sites
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.alert-success {
+	color: $theme-highlighted !important;
+	background: $theme-highlighted-darker !important;
+	border-color: $theme-highlighted !important;
+}

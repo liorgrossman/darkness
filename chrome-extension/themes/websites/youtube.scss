@@ -231,6 +231,13 @@ a.yt-uix-button-epic-nav-item:hover {
 .share-service-button {
 	@include invert-back();
 }
+.share-panel button {
+	background: transparent !important;
+	color: $theme-text !important;
+}
+.share-panel button span {
+	color: $theme-text !important;
+}
 
 // Tooltips when hover over cogwheel, cc, etc.
 .ytp-tooltip {
@@ -386,6 +393,11 @@ a.yt-uix-button-epic-nav-item:hover {
 .playlist-mix-icon,
 #player-playlist .yt-uix-button-player-controls:first-child {
 	@include invert-back()
+}
+
+// Fix blue background on add-ticks when adding to playlist
+.playlist-status {
+	background-color: transparent !important;
 }
 
 // Fixe thumbnail preview when skipping video

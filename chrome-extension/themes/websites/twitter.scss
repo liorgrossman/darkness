@@ -1,0 +1,177 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.global-nav-inner {
+	background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Icons
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.Icon--bird {
+	color: $theme-faint-button-background !important;
+}
+
+.ProfileTweet-actionButton {
+	background: transparent !important;
+}
+
+.Icon--retweeted {
+	color: $theme-notices !important;
+}
+
+.Icon--follower {
+	color: $theme-secondary-button-background !important;
+}
+
+.Icon--search {
+	background: transparent !important;
+	color: $theme-button-background !important;
+}
+
+.Icon--follow {
+	color: $theme-button-background !important;
+}
+
+.DMActivity-close {
+	background: transparent !important;
+}
+.Icon--close {
+	color: $theme-button-background !important;
+}
+.modal-close {
+	background: transparent !important;
+}
+
+.DMActivity-back {
+	background: transparent !important;
+}
+.Icon--caretLeft {
+	color: $theme-button-background !important;
+}
+
+.DMPopover-button{
+	background: transparent !important;
+}
+.DMPopover-button > .Icon--dots{
+	color: $theme-button-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Button-fixes
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.btn-link {
+	background: transparent !important;
+	color: $theme-link !important;
+}
+
+.dropdown-link {
+	background: transparent !important;
+	color: $theme-link !important;
+}
+
+.PollingCardComposer-addOption, .PollingCardComposer-defaultDuration, .PollingCardComposer-remove {
+	background: transparent !important;
+	color: $theme-link !important;
+}
+
+.follow-btn, .follow-button, .DMNotificationsPermissionRequest-later, .DMNotificationsPermissionRequest-accept {
+	background: white !important;
+}
+
+.ListCreationModule-action > button {
+	background: white !important;
+}
+
+.UserActions-editButton {
+	background: white !important;
+}
+
+// Follow buttons when searching
+.AdaptiveFiltersBar-target--more {
+	background: transparent !important;
+}
+.following-text {
+	color: $theme-button-background !important
+}
+
+#export_button, #geo_button, #import-services-list button, button.revoke, .btn-widgets-new > button {
+	background: white !important;
+	color: $theme-button-background !important
+}
+
+.signup-btn.btn {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+	text-shadow: none !important;
+	background-image: none !important;
+	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Videos
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.player-wrapper, .AdaptiveMedia-video {
+	-webkit-filter: invert(100) !important;
+}
+video {
+	-webkit-filter: invert(100) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile stuff
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.DashboardProfileCard-bg{
+	-webkit-filter: invert(100) !important;
+}
+
+.js-service-name > span {
+	-webkit-filter: invert(100) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Tooltips
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.tooltip-inner {
+	background: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+
+.tooltip-arrow {
+	color: $theme-tooltip-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Other Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// 3rd Party Extensions Support
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+

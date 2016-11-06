@@ -103,11 +103,55 @@ var CONFIG = {
 				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
 		},
+		'sharelatex': {
+			key: 'sharelatex', // Must be the same as the object key
+			name: 'ShareLaTeX',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.sharelatex\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: []
+		},
+		'twitter': {
+			key: 'twitter', // Must be the same as the object key
+			name: 'Twitter',
+			support: 'full',
+			hostRegExp: new RegExp('^twitter\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: []
+		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
+		},
+		'drive': {
+			key: 'drive', // Must be the same as the object key
+			name: 'Drive',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^drive\.google\.com$', 'i')
+		},
+		'docs': {
+			key: 'docs', // Must be the same as the object key
+			name: 'Docs',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^docs\.google\.com$', 'i')
+		},
+		'calendar': {
+			key: 'calendar', // Must be the same as the object key
+			name: 'Calendar',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^calendar\.google\.com$', 'i')
+		},
+		'dropbox': {
+			key: 'dropbox', // Must be the same as the object key
+			name: 'Dropbox',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.dropbox\.com$', 'i')
 		},
 		'trello': {
 			key: 'trello', // Must be the same as the object key

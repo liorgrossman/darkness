@@ -1,20 +1,7 @@
-/*----------------------------------------------------------------------------------------------------------------------------------------------------
-
-Guidelines:
-* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
-* Please add short comments before each CSS selector to indicate what UI element it refers to
-* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
-
-You should know: all the website's colors are inverted before skinning even starts!
-* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
-* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
-* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
-* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
-----------------------------------------------------------------------------------------------------------------------------------------------------*/
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Github skin for Darkness
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -55,6 +42,12 @@ a {
     &:active {
         color: $theme-link-active !important;
     }
+}
+
+// buttonlinks
+.btn-link {
+    background-color: transparent !important;
+    color: $theme-link !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -282,6 +275,38 @@ a.btn,a.btn:visited,a.btn:hover,
     background: $theme-button-background !important;
     color: $theme-button-text !important;
     border-color: $theme-border !important;
+}
+
+// The contributionstab
+rect[fill="#1e6823"]{
+    fill: invert-back-color(#1e6823) !important;
+}
+.legend > li:nth-child(5){
+    background-color: invert-back-color(#1e6823) !important;
+}
+rect[fill="#44a340"], .legend > li:nth-child(4){
+    fill: invert-back-color(#44a340) !important;
+}
+.legend > li:nth-child(4){
+    background-color: invert-back-color(#44a340) !important;
+}
+rect[fill="#8cc665"], .legend > li:nth-child(3){
+    fill: invert-back-color(#8cc665) !important;
+}
+.legend > li:nth-child(3){
+    background-color: invert-back-color(#8cc665) !important;
+}
+rect[fill="#d6e685"], .legend > li:nth-child(2){
+    fill: invert-back-color(#d6e685) !important;
+}
+.legend > li:nth-child(2){
+    background-color: invert-back-color(#d6e685) !important;
+}
+rect[fill="#eeeeee"], .legend > li:nth-child(1){
+    fill: invert-back-color(#eeeeee) !important;
+}
+.legend > li:nth-child(1){
+    background-color: invert-back-color(#eeeeee) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
