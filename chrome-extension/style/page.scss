@@ -58,6 +58,26 @@ body[data-drk-site="google"] {
 	}
 }
 
+body[data-drk-site="twitter"] {
+	div.drk_settings_icon {
+		top: 9px !important;
+	}
+}
+
+body[data-drk-site="sharelatex"] {
+	.toolbar-header > .toolbar-right {
+		margin-right: 48px !important;
+	}
+
+	div.drk_settings_icon {
+		top: 6px !important;
+		right: 8px !important;
+	}
+}
+
+
+
+
 body[data-drk-site="inbox"] {
 	// Menu in the right side of toolbar
 	.k2 {

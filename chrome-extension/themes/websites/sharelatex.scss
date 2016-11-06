@@ -109,15 +109,7 @@ li.selected > .entity > div > div > span.dropdown {
 .editor header a.btn {
 	background: transparent !important;
 }
-// Making space for the darkness icon
-.toolbar-header > .toolbar-right {
-	margin-right: 48px !important;
-}
-// Aligning the darkness icon
-div.drk_settings_icon {
-	top: 6px !important;
-	right: 8px !important;
-}
+
 // Creating a border, so the darkness icon looks like it belongs in the toolbar
 a[tooltip="Chat"] {
 	border-right: 1px solid #cfcfcf !important;
