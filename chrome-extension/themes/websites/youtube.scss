@@ -217,6 +217,12 @@ a.yt-uix-button-epic-nav-item:hover {
 	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-videomanager-vflTnl7Mo.webp) 0 -228px !important;
 }
 
+// Notification top
+.yt-alert-actionable.yt-alert-info{
+	background-color: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Video page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -453,6 +459,9 @@ a.yt-uix-button-epic-nav-item:hover {
 // Invert suscribe button
 .yt-uix-button-subscribe-branded:before {
 	@include invert-back()
+}
+.yt-uix-button-subscription-container > button.yt-uix-button-subscribe-branded {
+	background-color: invert-back-color(#e62117) !important;
 }
 
 // Invert devices image in the profile
