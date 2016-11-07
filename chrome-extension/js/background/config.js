@@ -74,7 +74,8 @@ var CONFIG = {
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
-			topContributors: []
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		},
 		'youtube': {
 			key: 'youtube', // Must be the same as the object key
@@ -111,7 +112,8 @@ var CONFIG = {
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
-			topContributors: []
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		},
 		'twitter': {
 			key: 'twitter', // Must be the same as the object key
@@ -131,10 +133,9 @@ var CONFIG = {
 			support: 'ask-developers',
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+				{name: 'Guillermo Muela', link: 'https://github.com/Gmuela'}
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
 		},
 		'stackoverflow': {
