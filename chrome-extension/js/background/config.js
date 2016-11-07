@@ -128,7 +128,7 @@ var CONFIG = {
         'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'full',
+			support: 'ask-developers',
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
