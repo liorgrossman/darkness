@@ -16,6 +16,10 @@ input {
 	border-color: $theme-border;
 }
 
+::-webkit-resizer, ::-webkit-scrollbar-corner {
+	background: #222222;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Project site
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,8 +52,12 @@ body > .ace_editor > .ace_scroller > .ace_content > .ace_layer > .ace_active-lin
 }
 
 // Revert the pdf-viewer so that it displays the right way
+.pdfjs-viewer {
+	-webkit-filter: invert(100%) !important;
+	background-color: invert-back-color(#cfcfcf) !important;
+}
 .pdf-page-container {
-	-webkit-filter: invert(0%) !important;
+	-webkit-filter: invert(100%) !important;
 }
 // The toolbars
 .pdfjs-controls {
