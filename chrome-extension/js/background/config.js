@@ -107,7 +107,7 @@ var CONFIG = {
 			key: 'sharelatex', // Must be the same as the object key
 			name: 'ShareLaTeX',
 			support: 'full',
-			hostRegExp: new RegExp('^www\.sharelatex\.com$', 'i'),
+			hostRegExp: new RegExp('\.sharelatex\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
@@ -118,6 +118,18 @@ var CONFIG = {
 			name: 'Twitter',
 			support: 'full',
 			hostRegExp: new RegExp('^twitter\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
+			]
+		},
+        'amazon': {
+			key: 'amazon', // Must be the same as the object key
+			name: 'Amazon',
+			support: 'full',
+			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
