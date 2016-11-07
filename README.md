@@ -15,9 +15,9 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 </div>
 
 ## Features
-* Supports 4 websites: Google, Facebook, Gmail, YouTube (help us add more)
-* Boasts 3 color schemes: Iceberg, Tomorrow, Material (help us add more)
-* Written in Javascript and SCSS (basically CSS with variables)
+* Supports 8 websites: Google, Facebook, Gmail, Inbox, YouTube, Twitter, GitHub, ShareLaTeX ([help us add more](./CONTRIBUTING.md))
+* Boasts 3 color schemes: Iceberg, Tomorrow, Material ([help us add more](./CONTRIBUTING.md))
+* Written in JavaScript, uses SASS
 * Self-hosted. Easy to install on Windows, Mac, Linux
 * Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm).  
 
