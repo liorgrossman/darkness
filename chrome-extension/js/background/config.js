@@ -42,7 +42,7 @@ var CONFIG = {
         'translator': {
 			key: 'translator', // Must be the same as the object key
 			name: 'Translator',
-			support: 'ask-developers',
+			support: 'full',
 			hostRegExp: new RegExp('^translate.google.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
@@ -141,7 +141,7 @@ var CONFIG = {
         'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'ask-developers',
+			support: 'full',
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}

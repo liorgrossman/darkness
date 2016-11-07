@@ -1,259 +1,28 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+// Personal Variables
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+$noColor: transparent;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// All buttons
-button {
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
+header, #navFooter {
+  @include invert-back()
 }
 
 // All inputs
-input {
-	color: $theme-textbox-text;
-	background-color: $theme-textbox-background;
-	border-color: $theme-border;
+input[type="submit"]{
+  background-color: $noColor !important;
 }
 
-// @username
-s {
-	color: $theme-link // not !important (allow override by more specific CSS rules)
+//NavFlyoutBar
+#nav-flyout-shopAll {
+  background-color: #0f0b06;
 }
-
-// All kinds of links
-a, body .btn-link, body .btn-link:focus, body .icon-btn, body .pretty-link b, body .pretty-link:hover s, body .pretty-link:hover b, body .pretty-link:focus s, body .pretty-link:focus b, body .metadata a:hover, body .metadata a:focus, body .account-group:hover .fullname, body .account-group:focus .fullname, body .account-summary:focus .fullname, body .message .message-text a, body .stats a strong, body .plain-btn:hover, body .plain-btn:focus, body .dropdown.open .user-dropdown.plain-btn, body .open > .plain-btn, body #global-actions .new:before, body .module .list-link:hover, body .module .list-link:focus, body .stats a:hover, body .stats a:hover strong, body .stats a:focus, body .stats a:focus strong, body .find-friends-sources li:hover .source, body .stream-item a:hover .fullname, body .stream-item a:focus .fullname, body .stream-item .view-all-supplements:hover, body .stream-item .view-all-supplements:focus, body .tweet .time a:hover, body .tweet .time a:focus, body .tweet .details.with-icn b, body .tweet .details.with-icn .Icon, body .tweet .tweet-geo-text a:hover, body .stream-item:hover .original-tweet .details b, body .stream-item .original-tweet.focus .details b, body .stream-item.open .original-tweet .details b, body .client-and-actions a:hover, body .client-and-actions a:focus, body .dismiss-btn:hover b, body .tweet .context .pretty-link:hover s, body .tweet .context .pretty-link:hover b, body .tweet .context .pretty-link:focus s, body .tweet .context .pretty-link:focus b, body .list .username a:hover, body .list .username a:focus, body .list-membership-container .create-a-list, body .list-membership-container .create-a-list:hover, body .card .list-details a:hover, body .card .list-details a:focus, body .card .card-body:hover .attribution, body .card .card-body .attribution:focus, body .new-tweets-bar, body .remove-background-btn, body .stream-item-activity-notification .latest-tweet .tweet-row a:hover, body .stream-item-activity-notification .latest-tweet .tweet-row a:focus, body .stream-item-activity-notification .latest-tweet .tweet-row a:hover b, body .stream-item-activity-notification .latest-tweet .tweet-row a:focus b {
-	color: $theme-link // not !important (allow override by more specific CSS rules)
+#nav-subnav{
+  background-color: invert($white);
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Override user color (colors that are based on a Twitter profile's color theme)
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-// @ before username
-body s {
-	color: $theme-link !important;
-
-}
-
-.poster-image {
-
-}
-// Links that are based on user color
-body .u-textUserColor, body .u-textUserColorHover:hover, body .u-textUserColorHover:hover .ProfileTweet-actionCount, body .u-textUserColorHover:focus {
-	color: $theme-link !important;
-}
-
-// Border colro that is based on user colors
-body .u-borderUserColor, body .u-borderUserColorHover:hover, body .u-borderUserColorHover:focus {
-	border-color: $theme-link !important;
-}
-
-body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:focus {
-	background-color: $theme-link !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Toolbar
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-#global-actions > li > a {
-	color: $theme-link !important;
-	border-bottom-color: $theme-link !important;
-}
-
-#global-actions > li > a .Icon {
-	filter: invert(0) !important;
-}
-
-	// Toolbar background
-.global-nav-inner {
-	background: $theme-background-toolbar !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Icons
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-.Icon {
-	@include invert-back();
-}
-
-// Buttons below tweets
-.ProfileTweet-action .Icon,
-.ProfileTweet-action button,
-.ProfileTweet-action button span {
-	color: #999 !important;
-	background: transparent !important;
-	filter: invert(0) !important;
-}
-
-.ProfileTweet-action button span:hover {
-	color: #777 !important;
-}
-
-// Twitter logo on top
-.Icon--bird {
-	color: invert($theme-link) !important;
-}
-
-.ProfileTweet-actionButton {
-	background: transparent !important; // To override <button> background
-}
-
-.Icon--follower {
-	color: invert($theme-link) !important;
-}
-
-.Icon--search {
-	background: transparent !important;
-	color: #ccc !important;
-}
-
-.Icon--follow {
-	color: invert($theme-link) !important;
-}
-
-.DMActivity-close {
-	background: transparent !important;
-}
-.Icon--close {
-	color: $theme-text !important;
-}
-.modal-close {
-	background: transparent !important;
-}
-
-.DMActivity-back {
-	background: transparent !important;
-}
-.Icon--caretLeft {
-	color: $theme-button-background !important;
-}
-
-.DMPopover-button{
-	background: transparent !important;
-}
-.DMPopover-button > .Icon--dots{
-	color: $theme-button-background !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Tweet editor
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-.RichEditor {
-	border-color: $theme-border !important;
-}
-
-.top-timeline-tweetbox .timeline-tweet-box .tweet-form.condensed .tweet-box {
-	color: $theme-text !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Dialogs
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-.modal-overlay {
-	background: rgba(200,200,200,0.9) !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Button-fixes
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.btn-link {
-	background: transparent !important;
-	color: $theme-link !important;
-}
-
-.dropdown-link {
-	background: transparent !important;
-	color: $theme-link !important;
-}
-
-.PollingCardComposer-addOption, .PollingCardComposer-defaultDuration, .PollingCardComposer-remove {
-	background: transparent !important;
-	color: $theme-link !important;
-}
-
-.follow-btn, .follow-button, .DMNotificationsPermissionRequest-later, .DMNotificationsPermissionRequest-accept {
-	background: white !important;
-}
-
-.ListCreationModule-action > button {
-	background: white !important;
-}
-
-.UserActions-editButton {
-	background: white !important;
-}
-
-// Follow buttons when searching
-.AdaptiveFiltersBar-target--more {
-	background: transparent !important;
-}
-.following-text {
-	color: $theme-button-background !important
-}
-
-#export_button, #geo_button, #import-services-list button, button.revoke, .btn-widgets-new > button {
-	background: white !important;
-	color: $theme-button-background !important
-}
-
-.signup-btn.btn {
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
-	text-shadow: none !important;
-	background-image: none !important;
-	-webkit-filter: invert(0) !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Videos
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.player-wrapper, .AdaptiveMedia-video {
-	@include invert-back();
-}
-video {
-	@include invert-back();
-}
-
-// Don't invert video thumb
-.PlayableMedia-player[style*="background-image:"],
-.PlayableMedia-player[style*="background-image:"] iframe {
-	-webkit-filter: invert(0%) !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Profile stuff
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.DashboardProfileCard-bg{
-	@include invert-back();
-}
-
-.js-service-name > span {
-	@include invert-back();
-}
-.tweet {
-	border-bottom-color: #ccc !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Tooltips
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.tooltip-inner {
-	background: $theme-tooltip-background !important;
-	color: $theme-tooltip-text !important;
-}
-
-.tooltip-arrow {
-	color: $theme-tooltip-background !important;
-}
-
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // 3rd Party Extensions Support
 //----------------------------------------------------------------------------------------------------------------------------------------------------
