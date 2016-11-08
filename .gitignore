@@ -117,7 +117,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Windows System Volume Information (Hidden folder at the root of every drive)
-System Volume Information/*
+System Volume Information/
 
 ### JetBrains ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
