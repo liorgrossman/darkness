@@ -130,7 +130,7 @@ a[tooltip="Chat"] {
 }
 
 // User colors
-.online-user {
+.online-user, .remote-cursor {
 	-webkit-filter: invert(100%) !important;
 }
 .message-wrapper > .message {
