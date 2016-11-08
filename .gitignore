@@ -116,6 +116,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Windows System Volume Information (Hidden folder at the root of every drive)
+System Volume Information/*
 
 ### JetBrains ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
