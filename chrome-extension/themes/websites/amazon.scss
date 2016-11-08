@@ -7,6 +7,14 @@ $noColor: transparent;
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+#nav-main{
+    z-index: 100 !important;
+}
+
+.cropped-image-map, .image-map, .shogun-widget, .cropped-image-map-center-alignment{
+  z-index: -1;
+}
+
 header, #navFooter {
   @include invert-back()
 }
@@ -18,11 +26,24 @@ input[type="submit"]{
 
 //NavFlyoutBar
 #nav-flyout-shopAll {
-  background-color: #0f0b06;
+  background-color: $theme-background-box !important;
+  z-index: 2 !important;
+}
+.a-section, #desktop-unrec-col-1{
+  z-index: -1 !important;
 }
 #nav-subnav{
-  background-color: invert($white);
+  background-color: $theme-background !important;
+}
+#searchDropdownBox{
+  background-color: $theme-background !important;
 }
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // 3rd Party Extensions Support
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+div.drk_settings,
+div.drk_settings_icon,
+div.drk_dialog,
+.addthis_sharing_toolbox,
+.drk_invert_back {
+  -webkit-filter: invert(100%)  !important; }
