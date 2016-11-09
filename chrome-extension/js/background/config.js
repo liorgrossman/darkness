@@ -63,7 +63,8 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Alon Diamant', link: 'http://www.alondiamant.com/'},
-				{name: 'Gilad Sasson', link: 'http://www.nekuda.co.il/en/'}
+				{name: 'Gilad Sasson', link: 'http://www.nekuda.co.il/en/'},
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			]
 		},
 		'inbox': {
@@ -164,8 +165,14 @@ var CONFIG = {
 		'reddit': {
 			key: 'reddit', // Must be the same as the object key
 			name: 'Reddit',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
+			support: 'full',
+			hostRegExp: new RegExp('^www\.reddit\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
+			]
 		}
 	}
 };

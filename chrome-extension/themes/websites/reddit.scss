@@ -1,0 +1,77 @@
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+#header-bottom-left {
+	background: $theme-background !important;
+}
+#header-bottom-left > a:nth-child(2){
+	-webkit-filter: invert(100%) !important;
+}
+
+// Create links
+.submit-link > .morelink > a, .submit-text > .morelink > a {
+	color: $theme-button-text !important;
+	background-color: $theme-button-background !important;
+}
+.submit-link > .morelink > .nub, .submit-text > .morelink > .nub {
+	display: none;
+}
+
+// Christmas special
+.hohoho > .morelink > a {
+	color: $theme-button-text !important;
+	background-color: $theme-secondary-button-background !important;
+}
+
+// Special input boxes
+.roundfield {
+	background-color: $theme-textbox-background !important;
+}
+
+// Selected post
+.thing.linkflair-mod {
+	background-color: $theme-highlighted !important;
+}
+
+// quotes in posts
+.comments-page .expando .md blockquote, .comment .md blockquote {
+	color: $theme-url !important;
+}
+
+// Search button
+#search > input[type="submit"] {
+	background-color: transparent !important;
+}
+
+// tabs
+.tabmenu > li > a {
+	background-color: $theme-faint-button-background !important;
+}
+.tabmenu > li.selected > a {
+	background-color: $theme-background !important;
+}
+
+body {
+	background-color: $theme-background !important;
+}
