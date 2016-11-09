@@ -84,7 +84,15 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 .ProfileTweet-action button span {
 	color: #999 !important;
 	background: transparent !important;
-	filter: invert(0) !important;
+	-webkit-filter: invert(0) !important;
+}
+
+.retweeted .ProfileTweet-action--retweet .Icon--retweet {
+	color: $theme-url !important;
+}
+.favorited .ProfileTweet-action--favorite .ProfileTweet-actionButtonUndo, .ProfileTweet-action--favorite:hover .ProfileTweet-actionButton {
+	-webkit-filter: invert(100) !important;
+	color: invert(#e81c4f) !important;
 }
 
 .ProfileTweet-action button span:hover {
@@ -113,11 +121,15 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	color: invert($theme-link) !important;
 }
 
+.Icon--close {
+	color: invert($theme-button-background) !important;
+}
+
 .DMActivity-close {
 	background: transparent !important;
 }
 .Icon--close {
-	color: $theme-text !important;
+	//color: $theme-text !important;
 }
 .modal-close {
 	background: transparent !important;
