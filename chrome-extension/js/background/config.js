@@ -137,11 +137,23 @@ var CONFIG = {
 				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
 		},
+		'serverfault': {
+			key: 'serverfault', // Must be the same as the object key
+			name: 'ServerFault',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^serverfault\.com$', 'i')
+		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
+		},
+		'askUbuntu': {
+			key: 'askUbuntu', // Must be the same as the object key
+			name: 'askUbuntu',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^askubuntu\.com$', 'i')
 		},
 		'trello': {
 			key: 'trello', // Must be the same as the object key
