@@ -1,6 +1,8 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Personal Variables
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//No color
 $noColor: transparent;
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -8,10 +10,10 @@ $noColor: transparent;
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 .cropped-image-map, .image-map, .shogun-widget, .cropped-image-map-center-alignment{
-  z-index: -1;
+  z-index: -100;
 }
 
-header, #navFooter, i, .a-color-success {
+header, #navFooter, i, .a-color-success, .acsux-hsb-container li, .acsux-menu, .acs-tiles-wrapfix{
   @include invert-back()
 }
 
@@ -24,7 +26,6 @@ input[type="submit"]{
 //NavFlyoutBar
 #nav-flyout-shopAll{
   background-color: $theme-background-box !important;
-  z-index: 2 !important;
 }
 #nav-subnav, #nav-iss-attach , #searchDropdownBox{
   background-color: $theme-background !important;
