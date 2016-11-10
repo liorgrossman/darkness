@@ -82,6 +82,9 @@ input
 .gb_Rb, .gb_Sb, .gb_Xa {
 	-webkt-filter: none !important;
 }
+.gb_Za.gb_Wb {
+	-webkit-filter: invert(100%) !important;
+}
 
 // Search bar
 .gb_ue {
@@ -112,7 +115,7 @@ input
 }
 
 // "Google apps" and notifications buttons (in upper-right corner)
-.gb_pc {
+.gb_pc, .gb_M {
 	@include invert-back();
 }
 

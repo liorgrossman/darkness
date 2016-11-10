@@ -16,6 +16,10 @@ input {
 	border-color: $theme-border;
 }
 
+::-webkit-resizer, ::-webkit-scrollbar-corner {
+	background: #222222;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Project site
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -40,10 +44,20 @@ input {
 .ace_cursor{
 	-webkit-filter: invert(100%) !important;
 }
+body > .ace_editor > .ace_scroller{
+	-webkit-filter: invert(100%) !important;
+}
+body > .ace_editor > .ace_scroller > .ace_content > .ace_layer > .ace_active-line{
+	-webkit-filter: invert(0%) !important;
+}
 
 // Revert the pdf-viewer so that it displays the right way
+.pdfjs-viewer {
+	-webkit-filter: invert(100%) !important;
+	background-color: invert-back-color(#cfcfcf) !important;
+}
 .pdf-page-container {
-	-webkit-filter: invert(0%) !important;
+	-webkit-filter: invert(100%) !important;
 }
 // The toolbars
 .pdfjs-controls {
@@ -113,6 +127,17 @@ li.selected > .entity > div > div > span.dropdown {
 // Creating a border, so the darkness icon looks like it belongs in the toolbar
 a[tooltip="Chat"] {
 	border-right: 1px solid #cfcfcf !important;
+}
+
+// User colors
+.online-user {
+	-webkit-filter: invert(100%) !important;
+}
+.message-wrapper > .message {
+	border-color: invert-back-color(rgb(198, 232, 125)) !important;
+}
+.message-wrapper > .message > .arrow {
+	-webkit-filter: invert(100%) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

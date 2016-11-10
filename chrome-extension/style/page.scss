@@ -46,6 +46,11 @@ body[data-drk-site="gmail"] {
 		margin-right: 25px !important;
 	}
 
+	// If logged in: the right part of top-toolbar
+	.gb_ic.gb_R {
+		margin-right: 25px !important;
+	}
+
 	div.drk_settings_icon {
 		position: fixed !important;
 		top: 15px !important;
@@ -126,6 +131,20 @@ body[data-drk-site="stackoverflow"] {
 		position: fixed !important;
 		top: 2px !important;
 		right: 5px !important;
+	}
+}
+
+body[data-drk-site="amazon"] {
+	div.drk_settings_icon {
+		position: absolute !important;
+	}
+}
+
+body[data-drk-site="reddit"] {
+	div.drk_settings_icon {
+		position: absolute !important;
+		top: 18px !important;
+		right: 0px !important;
 	}
 }
 

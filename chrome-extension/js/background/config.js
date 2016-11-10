@@ -87,7 +87,8 @@ var CONFIG = {
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
-			topContributors: []
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		},
 		'youtube': {
 			key: 'youtube', // Must be the same as the object key
@@ -124,7 +125,8 @@ var CONFIG = {
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
-			topContributors: []
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		},
 		'twitter': {
 			key: 'twitter', // Must be the same as the object key
@@ -144,10 +146,9 @@ var CONFIG = {
 			support: 'full',
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+				{name: 'Guillermo Muela', link: 'https://github.com/Gmuela'}
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
 		},
 		'stackoverflow': {
@@ -156,35 +157,17 @@ var CONFIG = {
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
 		},
-		'drive': {
-			key: 'drive', // Must be the same as the object key
-			name: 'Drive',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^drive\.google\.com$', 'i')
-		},
-		'docs': {
-			key: 'docs', // Must be the same as the object key
-			name: 'Docs',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^docs\.google\.com$', 'i')
-		},
-		'calendar': {
-			key: 'calendar', // Must be the same as the object key
-			name: 'Calendar',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^calendar\.google\.com$', 'i')
-		},
-		'dropbox': {
-			key: 'dropbox', // Must be the same as the object key
-			name: 'Dropbox',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^www\.dropbox\.com$', 'i')
-		},
 		'trello': {
 			key: 'trello', // Must be the same as the object key
 			name: 'Trello',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^trello\.com$', 'i')
+		},
+		'reddit': {
+			key: 'reddit', // Must be the same as the object key
+			name: 'Reddit',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
 		}
 	}
 };
