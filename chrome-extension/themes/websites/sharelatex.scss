@@ -140,6 +140,18 @@ a[tooltip="Chat"] {
 	-webkit-filter: invert(100%) !important;
 }
 
+// search and find-replace
+.ace_search button {
+	-webkit-filter: invert(100%) !important;
+	color: $theme-button-text !important;
+}
+.ace_search button .fa {
+	color: $theme-button-text !important;
+}
+.ace_search .ace_searchbtn_close {
+	-webkit-filter: invert(100%) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Project-list site
 //----------------------------------------------------------------------------------------------------------------------------------------------------
