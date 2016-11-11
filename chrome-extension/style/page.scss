@@ -80,7 +80,11 @@ body[data-drk-site="sharelatex"] {
 	}
 }
 
-
+body[data-drk-site="dropbox"] {
+	.react-title-bar__action-wrap {
+		margin-right: 40px !important;
+	}
+}
 
 
 body[data-drk-site="inbox"] {

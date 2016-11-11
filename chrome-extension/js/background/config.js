@@ -162,6 +162,17 @@ var CONFIG = {
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^trello\.com$', 'i')
 		},
+		'dropbox': {
+			key: 'dropbox', // Must be the same as the object key
+			name: 'Dropbox',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.dropbox\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'reddit': {
 			key: 'reddit', // Must be the same as the object key
 			name: 'Reddit',
@@ -171,7 +182,6 @@ var CONFIG = {
 				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
 			]
 		}
 	}
