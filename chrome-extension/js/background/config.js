@@ -38,20 +38,7 @@ var CONFIG = {
 				{name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/'},
 				{name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich'}
 			]
-		},
-        'translator': {
-			key: 'translator', // Must be the same as the object key
-			name: 'Translator',
-			support: 'full',
-			hostRegExp: new RegExp('^translate.google.com$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/'},
-				{name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich'}
-			]
-		},
+		}
 		'facebook': {
 			key: 'facebook', // Must be the same as the object key
 			name: 'Facebook',
@@ -143,7 +130,7 @@ var CONFIG = {
         'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'full',
+			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Guillermo Muela', link: 'https://github.com/Gmuela'}
@@ -154,19 +141,19 @@ var CONFIG = {
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
-			support: 'ask-developers',
+			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
 		},
 		'trello': {
 			key: 'trello', // Must be the same as the object key
 			name: 'Trello',
-			support: 'ask-developers',
+			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^trello\.com$', 'i')
 		},
 		'reddit': {
 			key: 'reddit', // Must be the same as the object key
 			name: 'Reddit',
-			support: 'ask-developers',
+			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
 		}
 	}
