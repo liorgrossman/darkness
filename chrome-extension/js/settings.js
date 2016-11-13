@@ -27,8 +27,9 @@ if (!DarknessSettingsLoader) {
 		var ID_SETTINGS_STYLE = 'drk_settings_style';
 		var ID_SETTINGS_HTML = 'drk_settings_html';
 
-		// User settings
+		// User settings & stats
 		var settings = JSON.parse('@@SETTINGS@@');
+		var STATS = JSON.parse('@@STATS@@');
 
 		// Determine the payment platform to use
 		var PAYMENT_PLATFORM = 'paypal';
@@ -51,10 +52,31 @@ if (!DarknessSettingsLoader) {
 			}
 			return Math.abs(hash) / 2147483647;
 		};
+
 		// Helper: Log to console
 		var log = function() {
 			Array.prototype.unshift.call(arguments, '--> ');
 			if (PRINT_LOGS) console.log.apply(console, arguments);
+		};
+
+		// Given the specified install date, how many days have passed since the user installed Darkness?
+		var getDaysSinceInstall = function(installDate, humanReadable) {
+			if (typeof(installDate) != 'number') return "Unknown";
+			var timeNow = (new Date()).getTime();
+			var passedMs = timeNow - installDate;
+			if (passedMs < 0) return "Negative";
+			var passedDays = passedMs / 1000 / 3600 / 24;
+			if (humanReadable) {
+				if (passedDays < 3) {
+					return Math.round(passedDays * 10) / 10;
+				} 		
+				else {
+					return Math.round(passedDays);
+				}
+			} else {
+				var passedDaysRounded = Math.round(passedDays * 100) / 100;
+				return passedDaysRounded;
+			}
 		};
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------
@@ -206,6 +228,8 @@ if (!DarknessSettingsLoader) {
 						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-all');
 						repEventByUser('funnel-' + dialogReason, 'paid-' + dialogAmount);
 						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-' + dialogAmount);
+						var daysSinceInstall = getDaysSinceInstall(STATS.installDate, true);						
+						repEvent('funnel-' + PAYMENT_PLATFORM, 'paid-days-since-install', daysSinceInstall);
 						notifyUserOnPaymentFinished(true);
 					}
 					else { // Regular user (unexplained?!)

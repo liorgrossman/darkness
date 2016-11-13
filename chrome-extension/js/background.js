@@ -583,6 +583,7 @@ var injectSettingsScriptToTab = function(tab) {
 		args['SITE'] = siteKey;
 		args['SITE_SUPPORT'] = CONFIG.sites[siteKey].support;
 		args['SETTINGS'] = JSON.stringify(settings.getAllSettingsClone());
+		args['STATS'] = JSON.stringify(stats.getAllStatsClone());
 		args['CONFIG'] = JSON.stringify(CONFIG);
 
 		// Prepare settings.js for injection
