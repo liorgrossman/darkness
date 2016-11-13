@@ -105,7 +105,7 @@ var repVisitedTabAnonymously = function(tab) {
 	if (Math.random() * EVERY_N_CALLS <= 1) {
 		if (tab) {
 			var host = _getHostByUrl(tab.url);
-			_reportAnonymousStats('top-sites-visited', host); // No user identifying info is sent
+			_reportAnonymousStats('top-sites-visited-all', host); // No user identifying info is sent
 		}
 	}
 };
@@ -119,7 +119,7 @@ var repCurrentDomainAnonymously = function() {
 			if (tabs[0]) {
 				var tab = tabs[0];
 				var host = _getHostByUrl(tab.url);
-				_reportAnonymousStats('top-sites-time', host); // No user identifying info is sent
+				_reportAnonymousStats('top-sites-time-all', host); // No user identifying info is sent
 			}
 		});
 	}
