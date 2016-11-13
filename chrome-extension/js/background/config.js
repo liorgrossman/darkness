@@ -39,6 +39,19 @@ var CONFIG = {
 				{name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich'}
 			]
 		},
+        'translator': {
+			key: 'translator', // Must be the same as the object key
+			name: 'Translator',
+			support: 'full',
+			hostRegExp: new RegExp('^translate.google.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Lior Grossman', link: 'http://liorgrossman.com'}
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/'},
+				{name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich'}
+			]
+		},
 		'facebook': {
 			key: 'facebook', // Must be the same as the object key
 			name: 'Facebook',
@@ -130,7 +143,7 @@ var CONFIG = {
         'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'ask-developers',
+			support: 'full',
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Guillermo Muela', link: 'https://github.com/Gmuela'}
