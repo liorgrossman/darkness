@@ -5,11 +5,11 @@
 var ENVIRONMENT = 'development';
 
 // Important - don't touch this:
-if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production'; // Chrome Web Store version
+if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production';	// Chrome Web Store version
 
 // Local testing versions
-if (chrome.runtime.id == 'nhppbahodjffdfdbndcoinbbfjlfkmoc') ENVIRONMENT = 'production'; // Local CWS version
-if (chrome.runtime.id == 'kggllcjcknlclegojnkkomchhpjebgpo') ENVIRONMENT = 'development'; // Testing before deployment to Chrome Web Store
+if (chrome.runtime.id == 'koobfbhnpdijhobcdllfkmlgngbpgjep') ENVIRONMENT = 'development';	// Local version (development)
+if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging';		// Local testing version before deploying (staging)
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global vars
