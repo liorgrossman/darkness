@@ -671,13 +671,14 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 var initializeTab = function(tab, startUpRetroactiveLoad) {
 	var siteKey = getSiteKeyForUrl(tab.url);
 	var themeKey = siteKey ? whichThemeForSite(true, siteKey, false) : null;
-	if (!themeKey) return log('Not initializing tab'); // Quit if site is not supported
 
 	if (!startUpRetroactiveLoad) {
 		// Send analytics
 		repVisitedTabAnonymously(tab);
 		repTopThemes(siteKey, themeKey);
 	}
+
+	if (!themeKey) return log('Not initializing tab'); // Quit if site is not supported
 
 	// Inject page.js to the tab
 	injectPageJsToTab(tab, siteKey, themeKey);
