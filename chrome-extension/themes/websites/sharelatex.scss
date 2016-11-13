@@ -130,13 +130,25 @@ a[tooltip="Chat"] {
 }
 
 // User colors
-.online-user {
+.online-user, .remote-cursor {
 	-webkit-filter: invert(100%) !important;
 }
 .message-wrapper > .message {
 	border-color: invert-back-color(rgb(198, 232, 125)) !important;
 }
 .message-wrapper > .message > .arrow {
+	-webkit-filter: invert(100%) !important;
+}
+
+// search and find-replace
+.ace_search button {
+	-webkit-filter: invert(100%) !important;
+	color: $theme-button-text !important;
+}
+.ace_search button .fa {
+	color: $theme-button-text !important;
+}
+.ace_search .ace_searchbtn_close {
 	-webkit-filter: invert(100%) !important;
 }
 

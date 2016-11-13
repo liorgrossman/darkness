@@ -67,6 +67,16 @@ a {
 	background-color: $theme-background-box !important;
 }
 
+// background when viewing images
+._4d3w .stageWrapper {
+	background-color: $theme-background !important;
+}
+
+// Link to newsfeed
+._4q39 > a._2s25 {
+	color: $theme-link !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Un-invert icons
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -673,7 +683,7 @@ div[aria-label*="sticker"] {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // lightbox background
-._3qx ._3ixn {
+._3qx ._3ixn, ._1oye, ._4-of, ._1oyf, ._1oyh {
 	background-color: rgba(darken($theme-background-box, 10%), 0.9) !important;
 	border-color: $theme-border !important;
 }
@@ -915,6 +925,18 @@ body ._19u- ._3ixn {
 // Like / Message / Contact us on Pages
 #pages_actions_pagelet button {
 	color: $theme-text !important;
+}
+
+// Create group button
+._4jy2 {
+	background-color: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+
+// Search group
+.uiSearchInput button {
+	background-color: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

@@ -38,7 +38,7 @@ var CONFIG = {
 				{name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/'},
 				{name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich'}
 			]
-		}
+		},
 		'facebook': {
 			key: 'facebook', // Must be the same as the object key
 			name: 'Facebook',
@@ -63,7 +63,8 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{name: 'Alon Diamant', link: 'http://www.alondiamant.com/'},
-				{name: 'Gilad Sasson', link: 'http://www.nekuda.co.il/en/'}
+				{name: 'Gilad Sasson', link: 'http://www.nekuda.co.il/en/'},
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
 			]
 		},
 		'inbox': {
@@ -138,11 +139,23 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'serverfault': {
+			key: 'serverfault', // Must be the same as the object key
+			name: 'ServerFault',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^serverfault\.com$', 'i')
+		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
 			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
+		},
+		'askUbuntu': {
+			key: 'askUbuntu', // Must be the same as the object key
+			name: 'askUbuntu',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^askubuntu\.com$', 'i')
 		},
 		'trello': {
 			key: 'trello', // Must be the same as the object key
@@ -150,11 +163,27 @@ var CONFIG = {
 			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^trello\.com$', 'i')
 		},
+		'dropbox': {
+			key: 'dropbox', // Must be the same as the object key
+			name: 'Dropbox',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.dropbox\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'reddit': {
 			key: 'reddit', // Must be the same as the object key
 			name: 'Reddit',
-			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
-			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
+			support: 'full',
+			hostRegExp: new RegExp('^www\.reddit\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Theis Villumsen', link: 'https://folkmann.it/'}
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		}
 	}
 };

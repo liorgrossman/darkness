@@ -32,16 +32,18 @@ var getSiteKeyForUrl = function(url) {
 				}
 			} else {
 				var themeSupport = CONFIG.sites[siteKey].support;
+				// Default: full support. Always skin this website
+				var returnedSiteKey = siteKey;
 				if (themeSupport == 'ask-developers') {
 					// In production mode ask developers to join us, in development mode there's no need
-					return (ENVIRONMENT == 'development') ? null: siteKey;
+					returnedSiteKey = (ENVIRONMENT == 'development') ? null: siteKey;
 				}
 				else if (themeSupport == 'in-development') {
 					// In production mode don't skin this website, in development mode do
-					return (ENVIRONMENT == 'development') ? siteKey : null;
+					returnedSiteKey = (ENVIRONMENT == 'development') ? siteKey : null;
 				}
-				// Default: full support. Always skin this website
-				return siteKey;
+				log("Returning site key: " + returnedSiteKey);
+				return returnedSiteKey;
 			}
 		}
 	}
@@ -108,6 +110,7 @@ var replaceThemeAndGetCss = function(tab, themeToDisplay, callback) {
 
 	// Send the theme's CSS back to the client (regardless of allowed or not)
 	var cssFilename = getThemeCssFilename(siteKey, themeToDisplay);
+	log("Calling readFileFromDisk for " + cssFilename);
 	readFileFromDisk(true, cssFilename, function() {
 		var cssContent = getPageCssContent(siteKey, themeToDisplay);
 		callback(cssContent);

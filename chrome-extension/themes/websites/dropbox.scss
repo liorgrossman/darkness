@@ -1,0 +1,295 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.jobs-logo, .enterprise-header__logo-gliph, .enterprise-header__title-text {
+	-webkit-filter: invert(100) !important;
+}
+
+// All buttons
+button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.btn {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.button-primary {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+
+	&:disabled {
+		background-color: $theme-highlighted !important;
+	}
+
+	&:disabled:hover {
+		background-color: $theme-highlighted-darker !important;
+		-webkit-filter: invert(0) !important;
+	}
+}
+.dbmodal-button {
+
+	&:disabled {
+		-webkit-filter: invert(100) !important;
+	}
+}
+.dbmodal-button.c-btn--primary, .unified-share-modal__share-send, .confirm-button.c-btn--primary, .c-btn--primary.u-mar-left-s, .u-l-fr .c-btn {
+	-webkit-filter: invert(100) !important;
+
+	&:hover {
+		-webkit-filter: invert(0) !important;
+	}
+
+}
+.dbmodal-button.button-primary, .button-primary.choose-folder-submit, .notes-sidebar-page-cta, .dbox-app-promo-cta button, .install-button-component, .gifting-cta__button, a.freshbutton-blue, .login-button {
+	-webkit-filter: invert(100) !important;
+}
+.button-secondary {
+
+	&:hover{
+		background: linear-gradient(#fffffe, $theme-highlighted) !important;
+	}
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// buttons as links
+button.button-as-link {
+	background-color: transparent !important;
+	color: $theme-link !important;
+}
+button.button-as-link .link-img {
+	-webkit-filter: invert(100) !important;
+	background-color: transparent !important;
+}
+
+// Calendars
+.calendar .selected {
+	background-color: $theme-highlighted !important;
+}
+.calendar .date:hover {
+	background-color: $theme-highlighted-darker !important
+}
+
+// menus
+.bubble-menu-item:hover {
+	background-color: $theme-highlighted !important;
+}
+.context-menu-item--selected {
+	background-color: $theme-highlighted !important;
+}
+.account-dropdown ul a:hover {
+	background-color: $theme-highlighted !important;
+}
+
+.invite-icon__facebook, .invite-icon__gmail {
+	-webkit-filter: invert(100) !important;
+}
+.contacts-tokenizer-input {
+	background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Headers
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+#page-header, #trash-header, #trash-sub-header, #trash-table-header, #events-sub-header, #events-header {
+	background-color: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#page-sidebar {
+}
+#sidebar {
+	background-color: transparent !important;
+}
+
+#ha-container > .ha {
+	border-color: $theme-notices !important;
+}
+#ha-container > .ha a {
+	border-color: $theme-notices !important;
+}
+#ha-container > .ha a.dismiss-button {
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#page-footer {
+}
+#page-footer button {
+	background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// File list
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+button.header-nav-link {
+	background-color: transparent !important;
+}
+
+.search-bar .search-bar__text-input {
+	background-color: transparent !important;
+}
+.search-bar .search-bar__button {
+	-webkit-filter: invert(100) !important;
+	background-color: invert($theme-button-background) !important;
+}
+
+.global-actions__button {
+	background-color: transparent !important;
+}
+
+.c-column-header__button {
+	background-color: transparent !important;
+}
+
+.c-column-header {
+	background-color: $theme-background !important;
+}
+
+#browse-box {
+	header > #browse-header {
+		background-color: $theme-background !important;
+	}
+}
+
+.browse-file-row:hover, .browse-file-row--is-selected {
+	background-color: $theme-highlighted-darker !important;
+	border-top-color: $theme-highlighted !important;
+	border-bottom-color: $theme-highlighted !important;
+}
+
+.browse-file-row__column form {
+	-webkit-filter: invert(100) !important;
+}
+
+// popup
+.db-modal-x {
+	background-color: transparent !important;
+}
+.tree-view__item-label {
+	color: $theme-link !important;
+}
+.unified-share-modal__settings{
+	background-color: transparent !important;
+}
+.paging-list .selected{
+	background-color: $theme-highlighted-darker !important;
+	color: $theme-link !important;
+}
+.paging-list .selected .option-secondary {
+	color: $theme-url !important;
+}
+.unified-share-modal button.c-borderless-button {
+	background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Showing a file
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// toolbar
+.react-title-bar__close {
+	background-color: transparent !important;
+}
+.react-title-bar__controls > .share-button {
+	-webkit-filter: invert(100) !important;
+}
+.vjs-big-play-button {
+	background-color: transparent !important;
+}
+.react-file-viewer-dropdown li a:hover {
+	background-color: $theme-highlighted !important;
+}
+
+// Controls in the bottom
+.preview-toolbar-container {
+}
+.preview-toolbar-container .preview-toolbar-overlay {
+	background-color: $theme-highlighted !important;
+}
+
+// Comments
+.comment-input-buttons button {
+	background-color: transparent !important;
+}
+.comment-box .post-button {
+	-webkit-filter: invert(100) !important;
+}
+
+// mentions
+.blue {
+	color: $theme-highlighted !important;
+}
+
+// Comment on images
+.blank-state__button {
+	-webkit-filter: invert(100) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Showing trash
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.trash-row:hover {
+	background-color: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Showing events
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.event-row:hover {
+	background-color: $theme-highlighted-darker !important;
+	border-top-color: $theme-highlighted !important;
+	border-bottom-color: $theme-highlighted !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// File requests
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.drops-empty-page-cta > button{
+	-webkit-filter: invert(100) !important;
+}
+.create-edit-form-destination-change {
+	background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Gift Dropbox
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.feature-table__table-column--blue {
+	background-color: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Gift Dropbox
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.c-tabs__tab {
+	border-color: $theme-highlighted-darker !important;
+	border-bottom-color: #bdc4c9 !important;
+}
+.c-tabs__tab.c-tabs__tab--selected {
+	border-color: #bdc4c9 !important;
+}
+.bar-graph-legend, .bar-graph-part {
+	-webkit-filter: invert(100) !important;
+}
+.bar-graph-legend.bar-graph-free {
+	-webkit-filter: invert(0) !important;
+}
