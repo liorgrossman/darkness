@@ -8,12 +8,13 @@ $noColor: transparent;
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
+/*
+// z-index manipulation messes up with the look of Amazon's header when scrolling, so I disabled it
 .cropped-image-map, .image-map, .shogun-widget, .cropped-image-map-center-alignment{
   z-index: -100;
-}
+}*/
 
-header, #navFooter, i, .a-color-success, .acsux-hsb-container li, .acsux-menu, .acs-tiles-wrapfix{
+header, #navFooter, #a-page i, .a-color-success, .acsux-hsb-container li, .acsux-menu, .acs-tiles-wrapfix{
   @include invert-back()
 }
 
@@ -30,12 +31,3 @@ input[type="submit"]{
 #nav-subnav, #nav-iss-attach , #searchDropdownBox{
   background-color: $theme-background !important;
 }
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// 3rd Party Extensions Support
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-div.drk_settings,
-div.drk_settings_icon,
-div.drk_dialog,
-.addthis_sharing_toolbox,
-.drk_invert_back {
-  -webkit-filter: invert(100%)  !important; }
