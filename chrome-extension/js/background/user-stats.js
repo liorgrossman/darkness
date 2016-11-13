@@ -41,6 +41,7 @@ var StatsFactory = function() {
 	var _stats = {};
 
 
+	// Internal method: save stats to cookie
 	var _saveStatsToCookie = function(callback) {
 		var statsToSave = {
 			analyticsId: _stats.analyticsId,
@@ -63,7 +64,7 @@ var StatsFactory = function() {
 			} else {
 				logWarn("Cookie set error: ", chrome.runtime.lastError);
 			}
-			callback();
+			if (callback) callback();
 		})
 
 	}
@@ -135,6 +136,9 @@ var StatsFactory = function() {
 	Stats.prototype.set = function(key, val) {
 		_stats[key] = val;
 		_saveStats();
+		if (key == 'type') {
+			_saveStatsToCookie();
+		}
 	};
 
 	Stats.prototype.get = function(key) {
