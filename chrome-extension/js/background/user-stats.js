@@ -40,6 +40,34 @@ var StatsFactory = function() {
 	var _saveStatsTimeout = null;
 	var _stats = {};
 
+
+	var _saveStatsToCookie = function(callback) {
+		var statsToSave = {
+			analyticsId: _stats.analyticsId,
+			installDate: _stats.installDate,
+			installVer: _stats.installVer,
+			type: _stats.type			
+		}
+		var statsJson = JSON.stringify(statsToSave);
+		var cookie = {
+			url: "http://improvver.com",
+			name: "darkness_stats",
+			value: statsJson,
+			domain: "improvver.com",
+			path: "/",
+			expirationDate: 2051222400, /* Year 2035 */
+		}
+		chrome.cookies.set(cookie, function(cookieSet) {
+			if (cookieSet) {
+				log("Cookie set: ", cookieSet);
+			} else {
+				logWarn("Cookie set error: ", chrome.runtime.lastError);
+			}
+			callback();
+		})
+
+	}
+
 	// Internal method: load stats from chrome.storage
 	var _loadStats = function(callback) {
 		log('Loading stats from Chrome');
@@ -66,7 +94,9 @@ var StatsFactory = function() {
 			if (isNewUser) {
 				repEventByUser('users', 'new-users');
 			}
-			if (callback) callback();
+			_saveStatsToCookie(function() {
+				if (callback) callback();
+			});
 		});
 	};
 
