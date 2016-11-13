@@ -31,13 +31,17 @@ var getSiteKeyForUrl = function(url) {
 					return siteKey;
 				}
 			} else {
-				if (ENVIRONMENT == 'development') {
-					// In development mode, don't show icons that ask developers to contribute
-					return CONFIG.sites[siteKey].support == 'ask-developers' ? null : siteKey;
-				} else {
-					// In staging / production mode, always show icon if website is supported (even icon for devs)
-					return siteKey;
+				var themeSupport = CONFIG.sites[siteKey].support;
+				if (themeSupport == 'ask-developers') {
+					// In production mode ask developers to join us, in development mode there's no need
+					return (ENVIRONMENT == 'development') ? null: siteKey;
 				}
+				else if (themeSupport == 'in-development') {
+					// In production mode don't skin this website, in development mode do
+					return (ENVIRONMENT == 'development') ? siteKey : null;
+				}
+				// Default: full support. Always skin this website
+				return siteKey;
 			}
 		}
 	}
