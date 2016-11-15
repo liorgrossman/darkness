@@ -490,6 +490,9 @@ if (!DarknessSettingsLoader) {
 			if (ASSETS.TYPE == 'p') {
 				// Adjustments for Pro mode
 				$('.drk_upgrade_btn').addClass('hidden');
+				$('.drk_vote_btn').addClass('hidden');
+			} else {
+				$('.drk_rate_btn').addClass('hidden');
 			}
 
 			// Fill website name, etc.
@@ -649,7 +652,15 @@ if (!DarknessSettingsLoader) {
 			// Rate button
 			$('.drk_settings .drk_rate_btn').unbind('click').click(function() {
 				repEventByUser('user-action', 'rate-btn-click');
-				var url = 'https://chrome.google.com/webstore/detail/darkness/imilbobhamcfahccagbncamhpnbkaenm/reviews';
+				var url = 'https://goo.gl/oMLASO';
+				var win = window.open(url, '_blank');
+				win.focus();
+			});
+
+			// Vote button
+			$('.drk_settings .drk_vote_btn').unbind('click').click(function() {
+				repEventByUser('user-action', 'vote-btn-click');
+				var url = 'https://goo.gl/a8cQF4';
 				var win = window.open(url, '_blank');
 				win.focus();
 			});
