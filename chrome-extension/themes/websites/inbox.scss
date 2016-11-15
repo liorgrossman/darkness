@@ -39,7 +39,7 @@ input {
 	box-shadow: 0 0 4px rgba(255,255,255,.14),0 4px 8px rgba(255,255,255,.28) !important;
 }
 // User profile image
-.gbii {
+.gbii, .gbip {
 	-webkit-filter: invert(100%) !important;
 }
 
@@ -74,6 +74,10 @@ input {
 // Button shadows
 .dy {
 	box-shadow: 0 0 2px rgba(255,255,255,.12),0 2px 4px rgba(255,255,255,.24);
+}
+// Option button on a single email
+img.FK {
+	-webkit-filter: invert(0%) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -148,4 +152,23 @@ input.dm {
 }
 .p2 > img {
 	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Message summaries
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Summaries of 
+.m0 {
+	background-color: $theme-highlighted !important;
+}
+.m0 span{
+	color: $theme-text !important;
+}
+.ko, .aL.ko {
+	color: $theme-tooltip-background !important;
+}
+.cf.ko {
+	color: $theme-tooltip-text !important;
+	background-color: $theme-tooltip-background !important;
 }
