@@ -134,10 +134,10 @@ a[tooltip="Chat"] {
 	-webkit-filter: invert(100%) !important;
 }
 .message-wrapper > .message {
-	border-color: invert-back-color(rgb(198, 232, 125)) !important;
-}
-.message-wrapper > .message > .arrow {
+	background-color: invert-back-color(rgb(250, 252, 243)) !important;
 	-webkit-filter: invert(100%) !important;
+	box-shadow: -1px 2px 3px invert-back-color(#ddd) !important;
+	color: invert-back-color($theme-text) !important;
 }
 
 // search and find-replace
