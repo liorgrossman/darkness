@@ -757,6 +757,14 @@ if (!DarknessSettingsLoader) {
 				$('.drk_promo_input').focus();
 			});
 
+
+			// Hide link
+			$('.drk_hide_link').unbind('click').click(function(e) {
+				setTimeout(function() {
+					revertAfterPreview(false);
+				}, 200);
+			});
+
 			// Upgrade dialog -> Promo submitted by hitting Enter
 			$('.drk_promo_input').keydown(function(e) {
 				if (e.keyCode == 13) {
