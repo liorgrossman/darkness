@@ -589,6 +589,14 @@ textarea._4h98 {
 	@include invert-back();
 }
 
+// Chat search
+input[type="text"]._58al {
+	background-color: transparent !important;
+}
+._3rh8 {
+	background-color: $theme-background-toolbar !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Chat window (incl. emoticons, stickers etc.)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -668,6 +676,9 @@ div[aria-label*="sticker"] {
 }
 
 // Green "online" status dot - in chat windows
+.minimized ._3olv._2nlt{
+	-webkit-filter: invert(0%) !important;
+}
 ._2nlt, ._3olv._2nlt {
 	@include invert-back();
 }
@@ -1052,3 +1063,8 @@ i._lew {
 	opacity: 0.2;
 }
 
+// notificationcount fra amninitrated page
+._5ugf {
+	background-color: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
