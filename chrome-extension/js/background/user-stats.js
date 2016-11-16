@@ -47,7 +47,7 @@ var StatsFactory = function() {
 			analyticsId: _stats.analyticsId,
 			installDate: _stats.installDate,
 			installVer: _stats.installVer,
-			type: _stats.type			
+			type: _stats.type
 		}
 		var statsJson = JSON.stringify(statsToSave);
 		var cookie = {
@@ -56,7 +56,8 @@ var StatsFactory = function() {
 			value: statsJson,
 			domain: "improvver.com",
 			path: "/",
-			expirationDate: 2051222400, /* Year 2035 */
+			expirationDate: 2051222400,
+			/* Year 2035 */
 		}
 		chrome.cookies.set(cookie, function(cookieSet) {
 			if (cookieSet) {
@@ -181,4 +182,3 @@ var StatsFactory = function() {
 
 // Run the function that builds the class
 var Stats = StatsFactory();
-

@@ -21,7 +21,7 @@ if (!DarknessSettingsLoader) {
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
 
 		// Assets (CSS/JS/HTML) that need to be replaced every time the settings panel is opened - for development purposes
-		var ASSETS = {'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@'};
+		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
 
 		// ID of the injected elements
 		var ID_SETTINGS_STYLE = 'drk_settings_style';
@@ -43,7 +43,8 @@ if (!DarknessSettingsLoader) {
 
 		// Hashing function: from string to a float between 0 and 1 (deterministic psuedo random)
 		var hashStringToFloat = function(str) {
-			var hash = 0, i, chr, len;
+			var hash = 0,
+				i, chr, len;
 			if (str.length === 0) return hash;
 			for (i = 0, len = str.length; i < len; i++) {
 				chr = str.charCodeAt(i);
@@ -69,8 +70,7 @@ if (!DarknessSettingsLoader) {
 			if (humanReadable) {
 				if (passedDays < 3) {
 					return Math.round(passedDays * 10) / 10;
-				} 		
-				else {
+				} else {
 					return Math.round(passedDays);
 				}
 			} else {
@@ -84,18 +84,21 @@ if (!DarknessSettingsLoader) {
 		// From: https://raw.githubusercontent.com/GoogleChrome/chrome-app-samples/master/samples/managed-in-app-payments/scripts/buy.js
 		//--------------------------------------------------------------------------------------------------------------------------------------------
 		(function() {
-			var f = this, g = function(a, d) {
-				var c = a.split("."), b = window || f;
-				c[0] in b || !b.execScript || b.execScript("var " + c[0]);
-				for (var e; c.length && (e = c.shift());)c.length || void 0 === d ? b = b[e] ? b[e] : b[e] = {} : b[e] = d
-			};
+			var f = this,
+				g = function(a, d) {
+					var c = a.split("."),
+						b = window || f;
+					c[0] in b || !b.execScript || b.execScript("var " + c[0]);
+					for (var e; c.length && (e = c.shift());) c.length || void 0 === d ? b = b[e] ? b[e] : b[e] = {} : b[e] = d
+				};
 			var h = function(a) {
-				var d = chrome.runtime.connect("nmmhkkegccagdldgiimedpiccmgmieda", {}), c = !1;
+				var d = chrome.runtime.connect("nmmhkkegccagdldgiimedpiccmgmieda", {}),
+					c = !1;
 				d.onMessage.addListener(function(b) {
 					c = !0;
 					"response" in b && !("errorType" in b.response) ? a.success && a.success(b) : a.failure && a.failure(b)
 				});
-				d.onDisconnect.addListener(function() {!c && a.failure && a.failure({request: {}, response: {errorType: "INTERNAL_SERVER_ERROR"}})});
+				d.onDisconnect.addListener(function() {!c && a.failure && a.failure({ request: {}, response: { errorType: "INTERNAL_SERVER_ERROR" } }) });
 				d.postMessage(a)
 			};
 			g("google.payments.inapp.buy", function(a) {
@@ -122,15 +125,15 @@ if (!DarknessSettingsLoader) {
 		//--------------------------------------------------------------------------------------------------------------------------------------------
 
 		var repEvent = function(category, action, label) {
-			chrome.runtime.sendMessage({action: 'repEvent', cat: category, act: action, lab: label});
+			chrome.runtime.sendMessage({ action: 'repEvent', cat: category, act: action, lab: label });
 		};
 
 		var repEventByUser = function(category, action) {
-			chrome.runtime.sendMessage({action: 'repEventByUser', cat: category, act: action});
+			chrome.runtime.sendMessage({ action: 'repEventByUser', cat: category, act: action });
 		};
 
 		var repToFunnel = function(step) {
-			chrome.runtime.sendMessage({action: 'repToFunnel', step: step});
+			chrome.runtime.sendMessage({ action: 'repToFunnel', step: step });
 		};
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------
@@ -166,7 +169,7 @@ if (!DarknessSettingsLoader) {
 
 			// Add custom data to each PayPal transaction
 			var transactionId = Math.random().toString(36).slice(2, 12);
-			var custom = {dialog_reason: dialogReason, theme: THEME, site: SITE, machine_id: MACHINE_ID, transaction_id: transactionId};
+			var custom = { dialog_reason: dialogReason, theme: THEME, site: SITE, machine_id: MACHINE_ID, transaction_id: transactionId };
 			$('#drk_paypal_custom').attr('value', JSON.stringify(custom));
 
 			// Hide upgrade dialog, and show "waiting" dialog instead
@@ -177,7 +180,7 @@ if (!DarknessSettingsLoader) {
 			$("#drk_paypal_form").trigger("submit");
 
 			// Then start polling for PayPal's answer
-			chrome.runtime.sendMessage({action: "startPollingPayPal", transactionId: transactionId}, function(response) {
+			chrome.runtime.sendMessage({ action: "startPollingPayPal", transactionId: transactionId }, function(response) {
 				log('background response', response);
 				// Check if response from the IPN server is 'Completed'
 				if (response.status == 'Completed') {
@@ -192,7 +195,7 @@ if (!DarknessSettingsLoader) {
 		// Payment Step 2: Load Google Payment's payment dialog for the specified product SKU
 		var loadGooglePaymentDialog = function(sku) {
 			google.payments.inapp.buy({
-				'parameters': {'env': 'prod'}, // prod / sandbox / test
+				'parameters': { 'env': 'prod' }, // prod / sandbox / test
 				'sku': sku,
 				'success': function(buyResponse) {
 					onPaySuccess(buyResponse);
@@ -217,7 +220,7 @@ if (!DarknessSettingsLoader) {
 			log((success ? 'payment succeeded' : 'payment failed'), buyResponse);
 
 			// Let the server know we have a response, and reload the user
-			chrome.runtime.sendMessage({action: "payResponse", success: success}, function(response) {
+			chrome.runtime.sendMessage({ action: "payResponse", success: success }, function(response) {
 				log('background response from payResponse', response);
 				ASSETS.TYPE = response.type;
 				if (success) {
@@ -228,19 +231,17 @@ if (!DarknessSettingsLoader) {
 						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-all');
 						repEventByUser('funnel-' + dialogReason, 'paid-' + dialogAmount);
 						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-' + dialogAmount);
-						var daysSinceInstall = getDaysSinceInstall(STATS.installDate, true);						
+						var daysSinceInstall = getDaysSinceInstall(STATS.installDate, true);
 						repEvent('funnel-' + PAYMENT_PLATFORM, 'paid-days-since-install', daysSinceInstall);
 						notifyUserOnPaymentFinished(true);
-					}
-					else { // Regular user (unexplained?!)
+					} else { // Regular user (unexplained?!)
 						var reason = 'UNEXPLAINED';
 						repToFunnel('pay-fail-' + reason);
 						repEventByUser('funnel-' + dialogReason, 'pay-fail-' + reason);
 						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-fail-' + reason);
 						notifyUserOnPaymentFinished(false);
 					}
-				}
-				else {
+				} else {
 					// Payment platform declared failure
 					if (ASSETS.TYPE == 'p') { // Pro user (unexplained?!)
 						repToFunnel('paid');
@@ -249,8 +250,7 @@ if (!DarknessSettingsLoader) {
 						repEventByUser('funnel-' + dialogReason, 'paid-' + dialogAmount + '-UNEXPLAINED');
 						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-' + dialogAmount + '-UNEXPLAINED');
 						notifyUserOnPaymentFinished(true);
-					}
-					else { // Regular user (as expected)
+					} else { // Regular user (as expected)
 						repToFunnel('pay-fail-' + failureReason);
 						repEventByUser('funnel-' + dialogReason, 'pay-fail-' + failureReason);
 						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-fail-' + failureReason);
@@ -265,10 +265,10 @@ if (!DarknessSettingsLoader) {
 			var promo = $('.drk_promo_input').val().trim();
 			$('.drk_promo_submit').val('Checking...');
 			// Ask the background to check with the code with the server
-			chrome.runtime.sendMessage({action: "checkPromoCode", promo: promo}, function(res) {
+			chrome.runtime.sendMessage({ action: "checkPromoCode", promo: promo }, function(res) {
 				if (res.success) {
 					// Ask server to reload the user
-					chrome.runtime.sendMessage({action: "payResponse", success: true}, function(response) {
+					chrome.runtime.sendMessage({ action: "payResponse", success: true }, function(response) {
 						log('background response from payResponse', response);
 						ASSETS.TYPE = response.type;
 						notifyUserOnPaymentFinished(true);
@@ -374,14 +374,13 @@ if (!DarknessSettingsLoader) {
 			log('previewMode', previewMode);
 
 			// Set theme on background script and receive the CSS
-			chrome.runtime.sendMessage({action: "loadTheme", theme: theme}, function(response) {
+			chrome.runtime.sendMessage({ action: "loadTheme", theme: theme }, function(response) {
 				// Replace the CSS
 				darknessLoader.replaceThemeCss(response.cssContent);
 				if (previewMode) {
 					// Preview mode on, don't save theme
 					startPreviewMode();
-				}
-				else {
+				} else {
 					// Preview mode off, save theme
 					if (previouslyInPreviewMode) {
 						revertAfterPreview(false);
@@ -550,7 +549,7 @@ if (!DarknessSettingsLoader) {
 				$('.drk_settings .drk_time').removeClass('drk_active');
 				$('.drk_settings .drk_time[data-time="' + time + '"]').addClass('drk_active');
 				// Change the settings
-				chrome.runtime.sendMessage({action: "setEnableAt", time: time}, function(newSettings) {
+				chrome.runtime.sendMessage({ action: "setEnableAt", time: time }, function(newSettings) {
 					settings = newSettings;
 					darknessLoader.onSettingsEnableAtChanged(settings.global.enableAt);
 				});
@@ -567,8 +566,7 @@ if (!DarknessSettingsLoader) {
 					// Change it immediately
 					darknessLoader.onSettingsPanelVisiblityChanged(false);
 					deleteSettingsPanel();
-				}
-				else {
+				} else {
 					// We're doing to disable the theme now (it's not night time)
 					// Show a warning to to the user for 3 seconds
 					$('.drk_night_time_warning').addClass('visible').delay(2500).fadeOut(500);
@@ -587,7 +585,7 @@ if (!DarknessSettingsLoader) {
 					if (e.altKey && e.shiftKey) {
 						// Holding Alt+Shift while clicking on X will reset all user settings, and reload the settings panel
 						log("Dev shortcut: resetting settings + reloading panel");
-						chrome.runtime.sendMessage({action: "resetAllSettings", theme: THEME}, function(err, res) {
+						chrome.runtime.sendMessage({ action: "resetAllSettings", theme: THEME }, function(err, res) {
 							if (err)
 								log("Error deleting all settings: ", err);
 							else
@@ -595,8 +593,7 @@ if (!DarknessSettingsLoader) {
 							// This will replace both ASSETS and SETTINGS before loading the settings panel
 							reloadSettingsPanel();
 						});
-					}
-					else if (e.metaKey || e.ctrlKey) {
+					} else if (e.metaKey || e.ctrlKey) {
 						// Holding Ctrl/Cmd while clicking on X will reload the settings panel (good for developing the settings panel)
 						log("Dev shortcut: reloading panel");
 						reloadSettingsPanel();
@@ -795,8 +792,7 @@ if (!DarknessSettingsLoader) {
 					// PayPal failed? Let user pay with Google Payments
 					PAYMENT_PLATFORM = 'google';
 					buyClick('darkness_pro_life_4.99');
-				}
-				else {
+				} else {
 					// PayPal AND Google failed? Send a support email
 					var to = 'Darkness Support <darkness@improvver.com>';
 					var paymentMethodName = PAYMENT_PLATFORM == 'paypal' ? 'PayPal' : 'Google Payment';
@@ -850,7 +846,7 @@ if (!DarknessSettingsLoader) {
 			// Use this theme for all websites (currently not in use) -> Yes
 			$('.drk_use_this_for_all_confirmation .drk_yes').unbind('click').click(function(e) {
 				// Ask the background script to set this theme for all websites
-				chrome.runtime.sendMessage({action: "setThemeForAllWebsites", theme: THEME}, function(newSettings) {
+				chrome.runtime.sendMessage({ action: "setThemeForAllWebsites", theme: THEME }, function(newSettings) {
 					// Reload settings from background script
 					settings = newSettings;
 				});
@@ -891,7 +887,7 @@ if (!DarknessSettingsLoader) {
 			$('.drk_settings').removeClass('visible');
 
 			// Load latest user settings
-			chrome.runtime.sendMessage({action: "getSettings"}, function(response) {
+			chrome.runtime.sendMessage({ action: "getSettings" }, function(response) {
 				settings = response.newSettings;
 				var newTheme = response.newTheme;
 				log("Got new settings from background: ", settings, newTheme);
@@ -901,7 +897,7 @@ if (!DarknessSettingsLoader) {
 				loadTheme(newTheme);
 
 				// Load latest assets (HTML, JS, CSS)
-				chrome.runtime.sendMessage({action: "getAssetsForSettingsPanel"}, function(assets) {
+				chrome.runtime.sendMessage({ action: "getAssetsForSettingsPanel" }, function(assets) {
 					log("Got assets:", assets);
 
 					// Replace ASSETS and load HTML and CSS from ASSETS
