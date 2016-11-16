@@ -37,17 +37,14 @@ body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
 body[data-drk-site="google"],
 body[data-drk-site="gmail"] {
 	// If logged in: the avatar on the right side of toolbar
-	.gb_cb.gb_R {
+	.gb_cb.gb_R,
+	.gb_ic.gb_R,
+	.gb_db.gb_R {
 		margin-right: 25px !important;
 	}
 
 	// If logged out: the "Sign in" button in the right side of the toolbar
 	.gb_Ha {
-		margin-right: 25px !important;
-	}
-
-	// If logged in: the right part of top-toolbar
-	.gb_ic.gb_R {
 		margin-right: 25px !important;
 	}
 
