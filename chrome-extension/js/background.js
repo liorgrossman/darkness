@@ -36,9 +36,8 @@ var getSiteKeyForUrl = function(url) {
 				var returnedSiteKey = siteKey;
 				if (themeSupport == 'ask-developers') {
 					// In production mode ask developers to join us, in development mode there's no need
-					returnedSiteKey = (ENVIRONMENT == 'development') ? null: siteKey;
-				}
-				else if (themeSupport == 'in-development') {
+					returnedSiteKey = (ENVIRONMENT == 'development') ? null : siteKey;
+				} else if (themeSupport == 'in-development') {
 					// In production mode don't skin this website, in development mode do
 					returnedSiteKey = (ENVIRONMENT == 'development') ? siteKey : null;
 				}
@@ -64,8 +63,7 @@ var whichThemeForSite = function(debug, siteKey, canPreview) {
 			// Has user settings
 			if (debug) log('Which theme for ' + siteKey + '?' + ' User settings says ' + themeFromSettings);
 			themeKey = themeFromSettings;
-		}
-		else {
+		} else {
 			// No user settings, use default
 			var defaultTheme = CONFIG.sites[siteKey].p ? 'none' : settings.global.get('defaultTheme');
 			if (debug) log('Which theme for ' + siteKey + '?' + ' No user settings. Default says ' + defaultTheme);
@@ -83,8 +81,7 @@ var whichThemeForSite = function(debug, siteKey, canPreview) {
 				// Pro website? Set back to none
 				if (debug) log('Preview mode off. Resetting theme back to none');
 				themeKey = 'none';
-			}
-			else if (CONFIG.themes[themeKey].p) {
+			} else if (CONFIG.themes[themeKey].p) {
 				themeKey = CONFIG.defaultTheme;
 				// Pro theme? Set back to default theme
 				if (debug) log('Preview mode off. Resetting theme back to default: ' + themeKey);
@@ -168,7 +165,7 @@ var reloadUserUntilPro = function(success, callback) {
 			// Payment returned success
 			if (userType == 'p') {
 				// Pro user - return success
-				callback({type: userType});
+				callback({ type: userType });
 			} else {
 				if (reloadUserInterval < 20000) {
 					// Non-pro user - keep trying
@@ -180,14 +177,14 @@ var reloadUserUntilPro = function(success, callback) {
 				} else {
 					// Non-pro user - timeout
 					log('I give up');
-					callback({type: userType});
+					callback({ type: userType });
 				}
 			}
 		} else {
 			// Payment returned failure
 			// Return failure immediately
 			log('Reload called once due to failure');
-			callback({type: userType});
+			callback({ type: userType });
 		}
 	});
 };
@@ -196,13 +193,13 @@ var reloadUserUntilPro = function(success, callback) {
 // Check the specified promo code with Darkness' servers
 var checkPromoCode = function(code, sendResponse) {
 	code = parseInt(code) || 0;
-	var params = {'machineId': stats.get('userId'), 'code': code, 'token': Math.floor(Math.random() * 99999) + 1};
+	var params = { 'machineId': stats.get('userId'), 'code': code, 'token': Math.floor(Math.random() * 99999) + 1 };
 	log('Checking promo for ' + JSON.stringify(params));
 	var onServerResponse = function(err, res) {
 		if (err) {
 			log('Promo server error: ' + code);
 			repEvent('user-action', 'prmo-server-error', code);
-			sendResponse({success: false});
+			sendResponse({ success: false });
 		}
 		if (res) {
 			console.log(res);
@@ -218,19 +215,18 @@ var checkPromoCode = function(code, sendResponse) {
 					repEvent('user-action', 'prmo-correct', code);
 					settings.global.set('override', 'prmo' + code);
 					reloadUser(function() {
-						sendResponse({success: true});
+						sendResponse({ success: true });
 					})
-				}
-				else {
+				} else {
 					log('Promo server invalid: ' + code);
 					repEvent('user-action', 'prmo-server-invalid', code);
-					sendResponse({success: false});
+					sendResponse({ success: false });
 				}
 
 			} else {
 				log('Promo incorrect: ' + code);
 				repEvent('user-action', 'prmo-incorrect', code);
-				sendResponse({success: false});
+				sendResponse({ success: false });
 			}
 		}
 	};
@@ -245,7 +241,7 @@ var checkPromoCode = function(code, sendResponse) {
 // Callback returns: errorString, paidBoolean
 var checkGooglePayments = function(callback) {
 	google.payments.inapp.getPurchases({
-		'parameters': {'env': 'prod'},
+		'parameters': { 'env': 'prod' },
 		'success': function(res) {
 			log('getPurchases success:', res);
 			if (!res.response || typeof(res.response.details) != 'object') return callback('getPurchases no response', false);
@@ -351,7 +347,7 @@ var queryPayPalStatusPeriodically = function() {
 var queryPayPalStatusNow = function() {
 	var now = (new Date()).getTime();
 	stats.set('paypalCheckedTime', now);
-	var params = {'machineId': stats.get('userId'), 'transactionId': paypalTransacationId};
+	var params = { 'machineId': stats.get('userId'), 'transactionId': paypalTransacationId };
 	log('Checking IPN status for ' + JSON.stringify(params));
 	var onServerResponse = function(err, res) {
 		if (err) {
@@ -432,7 +428,7 @@ chrome.runtime.onMessage.addListener(
 			case 'loadTheme':
 				// Load the specified theme, then return the CSS that the client needs to inject to show that theme
 				replaceThemeAndGetCss(sender.tab, request.theme, function(cssContent) {
-					sendResponse({'cssContent': cssContent});
+					sendResponse({ 'cssContent': cssContent });
 				});
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
@@ -461,10 +457,10 @@ chrome.runtime.onMessage.addListener(
 				// Get the most recent settings from the background script to the client side
 				var siteKey = getSiteKeyForUrl(sender.tab.url);
 				var themeKey = siteKey ? whichThemeForSite(true, siteKey, false) : 'none';
-				sendResponse({newSettings: settings.getAllSettingsClone(), newTheme: themeKey});
+				sendResponse({ newSettings: settings.getAllSettingsClone(), newTheme: themeKey });
 				return false;
 
-			// ===== ANALYTICS =====
+				// ===== ANALYTICS =====
 
 			case 'repToFunnel':
 				// Report a step in the funnel of Darkness Pro
@@ -481,7 +477,7 @@ chrome.runtime.onMessage.addListener(
 				repEvent(request.cat, request.act, request.lab);
 				return false;
 
-			// ===== MISC =====
+				// ===== MISC =====
 
 			case 'openSettings':
 				// Load the settings dialog, by injecting settings.js into the active tab
@@ -545,7 +541,7 @@ var getAssetsForSettingsPanel = function(callback) {
 
 		// Return all the assets
 		// This should an exact match of "var ASSETS" in settings.js (client side)
-		var args = {'CSS': cssContent, 'CSSOFF': noThemeCssContent, 'HTML': htmlContent, 'TYPE': stats.get('type')};
+		var args = { 'CSS': cssContent, 'CSSOFF': noThemeCssContent, 'HTML': htmlContent, 'TYPE': stats.get('type') };
 		callback(args);
 	});
 };
@@ -643,20 +639,19 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	var noThemeCssContent = readFileFromCache("style-css/page.css");
 
 	// All the arguments required by page.js
-	var code = getCodeForInjection("js/page.js",
-		{
-			'HTML': htmlContent,
-			'CSS': cssContent,
-			'CSSOFF': noThemeCssContent,
+	var code = getCodeForInjection("js/page.js", {
+		'HTML': htmlContent,
+		'CSS': cssContent,
+		'CSSOFF': noThemeCssContent,
 
-			'SETTINGS': JSON.stringify(settings.getAllSettingsClone()),
-			'TYPE': stats.get('type'),
-			'SITE': siteKey,
-			'SITE_SUPPORT': CONFIG.sites[siteKey].support,
+		'SETTINGS': JSON.stringify(settings.getAllSettingsClone()),
+		'TYPE': stats.get('type'),
+		'SITE': siteKey,
+		'SITE_SUPPORT': CONFIG.sites[siteKey].support,
 
-			'ENVIRONMENT': ENVIRONMENT,
-			'MACHINEID': stats.get('userId')
-		});
+		'ENVIRONMENT': ENVIRONMENT,
+		'MACHINEID': stats.get('userId')
+	});
 
 	// Inject it to page
 	chrome.tabs.executeScript(tab.id, {
@@ -741,7 +736,8 @@ var retroactivelyInitExistingTabs = function() {
 var loadAllAssetsToCache = function(debug, callback) {
 
 	// Get keys of all supported sites & themes
-	var themeKeys = [], siteKeys = [];
+	var themeKeys = [],
+		siteKeys = [];
 	for (var i in CONFIG.themes) themeKeys.push(CONFIG.themes[i].key);
 	for (i in CONFIG.sites) siteKeys.push(CONFIG.sites[i].key);
 	if (debug) {
@@ -774,10 +770,10 @@ var initializeConfiguration = function() {
 	// Chrome runtime configuration setup
 	chrome.runtime.setUninstallURL("http://improvver.com/darkness/extension/uninstalled");
 
-	chrome.runtime.onInstalled.addListener(function (details) {
+	chrome.runtime.onInstalled.addListener(function(details) {
 		log("Chrome invoked onInstalled: ", details);
 		if (details && details.reason == "install") {
-			chrome.tabs.create({url: "http://improvver.com/darkness/extension/thank-you"}, function(tab) {
+			chrome.tabs.create({ url: "http://improvver.com/darkness/extension/thank-you" }, function(tab) {
 				log("Thank you page opened");
 			});
 		}

@@ -19,7 +19,7 @@ if (!DarknessLoader) { // Don't load twice
 		var ID_FOR_INJECTED_STYLE = 'drk_style_theme';
 
 		// Various assets provided by the background scripts
-		var ASSETS = {'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@'};
+		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
 		var SITE = '@@SITE@@';
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
 		var settings = JSON.parse('@@SETTINGS@@'); // User settings
@@ -65,7 +65,7 @@ if (!DarknessLoader) { // Don't load twice
 					}
 				}
 			});
-			documentObserver.observe(document, {childList: true, subtree: true});
+			documentObserver.observe(document, { childList: true, subtree: true });
 
 			// Method 3: readyState is already complete
 			if (document.readyState == 'complete') {
@@ -192,8 +192,7 @@ if (!DarknessLoader) { // Don't load twice
 			if (currentlyEnabled && !shouldBeEnabled) {
 				// Turn it off
 				switchStyleOff();
-			}
-			else if (!currentlyEnabled && shouldBeEnabled) {
+			} else if (!currentlyEnabled && shouldBeEnabled) {
 				// Turn it on
 				switchStyleOn();
 			}
@@ -275,7 +274,7 @@ if (!DarknessLoader) { // Don't load twice
 					document.getElementById(ID_FOR_SETTINGS_ICON).removeEventListener('click', onSettingsIconClick);
 					// Trigger opening of the settings panel
 					darknessLoader.onSettingsPanelVisiblityChanged(true);
-					chrome.runtime.sendMessage({action: "openSettings"}, function(response) {});
+					chrome.runtime.sendMessage({ action: "openSettings" }, function(response) {});
 				};
 				// Upon click on icon, open the settings panel
 				document.getElementById(ID_FOR_SETTINGS_ICON).addEventListener('click', onSettingsIconClick)

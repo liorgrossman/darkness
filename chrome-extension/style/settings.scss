@@ -669,7 +669,7 @@ div.drk_dialog.drk_get_pro {
 
 	}
 
-	.drk_promo_link, .drk_promo_caption {
+	.drk_promo_link, .drk_promo_caption, .drk_hide_link {
 		font-size: 11px !important;
 		font-weight: 400 !important;
 		position: absolute !important;
@@ -690,6 +690,19 @@ div.drk_dialog.drk_get_pro {
 		&.visible {
 			display: block !important;
 		}
+	}
+
+	.drk_hide_link {
+		bottom: 1px !important;
+		left: 0px !important;
+		cursor: pointer !important;
+		transition: color .2s ease-in-out !important;
+		padding: 4px 10px !important;
+		&:hover {
+			color: #559885 !important;
+			transition: color .0s ease-in-out !important;
+		}
+		display: block !important;
 	}
 
 	.drk_promo_form {

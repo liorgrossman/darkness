@@ -1,15 +1,14 @@
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Set the environment
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 var ENVIRONMENT = 'development';
 
 // Important - don't touch this:
-if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production';	// Chrome Web Store version
+if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production'; // Chrome Web Store version
 
 // Local testing versions
-if (chrome.runtime.id == 'koobfbhnpdijhobcdllfkmlgngbpgjep') ENVIRONMENT = 'development';	// Local version (development)
-if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging';		// Local testing version before deploying (staging)
+if (chrome.runtime.id == 'koobfbhnpdijhobcdllfkmlgngbpgjep') ENVIRONMENT = 'development'; // Local version (development)
+if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging'; // Local testing version before deploying (staging)
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global vars
@@ -70,8 +69,7 @@ var sendHttpPostRequest = function(url, params, callback) {
 				// JSON.parse does not evaluate the attacker's scripts.
 				try {
 					var resp = JSON.parse(xhr.responseText);
-				}
-				catch (e) {
+				} catch (e) {
 					callback("Error parsing response as JSON: ", e, "\nResponse is: " + xhr.responseText);
 				}
 				if (resp) callback(null, resp);
@@ -85,7 +83,8 @@ var sendHttpPostRequest = function(url, params, callback) {
 
 // Hashing function: from string to 32bit signed integer
 var hashStringToSignedInt32 = function(str) {
-	var hash = 0, i, chr, len;
+	var hash = 0,
+		i, chr, len;
 	if (str.length === 0) return hash;
 	for (i = 0, len = str.length; i < len; i++) {
 		chr = str.charCodeAt(i);
