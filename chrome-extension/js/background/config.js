@@ -151,8 +151,8 @@ var CONFIG = {
 			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
 		},
-		'askUbuntu': {
-			key: 'askUbuntu', // Must be the same as the object key
+		'askubuntu': {
+			key: 'askubuntu', // Must be the same as the object key
 			name: 'askUbuntu',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^askubuntu\.com$', 'i')

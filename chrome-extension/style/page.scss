@@ -127,7 +127,9 @@ body[data-drk-site="github"] {
 	}
 }
 
-body[data-drk-site="stackoverflow"] {
+body[data-drk-site="stackoverflow"],
+body[data-drk-site="serverfault"],
+body[data-drk-site="askubuntu"] {
 	div.drk_settings_icon {
 		position: fixed !important;
 		top: 2px !important;
