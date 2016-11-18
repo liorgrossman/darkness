@@ -1,0 +1,86 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
+This is a template for easily creating skins for new websites!
+The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
+
+Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
+Those CSS are built by combining 3 files:
+1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
+2. A skin common to all websites (themes/websites/all-websites.scss)
+3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
+
+Building a new skin is simple:
+1. Edit /js/background/config.js and add your new website to CONFIG.sites
+2. Copy WEBSITE-TEMPLATE.scss file to [SITE].scss, where [SITE] is the key you specified in config.js (e.g. github.scss, twitter.scss)
+3. Inside /themes, you'll need to create 3 SCSS files, one for each color theme supported by your skin:
+   Copy google-iceberg.scss, google-base16tommorow.scss, google-material.scss
+     to [SITE]-iceberg.scss, [SITE]-base16tommorow.scss, [SITE]-material.scss
+4. On each of those SCSS files, change the last line to include your skin SCSS instead of google.scss:
+   @import "websites/google.scss" to @import "websites/[SKIN].scss"
+
+Guidelines:
+* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
+* Please add short comments before each CSS selector to indicate what UI element it refers to
+* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
+
+You should know: all the website's colors are inverted before skinning even starts!
+* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
+* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
+* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
+* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.toolbarClass {
+	background: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Homepage
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Other Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// 3rd Party Extensions Support
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
