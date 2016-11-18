@@ -46,7 +46,9 @@ input {
 	background-color: $theme-textbox-background;
 	border-color: $theme-border;
 }
-
+body {
+	background-color: $theme-background !important;
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -55,6 +57,28 @@ input {
 .toolbarClass {
 	background: $theme-background !important;
 }
+//toolbar of chat
+._5742,
+._36ic //messenger settings
+{
+	border-color: $theme-border !important;
+	background:  $theme-background-toolbar !important;
+}
+._2xhi , //converstations on side
+{
+	._5l-3 {
+background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+
+	}
+}
+._3rh8, //underneath messenger settings 
+._4_j5
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
 
 // turn videos back to normal
 ._1c_u {
@@ -66,6 +90,11 @@ input {
 	background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
 	color: invert-back-color(#ffffff) !important;
 }
+
+
+._29_7 > div{
+	background-color: $theme-background-box !important;
+} 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
