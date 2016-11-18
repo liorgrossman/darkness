@@ -56,6 +56,17 @@ input {
 	background: $theme-background !important;
 }
 
+// turn videos back to normal
+._1c_u {
+	@include invert-back();
+}
+// Bubble: yours
+// _-5k _3i_m _nd_
+._3i_m > div, ._3i_m > div a {
+	background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
+	color: invert-back-color(#ffffff) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
