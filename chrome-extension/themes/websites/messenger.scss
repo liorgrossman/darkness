@@ -64,16 +64,34 @@ body {
 	border-color: $theme-border !important;
 	background:  $theme-background-toolbar !important;
 }
+
+//drop down for settings
+._54nf
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+	li:hover {
+		background: $theme-highlighted !important;
+		span{
+			background: $theme-highlighted !important;
+		}
+	}
+}
+._4eby //settings popup
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
 ._2xhi , //converstations on side
 {
-	._5l-3 {
-background-color: $theme-background-box !important;
-	border-color: $theme-border !important;
-
+	._5l-3 
+	{
+		background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
 	}
 }
 ._3rh8, //underneath messenger settings 
-._4_j5
+._4_j5 // right side bar for conversational settings
 {
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
