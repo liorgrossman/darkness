@@ -46,7 +46,46 @@ input {
 	background-color: $theme-textbox-background;
 	border-color: $theme-border;
 }
+//logo
+#hlogo{
+	@include invert-back();
+}
+//top bar
+.topbar,
+#footer{
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border !important;
+}
 
+#herobox
+{
+	background{
+		@include invert-back();
+	}
+}
+//main content
+#content
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+	//answer question at bottom
+	#wmd-button-bar
+	{
+		background-color: $theme-background-toolbar !important;
+		border-color: $theme-border !important;	
+		//tool bar
+		li > span
+		{
+			@include invert-back();
+		}
+		//text area
+		textarea
+		{
+			background-color: $theme-background-box !important;
+			border-color: $theme-border !important;
+		}
+	}
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
