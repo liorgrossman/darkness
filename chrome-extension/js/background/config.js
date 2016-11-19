@@ -148,8 +148,13 @@ var CONFIG = {
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
-			support: 'ask-developers', // Show a call to action for developers to join our community (don't show it in dev mode)
-			hostRegExp: new RegExp('^stackoverflow\.com$', 'i')
+			support: 'full',
+			hostRegExp: new RegExp('^stackoverflow\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{name: 'Nicolas Botello', link: 'http://nicolasbotello.com/'}
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		},
 		'askUbuntu': {
 			key: 'askUbuntu', // Must be the same as the object key
