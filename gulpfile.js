@@ -127,7 +127,8 @@ gulp.task('install', function() {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 var argv = require('yargs').argv;
 var replace = require('gulp-replace');
-
+//example:
+// gulp newSkin --skin=stackoverflow
 gulp.task('newSkin', function() {
 	var skin = argv.skin;
 	gutil.log("start new skin: " +skin);
