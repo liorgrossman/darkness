@@ -69,7 +69,8 @@ input {
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
 	//answer question at bottom
-	#wmd-button-bar
+	#wmd-button-bar,
+	.wmd-button-bar
 	{
 		background-color: $theme-background-toolbar !important;
 		border-color: $theme-border !important;	
@@ -96,9 +97,26 @@ input {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// Sidebar
+// Question switch context
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
+.topbar-dialog{
+	.modal-content
+	{
+		background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
+		li {
+			background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
+		}
+	} 
+	.header{
+		background-color: $theme-background-toolbar !important;
+		border-color: $theme-border !important;	
+	}
+	.site-icon{
+		@include invert-back();
+	}
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
 //----------------------------------------------------------------------------------------------------------------------------------------------------
