@@ -152,6 +152,22 @@ a[tooltip="Chat"] {
 	-webkit-filter: invert(100%) !important;
 }
 
+// Popup close button
+.close{
+	background-color: transparent !important;
+	color: #333 !important;
+}
+
+// Share input
+.tags > input.input {
+	background-color: transparent !important;
+}
+
+// user colors in history tool
+.user > .color-square {
+	-webkit-filter: invert(100%) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Project-list site
 //----------------------------------------------------------------------------------------------------------------------------------------------------
