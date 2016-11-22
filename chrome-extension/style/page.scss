@@ -35,6 +35,7 @@ body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
 // Position the moon icon in the toolbar, adjust the toolbar (based on website)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 body[data-drk-site="google"],
+body[data-drk-site="docs"],
 body[data-drk-site="gmail"] {
 	// If logged in: the avatar on the right side of toolbar
 	.gb_cb.gb_R,
@@ -84,6 +85,11 @@ body[data-drk-site="dropbox"] {
 }
 
 
+body[data-drk-site="docs"] {
+	.docs-titlebar-buttons {
+		padding-right: 52px !important;
+	}
+}
 body[data-drk-site="inbox"] {
 	// Menu in the right side of toolbar
 	.k2 {

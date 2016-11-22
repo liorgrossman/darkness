@@ -78,6 +78,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'docs': {
+			key: 'docs', // Must be the same as the object key
+			name: 'Google Docs',
+			support: 'in-development',
+			hostRegExp: new RegExp('^docs\.google\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'youtube': {
 			key: 'youtube', // Must be the same as the object key
 			name: 'YouTube',
