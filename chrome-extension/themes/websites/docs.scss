@@ -39,13 +39,20 @@ iframe {
 // Overview
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Docs
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
 // Toolbar
+.gb_dd.gb_id.gb_kd {
+	background-color: $theme-background-toolbar !important;
+}
+
+// Profile picture
+.gb_7a, .gb_8a {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
 #docs-chrome {
 	background-color: $theme-background-toolbar !important;
 }
@@ -59,6 +66,10 @@ iframe {
 #docs-star {
 	-webkit-filter: invert(1) !important;
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Docs
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // The acsual document
 .kix-page {
@@ -75,26 +86,72 @@ iframe {
 .docs-explore-sidebar-title {
 	background-color: $theme-highlighted !important;
 }
+.docs-explore-icon path{
+	fill: invert-back-color($theme-url) !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sheets
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Editing a cell
+div.input-box[aria-hidden="false"] {
+	-webkit-filter: invert(1) !important;
+}
 
+// Color picking in conditional formatting
+.goog-palette-cell > div {
+	-webkit-filter: invert(1) !important;
+}
+.waffle-conditionalformat-format-button-inner {
+	-webkit-filter: invert(1) !important;
+}
+.waffle-sidebar-title {
+	background-color: $theme-highlighted !important;
+}
+.goog-color-menu-button-indicator {
+	-webkit-filter: invert(1) !important;
+}
+.goog-color-menu-button-indicator > div {
+	-webkit-filter: invert(1) !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Slides
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+// White font and cursor in notes
+#speakernotes .sketchy-text-content-text text {
+	fill: #fff !important;
+}
+#speakernotes rect.docs-text-ui-cursor-blink{
+	fill: #fff !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Forms
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+// Colored bar in the top
+.freebirdHeaderMastWithOverlay {
+	-webkit-filter: invert(1) !important;
+}
+// The form
+.freebirdFormeditorViewEditingsurfaceCentered {
+	-webkit-filter: invert(1) !important;
+}
+// Color-picker
+.freebirdFormeditorViewColorpaletteContainer {
+	-webkit-filter: invert(1) !important;
+}
+iframe img {
+	-webkit-filter: invert(1) !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Drawings
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+#canvas-container {
+	-webkit-filter: invert(1) !important;
+}
