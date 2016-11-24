@@ -153,6 +153,14 @@ input {
 		@include invert-back();
 	}
 }
+//comminty bulletin
+.community-bulletin{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+	.favicon {
+		@include invert-back();
+	}
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
 //----------------------------------------------------------------------------------------------------------------------------------------------------
