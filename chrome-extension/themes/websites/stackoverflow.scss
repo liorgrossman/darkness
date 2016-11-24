@@ -94,11 +94,19 @@ input {
 // Toolbar background
 .toolbarClass {
 	background: $theme-background !important;
-}
+}	
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// Question switch context
+// Question 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+//tabs
+#tabs {
+	a {
+		background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
+	}
+}
+//switch context
 .topbar-dialog{
 	.modal-content
 	{
