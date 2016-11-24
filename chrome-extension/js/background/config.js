@@ -53,6 +53,17 @@ var CONFIG = {
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			]
 		},
+		'messenger': {
+			key: 'messenger', // Must be the same as the object key
+			name: 'Messenger',
+			support: 'full',
+			hostRegExp: new RegExp('^(www|web|beta)\.messenger\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'gmail': {
 			key: 'gmail', // Must be the same as the object key
 			name: 'Gmail',
