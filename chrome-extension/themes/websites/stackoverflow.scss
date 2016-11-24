@@ -159,12 +159,19 @@ input {
 	}
 }
 //comminty bulletin
-.community-bulletin{
+.community-bulletin
+{
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
 	.favicon {
 		@include invert-back();
 	}
+}
+//related groups
+.related > div
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
 }
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
