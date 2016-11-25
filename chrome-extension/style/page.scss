@@ -54,6 +54,14 @@ body[data-drk-site="gmail"] {
 	}
 }
 
+body[data-drk-site="cloudflare"] {
+	nav.header-navigation {
+		margin-right: 3rem !important;
+	}
+	div.drk_settings_icon {
+		top: 17px !important;
+	}
+}
 body[data-drk-site="google"] {
 	div.drk_settings_icon {
 		position: absolute !important;
