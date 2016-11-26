@@ -13,8 +13,12 @@ Please help us **improve existing skins and create new ones**. Pull requests are
 #### Fix or improve an existing skin
 Edit `/themes/websites/[WEBSITE].scss` (e.g. `/themes/websites/youtube.scss`)
 
-#### Add skin for an new website (e.g. GitHub, Twitter)
-Open `/themes/websites/WEBSITE-TEMPLATE.scss` in your code editor and follow the instructions.
+#### Add skin for an new website (e.g. BBC, GoogleDrive)
+1. Run `gulp skin:create --key=[KEY]` where [KEY] is lowercase, alphanumeric string (e.g. bbc, googledrive)
+1. Edit 'js/background/config.js' and add your website to CONFIG.sites, use the aforementioned [KEY] as a key
+1. Browse to chrome://extensions/ and reload the Darkness extension
+1. Edit your new skin .scss: chrome-extension/themes/websites/[KEY].scss
+1. Don't forget to run `npm start` to **watch SCSS files** and compile them in real-time.
 
 #### Fix or improve a color theme
 Edit `/themes/themes/[THEME].scss` (e.g. `/themes/themes/material.scss`)
