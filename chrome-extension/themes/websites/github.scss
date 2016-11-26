@@ -323,6 +323,11 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
     color: $theme-text !important;
 }
 
+// Images inside readmy
+.readme > .markdown-body img {
+	background-color: Transparent !important;
+}
+
 //edit link shows up as a button change background
 .muted-link {
     background: $theme-background !important;
