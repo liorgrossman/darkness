@@ -172,7 +172,7 @@ gulp.task('skin:create', function() {
 		.pipe(gulp.dest(chromeDevelopmentDir + '/themes/'));
 
 	console.log("Skin '" + skinKey + "' successfully created!");
-	console.log("1. Please edit 'js/background/config.js' and add '" + skinKey + "' to CONFIG.sites, use '" + skinKey + "' as key");
+	console.log("1. Please edit '/js/background/config.js' and add '" + skinKey + "' to CONFIG.sites, use '" + skinKey + "' as key");
 	console.log("2. Browse to chrome://extensions/ and reload the Darkness extension");
 	console.log("3. Edit your new skin: " + chromeDevelopmentDir + '/themes/websites/' + skinKey + '.scss');
 	console.log("4. To continuously compile the .scss during development, run: gulp sass:watch");
