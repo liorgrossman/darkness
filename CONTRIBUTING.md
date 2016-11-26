@@ -15,6 +15,7 @@ Edit `/themes/websites/[KEY].scss` (e.g. `/themes/websites/youtube.scss`)
 Just run `gulp skin:create --key=[KEY]` where [KEY] is lowercase and alphanumeric (e.g. bbc, googledrive).
 
 Then follow the instructions:
+
 1. Edit `/js/background/config.js` and add your website to CONFIG.sites, use [KEY] as a key
 1. Browse to `chrome://extensions/` and reload the Darkness extension
 1. Edit your new skin: `/themes/websites/[KEY].scss`
