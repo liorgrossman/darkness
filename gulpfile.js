@@ -121,3 +121,30 @@ gulp.task('install', function() {
 		"$ gulp sass:cleanup    delete all compiled .css and .css.map files\n" +
 		"$ gulp sass:watch      watch all .scss files and compile when changed (recommended)\n");
 });
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// New Skin
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+var argv = require('yargs').argv;
+var replace = require('gulp-replace');
+//example:
+// gulp newSkin --skin=stackoverflow
+gulp.task('newSkin', function() {
+	var skin = argv.skin;
+	gutil.log("start new skin: " +skin);
+	gutil.log("copy .scss file");
+	gulp.src(chromeDevelopmentDir + '/themes/websites/WEBSITE-TEMPLATE.scss')
+		.pipe(rename({basename: skin}))
+		.pipe(gulp.dest(chromeDevelopmentDir + '/themes/websites/'));
+	gutil.log("copy and modify [SITE]-iceberg.scss .scss file for skin");
+	gulp.src(chromeDevelopmentDir + '/themes/google-*.scss')
+		.pipe(rename(function(path)
+		{
+			var res = path.basename.replace("google", skin);
+			path.basename = res;
+			return path;
+		}))
+		.pipe(replace('google', skin))
+		.pipe(gulp.dest(chromeDevelopmentDir + '/themes/'));
+	
+});

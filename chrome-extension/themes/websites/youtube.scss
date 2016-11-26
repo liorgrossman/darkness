@@ -223,6 +223,16 @@ a.yt-uix-button-epic-nav-item:hover {
 	color: $theme-tooltip-text !important;
 }
 
+// Language-picker
+#yt-picker-language-footer button {
+	background-color: transparent !important;
+}
+
+// Progress bar on thumbnails
+.resume-playback-progress-bar {
+	background-color: $theme-button-background !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Video page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -452,8 +462,14 @@ a.yt-uix-button-epic-nav-item:hover {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Invert profile header image
-.hd-banner-image {
-	@include invert-back()
+#c4-header-bg-container {
+	-webkit-filter: invert(100%) !important;
+}
+#header-links {
+	-webkit-filter: invert(100%) !important;
+}
+.channel-header-profile-image-container {
+	-webkit-filter: invert(100%) !important;
 }
 
 // Invert suscribe button
