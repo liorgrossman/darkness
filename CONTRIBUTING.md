@@ -6,17 +6,15 @@ Please help us **improve existing skins and create new ones**. Pull requests are
 ## How to start developing?
 1. If you haven't yet, first [install Darkness locally](./README.MD)
 1. Run `npm start` to **watch SCSS files** and compile them in real-time.
-1. Write your awesome code - see below
-
 
 ## How do I...
 #### Fix or improve an existing skin
-Edit `/themes/websites/[WEBSITE].scss` (e.g. `/themes/websites/youtube.scss`)
+Edit `/themes/websites/[KEY].scss` (e.g. `/themes/websites/youtube.scss`)
 
-#### Add skin for an new website (e.g. BBC, Google Drive)
+#### Add a skin for an new website (e.g. BBC, Google Drive)
 1. Run `gulp skin:create --key=[KEY]` where [KEY] is lowercase, alphanumeric string (e.g. bbc, googledrive)
 1. Edit `/js/background/config.js` and add your website to CONFIG.sites, use [KEY] as a key
-1. Browse to [chrome://extensions/](chrome://extensions/) and reload the Darkness extension
+1. Browse to <a href="chrome://extensions/" target="_blank">chrome://extensions/</a> and reload the Darkness extension
 1. Edit your new skin: `/themes/websites/[KEY].scss`
 1. Don't forget to run `npm start` to **watch SCSS files** and compile them in real-time.
 
