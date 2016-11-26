@@ -11,6 +11,7 @@ Please help us **improve existing skins and create new ones**. Pull requests are
 #### Fix or improve an existing skin
 Edit `/themes/websites/[KEY].scss` (e.g. `/themes/websites/youtube.scss`)
 
+
 #### Add a skin for an new website (e.g. BBC, Google Drive)
 Just run `gulp skin:create --key=[KEY]` where [KEY] is lowercase and alphanumeric (e.g. bbc, googledrive).
 
@@ -21,8 +22,10 @@ Then follow the instructions:
 1. Edit your new skin: `/themes/websites/[KEY].scss`
 1. Don't forget to run `npm start` to **watch SCSS files** and compile them in real-time.
 
+
 #### Fix or improve a color theme
 Edit `/themes/themes/[THEME].scss` (e.g. `/themes/themes/material.scss`)
+
 
 #### Create a new color theme (in addition to Monokai, Tomorrow, etc.)
 Open `/themes/themes/THEME-TEMPLATE.scss` in your code editor and follow the instructions.
