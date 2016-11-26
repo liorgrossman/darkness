@@ -1,173 +1,226 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // StackOverflow skin for Darkness
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 // All buttons
 button {
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
 }
 
 // All inputs
 input {
-	color: $theme-textbox-text;
-	background-color: $theme-textbox-background;
-	border-color: $theme-border;
-}
-//logo
-#hlogo{
-	@include invert-back();
-}
-//top bar
-.topbar,
-#footer{
-	background-color: $theme-background-toolbar !important;
-	border-color: $theme-border !important;
+    color: $theme-textbox-text;
+    background-color: $theme-textbox-background;
+    border-color: $theme-border;
 }
 
-#herobox
+//logo
+#hlogo {
+    @include invert-back();
+    background-color: $theme-url !important;
+}
+
+//top bar
+.topbar,
+#footer {
+    background-color: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+}
+
+#herobox 
 {
-	background{
-		@include invert-back();
+    background
+    {
+        @include invert-back();
+    }
+}
+//questions announcment
+.ds-announcement
+{
+	.img {
+		@include invert-back();	
+	}
+	@include invert-back();	
+	.btn{
+		background-color: $theme-button-background !important;
+	    color: $theme-button-text !important;
+	    border-color: $theme-border !important;
 	}
 }
 //main content
-#content
-{
-	background-color: $theme-background-box !important;
-	border-color: $theme-border !important;
-	//answer question at bottom
-	#wmd-button-bar,
-	.wmd-button-bar
-	{
-		background-color: $theme-background-toolbar !important;
-		border-color: $theme-border !important;	
-		//text area
-		textarea
-		{
-			background-color: $theme-background-box !important;
-			border-color: $theme-border !important;
-		}
-	}
+#content {
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
+    //answer question at bottom
+    #wmd-button-bar,
+    .wmd-button-bar {
+        background-color: $theme-background-toolbar !important;
+        border-color: $theme-border !important;
+        //text area
+        textarea {
+            background-color: $theme-background-box !important;
+            border-color: $theme-border !important;
+        }
+    }
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+.network-items > a {
+    @include invert-back();
+}
 
 // Toolbar background
 .toolbarClass {
-	background: $theme-background !important;
-}	
+    background: $theme-background !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Login 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-#formContainer, #switch{
-	background-color: $theme-background-box !important;
-	border-color: $theme-border !important;
+#formContainer,
+#switch {
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Tour
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 //blocks of questions
 .qa-block,
 .content-block,
-.user-info-rep
-{
-	background-color: $theme-background-box !important;
-	border-color: $theme-border !important;
+.user-info-rep {
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
 }
+
 //buttons
-#huge-buttons, 
-.button{
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
+#huge-buttons,
+.button {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Question 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+//icon number for questions
+.answer-votes,
+.answered
+{
+	background-color: $theme-textbox-background !important;
+	border-color: $theme-border !important;
+	color: $theme-text !important;
+	strong {
+		color: $theme-text-faint !important;
+	}
+}
+//icon with answered accepted
+.answered-accepted
+{
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+
+}
+
 //join stack over flow button
 .content {
-	a {
-		background-color: $theme-button-background !important;
-		color: $theme-button-text !important;
-		border-color: $theme-border !important;	
-	}
+    a {
+        background-color: $theme-button-background !important;
+        color: $theme-button-text !important;
+        border-color: $theme-border !important;
+    }
 }
+
 //tabs
 #tabs {
-	a {
-		background-color: $theme-background-box !important;
-		border-color: $theme-border !important;
+    a {
+        background-color: $theme-background-box !important;
+        border-color: $theme-border !important;
+    }
+}
+//comminty bulletin
+.community-bulletin {
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
+    .favicon {
+        @include invert-back();
+    }
+}
+
+
+.related > div //related groups
+{
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
+}
+//job offers
+.everyonelovesstackoverflow 
+{
+	.clc-cp-sb-open-jobs,
+	.clc-cp-sb-name,
+	.clc-cp-job-title 
+	{
+		color: $theme-link !important;	
+	}
+	//button for job offers
+	.clc-cp-sb-button
+	{
+	    background-color: $theme-button-background !important;
+	    color: $theme-button-text !important;
+	    border-color: $theme-border !important;
 	}
 }
+#hot-network-questions
+{
+    .favicon {
+        @include invert-back();
+    }
+}
 //switch context
-
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Question switch context
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-.topbar-dialog{
-	.modal-content
-	{
-		background-color: $theme-background-box !important;
-		border-color: $theme-border !important;
-		li {
-			background-color: $theme-background-box !important;
-		border-color: $theme-border !important;
-		}
-	} 
-	.header{
-		background-color: $theme-background-toolbar !important;
-		border-color: $theme-border !important;	
-	}
-	.site-icon{
-		@include invert-back();
-	}
+.topbar-dialog {
+    .modal-content {
+        background-color: $theme-background-box !important;
+        border-color: $theme-border !important;
+        li {
+            background-color: $theme-background-box !important;
+            border-color: $theme-border !important;
+        }
+    }
+    .header {
+        background-color: $theme-background-toolbar !important;
+        border-color: $theme-border !important;
+    }
+    .site-icon {
+        @include invert-back();
+    }
 }
-//comminty bulletin
-.community-bulletin
-{
-	background-color: $theme-background-box !important;
-	border-color: $theme-border !important;
-	.favicon {
-		@include invert-back();
-	}
-}
-//related groups
-.related > div
-{
-	background-color: $theme-background-box !important;
-	border-color: $theme-border !important;
-}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Search
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Homepage
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Profile Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Other Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // 3rd Party Extensions Support
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
