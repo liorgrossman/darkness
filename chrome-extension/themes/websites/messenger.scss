@@ -1,33 +1,7 @@
-/*----------------------------------------------------------------------------------------------------------------------------------------------------
-This is a template for easily creating skins for new websites!
-The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Facebook Messenger search skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 
-Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
-Those CSS are built by combining 3 files:
-1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
-2. A skin common to all websites (themes/websites/all-websites.scss)
-3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
-
-Building a new skin is simple:
-1. Edit /js/background/config.js and add your new website to CONFIG.sites
-2. Copy WEBSITE-TEMPLATE.scss file to [SITE].scss, where [SITE] is the key you specified in config.js (e.g. github.scss, twitter.scss)
-3. Inside /themes, you'll need to create 3 SCSS files, one for each color theme supported by your skin:
-   Copy google-iceberg.scss, google-base16tommorow.scss, google-material.scss
-     to [SITE]-iceberg.scss, [SITE]-base16tommorow.scss, [SITE]-material.scss
-4. On each of those SCSS files, change the last line to include your skin SCSS instead of google.scss:
-   @import "websites/google.scss" to @import "websites/[SKIN].scss"
-
-Guidelines:
-* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
-* Please add short comments before each CSS selector to indicate what UI element it refers to
-* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
-
-You should know: all the website's colors are inverted before skinning even starts!
-* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
-* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
-* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
-* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
-----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
@@ -57,6 +31,16 @@ body {
 .toolbarClass {
 	background: $theme-background !important;
 }
+
+// Left buttons (Settings and new message) - invert back from orange to blue
+a[role="button"] {
+	@include invert-back();
+}
+a[role="button"] svg {
+	-webkit-filter: none !important;
+}
+
+
 //toolbar of chat
 ._5742,
 ._36ic //messenger settings
@@ -95,24 +79,49 @@ body {
 {
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
+
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// List of chats
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Small messenger (lightening) icon next to chats
+._2poo {
+	@include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Chat windows
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 // turn videos back to normal
 ._1c_u {
 	@include invert-back();
 }
+
+
+
+// Bubble: theirs
+._hh7 {
+	background-color: $theme-background-box !important;
+	color: invert-back-color(#f0f0f0) !important;
+	a {
+		color: invert-back-color(#f0f0f0) !important;
+	}
+} 
+
+
 // Bubble: yours
 // _-5k _3i_m _nd_
-._3i_m > div, ._3i_m > div a {
-	background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
-	color: invert-back-color(#ffffff) !important;
+._nd_ ._hh7 {
+	background-color: invert-back-color(desaturate(darken(#4080ff, 20%), 20%)) !important;
+	color: invert-back-color(#f0f0f0) !important;
+	a {
+		color: invert-back-color(#f0f0f0) !important;
+	}
 }
-
-
-._29_7 > div{
-	background-color: $theme-background-box !important;
-} 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // New message
@@ -123,25 +132,6 @@ body {
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
 }
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Footer
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Search
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Homepage
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Profile Page
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Other Page
-//----------------------------------------------------------------------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // 3rd Party Extensions Support

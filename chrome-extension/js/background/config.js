@@ -62,6 +62,7 @@ var CONFIG = {
 				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
 			]
 		},
 		'gmail': {
