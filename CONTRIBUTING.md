@@ -12,7 +12,9 @@ Please help us **improve existing skins and create new ones**. Pull requests are
 Edit `/themes/websites/[KEY].scss` (e.g. `/themes/websites/youtube.scss`)
 
 #### Add a skin for an new website (e.g. BBC, Google Drive)
-1. Run `gulp skin:create --key=[KEY]` where [KEY] is lowercase, alphanumeric string (e.g. bbc, googledrive)
+Just run `gulp skin:create --key=[KEY]` where [KEY] is lowercase and alphanumeric (e.g. bbc, googledrive).
+
+Then follow the instructions:
 1. Edit `/js/background/config.js` and add your website to CONFIG.sites, use [KEY] as a key
 1. Browse to `chrome://extensions/` and reload the Darkness extension
 1. Edit your new skin: `/themes/websites/[KEY].scss`
