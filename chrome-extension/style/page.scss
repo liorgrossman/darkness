@@ -125,6 +125,18 @@ body[data-drk-site="facebook"] {
 	}
 }
 
+body[data-drk-site="messenger"] {
+	._fl2 {
+		right: 42px !important
+	}
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 9px !important;
+		right: 9px !important;
+	}
+}
+
+
 body[data-drk-site="github"] {
 	div.drk_settings_icon {
 		position: fixed !important;
@@ -133,7 +145,9 @@ body[data-drk-site="github"] {
 	}
 }
 
-body[data-drk-site="stackoverflow"] {
+body[data-drk-site="stackoverflow"],
+body[data-drk-site="serverfault"],
+body[data-drk-site="askubuntu"] {
 	div.drk_settings_icon {
 		position: fixed !important;
 		top: 2px !important;

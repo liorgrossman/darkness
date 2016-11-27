@@ -8,15 +8,6 @@ Those CSS are built by combining 3 files:
 2. A skin common to all websites (themes/websites/all-websites.scss)
 3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
 
-Building a new skin is simple:
-1. Edit /js/background/config.js and add your new website to CONFIG.sites
-2. Copy WEBSITE-TEMPLATE.scss file to [SITE].scss, where [SITE] is the key you specified in config.js (e.g. github.scss, twitter.scss)
-3. Inside /themes, you'll need to create 3 SCSS files, one for each color theme supported by your skin:
-   Copy google-iceberg.scss, google-base16tommorow.scss, google-material.scss
-     to [SITE]-iceberg.scss, [SITE]-base16tommorow.scss, [SITE]-material.scss
-4. On each of those SCSS files, change the last line to include your skin SCSS instead of google.scss:
-   @import "websites/google.scss" to @import "websites/[SKIN].scss"
-
 Guidelines:
 * Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
 * Please add short comments before each CSS selector to indicate what UI element it refers to

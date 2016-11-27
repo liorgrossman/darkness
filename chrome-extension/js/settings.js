@@ -760,9 +760,10 @@ if (!DarknessSettingsLoader) {
 
 			// Hide link
 			$('.drk_hide_link').unbind('click').click(function(e) {
+				repEventByUser('user-action', 'hide-upgrade-dialog-click');
 				setTimeout(function() {
 					revertAfterPreview(false);
-				}, 200);
+				}, 500);
 			});
 
 			// Upgrade dialog -> Promo submitted by hitting Enter

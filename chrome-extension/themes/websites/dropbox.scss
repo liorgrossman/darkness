@@ -40,6 +40,12 @@ button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.b
 	}
 
 }
+#select-btn[disabled]:hover {
+		-webkit-filter: invert(0) !important;
+}
+#select-btn, #select-btn:hover {
+		-webkit-filter: invert(1) !important;
+}
 .dbmodal-button.button-primary, .button-primary.choose-folder-submit, .notes-sidebar-page-cta, .dbox-app-promo-cta button, .install-button-component, .gifting-cta__button, a.freshbutton-blue, .login-button {
 	-webkit-filter: invert(100) !important;
 }
@@ -100,6 +106,11 @@ button.button-as-link .link-img {
 // Toolbar background
 #page-header, #trash-header, #trash-sub-header, #trash-table-header, #events-sub-header, #events-header {
 	background-color: $theme-background !important;
+}
+
+.quota_graph_bar {
+	background-color: $theme-highlighted !important;
+	border-color: $theme-highlighted-darker !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -292,4 +303,13 @@ button.header-nav-link {
 }
 .bar-graph-legend.bar-graph-free {
 	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Dropbox chooser
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Links in sidebar
+.pane-btns {
+	color: $theme-link !important;
 }

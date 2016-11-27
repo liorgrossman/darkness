@@ -1,6 +1,6 @@
 # Darkness: Dark Themes for Popular Websites
 
-<img alt="Darkness Logo" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-icon-48px.png" align="left" style="padding: 0 10px 5px 0">
+<img alt="Darkness Logo" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-icon-48px.png" align="left" style="padding: 0 10px 5px 0; background-color: transparent">
 
 **Darkness** is a Chrome extension that provides **dark themes** for popular websites such as Google, Facebook, Gmail and YouTube.
 
