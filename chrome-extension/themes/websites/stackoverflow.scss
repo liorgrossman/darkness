@@ -194,6 +194,10 @@ input {
         @include invert-back();
     }
 }
+//arrow accept question
+.vote-accepted-on{
+	@include invert-back();
+}
 //switch context
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Question switch context
