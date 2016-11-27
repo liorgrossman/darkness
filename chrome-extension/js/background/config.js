@@ -160,7 +160,7 @@ var CONFIG = {
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
-			support: 'in-development',
+			support: 'full',
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{name: 'Nicolas Botello', link: 'http://nicolasbotello.com/'}

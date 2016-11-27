@@ -70,7 +70,7 @@ $theme-button-background: invert-back-color($blue);
 $theme-secondary-button-background: invert-back-color(darken($orange, 10%));
 
 // Faint buttons (close to background color)
-$theme-faint-button-background: $theme-background-toolbar;
+$theme-faint-button-background: invert-back-color($blue);
 
 // Textboxes, Textareas, Inputs
 $theme-textbox-text: invert-back-color($almost-white);
