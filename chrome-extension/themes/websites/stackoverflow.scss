@@ -230,8 +230,33 @@ input {
 	    border-color: $theme-border !important;
 	}
 }
-.job-link{
-	background-color: $theme-background-box !important;
+//highited jobs
+._highlighted,
+{
+	background-color: $theme-background-toolbar !important;
+	.salary{
+		color: $theme-text !important;
+	}
+	//title for job links
+	.-title > h2 > a.job-link{
+		background-color: $theme-background-toolbar !important;
+	}
+}
+//each job row
+.-item + .-job
+{
+	.salary{
+		color: $theme-text !important;
+	}
+	//title for job links
+	.-title > h2 > a.job-link{
+		background-color: $theme-background-box !important;
+	}	
+}
+.fl.external{
+	.-icon{
+		@include invert-back();
+	}
 }
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Tags
