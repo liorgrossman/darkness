@@ -639,6 +639,10 @@ div[aria-label*="sticker"] {
 	@include invert-back();
 }
 
+// Your emojis
+._1nc6 ._d97 img, ._1nc6 ._d97 a img {
+	-webkit-filter:invert(0) !important;
+}
 // Bubble: yours
 ._1nc6 ._d97, ._1nc6 ._d97 a {
 	//background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
