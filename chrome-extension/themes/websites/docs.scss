@@ -35,6 +35,11 @@ iframe {
 	-webkit-filter: invert(0) !important;
 }
 
+// Icons
+.docs-icon, .docs-homescreen-icon {
+	-webkit-filter: invert(1) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Overview
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,8 +50,22 @@ iframe {
 }
 
 // Profile picture
-.gb_7a, .gb_8a {
+.gb_7a, .gb_8a:before {
 	@include invert-back()
+}
+
+// Google logo in left menu
+.gb_sd.gb_Vb {
+	-webkit-filter: invert(1) !important;
+}
+// Undo color-change in menu on some icons
+.docs-homescreen-nav-settings-24, .docs-homescreen-nav-help-24 {
+	-webkit-filter: invert(1) !important;
+}
+
+// Action buttons when viewing list of documents
+.docs-homescreen-floater-header-buttons {
+	-webkit-filter: invert(1) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -65,6 +84,13 @@ iframe {
 }
 #docs-star {
 	-webkit-filter: invert(1) !important;
+}
+.gb_hd.gb_md.gb_od {
+	background-color: $theme-background-toolbar !important;
+}
+// Reverts the different google-logos
+.gb_3, .gb_M {
+	-webkit-filter: invert(100%) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
