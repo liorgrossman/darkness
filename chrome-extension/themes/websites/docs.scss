@@ -1,0 +1,183 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button, .gb_qb .gb_wb {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.goog-buttonset-default {
+	-webkit-filter: invert(1) !important;
+}
+.jfk-button-action {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+	-webkit-filter: invert(1) !important;
+}
+.jfk-button-action.jfk-button-disabled {
+	-webkit-filter: invert(0) !important;
+}
+.gbip {
+	-webkit-filter: invert(1) !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+iframe {
+	-webkit-filter: invert(0) !important;
+}
+
+// Icons
+.docs-icon, .docs-homescreen-icon {
+	-webkit-filter: invert(1) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Overview
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar
+.gb_dd.gb_id.gb_kd {
+	background-color: $theme-background-toolbar !important;
+}
+
+// Profile picture
+.gb_7a, .gb_8a:before {
+	@include invert-back()
+}
+
+// Google logo in left menu
+.gb_sd.gb_Vb {
+	-webkit-filter: invert(1) !important;
+}
+// Undo color-change in menu on some icons
+.docs-homescreen-nav-settings-24, .docs-homescreen-nav-help-24 {
+	-webkit-filter: invert(1) !important;
+}
+
+// Action buttons when viewing list of documents
+.docs-homescreen-floater-header-buttons {
+	-webkit-filter: invert(1) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#docs-chrome {
+	background-color: $theme-background-toolbar !important;
+}
+#docs-branding-container {
+	-webkit-filter: invert(1) !important;
+}
+.docs-title-widget > input {
+	background-color: transparent !important;
+	border: 1px solid $theme-background-toolbar;
+}
+#docs-star {
+	-webkit-filter: invert(1) !important;
+}
+.gb_hd.gb_md.gb_od {
+	background-color: $theme-background-toolbar !important;
+}
+// Reverts the different google-logos
+.gb_3, .gb_M {
+	-webkit-filter: invert(100%) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Docs
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// The acsual document
+.kix-page {
+	-webkit-filter: invert(1) !important;
+	box-shadow: 0 0 5px #aaa;
+}
+
+// Colorpicker
+.jfk-palette-colorswatch {
+	-webkit-filter: invert(1) !important;
+}
+
+// Explorer
+.docs-explore-sidebar-title {
+	background-color: $theme-highlighted !important;
+}
+.docs-explore-icon path{
+	fill: invert-back-color($theme-url) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sheets
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Editing a cell
+div.input-box[aria-hidden="false"] {
+	-webkit-filter: invert(1) !important;
+}
+
+// Color picking in conditional formatting
+.goog-palette-cell > div {
+	-webkit-filter: invert(1) !important;
+}
+.waffle-conditionalformat-format-button-inner {
+	-webkit-filter: invert(1) !important;
+}
+.waffle-sidebar-title {
+	background-color: $theme-highlighted !important;
+}
+.goog-color-menu-button-indicator {
+	-webkit-filter: invert(1) !important;
+}
+.goog-color-menu-button-indicator > div {
+	-webkit-filter: invert(1) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Slides
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// White font and cursor in notes
+#speakernotes .sketchy-text-content-text text {
+	fill: #fff !important;
+}
+#speakernotes rect.docs-text-ui-cursor-blink{
+	fill: #fff !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Forms
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Colored bar in the top
+.freebirdHeaderMastWithOverlay {
+	-webkit-filter: invert(1) !important;
+}
+// The form
+.freebirdFormeditorViewEditingsurfaceCentered {
+	-webkit-filter: invert(1) !important;
+}
+// Color-picker
+.freebirdFormeditorViewColorpaletteContainer {
+	-webkit-filter: invert(1) !important;
+}
+iframe img {
+	-webkit-filter: invert(1) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Drawings
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#canvas-container {
+	-webkit-filter: invert(1) !important;
+}
