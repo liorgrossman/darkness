@@ -641,8 +641,9 @@ div[aria-label*="sticker"] {
 
 // Bubble: yours
 ._1nc6 ._d97, ._1nc6 ._d97 a {
-	background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
-	color: invert-back-color(#ffffff) !important;
+	//background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
+	//color: invert-back-color(#ffffff) !important;
+	-webkit-filter:invert(1) !important;
 }
 
 // Bubble: the other side
