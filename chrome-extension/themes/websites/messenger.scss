@@ -104,7 +104,7 @@ a[role="button"] svg {
 
 
 // Bubble: theirs
-._hh7 {
+._29_7 >._hh7 {
 	background-color: $theme-background-box !important;
 	color: invert-back-color(#f0f0f0) !important;
 	a {
@@ -116,11 +116,10 @@ a[role="button"] svg {
 // Bubble: yours
 // _-5k _3i_m _nd_
 ._nd_ ._hh7 {
-	background-color: invert-back-color(desaturate(darken(#4080ff, 20%), 20%)) !important;
-	color: invert-back-color(#f0f0f0) !important;
-	a {
-		color: invert-back-color(#f0f0f0) !important;
-	}
+	-webkit-filter: invert(1) !important;
+}
+._nd_ ._hh7 img{
+	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
