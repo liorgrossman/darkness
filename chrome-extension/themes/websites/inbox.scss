@@ -137,6 +137,9 @@ img.FK {
 .b5 img {
 	-webkit-filter: invert(0) !important;
 }
+center.gmail_msg > table img {
+    -webkit-filter: invert(1) !important;
+}
 center.gmail_msg > table {
     -webkit-filter: invert(1) !important;
 }
