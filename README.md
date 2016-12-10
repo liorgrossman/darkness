@@ -29,7 +29,9 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 	* If you use SSH: `git clone git@github.com:YOUR_GITHUB_USER/darkness.git`
  	* or using HTTPS: `git clone https://github.com/YOUR_GITHUB_USER/darkness.git`
 1. Go to the root Darkness directory: `cd darkness`
-1. Set up a the original repo as a remote: `git remote add upstream git@github.com:liorgrossman/darkness.git`
+1. Set up a the original repo as a remote:
+	* If you use SSH: `git remote add upstream git@github.com:liorgrossman/darkness.git`
+ 	* or using HTTPS: `git remote add upstream https://github.com/liorgrossman/darkness.git`
 1. Get the code: `git fetch upstream`
 1. [Install Node.js](https://nodejs.org/), unless you already have it installed
 1. Install packages and compile all SCSS files to CSS: `npm install` (run it from the same directory as package.json)
