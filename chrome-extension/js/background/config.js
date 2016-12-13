@@ -104,7 +104,7 @@ var CONFIG = {
 		'cloudflare': {
 			key: 'cloudflare', // Must be the same as the object key
 			name: 'Cloudflare',
-			support: 'in-development',
+			support: 'full',
 			hostRegExp: new RegExp('^www\.cloudflare\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
