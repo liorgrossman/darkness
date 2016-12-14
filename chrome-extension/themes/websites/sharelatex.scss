@@ -81,15 +81,15 @@ body > .ace_editor > .ace_scroller > .ace_content > .ace_layer > .ace_active-lin
 	color: $theme-button-text !important;
 }
 // The logs
-.pdf-logs .alert-danger {
+.pdf-logs .alert-danger, .pdf-errors .alert-danger {
 	color: invert-back-color(#ae2d05) !important;
 	border-color: invert-back-color(#ae2d05) !important;
 }
-.pdf-logs .alert-warning {
+.pdf-logs .alert-warning, .pdf-errors .alert-warning {
 	color: invert-back-color(#c67605) !important;
 	border-color: invert-back-color(#c67605) !important;
 }
-.pdf-logs .alert-info {
+.pdf-logs .alert-info, .pdf-errors .alert-info {
 	color: invert-back-color(#263873) !important;
 	border-color: invert-back-color(#263873) !important;
 }
@@ -171,6 +171,25 @@ a[tooltip="Chat"] {
 // Dropdown when selecting compile options
 .pdf > .toolbar > .btn-group {
 	z-index: 1000 !important;
+}
+
+// Goto location in pdf or code, buttons
+.fa-long-arrow-right, .fa-long-arrow-left {
+	color: $theme-button-text !important;
+}
+
+// The uploader
+.qq-uploader .btn {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// Dropdown menu when compiling
+.pdf ul.dropdown-menu {
+	-webkit-filter: invert(1) !important;
+	background-color: $theme-textbox-background !important;
+	color: $theme-textbox-text !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
