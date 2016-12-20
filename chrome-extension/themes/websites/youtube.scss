@@ -197,6 +197,11 @@ a.yt-uix-button-epic-nav-item:hover {
 	border-color: transparent !important;
 }
 
+// Transparent background on searchbar
+#masthead-search-term {
+	background: transparent !important;
+}
+
 .yt-uix-tooltip-tip-content {
 	color: $theme-text !important;
 	background: $theme-background !important;
