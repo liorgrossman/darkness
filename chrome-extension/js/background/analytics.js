@@ -72,10 +72,40 @@ var _reportEvent = function(category, action, label, value) {
 	}
 };
 
+// Given the specified install date, how many days have passed since the user installed Darkness?
+var getDaysSinceInstall = function(installDate, humanReadable) {
+	if (typeof(installDate) != 'number') return "Unknown";
+	var timeNow = (new Date()).getTime();
+	var passedMs = timeNow - installDate;
+	if (passedMs < 0) return "Negative";
+	var passedDays = passedMs / 1000 / 3600 / 24;
+	if (humanReadable) {
+		if (passedDays < 3) {
+			return Math.round(passedDays * 10) / 10;
+		} else {
+			return Math.round(passedDays);
+		}
+	} else {
+		var passedDaysRounded = Math.round(passedDays * 100) / 100;
+		return passedDaysRounded;
+	}
+};
+
 // Private helper method: report that a user is active anonymously (used to count daily active users)
 var _reportUserActiveInternal = function() {
 	repEventByUser('users', 'daily-actives');
 	if (stats.get('type') == 'p') repEventByUser('users', 'daily-actives-pro');
+
+	var installDate = stats.get('installDate') || 0;
+	var daysSinceInstall = getDaysSinceInstall(installDate, true);
+	
+	if (stats.get('type') == 'p') {
+		repEvent('users', 'user-days-pro', daysSinceInstall);
+	}
+	else {
+		repEvent('users', 'user-days-free', daysSinceInstall);
+	}
+
 	stats.set('lastDailyReport', (new Date()).getTime());
 };
 
