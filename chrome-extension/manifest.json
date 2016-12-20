@@ -1,11 +1,12 @@
 {
 	"manifest_version": 2,
 
-	"name": "Darkness: Beautiful Dark Themes",
-	"short_name": "Darkness",
-	"version": "0.4.9",
-	"description": "Beautiful dark themes / skins for Facebook, Google, YouTube, Reddit, Twitter and more",
+	"name": "__MSG_appFullName__",
+	"short_name": "__MSG_appShortName__",
+	"description": "__MSG_appDescription__",
+	"version": "0.4.10",
 	"author": "Improvver",
+	"default_locale": "en",
 
 	"icons": {
 		"16": "images/darkness-icon-16px.png",
@@ -56,7 +57,7 @@
 			"19": "images/darkness-icon-19px.png",
 			"38": "images/darkness-icon-38px.png"
 		},
-		"default_title": "Darkness",
+		"default_title": "__MSG_appShortName__",
 		"default_popup": "html/options.html"
 	},
 	"options_page": "html/options.html",
