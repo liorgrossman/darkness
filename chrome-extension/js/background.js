@@ -244,7 +244,7 @@ var getSku = function() {
 	if (passedDays > 30) {
 		return "2";
 	}
-	if (ENVIRONMENT == "staging") return "2";
+	// if (ENVIRONMENT == "staging") return "2";
 	return DEFAULT_SKU;
 }
 
