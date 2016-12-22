@@ -19,7 +19,7 @@ if (!DarknessSettingsLoader) {
 		var THEME = '@@THEME@@';
 		var SITE = '@@SITE@@';
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
-		var SKU = 2;
+		var SKU = '@@SKU@@';
 
 		// Assets (CSS/JS/HTML) that need to be replaced every time the settings panel is opened - for development purposes
 		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
@@ -165,7 +165,8 @@ if (!DarknessSettingsLoader) {
 
 			// What's the PayPal button ID?
 			var paypalButtonId = '';
-			if (sku == 'darkness_pro_life_4.99') paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
+			if (SKU == "1") paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
+			if (SKU == "2") paypalButtonId = prod ? 'U59U55TCYJMHQ' : 'LMQAHVFLAGHK2';
 			$('#drk_paypal_button_id').attr('value', paypalButtonId);
 
 			// Add custom data to each PayPal transaction
@@ -487,6 +488,7 @@ if (!DarknessSettingsLoader) {
 			else if (ENVIRONMENT == 'staging') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '') + '*';
 			else if (ENVIRONMENT == 'production') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '');
 			$('.drk_app_name').html(title);
+			$('.drk_settings .sku_replace').addClass('sku-'+SKU).removeClass('sku_replace');
 			if (ASSETS.TYPE == 'p') {
 				// Adjustments for Pro mode
 				$('.drk_upgrade_btn').remove();
@@ -798,7 +800,7 @@ if (!DarknessSettingsLoader) {
 				repEventByUser('funnel-' + dialogReason, 'pay-cancel-' + cancelReason);
 				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
-				if (PAYMENT_PLATFORM == 'paypal') {
+				if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
 					// PayPal failed? Let user pay with Google Payments
 					PAYMENT_PLATFORM = 'google';
 					buyClick();
