@@ -20,6 +20,8 @@ if (!DarknessSettingsLoader) {
 		var SITE = '@@SITE@@';
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
 		var SKU = '@@SKU@@';
+		var FUNNEL_PREFIX = 'funnel-';
+		if (SKU != '1') FUNNEL_PREFIX = 'funnel-' +  SKU + '-';
 
 		// Assets (CSS/JS/HTML) that need to be replaced every time the settings panel is opened - for development purposes
 		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
@@ -134,7 +136,7 @@ if (!DarknessSettingsLoader) {
 		};
 
 		var repToFunnel = function(step) {
-			chrome.runtime.sendMessage({ action: 'repToFunnel', step: step });
+			chrome.runtime.sendMessage({ action: 'repToFunnel', step: step, sku: SKU });
 		};
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------
@@ -229,33 +231,33 @@ if (!DarknessSettingsLoader) {
 					// Payment platform declared success
 					if (ASSETS.TYPE == 'p') { // Pro user (as expected)
 						repToFunnel('paid');
-						repEventByUser('funnel-' + dialogReason, 'paid-all');
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-all');
-						repEventByUser('funnel-' + dialogReason, 'paid-' + dialogAmount);
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-' + dialogAmount);
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-all');
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-all');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-' + dialogAmount);
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-' + dialogAmount);
 						var daysSinceInstall = getDaysSinceInstall(STATS.installDate, true);
 						repEvent('funnel-' + PAYMENT_PLATFORM, 'paid-days-since-install', daysSinceInstall);
 						notifyUserOnPaymentFinished(true);
 					} else { // Regular user (unexplained?!)
 						var reason = 'UNEXPLAINED';
 						repToFunnel('pay-fail-' + reason);
-						repEventByUser('funnel-' + dialogReason, 'pay-fail-' + reason);
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-fail-' + reason);
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-fail-' + reason);
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-fail-' + reason);
 						notifyUserOnPaymentFinished(false);
 					}
 				} else {
 					// Payment platform declared failure
 					if (ASSETS.TYPE == 'p') { // Pro user (unexplained?!)
 						repToFunnel('paid');
-						repEventByUser('funnel-' + dialogReason, 'paid-all-UNEXPLAINED');
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-all-UNEXPLAINED');
-						repEventByUser('funnel-' + dialogReason, 'paid-' + dialogAmount + '-UNEXPLAINED');
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-' + dialogAmount + '-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-all-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-all-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-' + dialogAmount + '-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-' + dialogAmount + '-UNEXPLAINED');
 						notifyUserOnPaymentFinished(true);
 					} else { // Regular user (as expected)
 						repToFunnel('pay-fail-' + failureReason);
-						repEventByUser('funnel-' + dialogReason, 'pay-fail-' + failureReason);
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-fail-' + failureReason);
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-fail-' + failureReason);
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-fail-' + failureReason);
 						notifyUserOnPaymentFinished(false);
 					}
 				}
@@ -405,8 +407,8 @@ if (!DarknessSettingsLoader) {
 
 			// Analytics
 			repToFunnel('buy-dialog-shown');
-			repEventByUser('funnel-' + dialogReason, 'buy-dialog-shown');
-			repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-dialog-shown');
+			repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
+			repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
 		};
 
 		// Revert from preview mode to no preview
@@ -671,8 +673,8 @@ if (!DarknessSettingsLoader) {
 				repEventByUser('user-action', 'upgrade-btn-click');
 				dialogReason = 'upgrade-btn';
 				repToFunnel('buy-dialog-shown');
-				repEventByUser('funnel-' + dialogReason, 'buy-dialog-shown');
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-dialog-shown');
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
 				// Close all dialogs
 				$('.drk_dialog').removeClass('visible');
 				// Open upgrade dialog
@@ -744,11 +746,12 @@ if (!DarknessSettingsLoader) {
 			$('.drk_get_pro.sku-'+SKU+' .drk_buy_life').unbind('click').click(function() {
 				// Analytics
 				dialogAmount = '4.99life';
+				if (SKU == 2) dialogAmount = '2.99life';
 				repToFunnel('buy-now-clicked');
-				repEventByUser('funnel-' + dialogReason, 'buy-now-click-' + dialogAmount);
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-now-click-' + dialogAmount);
-				repEventByUser('funnel-' + dialogReason, 'buy-now-click-all');
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-now-click-all');
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-now-click-' + dialogAmount);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-' + dialogAmount);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-now-click-all');
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-all');
 				// Trigger purchase dialog
 				buyClick();
 			});
@@ -787,8 +790,8 @@ if (!DarknessSettingsLoader) {
 
 				var cancelReason = 'dont-want';
 				repToFunnel('pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + dialogReason, 'pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 			});
 
 			// Why did you cancel payment dialog -> PayPal/Google doesn't work for me
@@ -797,8 +800,8 @@ if (!DarknessSettingsLoader) {
 
 				var cancelReason = 'payment-problem';
 				repToFunnel('pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + dialogReason, 'pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
 				if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
 					// PayPal failed? Let user pay with Google Payments

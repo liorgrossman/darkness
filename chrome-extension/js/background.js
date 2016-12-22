@@ -479,7 +479,7 @@ chrome.runtime.onMessage.addListener(
 
 			case 'repToFunnel':
 				// Report a step in the funnel of Darkness Pro
-				repToFunnel(request.step);
+				repToFunnel(request.step, request.sku);
 				return false;
 
 			case 'repEventByUser':
@@ -646,7 +646,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	log("Injecting loader script");
 
 	// Analytics
-	repToFunnel('pageview');
+	repToFunnel('pageview', getSku());
 	if (Math.random() < 0.01) repEventByUser('pageviews-x100', siteKey + '-' + themeKey);
 
 	// Load all the assets

@@ -194,6 +194,10 @@ var repEventByUser = function(category, action) {
 };
 
 // Report a step in the funnel of Darkness Pro
-var repToFunnel = function(step) {
-	_reportPageview('/pro-funnel/' + step, step);
+var repToFunnel = function(step, sku) {
+	var folder = "pro-funnel";
+	if (sku != "1") {
+		folder = "pro-funnel-" + sku;
+	}
+	_reportPageview('/' + folder + '/' + step, step);
 };
