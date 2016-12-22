@@ -241,7 +241,7 @@ var getSku = function() {
 	var timeNow = (new Date()).getTime();
 	var passedMs = timeNow - installDate;	
 	var passedDays = passedMs / 1000 / 3600 / 24;
-	if (passedDays > 30) {
+	if (passedDays > 7) {
 		return "2";
 	}
 	// if (ENVIRONMENT == "staging") return "2";
