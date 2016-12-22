@@ -19,6 +19,7 @@ if (!DarknessSettingsLoader) {
 		var THEME = '@@THEME@@';
 		var SITE = '@@SITE@@';
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
+		var SKU = 2;
 
 		// Assets (CSS/JS/HTML) that need to be replaced every time the settings panel is opened - for development purposes
 		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
@@ -145,17 +146,17 @@ if (!DarknessSettingsLoader) {
 		var dialogAmount = 0; // How much the user paid? (for analytics)
 
 		// Payment Step 1: Called when a user clicks the "buy" button
-		var buyClick = function(sku) {
+		var buyClick = function() {
 			if (PAYMENT_PLATFORM == 'paypal') {
-				loadPayPalPaymentDialog(sku);
+				loadPayPalPaymentDialog();
 			} else {
-				loadGooglePaymentDialog(sku);
+				loadGooglePaymentDialog();
 			}
 		};
 
 
 		// Payment Step 2: Load PayPal's payment dialog for the specified product SKU
-		var loadPayPalPaymentDialog = function(sku) {
+		var loadPayPalPaymentDialog = function() {
 			var prod = ENVIRONMENT == 'production';
 
 			// Where to submit the form to?
@@ -173,7 +174,7 @@ if (!DarknessSettingsLoader) {
 			$('#drk_paypal_custom').attr('value', JSON.stringify(custom));
 
 			// Hide upgrade dialog, and show "waiting" dialog instead
-			$('.drk_get_pro').removeClass('visible');
+			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
 			$('.drk_pay_waiting').addClass('visible');
 
 			// Submit the form
@@ -289,7 +290,7 @@ if (!DarknessSettingsLoader) {
 			log('pay finished', success, ASSETS.TYPE);
 
 			// Hide all open dialogs
-			$('.drk_get_pro').removeClass('visible');
+			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
 			$('.drk_pay_waiting').removeClass('visible');
 			$('.drk_settings').removeClass('visible');
 
@@ -398,7 +399,7 @@ if (!DarknessSettingsLoader) {
 
 			// Show preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').addClass('visible');
-			$('.drk_get_pro').addClass('visible');
+			$('.drk_get_pro.sku-'+SKU).addClass('visible');
 			$('.drk_use_this_for_all_button').addClass('disabled');
 
 			// Analytics
@@ -415,7 +416,7 @@ if (!DarknessSettingsLoader) {
 
 			// Hide preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').removeClass('visible');
-			$('.drk_get_pro').removeClass('visible');
+			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
 			$('.drk_use_this_for_all_button').removeClass('disabled');
 
 			if (switchToAllowedTheme) {
@@ -488,7 +489,7 @@ if (!DarknessSettingsLoader) {
 			$('.drk_app_name').html(title);
 			if (ASSETS.TYPE == 'p') {
 				// Adjustments for Pro mode
-				$('.drk_upgrade_btn').addClass('hidden');
+				$('.drk_upgrade_btn').remove();
 				$('.drk_vote_btn').addClass('hidden');
 			} else {
 				$('.drk_rate_btn').addClass('hidden');
@@ -673,7 +674,7 @@ if (!DarknessSettingsLoader) {
 				// Close all dialogs
 				$('.drk_dialog').removeClass('visible');
 				// Open upgrade dialog
-				$('.drk_get_pro').addClass('visible');
+				$('.drk_get_pro.sku-'+SKU).addClass('visible');
 			});
 
 			// Developer Button #1 ("Developer? Help us fix the CSS")
@@ -738,7 +739,7 @@ if (!DarknessSettingsLoader) {
 		var loadUpgradeDialogEventHandlers = function() {
 
 			// Buy button
-			$('.drk_get_pro .drk_buy_life').unbind('click').click(function() {
+			$('.drk_get_pro.sku-'+SKU+' .drk_buy_life').unbind('click').click(function() {
 				// Analytics
 				dialogAmount = '4.99life';
 				repToFunnel('buy-now-clicked');
@@ -747,7 +748,7 @@ if (!DarknessSettingsLoader) {
 				repEventByUser('funnel-' + dialogReason, 'buy-now-click-all');
 				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-now-click-all');
 				// Trigger purchase dialog
-				buyClick('darkness_pro_life_4.99');
+				buyClick();
 			});
 
 			// Upgrade dialog -> Got promo?
@@ -800,7 +801,7 @@ if (!DarknessSettingsLoader) {
 				if (PAYMENT_PLATFORM == 'paypal') {
 					// PayPal failed? Let user pay with Google Payments
 					PAYMENT_PLATFORM = 'google';
-					buyClick('darkness_pro_life_4.99');
+					buyClick();
 				} else {
 					// PayPal AND Google failed? Send a support email
 					var to = 'Darkness Support <darkness@improvver.com>';
@@ -833,7 +834,7 @@ if (!DarknessSettingsLoader) {
 
 
 			// X button clicked (for Upgrade Dialog)
-			$('.drk_get_pro .drk_dialog_close').unbind('click').click(function(e) {
+			$('.drk_get_pro.sku-'+SKU+' .drk_dialog_close').unbind('click').click(function(e) {
 				$('.drk_promo_form').removeClass('visible');
 				$('.drk_promo_link').addClass('visible');
 				closeActiveDialog(e);
