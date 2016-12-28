@@ -66,7 +66,7 @@
 		<section class="drk_section drk_section_darkness">
 			<div class="drk_title">Darkness</div>
 			<div class="drk_content">
-				<div class="drk_button drk_upgrade_btn drk_bold"><i class="icon-plus"></i>Get Darkness for Gmail and YouTube</div>
+				<!--<div class="drk_button drk_upgrade_btn drk_bold"><i class="icon-plus"></i>Get Darkness for Gmail and YouTube</div> -->
 				<div class="drk_button drk_rate_btn"><i class="icon-star"></i>Rate us on Chrome Web Store</div>
 				<div class="drk_button drk_vote_btn"><i class="icon-star"></i>Vote for the next websites and themes!</div>
 				<div class="drk_button drk_developer_add"><i class="icon-github-circled"></i>Develop skins for more websites</div>
@@ -75,6 +75,7 @@
 				<div class="drk_button drk_feedback_btn"><i class="icon-chat"></i>Send feedback</div>
 			</div>
 		</section>
+		<section class="drk_section drk_section_pro sku_replace drk_upgrade_btn"></section>
 	</div>
 
 	<!-- Dialog: Use this theme for all websites? (not in use at the moment -->
@@ -168,7 +169,7 @@
 	</div>
 
 	<!-- Upgrade to Darkness Pro: Dialog -->
-	<div class="drk_dialog drk_get_pro">
+	<div class="drk_dialog drk_get_pro sku-1">
 		<div class="drk_dialog_inner">
 			<span class="drk_close"><a class="drk_icon drk_icon_close drk_dialog_close" href="javascript:void(0);"><i class="drk_icon icon-cancel"></i></a></span>
 			<div class="drk_content drk_sale">
@@ -176,6 +177,37 @@
 					<div class="drk_button_dialog drk_inline drk_bold drk_buy_life">
 						<div class="upg_btn1">Upgrade now</div>
 						<div class="upg_btn2">$4.99 one time payment</div>
+					</div>
+					<!-- The Standard PayPal form (hidden) -->
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="drk_paypal_form">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="notify_url" value="http://improvver.com/api/ipn">
+						<input type="hidden" name="custom" id="drk_paypal_custom" value='{}'>
+						<input type="hidden" name="hosted_button_id" id="drk_paypal_button_id" value="Z9BBUN4PDFGKQ">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>
+				<div class="drk_promo_link visible">Got promo?</div>
+				<div class="drk_promo_form">
+					<div class="drk_promo_caption">Enter promo code:</div>
+					<input class="drk_promo_input" type="text"/>
+					<input class="drk_promo_submit" value="Send" type="button"/>
+				</div>
+				<div class="drk_hide_link">Let me see</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Upgrade to Darkness Pro: Dialog -->
+	<div class="drk_dialog drk_get_pro sku-2">
+		<div class="drk_dialog_inner">
+			<span class="drk_close"><a class="drk_icon drk_icon_close drk_dialog_close" href="javascript:void(0);"><i class="drk_icon icon-cancel"></i></a></span>
+			<div class="drk_content drk_sale">
+				<div class="drk_button_dialog_wrapper">
+					<div class="drk_button_dialog drk_inline drk_bold drk_buy_life">
+						<div class="upg_btn1">Upgrade now</div>
+						<div class="upg_btn2">$2.99 one time payment</div>
 					</div>
 					<!-- The Standard PayPal form (hidden) -->
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="drk_paypal_form">
@@ -244,7 +276,7 @@
 			</div>
 			<div class="drk_content drk_sale">
 				<h1>Waiting for approval from PayPal</h1>
-				<h2>Darkness will upgrade a few seconds after you pay</h2>
+				<h2>Please leave this dialog open after paying.<br/>Darkness will automatically reload within 1-2 minutes.</h2>
 				<br/>
 				<div class="centered">
 					<div class="drk_button_dialog drk_inline drk_bold drk_cancel_dont_want">I don't want to upgrade</div>

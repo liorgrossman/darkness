@@ -233,6 +233,21 @@ var checkPromoCode = function(code, sendResponse) {
 	sendHttpPostRequest('http://improvver.com/api/darkness/check-promo-code', params, onServerResponse);
 };
 
+// Get the SKU for Darkness Pro
+var getSku = function() {
+	var DEFAULT_SKU = "1";
+	var installDate = stats.get('installDate') || 0;
+	if (typeof(installDate) != 'number') return DEFAULT_SKU;
+	var timeNow = (new Date()).getTime();
+	var passedMs = timeNow - installDate;	
+	var passedDays = passedMs / 1000 / 3600 / 24;
+	if (passedDays > 7) {
+		return "2";
+	}
+	// if (ENVIRONMENT == "staging") return "2";
+	return DEFAULT_SKU;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Payments - Google Payments
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -464,7 +479,7 @@ chrome.runtime.onMessage.addListener(
 
 			case 'repToFunnel':
 				// Report a step in the funnel of Darkness Pro
-				repToFunnel(request.step);
+				repToFunnel(request.step, request.sku);
 				return false;
 
 			case 'repEventByUser':
@@ -573,6 +588,7 @@ var injectSettingsScriptToTab = function(tab) {
 	// Load all stuff that needs to be inside "var ASSETS" in settings.js
 	getAssetsForSettingsPanel(function(args) {
 		// Add additional variables that are used by settings.js
+		args['SKU'] = getSku();
 		args['MACHINEID'] = stats.get('userId')
 		args['ENVIRONMENT'] = ENVIRONMENT;
 		args['THEME'] = themeKey;
@@ -630,7 +646,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	log("Injecting loader script");
 
 	// Analytics
-	repToFunnel('pageview');
+	repToFunnel('pageview', getSku());
 	if (Math.random() < 0.01) repEventByUser('pageviews-x100', siteKey + '-' + themeKey);
 
 	// Load all the assets

@@ -19,6 +19,9 @@ if (!DarknessSettingsLoader) {
 		var THEME = '@@THEME@@';
 		var SITE = '@@SITE@@';
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
+		var SKU = '@@SKU@@';
+		var FUNNEL_PREFIX = 'funnel-';
+		if (SKU != '1') FUNNEL_PREFIX = 'funnel-' +  SKU + '-';
 
 		// Assets (CSS/JS/HTML) that need to be replaced every time the settings panel is opened - for development purposes
 		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
@@ -133,7 +136,7 @@ if (!DarknessSettingsLoader) {
 		};
 
 		var repToFunnel = function(step) {
-			chrome.runtime.sendMessage({ action: 'repToFunnel', step: step });
+			chrome.runtime.sendMessage({ action: 'repToFunnel', step: step, sku: SKU });
 		};
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------
@@ -145,17 +148,17 @@ if (!DarknessSettingsLoader) {
 		var dialogAmount = 0; // How much the user paid? (for analytics)
 
 		// Payment Step 1: Called when a user clicks the "buy" button
-		var buyClick = function(sku) {
+		var buyClick = function() {
 			if (PAYMENT_PLATFORM == 'paypal') {
-				loadPayPalPaymentDialog(sku);
+				loadPayPalPaymentDialog();
 			} else {
-				loadGooglePaymentDialog(sku);
+				loadGooglePaymentDialog();
 			}
 		};
 
 
 		// Payment Step 2: Load PayPal's payment dialog for the specified product SKU
-		var loadPayPalPaymentDialog = function(sku) {
+		var loadPayPalPaymentDialog = function() {
 			var prod = ENVIRONMENT == 'production';
 
 			// Where to submit the form to?
@@ -164,7 +167,8 @@ if (!DarknessSettingsLoader) {
 
 			// What's the PayPal button ID?
 			var paypalButtonId = '';
-			if (sku == 'darkness_pro_life_4.99') paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
+			if (SKU == "1") paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
+			if (SKU == "2") paypalButtonId = prod ? 'U59U55TCYJMHQ' : 'LMQAHVFLAGHK2';
 			$('#drk_paypal_button_id').attr('value', paypalButtonId);
 
 			// Add custom data to each PayPal transaction
@@ -173,7 +177,7 @@ if (!DarknessSettingsLoader) {
 			$('#drk_paypal_custom').attr('value', JSON.stringify(custom));
 
 			// Hide upgrade dialog, and show "waiting" dialog instead
-			$('.drk_get_pro').removeClass('visible');
+			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
 			$('.drk_pay_waiting').addClass('visible');
 
 			// Submit the form
@@ -227,33 +231,33 @@ if (!DarknessSettingsLoader) {
 					// Payment platform declared success
 					if (ASSETS.TYPE == 'p') { // Pro user (as expected)
 						repToFunnel('paid');
-						repEventByUser('funnel-' + dialogReason, 'paid-all');
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-all');
-						repEventByUser('funnel-' + dialogReason, 'paid-' + dialogAmount);
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-' + dialogAmount);
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-all');
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-all');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-' + dialogAmount);
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-' + dialogAmount);
 						var daysSinceInstall = getDaysSinceInstall(STATS.installDate, true);
 						repEvent('funnel-' + PAYMENT_PLATFORM, 'paid-days-since-install', daysSinceInstall);
 						notifyUserOnPaymentFinished(true);
 					} else { // Regular user (unexplained?!)
 						var reason = 'UNEXPLAINED';
 						repToFunnel('pay-fail-' + reason);
-						repEventByUser('funnel-' + dialogReason, 'pay-fail-' + reason);
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-fail-' + reason);
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-fail-' + reason);
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-fail-' + reason);
 						notifyUserOnPaymentFinished(false);
 					}
 				} else {
 					// Payment platform declared failure
 					if (ASSETS.TYPE == 'p') { // Pro user (unexplained?!)
 						repToFunnel('paid');
-						repEventByUser('funnel-' + dialogReason, 'paid-all-UNEXPLAINED');
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-all-UNEXPLAINED');
-						repEventByUser('funnel-' + dialogReason, 'paid-' + dialogAmount + '-UNEXPLAINED');
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'paid-' + dialogAmount + '-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-all-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-all-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'paid-' + dialogAmount + '-UNEXPLAINED');
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'paid-' + dialogAmount + '-UNEXPLAINED');
 						notifyUserOnPaymentFinished(true);
 					} else { // Regular user (as expected)
 						repToFunnel('pay-fail-' + failureReason);
-						repEventByUser('funnel-' + dialogReason, 'pay-fail-' + failureReason);
-						repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-fail-' + failureReason);
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-fail-' + failureReason);
+						repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-fail-' + failureReason);
 						notifyUserOnPaymentFinished(false);
 					}
 				}
@@ -289,7 +293,7 @@ if (!DarknessSettingsLoader) {
 			log('pay finished', success, ASSETS.TYPE);
 
 			// Hide all open dialogs
-			$('.drk_get_pro').removeClass('visible');
+			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
 			$('.drk_pay_waiting').removeClass('visible');
 			$('.drk_settings').removeClass('visible');
 
@@ -398,13 +402,13 @@ if (!DarknessSettingsLoader) {
 
 			// Show preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').addClass('visible');
-			$('.drk_get_pro').addClass('visible');
+			$('.drk_get_pro.sku-'+SKU).addClass('visible');
 			$('.drk_use_this_for_all_button').addClass('disabled');
 
 			// Analytics
 			repToFunnel('buy-dialog-shown');
-			repEventByUser('funnel-' + dialogReason, 'buy-dialog-shown');
-			repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-dialog-shown');
+			repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
+			repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
 		};
 
 		// Revert from preview mode to no preview
@@ -415,7 +419,7 @@ if (!DarknessSettingsLoader) {
 
 			// Hide preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').removeClass('visible');
-			$('.drk_get_pro').removeClass('visible');
+			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
 			$('.drk_use_this_for_all_button').removeClass('disabled');
 
 			if (switchToAllowedTheme) {
@@ -486,9 +490,10 @@ if (!DarknessSettingsLoader) {
 			else if (ENVIRONMENT == 'staging') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '') + '*';
 			else if (ENVIRONMENT == 'production') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '');
 			$('.drk_app_name').html(title);
+			$('.drk_settings .sku_replace').addClass('sku-'+SKU).removeClass('sku_replace');
 			if (ASSETS.TYPE == 'p') {
 				// Adjustments for Pro mode
-				$('.drk_upgrade_btn').addClass('hidden');
+				$('.drk_upgrade_btn').remove();
 				$('.drk_vote_btn').addClass('hidden');
 			} else {
 				$('.drk_rate_btn').addClass('hidden');
@@ -668,12 +673,12 @@ if (!DarknessSettingsLoader) {
 				repEventByUser('user-action', 'upgrade-btn-click');
 				dialogReason = 'upgrade-btn';
 				repToFunnel('buy-dialog-shown');
-				repEventByUser('funnel-' + dialogReason, 'buy-dialog-shown');
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-dialog-shown');
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
 				// Close all dialogs
 				$('.drk_dialog').removeClass('visible');
 				// Open upgrade dialog
-				$('.drk_get_pro').addClass('visible');
+				$('.drk_get_pro.sku-'+SKU).addClass('visible');
 			});
 
 			// Developer Button #1 ("Developer? Help us fix the CSS")
@@ -738,16 +743,17 @@ if (!DarknessSettingsLoader) {
 		var loadUpgradeDialogEventHandlers = function() {
 
 			// Buy button
-			$('.drk_get_pro .drk_buy_life').unbind('click').click(function() {
+			$('.drk_get_pro.sku-'+SKU+' .drk_buy_life').unbind('click').click(function() {
 				// Analytics
 				dialogAmount = '4.99life';
+				if (SKU == 2) dialogAmount = '2.99life';
 				repToFunnel('buy-now-clicked');
-				repEventByUser('funnel-' + dialogReason, 'buy-now-click-' + dialogAmount);
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-now-click-' + dialogAmount);
-				repEventByUser('funnel-' + dialogReason, 'buy-now-click-all');
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'buy-now-click-all');
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-now-click-' + dialogAmount);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-' + dialogAmount);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-now-click-all');
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-all');
 				// Trigger purchase dialog
-				buyClick('darkness_pro_life_4.99');
+				buyClick();
 			});
 
 			// Upgrade dialog -> Got promo?
@@ -784,8 +790,8 @@ if (!DarknessSettingsLoader) {
 
 				var cancelReason = 'dont-want';
 				repToFunnel('pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + dialogReason, 'pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 			});
 
 			// Why did you cancel payment dialog -> PayPal/Google doesn't work for me
@@ -794,13 +800,13 @@ if (!DarknessSettingsLoader) {
 
 				var cancelReason = 'payment-problem';
 				repToFunnel('pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + dialogReason, 'pay-cancel-' + cancelReason);
-				repEventByUser('funnel-' + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
-				if (PAYMENT_PLATFORM == 'paypal') {
+				if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
 					// PayPal failed? Let user pay with Google Payments
 					PAYMENT_PLATFORM = 'google';
-					buyClick('darkness_pro_life_4.99');
+					buyClick();
 				} else {
 					// PayPal AND Google failed? Send a support email
 					var to = 'Darkness Support <darkness@improvver.com>';
@@ -833,7 +839,7 @@ if (!DarknessSettingsLoader) {
 
 
 			// X button clicked (for Upgrade Dialog)
-			$('.drk_get_pro .drk_dialog_close').unbind('click').click(function(e) {
+			$('.drk_get_pro.sku-'+SKU+' .drk_dialog_close').unbind('click').click(function(e) {
 				$('.drk_promo_form').removeClass('visible');
 				$('.drk_promo_link').addClass('visible');
 				closeActiveDialog(e);

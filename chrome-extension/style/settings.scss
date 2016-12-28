@@ -133,7 +133,7 @@ div.drk_button {
 	background: $darkness-button-background !important;
 	color: $darkness-button-text !important;
 	cursor: pointer !important;
-	padding: 8px 0 8px 2px !important;
+	padding: 6px 0 6px 2px !important;
 	margin: 0 !important;
 	display: block !important;
 	font-weight: 300 !important;
@@ -250,7 +250,7 @@ ul li.drk_button_li {
 	color: $darkness-listbutton-text !important;
 	cursor: pointer !important;
 	padding: 10px !important;
-	margin: 10px 9px !important;
+	margin: 8px 9px !important;
 	display: block !important;
 	font-size: 14px !important;
 	font-weight: 200 !important;
@@ -421,9 +421,10 @@ div.drk_settings {
 		clear: both !important;
 		float: left !important;
 		width: 100% !important;
-		padding: 17px 0 10px !important;
+		padding: 14px 0 10px !important;
 		border-bottom: solid 1px lighten($darkness-background, 10%) !important;
 		&:last-of-type {
+			border-bottom: none !important;
 			//padding: 20px 0 5px !important;
 		}
 		div.drk_title {
@@ -457,7 +458,7 @@ div.drk_settings {
 			}
 		}
 		div.drk_content {
-			padding: 8px 20px 5px !important;
+			padding: 6px 20px 1px !important;
 			&.drk_theme_list_content {
 				float: left !important;
 				padding: 2px 20px !important;
@@ -473,6 +474,27 @@ div.drk_settings {
 			margin: 0 32px !important;
 		}
 	}
+}
+
+div.drk_settings section.drk_section_pro {
+	height: 133px !important;
+	padding: 0 !important;
+	opacity: 0.9 !important;
+	cursor: pointer !important;
+	transition: opacity 0.2s ease-in-out !important;
+}
+
+div.drk_settings section.drk_section_pro.sku-1 {
+	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-1.png") no-repeat center !important;
+}
+
+div.drk_settings section.drk_section_pro.sku-2 {
+	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-2.png") no-repeat center !important;
+}
+
+div.drk_settings section.drk_section_pro:hover {
+	opacity: 1.0 !important;
+	transition: opacity 0.1s ease-in-out !important;
 }
 
 div.drk_share_placeholder {
@@ -591,6 +613,43 @@ div.drk_dialog {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // UPGRADE DIALOG
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+div.drk_dialog.drk_get_pro.sku-1 {
+	.drk_content {
+		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-dialog-1.png") no-repeat center !important;
+	}
+}
+
+div.drk_dialog.drk_get_pro.sku-2 {
+	div.drk_dialog_inner {
+		box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.8), 0 0 100px rgba(255, 230, 225, 0.5), 0 0 10px rgba(255, 230, 225, 0.2) !important;
+	}
+	.drk_content {
+		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-dialog-2.png") no-repeat center !important;
+	}
+	.drk_button_dialog {
+		background: linear-gradient(180deg, #cf0010 30%, #87000a) !important;
+		.upg_btn1 {
+			font-weight: 600 !important;
+    		letter-spacing: -1px !important;
+		}
+		.upg_btn2 {
+			color: #e5adae !important;
+		}
+		&:hover {
+			background: linear-gradient(180deg, #cf0010 30%, #87000a) !important;
+		}
+	}
+
+	.drk_promo_link, .drk_promo_caption, .drk_hide_link {
+		color: rgba(255, 255, 255, 0.25) !important
+	}
+	.drk_promo_link:hover, .drk_promo_caption:hover, .drk_hide_link:hover {
+		color: rgba(255, 255, 255, 0.35) !important
+	}
+
+}
+
 div.drk_dialog.drk_get_pro {
 	div.drk_dialog_inner {
 		border-radius: 7px !important;
@@ -616,8 +675,7 @@ div.drk_dialog.drk_get_pro {
 		border-radius: 7px !important;
 		overflow: hidden !important;
 		padding: 0 !important;
-		margin: 0 !important;
-		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-dialog.png") no-repeat center !important;
+		margin: 0 !important;		
 		width: 600px !important;
 		height: 326px !important;
 	}
@@ -666,7 +724,6 @@ div.drk_dialog.drk_get_pro {
 			transition: all .1s ease-in-out !important;
 			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
 		}
-
 	}
 
 	.drk_promo_link, .drk_promo_caption, .drk_hide_link {
