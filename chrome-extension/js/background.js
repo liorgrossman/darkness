@@ -199,10 +199,10 @@ var checkPromoCode = function(code, sendResponse) {
 		if (err) {
 			log('Promo server error: ' + code);
 			repEvent('user-action', 'prmo-server-error', code);
-			sendResponse({ success: false });
+			sendResponse({ success: false, error: err.toString() });
 		}
 		if (res) {
-			console.log(res);
+			log(res);
 			var success = res.success;
 			var r = res.response;
 			if (success) {
@@ -212,22 +212,26 @@ var checkPromoCode = function(code, sendResponse) {
 					hashStringToSignedInt32(r + "KLzzTuPDoP5cXJ1iK3yrR8kzo1zC7YJTcw") == 803706031;
 				if (validResponse) {
 					log('Promo correct: ' + code);
-					repEvent('user-action', 'prmo-correct', code);
+					repEvent('errors', 'prmo-response-code-correct', code);
 					settings.global.set('override', 'prmo' + code);
 					reloadUser(function() {
 						sendResponse({ success: true });
 					})
 				} else {
 					log('Promo server invalid: ' + code);
-					repEvent('user-action', 'prmo-server-invalid', code);
-					sendResponse({ success: false });
+					repEvent('errors', 'prmo-response-invalid-' + res.response.toString(), code);
+					sendResponse({ success: false, error: 'Invalid response detected: ' + res.response.toString()});
 				}
 
 			} else {
 				log('Promo incorrect: ' + code);
-				repEvent('user-action', 'prmo-incorrect', code);
-				sendResponse({ success: false });
+				repEvent('errors', 'prmo-response-code-incorrect', code);
+				sendResponse({ success: false, error: 'PROMO-INCORRECT' });
 			}
+		} else {
+			log('Promo server got no response: ' + code);
+			repEvent('errors', 'prmo-response-no-response', code);
+			sendResponse({ success: false, error: 'No response received'});
 		}
 	};
 	sendHttpPostRequest('http://improvver.com/api/darkness/check-promo-code', params, onServerResponse);
@@ -362,19 +366,23 @@ var queryPayPalStatusPeriodically = function() {
 var queryPayPalStatusNow = function() {
 	var now = (new Date()).getTime();
 	stats.set('paypalCheckedTime', now);
-	var params = { 'machineId': stats.get('userId'), 'transactionId': paypalTransacationId };
+	var machineId = stats.get('userId');
+	var params = { 'machineId': machineId, 'transactionId': paypalTransacationId };
 	log('Checking IPN status for ' + JSON.stringify(params));
 	var onServerResponse = function(err, res) {
 		if (err) {
-			return logError(err);
+			repEvent('errors', 'payment-response-comm-error-'+err, machineId);
+			return logError("Error communicating with server: " + err);
 		}
 		if (res) {
 			if (res.error) {
+				repEvent('errors', 'payment-response-server-error-'+res.error, machineId);
 				return logError("Server returned error: " + res.error);
 			}
 			if (res.data) {
-				if (res.data.custom_machine_id != stats.get('userId')) {
-					return logError("Incompatible machineId returned: ", res.data.custom_machine_id, stats.get('userId'));
+				if (res.data.custom_machine_id != machineId) {
+					repEvent('errors', 'payment-response-incompatible-machine-id', machineId);
+					return logError("Incompatible machineId returned: ", res.data.custom_machine_id, machineId);
 				}
 
 				// Save info from PayPal

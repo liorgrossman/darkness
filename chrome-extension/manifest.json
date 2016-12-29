@@ -4,7 +4,7 @@
 	"name": "__MSG_appFullName__",
 	"short_name": "__MSG_appShortName__",
 	"description": "__MSG_appDescription__",
-	"version": "0.4.13",
+	"version": "0.4.14",
 	"author": "Improvver",
 	"default_locale": "en",
 
