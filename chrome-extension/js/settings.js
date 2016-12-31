@@ -278,12 +278,18 @@ if (!DarknessSettingsLoader) {
 						notifyUserOnPaymentFinished(true);
 					});
 				} else {
-					// Notify the user code is wrong
-					$('.drk_promo_submit').val('Invalid code');
-					$('.drk_promo_input').val('');
-					setTimeout(function() {
+					if (res.error == 'PROMO-INCORRECT') {
+						// Notify the user code is wrong
+						$('.drk_promo_submit').val('Invalid code');
+						$('.drk_promo_input').val('');
+						setTimeout(function() {
+							$('.drk_promo_submit').val('Send');
+						}, 2500);
+					} else {
 						$('.drk_promo_submit').val('Send');
-					}, 2500);
+						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to support@improvver.com";
+						alert(msg);
+					}
 				}
 			});
 		};
