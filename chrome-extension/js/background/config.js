@@ -101,6 +101,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'twitch': {
+			key: 'twitch', // Must be the same as the object key
+			name: 'Twitch',
+			support: 'in-development',
+			hostRegExp: new RegExp('^www\.twitch\.tv$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'cloudflare': {
 			key: 'cloudflare', // Must be the same as the object key
 			name: 'Cloudflare',
