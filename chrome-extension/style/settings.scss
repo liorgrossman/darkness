@@ -628,7 +628,7 @@ div.drk_dialog.drk_get_pro.sku-2 {
 		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-dialog-2.png") no-repeat center !important;
 	}
 	.drk_button_dialog {
-		background: linear-gradient(180deg, #cf0010 30%, #87000a) !important;
+		background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
 		.upg_btn1 {
 			font-weight: 600 !important;
     		letter-spacing: -1px !important;
@@ -637,7 +637,7 @@ div.drk_dialog.drk_get_pro.sku-2 {
 			color: #e5adae !important;
 		}
 		&:hover {
-			background: linear-gradient(180deg, #cf0010 30%, #87000a) !important;
+			background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
 		}
 	}
 
