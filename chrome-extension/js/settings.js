@@ -266,8 +266,9 @@ if (!DarknessSettingsLoader) {
 
 		// Payment Step 3 (alternative): Called when a user submits a promo code
 		var submitPromoCode = function() {
-			var promo = $('.drk_promo_input').val().trim();
-			$('.drk_promo_submit').val('Checking...');
+			var $dialog = $('.drk_get_pro.sku-'+SKU)
+			var promo = $dialog.find('.drk_promo_input').val().trim();			
+			$dialog.find('.drk_promo_submit').val('Checking...');
 			// Ask the background to check with the code with the server
 			chrome.runtime.sendMessage({ action: "checkPromoCode", promo: promo }, function(res) {
 				if (res.success) {
@@ -280,13 +281,13 @@ if (!DarknessSettingsLoader) {
 				} else {
 					if (res.error == 'PROMO-INCORRECT') {
 						// Notify the user code is wrong
-						$('.drk_promo_submit').val('Invalid code');
-						$('.drk_promo_input').val('');
+						$dialog.find('.drk_promo_submit').val('Invalid code');
+						$dialog.find('.drk_promo_input').val('');
 						setTimeout(function() {
-							$('.drk_promo_submit').val('Send');
+							$dialog.find('.drk_promo_submit').val('Send');
 						}, 2500);
 					} else {
-						$('.drk_promo_submit').val('Send');
+						$dialog.find('.drk_promo_submit').val('Send');
 						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to support@improvver.com";
 						alert(msg);
 					}
