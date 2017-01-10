@@ -48,9 +48,26 @@ input
 	border-color: darken($theme-button-background, 10%) !important;
 }
 
+// Search bar
+.sbibod {
+	box-shadow: none !important;
+	background-color: $theme-textbox-background !important;
+}
+
 // Search box fill
 .sbib_a, .sbib_b {
 	background-color: $theme-textbox-background !important;
+}
+
+// Magnifying glass button
+.sbibod button.sbico-c {
+	background-color: $theme-textbox-background !important;
+}
+
+// Magnifying glass icon
+.sbibod button.sbico-c svg {
+	-webkit-filter: none !important;
+	color: $theme-link !important;
 }
 
 // Magnifying glass button
@@ -103,7 +120,7 @@ input
 
 // Header: All | Videos | Images | News | Maps...
 #hdtbSum {
-	background-color: $theme-background !important;
+	background-color: $theme-background-toolbar !important;
 	border-color: $theme-border !important;
 	a:hover {
 		color: darken($theme-link, 10%) !important;
@@ -119,7 +136,7 @@ input
 
 
 // User avatar on toolbar
-.gb_7a::before, .gb_8a::before {
+.gb_7a::before, .gb_8a::before, .gb_8a {
 	@include invert-back()
 }
 
@@ -150,7 +167,7 @@ cite {
 
 // Down arrow next to URL
 .ab_button {
-	background-color: $theme-background !important;
+	background-color: $theme-background-toolbar !important;
 	border-color: $theme-border !important;
 }
 
