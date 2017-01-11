@@ -180,3 +180,6 @@ fabric.properties
 
 # Sublime files
 *.sublime*
+
+# Yarn
+yarn.lock
