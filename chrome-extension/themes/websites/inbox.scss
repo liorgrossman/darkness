@@ -60,13 +60,23 @@ input {
 	border-color: $theme-border !important;
 }
 
+// "Inbox" (the word inbox)
+.bl { 
+	color: #272727 !important; 
+}
+
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Icons & buttons
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Changes the color of icons to a visible one
-.gN, .du > img, .iG > .Kc > img, .iK > li > img, .g-aq-al > img, .bG > img, .qY, .e6 > img, .tD > img {
+.gN, .du > img, .iG > .Kc > img, .iK > li > img, .g-aq-al > img, .bG > img, .qY, .e6 > img, .tD > img,.b6 > img {
 	-webkit-filter: invert(0%) !important;
+}
+// breaker between text formatting icons
+.g-W-Cw{
+ background: rgba(175, 172, 172, 0.74) !important;
 }
 // send button
 .qj:not([disabled]) {
@@ -86,6 +96,7 @@ input {
 img.FK {
 	-webkit-filter: invert(0%) !important;
 }
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Search
@@ -139,7 +150,7 @@ img.FK {
 
 .b5 {
 	-webkit-filter: invert(100) !important;
-	background: white !important;
+	color:#8a8a8a;
 }
 .b5 img {
 	-webkit-filter: invert(0) !important;
