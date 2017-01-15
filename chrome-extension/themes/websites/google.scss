@@ -136,7 +136,7 @@ input
 
 
 // User avatar on toolbar
-.gb_7a::before, .gb_8a::before, .gb_8a {
+.gb_7a::before, .gb_8a::before {
 	@include invert-back()
 }
 
