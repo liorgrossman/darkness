@@ -36,8 +36,11 @@ iframe {
 }
 
 // Icons
-.docs-icon, .docs-homescreen-icon {
+.docs-icon, .docs-homescreen-icon, .docs-icon-img {
 	-webkit-filter: invert(1) !important;
+}
+.docs-icon-text-color, .docs-icon-fill-color, .docs-icon-spreadsheet, .docs-icon-excel {
+	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,6 +117,11 @@ iframe {
 }
 .docs-explore-icon path{
 	fill: invert-back-color($theme-url) !important;
+}
+
+// The cursor
+.kix-cursor {
+	-webkit-filter: invert(1) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

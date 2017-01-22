@@ -93,7 +93,7 @@ var CONFIG = {
 		'docs': {
 			key: 'docs', // Must be the same as the object key
 			name: 'Google Docs',
-			support: 'in-development',
+			support: 'full',
 			hostRegExp: new RegExp('^docs\.google\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
