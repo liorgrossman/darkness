@@ -560,6 +560,16 @@ textarea._4h98 {
 	@include invert-back();
 }
 
+//-------------------------------------------------------------------------
+// [person] likes [site]
+._6lh ._6lp ._6lo {
+	color: $theme-button-background !important;
+	text-shadow: 0 1px 2px rgba(255, 255, 255, .4) !important;
+}
+._6lh ._6ln a {
+	text-shadow: 0 1px 2px rgba(255, 255, 255, .4) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Chat sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -953,6 +963,11 @@ body ._19u- ._3ixn {
 // Search group
 .uiSearchInput button {
 	background-color: transparent !important;
+}
+
+// Coverphoto
+.groupsCoverPhoto img.scaledImageFitHeight {
+	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

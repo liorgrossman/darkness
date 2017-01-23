@@ -197,14 +197,22 @@ a.yt-uix-button-epic-nav-item:hover {
 	border-color: transparent !important;
 }
 
+// Transparent background on searchbar
+#masthead-search-term {
+	background: transparent !important;
+}
+
 .yt-uix-tooltip-tip-content {
 	color: $theme-text !important;
 	background: $theme-background !important;
 }
 
 // Fix for "Add to watch later"
-.addto-watch-later-button {
+.addto-watch-later-button, .addto-watch-later-button-success {
 	background-color: #f8f8f8 !important;
+}
+.addto-watch-later-button-success:before {
+	-webkit-filter: invert(1) !important;
 }
 
 // Fix for "help sprite" and "Live beta"-link

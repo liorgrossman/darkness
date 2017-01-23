@@ -96,7 +96,18 @@ input {
 img.FK {
 	-webkit-filter: invert(0%) !important;
 }
+.qE {
+	-webkit-filter: invert(0) !important;
+}
+img.ld.mm{
+    -webkit-filter: invert(0) !important;
+}
 
+// "show more"-button
+.e2 > .dy {
+	background-color: $theme-secondary-button-background !important;
+	color: $theme-button-text !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Search
@@ -167,6 +178,12 @@ input.dm {
 	-webkit-filter: invert(0) !important;
 }
 
+// "View entiry email"-link
+a.H.dH {
+	color: $theme-link !important;
+    -webkit-filter: invert(1) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Message summaries
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -194,5 +211,15 @@ input.dm {
 	background-color: #d6d6d6 !important;
 }
 .hc {
+	-webkit-filter: invert(0) !important;
+}
+.g-eA-jX {
+	-webkit-filter: invert(1) !important;
+}
+.aR {
+	-webkit-filter: invert(1) !important;
+	background-color: white !important;
+}
+.b6 > img {
 	-webkit-filter: invert(0) !important;
 }
