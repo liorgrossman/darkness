@@ -61,6 +61,11 @@ iframe {
 .gb_sd.gb_Vb {
 	-webkit-filter: invert(1) !important;
 }
+
+// "Docs" in the toolbar logo
+.gb_Sb .gb_td {
+	color: white !important;
+}
 // Undo color-change in menu on some icons
 .docs-homescreen-nav-settings-24, .docs-homescreen-nav-help-24 {
 	-webkit-filter: invert(1) !important;
