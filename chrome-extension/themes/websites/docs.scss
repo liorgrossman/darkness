@@ -129,6 +129,14 @@ iframe {
 	-webkit-filter: invert(1) !important;
 }
 
+// Colab
+.docs-presence-plus-collab-widget-color-block {
+	-webkit-filter: invert(1) !important;
+}
+.docs-presence-plus-collab-widget-color-block > div {
+	-webkit-filter: invert(1) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sheets
 //----------------------------------------------------------------------------------------------------------------------------------------------------
