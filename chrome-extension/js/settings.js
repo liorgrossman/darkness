@@ -288,7 +288,7 @@ if (!DarknessSettingsLoader) {
 						}, 2500);
 					} else {
 						$dialog.find('.drk_promo_submit').val('Send');
-						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to support@improvver.com";
+						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to darkness@improvver.com";
 						alert(msg);
 					}
 				}
