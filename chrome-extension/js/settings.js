@@ -172,7 +172,8 @@ if (!DarknessSettingsLoader) {
 			$('#drk_paypal_button_id').attr('value', paypalButtonId);
 
 			// Add custom data to each PayPal transaction
-			var transactionId = Math.random().toString(36).slice(2, 12);
+			var now = new Date();
+			var transactionId = 'tid_' + now.getFullYear() + '_' + ('0'+(now.getMonth()+1)).slice(-2) + '_' + now.getDate();
 			var custom = { dialog_reason: dialogReason, theme: THEME, site: SITE, machine_id: MACHINE_ID, transaction_id: transactionId };
 			$('#drk_paypal_custom').attr('value', JSON.stringify(custom));
 
