@@ -68,6 +68,15 @@ body[data-drk-site="google"] {
 		top: 27px !important;
 	}
 }
+body[data-drk-site="bitbucket"] {
+	div.drk_settings_icon {
+		top: 6px !important;
+		right: 7px !important;
+	}
+	.aui-header .aui-header-secondary .aui-nav {
+		margin-right: 25px !important;
+	}
+}
 
 body[data-drk-site="twitter"] {
 	div.drk_settings_icon {
