@@ -123,7 +123,7 @@ var PaymentsFactory = function() {
 	};
 
 
-	// PUBLIC FUNCTION: Check the specified promo code with Darkness' servers
+	// PUBLIC FUNCTION: Check the specified promo code with the servers
 	Payments.prototype.checkPromoCode = function(code, sendResponse) {
 		code = parseInt(code) || 0;
 		var params = { 'machineId': stats.get('userId'), 'code': code, 'token': Math.floor(Math.random() * 99999) + 1 };
@@ -167,10 +167,10 @@ var PaymentsFactory = function() {
 				sendResponse({ success: false, error: 'No response received' });
 			}
 		};
-		sendHttpPostRequest('http://improvver.com/api/darkness/check-promo-code', params, onServerResponse);
+		sendHttpPostRequest('http://improvver.com/api/' + _appName + '/check-promo-code', params, onServerResponse);
 	};
 
-	// PUBLIC FUNCTION: Get the SKU for Darkness Pro
+	// PUBLIC FUNCTION: Get the SKU
 	Payments.prototype.getSku = function() {
 		var DEFAULT_SKU = "1";
 		var installDate = stats.get('installDate') || 0;
@@ -366,7 +366,7 @@ var PaymentsFactory = function() {
 				return logError("No data found in response", res);
 			}
 		};
-		sendHttpPostRequest('http://improvver.com/api/darkness/check-user-paypal-status', params, onServerResponse);
+		sendHttpPostRequest('http://improvver.com/api/' + _appName + '/check-user-paypal-status', params, onServerResponse);
 	};
 
 
