@@ -20,30 +20,30 @@ var PaymentsFactory = function() {
 
 	function _setType(type) {
 		if (_appName == 'darkness')
-			stats.set('type', type);
+			return stats.set('type', type);
 		else 
-			settings.set('type', type);
+			return settings.set('type', type);
 	}
 
 	function _getType() {
 		if (_appName == 'darkness')
-			stats.get('type');
+			return stats.get('type');
 		else 
-			settings.get('type');
+			return settings.get('type');
 	}
 
 	function _setOverride(override) {
 		if (_appName == 'darkness')
-			settings.global.set('override', override);
+			return settings.global.set('override', override);
 		else 
-			settings.set('override', override);
+			return settings.set('override', override);
 	}
 
 	function _getOverride() {
 		if (_appName == 'darkness')
-			settings.global.get('override');
+			return settings.global.get('override');
 		else 
-			settings.get('override');
+			return settings.get('override');
 	}
 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -57,10 +57,12 @@ var PaymentsFactory = function() {
 	Payments.prototype.reloadUser = function(callback) {
 		log("Reload user");
 		if (ENVIRONMENT == 'development' || (_getOverride() && _getOverride() != '')) {
+			console.log("1111");
 			// Paid via PayPal
-			stats.set('type', 'p');
+			_setType('p');
 			if (callback) callback('p');
 		} else {
+			console.log("2222");
 			// Check PayPal
 			if (_paymentPeriodCheckInterval) clearInterval(_paymentPeriodCheckInterval);
 			_paymentPeriodCheckInterval = setInterval(function() {
@@ -74,7 +76,7 @@ var PaymentsFactory = function() {
 					logError('checkGooglePayments error: ', err);
 				} else { // no error
 					var pro = (type === true);
-					stats.set('type', pro ? 'p' : 'n');
+					_setType(pro ? 'p' : 'n');
 					if (pro) {
 						// No need to keep on checking with Google Payments
 						_setOverride('google');
@@ -93,7 +95,7 @@ var PaymentsFactory = function() {
 	var _reloadUserInterval = 500;
 	Payments.prototype.reloadUserUntilPro = function(success, callback) {
 		Payments.prototype.reloadUser(function() {
-			var userType = stats.get('type');
+			var userType = _getType();
 			if (success) {
 				// Payment returned success
 				if (userType == 'p') {
@@ -125,7 +127,10 @@ var PaymentsFactory = function() {
 
 	// PUBLIC FUNCTION: Check the specified promo code with the servers
 	Payments.prototype.checkPromoCode = function(code, sendResponse) {
-		code = parseInt(code) || 0;
+		code = code.trim();
+		if (code.indexOf('@') == -1) {
+			code = parseInt(code) || 0;
+		}
 		var params = { 'machineId': stats.get('userId'), 'code': code, 'token': Math.floor(Math.random() * 99999) + 1 };
 		log('Checking promo for ' + JSON.stringify(params));
 		var onServerResponse = function(err, res) {
