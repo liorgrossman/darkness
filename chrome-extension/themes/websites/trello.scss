@@ -78,10 +78,12 @@ input, textarea {
 .background-box[style=" ; background-color: #838C91 ;"]
 {
 	@include invert-back();
-	//background-color: lighten(#CD5A91, 5%) !important;
 }
-//background-color: #CD5A91;
-//}
+
+// invert back unread dot
+.compact-board-tile-link-options-unread{
+	@include invert-back();
+}
 
 // Textareas and input boxes
 textarea.list-header-name.mod-list-name {
