@@ -58,7 +58,7 @@ Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and ex
 
 ## Got more questions?
 * Join the [Darkness Developers Community on Facebook](https://www.facebook.com/groups/darkness-developers)
-* Contact us at: support@improvver.com
+* Contact us at: darkness@improvver.com
 
 
 ##  License

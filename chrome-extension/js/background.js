@@ -122,320 +122,6 @@ var setThemeForAllWebsites = function(theme) {
 	}
 };
 
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Payments - All Platforms
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-// Load/reload the current user
-var reloadUser = function(callback) {
-	log("Reload user");
-	if (ENVIRONMENT == 'development' || (settings.global.get('override') && settings.global.get('override') != '')) {
-		// Paid via PayPal
-		stats.set('type', 'p');
-		if (callback) callback('p');
-	} else {
-		// Check Google Payments
-		checkGooglePayments(function(err, type) {
-			// if (ENVIRONMENT == 'staging') type = true;
-			if (err) {
-				logError('checkGooglePayments error: ', err);
-			} else { // no error
-				var pro = (type === true);
-				stats.set('type', pro ? 'p' : 'n');
-				if (pro) {
-					// No need to keep on checking with Google Payments
-					settings.global.set('override', 'google');
-				}
-			}
-			if (callback) callback(type);
-		});
-	}
-};
-
-
-// Keep calling reloadUser() until the user is marked as a 'Pro' user
-// Used when waiting for an upgrade payment to complete
-// Upon success or upon timeout, calls callback(type)
-var reloadUserInterval = 500;
-var reloadUserUntilPro = function(success, callback) {
-	reloadUser(function() {
-		var userType = stats.get('type');
-		if (success) {
-			// Payment returned success
-			if (userType == 'p') {
-				// Pro user - return success
-				callback({ type: userType });
-			} else {
-				if (reloadUserInterval < 20000) {
-					// Non-pro user - keep trying
-					log('Will call reload again in ' + reloadUserInterval + 'ms');
-					setTimeout(function() {
-						reloadUserUntilPro(success, callback);
-					}, reloadUserInterval);
-					reloadUserInterval *= 2;
-				} else {
-					// Non-pro user - timeout
-					log('I give up');
-					callback({ type: userType });
-				}
-			}
-		} else {
-			// Payment returned failure
-			// Return failure immediately
-			log('Reload called once due to failure');
-			callback({ type: userType });
-		}
-	});
-};
-
-
-// Check the specified promo code with Darkness' servers
-var checkPromoCode = function(code, sendResponse) {
-	code = parseInt(code) || 0;
-	var params = { 'machineId': stats.get('userId'), 'code': code, 'token': Math.floor(Math.random() * 99999) + 1 };
-	log('Checking promo for ' + JSON.stringify(params));
-	var onServerResponse = function(err, res) {
-		if (err) {
-			log('Promo server error: ' + code);
-			repEvent('user-action', 'prmo-server-error', code);
-			sendResponse({ success: false, error: err.toString() });
-		}
-		if (res) {
-			log(res);
-			var success = res.success;
-			var r = res.response;
-			if (success) {
-				var validResponse =
-					hashStringToSignedInt32(r + "N79clEnJjx0PTrrpx759sFNfpMCJc") == 1281845216 &&
-					hashStringToSignedInt32(r + "BUf6ffyyetwkRsmhklcOs") == 593006853 &&
-					hashStringToSignedInt32(r + "KLzzTuPDoP5cXJ1iK3yrR8kzo1zC7YJTcw") == 803706031;
-				if (validResponse) {
-					log('Promo correct: ' + code);
-					repEvent('errors', 'prmo-response-code-correct', code);
-					settings.global.set('override', 'prmo' + code);
-					reloadUser(function() {
-						sendResponse({ success: true });
-					})
-				} else {
-					log('Promo server invalid: ' + code);
-					repEvent('errors', 'prmo-response-invalid-' + res.response.toString(), code);
-					sendResponse({ success: false, error: 'Invalid response detected: ' + res.response.toString()});
-				}
-
-			} else {
-				log('Promo incorrect: ' + code);
-				repEvent('errors', 'prmo-response-code-incorrect', code);
-				sendResponse({ success: false, error: 'PROMO-INCORRECT' });
-			}
-		} else {
-			log('Promo server got no response: ' + code);
-			repEvent('errors', 'prmo-response-no-response', code);
-			sendResponse({ success: false, error: 'No response received'});
-		}
-	};
-	sendHttpPostRequest('http://improvver.com/api/darkness/check-promo-code', params, onServerResponse);
-};
-
-// Get the SKU for Darkness Pro
-var getSku = function() {
-	var DEFAULT_SKU = "1";
-	var installDate = stats.get('installDate') || 0;
-	if (typeof(installDate) != 'number') return DEFAULT_SKU;
-	var timeNow = (new Date()).getTime();
-	var passedMs = timeNow - installDate;	
-	var passedDays = passedMs / 1000 / 3600 / 24;
-	if (passedDays > 7) {
-		return "2";
-	}
-	// if (ENVIRONMENT == "staging") return "2";
-	return DEFAULT_SKU;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Payments - Google Payments
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-// Check Google Payments for the current user (based on the Chrome's user account)
-// Callback returns: errorString, paidBoolean
-var checkGooglePayments = function(callback) {
-	google.payments.inapp.getPurchases({
-		'parameters': { 'env': 'prod' },
-		'success': function(res) {
-			log('getPurchases success:', res);
-			if (!res.response || typeof(res.response.details) != 'object') return callback('getPurchases no response', false);
-			// Find valid purchases
-			var valids = [];
-			for (var i in res.response.details) {
-				var item = res.response.details[i];
-				log('getPurchases item:', item);
-				if (item.state == "ACTIVE") {
-					valids.push(item);
-				}
-			}
-			// valids == {kind: "chromewebstore#payment", itemId: "imilbobhamcfahccagbncamhpnbkaenm", sku: "darkness_pro_monthly_1.99", createdTime: "1464616290111", state: "ACTIVE"}
-			log("getPurchases valids:", valids);
-			return callback(null, valids.length > 0);
-		},
-		'failure': function(res) {
-			log('getPurchases failure:', res);
-			return callback('getPurchases failure', false);
-
-		}
-	});
-};
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Payments - PayPal
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-// Paypal related variables
-var paypalTransacationId = 'NONE';
-var paypalTransactionResponse = null;
-
-// Start a periodic check of PayPal to see if user has already paid
-// We pass a randomly-generated transactionId so we do not mix up 2 different clicks on the "Pay" button
-var startPollingPayPal = function(callbackToNotifyClient, transactionId) {
-	paypalTransacationId = transactionId;
-
-	// Set stats for when polling had started
-	// Polling will persist even if browser is restarted (since it's based on setInterval every second + status saved in chrome.storage)
-	var now = (new Date()).getTime();
-	stats.set('paypalOpenedTime', now);
-	stats.set('paypalCheckedTime', now);
-
-	// Notify the client side when the PayPal transaction is complete (success/failure)
-	notifyOnPayPalTransactionComplete(callbackToNotifyClient);
-};
-
-
-// Check if PayPal transaction is complete (success/failure) every second - invoke the callback when it is.
-var notifyOnPayPalTransactionComplete = function(callbackToNotifyClient) {
-	if (paypalTransactionResponse) {
-		// When we get a success, call callbackToNotifyClient() so the "waiting..." dialog is closed
-		// If tab/browser is closed, no one will listen to callbackToNotifyClient(), which is OK since the "waiting" dialog is already gone
-		callbackToNotifyClient(paypalTransactionResponse);
-	} else {
-		var now = (new Date()).getTime();
-		var paypalOpenedTime = stats.get('paypalOpenedTime') || 0;
-		if (now - paypalOpenedTime > 1000 * 3600) { // 1 hour
-			log('I give up');
-			// Don't even send a response to client, keep the dialog open...
-		} else {
-			setTimeout(function() {
-				notifyOnPayPalTransactionComplete(callbackToNotifyClient);
-			}, 1000);
-		}
-	}
-};
-
-// If there's an active PayPal transaction going on (as initiated by startPollingPayPal) - query the status periodically
-// This query is done every 3 seconds, gradually increasing to every 60 seconds, and fully stops after 48 hours
-// This function is called every 1 second, but in most cases it does nothing
-var queryPayPalStatusPeriodically = function() {
-
-	// If there's an active PayPal transaction (as initiated by startPollingPayPal)
-	var paypalOpenedTime = stats.get('paypalOpenedTime');
-	if (paypalOpenedTime) {
-		var now = (new Date()).getTime();
-		var paypalOpenedMillisecondsAgo = now - paypalOpenedTime;
-		var paypalOpenedMinsAgo = Math.floor(paypalOpenedMillisecondsAgo / 1000 / 60);
-
-		// Stop after 48 hours
-		if (paypalOpenedMinsAgo > 60 * 48) {
-			stats.remove('paypalOpenedTime');
-			stats.remove('paypalCheckedTime');
-			return;
-		}
-
-		// Calculate interval (3 seconds to 60 seconds)
-		var howManySecondsBetweenChecks = paypalOpenedMinsAgo;
-		howManySecondsBetweenChecks = Math.max(howManySecondsBetweenChecks, 3); // Not less than 3 seconds
-		howManySecondsBetweenChecks = Math.min(howManySecondsBetweenChecks, 60); // Not more than 60 seconds
-		howManySecondsBetweenChecks = howManySecondsBetweenChecks - 0.1; // To avoid inaccurate clock problems
-
-		// Since this function runs every 1 second, check if it's time to send a query again?
-		var paypalCheckedTime = stats.get('paypalCheckedTime');
-		if (now - paypalCheckedTime > (howManySecondsBetweenChecks * 1000)) {
-			queryPayPalStatusNow();
-		}
-	}
-};
-
-// Query PayPal payment status for the current machine and current transaction
-var queryPayPalStatusNow = function() {
-	var now = (new Date()).getTime();
-	stats.set('paypalCheckedTime', now);
-	var machineId = stats.get('userId');
-	var params = { 'machineId': machineId, 'transactionId': paypalTransacationId };
-	log('Checking IPN status for ' + JSON.stringify(params));
-	var onServerResponse = function(err, res) {
-		if (err) {
-			repEvent('errors', 'payment-response-comm-error-'+err, machineId);
-			return logError("Error communicating with server: " + err);
-		}
-		if (res) {
-			if (res.error) {
-				repEvent('errors', 'payment-response-server-error-'+res.error, machineId);
-				return logError("Server returned error: " + res.error);
-			}
-			if (res.data) {
-				if (res.data.custom_machine_id != machineId) {
-					repEvent('errors', 'payment-response-incompatible-machine-id', machineId);
-					return logError("Incompatible machineId returned: ", res.data.custom_machine_id, machineId);
-				}
-
-				// Save info from PayPal
-				stats.set('firstName', res.data.first_name);
-				stats.set('lastName', res.data.first_name);
-				stats.set('email', res.data.payer_email);
-
-				if (res.data.payment_status == 'Completed') {
-					// Payment successful
-					log("Payment done:", res.data);
-					stats.set('upgradeDate', parseInt(res.data.timestamp));
-					stats.set('ipnGuid', res.data.guid); // for future reference
-					settings.global.set('override', 'paypal');
-					// Return a response to the client side
-					// (paypalTransactionResponse is checked periodically, and returned to client by notifyOnPayPalTransactionComplete)
-					paypalTransactionResponse = {
-						status: res.data.payment_status,
-						reason: (res.data.reason_code || res.data.pending_reason || '')
-					};
-					// Stop polling
-					stats.remove('paypalOpenedTime');
-					stats.remove('paypalCheckedTime');
-				} else {
-					// Status != 'Completed'
-					if (res.data.custom_transaction_id == paypalTransacationId) {
-						// A user's current payment transaction has failed
-						log("This transaction has failed");
-						// Return a response to the client side
-						// (paypalTransactionResponse is checked periodically, and returned to client by notifyOnPayPalTransactionComplete)
-						paypalTransactionResponse = {
-							status: res.data.payment_status,
-							reason: (res.data.reason_code || res.data.pending_reason || '')
-						};
-						// Stop polling
-						stats.remove('paypalOpenedTime');
-						stats.remove('paypalCheckedTime');
-					} else {
-						// A user failed to pay in the past, but is currently trying to pay again
-						log("Some previous transaction has failed, keep polling");
-					}
-				}
-			} else {
-				// No res.data = no payment ever done
-				log("No payment done yet");
-			}
-		} else {
-			// No res
-			return logError("No data found in response", res);
-		}
-	};
-	sendHttpPostRequest('http://improvver.com/api/darkness/check-user-paypal-status', params, onServerResponse);
-};
-
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Messaging between background script <-> client side content script
@@ -517,18 +203,18 @@ chrome.runtime.onMessage.addListener(
 			case 'startPollingPayPal':
 				// User just clicked "Pay with PayPal", start polling for PayPal response periodally
 				// Notify the client side upon success, failure, or timeout
-				startPollingPayPal(sendResponse, request.transactionId);
+				Payments.startPollingPayPal(sendResponse, request.transactionId);
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
 			case 'payResponse':
 				// Client side notifies background when PayPal / Google Payment is complete (either success or failure)
 				// This will reload the user until it's pro (or timeout), let the client know the user type, and let the client send analytics
-				reloadUserUntilPro(request.success, sendResponse);
+				Payments.reloadUserUntilPro(request.success, sendResponse);
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
 			case 'checkPromoCode':
 				// Check the specified promo code with Darkness' servers
-				checkPromoCode(request.promo, sendResponse);
+				Payments.checkPromoCode(request.promo, sendResponse);
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
 			default:
@@ -596,7 +282,7 @@ var injectSettingsScriptToTab = function(tab) {
 	// Load all stuff that needs to be inside "var ASSETS" in settings.js
 	getAssetsForSettingsPanel(function(args) {
 		// Add additional variables that are used by settings.js
-		args['SKU'] = getSku();
+		args['SKU'] = Payments.getSku();
 		args['MACHINEID'] = stats.get('userId')
 		args['ENVIRONMENT'] = ENVIRONMENT;
 		args['THEME'] = themeKey;
@@ -654,7 +340,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	log("Injecting loader script");
 
 	// Analytics
-	repToFunnel('pageview', getSku());
+	repToFunnel('pageview', Payments.getSku());
 	if (Math.random() < 0.01) repEventByUser('pageviews-x100', siteKey + '-' + themeKey);
 
 	// Load all the assets
@@ -834,7 +520,7 @@ var initializeBackgroundScript = function() {
 			if (ENVIRONMENT == 'staging') settings.global.remove('override');
 
 			// Load the user
-			reloadUser(function() {
+			Payments.reloadUser(function() {
 
 				// Initialize analytics: part 2
 				initializeAnalyticsAfterLoad();
@@ -853,8 +539,6 @@ var initializeBackgroundScript = function() {
 					if (ENVIRONMENT != 'production') {
 						loadAllAssetsToCache(false, function() {});
 					}
-					// If user opted to pay with PayPal, check the payment status
-					queryPayPalStatusPeriodically();
 				}, 1000)
 			});
 
