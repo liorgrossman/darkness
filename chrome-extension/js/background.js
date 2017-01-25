@@ -203,18 +203,18 @@ chrome.runtime.onMessage.addListener(
 			case 'startPollingPayPal':
 				// User just clicked "Pay with PayPal", start polling for PayPal response periodally
 				// Notify the client side upon success, failure, or timeout
-				startPollingPayPal(sendResponse, request.transactionId);
+				Payments.startPollingPayPal(sendResponse, request.transactionId);
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
 			case 'payResponse':
 				// Client side notifies background when PayPal / Google Payment is complete (either success or failure)
 				// This will reload the user until it's pro (or timeout), let the client know the user type, and let the client send analytics
-				reloadUserUntilPro(request.success, sendResponse);
+				Payments.reloadUserUntilPro(request.success, sendResponse);
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
 			case 'checkPromoCode':
 				// Check the specified promo code with Darkness' servers
-				checkPromoCode(request.promo, sendResponse);
+				Payments.checkPromoCode(request.promo, sendResponse);
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
 			default:
@@ -282,7 +282,7 @@ var injectSettingsScriptToTab = function(tab) {
 	// Load all stuff that needs to be inside "var ASSETS" in settings.js
 	getAssetsForSettingsPanel(function(args) {
 		// Add additional variables that are used by settings.js
-		args['SKU'] = getSku();
+		args['SKU'] = Payments.getSku();
 		args['MACHINEID'] = stats.get('userId')
 		args['ENVIRONMENT'] = ENVIRONMENT;
 		args['THEME'] = themeKey;
@@ -340,7 +340,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	log("Injecting loader script");
 
 	// Analytics
-	repToFunnel('pageview', getSku());
+	repToFunnel('pageview', Payments.getSku());
 	if (Math.random() < 0.01) repEventByUser('pageviews-x100', siteKey + '-' + themeKey);
 
 	// Load all the assets
@@ -520,7 +520,7 @@ var initializeBackgroundScript = function() {
 			if (ENVIRONMENT == 'staging') settings.global.remove('override');
 
 			// Load the user
-			reloadUser(function() {
+			Payments.reloadUser(function() {
 
 				// Initialize analytics: part 2
 				initializeAnalyticsAfterLoad();
@@ -539,8 +539,6 @@ var initializeBackgroundScript = function() {
 					if (ENVIRONMENT != 'production') {
 						loadAllAssetsToCache(false, function() {});
 					}
-					// If user opted to pay with PayPal, check the payment status
-					queryPayPalStatusPeriodically();
 				}, 1000)
 			});
 
