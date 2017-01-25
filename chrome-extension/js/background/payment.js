@@ -5,26 +5,66 @@
 
 var PaymentsFactory = function() {
 
+	// Global vailables
+	var _appName = null;
+	
 	// Constructor
-	function Payments() {}
+	function Payments(appName) {
+		_appName = appName;
+		console.log("Loading with apName", appName);
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Helper methods
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	function _setType(type) {
+		if (_appName == 'darkness')
+			stats.set('type', type);
+		else 
+			settings.set('type', type);
+	}
+
+	function _getType() {
+		if (_appName == 'darkness')
+			stats.get('type');
+		else 
+			settings.get('type');
+	}
+
+	function _setOverride(override) {
+		if (_appName == 'darkness')
+			settings.global.set('override', override);
+		else 
+			settings.set('override', override);
+	}
+
+	function _getOverride() {
+		if (_appName == 'darkness')
+			settings.global.get('override');
+		else 
+			settings.get('override');
+	}
 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------
 	// Payments - All Platforms
 	//----------------------------------------------------------------------------------------------------------------------------------------------------
 
-	var paymentPeriodCheckInterval = null;
-	// Load/reload the current user
+	
+	// PUBLIC FUNCTION: Load/reload the current user
+	// This is called on application start
+	var _paymentPeriodCheckInterval = null;
 	Payments.prototype.reloadUser = function(callback) {
 		log("Reload user");
-		if (ENVIRONMENT == 'development' || (settings.global.get('override') && settings.global.get('override') != '')) {
+		if (ENVIRONMENT == 'development' || (_getOverride() && _getOverride() != '')) {
 			// Paid via PayPal
 			stats.set('type', 'p');
 			if (callback) callback('p');
 		} else {
 			// Check PayPal
-			if (paymentPeriodCheckInterval) clearInterval(paymentPeriodCheckInterval);
-			paymentPeriodCheckInterval = setInterval(function() {
-				queryPayPalStatusPeriodically();
+			if (_paymentPeriodCheckInterval) clearInterval(_paymentPeriodCheckInterval);
+			_paymentPeriodCheckInterval = setInterval(function() {
+				_queryPayPalStatusPeriodically();
 			}, 1000);
 
 			// Check Google Payments
@@ -37,7 +77,7 @@ var PaymentsFactory = function() {
 					stats.set('type', pro ? 'p' : 'n');
 					if (pro) {
 						// No need to keep on checking with Google Payments
-						settings.global.set('override', 'google');
+						_setOverride('google');
 					}
 				}
 				if (callback) callback(type);
@@ -47,10 +87,10 @@ var PaymentsFactory = function() {
 	};
 
 
-	// Keep calling reloadUser() until the user is marked as a 'Pro' user
+	// PUBLIC FUNCTION: Keep calling reloadUser() until the user is marked as a 'Pro' user
 	// Used when waiting for an upgrade payment to complete
 	// Upon success or upon timeout, calls callback(type)
-	var reloadUserInterval = 500;
+	var _reloadUserInterval = 500;
 	Payments.prototype.reloadUserUntilPro = function(success, callback) {
 		Payments.prototype.reloadUser(function() {
 			var userType = stats.get('type');
@@ -60,13 +100,13 @@ var PaymentsFactory = function() {
 					// Pro user - return success
 					callback({ type: userType });
 				} else {
-					if (reloadUserInterval < 20000) {
+					if (_reloadUserInterval < 20000) {
 						// Non-pro user - keep trying
-						log('Will call reload again in ' + reloadUserInterval + 'ms');
+						log('Will call reload again in ' + _reloadUserInterval + 'ms');
 						setTimeout(function() {
 							Payments.prototype.reloadUserUntilPro(success, callback);
-						}, reloadUserInterval);
-						reloadUserInterval *= 2;
+						}, _reloadUserInterval);
+						_reloadUserInterval *= 2;
 					} else {
 						// Non-pro user - timeout
 						log('I give up');
@@ -83,7 +123,7 @@ var PaymentsFactory = function() {
 	};
 
 
-	// Check the specified promo code with Darkness' servers
+	// PUBLIC FUNCTION: Check the specified promo code with Darkness' servers
 	Payments.prototype.checkPromoCode = function(code, sendResponse) {
 		code = parseInt(code) || 0;
 		var params = { 'machineId': stats.get('userId'), 'code': code, 'token': Math.floor(Math.random() * 99999) + 1 };
@@ -106,7 +146,7 @@ var PaymentsFactory = function() {
 					if (validResponse) {
 						log('Promo correct: ' + code);
 						repEvent('errors', 'prmo-response-code-correct', code);
-						settings.global.set('override', 'prmo' + code);
+						_setOverride('prmo' + code);
 						Payments.prototype.reloadUser(function() {
 							sendResponse({ success: true });
 						})
@@ -130,7 +170,7 @@ var PaymentsFactory = function() {
 		sendHttpPostRequest('http://improvver.com/api/darkness/check-promo-code', params, onServerResponse);
 	};
 
-	// Get the SKU for Darkness Pro
+	// PUBLIC FUNCTION: Get the SKU for Darkness Pro
 	Payments.prototype.getSku = function() {
 		var DEFAULT_SKU = "1";
 		var installDate = stats.get('installDate') || 0;
@@ -186,7 +226,7 @@ var PaymentsFactory = function() {
 	var _paypalTransacationId = 'NONE';
 	var _paypalTransactionResponse = null;
 
-	// Start a periodic check of PayPal to see if user has already paid
+	// PUBLIC FUNCTION: Start a periodic check of PayPal to see if user has already paid
 	// We pass a randomly-generated transactionId so we do not mix up 2 different clicks on the "Pay" button
 	Payments.prototype.startPollingPayPal = function(callbackToNotifyClient, transactionId) {
 		_paypalTransacationId = transactionId;
@@ -225,7 +265,7 @@ var PaymentsFactory = function() {
 	// If there's an active PayPal transaction going on (as initiated by startPollingPayPal) - query the status periodically
 	// This query is done every 3 seconds, gradually increasing to every 60 seconds, and fully stops after 48 hours
 	// This function is called every 1 second, but in most cases it does nothing
-	var queryPayPalStatusPeriodically = function() {
+	var _queryPayPalStatusPeriodically = function() {
 
 		// If there's an active PayPal transaction (as initiated by startPollingPayPal)
 		var paypalOpenedTime = stats.get('paypalOpenedTime');
@@ -288,7 +328,7 @@ var PaymentsFactory = function() {
 						log("Payment done:", res.data);
 						stats.set('upgradeDate', parseInt(res.data.timestamp));
 						stats.set('ipnGuid', res.data.guid); // for future reference
-						settings.global.set('override', 'paypal');
+						_setOverride('paypal');
 						// Return a response to the client side
 						// (_paypalTransactionResponse is checked periodically, and returned to client by _notifyOnPayPalTransactionComplete)
 						_paypalTransactionResponse = {
@@ -335,6 +375,7 @@ var PaymentsFactory = function() {
 
 }
 
-// Run the function that builds the class
+// Get the construcor
 var PaymentsConstructor = new PaymentsFactory();
-var Payments = new PaymentsConstructor();
+// Run the constructor
+var Payments = new PaymentsConstructor(CONFIG.appName);
