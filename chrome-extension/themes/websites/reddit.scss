@@ -75,3 +75,12 @@ input {
 body {
 	background-color: $theme-background !important;
 }
+
+// Right sidebar
+.side .submit {
+	-webkit-filter: invert(1) !important;
+}
+.side a {
+	-webkit-filter: invert(1) !important;
+	color: invert-back-color($theme-link) !important;
+}
