@@ -210,7 +210,7 @@ var CONFIG = {
 		'trello': {
 			key: 'trello', // Must be the same as the object key
 			name: 'Trello',
-			support: 'full', // Show a call to action for developers to join our community (don't show it in dev mode)
+			support: 'in-development', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^trello\.com$', 'i')
 		},
 		'dropbox': {

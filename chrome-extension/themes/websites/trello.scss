@@ -43,9 +43,45 @@ input, textarea {
 	@include invert-back();
 }
 
-.compact-board-tile-wrapper{
+
+// Invert back board background colours
+
+.compact-board-tile-link-thumbnail[style="background-color: #0079BF;"],
+.compact-board-tile-background[style="background-color: #0079BF;"],
+.background-box[style=" ; background-color: #0079BF; "],
+.compact-board-tile-link-thumbnail[style="background-color: #0079BF;"],
+.compact-board-tile-background[style="background-color: #0079BF;"],
+.background-box[style=" ; background-color: #0079BF; "],
+.compact-board-tile-link-thumbnail[style="background-color: #D29034;"],
+.compact-board-tile-background[style="background-color: #D29034;"],
+.background-box[style=" ; background-color: #D29034; "],
+.compact-board-tile-link-thumbnail[style="background-color: #519839;"],
+.compact-board-tile-background[style="background-color: #519839;"],
+.background-box[style=" ; background-color: #519839; "],
+.compact-board-tile-link-thumbnail[style="background-color: #B04632;"],
+.compact-board-tile-background[style="background-color: #B04632;"],
+.background-box[style=" ; background-color: #B04632; "],
+.compact-board-tile-link-thumbnail[style="background-color: #89609E;"],
+.compact-board-tile-background[style="background-color: #89609E;"],
+.background-box[style=" ; background-color: #89609E; "],
+.compact-board-tile-link-thumbnail[style="background-color: #CD5A91;"],
+.compact-board-tile-background[style="background-color: #CD5A91;"],
+.background-box[style=" ; background-color: #CD5A91; "],
+.compact-board-tile-link-thumbnail[style="background-color: #4BBF6B;"],
+.compact-board-tile-background[style="background-color: #4BBF6B;"],
+.background-box[style=" ; background-color: #4BBF6B; "],
+.compact-board-tile-link-thumbnail[style="background-color: #00AECC;"],
+.compact-board-tile-background[style="background-color: #00AECC;"],
+.background-box[style=" ; background-color: #00AECC; "],
+.compact-board-tile-link-thumbnail[style="background-color: #838C91;"],
+.compact-board-tile-background[style="background-color: #838C91;"]
+.background-box[style=" ; background-color: #838C91 ;"]
+{
 	@include invert-back();
+	//background-color: lighten(#CD5A91, 5%) !important;
 }
+//background-color: #CD5A91;
+//}
 
 // Textareas and input boxes
 textarea.list-header-name.mod-list-name {
