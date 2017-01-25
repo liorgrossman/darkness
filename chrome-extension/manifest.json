@@ -47,7 +47,7 @@
 			"js/background/user-settings.js",
 			"js/background/file-reader.js",
 			"js/background/analytics.js",
-			"js/background/payment.js",
+			"js/background/payments.js",
 			"js/background.js"
 		],
 		"persistent": true

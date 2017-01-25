@@ -200,6 +200,8 @@ chrome.runtime.onMessage.addListener(
 				});
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
 
+				// ===== Payments =====
+
 			case 'startPollingPayPal':
 				// User just clicked "Pay with PayPal", start polling for PayPal response periodally
 				// Notify the client side upon success, failure, or timeout
@@ -216,6 +218,8 @@ chrome.runtime.onMessage.addListener(
 				// Check the specified promo code with Darkness' servers
 				Payments.checkPromoCode(request.promo, sendResponse);
 				return true; // Don't call sendResponse automatically - tell Chrome we wish to call it later (async)
+
+				// ===== Default =====
 
 			default:
 				// ERROR: Unsupported message
