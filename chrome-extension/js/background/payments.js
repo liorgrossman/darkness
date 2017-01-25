@@ -57,12 +57,10 @@ var PaymentsFactory = function() {
 	Payments.prototype.reloadUser = function(callback) {
 		log("Reload user");
 		if (ENVIRONMENT == 'development' || (_getOverride() && _getOverride() != '')) {
-			console.log("1111");
 			// Paid via PayPal
 			_setType('p');
 			if (callback) callback('p');
 		} else {
-			console.log("2222");
 			// Check PayPal
 			if (_paymentPeriodCheckInterval) clearInterval(_paymentPeriodCheckInterval);
 			_paymentPeriodCheckInterval = setInterval(function() {
