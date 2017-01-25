@@ -326,6 +326,17 @@ a.yt-uix-button-epic-nav-item:hover {
 	background: transparent !important;
 }
 
+// Color on the comment-button
+#comment-simplebox .comment-simplebox-buttons > button.comment-simplebox-submit {
+	background: $theme-button-background !important;
+	background-color: $theme-button-background !important;
+}
+
+// Black background for comment-box
+.comment-simplebox-frame, .comment-simplebox-renderer-collapsed-content {
+	background-color: #fff !important;
+}
+
 // Transparent BG for the buttons in the comment section
 #comment-section-renderer button {
 	background: transparent !important;
