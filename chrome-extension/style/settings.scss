@@ -642,10 +642,10 @@ div.drk_dialog.drk_get_pro.sku-2 {
 	}
 
 	.drk_promo_link, .drk_promo_caption, .drk_hide_link {
-		color: rgba(255, 255, 255, 0.25) !important
+		color: #60a5e0 !important;
 	}
 	.drk_promo_link:hover, .drk_promo_caption:hover, .drk_hide_link:hover {
-		color: rgba(255, 255, 255, 0.35) !important
+		color: #70b0ff !important;
 	}
 
 }
@@ -770,12 +770,13 @@ div.drk_dialog.drk_get_pro {
 	}
 
 	.drk_promo_caption {
-		bottom: 53px !important;
+		bottom: 56px !important;
 		right: 15px !important;
 		width: 120px !important;
 		text-align: center !important;
 		color: #459078 !important;
 		font-size: 12px !important;
+		line-height: 1.3em !important;
 	}
 
 	.drk_promo_input {

@@ -281,7 +281,7 @@ if (!DarknessSettingsLoader) {
 				} else {
 					if (res.error == 'PROMO-INCORRECT') {
 						// Notify the user code is wrong
-						$dialog.find('.drk_promo_submit').val('Invalid code');
+						$dialog.find('.drk_promo_submit').val('Not found');
 						$dialog.find('.drk_promo_input').val('');
 						setTimeout(function() {
 							$dialog.find('.drk_promo_submit').val('Send');
