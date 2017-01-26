@@ -151,6 +151,12 @@ var CONFIG = {
 				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
 			]
 		},
+		'bitbucket': {
+			key: 'bitbucket', // Must be the same as the object key
+			name: 'Bitbucket',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^bitbucket\.org$', 'i')
+		},
 		'sharelatex': {
 			key: 'sharelatex', // Must be the same as the object key
 			name: 'ShareLaTeX',

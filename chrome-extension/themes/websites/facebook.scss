@@ -964,6 +964,9 @@ body ._19u- ._3ixn {
 .uiSearchInput button {
 	background-color: transparent !important;
 }
+input.inputtext {
+	background-color: transparent !important;
+}
 
 // Coverphoto
 .groupsCoverPhoto img.scaledImageFitHeight {
@@ -1095,4 +1098,10 @@ i._lew {
 }
 ._2mbj ._3u33 i {
 	-webkit-filter: invert(50%) !important;
+}
+
+// Close hints
+._50zz._50z-, ._3soc {
+	-webkit-filter: invert(1) !important;
+    background-color: transparent !important;
 }
