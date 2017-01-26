@@ -22,7 +22,7 @@ input
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Big Google Logo
-#hplogo {
+#hplogo img {
 	@include invert-back()
 }
 
@@ -136,7 +136,7 @@ input
 
 
 // User avatar on toolbar
-.gb_7a::before, .gb_8a::before {
+.gb_7a::before, .gb_8a::before, .gbii::before {
 	@include invert-back()
 }
 
