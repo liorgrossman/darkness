@@ -67,7 +67,9 @@ var PaymentsFactory = function() {
 	var _paymentPeriodCheckInterval = null;
 	Payments.prototype.reloadUser = function(callback) {
 		log("Reload user");
-		if ((_getOverride() && _getOverride() != '')) {
+		// Darkness Developer Edition users always have all Pro features on
+		var alwaysPro = (_appName == 'darkness') && (ENVIRONMENT == 'development');
+		if (alwaysPro || (_getOverride() && _getOverride() != '')) {
 			console.log("reloadUser found Pro user");
 			// Paid via PayPal
 			_setType('p');
