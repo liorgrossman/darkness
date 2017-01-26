@@ -7,11 +7,10 @@ var PaymentsFactory = function() {
 
 	// Global vailables
 	var _appName = null;
-	
+
 	// Constructor
 	function Payments(appName) {
 		_appName = appName;
-		console.log("Loading with apName", appName);
 	}
 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -21,52 +20,60 @@ var PaymentsFactory = function() {
 	function _setType(type) {
 		if (_appName == 'darkness')
 			return stats.set('type', type);
-		else 
+		else
 			return settings.set('type', type);
 	}
 
 	function _getType() {
 		if (_appName == 'darkness')
 			return stats.get('type');
-		else 
+		else
 			return settings.get('type');
 	}
 
 	function _setOverride(override) {
 		if (_appName == 'darkness')
 			return settings.global.set('override', override);
-		else 
+		else
 			return settings.set('override', override);
 	}
 
 	function _getOverride() {
 		if (_appName == 'darkness')
 			return settings.global.get('override');
-		else 
+		else
 			return settings.get('override');
 	}
+
+	var hashStringToSignedInt32 = function(str) {
+		var hash = 0,
+			i, chr, len;
+		if (str.length === 0) return hash;
+		for (i = 0, len = str.length; i < len; i++) {
+			chr = str.charCodeAt(i);
+			hash = ((hash << 5) - hash) + chr;
+			hash |= 0; // Convert to 32bit signed integer
+		}
+		return hash;
+	};
 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------
 	// Payments - All Platforms
 	//----------------------------------------------------------------------------------------------------------------------------------------------------
 
-	
+
 	// PUBLIC FUNCTION: Load/reload the current user
 	// This is called on application start
 	var _paymentPeriodCheckInterval = null;
 	Payments.prototype.reloadUser = function(callback) {
 		log("Reload user");
-		if (ENVIRONMENT == 'development' || (_getOverride() && _getOverride() != '')) {
+		if ((_getOverride() && _getOverride() != '')) {
+			console.log("reloadUser found Pro user");
 			// Paid via PayPal
 			_setType('p');
 			if (callback) callback('p');
 		} else {
-			// Check PayPal
-			if (_paymentPeriodCheckInterval) clearInterval(_paymentPeriodCheckInterval);
-			_paymentPeriodCheckInterval = setInterval(function() {
-				_queryPayPalStatusPeriodically();
-			}, 1000);
-
+			console.log("reloadUser found Normal user");
 			// Check Google Payments
 			_checkGooglePayments(function(err, type) {
 				// if (ENVIRONMENT == 'staging') type = true;
@@ -84,6 +91,12 @@ var PaymentsFactory = function() {
 			});
 		}
 
+		// Check PayPal
+		if (_paymentPeriodCheckInterval) clearInterval(_paymentPeriodCheckInterval);
+		_paymentPeriodCheckInterval = setInterval(function() {
+			_queryPayPalStatusPeriodically();
+		}, 1000);
+
 	};
 
 
@@ -98,7 +111,9 @@ var PaymentsFactory = function() {
 				// Payment returned success
 				if (userType == 'p') {
 					// Pro user - return success
-					callback({ type: userType });
+					callback({
+						type: userType
+					});
 				} else {
 					if (_reloadUserInterval < 20000) {
 						// Non-pro user - keep trying
@@ -110,14 +125,18 @@ var PaymentsFactory = function() {
 					} else {
 						// Non-pro user - timeout
 						log('I give up');
-						callback({ type: userType });
+						callback({
+							type: userType
+						});
 					}
 				}
 			} else {
 				// Payment returned failure
 				// Return failure immediately
 				log('Reload called once due to failure');
-				callback({ type: userType });
+				callback({
+					type: userType
+				});
 			}
 		});
 	};
@@ -129,13 +148,20 @@ var PaymentsFactory = function() {
 		if (code.indexOf('@') == -1) {
 			code = parseInt(code) || 0;
 		}
-		var params = { 'machineId': stats.get('userId'), 'code': code, 'token': Math.floor(Math.random() * 99999) + 1 };
+		var params = {
+			'machineId': stats.get('userId'),
+			'code': code,
+			'token': Math.floor(Math.random() * 99999) + 1
+		};
 		log('Checking promo for ' + JSON.stringify(params));
 		var onServerResponse = function(err, res) {
 			if (err) {
 				log('Promo server error: ' + code);
 				repEvent('user-action', 'prmo-server-error', code);
-				sendResponse({ success: false, error: err.toString() });
+				sendResponse({
+					success: false,
+					error: err.toString()
+				});
 			}
 			if (res) {
 				log(res);
@@ -151,23 +177,34 @@ var PaymentsFactory = function() {
 						repEvent('errors', 'prmo-response-code-correct', code);
 						_setOverride('prmo' + code);
 						Payments.prototype.reloadUser(function() {
-							sendResponse({ success: true });
+							sendResponse({
+								success: true
+							});
 						})
 					} else {
 						log('Promo server invalid: ' + code);
 						repEvent('errors', 'prmo-response-invalid-' + res.response.toString(), code);
-						sendResponse({ success: false, error: 'Invalid response detected: ' + res.response.toString() });
+						sendResponse({
+							success: false,
+							error: 'Invalid response detected: ' + res.response.toString()
+						});
 					}
 
 				} else {
 					log('Promo incorrect: ' + code);
 					repEvent('errors', 'prmo-response-code-incorrect', code);
-					sendResponse({ success: false, error: 'PROMO-INCORRECT' });
+					sendResponse({
+						success: false,
+						error: 'PROMO-INCORRECT'
+					});
 				}
 			} else {
 				log('Promo server got no response: ' + code);
 				repEvent('errors', 'prmo-response-no-response', code);
-				sendResponse({ success: false, error: 'No response received' });
+				sendResponse({
+					success: false,
+					error: 'No response received'
+				});
 			}
 		};
 		sendHttpPostRequest('http://improvver.com/api/' + _appName + '/check-promo-code', params, onServerResponse);
@@ -196,7 +233,9 @@ var PaymentsFactory = function() {
 	// Callback returns: errorString, paidBoolean
 	var _checkGooglePayments = function(callback) {
 		google.payments.inapp.getPurchases({
-			'parameters': { 'env': 'prod' },
+			'parameters': {
+				'env': 'prod'
+			},
 			'success': function(res) {
 				log('getPurchases success:', res);
 				if (!res.response || typeof(res.response.details) != 'object') return callback('getPurchases no response', false);
@@ -232,6 +271,7 @@ var PaymentsFactory = function() {
 	// PUBLIC FUNCTION: Start a periodic check of PayPal to see if user has already paid
 	// We pass a randomly-generated transactionId so we do not mix up 2 different clicks on the "Pay" button
 	Payments.prototype.startPollingPayPal = function(callbackToNotifyClient, transactionId) {
+		console.log("Start polling");
 		_paypalTransacationId = transactionId;
 
 		// Set stats for when polling had started
@@ -303,7 +343,10 @@ var PaymentsFactory = function() {
 		var now = (new Date()).getTime();
 		stats.set('paypalCheckedTime', now);
 		var machineId = stats.get('userId');
-		var params = { 'machineId': machineId, 'transactionId': _paypalTransacationId };
+		var params = {
+			'machineId': machineId,
+			'transactionId': _paypalTransacationId
+		};
 		log('Checking IPN status for ' + JSON.stringify(params));
 		var onServerResponse = function(err, res) {
 			if (err) {
