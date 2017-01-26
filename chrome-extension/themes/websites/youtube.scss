@@ -382,6 +382,13 @@ a.yt-uix-button-epic-nav-item:hover {
 	color: $theme-url !important;
 }
 
+// Trying to make emojis work in titles
+.watch-title {
+	color: invert-back-color($theme-text) !important;
+	-webkit-filter: invert(1) !important;
+	text-rendering: geometricPrecision;
+}
+
 // Video likes bar color
 .video-extras-sparkbars {
 	-webkit-filter: invert(100%) !important;
