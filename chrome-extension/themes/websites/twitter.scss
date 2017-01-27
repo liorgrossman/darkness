@@ -167,6 +167,27 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	background: rgba(200,200,200,0.9) !important;
 }
 
+.Icon--report,
+.Icon--delete,
+.Icon--dots,
+.Icon--caretLeft,
+.Icon--smiley {
+	color: $theme-button-background !important;
+	-webkit-filter: invert(0) !important;
+}
+
+.DirectMessage-media {
+	-webkit-filter: invert(1) !important;
+}
+.DirectMessage-media .Media-photo {
+	-webkit-filter: invert(1) !important;
+}
+
+.EmojiPicker > button,
+.DirectMessage-action > button {
+	background-color: transparent !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Button-fixes
 //----------------------------------------------------------------------------------------------------------------------------------------------------

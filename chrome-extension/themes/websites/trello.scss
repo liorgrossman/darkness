@@ -1,34 +1,77 @@
-/*----------------------------------------------------------------------------------------------------------------------------------------------------
-This is a template for easily creating skins for new websites!
-The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Storing the Trello colors as variables for ease of use
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 
-Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
-Those CSS are built by combining 3 files:
-1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
-2. A skin common to all websites (themes/websites/all-websites.scss)
-3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
+// Original colors in HEX
+$trello-blue:	#0079BF;
+$trello-yellow:	#D29034;
+$trello-green:	#519839;
+$trello-red:	#B04632;
+$trello-purple:	#89609E;
+$trello-pink:	#CD5A91;
+$trello-mint:	#4BBF6B;
+$trello-cyan:	#00AECC;
+$trello-gray:	#838C91;
 
-Guidelines:
-* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
-* Please add short comments before each CSS selector to indicate what UI element it refers to
-* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
+// Original colors in RGB from HEX
+$trello-rgb-blue: red($trello-blue) + ", " + green($trello-blue) + ", " + blue($trello-blue);
+$trello-rgb-yellow: red($trello-yellow) + ", " + green($trello-yellow) + ", " + blue($trello-yellow);
+$trello-rgb-green: red($trello-green) + ", " + green($trello-green) + ", " + blue($trello-green);
+$trello-rgb-red: red($trello-red) + ", " + green($trello-red) + ", " + blue($trello-red);
+$trello-rgb-purple: red($trello-purple) + ", " + green($trello-purple) + ", " + blue($trello-purple);
+$trello-rgb-pink: red($trello-pink) + ", " + green($trello-pink) + ", " + blue($trello-pink);
+$trello-rgb-mint: red($trello-mint) + ", " + green($trello-mint) + ", " + blue($trello-mint);
+$trello-rgb-cyan: red($trello-cyan) + ", " + green($trello-cyan) + ", " + blue($trello-cyan);
+$trello-rgb-gray: red($trello-gray) + ", " + green($trello-gray) + ", " + blue($trello-gray);
 
-You should know: all the website's colors are inverted before skinning even starts!
-* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
-* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
-* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
-* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+// Percentage to darken the trello colors
+$percent: 25%;
+
+// Darkend trello colors
+$trello-dark-blue:		invert-back-color(darken($trello-blue, $percent));
+$trello-dark-yellow:	invert-back-color(darken($trello-yellow, $percent));
+$trello-dark-green:		invert-back-color(darken($trello-green, $percent));
+$trello-dark-red:		invert-back-color(darken($trello-red, $percent));
+$trello-dark-purple:	invert-back-color(darken($trello-purple, $percent));
+$trello-dark-pink:		invert-back-color(darken($trello-pink, $percent));
+$trello-dark-mint:		invert-back-color(darken($trello-mint, $percent));
+$trello-dark-cyan:		invert-back-color(darken($trello-cyan, $percent));
+$trello-dark-gray:		invert-back-color(darken($trello-gray, $percent));
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // All buttons
-button {
+button, 
+a.button-link:hover, 
+.pop-over-list > li > a:hover,
+.pop-over-list > li.uploader:hover > .fakefile,
+input[type="submit"].primary,
+input[type="button"],
+.quick-card-editor-buttons-item {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
+}
+
+input[type="submit"].primary,
+input[type="submit"],
+input[type="button"],
+a.mod-primary {
+	background: $theme-button-background !important;
+	box-shadow: 0 0 0 $theme-button-background !important;
+}
+button.negate {
+	box-shadow: 0 0 0 $theme-button-background !important;
+}
+button.negate:hover {
+	background: $theme-secondary-button-background !important;
+}
+
+// Login with google
+#google-link {
+	@include invert-back();
 }
 
 // All inputs
@@ -38,54 +81,170 @@ input, textarea {
 	border-color: $theme-border;
 }
 
-// Label colours should remain the same
+// links
+a:visited {
+	color: $theme-link !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Handling setting darker trello colors
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Default background
+body {
+	background-color: $theme-background !important;
+}
+
+// Color change preview
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-blue});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-yellow});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-green});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-red});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-purple});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-pink});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-mint});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-cyan});'],
+.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-gray});'] {
+	-webkit-filter: invert(0) !important;
+}
+
+// Blue elements
+body[style*="background-color: rgb(#{$trello-rgb-blue});"],
+.background-box[style*="background-color: #{$trello-blue};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-blue});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-blue};"],
+.compact-board-tile-background[style*="background-color: #{$trello-blue};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-blue});"] {
+	background-color: $trello-dark-blue !important;
+}
+// Yellow elements
+body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
+.background-box[style*="background-color: #{$trello-yellow};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-yellow});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-yellow};"],
+.compact-board-tile-background[style*="background-color: #{$trello-yellow};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-yellow});"] {
+	background-color: $trello-dark-yellow !important;
+}
+// Green elements
+body[style*="background-color: rgb(#{$trello-rgb-green});"],
+.background-box[style*="background-color: #{$trello-green};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-green});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-green};"],
+.compact-board-tile-background[style*="background-color: #{$trello-green};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-green});"] {
+	background-color: $trello-dark-green !important;
+}
+// Red elements
+body[style*="background-color: rgb(#{$trello-rgb-red});"],
+.background-box[style*="background-color: #{$trello-red};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-red});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-red};"],
+.compact-board-tile-background[style*="background-color: #{$trello-red};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-red});"] {
+	background-color: $trello-dark-red !important;
+}
+// Purple elements
+body[style*="background-color: rgb(#{$trello-rgb-purple});"],
+.background-box[style*="background-color: #{$trello-purple};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-purple});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-purple};"],
+.compact-board-tile-background[style*="background-color: #{$trello-purple};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-purple});"] {
+	background-color: $trello-dark-purple !important;
+}
+// Pink elements
+body[style*="background-color: rgb(#{$trello-rgb-pink});"],
+.background-box[style*="background-color: #{$trello-pink};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-pink});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-pink};"],
+.compact-board-tile-background[style*="background-color: #{$trello-pink};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-pink});"] {
+	background-color: $trello-dark-pink !important;
+}
+// Mint elements
+body[style*="background-color: rgb(#{$trello-rgb-mint});"],
+.background-box[style*="background-color: #{$trello-mint};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-mint});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-mint};"],
+.compact-board-tile-background[style*="background-color: #{$trello-mint};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-mint});"] {
+	background-color: $trello-dark-mint !important;
+}
+// Cyan elements
+body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
+.background-box[style*="background-color: #{$trello-cyan};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-cyan});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-cyan};"],
+.compact-board-tile-background[style*="background-color: #{$trello-cyan};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-cyan});"] {
+	background-color: $trello-dark-cyan !important;
+}
+// Gray elements
+body[style*="background-color: rgb(#{$trello-rgb-gray});"],
+.background-box[style*="background-color: #{$trello-gray};"],
+.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-gray});"],
+.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-gray};"],
+.compact-board-tile-background[style*="background-color: #{$trello-gray};"],
+.board-tile[style*="background-color: rgb(#{$trello-rgb-gray});"] {
+	background-color: $trello-dark-gray !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Icons and misc
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Logos
+.header-logo-default, 
+.header-logo-loading,
+.header-btn-icon {
+	@include invert-back();
+}
+
+// Badge when all tasks in a card are completed
+.badge.is-complete {
+	@include invert-back();
+}
+
+// Task-progress-bar
+.checklist-progress-bar-current.js-checklist-progress-bar:not(.checklist-progress-bar-current-complete) {
+	background: $theme-notices !important;
+}
+.checklist-progress-bar-current.js-checklist-progress-bar.checklist-progress-bar-current-complete {
+	@include invert-back();
+}
+
+// Cards
 .card-label {
 	@include invert-back();
 }
 
-
-// Invert back board background colours
-
-.compact-board-tile-link-thumbnail[style="background-color: #0079BF;"],
-.compact-board-tile-background[style="background-color: #0079BF;"],
-.background-box[style=" ; background-color: #0079BF; "],
-.compact-board-tile-link-thumbnail[style="background-color: #0079BF;"],
-.compact-board-tile-background[style="background-color: #0079BF;"],
-.background-box[style=" ; background-color: #0079BF; "],
-.compact-board-tile-link-thumbnail[style="background-color: #D29034;"],
-.compact-board-tile-background[style="background-color: #D29034;"],
-.background-box[style=" ; background-color: #D29034; "],
-.compact-board-tile-link-thumbnail[style="background-color: #519839;"],
-.compact-board-tile-background[style="background-color: #519839;"],
-.background-box[style=" ; background-color: #519839; "],
-.compact-board-tile-link-thumbnail[style="background-color: #B04632;"],
-.compact-board-tile-background[style="background-color: #B04632;"],
-.background-box[style=" ; background-color: #B04632; "],
-.compact-board-tile-link-thumbnail[style="background-color: #89609E;"],
-.compact-board-tile-background[style="background-color: #89609E;"],
-.background-box[style=" ; background-color: #89609E; "],
-.compact-board-tile-link-thumbnail[style="background-color: #CD5A91;"],
-.compact-board-tile-background[style="background-color: #CD5A91;"],
-.background-box[style=" ; background-color: #CD5A91; "],
-.compact-board-tile-link-thumbnail[style="background-color: #4BBF6B;"],
-.compact-board-tile-background[style="background-color: #4BBF6B;"],
-.background-box[style=" ; background-color: #4BBF6B; "],
-.compact-board-tile-link-thumbnail[style="background-color: #00AECC;"],
-.compact-board-tile-background[style="background-color: #00AECC;"],
-.background-box[style=" ; background-color: #00AECC; "],
-.compact-board-tile-link-thumbnail[style="background-color: #838C91;"],
-.compact-board-tile-background[style="background-color: #838C91;"]
-.background-box[style=" ; background-color: #838C91 ;"]
-{
-	@include invert-back();
+// Card and list titles
+.mod-card-back-title,
+.list-card-edit-title,
+.list-card-composer-textarea,
+.list-header-name {
+	background-color: transparent !important;
 }
 
-// invert back unread dot
-.compact-board-tile-link-options-unread{
-	@include invert-back();
+// Dark fade when fading background elements
+.window-overlay {
+	background-color: rgba(150,150,150,0.6) !important;
+}
+.attachment-viewer-frames, .quick-card-editor {
+	background-color: rgba(200,200,200,0.6) !important;
 }
 
-// Textareas and input boxes
-textarea.list-header-name.mod-list-name {
-	background-color: lighten($theme-background, 5%) !important;
+// Header bar
+#header {
+	background: $theme-background-toolbar !important;
+}
+.body-board-view #header {
+	background: rgba(255,255,255,.15) !important;
+}
+
+// Download section
+.promo-platforms-app-item-image,
+.promo-platforms-browser-item-image {
+	@include invert-back();
 }
