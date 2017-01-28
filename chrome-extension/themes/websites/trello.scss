@@ -49,7 +49,8 @@ a.button-link:hover,
 .pop-over-list > li.uploader:hover > .fakefile,
 input[type="submit"].primary,
 input[type="button"],
-.quick-card-editor-buttons-item {
+.quick-card-editor-buttons-item,
+a.job-listing {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
@@ -68,9 +69,13 @@ button.negate {
 button.negate:hover {
 	background: $theme-secondary-button-background !important;
 }
+a.job-listing{
+	background: $theme-button-background !important;
+	box-shadow: 0 0 0 $theme-button-background !important;
+}
 
 // Login with google
-#google-link {
+#google-link, #google {
 	@include invert-back();
 }
 
@@ -197,7 +202,8 @@ body[style*="background-color: rgb(#{$trello-rgb-gray});"],
 // Logos
 .header-logo-default, 
 .header-logo-loading,
-.header-btn-icon {
+.header-btn-icon,
+.global-header-section-logo.mod-black {
 	@include invert-back();
 }
 
@@ -247,4 +253,67 @@ body[style*="background-color: rgb(#{$trello-rgb-gray});"],
 .promo-platforms-app-item-image,
 .promo-platforms-browser-item-image {
 	@include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sites not requiring login
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background images
+.background-trellists,
+.header-section.layout-centered {
+	@include invert-back();
+}
+.header-section.layout-centered .button {
+	-webkit-filter: invert(1) !important;
+}
+
+// Blue elements
+.mod-trello-blue,
+.background-blue {
+	background-color: $trello-dark-blue !important;
+}
+.background-business-blue {
+	background-color: $trello-blue !important;
+	@include invert-back();
+}
+.mod-trello-blue .page-header-content {
+	color: #000 !important;
+}
+.mod-trello-blue .page-header-nav {
+	color: $theme-button-background !important;
+	background-color: invert-back-color($trello-blue) !important;
+}
+.mod-trello-blue .page-header-nav a.is-active {
+	background-color: invert-back-color(darken($trello-blue, 5%)) !important;
+}
+
+// White text
+.mod-white-text {
+	color: #000 !important;
+}
+
+// Pink elements
+.background-pink-purple {
+	background-color: $trello-dark-pink !important;
+	background: $trello-dark-pink !important;
+}
+
+.layout-love {
+	background-color: invert-back-color($trello-blue) !important;
+}
+
+.background-dark-bc {
+	background-color: $trello-dark-blue !important;
+}
+
+.background-light-purple {
+	@include invert-back();
+}
+.background-light-purple img {
+	-webkit-filter: invert(0) !important;
+}
+
+.background-sky {
+	background: invert-back-color(#29cce5) !important;
 }
