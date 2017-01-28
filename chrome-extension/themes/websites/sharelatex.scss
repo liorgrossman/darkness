@@ -107,12 +107,13 @@ li.selected > .entity > div > .ng-binding,
 li.selected > .entity > div > span > a > .fa,
 li.selected > .entity > div > div > .fa,
 li.selected > .entity > div > div > .ng-binding,
-li.selected > .entity > div > div > span > a > .fa {
-	color: $theme-secondary-button-background !important;
+li.selected > .entity > div > div > span > a > .fa,
+aside#file-tree:not(.multi-selected) ul.file-tree-list li.selected>.entity>.entity-name {
+	color: $theme-button-background !important;
 }
 li.selected > .entity > div > span.dropdown,
 li.selected > .entity > div > div > span.dropdown {
-	border-right: 4px solid $theme-secondary-button-background !important;
+	border-right: 4px solid $theme-button-background !important;
 }
 
 // Toolbar background
