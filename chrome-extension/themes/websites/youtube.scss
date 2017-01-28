@@ -446,6 +446,9 @@ a.yt-uix-button-epic-nav-item:hover {
 .ytp-preview {
 	@include invert-back()
 }
+.ytp-preview > .ytp-tooltip-bg {
+	-webkit-filter: invert(0) !important;
+}
 
 // Fix tooltip color
 .ytp-tooltip-text {
