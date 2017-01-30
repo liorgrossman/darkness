@@ -55,6 +55,18 @@ button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.b
 		background: linear-gradient(#fffffe, $theme-highlighted) !important;
 	}
 }
+table.settings-table .sprite-button {
+	background-color: transparent !important;
+}
+.link-img {
+	background-color: transparent !important;
+}
+.s_web_x {
+	-webkit-filter: invert(0) !important;
+}
+.freshbutton-blue {
+	-webkit-filter: invert(1) !important;
+}
 
 // All inputs
 input {
