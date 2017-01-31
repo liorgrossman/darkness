@@ -218,8 +218,14 @@ var CONFIG = {
 		'trello': {
 			key: 'trello', // Must be the same as the object key
 			name: 'Trello',
-			support: 'in-development', // Show a call to action for developers to join our community (don't show it in dev mode)
-			hostRegExp: new RegExp('^trello\.com$', 'i')
+			support: 'full', // Show a call to action for developers to join our community (don't show it in dev mode)
+			hostRegExp: new RegExp('^trello\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{ name: 'John Evans', link: 'https://github.com/jhevans' }
+			]
 		},
 		'dropbox': {
 			key: 'dropbox', // Must be the same as the object key
