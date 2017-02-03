@@ -32,7 +32,7 @@ button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.b
 		-webkit-filter: invert(100) !important;
 	}
 }
-.dbmodal-button.c-btn--primary, .unified-share-modal__share-send, .confirm-button.c-btn--primary, .c-btn--primary.u-mar-left-s, .u-l-fr .c-btn {
+.dbmodal-button.c-btn--primary, .unified-share-modal__share-send, .confirm-button.c-btn--primary, .c-btn--primary.u-mar-left-s, .u-l-fr .c-btn, .content-link-sync-modal__add-to-dropbox-button {
 	-webkit-filter: invert(100) !important;
 
 	&:hover {
@@ -55,7 +55,7 @@ button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.b
 		background: linear-gradient(#fffffe, $theme-highlighted) !important;
 	}
 }
-table.settings-table .sprite-button {
+table.settings-table .sprite-button, .content-link-sync-modal__close > button {
 	background-color: transparent !important;
 }
 .link-img {
