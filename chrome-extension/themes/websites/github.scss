@@ -659,6 +659,13 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
     color: $theme-text !important;
 }
 
+.toolbar-group > button svg,
+.menu-target svg,
+.reponav-item svg,
+nav > a:visited svg {
+    background: transparent !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Explore Github
 //----------------------------------------------------------------------------------------------------------------------------------------------------
