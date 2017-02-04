@@ -662,7 +662,9 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
 .toolbar-group > button svg,
 .menu-target svg,
 .reponav-item svg,
-nav > a:visited svg {
+nav > a:visited svg,
+svg.octicon.octicon-code,
+svg.octicon.octicon-clippy {
     background: transparent !important;
 }
 
