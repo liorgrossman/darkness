@@ -140,6 +140,10 @@ input
 	@include invert-back()
 }
 
+// User avatar on the menu (when clicking the avatar on the toolbar)
+.gbip {
+	@include invert-back()
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
