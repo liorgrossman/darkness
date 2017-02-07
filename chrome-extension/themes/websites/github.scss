@@ -309,6 +309,9 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
 .profile-timeline-card-footer > a.muted-link {
     background: transparent !important;
 }
+button.muted-link {
+    background-color: transparent !important;
+}
 
 // Remove background on dropdown
 .contributions-setting .contributions-setting-link {
