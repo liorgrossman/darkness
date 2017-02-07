@@ -8,6 +8,9 @@ button {
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
+.btn > i.fa {
+	color: $theme-button-text !important;
+}
 
 // All inputs
 input {
