@@ -21,10 +21,15 @@ input {
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Toolbar background
-#header-bottom-left {
-	background: $theme-background !important;
+// Background banner
+#header[role="banner"] {
+	-webkit-filter: invert(1) !important;
 }
+#header[role="banner"] > div{
+	-webkit-filter: invert(1) !important;
+}
+
+// Toolbar background
 #header-bottom-left > a:nth-child(2){
 	-webkit-filter: invert(100%) !important;
 }
