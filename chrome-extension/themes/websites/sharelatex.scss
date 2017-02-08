@@ -237,11 +237,16 @@ ul.dropdown-menu > li > a:hover {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// Other sites
+// Other
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 .alert-success {
 	color: $theme-highlighted !important;
 	background: $theme-highlighted-darker !important;
 	border-color: $theme-highlighted !important;
+}
+
+.modal-backdrop,
+#left-menu-mask {
+	background-color: $almost-white !important;
 }
