@@ -500,12 +500,18 @@ if (!DarknessSettingsLoader) {
 			else if (ENVIRONMENT == 'production') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '');
 			$('.drk_app_name').html(title);
 			$('.drk_settings .sku_replace').addClass('sku-'+SKU).removeClass('sku_replace');
-			if (ASSETS.TYPE == 'p') {
-				// Adjustments for Pro mode
-				$('.drk_upgrade_btn').remove();
-				$('.drk_vote_btn').addClass('hidden');
-			} else {
-				$('.drk_rate_btn').addClass('hidden');
+			if (ENVIRONMENT == 'development')  { 
+				// Darkness Development Edition users:
+				$('.drk_upgrade_btn').remove(); // Hide upgrade button
+				$('.drk_cross_promo_btn').addClass('hidden'); // Hide cross promotion
+				$('.drk_rate_btn').addClass('hidden'); // Hide rate on CWS
+			}
+			else if (ASSETS.TYPE == 'p') { 
+				// Pro users:
+				$('.drk_upgrade_btn').remove(); // Hide upgrade button
+			} else { 
+				// Regular users
+				$('.drk_rate_btn').addClass('hidden'); // Hide rate on CWS
 			}
 
 			// Fill website name, etc.
@@ -664,6 +670,14 @@ if (!DarknessSettingsLoader) {
 			$('.drk_settings .drk_rate_btn').unbind('click').click(function() {
 				repEventByUser('user-action', 'rate-btn-click');
 				var url = 'https://goo.gl/oMLASO';
+				var win = window.open(url, '_blank');
+				win.focus();
+			});
+
+			// Cross promotion button
+			$('.drk_settings .drk_cross_promo_btn').unbind('click').click(function() {
+				repEventByUser('user-action', 'cross-promo-btn-click');
+				var url = 'https://goo.gl/Natio5';
 				var win = window.open(url, '_blank');
 				win.focus();
 			});

@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2017 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
@@ -19,6 +19,8 @@
 <glyph glyph-name="ok" unicode="&#xe805;" d="M875 588l-535-600-340 338 123 124 196-195 420 457z" horiz-adv-x="875" />
 
 <glyph glyph-name="code" unicode="&#xe806;" d="M380 636q16-14 16-32t-16-30l-246-224 246-226q16-12 16-30t-16-32q-30-30-60 0l-320 288 320 286q30 30 60 0z m302 0l318-286-318-288q-32-30-62 0-32 32 0 62l248 226-248 224q-32 30 0 62 30 30 62 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="picture" unicode="&#xe807;" d="M856 518l-100 0-124 150-214-150-180 0q-52 0-90-39t-38-91l0-160-108 296q-10 38 22 52l680 248q36 10 50-24z m106-90q16 0 27-12t11-28l0-472q0-16-11-28t-27-12l-724 0q-16 0-27 12t-11 28l0 472q0 16 11 28t27 12l724 0z m-56-452l0 162-72 160-166-60-130-132-138 170-92-214 0-86 598 0z" horiz-adv-x="1000" />
 
 <glyph glyph-name="flag-filled" unicode="&#xe80a;" d="M640 693q25 25 57 11t32-47l0-418q0-21-15-36-80-80-193-80t-193 80q-47 46-110 50t-114-36l0-238q0-21-15-37t-36-15-37 15-16 37l0 678q0 21 15 36 80 80 193 80t193-80q50-50 120-50t119 50z" horiz-adv-x="729" />
 
