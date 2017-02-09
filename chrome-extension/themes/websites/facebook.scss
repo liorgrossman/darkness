@@ -1116,3 +1116,8 @@ i._lew {
 	-webkit-filter: invert(1) !important;
     background-color: transparent !important;
 }
+
+// no background on close-button in groups
+._50-0._50z- {
+	background-color: transparent !important;
+}
