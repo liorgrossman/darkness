@@ -158,6 +158,12 @@ var CONFIG = {
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^bitbucket\.org$', 'i')
 		},
+		'gitlab': {
+			key: 'gitlab', // Must be the same as the object key
+			name: 'GitLab',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^gitlab\.com$', 'i')
+		},
 		'sharelatex': {
 			key: 'sharelatex', // Must be the same as the object key
 			name: 'ShareLaTeX',

@@ -841,6 +841,13 @@ body ._19u- ._3ixn {
 	color: $theme-button-text !important;
 }
 
+._nd_ ._hh7 {
+	-webkit-filter: invert(1) !important;
+}
+._nd_ ._hh7 ._1ift {
+	-webkit-filter: invert(0) !important;
+}
+
 // Emoticons
 .emoticonsPanel .panelFlyout {
 	background-color: $theme-background !important;
@@ -854,6 +861,10 @@ body ._19u- ._3ixn {
 		background-color: $theme-border !important;
 		color: $theme-text-faint !important;
 	}
+}
+
+._3quh {
+	background: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1104,4 +1115,13 @@ i._lew {
 ._50zz._50z-, ._3soc {
 	-webkit-filter: invert(1) !important;
     background-color: transparent !important;
+}
+
+// no background on close-button in groups
+._50-0._50z- {
+	background-color: transparent !important;
+}
+
+._1kf_ ._1yst {
+	background-color: rgba(255,255,255,.6) !important;
 }

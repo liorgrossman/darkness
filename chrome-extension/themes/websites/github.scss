@@ -305,6 +305,19 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
     background-color: invert-back-color(#eeeeee) !important;
 }
 
+// Remove background color
+.profile-timeline-card-footer > a.muted-link {
+    background: transparent !important;
+}
+button.muted-link {
+    background-color: transparent !important;
+}
+
+// Remove background on dropdown
+.contributions-setting .contributions-setting-link {
+    background: transparent !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Repo Main Page 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -348,6 +361,10 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
         background: $theme-background !important;
         color: $theme-text !important;
     }
+}
+
+.branch-infobar a.muted-link {
+    background: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -444,6 +461,10 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
         background: $theme-background !important;
         color: $theme-text !important;
     }
+}
+
+.thread-subscription-status {
+    background-color: transparent !important;
 }
 
 //subcribe color 
@@ -651,6 +672,13 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
     }
 }
 
+button.flash-close {
+    background-color: transparent !important;
+}
+button.flash-close svg {
+    color: $theme-button-background !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Misc
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -659,10 +687,21 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
     color: $theme-text !important;
 }
 
+// Removing background on some images
 .toolbar-group > button svg,
 .menu-target svg,
 .reponav-item svg,
-nav > a:visited svg {
+nav > a:visited svg,
+a.btn-link > svg,
+svg.octicon.octicon-code,
+svg.octicon.octicon-clippy,
+svg.octicon.octicon-check {
+    background: transparent !important;
+}
+
+// Fix for the broadcast on front-page
+.octofication .broadcast-icon-mask {
+    background-color: transparent !important;
     background: transparent !important;
 }
 

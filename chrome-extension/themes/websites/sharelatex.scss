@@ -8,6 +8,9 @@ button {
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
+.btn > i.fa {
+	color: $theme-button-text !important;
+}
 
 // All inputs
 input {
@@ -234,11 +237,16 @@ ul.dropdown-menu > li > a:hover {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// Other sites
+// Other
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 .alert-success {
 	color: $theme-highlighted !important;
 	background: $theme-highlighted-darker !important;
 	border-color: $theme-highlighted !important;
+}
+
+.modal-backdrop,
+#left-menu-mask {
+	background-color: $almost-white !important;
 }
