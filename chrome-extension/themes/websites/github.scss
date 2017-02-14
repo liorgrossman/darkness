@@ -438,7 +438,7 @@ button.muted-link {
     background: $theme-background-toolbar !important;
     svg {
         -webkit-filter: none !important;
-        background: $theme-background !important;
+        background: transparent !important;
         color: $theme-text !important;
     }
 }
