@@ -66,6 +66,14 @@ a {
     color: $theme-text !important;
 }
 
+// Search
+.header .header-search-scope {
+    color: #767676 !important;
+}
+.header .header-search-input::-webkit-input-placeholder {
+    color: $theme-text !important;
+}
+
 //links on top right of bar
 #user-links > li > a {
     color: $theme-textbox-text !important;
@@ -552,6 +560,23 @@ button.muted-link {
 //
 .repository-content .select-menu-item .selected {
     background: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Graphs 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.capped-card-content {
+    -webkit-filter: invert(0) !important;
+}
+.capped-card-content .axis line {
+    stroke: invert-back-color(#aaa) !important;
+}
+.contributors-graph .capped-card .midlabel {
+    fill: invert-back-color(#aaa) !important;
+}
+.contributors-graph .capped-card path {
+    fill: invert-back-color(#f17f49) !important;
+    fill-opacity: 0.75 !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
