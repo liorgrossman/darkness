@@ -328,7 +328,8 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
 }
 
 // Remove background color
-.profile-timeline-card-footer > a.muted-link {
+.profile-timeline-card-footer > a.muted-link,
+.pinned-repo-item a.muted-link {
     background: transparent !important;
 }
 button.muted-link {
