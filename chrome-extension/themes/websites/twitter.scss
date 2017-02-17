@@ -253,7 +253,6 @@ video {
 }
 
 // Don't invert video thumb
-.PlayableMedia-player[style*="background-image:"],
 .PlayableMedia-player[style*="background-image:"] iframe {
 	-webkit-filter: invert(0%) !important;
 }
