@@ -66,16 +66,38 @@ a {
     color: $theme-text !important;
 }
 
-//links on top right of bar
+// "This repository"
+.header .header-search-scope {
+	color: rgba(0,0,0,0.7) !important;
+	border-right-color: #ddd !important;
+}
+
+// Search bar
+.header input[type="text"].header-search-input {
+	background: #cbc9c8 !important;
+}
+.header input[type="text"].header-search-input::-webkit-input-placeholder {
+	color: #444 !important;
+	
+}
+
+// Links on top right of bar
 #user-links > li > a {
     color: $theme-textbox-text !important;
-    @include invert-back();
-    img {
-        -webkit-filter: none !important;
-    }
-    .dropdown-caret {
-        @include invert-back();
-    }
+    svg {
+		@include invert-back();
+	}
+	// Tooltips like notifications
+	&.tooltipped-s::after {
+		-webkit-filter: invert(100%) !important;
+	}
+	&.tooltipped-n::after {
+		-webkit-filter: invert(100%) !important;
+	}
+}
+.header-nav-link:hover .dropdown-caret,
+.header-nav-link:focus .dropdown-caret {
+	border-top-color: #000 !important;
 }
 
 //dropdowns
