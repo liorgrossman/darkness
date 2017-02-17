@@ -128,6 +128,10 @@ img.ld.mm{
 .rj, .k5 {
 	background: $theme-background-box !important;
 }
+// Placeholder text
+input.gc::-webkit-input-placeholder {
+	color: $theme-text !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Statusboxes
