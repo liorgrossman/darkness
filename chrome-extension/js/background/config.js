@@ -45,7 +45,6 @@ var CONFIG = {
 			name: 'Quora',
 			support: 'full',
 			hostRegExp: new RegExp('^www\.quora\.com$', 'i'),
-			//pathRegExp: new RegExp('^/(search|webhp)?$'), // pathRegExp is optional and unnecessary for most websites
 			creators: [ // 
 				{ name: 'Abhishek Bhasker', link: 'http://Abhinickz.github.io' }
 			]
