@@ -40,6 +40,16 @@ var CONFIG = {
 				{ name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich' }
 			]
 		},
+		'quora': {
+			key: 'quora', // Must be the same as the object key
+			name: 'Quora',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.quora\.com$', 'i'),
+			//pathRegExp: new RegExp('^/(search|webhp)?$'), // pathRegExp is optional and unnecessary for most websites
+			creators: [ // 
+				{ name: 'Abhishek Bhasker', link: 'http://Abhinickz.github.io' }
+			]
+		},
 		'facebook': {
 			key: 'facebook', // Must be the same as the object key
 			name: 'Facebook',
