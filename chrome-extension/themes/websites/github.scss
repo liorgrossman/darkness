@@ -328,7 +328,8 @@ rect[fill="#eeeeee"], .legend > li:nth-child(1){
 }
 
 // Remove background color
-.profile-timeline-card-footer > a.muted-link {
+.profile-timeline-card-footer > a.muted-link,
+.pinned-repo-item a.muted-link {
     background: transparent !important;
 }
 button.muted-link {
@@ -574,6 +575,23 @@ button.muted-link {
 //
 .repository-content .select-menu-item .selected {
     background: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Graphs 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.capped-card-content {
+    -webkit-filter: invert(0) !important;
+}
+.capped-card-content .axis line {
+    stroke: invert-back-color(#aaa) !important;
+}
+.contributors-graph .capped-card .midlabel {
+    fill: invert-back-color(#aaa) !important;
+}
+.contributors-graph .capped-card path {
+    fill: invert-back-color(#f17f49) !important;
+    fill-opacity: 0.75 !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
