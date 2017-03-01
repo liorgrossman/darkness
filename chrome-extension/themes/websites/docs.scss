@@ -166,6 +166,35 @@ div.input-box[aria-hidden="false"] {
 	-webkit-filter: invert(1) !important;
 }
 
+// conditional formatting
+// red
+.waffle-conditionalformat-format-preview[style*='background-color: rgb(183, 225, 205)'],
+.waffle-conditionalformat-default-style-button[style*='background-color: rgb(183, 225, 205)'] {
+	background-color: invert-back-color(rgb(183, 225, 205)) !important;
+}
+.waffle-conditionalformat-format-preview[style*='rgb(11, 128, 67)'],
+.waffle-conditionalformat-default-style-button[style*='rgb(11, 128, 67)'] {
+	color: invert-back-color(rgb(11, 128, 67)) !important;
+}
+// yellow
+.waffle-conditionalformat-format-preview[style*='background-color: rgb(252, 232, 178)'],
+.waffle-conditionalformat-default-style-button[style*='background-color: rgb(252, 232, 178)'] {
+	background-color: invert-back-color(rgb(252, 232, 178)) !important;
+}
+.waffle-conditionalformat-format-preview[style*='color: rgb(240, 147, 0)'],
+.waffle-conditionalformat-default-style-button[style*='color: rgb(240, 147, 0)'] {
+	color: invert-back-color(rgb(240, 147, 0)) !important;
+}
+// green
+.waffle-conditionalformat-format-preview[style*='background-color: rgb(244, 199, 195)'], 
+.waffle-conditionalformat-default-style-button[style*='background-color: rgb(244, 199, 195)'] {
+	background-color: invert-back-color(rgb(244, 199, 195)) !important;
+}
+.waffle-conditionalformat-format-preview[style*='color: rgb(197, 57, 41)'], 
+.waffle-conditionalformat-default-style-button[style*='color: rgb(197, 57, 41)'] {
+	color: invert-back-color(rgb(197, 57, 41)) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Slides
 //----------------------------------------------------------------------------------------------------------------------------------------------------
