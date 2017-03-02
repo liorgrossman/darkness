@@ -296,31 +296,36 @@ a.btn,a.btn:visited,a.btn:hover,
 }
 
 // The contributionstab
-rect[fill="#1e6823"]{
+// Most
+rect[fill="#1e6823"], rect[fill="#196127"], .legend > li:nth-child(5){
     fill: invert-back-color(#1e6823) !important;
 }
 .legend > li:nth-child(5){
     background-color: invert-back-color(#1e6823) !important;
 }
-rect[fill="#44a340"], .legend > li:nth-child(4){
+// 2nd most
+rect[fill="#44a340"], rect[fill="#239a3b"], .legend > li:nth-child(4){
     fill: invert-back-color(#44a340) !important;
 }
 .legend > li:nth-child(4){
     background-color: invert-back-color(#44a340) !important;
 }
-rect[fill="#8cc665"], .legend > li:nth-child(3){
+// 3rd most
+rect[fill="#8cc665"], rect[fill="#7bc96f"], .legend > li:nth-child(3){
     fill: invert-back-color(#8cc665) !important;
 }
 .legend > li:nth-child(3){
     background-color: invert-back-color(#8cc665) !important;
 }
-rect[fill="#d6e685"], .legend > li:nth-child(2){
+// 4th most
+rect[fill="#d6e685"], rect[fill="#c6e48b"], .legend > li:nth-child(2){
     fill: invert-back-color(#d6e685) !important;
 }
 .legend > li:nth-child(2){
     background-color: invert-back-color(#d6e685) !important;
 }
-rect[fill="#eeeeee"], .legend > li:nth-child(1){
+// 5th most
+rect[fill="#eeeeee"], rect[fill="#ebedf0"], .legend > li:nth-child(1){
     fill: invert-back-color(#eeeeee) !important;
 }
 .legend > li:nth-child(1){
