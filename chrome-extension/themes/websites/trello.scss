@@ -255,6 +255,17 @@ body[style*="background-color: rgb(#{$trello-rgb-gray});"],
 	@include invert-back();
 }
 
+// Notifications
+#notification div.app-alert-item {
+	background-color: $theme-notices !important;
+	color: $theme-tooltip-text !important;
+	font-weight: normal !important;
+}
+#notification a.app-alert-item-button {
+	background-color: $theme-secondary-button-background !important;
+	color: $theme-button-text !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sites not requiring login
 //----------------------------------------------------------------------------------------------------------------------------------------------------
