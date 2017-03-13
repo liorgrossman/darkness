@@ -290,7 +290,7 @@ if (!DarknessSettingsLoader) {
 						}, 2500);
 					} else {
 						$dialog.find('.drk_promo_submit').val('Send');
-						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to darkness@improvver.com";
+						var msg = "Error sending promo to server:\n\n" + res.error + "\n\nPlease copy this message and send it to support@lifehacklabs.org";
 						alert(msg);
 					}
 				}
@@ -630,7 +630,7 @@ if (!DarknessSettingsLoader) {
 			// Send skin bug report button
 			$('.drk_settings .drk_bug_report_btn').unbind('click').click(function() {
 				repEventByUser('user-action', 'bug-report-btn-click');
-				var to = 'Darkness Support <darkness@improvver.com>';
+				var to = 'Lifehack Labs Support <support@lifehacklabs.org>';
 				var subj = 'Darkness Bug Report';
 				var body = '[Please send your bug report in English]\n\n________\nSystem Information:\nDarkness Version: ' +
 					chrome.runtime.getManifest().version +
@@ -646,7 +646,7 @@ if (!DarknessSettingsLoader) {
 			// Send feedback button
 			$('.drk_settings .drk_feedback_btn').unbind('click').click(function(e) {
 				repEventByUser('user-action', 'feedback-btn-click');
-				var to = 'Darkness Support <darkness@improvver.com>';
+				var to = 'Lifehack Labs Support <support@lifehacklabs.org>';
 				var subj = 'Darkness Feedback';
 				if (e.altKey) {
 					subj = 'Darkness System Report';
@@ -832,7 +832,7 @@ if (!DarknessSettingsLoader) {
 					buyClick();
 				} else {
 					// PayPal AND Google failed? Send a support email
-					var to = 'Darkness Support <darkness@improvver.com>';
+					var to = 'Lifehack Labs Support <support@lifehacklabs.org>';
 					var paymentMethodName = PAYMENT_PLATFORM == 'paypal' ? 'PayPal' : 'Google Payment';
 					var subj = 'Problem paying with ' + paymentMethodName;
 					var body =
