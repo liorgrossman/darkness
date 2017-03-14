@@ -780,6 +780,26 @@ svg.octicon.octicon-check {
     background: transparent !important;
 }
 
+// Working colors for states and tags
+.state {
+    -webkit-filter: invert(1) !important;
+}
+.table-list-item svg {
+    background: transparent !important;
+}
+.labels-list-item .label {
+    -webkit-filter: invert(1) !important;
+}
+.labels-list-item .label span {
+    -webkit-filter: invert(1) !important;
+}
+.label-edit label {
+    -webkit-filter: invert(1) !important;
+}
+.color-chooser .color-cooser-color {
+    -webkit-filter: invert(1) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Explore Github
 //----------------------------------------------------------------------------------------------------------------------------------------------------
