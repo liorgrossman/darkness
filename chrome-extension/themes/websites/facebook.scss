@@ -1125,3 +1125,16 @@ i._lew {
 ._1kf_ ._1yst {
 	background-color: rgba(255,255,255,.6) !important;
 }
+
+// Pointer to display what type of post is being made
+#pagelet_composer span._4-h8 {
+	border-color: transparent !important;
+}
+span._4-h8::after {
+	border-bottom: 8px solid $theme-background-box !important;
+}
+
+// Links at the top of notification overview
+._1sdi {
+	background-color: transparent !important;
+}
