@@ -297,39 +297,59 @@ a.btn,a.btn:visited,a.btn:hover,
 
 // The contributionstab
 // Most
-rect[fill="#1e6823"], rect[fill="#196127"], .legend > li:nth-child(5){
+rect[fill="#1e6823"] { // Old color (Active until Q1 2017)
     fill: invert-back-color(#1e6823) !important;
 }
-.legend > li:nth-child(5){
-    background-color: invert-back-color(#1e6823) !important;
+rect[fill="#196127"] {
+    fill: invert-back-color(#196127) !important;
+}
+.legend > li:nth-child(5) {
+    // background-color: invert-back-color(#1e6823) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#196127) !important;
 }
 // 2nd most
-rect[fill="#44a340"], rect[fill="#239a3b"], .legend > li:nth-child(4){
+rect[fill="#44a340"] { // Old color (Active until Q1 2017)
     fill: invert-back-color(#44a340) !important;
 }
-.legend > li:nth-child(4){
-    background-color: invert-back-color(#44a340) !important;
+rect[fill="#239a3b"] {
+    fill: invert-back-color(#239a3b) !important;
+}
+.legend > li:nth-child(4) {
+    // background-color: invert-back-color(#44a340) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#239a3b) !important;
 }
 // 3rd most
-rect[fill="#8cc665"], rect[fill="#7bc96f"], .legend > li:nth-child(3){
+rect[fill="#8cc665"] { // Old color (Active until Q1 2017)
     fill: invert-back-color(#8cc665) !important;
 }
-.legend > li:nth-child(3){
-    background-color: invert-back-color(#8cc665) !important;
+rect[fill="#7bc96f"] {
+    fill: invert-back-color(#7bc96f) !important;
+}
+.legend > li:nth-child(3) {
+    // background-color: invert-back-color(#8cc665) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#7bc96f) !important;
 }
 // 4th most
-rect[fill="#d6e685"], rect[fill="#c6e48b"], .legend > li:nth-child(2){
+rect[fill="#d6e685"] { // Old color (Active until Q1 2017)
     fill: invert-back-color(#d6e685) !important;
 }
-.legend > li:nth-child(2){
-    background-color: invert-back-color(#d6e685) !important;
+rect[fill="#c6e48b"] {
+    fill: invert-back-color(#c6e48b) !important;
+}
+.legend > li:nth-child(2) {
+    // background-color: invert-back-color(#d6e685) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#c6e48b) !important;
 }
 // 5th most
-rect[fill="#eeeeee"], rect[fill="#ebedf0"], .legend > li:nth-child(1){
+rect[fill="#eeeeee"] { // Old color (Active until Q1 2017)
     fill: invert-back-color(#eeeeee) !important;
 }
-.legend > li:nth-child(1){
-    background-color: invert-back-color(#eeeeee) !important;
+rect[fill="#ebedf0"] {
+    fill: invert-back-color(#ebedf0) !important;
+}
+.legend > li:nth-child(1) {
+    // background-color: invert-back-color(#eeeeee) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#ebedf0) !important;
 }
 
 // Remove background color
@@ -524,6 +544,16 @@ button.muted-link {
 
 .commit-icon svg {
     background-color: transparent !important;
+}
+
+.navigation-focus .muted-link {
+    background-color: transparent !important;
+}
+
+.subnav-item.selected {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -748,6 +778,26 @@ svg.octicon.octicon-check {
 .octofication .broadcast-icon-mask {
     background-color: transparent !important;
     background: transparent !important;
+}
+
+// Working colors for states and tags
+.state {
+    -webkit-filter: invert(1) !important;
+}
+.table-list-item svg {
+    background: transparent !important;
+}
+.labels-list-item .label {
+    -webkit-filter: invert(1) !important;
+}
+.labels-list-item .label span {
+    -webkit-filter: invert(1) !important;
+}
+.label-edit label {
+    -webkit-filter: invert(1) !important;
+}
+.color-chooser .color-cooser-color {
+    -webkit-filter: invert(1) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

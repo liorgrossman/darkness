@@ -149,6 +149,13 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	color: $theme-button-background !important;
 }
 
+.Banner-actions button {
+	background: transparent !important;
+}
+.logged-out #global-actions > li > a .Icon {
+	-webkit-filter: invert(1) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Tweet editor
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -245,20 +252,23 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 // Videos
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-.player-wrapper, .AdaptiveMedia-video {
-	@include invert-back();
+// Correctly invert gifs and videos
+.tweet .PlayableMedia--gif:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"],
+.PlayableMedia--video:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"] {
+	-webkit-filter: invert(100%) !important;
 }
-video {
-	@include invert-back();
-}
-
-// Don't invert video thumb
-.PlayableMedia-player[style*="background-image:"] iframe {
+.PlayableMedia--gif:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"] {
 	-webkit-filter: invert(0%) !important;
 }
-
-.player-container{
-	@include invert-back();
+.tweet .PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"],
+.PlayableMedia--video.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
+	-webkit-filter: invert(100%) !important;
+}
+.PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
+	-webkit-filter: invert(0%) !important;
+}
+.PlayableMedia-player > iframe {
+	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
