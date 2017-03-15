@@ -51,10 +51,10 @@ var StatsFactory = function() {
 		}
 		var statsJson = JSON.stringify(statsToSave);
 		var cookie = {
-			url: "http://improvver.com",
+			url: "http://lifehacklabs.org",
 			name: "darkness_stats",
 			value: statsJson,
-			domain: "improvver.com",
+			domain: "lifehacklabs.org",
 			path: "/",
 			expirationDate: 2051222400,
 			/* Year 2035 */

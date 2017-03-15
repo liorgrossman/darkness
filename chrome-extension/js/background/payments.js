@@ -209,7 +209,7 @@ var PaymentsFactory = function() {
 				});
 			}
 		};
-		sendHttpPostRequest('http://improvver.com/api/' + _appName + '/check-promo-code', params, onServerResponse);
+		sendHttpPostRequest('http://lifehacklabs.org/api/' + _appName + '/check-promo-code', params, onServerResponse);
 	};
 
 	// PUBLIC FUNCTION: Get the SKU
@@ -414,7 +414,7 @@ var PaymentsFactory = function() {
 				return logError("No data found in response", res);
 			}
 		};
-		sendHttpPostRequest('http://improvver.com/api/' + _appName + '/check-user-paypal-status', params, onServerResponse);
+		sendHttpPostRequest('http://lifehacklabs.org/api/' + _appName + '/check-user-paypal-status', params, onServerResponse);
 	};
 
 
