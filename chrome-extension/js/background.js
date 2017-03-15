@@ -238,7 +238,7 @@ chrome.runtime.onMessage.addListener(
 // This is useful for development, when you want those files to reload each time the moon icon is clicked
 var getAssetsForSettingsPanel = function(callback) {
 	// First, load all files from disk to cache
-	var filesToPreload = ["js/settings.js", "style-css/cleanslate.css", "icons/css/fontello.css", "style-css/settings.css", "html/settings.html"];
+	var filesToPreload = ["js/promo.js", "js/settings.js", "style-css/cleanslate.css", "icons/css/fontello.css", "style-css/settings.css", "html/settings.html"];
 	readFilesFromDisk(true, filesToPreload, function() {
 
 		// Load all CSS files from cache and concatenate (extremely quick, from memory)
@@ -297,6 +297,7 @@ var injectSettingsScriptToTab = function(tab) {
 		args['CONFIG'] = JSON.stringify(CONFIG);
 
 		// Prepare settings.js for injection
+		var promoCode = readFileFromCache("js/promo.js");
 		var code = getCodeForInjection("js/settings.js", args);
 
 		// Inject jQuery
@@ -308,7 +309,7 @@ var injectSettingsScriptToTab = function(tab) {
 			log("Loaded jQuery");
 			// Inject settings.js
 			chrome.tabs.executeScript(tab.id, {
-				code: code,
+				code: promoCode + "\n\n\n" + code,
 				runAt: 'document_start',
 				allFrames: false // not in iframes
 			});

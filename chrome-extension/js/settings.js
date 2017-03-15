@@ -14,6 +14,7 @@ if (!DarknessSettingsLoader) {
 		var PRINT_LOGS = (ENVIRONMENT != 'production') || document.location.href.indexOf('debug_darkness=1') > -1;
 		var CONFIG = JSON.parse('@@CONFIG@@');
 		var MACHINE_ID = '@@MACHINEID@@';
+		var Promo = new PromoConstructor(CONFIG.appName);
 
 		// Currently shown theme & site keys
 		var THEME = '@@THEME@@';
@@ -500,18 +501,28 @@ if (!DarknessSettingsLoader) {
 			else if (ENVIRONMENT == 'production') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '');
 			$('.drk_app_name').html(title);
 			$('.drk_settings .sku_replace').addClass('sku-'+SKU).removeClass('sku_replace');
-			if (ENVIRONMENT == 'development')  { 
+			if (ENVIRONMENT == 'developmentxxx')  { 
 				// Darkness Development Edition users:
 				$('.drk_upgrade_btn').remove(); // Hide upgrade button
 				$('.drk_cross_promo_btn').addClass('hidden'); // Hide cross promotion
 				$('.drk_rate_btn').addClass('hidden'); // Hide rate on CWS
 			}
-			else if (ASSETS.TYPE == 'p') { 
-				// Pro users:
-				$('.drk_upgrade_btn').remove(); // Hide upgrade button
-			} else { 
-				// Regular users
-				$('.drk_rate_btn').addClass('hidden'); // Hide rate on CWS
+			else {
+				var promo = Promo.get();
+				if (promo) {
+					$('.drk_cross_promo_btn').removeClass('hidden');
+					$('.drk_cross_promo_btn span').html(promo.title);
+				} else {
+					$('.drk_cross_promo_btn').addClass('hidden');
+					$('.drk_cross_promo_btn span').html('');
+				}
+				if (ASSETS.TYPE == 'p') { 
+					// Pro users:
+					$('.drk_upgrade_btn').remove(); // Hide upgrade button
+				} else { 
+					// Regular users
+					$('.drk_rate_btn').addClass('hidden'); // Hide rate on CWS
+				}
 			}
 
 			// Fill website name, etc.
@@ -676,10 +687,14 @@ if (!DarknessSettingsLoader) {
 
 			// Cross promotion button
 			$('.drk_settings .drk_cross_promo_btn').unbind('click').click(function() {
-				repEventByUser('user-action', 'cross-promo-btn-click');
-				var url = 'https://goo.gl/Natio5';
-				var win = window.open(url, '_blank');
-				win.focus();
+				var promo = Promo.get();
+				if (promo && promo.url) {
+					repEventByUser('user-action', 'cross-promo-btn-click');
+					var win = window.open(promo.url, '_blank');
+					win.focus();
+				}
+
+
 			});
 
 			// Vote button

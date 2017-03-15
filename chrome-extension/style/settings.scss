@@ -154,7 +154,7 @@ div.drk_button {
 		display: inline-block !important;
 	}
 	&.drk_bold {
-		color: lighten($darkness-button-text, 11%) !important;
+		color: lighten($darkness-button-text, 12%) !important;
 	}
 	&.drk_active {
 		background: $darkness-button-active-background !important;
@@ -163,6 +163,9 @@ div.drk_button {
 			color: $darkness-button-active-text-hover !important;
 			transition: all 0s ease-in-out !important;
 		}
+	}
+	span {
+		cursor: pointer !important;
 	}
 	i { // Icons
 		margin-right: 5px !important;
