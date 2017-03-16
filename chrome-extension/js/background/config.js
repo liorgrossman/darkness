@@ -254,6 +254,17 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
+		},
+		'jsfiddle': {
+			key: 'jsfiddle', // Must be the same as the object key
+			name: 'JSFiddle',
+			support: 'full',
+			hostRegExp: new RegExp('^jsfiddle\.net$', 'i'),
+			creators: [
+				{ name: 'Derek Bytheway', link: 'https://twitter.com/derekbtw/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		}
 	}
 };
