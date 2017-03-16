@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// Payment handler
+// Promotion handler
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 "use strict";
 
@@ -7,17 +7,26 @@ var PromoFactory = function() {
 
 	// Global vailables
 	var _appName = null;
-	var _promoConfig = { lastLoaded: 0, spots: {} };
+	var _promoConfig = {
+		lastLoaded: 0,
+		spots: {}
+	};
+	var MINIMAL_MINUTES_BETWEEN_RETREIVE = 60 * 2; // 2 hours
+	if (ENVIRONMENT != 'production') {
+		var MINIMAL_MINUTES_BETWEEN_RETREIVE = 1; // 1 minute (development)
+	}
 
 	// Constructor
 	function Promo(appName) {
 		_appName = appName;
 		_loadFromStorage(function(success) {
-			_retreivePromoConfig();
+			_retreivePromoConfigIfNecessary();
+			setInterval(function() {
+				_retreivePromoConfigIfNecessary();
+			}, 30 * 1000); // every 30 seconds
 		});
 
 	}
-
 	// Load the promo config from storage to _promoConfig
 	var _loadFromStorage = function(callback) {
 		chrome.storage.local.get('promoConfig', function(results) {
@@ -36,7 +45,9 @@ var PromoFactory = function() {
 	var _setConfigAndsaveToStorage = function(json) {
 		_promoConfig = json;
 		_promoConfig.lastLoaded = (new Date()).getTime();
-		chrome.storage.local.set({ 'promoConfig': _promoConfig }, function(results) {
+		chrome.storage.local.set({
+			'promoConfig': _promoConfig
+		}, function(results) {
 			if (chrome.runtime.lastError) {
 				logError("Error while saving promoConfig to storage:", chrome.runtime.lastError);
 			}
@@ -55,7 +66,7 @@ var PromoFactory = function() {
 					if (debug) log("GET request for " + url + " returned " + httpRequest.responseText.length + "b, took " + elapsed + "ms");
 					callback(null, httpRequest.responseText);
 				} else {
-					if (debug) logEror("GET request for " + url + " had error: ", httpRequest.status);
+					if (debug) logError("GET request for " + url + " had error: ", httpRequest.status);
 					callback(httpRequest.status);
 				}
 			}
@@ -64,9 +75,23 @@ var PromoFactory = function() {
 		httpRequest.send();
 	};
 
-	// Retreive the promo config remotely using Ajax
+
+	// // Retreive the promo config remotely using Ajax ONLY if enough time has passed
+	var _retreivePromoConfigIfNecessary = function() {
+		var now = (new Date()).getTime();
+		var elapsedMs = now - _promoConfig.lastLoaded;
+		var elapsedMinutes = elapsedMs / 1000 / 60;
+		if (elapsedMinutes > MINIMAL_MINUTES_BETWEEN_RETREIVE) {
+			_retreivePromoConfig();
+		}
+	}
+
+	// Retreive the promo config remotely using Ajax. Don't call this directly, but use _retreivePromoConfigIfNecessary instead
 	var _retreivePromoConfig = function() {
-		var url = "https://s3.amazonaws.com/lifehacklabs/common/configuration/promo.json";
+		var url = "http://files.lifehacklabs.org/common/configuration/promo.json";
+		if (ENVIRONMENT != 'production') {
+			url = "http://files.lifehacklabs.org/common/configuration/promo.dev.json";
+		}
 		_sendHttpGetRequest(true, url, function(err, response) {
 			if (err) {
 				return logError("Error requesting promo.json:", err);
