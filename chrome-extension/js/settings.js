@@ -14,7 +14,6 @@ if (!DarknessSettingsLoader) {
 		var PRINT_LOGS = (ENVIRONMENT != 'production') || document.location.href.indexOf('debug_darkness=1') > -1;
 		var CONFIG = JSON.parse('@@CONFIG@@');
 		var MACHINE_ID = '@@MACHINEID@@';
-		var Promo = new PromoConstructor(CONFIG.appName);
 
 		// Currently shown theme & site keys
 		var THEME = '@@THEME@@';
@@ -507,15 +506,17 @@ if (!DarknessSettingsLoader) {
 				$('.drk_cross_promo_btn').addClass('hidden'); // Hide cross promotion
 				$('.drk_rate_btn').addClass('hidden'); // Hide rate on CWS
 			}
-			else {
-				var promo = Promo.get();
-				if (promo) {
-					$('.drk_cross_promo_btn').removeClass('hidden');
-					$('.drk_cross_promo_btn span').html(promo.title);
-				} else {
-					$('.drk_cross_promo_btn').addClass('hidden');
-					$('.drk_cross_promo_btn span').html('');
-				}
+			else {				
+				chrome.runtime.sendMessage({ action: 'getPromo', spot: 'darkness-settings-dialog' }, function(promo){
+					if (promo) {
+						$('.drk_cross_promo_btn').removeClass('hidden');
+						$('.drk_cross_promo_btn span').html(promo.title);
+					} else {
+						$('.drk_cross_promo_btn').addClass('hidden');
+						$('.drk_cross_promo_btn span').html('');
+					}
+				});
+				
 				if (ASSETS.TYPE == 'p') { 
 					// Pro users:
 					$('.drk_upgrade_btn').remove(); // Hide upgrade button
@@ -687,14 +688,13 @@ if (!DarknessSettingsLoader) {
 
 			// Cross promotion button
 			$('.drk_settings .drk_cross_promo_btn').unbind('click').click(function() {
-				var promo = Promo.get();
-				if (promo && promo.url) {
-					repEventByUser('user-action', 'cross-promo-btn-click');
-					var win = window.open(promo.url, '_blank');
-					win.focus();
-				}
-
-
+				chrome.runtime.sendMessage({ action: 'getPromo', spot: 'darkness-settings-dialog' }, function(promo){
+					if (promo && promo.url) {
+						repEventByUser('user-action', 'cross-promo-btn-click');
+						var win = window.open(promo.url, '_blank');
+						win.focus();
+					}
+				});
 			});
 
 			// Vote button
