@@ -44,6 +44,7 @@ input {
 	border-color: $theme-border !important;
 }
 
+// Input padding
 textarea, input {
 	padding-left: 5px !important;
 }
@@ -70,23 +71,6 @@ textarea, input {
 	filter: invert(1) !important;
 	background-color: black !important;
 	color: white !important;
-}
-
-#content .bottom, #content .top, .CodeMirror-gutters {
-  border-right: solid 1px $darkness-text !important;
-  color: black !important;
-}
-
-#content .top {
-  border-bottom: solid 1px $darkness-text !important;
-}
-
-.CodeMirror-linenumber {
-	color: $darkness-text !important;
-}
-
-body:before {
-  @include invert-back()
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -124,10 +108,7 @@ label.checkboxCont input:checked+.checkbox {
   @include invert-back()
 }
 
-img, iframe, video, embed:not([type$="pdf"]), object, svg, canvas, [background*="http"] {
-	@include invert-back()
-}
-
+// Window Label
 .windowLabel.active, .windowLabel:hover {
 	border-color: $darkness-text !important;
 }
@@ -156,6 +137,7 @@ img, iframe, video, embed:not([type$="pdf"]), object, svg, canvas, [background*=
 // Log In
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Logo
 h1 {
 	@include invert-back()
 }
@@ -164,33 +146,53 @@ h1 {
 // Homepage
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Result
 #content #result:hover {
 	background-color: black !important;
 	transition: all ease-in .15s !important;
+}
+
+// Line Numbers
+.CodeMirror-linenumber {
+	color: $darkness-text !important;
+}
+
+// Editor border
+#content .bottom, #content .top, .CodeMirror-gutters {
+  border-right: solid 1px $darkness-text !important;
+  color: black !important;
+}
+
+// Editor border
+#content .top {
+  border-bottom: solid 1px $darkness-text !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Profile Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Code
 .fiddleList pre {
 	@include invert-back()
 }
 
+// Navigation
 #main-nav {
   background-color: transparent !important;
+}
+
+// Profile page top bar
+body:before {
+  @include invert-back()
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Collaboration modal
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Modal
 .togetherjs .togetherjs-modal > header,
 .togetherjs .togetherjs-window > header {
 	@include invert-back()
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// 3rd Party Extensions Support
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
