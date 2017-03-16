@@ -500,7 +500,7 @@ if (!DarknessSettingsLoader) {
 			else if (ENVIRONMENT == 'production') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '');
 			$('.drk_app_name').html(title);
 			$('.drk_settings .sku_replace').addClass('sku-'+SKU).removeClass('sku_replace');
-			if (ENVIRONMENT == 'developmentxxx')  { 
+			if (ENVIRONMENT == 'development')  { 
 				// Darkness Development Edition users:
 				$('.drk_upgrade_btn').remove(); // Hide upgrade button
 				$('.drk_cross_promo_btn').addClass('hidden'); // Hide cross promotion
