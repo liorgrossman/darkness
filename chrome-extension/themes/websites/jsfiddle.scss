@@ -87,11 +87,6 @@ textarea, input {
 	@include invert-back()
 }
 
-// Give the darkness button some space
-#actions .right {
-  margin-right: 40px !important;
-}
-
 // Restore original checkboxes
 label.checkboxCont input:checked+.checkbox {
   @include invert-back()
