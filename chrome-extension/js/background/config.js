@@ -190,7 +190,7 @@ var CONFIG = {
 		'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			support: 'in-development', // This skin still requires further improvement, help us by improving it!
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Guillermo Muela', link: 'https://github.com/Gmuela' }
@@ -265,6 +265,28 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
+		},
+		'wikipedia': {
+			key: 'wikipedia', // Must be the same as the object key
+			name: 'Wikipedia',
+			support: 'full',
+			hostRegExp: new RegExp('^(www|en|de|ru|it|pt|es|ja|fr|zh|pl)\.wikipedia\.org$', 'i'),
+			creators: [
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'googledrive': {
+			key: 'googledrive', // Must be the same as the object key
+			name: 'Google Drive',
+			support: 'full',
+			hostRegExp: new RegExp('^(drive)\.google\.com$', 'i'),
+			creators: [
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
 		}
 	}
-};
+}
