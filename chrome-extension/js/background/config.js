@@ -190,7 +190,7 @@ var CONFIG = {
 		'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it!
+			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Guillermo Muela', link: 'https://github.com/Gmuela' }
