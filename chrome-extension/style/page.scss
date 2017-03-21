@@ -84,6 +84,24 @@ body[data-drk-site="jsfiddle"] {
 		right: 12px !important;
 	}
 }
+body[data-drk-site="wikipedia"] {
+	#p-personal {
+		margin-right: 40px !important;
+	}
+	div.drk_settings_icon {
+		top: 6px !important;
+		right: 12px !important;
+	}
+}
+body[data-drk-site="googledrive"] {
+	.gb_pc:not(.gb_8b) .gb_qd {
+	  padding: 8px 40px 8px 8px;
+	}
+	div.drk_settings_icon {
+		top: 17px !important;
+		right: 12px !important;
+	}
+}
 body[data-drk-site="bitbucket"] {
 	div.drk_settings_icon {
 		top: 6px !important;
