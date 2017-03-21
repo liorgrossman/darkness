@@ -26,6 +26,10 @@ var CONFIG = {
 
 	// List of websites supported by Darkness
 	sites: {
+
+		//--------------------------------------------------------------------
+		// Fully implemented skins (support: 'full')
+		//--------------------------------------------------------------------
 		'google': {
 			key: 'google', // Must be the same as the object key
 			name: 'Google',
@@ -38,6 +42,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{ name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/' },
 				{ name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich' }
+			]
+		},
+		'quora': {
+			key: 'quora', // Must be the same as the object key
+			name: 'Quora',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.quora\.com$', 'i'),
+			creators: [ // 
+				{ name: 'Abhishek Bhasker', link: 'http://Abhinickz.github.io' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
 		'facebook': {
@@ -103,17 +118,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'twitch': {
-			key: 'twitch', // Must be the same as the object key
-			name: 'Twitch',
-			support: 'in-development',
-			hostRegExp: new RegExp('^www\.twitch\.tv$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
 		'cloudflare': {
 			key: 'cloudflare', // Must be the same as the object key
 			name: 'Cloudflare',
@@ -152,18 +156,6 @@ var CONFIG = {
 				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
 			]
 		},
-		'bitbucket': {
-			key: 'bitbucket', // Must be the same as the object key
-			name: 'Bitbucket',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^bitbucket\.org$', 'i')
-		},
-		'gitlab': {
-			key: 'gitlab', // Must be the same as the object key
-			name: 'GitLab',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^gitlab\.com$', 'i')
-		},
 		'sharelatex': {
 			key: 'sharelatex', // Must be the same as the object key
 			name: 'ShareLaTeX',
@@ -187,39 +179,18 @@ var CONFIG = {
 				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
 			]
 		},
-		'amazon': {
-			key: 'amazon', // Must be the same as the object key
-			name: 'Amazon',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
-			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Guillermo Muela', link: 'https://github.com/Gmuela' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
-		'serverfault': {
-			key: 'serverfault', // Must be the same as the object key
-			name: 'ServerFault',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^serverfault\.com$', 'i')
-		},
+
+
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
 			support: 'full',
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{name: 'Nicolas Botello', link: 'http://nicolasbotello.com/'}
+				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
-		},
-		'askubuntu': {
-			key: 'askubuntu', // Must be the same as the object key
-			name: 'askUbuntu',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^askubuntu\.com$', 'i')
 		},
 		'trello': {
 			key: 'trello', // Must be the same as the object key
@@ -272,8 +243,7 @@ var CONFIG = {
 			support: 'full',
 			hostRegExp: new RegExp('^(www|en|de|ru|it|pt|es|ja|fr|zh|pl)\.wikipedia\.org$', 'i'),
 			creators: [
-				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
-			],
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }	],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
@@ -287,6 +257,61 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
+		},
+
+		//--------------------------------------------------------------------
+		// Skins that still need additional work (support: 'in-development')
+		//--------------------------------------------------------------------
+		'twitch': {
+			key: 'twitch', // Must be the same as the object key
+			name: 'Twitch',
+			support: 'in-development',
+			hostRegExp: new RegExp('^www\.twitch\.tv$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'amazon': {
+			key: 'amazon', // Must be the same as the object key
+			name: 'Amazon',
+			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Guillermo Muela', link: 'https://github.com/Gmuela' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+
+
+		//--------------------------------------------------------------------
+		// Ask developers for help on the following websites
+		//--------------------------------------------------------------------
+		'bitbucket': {
+			key: 'bitbucket', // Must be the same as the object key
+			name: 'Bitbucket',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^bitbucket\.org$', 'i')
+		},
+		'gitlab': {
+			key: 'gitlab', // Must be the same as the object key
+			name: 'GitLab',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^gitlab\.com$', 'i')
+		},
+		'serverfault': {
+			key: 'serverfault', // Must be the same as the object key
+			name: 'ServerFault',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^serverfault\.com$', 'i')
+		},
+		'askubuntu': {
+			key: 'askubuntu', // Must be the same as the object key
+			name: 'askUbuntu',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^askubuntu\.com$', 'i')
 		}
 	}
 };
