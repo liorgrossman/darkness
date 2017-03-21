@@ -237,11 +237,14 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		//--------------------------------------------------------------------
+		// Skins that still need additional work (support: 'in-development')
+		//--------------------------------------------------------------------
 		'wikipedia': {
 			key: 'wikipedia', // Must be the same as the object key
 			name: 'Wikipedia',
-			support: 'full',
-			hostRegExp: new RegExp('^(www|en|de|ru|it|pt|es|ja|fr|zh|pl)\.wikipedia\.org$', 'i'),
+			support: 'in-development',
+			hostRegExp: new RegExp('^.+\.wikipedia\.org$', 'i'),
 			creators: [
 				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }	],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
@@ -250,18 +253,14 @@ var CONFIG = {
 		'googledrive': {
 			key: 'googledrive', // Must be the same as the object key
 			name: 'Google Drive',
-			support: 'full',
-			hostRegExp: new RegExp('^(drive)\.google\.com$', 'i'),
+			support: 'in-development',
+			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
 			creators: [
 				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-
-		//--------------------------------------------------------------------
-		// Skins that still need additional work (support: 'in-development')
-		//--------------------------------------------------------------------
 		'twitch': {
 			key: 'twitch', // Must be the same as the object key
 			name: 'Twitch',
