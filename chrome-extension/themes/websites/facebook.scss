@@ -703,6 +703,11 @@ div[aria-label*="sticker"] {
 	border-radius: 50% !important; // Otherwise earth looks aliased
 }
 
+// "Your post"-chat-box
+.fbNubFlyoutTitlebar {
+	border-color: $theme-border !important;
+	background-color: $theme-background-toolbar !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Lightboxes (photos, posts, etc.)
