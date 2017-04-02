@@ -799,6 +799,47 @@ svg.octicon.octicon-check {
 .color-chooser .color-cooser-color {
     -webkit-filter: invert(1) !important;
 }
+.select-menu-item-text span.color {
+    -webkit-filter: invert(1) !important;
+}
+.labels .label {
+    -webkit-filter: invert(1) !important;
+    color: white !important;
+}
+.discussion-item .label-color {
+    -webkit-filter: invert(1) !important;
+}
+.discussion-item .label-color a {
+    color: white !important;
+}
+
+// Working colors for line addition and removal
+.blob-num-addition {
+    background-color: invert-back-color(#095409) !important;
+    border-color: invert-back-color(#045104) !important;
+}
+.blob-code-addition {
+    background-color: invert-back-color(#082b08) !important;
+}
+.blob-code-addition .x {
+    background-color: invert-back-color(#067206) !important;
+}
+.block-diff-added {
+    background-color: invert-back-color(#2cbe4e) !important;
+}
+.blob-num-deletion {
+    background-color: invert-back-color(#4f0707) !important;
+    border-color: invert-back-color(#681414) !important;
+}
+.blob-code-deletion {
+    background-color: invert-back-color(#3f0808) !important;
+}
+.blob-code-deletion .x {
+    background-color: invert-back-color(#b2450e) !important;
+}
+.block-diff-deleted {
+    background-color: invert-back-color(#cb2431) !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Explore Github
