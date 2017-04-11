@@ -119,7 +119,8 @@ body[style*="background-color: rgb(#{$trello-rgb-blue});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-blue});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-blue};"],
 .compact-board-tile-background[style*="background-color: #{$trello-blue};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-blue});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-blue});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-blue});"] {
 	background-color: $trello-dark-blue !important;
 }
 // Yellow elements
@@ -128,7 +129,8 @@ body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-yellow};"],
 .compact-board-tile-background[style*="background-color: #{$trello-yellow};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-yellow});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-yellow});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-yellow});"] {
 	background-color: $trello-dark-yellow !important;
 }
 // Green elements
@@ -137,7 +139,8 @@ body[style*="background-color: rgb(#{$trello-rgb-green});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-green});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-green};"],
 .compact-board-tile-background[style*="background-color: #{$trello-green};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-green});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-green});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-green});"] {
 	background-color: $trello-dark-green !important;
 }
 // Red elements
@@ -146,7 +149,8 @@ body[style*="background-color: rgb(#{$trello-rgb-red});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-red});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-red};"],
 .compact-board-tile-background[style*="background-color: #{$trello-red};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-red});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-red});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-red});"] {
 	background-color: $trello-dark-red !important;
 }
 // Purple elements
@@ -155,7 +159,8 @@ body[style*="background-color: rgb(#{$trello-rgb-purple});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-purple});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-purple};"],
 .compact-board-tile-background[style*="background-color: #{$trello-purple};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-purple});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-purple});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-purple});"] {
 	background-color: $trello-dark-purple !important;
 }
 // Pink elements
@@ -164,7 +169,8 @@ body[style*="background-color: rgb(#{$trello-rgb-pink});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-pink});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-pink};"],
 .compact-board-tile-background[style*="background-color: #{$trello-pink};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-pink});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-pink});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-pink});"] {
 	background-color: $trello-dark-pink !important;
 }
 // Mint elements
@@ -173,7 +179,8 @@ body[style*="background-color: rgb(#{$trello-rgb-mint});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-mint});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-mint};"],
 .compact-board-tile-background[style*="background-color: #{$trello-mint};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-mint});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-mint});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-mint});"] {
 	background-color: $trello-dark-mint !important;
 }
 // Cyan elements
@@ -182,7 +189,8 @@ body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-cyan};"],
 .compact-board-tile-background[style*="background-color: #{$trello-cyan};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-cyan});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-cyan});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-cyan});"] {
 	background-color: $trello-dark-cyan !important;
 }
 // Gray elements
@@ -191,8 +199,31 @@ body[style*="background-color: rgb(#{$trello-rgb-gray});"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-gray});"],
 .compact-board-tile-link-thumbnail[style*="background-color: #{$trello-gray};"],
 .compact-board-tile-background[style*="background-color: #{$trello-gray};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-gray});"] {
+.board-tile[style*="background-color: rgb(#{$trello-rgb-gray});"],
+.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-gray});"] {
 	background-color: $trello-dark-gray !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Background images
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.board-backgrounds-section-tile.js-bg-photos .image {
+	-webkit-filter: invert(1) !important;
+}
+
+// When an image is used as background
+body[style*="background-image:"] {
+	-webkit-filter: invert(0) !important;
+}
+body[style*="background-image:"] > #surface, 
+body[style*="background-image:"] > .window-overlay, 
+body[style*="background-image:"] > #boards-drawer {
+	-webkit-filter: invert(1) !important;
+}
+body[style*="background-image:"] > #boards-drawer {
+	position: relative !important;
+	z-index: 60 !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
