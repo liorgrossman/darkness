@@ -195,6 +195,20 @@ div.input-box[aria-hidden="false"] {
 	color: invert-back-color(rgb(197, 57, 41)) !important;
 }
 
+// Collab
+.waffle-collab-presence {
+	-webkit-filter: invert(1) !important;
+}
+.cell-border[style*='top: -1px;'],
+.cell-border[style*='left: -1px;'] {
+	-webkit-filter: invert(1) !important;
+}
+div.selection-border,
+div.active-cell-border,
+.autofill-handle {
+	-webkit-filter: invert(1) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Slides
 //----------------------------------------------------------------------------------------------------------------------------------------------------
