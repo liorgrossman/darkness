@@ -259,6 +259,11 @@ nav > div > a {
     color: $theme-text !important;
 }
 
+.profile-timeline-card-wrapper {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
 //conttribution settings
 .edit_user button {
     background: $theme-background-box !important;
@@ -454,6 +459,11 @@ button.muted-link {
 .timeline-comment-wrapper,
 .discussion-timeline-actions {
     background-color: $theme-background !important;
+}
+
+.timeline-comment-wrapper {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 }
 
 .timeline-comment,
