@@ -152,12 +152,8 @@ a {
 .js-menu-content div,
 .js-menu-content .select-menu-list > div > a,
 .js-menu-content .select-menu-list > a {
-    background-color: $theme-background-box !important;
     color: $theme-textbox-text !important;
     border-color: $theme-border !important;
-    &:hover {
-        background-color: $theme-tooltip-text !important;
-    }
     &.selected {
         background-color: $theme-highlighted !important;
         color: $theme-link-active !important;
@@ -257,6 +253,11 @@ nav > div > a {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
     color: $theme-text !important;
+}
+
+.profile-timeline-card-wrapper {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 }
 
 //conttribution settings
@@ -454,6 +455,11 @@ button.muted-link {
 .timeline-comment-wrapper,
 .discussion-timeline-actions {
     background-color: $theme-background !important;
+}
+
+.timeline-comment-wrapper {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 }
 
 .timeline-comment,
@@ -811,6 +817,12 @@ svg.octicon.octicon-check {
 }
 .discussion-item .label-color a {
     color: white !important;
+}
+
+.closed-banner {
+    height: 0 !important;
+    border-bottom: 0 !important;
+    overflow: hidden !important;
 }
 
 // Working colors for line addition and removal
