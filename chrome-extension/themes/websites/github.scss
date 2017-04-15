@@ -819,6 +819,12 @@ svg.octicon.octicon-check {
     color: white !important;
 }
 
+.closed-banner {
+    height: 0 !important;
+    border-bottom: 0 !important;
+    overflow: hidden !important;
+}
+
 // Working colors for line addition and removal
 .blob-num-addition {
     background-color: invert-back-color(#095409) !important;
