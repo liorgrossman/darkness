@@ -152,12 +152,8 @@ a {
 .js-menu-content div,
 .js-menu-content .select-menu-list > div > a,
 .js-menu-content .select-menu-list > a {
-    background-color: $theme-background-box !important;
     color: $theme-textbox-text !important;
     border-color: $theme-border !important;
-    &:hover {
-        background-color: $theme-tooltip-text !important;
-    }
     &.selected {
         background-color: $theme-highlighted !important;
         color: $theme-link-active !important;
