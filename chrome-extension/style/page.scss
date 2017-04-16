@@ -248,6 +248,18 @@ body[data-drk-site="trello"] {
 	}
 }
 
+body[data-drk-site="w3schools"] {
+	div.drk_settings_icon {
+		top: 7px !important;
+	}
+	.w3-navbar > .w3-right {
+		margin-right: 48px !important;
+	}
+	.w3-navbar > .w3-right ~ .w3-right {
+		margin-right: 0px !important;
+	}
+}
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global message to user (e.g. conflict found with another extension)

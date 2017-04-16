@@ -311,6 +311,12 @@ var CONFIG = {
 			name: 'askUbuntu',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^askubuntu\.com$', 'i')
+		},
+		'w3schools': {
+			key: 'w3schools', // Must be the same as the object key
+			name: 'w3schools',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.w3schools\.com$', 'i')
 		}
 	}
 };

@@ -220,6 +220,8 @@ body[style*="background-image:"] > #surface,
 body[style*="background-image:"] > #drk_settings_html, 
 body[style*="background-image:"] > #drk_page_html, 
 body[style*="background-image:"] > .window-overlay, 
+body[style*="background-image:"] > .quick-card-editor, 
+body[style*="background-image:"] > .pop-over, 
 body[style*="background-image:"] > #boards-drawer {
 	-webkit-filter: invert(1) !important;
 }
