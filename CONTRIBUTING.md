@@ -4,7 +4,7 @@ Please help us **improve existing skins and create new ones**. Pull requests are
 
 
 ## How to start developing?
-1. If you haven't yet, first [install Darkness locally](./README.MD)
+1. If you haven't yet, first [install Darkness locally](./README.md#installation)
 1. Run `npm start` to **watch SCSS files** and compile them in real-time.
 
 ## How do I...
