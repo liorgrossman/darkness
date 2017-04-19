@@ -45,7 +45,7 @@ input {
 }
 
 :focus:not(.l-t-T-j:focus) {
-  outline: $theme-button-background solid 1px !important;
+	outline: $theme-button-background solid 1px !important;
 }
 
 
@@ -62,7 +62,7 @@ input {
 
 // App Drawer and Notification button
 .gb_pc svg, .gb_cc svg {
-  color: white !important;
+	color: white !important;
 }
 
 // Profile image and Google logo
@@ -76,28 +76,28 @@ input {
 .gb_sb .gb_yb {
     background: $theme-button-background !important;
     border-color: $theme-button-background !important;
-		color: black !important;
-		&:hover {
-			filter: brightness(0.9) !important;
-		}
+	color: black !important;
+	&:hover {
+		filter: brightness(0.9) !important;
+	}
 }
 
 // Google Drive logo
 .gb_Ad.gb_Ed {
 	filter: invert(1) !important;
-  opacity: 1 !important;
+	opacity: 1 !important;
 	color: $red !important;
 }
 
 // Top toolbar svg icons
 .a-nEbBXb .a-d-c svg,
 .a-nEbBXb .a-l-S-Pc-w-d .a-w-d-aa-zd svg {
-  fill: white !important;
+	fill: white !important;
 }
 
 // App Drawer
 .gb_ha {
-  box-shadow: 0 2px 10px transparentize($theme-button-background, 0.8) !important;
+	box-shadow: 0 2px 10px transparentize($theme-button-background, 0.8) !important;
 }
 
 // App Drawer icons
@@ -112,8 +112,8 @@ input {
 .x6jRSb:not(.VuWATc):focus,
 .x6jRSb:not(.VuWATc).sXaDqb-Pb {
     box-shadow: 0 2px 2px 0 transparentize($theme-button-background, 0.8),
-		0 3px 1px -2px transparentize($theme-button-background, 0.8),
-		0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
+				0 3px 1px -2px transparentize($theme-button-background, 0.8),
+				0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
 }
 
 // "My Drive" dropdown icons
@@ -131,7 +131,7 @@ input {
 
 // Search dropdown hover left border
 .a-s-yd-J.a-s-yd-Sa>* {
-  border-left: 2px solid $theme-button-background !important;
+	border-left: 2px solid $theme-button-background !important;
 }
 
 // More search tools dropdown underline
@@ -198,13 +198,13 @@ input {
 // Sidebar icons
 .a-Ng-c-ha,
 .a-da-U .a-U-ye-ha .a-U-xc-J .a-Ng-c-wk {
-  opacity: .7 !important;
+	opacity: .7 !important;
 }
 
 // "My Drive" arrow icon
 .a-U-Vf>.a-U-Ze-c-Vf,
 .a-U-Vg>.a-U-Ze-c-Vg {
-  @include invert-back()
+	@include invert-back()
 	svg {
 		fill: black !important;
 		opacity: .7 !important;
@@ -227,15 +227,19 @@ input {
 // "Name" arrow icon
 .a-nEbBXb .a-s-Xc-ag-fa-Te .a-t-hd-mhHukc-aa svg {
     fill: rgba(255, 255, 255, 0.54) !important;
-		&:hover {
-			fill: rgb(255, 255, 255) !important;
-		}
+	&:hover {
+		fill: rgb(255, 255, 255) !important;
+	}
 }
 
 // Folder Focused/Active
 .a-nEbBXb .a-t-J-ha,
 .a-nEbBXb .l-u-ha {
-		@include invert-back()
+	@include invert-back()
+}
+.a-nEbBXb .a-t-J-ha img,
+.a-nEbBXb .l-u-ha img{
+	-webkit-filter: invert(0) !important;
 }
 
 // Folder icons
@@ -257,11 +261,11 @@ input {
 .a-nEbBXb .y-E-gh-D .y-C-Ed-V,
 .a-nEbBXb .l-u-xb {
 	box-shadow: 0 2px 2px 0 transparentize($theme-button-background, 0.8),
-							0 3px 1px -2px transparentize($theme-button-background, 0.8),
-							0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
+				0 3px 1px -2px transparentize($theme-button-background, 0.8),
+				0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
 	-webkit-box-shadow: 0 2px 2px 0 transparentize($theme-button-background, 0.8),
-							0 3px 1px -2px transparentize($theme-button-background, 0.8),
-							0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
+						0 3px 1px -2px transparentize($theme-button-background, 0.8),
+						0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
 }
 
 .a-nEbBXb .a-ub-ra-B>.h-ra-B>.h-ra-ha {
