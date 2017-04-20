@@ -836,6 +836,9 @@ svg.octicon.octicon-check {
 .blob-code-addition .x {
     background-color: invert-back-color(#067206) !important;
 }
+.text-green {
+    color: invert-back-color(#2cbe4e) !important;
+}
 .block-diff-added {
     background-color: invert-back-color(#2cbe4e) !important;
 }
@@ -848,6 +851,9 @@ svg.octicon.octicon-check {
 }
 .blob-code-deletion .x {
     background-color: invert-back-color(#b2450e) !important;
+}
+.text-red {
+    color: invert-back-color(#cb2431) !important;
 }
 .block-diff-deleted {
     background-color: invert-back-color(#cb2431) !important;
