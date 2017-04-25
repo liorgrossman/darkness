@@ -113,6 +113,10 @@ iframe {
 	-webkit-filter: invert(1) !important;
 	box-shadow: 0 0 5px #aaa;
 }
+// Inserted images
+.kix-embeddedobject-image {
+	-webkit-filter: invert(0) !important;
+}
 
 // Colorpicker
 .jfk-palette-colorswatch {
