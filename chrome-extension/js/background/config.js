@@ -246,7 +246,8 @@ var CONFIG = {
 			support: 'in-development',
 			hostRegExp: new RegExp('^.+\.wikipedia\.org$', 'i'),
 			creators: [
-				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }	],
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
+			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
