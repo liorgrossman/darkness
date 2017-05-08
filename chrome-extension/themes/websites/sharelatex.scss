@@ -41,10 +41,13 @@ input {
 .ace_content {
 	-webkit-filter: invert(100%) !important;
 }
-.ace_active-line{
+.ace_active-line {
 	-webkit-filter: invert(100%) !important;
 }
-.ace_cursor{
+.ace_cursor {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_error-marker {
 	-webkit-filter: invert(100%) !important;
 }
 body > .ace_editor > .ace_scroller{
