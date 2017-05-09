@@ -8,8 +8,9 @@ button {
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
-.btn > i.fa, .btn > .review-icon {
-	color: $theme-button-text !important;
+.btn > i.fa, .toolbar-left i.fa, .btn > .review-icon {
+	// color: $theme-button-text !important;
+	-webkit-filter: grayscale(100%) !important;
 }
 
 // All inputs
