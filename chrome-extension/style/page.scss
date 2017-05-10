@@ -54,6 +54,11 @@ body[data-drk-site="gmail"] {
 		top: 15px !important;
 	}
 }
+body[data-drk-site="google"].hp {
+	div.drk_settings_icon {
+		top: 17px !important;
+	}
+}
 
 body[data-drk-site="cloudflare"] {
 	nav.header-navigation {
@@ -66,7 +71,7 @@ body[data-drk-site="cloudflare"] {
 body[data-drk-site="google"] {
 	div.drk_settings_icon {
 		position: absolute !important;
-		top: 27px !important;
+		top: 29px !important;
 	}
 }
 body[data-drk-site="quora"] {
