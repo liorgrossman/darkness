@@ -25,6 +25,9 @@ input
 #hplogo img {
 	@include invert-back()
 }
+#hplogo {
+	@include invert-back()
+}
 
 // But no the "UK / Belgium" underneath the logo
 #hplogo div {
