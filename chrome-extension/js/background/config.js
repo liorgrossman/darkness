@@ -240,7 +240,7 @@ var CONFIG = {
 		'mint': {
 			key: 'mint', // Must be the same as the object key
 			name: 'Mint',
-			support: 'in-development',
+			support: 'full',
 			hostRegExp: new RegExp('mint.intuit.com', 'i'),
 			creators: [
 				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
