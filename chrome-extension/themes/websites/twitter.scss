@@ -232,6 +232,10 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	background: white !important;
 }
 
+.recap-header.dismissible-content button {
+	background-color: transparent !important;
+}
+
 // Follow buttons when searching
 .AdaptiveFiltersBar-target--more {
 	background: transparent !important;
@@ -275,6 +279,11 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 }
 .PlayableMedia-player > iframe {
 	-webkit-filter: invert(0) !important;
+}
+
+// Polls
+.card-type-poll4choice_text_only > iframe {
+	background-color: $theme-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
