@@ -237,17 +237,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'mint': {
-			key: 'mint', // Must be the same as the object key
-			name: 'Mint',
-			support: 'in-development',
-			hostRegExp: new RegExp('mint.intuit.com', 'i'),
-			creators: [
-				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
 		'craigslist': {
 			key: 'craigslist', // Must be the same as the object key
 			name: 'Craigslist ',
@@ -303,6 +292,17 @@ var CONFIG = {
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Guillermo Muela', link: 'https://github.com/Gmuela' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'mint': {
+			key: 'mint', // Must be the same as the object key
+			name: 'Mint',
+			support: 'in-development',
+			hostRegExp: new RegExp('mint.intuit.com', 'i'),
+			creators: [
+				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]

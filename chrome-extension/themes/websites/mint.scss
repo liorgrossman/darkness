@@ -43,6 +43,11 @@ input {
 	background: none !important;
 }
 
+//back link button 
+.detailBack{
+	background: none !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -55,4 +60,19 @@ input {
 //account loading bar background
 .AccountStatusBarView {
 	background: $theme-background !important;
+}
+
+//main logo and sticky help box
+#mintLogo, #ozen{
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+}
+
+//main nav bar
+.navbar-nav a{
+	color: $theme-link !important;
+}
+
+.navbar-nav a.visited{
+	color: $theme-link-visited !important;
 }
