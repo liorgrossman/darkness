@@ -42,11 +42,6 @@ input {
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Toolbar background
-.toolbarClass {
-	background: $theme-background !important;
-}
-
 //the flag button doesn't need to be inverted
 .flag{
 	@include invert-back()
@@ -70,6 +65,8 @@ input {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//color of selected button doesn't show on yellow highlight button
 .button.sel a{
 	color: $theme-highlighted !important;
 }
@@ -77,6 +74,8 @@ input {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // My Account HomePage
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//make links in the my account section grid style properly
 button, input[type="submit"], input[type="button"]{
 	background: $theme-background !important;
 	background-color: $theme-background !important;
