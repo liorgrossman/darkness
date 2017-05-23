@@ -259,6 +259,7 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
