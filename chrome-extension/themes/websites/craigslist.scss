@@ -52,6 +52,9 @@ input {
 	margin-right: 35px;
 }
 
+#loginWidget.highlight{
+	margin-right: 40px;
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Search
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,9 +69,44 @@ input {
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-//color of selected button doesn't show on yellow highlight button
-.button.sel a{
+//make the background of the side bar the same as the rest of the page like with no skin
+.search-options-container, .search-options, .tsb, .searchgroup, .hasPic{
+	background: $theme-background !important;
+	background-color: $theme-background !important;
+}
+
+//mute the yellow highight on the purveyor buttons in search box
+.purveyor .button{
+	background: $theme-background-toolbar !important;
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border;
+}
+
+//mute the yellow highight on the purveyor buttons in search box
+.purveyor .button.sel{
 	color: $theme-highlighted !important;
+	background: $theme-textbox-background !important;
+	background-color: $theme-textbox-background;
+}
+
+//have to hard style the scroll bar for some reason
+.search-options-container::-webkit-scrollbar, .search-options-container::-webkit-scrollbar-track{
+	background: $theme-background-box !important;
+	background-color: $theme-background-box !important;
+}
+
+//have to hard style the scroll bar for some reason
+.search-options-container::-webkit-scrollbar-track {
+	background: $theme-background-box !important;
+	background-color: $theme-background-box !important;
+}
+
+//have to hard style the scroll bar for some reason
+.search-options-container::-webkit-scrollbar-thumb{
+	background: $theme-background-toolbar !important;
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-background-box !important;
+	box-shadow: inset 1px 1px 0 $theme-background-box, inset -1px -1px 0 $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
