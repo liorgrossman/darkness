@@ -92,6 +92,7 @@ var PromoFactory = function() {
 		if (ENVIRONMENT != 'production') {
 			url = "http://files.lifehacklabs.org/common/configuration/promo.dev.json";
 		}
+		url += "?ts=" + Date.now();
 		_sendHttpGetRequest(true, url, function(err, response) {
 			if (err) {
 				return logError("Error requesting promo.json:", err);

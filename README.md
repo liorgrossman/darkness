@@ -56,9 +56,10 @@ npm install
 Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and extend Darkness.
 
 
-## Got more questions?
+## Be in touch
 * Join the [Darkness Developers Community on Facebook](https://www.facebook.com/groups/darkness-developers)
 * Contact us at: contact@lifehacklabs.com
+* Check out our other projects: [BookAuthority](https://bookauthority.org/) and [Select New Tab](https://chrome.google.com/webstore/detail/select-beautiful-photos-f/gidbhaipbdimcjbjkpnhkdhghpbghena)
 
 
 ##  License
