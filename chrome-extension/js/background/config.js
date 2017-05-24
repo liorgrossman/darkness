@@ -237,6 +237,7 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
@@ -284,8 +285,29 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-
-
+		'mint': {
+			key: 'mint', // Must be the same as the object key
+			name: 'Mint',
+			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			hostRegExp: new RegExp('mint.intuit.com', 'i'),
+			creators: [
+				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'craigslist': {
+			key: 'craigslist', // Must be the same as the object key
+			name: 'Craigslist ',
+			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			hostRegExp: new RegExp('craigslist\.org$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		
 		//--------------------------------------------------------------------
 		// Ask developers for help on the following websites
 		//--------------------------------------------------------------------
