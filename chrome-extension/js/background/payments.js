@@ -214,6 +214,7 @@ var PaymentsFactory = function() {
 
 	// PUBLIC FUNCTION: Get the SKU
 	Payments.prototype.getSku = function() {
+		// if (ENVIRONMENT == "staging") return "1";
 		var DEFAULT_SKU = "1";
 		var installDate = stats.get('installDate') || 0;
 		if (typeof(installDate) != 'number') return DEFAULT_SKU;
@@ -223,7 +224,6 @@ var PaymentsFactory = function() {
 		if (passedDays > 7) {
 			return "2";
 		}
-		// if (ENVIRONMENT == "staging") return "2";
 		return DEFAULT_SKU;
 	}
 
