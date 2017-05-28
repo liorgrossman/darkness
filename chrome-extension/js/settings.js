@@ -164,11 +164,11 @@ if (!DarknessSettingsLoader) {
 			// Where to submit the form to?
 			var formAction = prod ? 'https://www.paypal.com/cgi-bin/webscr' : 'https://www.sandbox.paypal.com/cgi-bin/webscr';
 			$('#drk_paypal_form').attr('action', formAction);
-
+			
 			// What's the PayPal button ID?
 			var paypalButtonId = '';
-			if (SKU == "1") paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
-			if (SKU == "2") paypalButtonId = prod ? 'U59U55TCYJMHQ' : 'LMQAHVFLAGHK2';
+			if (SKU == "1") paypalButtonId = prod ? 'LGXAKGR9UZT5J' : 'Z9G4SAEXAQAQE';
+			if (SKU == "2") paypalButtonId = prod ? 'TYMEVJBHQRTUU' : 'HQQUR4X6PZ8KG';
 			$('#drk_paypal_button_id').attr('value', paypalButtonId);
 
 			// Add custom data to each PayPal transaction
@@ -793,6 +793,11 @@ if (!DarknessSettingsLoader) {
 				// Trigger purchase dialog
 				buyClick();
 			});
+			// Upgrade dialog -> Got promo?
+			$('.drk_show_feature_comparison').unbind('click').click(function(e) {
+				var url = "http://lifehacklabs.org/darkness/pro";
+				var win = window.open(url, '_blank');
+			});
 
 			// Upgrade dialog -> Got promo?
 			$('.drk_promo_link').unbind('click').click(function(e) {
@@ -800,7 +805,6 @@ if (!DarknessSettingsLoader) {
 				$('.drk_promo_form').addClass('visible');
 				$('.drk_promo_input').focus();
 			});
-
 
 			// Hide link
 			$('.drk_hide_link').unbind('click').click(function(e) {

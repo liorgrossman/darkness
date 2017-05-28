@@ -249,7 +249,7 @@ div.drk_button_dialog {
 
 ul li.drk_button_li {
 	background: $darkness-listbutton-background !important;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4), 0 0 3px rgba(0, 0, 0, 0.3) !important;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.4) !important;
 	color: $darkness-listbutton-text !important;
 	cursor: pointer !important;
 	padding: 10px !important;
@@ -262,7 +262,7 @@ ul li.drk_button_li {
 	text-align: left !important;
 	float: left !important;
 	width: 110px !important;
-	height: 50px !important;
+	height: 40px !important;
 	position: relative !important;
 	opacity: 0.9 !important;
 	border: solid 1px $darkness-background !important;
@@ -273,14 +273,12 @@ ul li.drk_button_li {
 		width: 33.333% !important;
 	}
 	.color1 {
-		border-radius: 0 0 2px 0 !important;
 		right: 0 !important;
 	}
 	.color2 {
 		right: 33.333% !important;
 	}
 	.color3 {
-		border-radius: 0 0 0 2px !important;
 		right: 66.666% !important;
 	}
 	&.none {
@@ -311,6 +309,20 @@ ul li.drk_button_li {
 		.color3 { background: #E53935 !important; }
 		.color2 { background: #64B5F6 !important; }
 	}
+	&.dusk {
+		background: #153555 !important;
+		color: #fff !important;
+		.color1 { background: #15497f !important; }
+		.color2 { background: #009bde !important; }
+		.color3 { background: #6FC8EF !important; }
+	}
+	&.redalert {
+		background: #000 !important;
+		color: #fff !important;
+		.color1 { background: #600500 !important; }
+		.color3 { background: #CF4F4F !important; }
+		.color2 { background: #DD0000 !important; }
+	}
 	.selected {
 		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.7), 0 0 3px rgba(0, 0, 0, 0.6) !important;
 		position: absolute !important;
@@ -332,7 +344,7 @@ ul li.drk_button_li {
 	}
 	.drk_theme_title {
 		padding: 0 !important;
-		margin: 0 !important;
+		margin: 5px !important;
 		cursor: pointer !important;
 		display: block !important;
 	}
@@ -624,39 +636,15 @@ div.drk_dialog.drk_get_pro.sku-1 {
 }
 
 div.drk_dialog.drk_get_pro.sku-2 {
-	div.drk_dialog_inner {
-		box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.8), 0 0 100px rgba(255, 230, 225, 0.5), 0 0 10px rgba(255, 230, 225, 0.2) !important;
-	}
 	.drk_content {
 		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-dialog-2.png") no-repeat center !important;
 	}
-	.drk_button_dialog {
-		background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
-		.upg_btn1 {
-			font-weight: 600 !important;
-    		letter-spacing: -1px !important;
-		}
-		.upg_btn2 {
-			color: #e5adae !important;
-		}
-		&:hover {
-			background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
-		}
-	}
-
-	.drk_promo_link, .drk_promo_caption, .drk_hide_link {
-		color: #60a5e0 !important;
-	}
-	.drk_promo_link:hover, .drk_promo_caption:hover, .drk_hide_link:hover {
-		color: #70b0ff !important;
-	}
-
 }
 
 div.drk_dialog.drk_get_pro {
 	div.drk_dialog_inner {
 		border-radius: 7px !important;
-		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.35), 0 0 200px rgba(249, 255, 233, 0.7), 0 0 10px rgba(249, 255, 233, 0.2) !important;
+		box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.8), 0 0 100px rgba(255, 230, 225, 0.5), 0 0 10px rgba(255, 230, 225, 0.2) !important;
 		background: Black !important;
 	}
 	span.drk_close {
@@ -691,23 +679,32 @@ div.drk_dialog.drk_get_pro {
 		border-radius: 4px !important;
 	}
 
+	.drk_show_feature_comparison {
+		position: absolute !important;
+		top: 120px !important;
+		left: 430px !important;
+		width: 80px !important;
+		height: 24px !important;
+		cursor: pointer !important;
+	}
 	.drk_button_dialog {
-		background: linear-gradient(180deg, #357865 30%, #30604f) !important;
+        background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
 		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) !important;
 		border-radius: 4px !important;
 		width: 244px !important;
 		transition: all .2s ease-in-out !important;
 		opacity: 0.9 !important;
 		margin: 0 !important;
+
 		.upg_btn1 {
 			font-size: 32px !important;
 			text-align: center !important;
-			font-weight: 400 !important;
+			font-weight: 600 !important;
+    		letter-spacing: -1px !important;
 			color: #fff !important;
 			cursor: pointer !important;
 			padding: 5px 0 7px !important;
 			-webkit-font-smoothing: antialiased;
-			letter-spacing: -0.5px !important;
 			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 		}
 		.upg_btn2 {
@@ -716,24 +713,28 @@ div.drk_dialog.drk_get_pro {
 			font-weight: 400 !important;
 			letter-spacing: -0.2px !important;
 			-webkit-font-smoothing: antialiased;
-			color: #cbffc6 !important;
+			color: #e5adae !important;
 			padding: 3px 0 0 !important;
 			cursor: pointer !important;
 			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 		}
 		&:hover {
-			background: linear-gradient(180deg, #357865 30%, #30604f) !important;
+			background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
 			opacity: 1 !important;
 			transition: all .1s ease-in-out !important;
 			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
 		}
 	}
 
+	.drk_promo_link:hover, .drk_promo_caption:hover, .drk_hide_link:hover {
+		color: #70b0ff !important;
+	}
+
 	.drk_promo_link, .drk_promo_caption, .drk_hide_link {
 		font-size: 11px !important;
 		font-weight: 400 !important;
 		position: absolute !important;
-		color: #357865 !important;
+		color: #60a5e0 !important;
 	}
 
 	.drk_promo_link {
@@ -743,7 +744,7 @@ div.drk_dialog.drk_get_pro {
 		transition: color .2s ease-in-out !important;
 		padding: 4px 10px !important;
 		&:hover {
-			color: #559885 !important;
+			color: #70b0ff !important;
 			transition: color .0s ease-in-out !important;
 		}
 		display: none !important;
@@ -759,7 +760,7 @@ div.drk_dialog.drk_get_pro {
 		transition: color .2s ease-in-out !important;
 		padding: 4px 10px !important;
 		&:hover {
-			color: #559885 !important;
+			color: #70b0ff !important;
 			transition: color .0s ease-in-out !important;
 		}
 		display: block !important;
@@ -777,7 +778,7 @@ div.drk_dialog.drk_get_pro {
 		right: 15px !important;
 		width: 120px !important;
 		text-align: center !important;
-		color: #459078 !important;
+		color: #70b0ff !important;
 		font-size: 12px !important;
 		line-height: 1.3em !important;
 	}
@@ -807,17 +808,17 @@ div.drk_dialog.drk_get_pro {
 		font-size: 12px !important;
 		margin: 0 !important;
 		line-height: 18px !important;
-		color: #cbffc6 !important;
+		color: #fff !important;
 		font-family: 'Open Sans' !important;
 		font-weight: 200 !important;
-		background: linear-gradient(180deg, #357865 30%, #30604f) !important;
+        background: linear-gradient(180deg, #cf0010 0%, #87000a 150%) !important;
 		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) !important;
 		border-radius: 3px !important;
 		border: none !important;
 		cursor: pointer !important;
 		opacity: 0.9 !important;
 		&:hover {
-			background: linear-gradient(180deg, #357865 30%, #30604f) !important;
+			background: linear-gradient(180deg, #cf0010 0%, #87000a 150%) !important;
 			opacity: 1 !important;
 			transition: all .1s ease-in-out !important;
 			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
