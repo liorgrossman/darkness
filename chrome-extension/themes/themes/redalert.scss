@@ -24,18 +24,19 @@ $light-yellow: #e8e2b7;
 
 
 $red-orange: #ff6040;
-$light-red: #ee0000;
-$dark-red: #a93030;
+$light-red: #dd0000;
+$dark-red: #a03030;
 $dark-gray: #7f7f7f;
 $dark-pink: #b11888;
-$dark-gray-red: #9a9681;
 $very-dark-gray: #333e48;
 $very-dark: #000;
 
-$box-background: #400000;
+$toolbar-background: #600500;
+$box-background: #300500;
 $text-color: white;
-$link-color: #ff5050;
-$link-color-visited: #ef3030;
+$link-color: #d05050;
+$link-color-visited: #b55555;
+$dark-gray-red: #b9b0b0;
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // BACKGROUND COLORS
@@ -48,7 +49,7 @@ $theme-background: invert-back-color($very-dark);
 $theme-background-box: invert-back-color($box-background);
 
 // Toolbar background
-$theme-background-toolbar: invert-back-color($box-background);
+$theme-background-toolbar: invert-back-color($toolbar-background);
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // TEXT COLORS
@@ -76,10 +77,10 @@ $theme-highlighted-darker: lighten($theme-highlighted, 5%);
 
 // Primary buttons (usually originally blue)
 $theme-button-text: invert-back-color($text-color);
-$theme-button-background: invert-back-color($light-blue);
+$theme-button-background: invert-back-color($light-red);
 
 // Secondary buttons (usually originally red / orange)
-$theme-secondary-button-background: invert-back-color($orange);
+$theme-secondary-button-background: invert-back-color($red-orange);
 
 // Faint buttons (close to background color)
 $theme-faint-button-background: invert-back-color(lighten($very-dark, 5%));
@@ -89,7 +90,7 @@ $theme-textbox-background: invert-back-color(darken($very-dark, 10%));
 $theme-textbox-text: invert-back-color($light-gray);
 
 // Border color
-$theme-border: invert-back-color(rgba(200,220,255,0.08));
+$theme-border: invert-back-color(rgba(200,20,0,0.08));
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // TOOLTIP COLORS
