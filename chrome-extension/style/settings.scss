@@ -249,7 +249,7 @@ div.drk_button_dialog {
 
 ul li.drk_button_li {
 	background: $darkness-listbutton-background !important;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4), 0 0 3px rgba(0, 0, 0, 0.3) !important;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.4) !important;
 	color: $darkness-listbutton-text !important;
 	cursor: pointer !important;
 	padding: 10px !important;
@@ -262,7 +262,7 @@ ul li.drk_button_li {
 	text-align: left !important;
 	float: left !important;
 	width: 110px !important;
-	height: 50px !important;
+	height: 40px !important;
 	position: relative !important;
 	opacity: 0.9 !important;
 	border: solid 1px $darkness-background !important;
@@ -273,14 +273,12 @@ ul li.drk_button_li {
 		width: 33.333% !important;
 	}
 	.color1 {
-		border-radius: 0 0 2px 0 !important;
 		right: 0 !important;
 	}
 	.color2 {
 		right: 33.333% !important;
 	}
 	.color3 {
-		border-radius: 0 0 0 2px !important;
 		right: 66.666% !important;
 	}
 	&.none {
@@ -311,6 +309,20 @@ ul li.drk_button_li {
 		.color3 { background: #E53935 !important; }
 		.color2 { background: #64B5F6 !important; }
 	}
+	&.dusk {
+		background: #153555 !important;
+		color: #fff !important;
+		.color1 { background: #404142 !important; }
+		.color2 { background: #3199C6 !important; }
+		.color3 { background: #6FC8EF !important; }
+	}
+	&.redalert {
+		background: #000 !important;
+		color: #fff !important;
+		.color1 { background: #900000 !important; }
+		.color3 { background: #E53935 !important; }
+		.color2 { background: #D00000 !important; }
+	}
 	.selected {
 		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.7), 0 0 3px rgba(0, 0, 0, 0.6) !important;
 		position: absolute !important;
@@ -332,7 +344,7 @@ ul li.drk_button_li {
 	}
 	.drk_theme_title {
 		padding: 0 !important;
-		margin: 0 !important;
+		margin: 5px !important;
 		cursor: pointer !important;
 		display: block !important;
 	}

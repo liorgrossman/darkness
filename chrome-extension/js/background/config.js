@@ -21,6 +21,14 @@ var CONFIG = {
 		'material': {
 			key: 'material',
 			name: 'Material Design'
+		},
+		'dusk': {
+			key: 'dusk',
+			name: 'Dusk'
+		},
+		'redalert': {
+			key: 'redalert',
+			name: 'Red Alert'
 		}
 	},
 
