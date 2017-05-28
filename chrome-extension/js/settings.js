@@ -793,6 +793,11 @@ if (!DarknessSettingsLoader) {
 				// Trigger purchase dialog
 				buyClick();
 			});
+			// Upgrade dialog -> Got promo?
+			$('.drk_show_feature_comparison').unbind('click').click(function(e) {
+				var url = "http://lifehacklabs.org/darkness/pro";
+				var win = window.open(url, '_blank');
+			});
 
 			// Upgrade dialog -> Got promo?
 			$('.drk_promo_link').unbind('click').click(function(e) {
@@ -800,7 +805,6 @@ if (!DarknessSettingsLoader) {
 				$('.drk_promo_form').addClass('visible');
 				$('.drk_promo_input').focus();
 			});
-
 
 			// Hide link
 			$('.drk_hide_link').unbind('click').click(function(e) {
