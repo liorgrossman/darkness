@@ -12,7 +12,7 @@ button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.b
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
-.button-primary {
+.button-primary, .button--primary {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
@@ -46,7 +46,7 @@ button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.b
 #select-btn, #select-btn:hover {
 		-webkit-filter: invert(1) !important;
 }
-.dbmodal-button.button-primary, .button-primary.choose-folder-submit, .notes-sidebar-page-cta, .dbox-app-promo-cta button, .install-button-component, .gifting-cta__button, a.freshbutton-blue, .login-button {
+.dbmodal-button.button-primary, .button-primary.choose-folder-submit, .notes-sidebar-page-cta, .dbox-app-promo-cta button, .install-button-component, .gifting-cta__button, a.freshbutton-blue {
 	-webkit-filter: invert(100) !important;
 }
 .button-secondary {
@@ -66,6 +66,17 @@ table.settings-table .sprite-button, .content-link-sync-modal__close > button {
 }
 .freshbutton-blue {
 	-webkit-filter: invert(1) !important;
+}
+button.feed-text__button {
+	background-color: transparent !important;
+}
+
+// "Learn more" button
+.expanding-section__button-container > button {
+	background-color: transparent !important;
+}
+.expanding-section__button-container .button-text > span {
+	color: $theme-button-background !important;
 }
 
 // All inputs
@@ -104,10 +115,19 @@ button.button-as-link .link-img {
 	background-color: $theme-highlighted !important;
 }
 
+.account-menu > button {
+	background-color: transparent !important;
+}
+
 .invite-icon__facebook, .invite-icon__gmail {
 	-webkit-filter: invert(100) !important;
 }
 .contacts-tokenizer-input {
+	background-color: transparent !important;
+}
+
+// Inputs
+.password-input-meter {
 	background-color: transparent !important;
 }
 
@@ -171,7 +191,14 @@ button.header-nav-link {
 }
 .search-bar .search-bar__button {
 	-webkit-filter: invert(100) !important;
-	background-color: invert($theme-button-background) !important;
+	background-color: transparent !important;
+}
+
+.checkbox-button {
+	background-color: $theme-faint-button-background !important;
+	&.checked, &.partial-checked {
+		background-color: $theme-button-background !important;
+	}
 }
 
 .global-actions__button {
@@ -202,6 +229,10 @@ button.header-nav-link {
 	-webkit-filter: invert(100) !important;
 }
 
+.browse-overflow-menu > div > button {
+	background-color: transparent !important;
+}
+
 // popup
 .db-modal-x {
 	background-color: transparent !important;
@@ -221,6 +252,14 @@ button.header-nav-link {
 }
 .unified-share-modal button.c-borderless-button {
 	background-color: transparent !important;
+}
+button[role="menuitem"] {
+	background-color: transparent !important;
+
+	&:hover {
+		background-color: $theme-highlighted !important;
+		color: $theme-button-background !important;
+	}
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
