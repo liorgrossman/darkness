@@ -73,6 +73,9 @@ a.job-listing{
 	background: $theme-button-background !important;
 	box-shadow: 0 0 0 $theme-button-background !important;
 }
+.js-star-board {
+	@include invert-back();
+}
 
 // Login with google
 #google-link, #google {
@@ -222,6 +225,8 @@ body[style*="background-image:"] > #drk_page_html,
 body[style*="background-image:"] > .window-overlay, 
 body[style*="background-image:"] > .quick-card-editor, 
 body[style*="background-image:"] > .pop-over, 
+body[style*="background-image:"] > #notification, 
+body[style*="background-image:"] > .plugin-overlay, 
 body[style*="background-image:"] > #boards-drawer {
 	-webkit-filter: invert(1) !important;
 }

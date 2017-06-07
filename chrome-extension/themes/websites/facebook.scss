@@ -710,11 +710,12 @@ div[aria-label*="sticker"] {
 }
 
 // New messages
-.highlightTitle .fbNubButton {
-	background-color: $theme-highlighted-darker !important;
-}
 ._5ugg {
 	background-color: $theme-notices !important;
+}
+.fbNub._50mz.highlightTitle .fbNubFlyoutTitlebar.titlebar {
+	border-color: $theme-highlighted !important;
+	background-color: $theme-highlighted-darker !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
