@@ -167,8 +167,8 @@ if (!DarknessSettingsLoader) {
 			
 			// What's the PayPal button ID?
 			var paypalButtonId = '';
-			if (SKU == "1") paypalButtonId = prod ? 'LGXAKGR9UZT5J' : 'Z9G4SAEXAQAQE';
-			if (SKU == "2") paypalButtonId = prod ? 'TYMEVJBHQRTUU' : 'HQQUR4X6PZ8KG';
+			if (SKU == "1") paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
+			if (SKU == "2") paypalButtonId = prod ? 'U59U55TCYJMHQ' : 'LMQAHVFLAGHK2';
 			$('#drk_paypal_button_id').attr('value', paypalButtonId);
 
 			// Add custom data to each PayPal transaction
