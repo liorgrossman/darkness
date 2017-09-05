@@ -60,7 +60,8 @@ a {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 //top toolbar
 .header,
-.header > div {
+.header > div,
+.js-header-wrapper > .Header {
     background-color: $theme-background-toolbar !important;
     border-color: $theme-border !important;
     color: $theme-text !important;

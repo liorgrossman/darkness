@@ -189,6 +189,18 @@ body[data-drk-site="youtube"] {
 		position: fixed !important;
 		top: 9px !important;
 	}
+
+	// The new "Polymer" design
+	div.ytd-masterhead {
+		margin-right: 20px !important;
+	}
+	div.drk_settings_icon {
+		top: 13px !important;
+	}
+	// Polymer, user menu
+	div#end.ytd-masthead {
+		margin-right: 20px !important;
+	}
 }
 
 body[data-drk-site="facebook"] {
