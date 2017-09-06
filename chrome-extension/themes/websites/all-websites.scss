@@ -3,7 +3,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 html {
-	// Set the HTML background. Since only the BODY is inverted, we need to invert the background here matnually
+	// Set the HTML background. Since only the BODY is inverted, we need to invert the background here manually
 	background-color: invert($theme-background) !important;
 	// min-height is important so there is no white padding below the page
 	min-height: 100% !important;
