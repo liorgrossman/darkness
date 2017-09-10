@@ -346,6 +346,11 @@ if (!DarknessLoader) { // Don't load twice
 
 			onElementReady('body', function(method) {
 				log("BODY is ready - via " + method);
+				if (SITE === 'youtube') {
+					setTimeout(function() {
+						DarknessSetYouTubeTheme(THEME);
+					}, 1000);
+				}
 				// Append the Darkness HTML (moon icon)
 				appendHtmlToBody(method);
 				setTimeout(function() {
