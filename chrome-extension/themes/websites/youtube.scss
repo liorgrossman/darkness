@@ -97,7 +97,15 @@ body:not(#body) {
 		background: lighten(inv($theme-background), 3%) !important;
 	}
 
-	// Live now badge below videos
+	// Search box
+	#container.ytd-searchbox {
+		border-color: inv($theme-border) !important;
+	}
+	ytd-searchbox[has-focus] #container.ytd-searchbox {
+		border-color: lighten(inv($theme-border), 10%) !important;
+	}
+
+	// "Live now" badge below videos
 	.badge-style-type-live-now.ytd-badge-supported-renderer {
 		color: inv($theme-link) !important;
 		border-color: inv($theme-link) !important;
