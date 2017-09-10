@@ -16,8 +16,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 </div>
 
 ## Features
-* Dark themes for popular websites: Google, Facebook, YouTube, Gmail, Inbox, Google Docs, Dropbox, Twitter, Reddit, Quora, Facebook Messenger ([help us add more](./CONTRIBUTING.md))
-* Dark themes for developer websites: StackOverflow, GitHub, Trello, CloudFlare, ShareLaTeX ([help us add more](./CONTRIBUTING.md))
+* Supports 16 websites: Google, Facebook, YouTube, Gmail, Inbox, Google Docs, Dropbox, Twitter, Reddit, Quora, Facebook Messenger, **StackOverflow, GitHub, Trello, CloudFlare, ShareLaTeX** ([help us add more](./CONTRIBUTING.md))
 * Select from 5 color themes: Iceberg, Tomorrow, Material Design, Dusk, Red Alert ([help us add more](./CONTRIBUTING.md))
 * Written in JavaScript, uses SASS
 * Self-hosted. Easy to install on Windows, Mac, Linux
