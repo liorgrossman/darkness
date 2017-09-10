@@ -7,6 +7,85 @@
 
 if (!DarknessLoader) { // Don't load twice
 
+	// Global function to assist with setting YouTube internal theme to be Dark/Light
+	// We use this when loading the page (in page.js), and when the user switches theme (in settings.js)
+	var DarknessSetYouTubeTheme = function(THEME) {
+		// Helper function
+		var getCookie = function(name) {
+			var value = "; " + document.cookie;
+			var parts = value.split("; " + name + "=");
+			if (parts.length == 2) return parts.pop().split(";").shift();
+		};
+
+		// Check for <HTML style> to determine whether it's the old or new YouTube design
+		const htmlStyle = document.documentElement.getAttribute("style");
+		if (!htmlStyle || !htmlStyle.indexOf('Roboto') == -1) {
+			return; // Old YouTube design, don't run this function
+		}
+
+		// Update YouTube's PREF (preferences) cookie to set YouTube Theme to Dark/Light
+		// If no dark theme is selected, set f6=1004 (YouTube built-in light theme)
+		// If dark theme is selected, set f6=1404 (YouTube built-in dark theme)
+		const noTheme = THEME == 'none';
+		var pref = getCookie('PREF') || ""; // Old cookie value
+		var newPref = ""; // New cookie value
+		const YT_THEME_NUMBER = noTheme ? '1004' : '1404';
+		if (pref.match(/f6=\d+/)) {
+			// f6 exists in PREF cookie, modify the f6
+			newPref = pref.replace(/f6=\d+/, 'f6=' + YT_THEME_NUMBER);
+		}
+		else {
+			if (pref != "") {
+				// PREF cookie exists but no f6 found, add f6
+				newPref = pref + "&f6=" + YT_THEME_NUMBER;
+			} else {
+				// PREF cookie doesn't exist, set it
+				newPref = "f6=" + YT_THEME_NUMBER;
+			}
+		}
+		var expires = new Date();
+		expires.setTime(Date.now() + (365*24*3600*1000)); // 1 year
+		var cookieSettingString = "PREF=" + newPref + ";domain=youtube.com;path=/;expires=" + expires.toUTCString();
+		document.cookie = cookieSettingString;
+
+		// Update the DOM elements to immediately apply YouTube Theme to be Dark/Light
+		// <HTML>
+		if (noTheme) {
+			document.documentElement.removeAttribute("style");
+			document.documentElement.setAttribute("style", "font-size: 10px;font-family: Roboto, Arial, sans-serif; background-color: #fafafa;");
+		} else {
+			document.documentElement.setAttribute("style", "font-size: 10px; font-family: Roboto, Arial, sans-serif; background-color: rgb(19, 19, 19);");
+		}
+		// <BODY>
+		if (document.body) {
+			if (noTheme) {
+				document.body.removeAttribute("dark");
+			} else {
+				document.body.setAttribute("dark", "true");
+			}
+		}
+	
+		// <ytd-app> - wrapper of the entire app
+		var ytdApps = document.getElementsByTagName("ytd-app");
+		if (ytdApps && ytdApps.length == 1) {
+			if (noTheme) {
+				ytdApps[0].setAttribute("style", "--ytd-app-scroll-offset:0; --yt-swatch-primary:rgb(255,255,255); --yt-swatch-primary-darker:rgb(230,230,230); --yt-swatch-text:rgba(17,17,17,0.4); --yt-swatch-input-text:rgba(17,17,17,1); --yt-swatch-textbox-bg:rgba(255,255,255,1); --yt-swatch-icon-color:rgba(136,136,136,1);");
+			} else {
+				ytdApps[0].setAttribute("style", "--ytd-app-scroll-offset:0; --yt-swatch-primary:rgb(35,35,35); --yt-swatch-primary-darker:rgb(32,32,32); --yt-swatch-text:rgb(255,255,255); --yt-swatch-important-text:rgb(255,255,255); --yt-swatch-input-text:rgba(255,255,255,1); --yt-swatch-textbox-bg:rgba(19,19,19,1); --yt-swatch-logo-override:rgb(255,255,255); --yt-swatch-icon-color:rgba(136,136,136,1);");
+			}
+		} 
+		// <ytd-masthead> - global header/toolbar
+		var ytdMastHead = document.getElementsByTagName("ytd-masthead");
+		if (ytdMastHead && ytdMastHead.length == 1) {
+			if (noTheme) {
+				ytdMastHead[0].setAttribute("style", "--yt-swatch-primary:rgb(255,255,255); --yt-swatch-primary-darker:rgb(230,230,230); --yt-swatch-text:rgba(17,17,17,0.4); --yt-swatch-input-text:rgba(17,17,17,1); --yt-swatch-textbox-bg:rgba(255,255,255,1); --yt-swatch-icon-color:rgba(136,136,136,1);");
+			} else {
+				ytdMastHead[0].setAttribute("style", "--yt-swatch-primary:rgb(35,35,35); --yt-swatch-primary-darker:rgb(32,32,32); --yt-swatch-text:rgb(255,255,255); --yt-swatch-important-text:rgb(255,255,255); --yt-swatch-input-text:rgba(255,255,255,1); --yt-swatch-textbox-bg:rgba(19,19,19,1); --yt-swatch-logo-override:rgb(255,255,255); --yt-swatch-icon-color:rgba(136,136,136,1);");
+			}
+		} 
+	}
+
+
 	var DarknessLoader = (function() {
 
 		// Constants
@@ -21,6 +100,7 @@ if (!DarknessLoader) { // Don't load twice
 		// Various assets provided by the background scripts
 		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
 		var SITE = '@@SITE@@';
+		var THEME = '@@THEME@@';
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
 		var settings = JSON.parse('@@SETTINGS@@'); // User settings
 
@@ -249,9 +329,12 @@ if (!DarknessLoader) { // Don't load twice
 		function DarknessLoader() {
 			currentlyEnabled = shouldEnableThemesNow();
 			log("Loading darkness in " + ENVIRONMENT + " mode. Currently enabled?", currentlyEnabled);
-
+	
 			onElementReady('head', function(method) {
 				log("HEAD is ready - via " + method);
+				if (SITE === 'youtube') {
+					DarknessSetYouTubeTheme(THEME);			
+				}
 				// If document is ready and there is still no head, create it
 				if (!document.head) {
 					var head = document.createElement('head');

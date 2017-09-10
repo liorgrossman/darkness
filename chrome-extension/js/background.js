@@ -366,6 +366,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 		'SETTINGS': JSON.stringify(settings.getAllSettingsClone()),
 		'TYPE': stats.get('type'),
 		'SITE': siteKey,
+		'THEME': themeKey,
 		'SITE_SUPPORT': CONFIG.sites[siteKey].support,
 
 		'ENVIRONMENT': ENVIRONMENT,

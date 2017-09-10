@@ -364,6 +364,9 @@ if (!DarknessSettingsLoader) {
 		// This automatically handles preview mode on/off as necessary, and updates the background script
 		var loadTheme = function(theme) {
 			log("Loading theme " + theme + " for website " + SITE);
+			if (SITE == 'youtube') {
+				DarknessSetYouTubeTheme(theme);
+			}
 			THEME = theme; // Update global var immediately
 
 			// Update settings panel UI
@@ -385,7 +388,7 @@ if (!DarknessSettingsLoader) {
 				}
 			}
 			log('previewMode', previewMode);
-
+			
 			// Set theme on background script and receive the CSS
 			chrome.runtime.sendMessage({ action: "loadTheme", theme: theme }, function(response) {
 				// Replace the CSS
