@@ -9,7 +9,7 @@ if (!DarknessLoader) { // Don't load twice
 
 	// Global function to assist with setting YouTube internal theme to be Dark/Light
 	// We use this when loading the page (in page.js), and when the user switches theme (in settings.js)
-	var DarknessSetYouTubeTheme = function(THEME) {
+	var DarknessSetYouTubeTheme = function(THEME, isUserTriggered) {
 		// Helper function
 		var getCookie = function(name) {
 			var value = "; " + document.cookie;
@@ -23,10 +23,17 @@ if (!DarknessLoader) { // Don't load twice
 			return; // Old YouTube design, don't run this function
 		}
 
+		const noTheme = THEME == 'none';
+		if (!isUserTriggered && noTheme) {
+			// If user selected 'None', and it's just a page refresh, don't do anything
+			// This is in order to allow users to use YouTube's built-in dark theme, without reverting it to light theme
+			// on every pageview.
+			return;
+		}
+
 		// Update YouTube's PREF (preferences) cookie to set YouTube Theme to Dark/Light
 		// If no dark theme is selected, set f6=1004 (YouTube built-in light theme)
 		// If dark theme is selected, set f6=1404 (YouTube built-in dark theme)
-		const noTheme = THEME == 'none';
 		var pref = getCookie('PREF') || ""; // Old cookie value
 		var newPref = ""; // New cookie value
 		const YT_THEME_NUMBER = noTheme ? '1004' : '1404';
@@ -333,7 +340,7 @@ if (!DarknessLoader) { // Don't load twice
 			onElementReady('head', function(method) {
 				log("HEAD is ready - via " + method);
 				if (SITE === 'youtube') {
-					DarknessSetYouTubeTheme(THEME);			
+					DarknessSetYouTubeTheme(THEME, false);			
 				}
 				// If document is ready and there is still no head, create it
 				if (!document.head) {
@@ -348,7 +355,7 @@ if (!DarknessLoader) { // Don't load twice
 				log("BODY is ready - via " + method);
 				if (SITE === 'youtube') {
 					setTimeout(function() {
-						DarknessSetYouTubeTheme(THEME);
+						DarknessSetYouTubeTheme(THEME, false);
 					}, 1000);
 				}
 				// Append the Darkness HTML (moon icon)

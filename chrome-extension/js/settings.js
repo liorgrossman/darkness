@@ -365,7 +365,7 @@ if (!DarknessSettingsLoader) {
 		var loadTheme = function(theme) {
 			log("Loading theme " + theme + " for website " + SITE);
 			if (SITE == 'youtube') {
-				DarknessSetYouTubeTheme(theme);
+				DarknessSetYouTubeTheme(theme, true);
 			}
 			THEME = theme; // Update global var immediately
 
