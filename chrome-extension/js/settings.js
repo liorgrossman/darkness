@@ -386,6 +386,9 @@ if (!DarknessSettingsLoader) {
 					dialogReason = 'pro-theme';
 					previewMode = true;
 				}
+				if (SITE == 'youtube' && THEME == 'youtubedark') {
+					previewMode = false;
+				}
 			}
 			log('previewMode', previewMode);
 			

@@ -76,7 +76,7 @@ var whichThemeForSite = function(debug, siteKey, canPreview) {
 
 	if (!canPreview) {
 		// If non-pro user, and a theme is set
-		if (stats.get('type') != 'p' && themeKey != null && themeKey != 'none') {
+		if (stats.get('type') != 'p' && themeKey != null && themeKey != 'none' && themeKey != 'youtubedark') {
 			if (CONFIG.sites[siteKey].p) {
 				// Pro website? Set back to none
 				if (debug) log('Preview mode off. Resetting theme back to none');
@@ -502,7 +502,7 @@ var initializeConfiguration = function() {
 	// Define which themes are free
 	for (var i in CONFIG.themes) {
 		var key = CONFIG.themes[i].key;
-		CONFIG.themes[i].p = (key != 'iceberg');
+		CONFIG.themes[i].p = (key != 'iceberg' && key != 'youtubedark');
 	}
 	for (i in CONFIG.sites) {
 		var key = CONFIG.sites[i].key;

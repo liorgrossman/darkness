@@ -29,6 +29,10 @@ var CONFIG = {
 		'redalert': {
 			key: 'redalert',
 			name: 'Red Alert'
+		}		,
+		'youtubedark': {
+			key: 'youtubedark',
+			name: 'YouTube Dark'
 		}
 	},
 
