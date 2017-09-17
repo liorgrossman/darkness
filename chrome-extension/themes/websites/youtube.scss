@@ -186,6 +186,11 @@ body#body {
 		color: $theme-link !important;
 	}
 
+	// Don't override links in Darkness settings panel
+	div.drk_subtitle a {
+		color: #a6a6a6 !important;
+	}
+
 	// links using span instead of <a>
 	.display-name span {
 		color: $theme-link !important;
