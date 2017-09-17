@@ -550,6 +550,18 @@ if (!DarknessSettingsLoader) {
 			} else {
 				$('.drk_skin_contributors_line').removeClass('visible');
 			}
+
+			// Show/hide youtube theme
+			if (SITE == 'youtube') {
+				// Check for <HTML style> to determine whether it's the old or new YouTube design
+				const htmlStyle = document.documentElement.getAttribute("style");
+				if (!htmlStyle || !htmlStyle.indexOf('Roboto') == -1) {
+					// Old YouTube design, don't show 'YouTube Dark' theme in settings panel
+				} else {
+					// New YouTube design, show 'YouTube Dark' theme in settings panel
+					$('.drk_button_li.youtubedark').attr('style', 'display:block !important');
+				}
+			}
 		};
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------

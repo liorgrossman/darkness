@@ -323,6 +323,14 @@ ul li.drk_button_li {
 		.color3 { background: #CF4F4F !important; }
 		.color2 { background: #DD0000 !important; }
 	}
+	&.youtubedark {
+		background: #111111 !important;
+		color: rgb(255,255,255) !important;
+		.color1 { background: rgb(64,64,64) !important; }
+		.color2 { background: rgb(136,136,136) !important; }
+		.color3 { background: rgb(255,0,0) !important; }
+		display: none !important;
+	}
 	.selected {
 		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.7), 0 0 3px rgba(0, 0, 0, 0.6) !important;
 		position: absolute !important;
