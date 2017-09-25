@@ -241,7 +241,11 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	background: transparent !important;
 }
 .following-text {
-	color: $theme-button-background !important
+	color: $theme-button-text !important
+}
+
+.unfollow-text{
+	color: $theme-button-text !important;
 }
 
 #export_button, #geo_button, #import-services-list button, button.revoke, .btn-widgets-new > button {
