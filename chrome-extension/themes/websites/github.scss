@@ -68,22 +68,25 @@ a {
 }
 
 // "This repository"
+.js-header-wrapper > .Header .header-search-scope,
 .header .header-search-scope {
 	color: rgba(0,0,0,0.7) !important;
 	border-right-color: #ddd !important;
 }
 
 // Search bar
+.js-header-wrapper > .Header input[type="text"].header-search-input,
 .header input[type="text"].header-search-input {
 	background: #cbc9c8 !important;
 }
+.js-header-wrapper > .Header input[type="text"].header-search-input::-webkit-input-placeholder,
 .header input[type="text"].header-search-input::-webkit-input-placeholder {
 	color: #444 !important;
 	
 }
 
 // Links on top right of bar
-#user-links > li > a {
+#user-links li.dropdown a.dropdown-item {
     color: $theme-textbox-text !important;
     svg {
 		@include invert-back();
@@ -95,6 +98,9 @@ a {
 	&.tooltipped-n::after {
 		-webkit-filter: invert(100%) !important;
 	}
+}
+#user-links li.dropdown a.dropdown-item:hover {
+    background-color: $theme-highlighted !important;
 }
 .header-nav-link:hover .dropdown-caret,
 .header-nav-link:focus .dropdown-caret {
