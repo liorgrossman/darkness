@@ -10,6 +10,11 @@ button,
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
+.modal-dialog-buttons > button[name="ok"] {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
 
 // All inputs
 input {
@@ -110,6 +115,15 @@ span.gb_6b,
 #searchAddCalBox {
 	background: transparent !important;
 	border-color: transparent !important;
+}
+
+// Colorpicker
+.ccp-rb-color,
+.goog-hsv-palette-sm-hs-image,
+.ccc-text,
+.goog-hsv-palette-sm-swatch,
+.goog-hsv-palette-sm-v-image {
+	@include invert-back()
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
