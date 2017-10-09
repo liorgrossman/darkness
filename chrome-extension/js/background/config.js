@@ -275,6 +275,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'googlecalendar': {
+			key: 'googlecalendar', // Must be the same as the object key
+			name: 'Google Calendar',
+			support: 'in-development',
+			hostRegExp: new RegExp('^calendar\.google\.com$', 'i'),
+			creators: [
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'twitch': {
 			key: 'twitch', // Must be the same as the object key
 			name: 'Twitch',
