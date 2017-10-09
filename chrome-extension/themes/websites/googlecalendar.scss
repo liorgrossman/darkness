@@ -10,7 +10,8 @@ button,
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
-.modal-dialog-buttons > button[name="ok"] {
+.modal-dialog-buttons > button[name="ok"],
+.jfk-button-action {
 	background: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
