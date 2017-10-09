@@ -108,8 +108,8 @@ var CONFIG = {
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			]
 		},
-		'inbox': {
-			key: 'inbox', // Must be the same as the object key
+		'googleinbox': {
+			key: 'googleinbox', // Must be the same as the object key
 			name: 'Inbox',
 			support: 'full',
 			hostRegExp: new RegExp('^inbox\.google\.com$', 'i'),
@@ -119,12 +119,23 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'docs': {
-			key: 'docs', // Must be the same as the object key
+		'googledocs': {
+			key: 'googledocs', // Must be the same as the object key
 			name: 'Google Docs',
 			support: 'full',
 			hostRegExp: new RegExp('^docs\.google\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'googlecalendar': {
+			key: 'googlecalendar', // Must be the same as the object key
+			name: 'Google Calendar',
+			support: 'full',
+			hostRegExp: new RegExp('^calendar\.google\.com$', 'i'),
+			creators: [
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
@@ -271,17 +282,6 @@ var CONFIG = {
 			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
 			creators: [
 				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
-		'googlecalendar': {
-			key: 'googlecalendar', // Must be the same as the object key
-			name: 'Google Calendar',
-			support: 'in-development',
-			hostRegExp: new RegExp('^calendar\.google\.com$', 'i'),
-			creators: [
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
