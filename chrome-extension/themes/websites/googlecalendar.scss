@@ -4,7 +4,8 @@
 
 // All buttons
 button,
-.jfk-button-action {
+.jfk-button-action,
+.ep-ea .goog-imageless-button {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
@@ -15,6 +16,16 @@ input {
 	color: $theme-textbox-text;
 	background-color: $theme-textbox-background;
 	border-color: $theme-border;
+}
+
+// Links
+[role="link"],
+.lk-button {
+	color: $theme-link !important;
+}
+
+.trans-strip {
+	background: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -132,4 +143,15 @@ span.gb_6b,
 // Agenda-view
 .lv-event-title {
 	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Add/create event
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.ep-dp,
+.ep-sp,
+.ep-ts .ui-dtsr-selected {
+	background-color: $theme-background-box !important;
+	border-color: $theme-background-box !important;
 }
