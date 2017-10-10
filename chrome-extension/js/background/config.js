@@ -281,7 +281,8 @@ var CONFIG = {
 			support: 'in-development',
 			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
 			creators: [
-				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' },
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
