@@ -1,25 +1,3 @@
-/*----------------------------------------------------------------------------------------------------------------------------------------------------
-This is a template for easily creating skins for new websites!
-The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
-
-Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
-Those CSS are built by combining 3 files:
-1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
-2. A skin common to all websites (themes/websites/all-websites.scss)
-3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
-
-Guidelines:
-* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
-* Please add short comments before each CSS selector to indicate what UI element it refers to
-* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
-
-You should know: all the website's colors are inverted before skinning even starts!
-* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
-* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
-* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
-* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
-----------------------------------------------------------------------------------------------------------------------------------------------------*/
-
 // Only used for the Google Drive logo
 $red: #EA4335;
 
@@ -48,7 +26,20 @@ input {
 	outline: $theme-button-background solid 1px !important;
 }
 
+// Background
+.a-nEbBXb .a-qc-La,
+.a-nEbBXb .a-da-Mf-B-ji-j {
+	background-color: $theme-background !important;
+}
 
+// Notification
+.a-la-B.g-Yd.a-Ff-B .la-r {
+	color: invert-back-color($theme-tooltip-text) !important;
+}
+.a-la-B.g-Yd.a-Ff-B {
+	background-color: $theme-tooltip-background !important;
+	color: invert-back-color($theme-tooltip-text) !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
@@ -57,7 +48,10 @@ input {
 // Toolbar background
 .gb_xd,
 .a-nEbBXb .a-D-B.a-D-B-gc-WErN3d {
-	background: $theme-background !important;
+	background: $theme-background-toolbar !important;
+}
+.gb_0d {
+	background: transparent !important;
 }
 
 // App Drawer and Notification button
@@ -68,7 +62,8 @@ input {
 // Profile image and Google logo
 .gbii::before,
 .gb_3b .gb_tc:before,
-.gbip::before {
+.gbip::before,
+.gb_4b .gb_vc {
 	@include invert-back()
 }
 
@@ -119,6 +114,10 @@ input {
 // "My Drive" dropdown icons
 .a-s-fa-Ha-pa {
 	fill: white !important;
+}
+
+.gb_xe {
+	background: $theme-textbox-background !important;
 }
 
 // Search dropdown
@@ -220,8 +219,9 @@ input {
 // Main Content Area
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-.a-nEbBXb .a-t-j .a-gd-j {
-	background-color: $theme-background !important;
+.a-nEbBXb .a-t-j .a-gd-j,
+.a-nEbBXb .a-t-D {
+	background-color: $theme-background-box !important;
 }
 
 // "Name" arrow icon
@@ -244,7 +244,7 @@ input {
 
 // Folder icons
 .a-nEbBXb .l-t-T-c-j::before {
-    background: $theme-background !important;
+    background: transparent !important;
 }
 
 // Notification
@@ -297,6 +297,7 @@ input {
 
 ::-webkit-scrollbar-track {
     background: $theme-background !important;
+    border-width: 0 !important;
 }
 
 ::-webkit-scrollbar-track:hover {

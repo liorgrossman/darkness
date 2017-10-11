@@ -1,0 +1,172 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button,
+.jfk-button-action,
+.ep-ea .goog-imageless-button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.modal-dialog-buttons > button[name="ok"],
+.jfk-button-action {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// Links
+[role="link"],
+.lk-button {
+	color: $theme-link !important;
+}
+
+.trans-strip {
+	background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.gb_uf,
+#vr-nav,
+#mainnav,
+#calmaster{
+	background: $theme-background !important;
+	border-color: $theme-background !important;
+}
+
+// App Drawer
+.gb_2,
+.gb_M {
+	@include invert-back()
+}
+
+// Profile image and Google logo
+#gb#gb a.gb_b.gb_cb.gb_R,
+.gbip,
+span.gb_6b,
+#mainlogo {
+	@include invert-back()
+}
+
+// Nofitications popup
+.gb_Xb, #gbsfw.gb_g {
+	filter: invert(0) !important;
+}
+
+// "My Account" button
+.gb_sb .gb_yb {
+    background: $theme-button-background !important;
+    border-color: $theme-button-background !important;
+	color: black !important;
+	&:hover {
+		filter: brightness(0.9) !important;
+	}
+}
+
+// Searchbar
+#gbqfb {
+    background: $theme-button-background !important;
+    border-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+}
+.gstl_50.gstt input {
+	background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Color identifiers in sidebar
+.calListRow[aria-selected="true"] .calListSquare {
+	@include invert-back()
+}
+
+// Create event button
+#createEventButtonContainer [role="button"] {
+    background: $theme-button-background !important;
+    border-color: $theme-button-background !important;
+    color: black !important;
+}
+
+// Foldables
+.dpdiv,
+.chromeColor,
+.calList,
+.calListRow,
+.calHeader {
+	background: transparent !important;
+	border-color: transparent !important;
+}
+
+// Search box
+#searchAddCalBox {
+	background: transparent !important;
+	border-color: transparent !important;
+}
+
+// Colorpicker
+.ccp-rb-color,
+.goog-hsv-palette-sm-hs-image,
+.ccc-text,
+.goog-hsv-palette-sm-swatch,
+.goog-hsv-palette-sm-v-image {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Calendar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#gridcontainer {
+	background-color: $theme-background-box !important;
+}
+#mainbody,
+.mv-daynames-table,
+.mv-event-container,
+.mv-container,
+.st-dtitle {
+	background-color: transparent !important;
+}
+
+.st-bg-today {
+	background-color: $theme-background-toolbar !important;
+}
+
+// The events in the calendar
+// Month-view & 2-week-view
+#calcontent.eui-t .st-c .te, #calcontent.eui-t .st-c .rb-n {
+	@include invert-back()
+}
+// Week-view & Day-view
+.chip dl {
+	@include invert-back()
+}
+// Agenda-view
+.lv-event-title {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Add/create event
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.ep-dp,
+.ep-sp,
+.ep-ts .ui-dtsr-selected {
+	background-color: $theme-background-box !important;
+	border-color: $theme-background-box !important;
+}

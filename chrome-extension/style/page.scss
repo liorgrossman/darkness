@@ -140,8 +140,16 @@ body[data-drk-site="dropbox"] {
 	}
 }
 
+body[data-drk-site="googlecalendar"] {
+	div.drk_settings_icon {
+		top: 16px !important;
+	}
+	.gb_hb {
+		padding-right: 50px !important;
+	}
+}
 
-body[data-drk-site="docs"] {
+body[data-drk-site="googledocs"] {
 	.docs-titlebar-buttons {
 		padding-right: 52px !important;
 	}
