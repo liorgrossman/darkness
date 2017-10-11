@@ -26,7 +26,9 @@ input {
 
 // Links
 [role="link"],
-.lk-button {
+.lk-button,
+#collapse_all_link,
+#expand_all_link {
 	color: $theme-link !important;
 }
 
@@ -140,7 +142,16 @@ span.gb_6b,
 // Calendar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-#gridcontainer {
+// Background of the different views
+#gridcontainer,
+.tg-timedevents,
+.wk-weektop,
+.wk-allday,
+.tg-time-pri,
+.tg-time-sec,
+.listv,
+.lv-row,
+.wk-dummyth {
 	background-color: $theme-background-box !important;
 }
 #mainbody,
@@ -151,8 +162,24 @@ span.gb_6b,
 	background-color: transparent !important;
 }
 
-.st-bg-today {
+// Highlight today
+.st-bg-today,
+.wk-full-mode .wk-today,
+.tg-today,
+.wk-today {
 	background-color: $theme-background-toolbar !important;
+}
+
+// Now arrow and line in day and week-view
+.tg-nowmarker {
+	border-color: $theme-highlighted !important;
+}
+.tg-nowptr{
+    border-top: 4px solid transparent !important;
+    border-bottom: 4px solid transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 5px solid $theme-highlighted !important;
 }
 
 // The events in the calendar
@@ -167,11 +194,6 @@ span.gb_6b,
 // Agenda-view
 .lv-event-title {
 	@include invert-back()
-}
-
-// Day/week view: horizontal line that shows the time now
-.tg-nowmarker {
-	border-color: $theme-link !important;
 }
 
 // Day/week view: grid that shows horizontal line every 30 minutes
