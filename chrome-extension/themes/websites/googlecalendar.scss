@@ -89,6 +89,10 @@ span.gb_6b,
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+// "Calendar" text on top of sidebar
+#mainlogo {
+	color: invert($theme-button-background) !important;
+}
 
 // Color identifiers in sidebar
 .calListRow[aria-selected="true"] .calListSquare {
@@ -110,6 +114,11 @@ span.gb_6b,
 .calHeader {
 	background: transparent !important;
 	border-color: transparent !important;
+}
+
+// Monthly calendar on the left side: remove black background from days
+.dp-weekday {
+	background: transparent !important;
 }
 
 // Search box
@@ -160,6 +169,46 @@ span.gb_6b,
 	@include invert-back()
 }
 
+// Day/week view: horizontal line that shows the time now
+.tg-nowmarker {
+	border-color: $theme-link !important;
+}
+
+// Day/week view: grid that shows horizontal line every 30 minutes
+.tg-dualmarker, .tg-dualmarker60 {
+	border-color: darken($theme-background, 9%) !important;
+}
+
+// Events in top (non-hour) part of calendar: don't show ugly blue border
+#calcontent.eui-t .st-c .te, #calcontent.eui-t .st-c .rb-n {
+	border-color: transparent !important;
+}
+
+// Events in calendar: don't show ugly blue border
+.chip dl {
+	border-color: transparent !important;
+}
+
+// Style the calendar's background
+// #calmaster = the entire page, scrollbar sometimes appear on page load
+// #scrolltimedeventswk = the calendar, scrollbar appears on day/week view
+// #gridcontainer = the calendar, scrollbar appears on agenda view
+#scrolltimedeventswk, #calmaster, #gridcontainer {
+	&::-webkit-scrollbar {
+		width: 10px !important;
+	}
+
+	&::-webkit-scrollbar-track {
+		border: none !important;
+		background: invert($track-background) !important;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: darken($theme-background-toolbar, 10%) !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
+}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Add/create event
 //----------------------------------------------------------------------------------------------------------------------------------------------------
