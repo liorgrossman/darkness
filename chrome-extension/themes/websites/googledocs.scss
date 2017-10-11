@@ -48,7 +48,7 @@ iframe {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Toolbar
-.gb_dd.gb_id.gb_kd {
+.gb_dd.gb_id.gb_kd, .gb_2d {
 	background-color: $theme-background-toolbar !important;
 }
 
@@ -58,8 +58,11 @@ iframe {
 }
 
 // Google logo in left menu
-.gb_sd.gb_Vb {
+.gb_sd.gb_Vb, .gb_4b .gb_vc {
 	-webkit-filter: invert(1) !important;
+}
+.gb_dc .gb_9d {
+	-webkit-filter: invert(0) !important;
 }
 
 // "Docs" in the toolbar logo
@@ -102,6 +105,20 @@ iframe {
 }
 .goog-palette-cell {
 	-webkit-filter: invert(100%) !important;
+}
+// Searchbar
+.gb_2d .gb_Pe::-webkit-input-placeholder {
+	color: $theme-textbox-text !important;
+}
+.gb_2d .gb_xe {
+	background-color: $theme-textbox-background !important;
+	border: 0px solid transparent !important;
+}
+.gb_xe button {
+	border-radius: 4px 0 0 4px !important;
+}
+.gb_Hd.gb_Sd .gb_Dd .gb_xe {
+	margin: 0 auto !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
