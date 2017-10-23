@@ -94,6 +94,17 @@ var CONFIG = {
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			]
 		},
+		'instagram': {
+			key: 'instagram', // Must be the same as the object key
+			name: 'Instagram',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.instagram\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'gmail': {
 			key: 'gmail', // Must be the same as the object key
 			name: 'Gmail',
@@ -292,17 +303,6 @@ var CONFIG = {
 			name: 'Twitch',
 			support: 'in-development',
 			hostRegExp: new RegExp('^www\.twitch\.tv$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
-		'instagram': {
-			key: 'instagram', // Must be the same as the object key
-			name: 'Instagram',
-			support: 'in-development',
-			hostRegExp: new RegExp('^www\.instagram\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
