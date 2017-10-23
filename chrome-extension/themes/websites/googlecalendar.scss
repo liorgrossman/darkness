@@ -5,7 +5,10 @@
 // All buttons
 button,
 .jfk-button-action,
-.ep-ea .goog-imageless-button {
+.bf-df,
+.e3Duub,
+.ep-ea .goog-imageless-button,
+.XiVK6d {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
@@ -16,12 +19,19 @@ button,
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
+.XiVK6d {
+	box-shadow: none !important;
+}
 
 // All inputs
-input {
-	color: $theme-textbox-text;
-	background-color: $theme-textbox-background;
-	border-color: $theme-border;
+input, textarea, input[type="text"] {
+	color: $theme-textbox-text !important;
+	background-color: transparent !important;
+	border-color: $theme-border !important;
+}
+.DSC0Mc,
+.OabDMe {
+	background-color: $theme-textbox-background !important;
 }
 
 // Links
@@ -36,6 +46,11 @@ input {
 	background: transparent !important;
 }
 
+// Dark background for popups
+.llhEMd {
+	background-color: rgba(255,255,255,0.38) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -44,6 +59,8 @@ input {
 .gb_uf,
 #vr-nav,
 #mainnav,
+.gb_yf,
+.gb_4d,
 #calmaster{
 	background: $theme-background !important;
 	border-color: $theme-background !important;
@@ -61,8 +78,12 @@ input {
 .gbii.gb_ab,
 .gb_9b .gb_bc,
 span.gb_6b,
+.gb_9b .gb_zc,
 #mainlogo {
 	@include invert-back()
+}
+.gb_vc svg, .gb_hc svg {
+	color: white !important;
 }
 
 // Nofitications popup
@@ -89,18 +110,29 @@ span.gb_6b,
 .gstl_50.gstt input {
 	background: transparent !important;
 }
+.gb_Be {
+	background-color: $theme-textbox-background !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
 // "Calendar" text on top of sidebar
 #mainlogo {
 	color: invert($theme-button-background) !important;
 }
 
 // Color identifiers in sidebar
-.calListRow[aria-selected="true"] .calListSquare {
+.calListRow[aria-selected="true"] .calListSquare,
+.uVccjd[aria-checked="true"] {
 	@include invert-back()
+}
+.uVccjd[aria-checked="false"] {
+	@include invert-back()
+}
+.uVccjd[aria-checked="false"] .uHMk6b {
+	border-color: black !important;
 }
 
 // Create event button
@@ -133,11 +165,21 @@ span.gb_6b,
 
 // Colorpicker
 .ccp-rb-color,
+.azQ4Lc,
 .goog-hsv-palette-sm-hs-image,
 .ccc-text,
 .goog-hsv-palette-sm-swatch,
 .goog-hsv-palette-sm-v-image {
 	@include invert-back()
+}
+.fM9vSd .FKhct,
+.SQaQVd,
+.rgXNVe,
+.kUwJrc.R4GWv {
+	@include invert-back()
+}
+.g3VIld {
+	box-shadow: none !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -153,7 +195,8 @@ span.gb_6b,
 .tg-time-sec,
 .listv,
 .lv-row,
-.wk-dummyth {
+.wk-dummyth,
+.tNDBE {
 	background-color: $theme-background-box !important;
 }
 #mainbody,
@@ -168,8 +211,19 @@ span.gb_6b,
 .st-bg-today,
 .wk-full-mode .wk-today,
 .tg-today,
-.wk-today {
+.wk-today,
+.ef2wWc,
+.ecKr0 {
 	background-color: $theme-background-toolbar !important;
+}
+.yzYBvd.F262Ye,
+.TUH0Sd .r4nke {
+	background-color: $theme-highlighted !important;
+}
+.pqE3fc .wy3aMe,
+.MmhHI.F262Ye,
+.OmwDud.F262Ye {
+	color: $theme-highlighted !important;
 }
 
 // Now arrow and line in day and week-view
@@ -186,16 +240,25 @@ span.gb_6b,
 
 // The events in the calendar
 // Month-view & 2-week-view
-#calcontent.eui-t .st-c .te, #calcontent.eui-t .st-c .rb-n {
+#calcontent.eui-t .st-c .te,
+#calcontent.eui-t .st-c .rb-n,
+.wgIOqb-XPtOyb {
 	@include invert-back()
 }
 // Week-view & Day-view
-.chip dl {
+.chip dl,
+.EfQccc {
 	@include invert-back()
 }
 // Agenda-view
-.lv-event-title {
+.lv-event-title,
+.Oxm52e {
 	@include invert-back()
+}
+
+// Darken past event
+.wgIOqb-XPtOyb.wgIOqb-XPtOyb-C3kE6 {
+	filter: invert(1) brightness(150%) !important;
 }
 
 // Day/week view: grid that shows horizontal line every 30 minutes
@@ -233,6 +296,13 @@ span.gb_6b,
 		box-shadow: none !important;
 	}
 }
+
+// See event details
+.i5a7ie,
+.XHsn7e.Wbs5sd {
+	@include invert-back()
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Add/create event
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -242,4 +312,15 @@ span.gb_6b,
 .ep-ts .ui-dtsr-selected {
 	background-color: $theme-background-box !important;
 	border-color: $theme-background-box !important;
+}
+
+.ThdJC.KKjvXb {
+	color: $theme-highlighted !important;
+}
+.WwvKTc {
+	background-color: $theme-highlighted !important;
+}
+
+.p9lUpf {
+	background-color: $theme-background !important;
 }
