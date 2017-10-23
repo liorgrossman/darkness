@@ -2,81 +2,74 @@
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-.jobs-logo, .enterprise-header__logo-gliph, .enterprise-header__title-text {
-	-webkit-filter: invert(100) !important;
-}
+// .jobs-logo, .enterprise-header__logo-gliph, .enterprise-header__title-text {
+// 	-webkit-filter: invert(100) !important;
+// }
 
 // All buttons
-button, a.freshbutton-blue, #all-positions, .nav-all-jobs, .section-view-all a.btn {
+button,
+a.button {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
-.button-primary, .button--primary {
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
-
-	&:disabled {
-		background-color: $theme-highlighted !important;
-	}
-
-	&:disabled:hover {
-		background-color: $theme-highlighted-darker !important;
-		-webkit-filter: invert(0) !important;
-	}
+button:hover {
+	background: $theme-button-background !important;
 }
-.dbmodal-button {
-
-	&:disabled {
-		-webkit-filter: invert(100) !important;
-	}
+// buttons as links
+.unified-share-modal button.c-borderless-button,
+button.button-as-link,
+.maestro-nav-switcher-menu-item--selected .maestro-nav-switcher-menu-item__title {
+	background-color: transparent !important;
+	color: $theme-link !important;
 }
-.dbmodal-button.c-btn--primary, .unified-share-modal__share-send, .confirm-button.c-btn--primary, .c-btn--primary.u-mar-left-s, .u-l-fr .c-btn, .content-link-sync-modal__add-to-dropbox-button {
-	-webkit-filter: invert(100) !important;
-
-	&:hover {
-		-webkit-filter: invert(0) !important;
-	}
-
-}
-#select-btn[disabled]:hover {
-		-webkit-filter: invert(0) !important;
-}
-#select-btn, #select-btn:hover {
-		-webkit-filter: invert(1) !important;
-}
-.dbmodal-button.button-primary, .button-primary.choose-folder-submit, .notes-sidebar-page-cta, .dbox-app-promo-cta button, .install-button-component, .gifting-cta__button, a.freshbutton-blue {
-	-webkit-filter: invert(100) !important;
-}
-.button-secondary {
-
-	&:hover{
-		background: linear-gradient(#fffffe, $theme-highlighted) !important;
-	}
-}
-table.settings-table .sprite-button, .content-link-sync-modal__close > button {
+button.button-as-link .link-img {
+	-webkit-filter: invert(1) !important;
 	background-color: transparent !important;
 }
-.link-img {
+.preview-toolbar-container .toolbar-button-entry button,
+.preview-toolbar-container .toolbar-button-entry button:hover,
+.pass-facepile-avatar,
+.pass-facepile-avatar:hover,
+.react-title-bar__close:hover,
+.react-title-bar__close {
 	background-color: transparent !important;
+	background: transparent !important;
 }
-.s_web_x {
+.preview-toolbar-container .toolbar-button-entry button img {
 	-webkit-filter: invert(0) !important;
 }
-.freshbutton-blue {
-	-webkit-filter: invert(1) !important;
-}
-button.feed-text__button {
-	background-color: transparent !important;
+// Three dots
+button span g {
+	fill: invert($theme-button-background) !important;
 }
 
-// "Learn more" button
-.expanding-section__button-container > button {
+// Buttons that should not have a background
+.mc-popover button,
+.mc-popover button > span,
+button.star__toggle,
+.search-bar__input > button,
+.mc-dropdown-menu > button,
+button.mc-tertiary-link-button,
+button > span[aria-label="More Actions"],
+a.button-secondary {
 	background-color: transparent !important;
+	background: transparent !important;
 }
-.expanding-section__button-container .button-text > span {
+
+// Removes shadows
+.recents-item__action-button:first-child {
+	box-shadow: none !important;
+}
+
+button.mc-tertiary-link-button .mc-tertiary-icon-text {
 	color: $theme-button-background !important;
+}
+.toggle__toggle-container--on {
+	background-color: $theme-highlighted !important;
+}
+.toggle__status.toggle__status--on {
+	color: $theme-highlighted !important;
 }
 
 // All inputs
@@ -86,285 +79,144 @@ input {
 	border-color: $theme-border;
 }
 
-// buttons as links
-button.button-as-link {
-	background-color: transparent !important;
-	color: $theme-link !important;
-}
-button.button-as-link .link-img {
-	-webkit-filter: invert(100) !important;
-	background-color: transparent !important;
+// "New" badge
+.maestro-nav__product-badge {
+	background-color: $theme-notices !important;
+	color: $theme-tooltip-text !important;
 }
 
-// Calendars
-.calendar .selected {
-	background-color: $theme-highlighted !important;
-}
-.calendar .date:hover {
-	background-color: $theme-highlighted-darker !important
-}
-
-// menus
-.bubble-menu-item:hover {
-	background-color: $theme-highlighted !important;
-}
-.context-menu-item--selected {
-	background-color: $theme-highlighted !important;
-}
-.account-dropdown ul a:hover {
+// Tip card
+.mc-tip-card {
 	background-color: $theme-highlighted !important;
 }
 
-.account-menu > button {
-	background-color: transparent !important;
+// Checkboxes
+.mc-checkbox-checked {
+	background-color: $theme-highlighted !important;
+}
+.mc-checkbox-checked .mc-checkbox-border {
+	border-color: $theme-highlighted-darker !important;
 }
 
-.invite-icon__facebook, .invite-icon__gmail {
-	-webkit-filter: invert(100) !important;
+// Popup menus
+.mc-popover-content-item:enabled span,
+.mc-popover-content-item:enabled:hover span {
+	color: black !important;
 }
-.contacts-tokenizer-input {
-	background-color: transparent !important;
-}
-
-// Inputs
-.password-input-meter {
-	background-color: transparent !important;
+.mc-popover-content-item:enabled:hover {
+	background-color: $theme-highlighted !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Headers
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Toolbar background
-#page-header, #trash-header, #trash-sub-header, #trash-table-header, #events-sub-header, #events-header {
-	background-color: $theme-background !important;
+.maestro-header .page-header {
+	background-color: $theme-background-box !important;
 }
 
-.quota_graph_bar {
+// Searchbar
+.search-bar__input {
+	background-color: $theme-textbox-background !important;
+}
+
+// Used space
+.quota-bar-used {
 	background-color: $theme-highlighted !important;
-	border-color: $theme-highlighted-darker !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Sidebar
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-#page-sidebar {
-}
-#sidebar {
-	background-color: transparent !important;
-}
-
-#ha-container > .ha {
-	border-color: $theme-notices !important;
-}
-#ha-container > .ha a {
-	border-color: $theme-notices !important;
-}
-#ha-container > .ha a.dismiss-button {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-#page-footer {
+.footer {
+	background-color: $theme-background-box !important;
 }
-#page-footer button {
-	background-color: transparent !important;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.maestro-nav__container {
+	background-color: $theme-background-toolbar !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // File list
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-button.header-nav-link {
+.mc-table-row,
+.brws-column-header .brws-checkbox-cell {
 	background-color: transparent !important;
-}
-
-.breadcrumb-overflow-button {
-	background-color: transparent !important;
-}
-
-.search-bar .search-bar__text-input {
-	background-color: transparent !important;
-}
-.search-bar .search-bar__button {
-	-webkit-filter: invert(100) !important;
-	background-color: transparent !important;
-}
-
-.checkbox-button {
-	background-color: $theme-faint-button-background !important;
-	&.checked, &.partial-checked {
-		background-color: $theme-button-background !important;
-	}
-}
-
-.global-actions__button {
-	background-color: transparent !important;
-}
-
-.c-column-header__button {
-	background-color: transparent !important;
-}
-
-.c-column-header {
-	background-color: $theme-background !important;
-}
-
-#browse-box {
-	header > #browse-header {
-		background-color: $theme-background !important;
-	}
-}
-
-.browse-file-row:hover, .browse-file-row--is-selected {
-	background-color: $theme-highlighted-darker !important;
-	border-top-color: $theme-highlighted !important;
-	border-bottom-color: $theme-highlighted !important;
-}
-
-.browse-file-row__column form {
-	-webkit-filter: invert(100) !important;
-}
-
-.browse-overflow-menu > div > button {
-	background-color: transparent !important;
-}
-
-// popup
-.db-modal-x {
-	background-color: transparent !important;
-}
-.tree-view__item-label {
-	color: $theme-link !important;
-}
-.unified-share-modal__settings{
-	background-color: transparent !important;
-}
-.paging-list .selected{
-	background-color: $theme-highlighted-darker !important;
-	color: $theme-link !important;
-}
-.paging-list .selected .option-secondary {
-	color: $theme-url !important;
-}
-.unified-share-modal button.c-borderless-button {
-	background-color: transparent !important;
-}
-button[role="menuitem"] {
-	background-color: transparent !important;
-
-	&:hover {
-		background-color: $theme-highlighted !important;
-		color: $theme-button-background !important;
-	}
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Showing a file
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// toolbar
-.react-title-bar__close {
+// Background
+.react-file-viewer {
+	background-color: $theme-background-box !important;
+}
+
+// The preview
+.preview-content iframe {
+	filter: invert(0)  !important
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Popups
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// General modal
+.db-modal-box > div > div {
+	background-color: $theme-background-box !important;
+}
+.db-modal-box > div > div .tokenizer-input, 
+.db-modal-box > div > div textarea {
+	background: transparent !important;
+}
+
+#modal-overlay, .db-modal-overlay {
+	background-color: rgba(255,255,255,0.6) !important;
+}
+
+// "try pro" box
+.ha.visible button:not(.button){
 	background-color: transparent !important;
 }
-.react-title-bar__controls > .share-button {
-	-webkit-filter: invert(100) !important;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// User setting
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.general-page-header {
+	background-color: $theme-highlighted-darker !important;
 }
-.vjs-big-play-button {
-	background-color: transparent !important;
-}
-.react-file-viewer-dropdown li a:hover {
+
+.bar-graph-part.bar-graph-normal.normal-color {
 	background-color: $theme-highlighted !important;
+	border-color: $theme-highlighted !important;
 }
-
-// Controls in the bottom
-.preview-toolbar-container {
-}
-.preview-toolbar-container .preview-toolbar-overlay {
-	background-color: $theme-highlighted !important;
-}
-
-// Comments
-.comment-input-buttons button {
-	background-color: transparent !important;
-}
-.comment-box .post-button {
-	-webkit-filter: invert(100) !important;
-}
-
-// mentions
-.blue {
-	color: $theme-highlighted !important;
-}
-
-// Comment on images
-.blank-state__button {
-	-webkit-filter: invert(100) !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Showing trash
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.trash-row:hover {
+.bar-graph-part.bar-graph-shared.bar-shared-color {
 	background-color: $theme-highlighted-darker !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Showing events
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.event-row:hover {
-	background-color: $theme-highlighted-darker !important;
-	border-top-color: $theme-highlighted !important;
-	border-bottom-color: $theme-highlighted !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// File requests
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.drops-empty-page-cta > button{
-	-webkit-filter: invert(100) !important;
-}
-.create-edit-form-destination-change {
-	background-color: transparent !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Gift Dropbox
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.feature-table__table-column--blue {
-	background-color: $theme-highlighted-darker !important;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// Gift Dropbox
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.c-tabs__tab {
 	border-color: $theme-highlighted-darker !important;
-	border-bottom-color: #bdc4c9 !important;
-}
-.c-tabs__tab.c-tabs__tab--selected {
-	border-color: #bdc4c9 !important;
-}
-.bar-graph-legend, .bar-graph-part {
-	-webkit-filter: invert(100) !important;
-}
-.bar-graph-legend.bar-graph-free {
-	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// Dropbox chooser
+// Regular sites
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Links in sidebar
-.pane-btns {
-	color: $theme-link !important;
+.plans-page-rebrand .plans-page__header {
+	background-color: $theme-highlighted !important;
+}
+.plans-page__headline {
+	color: black !important;
+}
+
+button.tabs__tab {
+	background-color: $theme-background-box !important;
+}
+button.tabs__tab.active {
+	background-color: $theme-background !important;
 }

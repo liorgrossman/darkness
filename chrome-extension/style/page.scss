@@ -138,6 +138,15 @@ body[data-drk-site="dropbox"] {
 	.react-title-bar__action-wrap {
 		margin-right: 40px !important;
 	}
+	div.drk_settings_icon {
+		right: 4px !important;
+		top: 18px !important;
+	}
+}
+body[data-drk-site="dropbox"].None {
+	.account-menu {
+		margin-right: 26px !important;
+	}
 }
 
 body[data-drk-site="googlecalendar"] {
