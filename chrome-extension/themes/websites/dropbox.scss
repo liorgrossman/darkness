@@ -2,9 +2,9 @@
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// .jobs-logo, .enterprise-header__logo-gliph, .enterprise-header__title-text {
-// 	-webkit-filter: invert(100) !important;
-// }
+*:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
 
 // All buttons
 button,
@@ -19,6 +19,8 @@ button:hover {
 // buttons as links
 .unified-share-modal button.c-borderless-button,
 button.button-as-link,
+.c-column-header__button:hover,
+.c-column-header__button,
 .maestro-nav-switcher-menu-item--selected .maestro-nav-switcher-menu-item__title {
 	background-color: transparent !important;
 	color: $theme-link !important;
@@ -32,7 +34,9 @@ button.button-as-link .link-img {
 .pass-facepile-avatar,
 .pass-facepile-avatar:hover,
 .react-title-bar__close:hover,
-.react-title-bar__close {
+.react-title-bar__close,
+.mc-overflow-button,
+.mc-overflow-button:hover {
 	background-color: transparent !important;
 	background: transparent !important;
 }
@@ -123,6 +127,13 @@ input {
 // Used space
 .quota-bar-used {
 	background-color: $theme-highlighted !important;
+}
+
+.c-tabs__bar {
+	background: $theme-background !important;
+}
+.c-tabs__tab--selected {
+	border-color: $theme-highlighted !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
