@@ -1,25 +1,3 @@
-/*----------------------------------------------------------------------------------------------------------------------------------------------------
-This is a template for easily creating skins for new websites!
-The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
-
-Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
-Those CSS are built by combining 3 files:
-1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
-2. A skin common to all websites (themes/websites/all-websites.scss)
-3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
-
-Guidelines:
-* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
-* Please add short comments before each CSS selector to indicate what UI element it refers to
-* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
-
-You should know: all the website's colors are inverted before skinning even starts!
-* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
-* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
-* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
-* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
-----------------------------------------------------------------------------------------------------------------------------------------------------*/
-
 @mixin brightness($brightness) {
 	filter: brightness($brightness) !important;
 }
@@ -224,24 +202,24 @@ div#simpleSearch #mw-searchButton {
 // Featured image title background
 .mergedtoprow td:first-child, .mergedbottomrow td:first-child {
 	background-color: $theme-border !important;
-	border-color: $theme-border;
-}
-
-// Paragraph font size (not sure if this is wanted or needed but
-// it makes it a lot easer to read. Feedback is certainly welcome
-.mw-body-content p {
-  font-size: 17px;
+	border-color: $theme-border !important;
 }
 
 // Table body
 tbody {
-	border-color: $theme-border;
+	border-color: $theme-border !important;
+}
+tr {
+	border-color: $theme-border !important;
 }
 
 // Contents box
 #toc, .toc, .mw-warning, .toccolours {
-	background-color: $theme-background;
-	border-color: $theme-border;
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+#content {
+	background-color: $theme-background-box !important;
 }
 
 // Top Notice
