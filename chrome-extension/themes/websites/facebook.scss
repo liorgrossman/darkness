@@ -375,6 +375,11 @@ li._54ne, .__MenuItem.selected {
 // Timeline (mine or other people's profiles)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Compose post
+#pagelet_composer textarea {
+	background-color: transparent !important;
+}
+
 // Timeline - middle content column
 .fbTimelineTimePeriod {
 	background-color: $theme-background !important;
