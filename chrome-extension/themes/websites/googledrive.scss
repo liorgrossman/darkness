@@ -78,7 +78,8 @@ input {
 }
 
 // Google Drive logo
-.gb_Ad.gb_Ed {
+.gb_Ad.gb_Ed,
+.gb_ac .gb_Ac {
 	filter: invert(1) !important;
 	opacity: 1 !important;
 	color: $red !important;
@@ -86,7 +87,9 @@ input {
 
 // Top toolbar svg icons
 .a-nEbBXb .a-d-c svg,
-.a-nEbBXb .a-l-S-Pc-w-d .a-w-d-aa-zd svg {
+.a-nEbBXb .a-l-S-Pc-w-d .a-w-d-aa-zd svg,
+.gb_se svg,
+.gb_b svg {
 	fill: white !important;
 }
 
@@ -97,6 +100,7 @@ input {
 
 // App Drawer icons
 .gb_O .gb_3,
+.gb_O .gb_2,
 .gb_M {
 	@include invert-back()
 }
@@ -117,6 +121,11 @@ input {
 }
 
 .gb_xe {
+	background: $theme-textbox-background !important;
+}
+
+// Searchbar
+.gb_Ce {
 	background: $theme-textbox-background !important;
 }
 

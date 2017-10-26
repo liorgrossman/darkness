@@ -100,7 +100,8 @@ body[data-drk-site="wikipedia"] {
 	}
 }
 body[data-drk-site="googledrive"] {
-	.gb_rc {
+	.gb_rc,
+	.gb_yc.gb_Zd {
 	  padding-right: 38px;
 	}
 	div.drk_settings_icon {
@@ -243,7 +244,7 @@ body[data-drk-site="messenger"] {
 body[data-drk-site="github"] {
 	div.drk_settings_icon {
 		position: fixed !important;
-		top: 9px !important;
+		top: 13px !important;
 		right: 12px !important;
 	}
 }
