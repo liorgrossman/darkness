@@ -141,6 +141,18 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'googledrive': {
+			key: 'googledrive', // Must be the same as the object key
+			name: 'Google Drive',
+			support: 'in-development',
+			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
+			creators: [
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			]
+		},
 		'googlecalendar': {
 			key: 'googlecalendar', // Must be the same as the object key
 			name: 'Google Calendar',
@@ -275,18 +287,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'googledrive': {
-			key: 'googledrive', // Must be the same as the object key
-			name: 'Google Drive',
-			support: 'in-development',
-			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
-			creators: [
-				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' },
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
 		'cloudflare': {
 			key: 'cloudflare', // Must be the same as the object key
 			name: 'Cloudflare',
@@ -375,6 +375,12 @@ var CONFIG = {
 			name: 'w3schools',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^www\.w3schools\.com$', 'i')
+		},
+		'box': {
+			key: 'box', // Must be the same as the object key
+			name: 'Box',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.box\.com$', 'i')
 		}
 	}
 };

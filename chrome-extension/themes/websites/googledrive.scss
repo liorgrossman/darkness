@@ -41,6 +41,30 @@ input {
 	color: invert-back-color($theme-tooltip-text) !important;
 }
 
+// Popup darken overlay
+.a-b-L .a-b-jl {
+	background-color: rgba(255, 255, 255, 0.65) !important;
+}
+.a-b-L .a-b-K {
+	background: linear-gradient(to bottom,rgba(100,100,100,0.65) 0%,transparent 100%) !important;
+}
+.a-b-Ma-d.a-b-Da-d.h-sb-Ic.a-b-d {
+	margin-right: 38px !important;
+}
+.a-b-L .a-b-Ma-d .a-b-c,
+.a-b-L .a-b-od-d .a-b-od-d-c,
+.a-b-L .a-b-va-d .a-b-da-c,
+.a-b-L .a-b-K-Jc {
+	@include invert-back()
+}
+.a-b:not(.a-b-Od) .a-b-ma-Nd,
+.a-b-tb-Ce,
+.a-b-yb-ac,
+.a-b-tb-Ce,
+.a-b-r-x {
+	box-shadow: none !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
