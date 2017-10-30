@@ -153,10 +153,11 @@ body[data-drk-site="dropbox"].None {
 
 body[data-drk-site="googlecalendar"] {
 	div.drk_settings_icon {
-		top: 15px !important;
+		top: 16px !important;
 	}
-	.gb_hb {
-		padding-right: 55px !important;
+	.gb_hb,
+	.gb_zc {
+		padding-right: 32px !important;
 	}
 }
 
