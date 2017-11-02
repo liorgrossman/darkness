@@ -260,6 +260,27 @@ body[style*="background-image:"] > #boards-drawer {
 	@include invert-back();
 }
 
+// Board menu
+.board-wrapper.is-show-menu .board-menu {
+	box-shadow: none !important;
+}
+.board-menu-tab-content {
+	background-color: $theme-background-toolbar !important;
+}
+
+// Lists
+.list {
+	background: $theme-background !important;
+}
+.list-card {
+	background-color: $theme-background-box !important;
+}
+
+// Add board
+.board-tile.mod-add {
+	background-color: $theme-background-box !important;
+}
+
 // Cards
 .card-label {
 	@include invert-back();
