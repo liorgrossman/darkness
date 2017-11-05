@@ -46,6 +46,7 @@ $trello-dark-gray:		invert-back-color(darken($trello-gray, $percent));
 button, 
 a.button-link:hover, 
 .pop-over-list > li > a:hover,
+.pop-over-list li.selected > a,
 .pop-over-list > li.uploader:hover > .fakefile,
 input[type="submit"].primary,
 input[type="button"],
@@ -239,6 +240,11 @@ body[style*="background-image:"] > #boards-drawer {
 // Icons and misc
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Icons
+.icon-search {
+	color: black !important;
+}
+
 // Logos
 .header-logo-default, 
 .header-logo-loading,
@@ -284,6 +290,9 @@ body[style*="background-image:"] > #boards-drawer {
 // Cards
 .card-label {
 	@include invert-back();
+}
+.window {
+	background-color: $theme-background !important;
 }
 
 // Card and list titles
