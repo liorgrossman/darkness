@@ -92,6 +92,22 @@ i {
 //	@include invert-back();
 //}
 
+// Page admin stuff
+._4h_-[style*="color: rgb(66, 183, 42)"],
+._za4,
+._4ocz._2x0y:hover,
+._su9,
+._sua,
+._hav,
+._haw {
+	@include invert-back()
+}
+
+._2-x8 {
+	padding-top: 112px !important;
+	margin-top: 0px !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Homepage / Feed
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -377,6 +393,11 @@ li._54ne, .__MenuItem.selected {
 
 // Compose post
 #pagelet_composer textarea {
+	background-color: transparent !important;
+}
+
+// Wish a happy birthday
+.mentionsTextarea {
 	background-color: transparent !important;
 }
 
