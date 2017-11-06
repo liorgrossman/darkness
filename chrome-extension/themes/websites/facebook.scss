@@ -744,6 +744,11 @@ div[aria-label*="sticker"] {
 	background-color: $theme-highlighted-darker !important;
 }
 
+// online indidcator
+.presenceIndicator.presenceActive {
+	@include invert-back()
+}
+
 // Videos
 ._1wno ._ox1 {
 	-webkit-filter: invert(0) !important;
