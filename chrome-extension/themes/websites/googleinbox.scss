@@ -22,9 +22,26 @@ input {
 	border-color: $theme-border;
 }
 
+// Background when scrolling
+.c4 {
+	background: $theme-background !important;
+}
+// Left menu
+.lQ {
+	background: $theme-background-box !important;
+}
+// a bessage or group of messages
+.an {
+	background: $theme-background-box !important;
+}
+.az .an {
+	background: $theme-background-toolbar !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 // Toolbar areas
 .hn.b4, .bB {
