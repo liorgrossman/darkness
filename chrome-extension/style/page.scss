@@ -161,6 +161,18 @@ body[data-drk-site="googlecalendar"] {
 	}
 }
 
+body[data-drk-site="googlecontacts"] {
+	div.drk_settings_icon {
+		top: 17px !important;
+	}
+	ul li.drk_button_li {
+		opacity: 1 !important;
+	}
+	.gb_zc {
+		margin-right: 30px !important;
+	}
+}
+
 body[data-drk-site="googledocs"] {
 	.docs-titlebar-buttons {
 		padding-right: 52px !important;
