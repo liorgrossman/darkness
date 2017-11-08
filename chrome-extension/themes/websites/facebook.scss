@@ -77,6 +77,15 @@ a {
 	color: $theme-link !important;
 }
 
+// Polls
+._3com {
+	background-color: $theme-highlighted-darker !important;
+}
+._58an { // add an option
+	background: transparent !important;
+	background-color: transparent !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Un-invert icons
 //----------------------------------------------------------------------------------------------------------------------------------------------------
