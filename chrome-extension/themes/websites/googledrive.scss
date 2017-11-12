@@ -103,7 +103,8 @@ input {
 
 // Google Drive logo
 .gb_Ad.gb_Ed,
-.gb_ac .gb_Ac {
+.gb_ac .gb_Ac,
+.gb_bc .gb_Cc {
 	filter: invert(1) !important;
 	opacity: 1 !important;
 	color: $red !important;
@@ -149,7 +150,8 @@ input {
 }
 
 // Searchbar
-.gb_Ce {
+.gb_Ce,
+.gb_Ee {
 	background: $theme-textbox-background !important;
 }
 
