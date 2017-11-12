@@ -210,9 +210,10 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	color: $theme-link !important;
 }
 
-.dropdown-link {
+.dropdown-link,
+.dropdown-toggle {
 	background: transparent !important;
-	color: $theme-link !important;
+	color: $theme-button-background !important;
 }
 
 .PollingCardComposer-addOption, .PollingCardComposer-defaultDuration, .PollingCardComposer-remove {
@@ -266,22 +267,40 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 // Videos
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Correctly invert gifs and videos
-.tweet .PlayableMedia--gif:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"],
-.PlayableMedia--video:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"] {
+// Correctly invert gifs in tweets
+.tweet .PlayableMedia--gif:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"] {
 	-webkit-filter: invert(100%) !important;
 }
+.tweet .PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
+	-webkit-filter: invert(0%) !important;
+}
+// Correctly convert gifs
 .PlayableMedia--gif:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"] {
 	-webkit-filter: invert(0%) !important;
 }
-.tweet .PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"],
-.PlayableMedia--video.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
+.PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
 	-webkit-filter: invert(100%) !important;
 }
-.PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
+// Correctly convert video
+.PlayableMedia--video div.PlayableMedia-player[style*="background-image:"] {
+	-webkit-filter: invert(0%) !important;
+}
+.PlayableMedia--video.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
 	-webkit-filter: invert(0%) !important;
 }
 .PlayableMedia-player > iframe {
+	-webkit-filter: invert(0) !important;
+}
+
+// Media controls
+.PlayableMedia-player button{
+	background-color: transparent !important;
+}
+.PlayableMedia-player button svg{
+	fill: invert-back-color($theme-button-background) !important;
+}
+.PlayableMedia--gif div[role="button"] svg,
+.PlayableMedia--video div[role="button"] svg {
 	-webkit-filter: invert(0) !important;
 }
 
