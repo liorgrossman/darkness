@@ -128,6 +128,13 @@ body[data-drk-site="twitter"] {
 		padding-right: 32px !important;
 	}
 }
+@media (min-width: 1300px){
+	body[data-drk-site="twitter"] {
+		.nav-extras {
+			padding-right: 0px !important;
+		}
+	}
+}
 
 body[data-drk-site="sharelatex"] {
 	.toolbar-header > .toolbar-right {
