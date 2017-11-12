@@ -879,6 +879,18 @@ svg.octicon.octicon-check {
     background-color: transparent !important;
 }
 
+// Overlay background
+.facebox-overlay-active {
+    @include  invert-back();
+}
+// Overlay close
+.facebox-close {
+    background-color: transparent !important;
+}
+.facebox-close svg {
+    color: invert-back-color($theme-button-background) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Explore Github
 //----------------------------------------------------------------------------------------------------------------------------------------------------
