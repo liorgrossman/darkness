@@ -304,11 +304,17 @@ body[style*="background-image:"] > #boards-drawer {
 }
 
 // Dark fade when fading background elements
-.window-overlay {
+.window-overlay,
+.attachment-viewer-underlay {
 	background-color: rgba(150,150,150,0.6) !important;
 }
-.attachment-viewer-frames, .quick-card-editor {
+.quick-card-editor {
 	background-color: rgba(200,200,200,0.6) !important;
+}
+
+// Attatched images
+.attachment-viewer-frame-preview-image {
+	-webkit-filter: invert(0) !important;
 }
 
 // Header bar

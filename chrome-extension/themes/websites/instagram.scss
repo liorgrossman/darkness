@@ -34,11 +34,13 @@ button,
 // No background
 ._tauyc,
 ._r48jm,
+._hwaop,
 .coreSpriteOptionsEllipsis,
 .coreSpriteOptionsEllipsisLight,
 .coreSpriteMobileNavSettings,
 .coreSpritePagingChevron,
-.coreSpritePlayIconSmall {
+.coreSpritePlayIconSmall,
+._dcj9f {
 	background-color: transparent !important;
 }
 
@@ -59,7 +61,8 @@ input {
 }
 
 // Lightbox
-._lz8g1 {
+._lz8g1,
+._pfyik {
 	background-color: rgba(darken($theme-background-box, 10%), 0.75) !important;
 }
 ._rebbv {
