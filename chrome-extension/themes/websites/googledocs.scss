@@ -2,6 +2,10 @@
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+html.gr__docs_google_com body {
+	background-color: transparent !important;
+}
+
 // All buttons
 button, .gb_qb .gb_wb {
 	background-color: $theme-button-background !important;
@@ -36,7 +40,7 @@ iframe {
 }
 
 // Icons
-.docs-icon, .docs-homescreen-icon, .docs-icon-img {
+.docs-icon, .docs-homescreen-icon, .docs-icon-img, #logo {
 	-webkit-filter: invert(1) !important;
 }
 .docs-icon-text-color, .docs-icon-fill-color, .docs-icon-spreadsheet, .docs-icon-excel {
