@@ -55,6 +55,22 @@ a {
     background-color: transparent !important;
 }
 
+// Pagination
+.pagination .current,
+.pagination .current:hover {
+    background-color: $theme-highlighted !important;
+    border-color: $theme-highlighted !important;
+}
+.pagination a:hover,
+.pagination a:focus,
+.pagination span:hover,
+.pagination span:focus,
+.pagination em:hover,
+.pagination em:focus {
+    background-color: $theme-highlighted-darker !important;
+    border-color: $theme-highlighted-darker !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
