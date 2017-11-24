@@ -91,6 +91,12 @@ a {
 	background: transparent !important;
 }
 
+// Alert about notifications being turned off/on
+._5ww7._5ww9 {
+	background-color: $theme-highlighted-darker !important;
+	border-color: $theme-highlighted !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Un-invert icons
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -833,6 +839,11 @@ body ._19u- ._3ixn {
 .uiList {
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
+}
+// Hovering over a person in chat-sidebar
+.pam .uiList {
+	background-color: transparent !important;
+	border-color: transparent !important;
 }
 
 .ul._281 {
