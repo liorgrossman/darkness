@@ -129,7 +129,7 @@ iframe {
 // Docs
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// The acsual document
+// The actual document
 .kix-page {
 	-webkit-filter: invert(1) !important;
 	box-shadow: 0 0 5px #aaa;
@@ -144,12 +144,16 @@ iframe {
 	-webkit-filter: invert(1) !important;
 }
 
-// Explorer
+// Explore
 .docs-explore-sidebar-title {
 	background-color: $theme-highlighted !important;
 }
-.docs-explore-icon path{
-	fill: invert-back-color($theme-url) !important;
+.docs-explore-icon path {
+	fill: invert-back-color($theme-highlighted) !important;
+}
+.waffle-assistant-entry-button-green-icon,
+.waffle-assistant-entry-label {
+	-webkit-filter: invert(1) !important;
 }
 
 // The cursor
@@ -163,6 +167,11 @@ iframe {
 }
 .docs-presence-plus-collab-widget-color-block > div {
 	-webkit-filter: invert(1) !important;
+}
+
+// Spelling errors
+.kix-spelling-error-overlay {
+	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
