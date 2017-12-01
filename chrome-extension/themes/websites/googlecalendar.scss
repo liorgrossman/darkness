@@ -1,3 +1,5 @@
+@import "all-google.scss";
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -61,27 +63,27 @@ input, textarea, input[type="text"] {
 #mainnav,
 .gb_yf,
 .gb_4d,
+.gb_xc:not(.gb_sb) .gb_Bd,
+.gb_Be,
 #calmaster{
 	background: $theme-background !important;
+	background-color: $theme-background !important;
 	border-color: $theme-background !important;
 }
 
-// App Drawer
-.gb_2,
-.gb_M {
-	@include invert-back()
-}
-
 // Profile image and Google logo
+.gbii::before {
+	-webkit-filter: invert(0) !important;
+}
 #gb#gb a.gb_b.gb_cb.gb_R,
 .gbip,
-.gbii.gb_ab,
 .gb_9b .gb_bc,
 span.gb_6b,
 .gb_9b .gb_zc,
 .gb_ac .gb_Ac,
 #gb#gb a.gb_b,
 .gb_ec,
+.gb_ac .gb_Bc:before,
 #mainlogo {
 	@include invert-back()
 }
@@ -112,9 +114,6 @@ span.gb_6b,
 }
 .gstl_50.gstt input {
 	background: transparent !important;
-}
-.gb_Be {
-	background-color: $theme-textbox-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

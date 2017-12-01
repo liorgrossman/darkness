@@ -85,6 +85,7 @@ input {
 
 // Profile image and Google logo
 .gbii::before,
+.gb_ac .gb_Bc,
 .gb_3b .gb_tc:before,
 .gbip::before,
 .gb_4b .gb_vc {
@@ -124,7 +125,6 @@ input {
 }
 
 // App Drawer icons
-.gb_O .gb_3,
 .gb_O .gb_2,
 .gb_M {
 	@include invert-back()
@@ -151,6 +151,7 @@ input {
 
 // Searchbar
 .gb_Ce,
+.gb_He,
 .gb_Ee {
 	background: $theme-textbox-background !important;
 }
