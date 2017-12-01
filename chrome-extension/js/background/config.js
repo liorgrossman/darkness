@@ -61,7 +61,7 @@ var CONFIG = {
 			name: 'Quora',
 			support: 'full',
 			hostRegExp: new RegExp('^www\.quora\.com$', 'i'),
-			creators: [ // 
+			creators: [ //
 				{ name: 'Abhishek Bhasker', link: 'http://Abhinickz.github.io' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
@@ -193,7 +193,7 @@ var CONFIG = {
 			key: 'github', // Must be the same as the object key
 			name: 'GitHub',
 			support: 'full',
-			hostRegExp: new RegExp('^(gist\.|)github\.com$', 'i'),
+			hostRegExp: new RegExp('^(git.*)|((gist\.|)github\.com)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' },
 				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
@@ -283,7 +283,7 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		
+
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
@@ -323,7 +323,7 @@ var CONFIG = {
 		'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			support: 'in-development', // This skin still requires further improvement, help us by improving it!
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Guillermo Muela', link: 'https://github.com/Gmuela' }
@@ -334,7 +334,7 @@ var CONFIG = {
 		'mint': {
 			key: 'mint', // Must be the same as the object key
 			name: 'Mint',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			support: 'in-development', // This skin still requires further improvement, help us by improving it!
 			hostRegExp: new RegExp('mint.intuit.com', 'i'),
 			creators: [
 				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
@@ -345,7 +345,7 @@ var CONFIG = {
 		'craigslist': {
 			key: 'craigslist', // Must be the same as the object key
 			name: 'Craigslist ',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			support: 'in-development', // This skin still requires further improvement, help us by improving it!
 			hostRegExp: new RegExp('craigslist\.org$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
@@ -353,7 +353,7 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		
+
 		//--------------------------------------------------------------------
 		// Ask developers for help on the following websites
 		//--------------------------------------------------------------------
