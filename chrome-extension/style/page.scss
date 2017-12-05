@@ -129,6 +129,19 @@ body[data-drk-site="twitter"] {
 		padding-right: 32px !important;
 	}
 }
+body[data-drk-site="mint"] {
+	div.drk_settings_icon {
+		top: 13px !important;
+	}
+	.login-signup-menu {
+		padding-right: 38px !important;
+	}
+}
+body[data-drk-site="twitch"] {
+	.top-nav__menu > div:last-child {
+		padding-right: 38px !important;
+	}
+}
 @media (min-width: 1300px){
 	body[data-drk-site="twitter"] {
 		.nav-extras {

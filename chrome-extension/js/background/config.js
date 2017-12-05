@@ -283,6 +283,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'cloudflare': {
+			key: 'cloudflare', // Must be the same as the object key
+			name: 'Cloudflare',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.cloudflare\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
@@ -294,17 +305,6 @@ var CONFIG = {
 			hostRegExp: new RegExp('^.+\.wikipedia\.org$', 'i'),
 			creators: [
 				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
-		'cloudflare': {
-			key: 'cloudflare', // Must be the same as the object key
-			name: 'Cloudflare',
-			support: 'in-development',
-			hostRegExp: new RegExp('^www\.cloudflare\.com$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
@@ -335,7 +335,7 @@ var CONFIG = {
 			key: 'mint', // Must be the same as the object key
 			name: 'Mint',
 			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
-			hostRegExp: new RegExp('mint.intuit.com', 'i'),
+			hostRegExp: new RegExp('^www\.mint\.com', 'i'),
 			creators: [
 				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
 			],
@@ -346,7 +346,7 @@ var CONFIG = {
 			key: 'craigslist', // Must be the same as the object key
 			name: 'Craigslist ',
 			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
-			hostRegExp: new RegExp('craigslist\.org$', 'i'),
+			hostRegExp: new RegExp('craigslist\.*$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
 			],

@@ -15,6 +15,13 @@ input {
 	background-color: $theme-textbox-background;
 	border-color: $theme-border;
 }
+// Checkmarks and toggles
+.c_ni, .c_bn {
+	fill: invert-back-color($theme-highlighted) !important;
+}
+.c_fn::before {
+	background: $theme-highlighted !important;
+}
 
 // Logo
 .logo{
@@ -48,14 +55,21 @@ input {
 .switch:before {
 	background-color: #bcbcbc !important;
 }
+.alert.error,
+.notification.warning,
+.notification.success {
+	@include invert-back();
+}
 
 .text-info, .text-success {
 	color: $theme-highlighted !important;
 }
 
-footer {
+footer,
+.main-footer__menu_bottom {
 	background-color: $theme-background-toolbar !important;
 }
+.main-footer__menu_bottom *,
 .main-footer__menu-group__header {
 	color: $theme-url !important;
 }
@@ -82,6 +96,9 @@ footer {
 // Sites, not logged in
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+.homepage-video__viewport-b {
+	background: linear-gradient(to bottom left, $theme-highlighted, $theme-highlighted-darker) !important;
+}
 .homepage-video-modal {
 	background-color: $theme-background !important;
 }
@@ -182,8 +199,16 @@ section.tile .grid img {
 .tabs a:before {
 	border-top-color: $theme-highlighted !important;
 }
-.tabs li.active a {
+.tabs li.active a,
+li[role="tab"][aria-selected="true"] {
 	background-color: $theme-highlighted !important;
+	color: $theme-text !important;
+}
+li[role="tab"][aria-selected="true"]::before {
+	border-top-color: $theme-highlighted !important;
+}
+li[role="tab"][aria-selected="false"] {
+	color: $theme-highlighted !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
