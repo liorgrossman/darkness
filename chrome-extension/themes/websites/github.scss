@@ -34,12 +34,12 @@ svg {
 }
 
 // Links
-a {
+a:not(.label) {
     color: $theme-link !important;
-    &:visited {
+    &:visited:not(.label) {
         color: $theme-link-visited !important;
     }
-    &:active {
+    &:active:not(.label) {
         color: $theme-link-active !important;
     }
 }
@@ -551,6 +551,14 @@ button.muted-link {
 //subcribe color 
 .thread-subscription-status .reason {
     background: $theme-background !important;
+}
+
+// Issue state
+.State, .label {
+    @include invert-back();
+}
+a.label {
+    color: white !important
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
