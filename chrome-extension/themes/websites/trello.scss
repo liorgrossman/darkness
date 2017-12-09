@@ -304,8 +304,7 @@ body[style*="background-image:"] > #boards-drawer {
 }
 
 // Dark fade when fading background elements
-.window-overlay,
-.attachment-viewer-underlay {
+.window-overlay {
 	background-color: rgba(150,150,150,0.6) !important;
 }
 .quick-card-editor {
@@ -340,6 +339,11 @@ body[style*="background-image:"] > #boards-drawer {
 #notification a.app-alert-item-button {
 	background-color: $theme-secondary-button-background !important;
 	color: $theme-button-text !important;
+}
+
+// Viewing attatchments
+iframe.attachment-viewer-frame-preview-iframe {
+	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
