@@ -230,6 +230,7 @@ if (!DarknessLoader) { // Don't load twice
 				return log("NOT appending HTML using " + method);
 			}
 			log("Appending HTML using " + method);
+			document.body.setAttribute('data-drk-type', ASSETS.TYPE);
 			document.body.setAttribute('data-drk-site', SITE);
 			document.body.setAttribute('data-drk-site-support', SITE_SUPPORT);
 			var d = document.createElement('div');
