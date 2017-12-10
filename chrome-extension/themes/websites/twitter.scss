@@ -163,6 +163,21 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+// Link previews
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.card-type-summary iframe,
+.card-type-summary_large_image iframe,
+.card-type-player iframe,
+ {
+	background: linear-gradient(to top, transparent 1.5%, invert($theme-link) 1.501%) !important;
+	margin-bottom: -0.32333em !important;
+	border-radius: .42857em !important;
+}
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 // Tweet editor
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 .RichEditor {
@@ -266,47 +281,32 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Videos
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
-// Correctly invert gifs in tweets
-.tweet .PlayableMedia--gif:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"] {
-	-webkit-filter: invert(100%) !important;
-}
-.tweet .PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
+// The container of videos/gifs is PlayableMedia-player 
+// It has [style*="background-image:"], so it's already inverted so videos are displayed CORRECTLY
+// Let's make sure we don't invert anything INSIDE that container
+.PlayableMedia-player video {
 	-webkit-filter: invert(0%) !important;
 }
-// Correctly convert gifs
-.PlayableMedia--gif:not(.playable-media-loaded) div.PlayableMedia-player[style*="background-image:"] {
+.PlayableMedia-player svg {
 	-webkit-filter: invert(0%) !important;
 }
-.PlayableMedia--gif.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
-	-webkit-filter: invert(100%) !important;
-}
-// Correctly convert video
-.PlayableMedia--video div.PlayableMedia-player[style*="background-image:"] {
+.PlayableMedia-player *[style*="background-image:"] {
 	-webkit-filter: invert(0%) !important;
-}
-.PlayableMedia--video.playable-media-loaded div.PlayableMedia-player[style*="background-image:"] {
-	-webkit-filter: invert(0%) !important;
-}
-.PlayableMedia-player > iframe {
-	-webkit-filter: invert(0) !important;
 }
 
-// Media controls
-.PlayableMedia-player button{
-	background-color: transparent !important;
-}
-.PlayableMedia-player button svg{
-	fill: invert-back-color($theme-button-background) !important;
-}
-.PlayableMedia--gif div[role="button"] svg,
-.PlayableMedia--video div[role="button"] svg {
-	-webkit-filter: invert(0) !important;
+// Some exceptions:
+// Style the playback buttons
+.PlayableMedia-player button {
+	-webkit-filter: invert(180%) !important;
 }
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 // Polls
-.card-type-poll4choice_text_only > iframe {
-	background-color: $theme-background !important;
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Polls
+.card2[data-card2-name*="poll"] iframe {
+	background-color: #666 !important;
+    border-radius: 3px !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
