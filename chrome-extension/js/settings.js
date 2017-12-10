@@ -863,7 +863,7 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
-				if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
+				/* if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
 					// PayPal failed? Let user pay with Google Payments
 					PAYMENT_PLATFORM = 'google';
 					buyClick();
@@ -882,7 +882,7 @@ if (!DarknessSettingsLoader) {
 						'&body=' +
 						encodeURIComponent(body);
 					var win = window.open(url, '_blank');
-				}
+				} */
 			});
 		};
 
