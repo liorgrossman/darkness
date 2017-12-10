@@ -29,6 +29,7 @@ div.drk_settings_icon {
 
 body[data-drk-type="n"] div.drk_settings_icon {
 	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-promo.png') no-repeat center !important;
+	width: 31px !important;
 }
 
 body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
