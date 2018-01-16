@@ -127,7 +127,8 @@ span.gb_6b,
 
 // Color identifiers in sidebar
 .calListRow[aria-selected="true"] .calListSquare,
-.uVccjd[aria-checked="true"] {
+.uVccjd[aria-checked="true"],
+.hsrazb {
 	@include invert-back()
 }
 .uVccjd[aria-checked="false"] {
