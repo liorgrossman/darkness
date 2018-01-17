@@ -381,6 +381,12 @@ rect[fill="#ebedf0"] {
 .pinned-repo-item a.muted-link {
     background: transparent !important;
 }
+div.profile-timeline-year-list {
+    background-color: transparent !important;
+}
+div.profile-timeline-year-list .filter-item:hover {
+    background-color: $theme-highlighted-darker !important;
+}
 button.muted-link {
     background-color: transparent !important;
 }
