@@ -42,7 +42,6 @@ input {
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 // Toolbar areas
 .hn.b4, .bB {
 	background: $theme-background-toolbar !important;
@@ -55,26 +54,9 @@ input {
 .hn:before {
 	box-shadow: 0 0 4px rgba(255,255,255,.14),0 4px 8px rgba(255,255,255,.28) !important;
 }
-// User profile image
-.gbii, .gbip {
-	-webkit-filter: invert(100%) !important;
-}
-
-// The app-drawer
-.gb_ga {
-	-webkit-filter: invert(0%) !important;
-	background-color: transparent !important;
-}
 // Reverts the different google-logos
 .gb_2, .gb_M {
 	-webkit-filter: invert(100%) !important;
-}
-
-// My account button
-.gb_qb .gb_wb {
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
 }
 
 // "Inbox" (the word inbox)

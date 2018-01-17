@@ -38,17 +38,6 @@ input {
 .MCcOAc>.pGxpHc {
 	box-shadow: none !important;
 }
-// User image
-.gbii::before,
-.gbip::before {
-	@include invert-back();
-}
-// "My account" button
-.gb_yb .gb_Eb {
-	background-color: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
-}
 
 // Searchbar
 .gb_7d .gb_Ce {

@@ -1,3 +1,4 @@
+@import "all-google.scss";
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,27 +53,12 @@ iframe {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Toolbar
-.gb_dd.gb_id.gb_kd, .gb_2d {
+.gb_dd.gb_id.gb_kd, 
+.gb_xc:not(.gb_sb) .gb_Bd, 
+.gb_2d {
 	background-color: $theme-background-toolbar !important;
 }
 
-// Profile picture
-.gb_7a, .gb_8a:before {
-	@include invert-back()
-}
-
-// Google logo in left menu
-.gb_sd.gb_Vb, .gb_4b .gb_vc {
-	-webkit-filter: invert(1) !important;
-}
-.gb_dc .gb_9d {
-	-webkit-filter: invert(0) !important;
-}
-
-// "Docs" in the toolbar logo
-.gb_Sb .gb_td {
-	color: white !important;
-}
 // Undo color-change in menu on some icons
 .docs-homescreen-nav-settings-24, .docs-homescreen-nav-help-24 {
 	-webkit-filter: invert(1) !important;
@@ -111,6 +97,7 @@ iframe {
 	-webkit-filter: invert(100%) !important;
 }
 // Searchbar
+.gb_ae .gb_0e::-webkit-input-placeholder,
 .gb_2d .gb_Pe::-webkit-input-placeholder {
 	color: $theme-textbox-text !important;
 }

@@ -71,41 +71,6 @@ input, textarea, input[type="text"] {
 	border-color: $theme-background !important;
 }
 
-// Profile image and Google logo
-.gbii::before {
-	-webkit-filter: invert(0) !important;
-}
-#gb#gb a.gb_b.gb_cb.gb_R,
-.gbip,
-.gb_9b .gb_bc,
-span.gb_6b,
-.gb_9b .gb_zc,
-.gb_ac .gb_Ac,
-#gb#gb a.gb_b,
-.gb_ec,
-.gb_ac .gb_Bc:before,
-#mainlogo {
-	@include invert-back()
-}
-.gb_vc svg, .gb_hc svg {
-	color: white !important;
-}
-
-// Nofitications popup
-.gb_Xb, #gbsfw.gb_g {
-	filter: invert(0) !important;
-}
-
-// "My Account" button
-.gb_sb .gb_yb {
-    background: $theme-button-background !important;
-    border-color: $theme-button-background !important;
-	color: black !important;
-	&:hover {
-		filter: brightness(0.9) !important;
-	}
-}
-
 // Searchbar
 #gbqfb {
     background: $theme-button-background !important;

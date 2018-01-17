@@ -130,24 +130,6 @@ input
 	}
 }
 
-// Sign in
-.gb_Ha {
-	background: $theme-button-background !important;
-	color: $theme-button-text !important;
-	border-color: $theme-border !important;
-}
-
-
-// User avatar on toolbar
-.gb_7a::before, .gb_8a::before, .gbii::before {
-	@include invert-back()
-}
-
-// User avatar on the menu (when clicking the avatar on the toolbar)
-.gbip {
-	@include invert-back()
-}
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
 //----------------------------------------------------------------------------------------------------------------------------------------------------

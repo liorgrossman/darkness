@@ -1,3 +1,4 @@
+@import "all-google.scss";
 // Only used for the Google Drive logo
 $red: #EA4335;
 
@@ -76,58 +77,6 @@ input {
 }
 .gb_0d {
 	background: transparent !important;
-}
-
-// App Drawer and Notification button
-.gb_pc svg, .gb_cc svg {
-	color: white !important;
-}
-
-// Profile image and Google logo
-.gbii::before,
-.gb_ac .gb_Bc,
-.gb_3b .gb_tc:before,
-.gbip::before,
-.gb_4b .gb_vc {
-	@include invert-back()
-}
-
-// "My Account" button
-.gb_sb .gb_yb {
-    background: $theme-button-background !important;
-    border-color: $theme-button-background !important;
-	color: black !important;
-	&:hover {
-		filter: brightness(0.9) !important;
-	}
-}
-
-// Google Drive logo
-.gb_Ad.gb_Ed,
-.gb_ac .gb_Ac,
-.gb_bc .gb_Cc {
-	filter: invert(1) !important;
-	opacity: 1 !important;
-	color: $red !important;
-}
-
-// Top toolbar svg icons
-.a-nEbBXb .a-d-c svg,
-.a-nEbBXb .a-l-S-Pc-w-d .a-w-d-aa-zd svg,
-.gb_se svg,
-.gb_b svg {
-	fill: white !important;
-}
-
-// App Drawer
-.gb_ha {
-	box-shadow: 0 2px 10px transparentize($theme-button-background, 0.8) !important;
-}
-
-// App Drawer icons
-.gb_O .gb_2,
-.gb_M {
-	@include invert-back()
 }
 
 // "New" button box shadow
