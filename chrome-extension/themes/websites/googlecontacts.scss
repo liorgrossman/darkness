@@ -32,6 +32,7 @@ input {
 
 // Topbar background
 .gb_zd,
+.gb_yc:not(.gb_tb) .gb_Cd,
 .gb_xc:not(.gb_sb) .gb_Bd {
 	background: $theme-background-toolbar !important;
 }

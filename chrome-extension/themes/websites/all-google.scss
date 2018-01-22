@@ -16,11 +16,24 @@
 	border-color: $theme-border !important;
 }
 
+// Site name, eg. "Calendar" or "Drive"
+.gb_ee {
+	@include invert-back();
+}
+
 // User avatar on toolbar
 .gb_7a::before, 
 .gb_8a::before, 
 .gbii::before,
 body[data-drk-site="googleinbox"] .gbii {
+	@include invert-back();
+}
+// Menu, App-drawer and Notification icons
+.gb_yc svg,
+.gb_kc svg {
+	color: invert-back-color($theme-text) !important;
+}
+.gb_cc {
 	@include invert-back();
 }
 // Profile image and Google logo
@@ -30,12 +43,11 @@ body[data-drk-site="googleinbox"] .gbii {
 span.gb_6b,
 .gb_9b .gb_zc,
 .gb_ac .gb_Ac,
-.gb_da .gb_b[aria-label="Google apps"],
 .gb_vf .gb_b:not(.gb_fb),
 .gb_ec,
 .gb_ac .gb_Bc:before,
 #mainlogo {
-	@include invert-back()
+	@include invert-back();
 }
 .gb_vc svg, .gb_hc svg {
 	color: white !important;
@@ -65,11 +77,11 @@ span.gb_6b,
 // Grid popup in toolbar
 .gb_ga .gb_2,
 .gb_ga .gb_M {
-	@include invert-back()
+	@include invert-back();
 }
 .gb_O .gb_2,
 .gb_M {
-	@include invert-back()
+	@include invert-back();
 }
 .gb_ha {
 	box-shadow: 0 2px 10px transparentize($theme-button-background, 0.8) !important;
