@@ -25,7 +25,8 @@
 .gb_7a::before, 
 .gb_8a::before, 
 .gbii::before,
-body[data-drk-site="googleinbox"] .gbii {
+body[data-drk-site="googleinbox"] .gbii,
+body[data-drk-site="googlephotos"] .gbii {
 	@include invert-back();
 }
 // Menu, App-drawer and Notification icons
@@ -36,6 +37,13 @@ body[data-drk-site="googleinbox"] .gbii {
 .gb_cc {
 	@include invert-back();
 }
+
+// Google logo
+.uuRyud {
+	@include invert-back();
+}
+
+// OLD!! 
 // Profile image and Google logo
 #gb#gb a.gb_b.gb_cb.gb_R,
 .gbip,

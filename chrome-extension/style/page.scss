@@ -226,6 +226,24 @@ body[data-drk-site="googledocs"] {
 		top: 17px !important;
 	}
 }
+body[data-drk-site="googlephotos"] {
+	// If logged in: the avatar on the right side of toolbar
+	#gb > div > div {
+		padding-right: 47px !important;
+	}
+	// buttons for full-screen viewing
+	.c9yG5b {
+		padding-right: 17px !important;
+	}
+
+	ul li.drk_button_li {
+		opacity: 1 !important;
+	}
+	div.drk_settings_icon {
+		position: fixed !important;
+		top: 17px !important;
+	}
+}
 body[data-drk-site="googleinbox"] {
 	// Menu in the right side of toolbar
 	.k2 {
