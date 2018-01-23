@@ -20,6 +20,11 @@
 	color: $theme-tooltip-text !important;
 }
 
+// Some buttons
+.gWLshd .kHssdc {
+	color: $theme-button-background !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar and sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -122,6 +127,35 @@
 // Background when viewing a photo in full screen
 .ZSTBVb {
 	background: $theme-background !important;
+}
+
+// Settings sidebar on single image
+.Q77Pt {
+	background: $theme-background-box !important;
+}
+
+// Sidebar when editing
+.QRGN9e,
+.LKuVw {
+	background: $theme-background-toolbar !important;
+}
+.jt0JGd {
+	background-color: $theme-background-box !important;
+}
+.Hj59Ib {
+	color: $theme-text !important;
+}
+.vFajec.sMVRZe {
+	box-shadow: none !important;
+}
+.WHjEdb {
+	background: transparent !important;
+}
+
+// Editing background
+.vqsmne,
+.Rxunzd {
+	background-color: $theme-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
