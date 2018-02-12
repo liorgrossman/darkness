@@ -105,7 +105,7 @@ if (!DarknessLoader) { // Don't load twice
 		var ID_FOR_INJECTED_STYLE = 'drk_style_theme';
 
 		// Various assets provided by the background scripts
-		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@' };
+		var ASSETS = { 'CSS': '@@CSS@@', 'CSSOFF': '@@CSSOFF@@', 'HTML': '@@HTML@@', 'TYPE': '@@TYPE@@', 'PROMO': '@@PROMO@@' };
 		var SITE = '@@SITE@@';
 		var THEME = '@@THEME@@';
 		var SITE_SUPPORT = '@@SITE_SUPPORT@@';
@@ -231,6 +231,7 @@ if (!DarknessLoader) { // Don't load twice
 			}
 			log("Appending HTML using " + method);
 			document.body.setAttribute('data-drk-type', ASSETS.TYPE);
+			document.body.setAttribute('data-drk-promo', ASSETS.PROMO);
 			document.body.setAttribute('data-drk-site', SITE);
 			document.body.setAttribute('data-drk-site-support', SITE_SUPPORT);
 			var d = document.createElement('div');

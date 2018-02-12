@@ -357,6 +357,18 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	var cssContent = getPageCssContent(siteKey, themeKey);
 	var noThemeCssContent = readFileFromCache("style-css/page.css");
 
+	// Set promo variable
+	var installDate = stats.get('installDate') || 0;
+	var passedDays = 0;
+	if (typeof(installDate) == 'number') {
+		var passedMs = Date.now() - installDate;
+		passedDays = Math.floor(passedMs / 1000 / 3600 / 24);
+	}
+	var promo = 'h';
+	if (Payments.getSku() > 1 && passedDays % 18 < 3) {
+		promo = 's';		
+	}
+
 	// All the arguments required by page.js
 	var code = getCodeForInjection("js/page.js", {
 		'HTML': htmlContent,
@@ -365,6 +377,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 
 		'SETTINGS': JSON.stringify(settings.getAllSettingsClone()),
 		'TYPE': stats.get('type'),
+		'PROMO': promo,
 		'SITE': siteKey,
 		'THEME': themeKey,
 		'SITE_SUPPORT': CONFIG.sites[siteKey].support,

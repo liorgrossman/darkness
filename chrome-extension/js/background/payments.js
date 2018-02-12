@@ -224,8 +224,6 @@ var PaymentsFactory = function() {
 		if (passedDays > 7) {
 			return "2";
 		}
-		// Temporary:
-		DEFAULT_SKU = "2";
 		return DEFAULT_SKU;
 	}
 
