@@ -1,0 +1,98 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
+This is a template for easily creating new color themes for Darkness
+The variables in this theme (e.g. $theme-background, $theme-color) are used by the various skins in /themes/websites
+
+Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
+Those CSS are built by combining 3 files:
+1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss) - THIS FILE
+2. A skin common to all websites (themes/websites/all-websites.scss)
+3. A site-specific skin (themes/websites/[SITE].scss)
+
+Building a new color theme is simple:
+1. Edit /js/background/config.js and add your new website to CONFIG.themes
+2. Copy THEME-TEMPLATE.scss file to [THEME].scss, where [THEME] is the key you specified in config.js (e.g. dusk.scss, pink.scss)
+3. Inside /themes, you'll need to create 1 additional SCSS files for each website:
+   Copy google-iceberg.scss    to google-[THEME].scss
+   Copy facebook-iceberg.scss  to facebook-[THEME].scss
+   Copy gmail-iceberg.scss     to gmail-[THEME].scss
+   etc.
+4. On each of those new SCSS files, change the first line to include your theme instead of iceberg.scss:
+   @import "themes/iceberg.scss" to @import "themes/[THEME].scss"
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@import "common.scss";
+
+// You may define your own variables here, but this is totally optional:
+$vividOrange: #FD971F;
+$hotRed: #FD5000;
+
+
+// However, the following variables are mandatory since they are used by the various website skins (/themes/websites/*.scss)
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// BACKGROUND COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background of page
+$theme-background: invert-back-color(#28292A);
+
+// Background of content boxes
+$theme-background-box: invert-back-color(lighten(#28292A, 5%));
+
+// Toolbar background
+$theme-background-toolbar: invert-back-color(#404142);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// TEXT COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Global color
+$light-gray: #BDBDBD;
+
+// Text color
+$theme-text: invert-back-color(#F0F4F9);
+$theme-text-faint: invert-back-color(#C0C4C8);
+
+// Links color
+$theme-link: invert-back-color(#65D7EF);
+$theme-link-visited: invert-back-color(desaturate(darken(#65D7EF, 20%), 20%));
+$theme-link-active: invert-back-color(#FFD569);
+
+// Special text colors
+$theme-url: invert-back-color(#808284);
+
+// Text highlights (e.g. selected row)
+$theme-highlighted: invert-back-color(darken(#65D7EF, 30%));
+$theme-highlighted-darker: lighten($theme-highlighted, 10%);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// UI COMPONENTS COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Primary buttons (usually originally blue)
+$theme-button-text: invert-back-color(#FAFCFF);
+$theme-button-background: invert-back-color(darken(#65D7EF, 30%));
+
+// Secondary buttons (usually originally red / orange)
+$theme-secondary-button-background: invert-back-color(darken($vividOrange, 10%));
+
+// Faint buttons (close to background color)
+$theme-faint-button-background: invert-back-color(darken(#404142, 5%));
+
+// Textboxes, Textareas, Inputs
+$theme-textbox-background: invert-back-color(darken(#28292A, 10%));
+$theme-textbox-text: invert-back-color(#F0F4F9);
+
+// Border color
+$theme-border: invert-back-color(rgba(255,255,255,0.08));
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// TOOLTIP COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Tooltips (on hover)
+$theme-tooltip-background: invert-back-color(#FFD569);
+$theme-tooltip-text: invert-back-color(#28292A);
+
+// Notices (usually appearing in the top of page for few seconds after user action)
+$theme-notices: invert-back-color(#FFD569);

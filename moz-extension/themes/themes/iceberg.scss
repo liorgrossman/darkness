@@ -1,0 +1,85 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Iceberg Theme
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+@import "common.scss";
+
+// Grayscale
+$almost-white: #FAFCFF;
+$very-light-grey: #F0F4F9;
+$light-gray: #C0C4C8;
+$gray: #808284;
+$darkish-grey: #606264;
+$dark-grey: #404142;
+$very-dark-grey: #28292A;
+
+// Colors
+$blue: #65D7EF;
+$purple: #A588FF;
+$yellow: #FFD569;
+$orange: #FD971F;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// BACKGROUND COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background of page
+$theme-background: invert-back-color($very-dark-grey);
+
+// Background of content boxes
+$theme-background-box: invert-back-color(lighten($very-dark-grey, 5%));
+
+// Toolbar background
+$theme-background-toolbar: invert-back-color($dark-grey);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// TEXT COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Text color
+$theme-text: invert-back-color($very-light-grey);
+$theme-text-faint: invert-back-color($light-gray);
+
+// Links color
+$theme-link: invert-back-color($blue);
+$theme-link-visited: invert-back-color(desaturate(darken($blue, 20%), 20%));
+$theme-link-active: invert-back-color($yellow);
+
+// Special text colors
+$theme-url: invert-back-color($gray);
+
+// Text highlights (e.g. selected row)
+$theme-highlighted: invert-back-color(darken($blue, 30%));
+$theme-highlighted-darker: lighten($theme-highlighted, 10%);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// UI COMPONENTS COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Primary buttons (usually originally blue)
+$theme-button-text: invert-back-color($almost-white);
+$theme-button-background: invert-back-color(darken($blue, 30%));
+
+// Secondary buttons (usually originally red / orange)
+$theme-secondary-button-background: invert-back-color(darken($orange, 10%));
+
+// Faint buttons (close to background color)
+$theme-faint-button-background: invert-back-color(darken($dark-grey, 5%));
+
+// Textboxes, Textareas, Inputs
+$theme-textbox-background: invert-back-color(darken($very-dark-grey, 10%));
+$theme-textbox-text: invert-back-color($very-light-grey);
+
+// Border color
+$theme-border: invert-back-color(rgba(255,255,255,0.08));
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// TOOLTIP COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Tooltips (on hover)
+$theme-tooltip-background: invert-back-color($yellow);
+$theme-tooltip-text: invert-back-color($very-dark-grey);
+
+// Notices (usually appearing in the top of page for few seconds after user action)
+$theme-notices: invert-back-color($yellow);

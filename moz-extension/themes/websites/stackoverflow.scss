@@ -1,0 +1,366 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// StackOverflow skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+span.icon {
+	@include invert-back();
+}
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+//logo
+#hlogo {
+	-webkit-filter: invert(100%) saturate(3) brightness(0.65) !important;
+}
+//top bar
+.top-bar .-logo .-img {
+	@include invert-back();
+}
+.topbar,
+#footer {
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border !important;
+}
+#herobox {
+	background {
+		@include invert-back();
+	}
+}
+//main content
+#content {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+	//answer question at bottom
+	#wmd-button-bar,
+	.wmd-button-bar {
+		background-color: $theme-background-toolbar !important;
+		border-color: $theme-border !important;
+		//text area
+		textarea {
+			background-color: $theme-background-box !important;
+			border-color: $theme-border !important;
+		}
+	}
+}
+// Announcements Banner
+#announcement-banner {
+	background: $theme-background-toolbar !important;
+
+	.-body {
+		color: $theme-text !important;
+	}
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.network-items > a {
+	@include invert-back();
+}
+// Toolbar background
+.toolbarClass {
+	background: $theme-background !important;
+}
+#hmenus .nav ul li a {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+#hmenus .nav ul li.youarehere a, 
+#hmenus .nav ul li a:hover {
+	background-color: darken($theme-button-background, 10%) !important;
+}
+.topbar .topbar-links .topbar-flair .reputation, 
+.topbar .topbar-links .topbar-flair .badgecount {
+	color: $theme-link !important;
+}
+
+.top-bar .indicator-badge._positive {
+	@include invert-back();
+}
+.achievements-dialog .rep-up {
+	@include invert-back();
+}
+.badge1, 
+.badge1+.badgecount, 
+.badge2, 
+.badge2+.badgecount, 
+.badge3, 
+.badge3+.badgecount {
+	@include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Login 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+#formContainer,
+#switch {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Tour
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//blocks of questions
+.qa-block,
+.content-block,
+.user-info-rep {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+//buttons
+#huge-buttons,
+.button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Question 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//questions announcment
+.ds-announcement {
+	.img {
+		@include invert-back();
+	}
+	@include invert-back();
+	.btn {
+		@include invert-back();
+		background-color: $theme-button-background !important;
+		color: $theme-button-text !important;
+		border-color: $theme-border !important;
+	}
+}
+//badges with counts
+.bounty-indicator-tab,
+.bounty-indicator {
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+	color: $theme-text !important;
+}
+.bounty-award {
+	-webkit-filter: invert(100%);
+}
+//icon number for questions
+.answer-votes,
+.answered {
+	/*background-color: $theme-textbox-background !important;*/
+	border-color: invert-back-color(#5fba7d) !important;
+	color: invert-back-color(#5fba7d) !important;
+	.mini-counts {
+		color: invert-back-color(#5fba7d) !important;
+	}
+	/*strong {
+			color: $theme-text-faint !important;
+	}*/
+}
+//icon with answered accepted
+.answered-accepted {
+	background-color: invert-back-color(#5fba7d) !important;
+	color: invert-back-color(#ffffff) !important;
+}
+//join stack over flow button
+.content {
+	a {
+		background-color: $theme-button-background !important;
+		color: $theme-button-text !important;
+		border-color: $theme-border !important;
+	}
+}
+//tabs
+#tabs {
+	a {
+		background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
+	}
+}
+//comminty bulletin
+.community-bulletin {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+	.favicon {
+		@include invert-back();
+	}
+}
+.related > div //related groups
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+//job offers
+.everyonelovesstackoverflow {
+	.clc-cp-sb-open-jobs,
+	.clc-cp-sb-name,
+	.clc-cp-job-title {
+		color: $theme-link !important;
+	}
+	//button for job offers
+	.clc-cp-sb-button {
+		background-color: $theme-button-background !important;
+		color: $theme-button-text !important;
+		border-color: $theme-border !important;
+	}
+}
+#hot-network-questions {
+	.favicon {
+		@include invert-back();
+	}
+}
+//arrow accept question
+.vote-accepted-on {
+	@include invert-back();
+}
+//switch context
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Question switch context
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.topbar-dialog {
+	.modal-content {
+		background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
+		li {
+			background-color: $theme-background-box !important;
+			border-color: $theme-border !important;
+		}
+	}
+	.header {
+		background-color: $theme-background-toolbar !important;
+		border-color: $theme-border !important;
+	}
+	.site-icon {
+		@include invert-back();
+	}
+}
+//TODO:
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Jobs
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.jobs-banner {
+	@include invert-back();
+	.btn,
+	.secondary-cta {
+		@include invert-back();
+		background-color: $theme-button-background !important;
+		color: $theme-button-text !important;
+		border-color: $theme-border !important;
+	}
+}
+//highited jobs
+._highlighted {
+	background-color: $theme-background-toolbar !important;
+	.salary {
+		color: $theme-text !important;
+	}
+	//title for job links
+	.-title > h2 > a.job-link {
+		background-color: $theme-background-toolbar !important;
+	}
+}
+//each job row
+.-item + .-job {
+	.salary {
+		color: $theme-text !important;
+	}
+	//title for job links
+	.-title > h2 > a.job-link {
+		background-color: $theme-background-box !important;
+	}
+}
+.fl.external {
+	.-icon {
+		@include invert-back();
+	}
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Right-side Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+div.clc-jobs-multi.blue {
+	background-color: $theme-background-box !important;
+}
+div.clc-jobs-multi > a.top {
+	color: invert-back-color(#ffffff) !important;
+}
+div.clc-jobs-multi > .middle > ul .job-wrap .title {
+	color: $theme-link !important;
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Code
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+/*pre.prettyprint {
+	background-color: invert-back-color(#000) !important;
+
+}
+*/
+
+pre.prettyprint::-webkit-scrollbar-track {
+	background: invert-back-color(#222222);
+}
+pre.prettyprint::-webkit-scrollbar-thumb {
+	background: invert-back-color(#444444);
+	border-color: invert-back-color(#444444);
+}
+/*
+code {
+	-webkit-filter: brightness(2) saturate(0.5) invert(100%)
+	background-color: #000 !important;
+
+}*/
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Tags
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.post-tag {
+	background: $theme-faint-button-background !important;
+	color: $theme-button-text !important;
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Badges
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.badge {
+	background-color: $theme-background-toolbar !important;
+}
+//check mark
+.badge-earned-check {
+	@include invert-back();
+}
+// Ask Question CTA
+.aside-cta {
+
+	a {
+		color: $theme-button-text !important;
+		background-color: $theme-button-background !important;
+		border-color: $theme-button-background !important;
+		box-shadow: inset 0 1px 0 lighten($theme-button-background, 10%) !important;
+
+		&:hover,
+		&:focus {
+			background-color: lighten($theme-button-background, 5%) !important;
+			box-shadow: inset 0 1px 0 lighten($theme-button-background, 20%) !important;
+		}
+	}
+}
+// Pagination
+.page-numbers {
+	border-color: $theme-border !important;
+	color: $theme-link !important;
+}
+// Fix global borders
+.comments,
+tr.comment > td,
+.question-page #answers .answer,
+#question-header,
+.wmd-preview,
+.question-summary,
+.subheader,
+.listResults .-item.-job,
+.tag-cell {
+	border-color: $theme-border !important;
+}

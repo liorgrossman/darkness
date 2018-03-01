@@ -1,0 +1,233 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+*:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+// All buttons
+button,
+a.button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+button:hover {
+	background: $theme-button-background !important;
+}
+// buttons as links
+.unified-share-modal button.c-borderless-button,
+button.button-as-link,
+.c-column-header__button:hover,
+.c-column-header__button,
+.maestro-nav-switcher-menu-item--selected .maestro-nav-switcher-menu-item__title {
+	background-color: transparent !important;
+	color: $theme-link !important;
+}
+button.button-as-link .link-img {
+	-webkit-filter: invert(1) !important;
+	background-color: transparent !important;
+}
+.preview-toolbar-container .toolbar-button-entry button,
+.preview-toolbar-container .toolbar-button-entry button:hover,
+.pass-facepile-avatar,
+.pass-facepile-avatar:hover,
+.react-title-bar__close:hover,
+.react-title-bar__close,
+.mc-overflow-button,
+.mc-overflow-button:hover {
+	background-color: transparent !important;
+	background: transparent !important;
+}
+.preview-toolbar-container .toolbar-button-entry button img {
+	-webkit-filter: invert(0) !important;
+}
+// Three dots
+button span g {
+	fill: invert($theme-button-background) !important;
+}
+
+// Buttons that should not have a background
+.mc-popover button,
+.mc-popover button > span,
+button.star__toggle,
+.search-bar__input > button,
+.mc-dropdown-menu > button,
+button.mc-tertiary-link-button,
+button > span[aria-label="More Actions"],
+a.button-secondary {
+	background-color: transparent !important;
+	background: transparent !important;
+}
+
+// Removes shadows
+.recents-item__action-button:first-child {
+	box-shadow: none !important;
+}
+
+button.mc-tertiary-link-button .mc-tertiary-icon-text {
+	color: $theme-button-background !important;
+}
+.toggle__toggle-container--on {
+	background-color: $theme-highlighted !important;
+}
+.toggle__status.toggle__status--on {
+	color: $theme-highlighted !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// "New" badge
+.maestro-nav__product-badge {
+	background-color: $theme-notices !important;
+	color: $theme-tooltip-text !important;
+}
+
+// Tip card
+.mc-tip-card {
+	background-color: $theme-highlighted !important;
+}
+
+// Checkboxes
+.mc-checkbox-checked {
+	background-color: $theme-highlighted !important;
+}
+.mc-checkbox-checked .mc-checkbox-border {
+	border-color: $theme-highlighted-darker !important;
+}
+
+// Popup menus
+.mc-popover-content-item:enabled span,
+.mc-popover-content-item:enabled:hover span {
+	color: black !important;
+}
+.mc-popover-content-item:enabled:hover {
+	background-color: $theme-highlighted !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Headers
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.maestro-header .page-header {
+	background-color: $theme-background-box !important;
+}
+
+// Searchbar
+.search-bar__input {
+	background-color: $theme-textbox-background !important;
+}
+
+// Used space
+.quota-bar-used {
+	background-color: $theme-highlighted !important;
+}
+
+.c-tabs__bar {
+	background: $theme-background !important;
+}
+.c-tabs__tab--selected {
+	border-color: $theme-highlighted !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.footer {
+	background-color: $theme-background-box !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.maestro-nav__container {
+	background-color: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// File list
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.mc-table-row,
+.brws-column-header .brws-checkbox-cell {
+	background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Showing a file
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background
+.react-file-viewer {
+	background-color: $theme-background-box !important;
+}
+
+// The preview
+.preview-content iframe {
+	filter: invert(0)  !important
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Popups
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// General modal
+.db-modal-box > div > div {
+	background-color: $theme-background-box !important;
+}
+.db-modal-box > div > div .tokenizer-input, 
+.db-modal-box > div > div textarea {
+	background: transparent !important;
+}
+
+#modal-overlay, .db-modal-overlay {
+	background-color: rgba(255,255,255,0.6) !important;
+}
+
+// "try pro" box
+.ha.visible button:not(.button){
+	background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// User setting
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.general-page-header {
+	background-color: $theme-highlighted-darker !important;
+}
+
+.bar-graph-part.bar-graph-normal.normal-color {
+	background-color: $theme-highlighted !important;
+	border-color: $theme-highlighted !important;
+}
+.bar-graph-part.bar-graph-shared.bar-shared-color {
+	background-color: $theme-highlighted-darker !important;
+	border-color: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Regular sites
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.plans-page-rebrand .plans-page__header {
+	background-color: $theme-highlighted !important;
+}
+.plans-page__headline {
+	color: black !important;
+}
+
+button.tabs__tab {
+	background-color: $theme-background-box !important;
+}
+button.tabs__tab.active {
+	background-color: $theme-background !important;
+}

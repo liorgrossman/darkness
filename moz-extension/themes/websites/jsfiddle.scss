@@ -1,0 +1,193 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
+This is a template for easily creating skins for new websites!
+The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
+
+Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
+Those CSS are built by combining 3 files:
+1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
+2. A skin common to all websites (themes/websites/all-websites.scss)
+3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
+
+Guidelines:
+* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
+* Please add short comments before each CSS selector to indicate what UI element it refers to
+* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
+
+You should know: all the website's colors are inverted before skinning even starts!
+* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
+* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
+* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
+* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+$darkness-toolbar-background: #666;
+$darkness-background: #333;
+$darkness-text: #999;
+$darkness-yellow: #ffd400;
+$darkness-blue: #86cdff;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text !important;
+	background-color: $theme-textbox-background !important;
+	border-color: $theme-border !important;
+}
+
+// Input padding
+textarea, input {
+	padding-left: 5px !important;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  background: $theme-button-background !important;
+}
+
+// Pseudo ::scrollbar-thumb element
+::-webkit-scrollbar-thumb {
+  background: $darkness-toolbar-background !important;
+  border-left: 2px solid $theme-border !important;
+  border-right: 1px solid $theme-border !important;
+}
+
+// Pseudo ::scrollbar-track element
+::-webkit-scrollbar-track {
+  background: black !important;
+}
+
+// Selection
+::selection {
+	filter: invert(1) !important;
+	background-color: black !important;
+	color: white !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+#header {
+	background: $theme-background !important;
+}
+
+// Restore original logo
+#home { 
+	@include invert-back()
+}
+
+// Restore original checkboxes
+label.checkboxCont input:checked+.checkbox {
+  @include invert-back()
+}
+
+// Restore original navigation underline
+#actions .actionItem a.aiButton:hover {
+  @include invert-back()
+  color: $darkness-text !important;
+}
+
+// Logo badge color
+#HW_badge {
+  @include invert-back()
+}
+
+// Window Label
+.windowLabel.active, .windowLabel:hover {
+	border-color: $darkness-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Sidebar
+#sidebar {
+	filter: brightness(0.85) !important;
+}
+
+// Restore original blue 'Keep us running' box
+#keep-us-running {
+	@include invert-back()
+}
+
+// Sidebar item hover
+#sidebar .toggler:hover {
+  @include invert-back()
+  color: $darkness-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Log In
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Logo
+h1 {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Homepage
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Result
+#content #result:hover {
+	background-color: black !important;
+	transition: all ease-in .15s !important;
+}
+
+// Line Numbers
+.CodeMirror-linenumber {
+	color: $darkness-text !important;
+}
+
+// Editor border
+#content .bottom, #content .top, .CodeMirror-gutters {
+  border-right: solid 1px $darkness-text !important;
+  color: black !important;
+}
+
+// Editor border
+#content .top {
+  border-bottom: solid 1px $darkness-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Code
+.fiddleList pre {
+	@include invert-back()
+}
+
+// Navigation
+#main-nav {
+  background-color: transparent !important;
+}
+
+// Profile page top bar
+body:before {
+  @include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Collaboration modal
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Modal
+.togetherjs .togetherjs-modal > header,
+.togetherjs .togetherjs-window > header {
+	@include invert-back()
+}

@@ -1,0 +1,121 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
+This is a template for easily creating skins for new websites!
+The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
+
+Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
+Those CSS are built by combining 3 files:
+1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
+2. A skin common to all websites (themes/websites/all-websites.scss)
+3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
+
+Guidelines:
+* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
+* Please add short comments before each CSS selector to indicate what UI element it refers to
+* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
+
+You should know: all the website's colors are inverted before skinning even starts!
+* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
+* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
+* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
+* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//the flag button doesn't need to be inverted
+.flag{
+	@include invert-back()
+}
+
+//move the links over to accomodate the dark settings icon
+.userlinks, #ef{
+	margin-right: 35px;
+}
+
+#loginWidget.highlight{
+	margin-right: 40px;
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//remove dark coloring at the top of the page around the search box
+.querybox, .form-tab, .js-only{
+	background: $theme-background !important;
+	background-color: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//make the background of the side bar the same as the rest of the page like with no skin
+.search-options-container, .search-options, .tsb, .searchgroup, .hasPic{
+	background: $theme-background !important;
+	background-color: $theme-background !important;
+}
+
+//mute the yellow highight on the purveyor buttons in search box
+.purveyor .button{
+	background: $theme-background-toolbar !important;
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border;
+}
+
+//mute the yellow highight on the purveyor buttons in search box
+.purveyor .button.sel{
+	color: $theme-highlighted !important;
+	background: $theme-textbox-background !important;
+	background-color: $theme-textbox-background;
+}
+
+//have to hard style the scroll bar for some reason
+.search-options-container::-webkit-scrollbar, .search-options-container::-webkit-scrollbar-track{
+	background: $theme-background-box !important;
+	background-color: $theme-background-box !important;
+}
+
+//have to hard style the scroll bar for some reason
+.search-options-container::-webkit-scrollbar-track {
+	background: $theme-background-box !important;
+	background-color: $theme-background-box !important;
+}
+
+//have to hard style the scroll bar for some reason
+.search-options-container::-webkit-scrollbar-thumb{
+	background: $theme-background-toolbar !important;
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-background-box !important;
+	box-shadow: inset 1px 1px 0 $theme-background-box, inset -1px -1px 0 $theme-background-box !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// My Account HomePage
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//make links in the my account section grid style properly
+button, input[type="submit"], input[type="button"]{
+	background: $theme-background !important;
+	background-color: $theme-background !important;
+	color: $theme-link !important;
+}

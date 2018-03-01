@@ -1,0 +1,217 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button, .btn.btn-primary, .top-nav__button > a {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+// Checkmarks and toggles
+.c_ni, .c_bn {
+	fill: invert-back-color($theme-highlighted) !important;
+}
+.c_fn::before {
+	background: $theme-highlighted !important;
+}
+
+// Logo
+.logo{
+	-webkit-filter: invert(1) !important;
+}
+
+// Backdrops on popups
+.modal-backdrop {
+	background-color: #fff !important;
+}
+
+.text-warning, .notification.warning {
+	color: $theme-button-background !important;
+}
+
+// Feedback button
+.next-beta {
+	background-color: $theme-button-background !important;
+}
+.next-beta a {
+	color: $theme-text !important;
+}
+
+// Status buttons and stuff
+.label-success {
+	background-color: $theme-highlighted !important;
+}
+.switch:after, .switch:before {
+	background-color: invert-back-color(#9bca3e) !important;
+}
+.switch:before {
+	background-color: #bcbcbc !important;
+}
+.alert.error,
+.notification.warning,
+.notification.success {
+	@include invert-back();
+}
+
+.text-info, .text-success {
+	color: $theme-highlighted !important;
+}
+
+footer,
+.main-footer__menu_bottom {
+	background-color: $theme-background-toolbar !important;
+}
+.main-footer__menu_bottom *,
+.main-footer__menu-group__header {
+	color: $theme-url !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.header-main {
+	background: $theme-background !important;
+}
+.gradient-bar-header {
+	background-color: $theme-button-background !important;
+	background-image: $theme-button-background !important;
+}
+
+// Dropdowns
+.header-navigation .open .dropdown-toggle, .zones-picker.open .current-zone {
+	background-color: rgb(225, 225, 225) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sites, not logged in
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.homepage-video__viewport-b {
+	background: linear-gradient(to bottom left, $theme-highlighted, $theme-highlighted-darker) !important;
+}
+.homepage-video-modal {
+	background-color: $theme-background !important;
+}
+
+// Those gradiant banners
+section.tile {
+	background: transparent !important;
+	color: $theme-text !important;
+}
+section.tile h2, section.tile h1, section.tile h3, section.tile h4 {
+	color: $theme-text !important;
+}
+section.tile .button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+section.tile img {
+	-webkit-filter: invert(0) !important;
+}
+section.tile .grid img {
+	-webkit-filter: invert(1) !important;
+}
+
+.icon-quote-left {
+	color: $theme-button-background !important;
+}
+
+// Feature grid on front page
+.grid__item--feature.tile__background--purple, .grid__item--feature.tile__background--yellow {
+	background: $theme-highlighted !important;
+}
+.grid__item--feature.tile__background--green, .grid__item--feature.tile__background--blue {
+	background: $theme-highlighted-darker !important;
+}
+.grid__item--feature {
+	color: $theme-text !important;
+}
+.grid__item--feature span {
+	color: $theme-url !important;
+}
+
+// Twitter shoutouts
+.owl-item * {
+	color: $theme-text !important;
+}
+
+// Half page gradiants
+.tile--2-col-green-bg::before {
+	background: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sites, logged in
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.site-status .info.success {
+	background-color: $theme-highlighted !important;
+}
+
+// Share
+.analytics-share-box, .analytics-share-box .tabs li.active a{
+	background-color: $theme-highlighted !important;
+}
+.analytics-share-box .tabs a{
+	background-color: $theme-highlighted-darker !important;
+}
+
+// Revert DNS colors
+.proxy .cloud {
+	-webkit-filter: invert(1) !important;
+}
+.dns-type-a .dns-type-cell{
+	color: invert-back-color(#333) !important;
+}
+.dns-type-aaaa .dns-type-cell{
+	color: invert-back-color(#7c7c7c) !important;
+}
+.dns-type-cname .dns-type-cell {
+	color: invert-back-color(#ff7900) !important;
+}
+.dns-type-mx .dns-type-cell {
+	color: invert-back-color(#d91698) !important;
+}
+.dns-type-txt .dns-type-cell {
+	color: invert-back-color(#9bca3e) !important;
+}
+.dns-type-srv .dns-type-cell{
+	color: invert-back-color(#bd2527) !important;
+}
+.dns-type-ns .dns-type-cell{
+	color: invert-back-color(#9545e5) !important;
+}
+.dns-type-loc .dns-type-cell{
+	color: invert-back-color(#62a1d8) !important;
+}
+
+.tabs a:before {
+	border-top-color: $theme-highlighted !important;
+}
+.tabs li.active a,
+li[role="tab"][aria-selected="true"] {
+	background-color: $theme-highlighted !important;
+	color: $theme-text !important;
+}
+li[role="tab"][aria-selected="true"]::before {
+	border-top-color: $theme-highlighted !important;
+}
+li[role="tab"][aria-selected="false"] {
+	color: $theme-highlighted !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Settings
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,168 @@
+@import "all-google.scss";
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background
+.dhgHyf {
+	background: $theme-background !important;
+}
+
+// Close button
+.VxYl6 .JUQOtc, 
+.XzDmJe .JUQOtc {
+	fill: invert-back-color($theme-button-background) !important;
+}
+
+// Notification
+.KYZn9b {
+	background: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+
+// Some buttons
+.gWLshd .kHssdc {
+	color: $theme-button-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar and sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Topbar background
+.QtDoYb {
+	background: $theme-background-toolbar !important;
+}
+
+// Menu background
+.wDSX5e {
+	background: $theme-background-box !important;
+}
+
+// Hightligt active in menu
+.wDSX5e .ixImeb {
+	background: $theme-highlighted !important;
+}
+.ixImeb>.w8iOwc {
+	color: $theme-button-background !important;
+}
+// Hightlight in menu on hover
+.wDSX5e .DOAbib:not(.Mph3Hc):hover {
+	background: $theme-highlighted-darker !important;
+}
+
+// "Upload" and "Create" buttons
+[jscontroller="yoQTSc"],
+.HQ8yf,
+.HQ8yf a
+.YYUyRc,
+.xE5EF {
+	color: $theme-button-background !important;
+}
+
+// Stuff under "Create" button
+.JUQOtc {
+	fill: invert-back-color($theme-button-background) !important;
+}
+
+// Searchbar
+.Aul2T {
+	background: $theme-textbox-background !important;
+}
+// Search predictions
+.MgQfZd:after {
+	background: $theme-background-toolbar !important;
+}
+.FBoeXc.vOSR6b {
+	background: $theme-background-box !important;
+}
+// "Show more"/"show less" button
+.JiA8gb .RwVyJb {
+	color: $theme-button-background !important;
+}
+
+// SVG buttons in menu
+.DOAbib .JUQOtc {
+	fill: invert-back-color($theme-secondary-button-background) !important;
+}
+// SVG buttons in sidebar and active in menu
+.mJ5jI .di0KJd .JUQOtc,
+.G6iPcb .JUQOtc,
+.ixImeb .JUQOtc {
+	fill: invert-back-color($theme-button-background) !important;
+}
+// Text under svg buttons in sidebar
+.DOAbib .xMAzlb, 
+.ixImeb .xMAzlb{
+	color: $theme-button-background !important;
+	fill: $theme-button-background !important;
+}
+
+// Notification counter in sidebar and menu
+.uNKHZe,
+.VkSgYd {
+	background-color: $theme-notices !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Content
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// "Select all" button
+.R4HkWb .JUQOtc {
+	fill: $theme-secondary-button-background !important;
+}
+
+// Boxes that don't need a background
+.gN5aAe,
+.YisXab {
+	background: transparent !important;
+}
+
+// Line under section header
+.YisXab::after {
+	background: $theme-background-box !important;
+}
+
+// Background when viewing a photo in full screen
+.ZSTBVb {
+	background: $theme-background !important;
+}
+
+// Settings sidebar on single image
+.Q77Pt {
+	background: $theme-background-box !important;
+}
+
+// Sidebar when editing
+.QRGN9e,
+.LKuVw {
+	background: $theme-background-toolbar !important;
+}
+.jt0JGd {
+	background-color: $theme-background-box !important;
+}
+.Hj59Ib {
+	color: $theme-text !important;
+}
+.vFajec.sMVRZe {
+	box-shadow: none !important;
+}
+.WHjEdb {
+	background: transparent !important;
+}
+
+// Editing background
+.vqsmne,
+.Rxunzd {
+	background-color: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Create new
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar
+.u5KVDc.X1clqd {
+	background-color: $theme-background-toolbar !important;
+}

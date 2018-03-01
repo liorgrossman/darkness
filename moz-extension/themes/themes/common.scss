@@ -1,0 +1,30 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Common helpers for all SCSS files (themes and websites)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Mixin to invert this element. We use this to invert the entire web page colors, before applying any specific colors
+// Use it as follows:
+// .myElement { @include invert(); }
+@mixin invert() {
+	-webkit-filter: invert(100%) !important;
+}
+
+// Mixin to un-invert this element. We use this to invert BACK specific page elements that shouldn't be inverted (e.g. images)
+// Use it as follows:
+// .myElement {
+//     @include invert-back();
+//     @include invert-back("brightness(1.3) contrast(0.8) saturate(0.7)");
+// }
+@mixin invert-back($moreFilters: "") {
+	-webkit-filter: invert(100%) + " " + $moreFilters + " !important";
+}
+
+// A SCSS function to invert back a CSS color. All color themes should use it, since the entire page is inverted
+// Use it as follows:
+// .myElement {
+//   color: invert-back-color(#151515);
+//   background-color: invert-back-color(darken($blue));
+// }
+@function invert-back-color($color) {
+	@return invert($color);
+}

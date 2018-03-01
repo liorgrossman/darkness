@@ -1,0 +1,301 @@
+@import "all-google.scss";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button,
+.jfk-button-action,
+.bf-df,
+.e3Duub,
+.ep-ea .goog-imageless-button,
+.XiVK6d {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.modal-dialog-buttons > button[name="ok"],
+.jfk-button-action {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.XiVK6d {
+	box-shadow: none !important;
+}
+
+// All inputs
+input, textarea, input[type="text"] {
+	color: $theme-textbox-text !important;
+	background-color: transparent !important;
+	border-color: $theme-border !important;
+}
+.DSC0Mc,
+.OabDMe {
+	background-color: $theme-textbox-background !important;
+}
+
+// Links
+[role="link"],
+.lk-button,
+#collapse_all_link,
+#expand_all_link {
+	color: $theme-link !important;
+}
+
+.trans-strip {
+	background: transparent !important;
+}
+
+// Dark background for popups
+.llhEMd {
+	background-color: rgba(255,255,255,0.38) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.gb_uf,
+#vr-nav,
+#mainnav,
+.gb_yf,
+.gb_xc:not(.gb_sb) .gb_Bd,
+.gb_yc:not(.gb_tb) .gb_Cd,
+.gb_Be,
+#calmaster{
+	background: $theme-background !important;
+	background-color: $theme-background !important;
+	border-color: $theme-background !important;
+}
+
+// Searchbar
+#gbqfb {
+    background: $theme-button-background !important;
+    border-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+}
+.gstl_50.gstt input {
+	background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// "Calendar" text on top of sidebar
+#mainlogo {
+	color: invert($theme-button-background) !important;
+}
+
+// Color identifiers in sidebar
+.calListRow[aria-selected="true"] .calListSquare,
+.uVccjd[aria-checked="true"],
+.hsrazb {
+	@include invert-back()
+}
+.uVccjd[aria-checked="false"] {
+	@include invert-back()
+}
+.uVccjd[aria-checked="false"] .uHMk6b {
+	border-color: black !important;
+}
+
+// Create event button
+#createEventButtonContainer [role="button"] {
+    background: $theme-button-background !important;
+    border-color: $theme-button-background !important;
+    color: black !important;
+}
+
+// Foldables
+.dpdiv,
+.chromeColor,
+.calList,
+.calListRow,
+.calHeader {
+	background: transparent !important;
+	border-color: transparent !important;
+}
+
+// Monthly calendar on the left side: remove black background from days
+.dp-weekday {
+	background: transparent !important;
+}
+
+// Search box
+#searchAddCalBox {
+	background: transparent !important;
+	border-color: transparent !important;
+}
+
+// Colorpicker
+.ccp-rb-color,
+.azQ4Lc,
+.goog-hsv-palette-sm-hs-image,
+.ccc-text,
+.goog-hsv-palette-sm-swatch,
+.goog-hsv-palette-sm-v-image {
+	@include invert-back()
+}
+.fM9vSd .FKhct,
+.SQaQVd,
+.rgXNVe,
+.kUwJrc.R4GWv {
+	@include invert-back()
+}
+.g3VIld {
+	box-shadow: none !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Calendar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background of the different views
+#gridcontainer,
+.tg-timedevents,
+.wk-weektop,
+.wk-allday,
+.tg-time-pri,
+.tg-time-sec,
+.listv,
+.lv-row,
+.wk-dummyth,
+.tNDBE {
+	background-color: $theme-background-box !important;
+}
+#mainbody,
+.mv-daynames-table,
+.mv-event-container,
+.mv-container,
+.st-dtitle {
+	background-color: transparent !important;
+}
+
+// Highlight today
+.st-bg-today,
+.wk-full-mode .wk-today,
+.tg-today,
+.wk-today,
+.ef2wWc,
+.ecKr0 {
+	background-color: $theme-background-toolbar !important;
+}
+.yzYBvd.F262Ye,
+.TUH0Sd .r4nke {
+	background-color: $theme-highlighted !important;
+}
+.pqE3fc .wy3aMe,
+.MmhHI.F262Ye,
+.OmwDud.F262Ye {
+	color: $theme-highlighted !important;
+}
+
+// Now arrow and line in day and week-view
+.tg-nowmarker {
+	border-color: $theme-highlighted !important;
+}
+.tg-nowptr{
+    border-top: 4px solid transparent !important;
+    border-bottom: 4px solid transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 5px solid $theme-highlighted !important;
+}
+
+// The events in the calendar
+// Month-view & 2-week-view
+#calcontent.eui-t .st-c .te,
+#calcontent.eui-t .st-c .rb-n,
+.wgIOqb-XPtOyb,
+.g3dbUc:not(.smECzc),
+.QNFxAc {
+	@include invert-back()
+}
+// Week-view & Day-view
+.chip dl,
+.EfQccc {
+	@include invert-back()
+}
+// Agenda-view
+.lv-event-title,
+.Oxm52e {
+	@include invert-back()
+}
+
+// Darken past event
+.wgIOqb-XPtOyb.wgIOqb-XPtOyb-C3kE6 {
+	filter: invert(1) brightness(150%) !important;
+}
+
+// Day/week view: grid that shows horizontal line every 30 minutes
+.tg-dualmarker, .tg-dualmarker60 {
+	border-color: darken($theme-background, 9%) !important;
+}
+
+// Events in top (non-hour) part of calendar: don't show ugly blue border
+#calcontent.eui-t .st-c .te, #calcontent.eui-t .st-c .rb-n {
+	border-color: transparent !important;
+}
+
+// Events in calendar: don't show ugly blue border
+.chip dl {
+	border-color: transparent !important;
+}
+
+// Style the calendar's background
+// #calmaster = the entire page, scrollbar sometimes appear on page load
+// #scrolltimedeventswk = the calendar, scrollbar appears on day/week view
+// #gridcontainer = the calendar, scrollbar appears on agenda view
+#scrolltimedeventswk, #calmaster, #gridcontainer {
+	&::-webkit-scrollbar {
+		width: 10px !important;
+	}
+
+	&::-webkit-scrollbar-track {
+		border: none !important;
+		background: invert($track-background) !important;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: darken($theme-background-toolbar, 10%) !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
+}
+
+// See event details
+.i5a7ie,
+.XHsn7e.Wbs5sd {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Add/create event
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.ep-dp,
+.ep-sp,
+.ep-ts .ui-dtsr-selected {
+	background-color: $theme-background-box !important;
+	border-color: $theme-background-box !important;
+}
+
+.ThdJC.KKjvXb {
+	color: $theme-highlighted !important;
+}
+.WwvKTc {
+	background-color: $theme-highlighted !important;
+}
+
+.p9lUpf {
+	background-color: $theme-background !important;
+}
+
+.qmv2fc.KKjvXb,
+.sIyjR {
+	@include invert-back()
+}

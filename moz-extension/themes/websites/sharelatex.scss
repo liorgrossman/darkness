@@ -1,0 +1,268 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+.btn > i.fa {
+	color: $theme-button-text !important;
+}
+
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+::-webkit-resizer, ::-webkit-scrollbar-corner {
+	background: #222222;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Project site
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Icons in top toolbar
+.toolbar-header .btn > i.fa, .toolbar-left i.fa, .btn > .review-icon {
+	color: $theme-button-background !important;
+	-webkit-filter: grayscale(100%) !important;
+}
+
+// Revert the editor, so that the build in themes work
+#editor {}
+.ace-editor-body {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_gutter-cell {
+	-webkit-filter: invert(0%) !important;
+}
+.ace_line_group {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_content {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_active-line {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_cursor {
+	-webkit-filter: invert(100%) !important;
+}
+.ace_error-marker {
+	-webkit-filter: invert(100%) !important;
+}
+body > .ace_editor > .ace_scroller{
+	-webkit-filter: invert(100%) !important;
+}
+body > .ace_editor > .ace_scroller > .ace_content > .ace_layer > .ace_active-line{
+	-webkit-filter: invert(0%) !important;
+}
+
+// Revert the pdf-viewer so that it displays the right way
+.pdfjs-viewer {
+	-webkit-filter: invert(100%) !important;
+	background-color: invert-back-color(#cfcfcf) !important;
+}
+.pdf-page-container {
+	-webkit-filter: invert(100%) !important;
+}
+// The toolbars
+.pdfjs-controls {
+	-webkit-filter: invert(0%) !important;
+}
+.pdfjs-controls .btn {
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+}
+.pdfjs-controls .fa {
+	color: $theme-button-text !important;
+	border-color: black !important;
+}
+.pdf .btn-group {
+	-webkit-filter: invert(100%) !important;
+}
+.pdf .btn-group .btn {
+	-webkit-filter: invert(100%) !important;
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+	color: $theme-button-text !important;
+}
+// The logs
+.pdf-logs .alert-danger, .pdf-errors .alert-danger {
+	color: invert-back-color(#ae2d05) !important;
+	border-color: invert-back-color(#ae2d05) !important;
+}
+.pdf-logs .alert-warning, .pdf-errors .alert-warning {
+	color: invert-back-color(#c67605) !important;
+	border-color: invert-back-color(#c67605) !important;
+}
+.pdf-logs .alert-info, .pdf-errors .alert-info {
+	color: invert-back-color(#263873) !important;
+	border-color: invert-back-color(#263873) !important;
+}
+
+// File-tree
+.fa {
+	color: $theme-button-background !important;
+}
+.fa.ng-scope {
+	color: $theme-button-text !important;
+}
+// Mark the selected file or folder
+li.selected > .entity > div > .fa,
+li.selected > .entity > div > .ng-binding,
+li.selected > .entity > div > span > a > .fa,
+li.selected > .entity > div > div > .fa,
+li.selected > .entity > div > div > .ng-binding,
+li.selected > .entity > div > div > span > a > .fa,
+aside#file-tree:not(.multi-selected) ul.file-tree-list li.selected>.entity>.entity-name {
+	color: $theme-button-background !important;
+}
+li.selected > .entity > div > span.dropdown,
+li.selected > .entity > div > div > span.dropdown {
+	border-right: 4px solid $theme-button-background !important;
+}
+
+// Toolbar background
+.toolbar-header {
+	background: $theme-background !important;
+}
+// Undoing a.btn background
+.editor header a.btn {
+	background: transparent !important;
+}
+
+// Creating a border, so the darkness icon looks like it belongs in the toolbar
+a[tooltip="Chat"] {
+	border-right: 1px solid #cfcfcf !important;
+}
+
+// User colors
+.online-user, .remote-cursor {
+	-webkit-filter: invert(100%) !important;
+}
+.message-wrapper > .message {
+	background-color: invert-back-color(rgb(250, 252, 243)) !important;
+	-webkit-filter: invert(100%) !important;
+	box-shadow: -1px 2px 3px invert-back-color(#ddd) !important;
+	color: invert-back-color($theme-text) !important;
+}
+
+// search and find-replace
+.ace_search button {
+	-webkit-filter: invert(100%) !important;
+	color: $theme-button-text !important;
+}
+.ace_search button .fa {
+	color: $theme-button-text !important;
+}
+.ace_search .ace_searchbtn_close {
+	-webkit-filter: invert(100%) !important;
+}
+
+// Popup close button
+.close{
+	background-color: transparent !important;
+	color: #333 !important;
+}
+
+// Share input
+.tags > input.input {
+	background-color: transparent !important;
+}
+
+// user colors in history tool
+.user > .color-square {
+	-webkit-filter: invert(100%) !important;
+}
+
+// Dropdown when selecting compile options
+.pdf > .toolbar > .btn-group {
+	z-index: 1000 !important;
+}
+
+// Goto location in pdf or code, buttons
+.fa-long-arrow-right, .fa-long-arrow-left {
+	color: $theme-button-text !important;
+}
+
+// The uploader
+.qq-uploader .btn {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// Dropdown menu when compiling
+.pdf ul.dropdown-menu {
+	-webkit-filter: invert(1) !important;
+	background-color: $theme-textbox-background !important;
+	color: $theme-textbox-text !important;
+}
+
+// Loading pdf
+.pdf-viewer .fa {
+	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Project-list site
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.navbar {
+	background: $theme-background !important;
+}
+.navbar-nav > li > a {
+	border-color: $theme-button-background !important;
+}
+.navbar-nav > li > a:hover {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+.loading-screen h3{
+	-webkit-filter: invert(100%) !important;
+	color: invert-back-color($theme-text) !important;
+}
+
+a.btn, .folders-menu > li.active {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+.folders-menu > li.active > a{
+	color: $theme-button-text !important;
+}
+
+.folders-menu > li > a {
+	color: $theme-link !important;
+}
+
+ul.dropdown-menu > li > a:hover {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Other
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.alert-success {
+	color: $theme-highlighted !important;
+	background: $theme-highlighted-darker !important;
+	border-color: $theme-highlighted !important;
+}
+
+.modal-backdrop,
+#left-menu-mask {
+	background-color: #FAFCFF !important;
+}
