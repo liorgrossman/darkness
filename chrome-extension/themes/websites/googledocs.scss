@@ -28,6 +28,9 @@ button, .gb_qb .gb_wb {
 .gbip {
 	-webkit-filter: invert(1) !important;
 }
+.docs-material-appbar #docs-titlebar-share-client-button .jfk-button {
+	-webkit-filter: invert(0) !important;
+}
 
 // All inputs
 input {
@@ -56,7 +59,8 @@ iframe {
 .gb_dd.gb_id.gb_kd,
 .docs-homescreen-gb-container div,
 .gb_xc:not(.gb_sb) .gb_Bd, 
-.gb_2d {
+.gb_2d,
+.docs-material-appbar #docs-header .docs-titlebar-buttons {
 	background-color: $theme-background-toolbar !important;
 }
 
