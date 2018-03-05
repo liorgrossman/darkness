@@ -1,0 +1,104 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Iceberg Theme
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+@import "common.scss";
+
+// Grayscale
+$cyan: #8abeb7;
+$blue: #81a2be;
+$purple: #b294bb;
+$green: #b5bd68;
+$red: #cc6666;
+$orange: #de935f;
+$light-orange: #f0c674;
+$very-light-gray: #c5c8c6;
+$light-gray: #e0e2e4;
+$gray: #373b41;
+$lime-green: #41b644;
+$moderate-green: #82c057;
+$strong-cyan: #009dbe;
+$light-blue: #009bde;
+$light-purple: #776cc4;
+$light-yellow: #e8e2b7;
+
+
+$red-orange: #ff6040;
+$light-red: #dd0000;
+$dark-red: #a03030;
+$dark-gray: #7f7f7f;
+$dark-pink: #b11888;
+$very-dark-gray: #333e48;
+$very-dark: #000;
+
+$toolbar-background: #600500;
+$box-background: #300500;
+$text-color: white;
+$link-color: #d05050;
+$link-color-visited: #b55555;
+$dark-gray-red: #b9b0b0;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// BACKGROUND COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background of page
+$theme-background: invert-back-color($very-dark);
+
+// Background of content boxes
+$theme-background-box: invert-back-color($box-background);
+
+// Toolbar background
+$theme-background-toolbar: invert-back-color($toolbar-background);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// TEXT COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Text color
+$theme-text: invert-back-color($text-color);
+$theme-text-faint: invert-back-color($dark-gray-red);
+
+// Links color
+$theme-link: invert-back-color($link-color);
+$theme-link-visited: invert-back-color($link-color-visited);
+$theme-link-active: invert-back-color($red-orange);
+
+// Special text colors
+$theme-url: invert-back-color($dark-red);
+
+// Text highlights (e.g. selected row)
+$theme-highlighted: invert-back-color(lighten($very-dark, 10%));
+$theme-highlighted-darker: lighten($theme-highlighted, 5%);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// UI COMPONENTS COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Primary buttons (usually originally blue)
+$theme-button-text: invert-back-color($text-color);
+$theme-button-background: invert-back-color($light-red);
+
+// Secondary buttons (usually originally red / orange)
+$theme-secondary-button-background: invert-back-color($red-orange);
+
+// Faint buttons (close to background color)
+$theme-faint-button-background: invert-back-color(lighten($very-dark, 5%));
+
+// Textboxes, Textareas, Inputs
+$theme-textbox-background: invert-back-color(darken($very-dark, 10%));
+$theme-textbox-text: invert-back-color($light-gray);
+
+// Border color
+$theme-border: invert-back-color(rgba(200,20,0,0.08));
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// TOOLTIP COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Tooltips (on hover)
+$theme-tooltip-background: invert-back-color($light-orange);
+$theme-tooltip-text: invert-back-color($very-dark);
+
+// Notices (usually appearing in the top of page for few seconds after user action)
+$theme-notices: invert-back-color($light-orange);

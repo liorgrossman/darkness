@@ -1,0 +1,799 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// YouTube skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+@import "all-google.scss";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Mixins
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// background, borders, links
+@mixin fixBG() {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+	a:hover {
+		color: darken($theme-link, 10%) !important;
+	}
+}
+
+@function inv($color) {
+	@return invert($color);
+}
+
+
+
+
+
+
+//====================================================================================================================================================
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// New YouTube design (post September 2017, https://www.youtube.com/new)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//====================================================================================================================================================
+
+body:not(#body) {
+	//---------------------------------------------------------------------
+	// Skin Generic HTML Elements
+	//---------------------------------------------------------------------
+
+	ytd-app {
+
+		// Buttons
+		button:not(#button) {
+			background-color: inv($theme-button-background) !important;
+			color: inv($theme-button-text) !important;
+			border-color: inv($theme-border) !important;
+			span {
+				color: inv($theme-button-text) !important;
+			}
+		}
+		button:not(#button).ytd-topbar-menu-button-renderer,
+		button:not(#button).ytd-masthead,
+		button:not(#button).ytp-button
+		{
+			background-color: transparent !important;
+			border-color: transparent !important;
+		}
+
+		// Textareas and input boxes
+		textarea, input[type="text"] {
+			background-color: inv($theme-textbox-background) !important;
+			color: inv($theme-textbox-text) !important;
+			border-color: inv($theme-border) !important;
+			}
+
+		a {
+			color: inv($theme-link) !important;
+			#video-title {
+				color: inv($theme-link) !important;
+			}
+		}
+
+		a:visited {
+			color: inv($theme-link-visited) !important;
+			#video-title {
+				color: inv($theme-link-visited) !important;
+			}
+		}
+
+		a:active {
+			color: inv($theme-link-active) !important;
+			#video-title {
+				color: inv($theme-link-active) !important;
+			}
+		}
+
+	}
+	//---------------------------------------------------------------------
+	// Skin Specific Elements
+	//---------------------------------------------------------------------
+	ytd-masthead {
+		background: inv($theme-background-toolbar) !important;
+	}
+	ytd-app {
+		background: inv($theme-background) !important;
+	}
+	app-drawer ytd-guide-renderer {
+		background: lighten(inv($theme-background), 3%) !important;
+	}
+
+	// Search box
+	#container.ytd-searchbox {
+		border-color: inv($theme-border) !important;
+	}
+	ytd-searchbox[has-focus] #container.ytd-searchbox {
+		border-color: lighten(inv($theme-border), 10%) !important;
+	}
+
+	// "Live now" badge below videos
+	.badge-style-type-live-now.ytd-badge-supported-renderer {
+		color: inv($theme-link) !important;
+		border-color: inv($theme-link) !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//====================================================================================================================================================
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Old YouTube design (pre September 2017)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//====================================================================================================================================================
+body#body {
+	@import "websites/all-websites.scss";
+	// Set the BODY background
+	background-color: $theme-background !important;
+	// min-height is important so there is no white padding below the page
+	min-height: 100% !important;
+	// Invert the colors of the entire page (as a baseline)
+	@include invert();
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// General layout
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// YouTube Header
+	#yt-masthead-container {
+		// Used gradient because the "you" in "youtube" wasn't visible with the theme-background-toolbar color in the BG.
+		background: $theme-background-toolbar !important;
+		border-color: $theme-border !important;
+	}
+
+	// Burger icon on the left side of the toolbar
+	.yt-uix-button-icon-appbar-guide {
+		// Make it darker so it's visible on the toolbar background
+		-webkit-filter: brightness(120%) !important;
+	}
+
+	#yt-masthead #logo-container .logo {
+		// Make the logo more visible on toolbar background
+		-webkit-filter: invert(100%) brightness(115%) saturate(70%) !important;
+	}
+
+	// Invert Flags images when picking a YT country
+	.yt-picker-region-flag {
+		@include invert-back()
+	}
+
+	// InvertYoutube Logo (Footer - left)
+	.footer-logo-icon {
+		@include invert-back()
+	}
+
+	// Invert most icons
+	.guide-item .yt-sprite {
+		@include invert-back()
+	}
+
+	// Set text to white in the navbar menu when hovered
+	#appbar-nav a:hover .yt-uix-button-content {
+		color: black !important;
+	}
+
+	// standard links
+	a {
+		color: $theme-link !important;
+	}
+
+	// Don't override links in Darkness settings panel
+	div.drk_subtitle a {
+		color: #a6a6a6 !important;
+	}
+
+	// links using span instead of <a>
+	.display-name span {
+		color: $theme-link !important;
+	}
+
+	// Change text color for the country selection
+	.yt-picker-region-name {
+		color: $theme-link !important;
+	}
+
+	// Change text color for the navbar text
+	#appbar-nav .yt-uix-button-content {
+		color: $theme-link !important;
+	}
+
+	// links in the left sidebar
+	.guide-item.guide-item-selected span.display-name span {
+		color: $theme-textbox-text !important;
+	}
+
+	// Change BG color for most boxes on the site
+	.yt-card {
+		background-color: $theme-background-box !important;
+	}
+
+	// Change BG color for video description
+	.yt-lockup-description {
+		background-color: $theme-background-box !important;
+	}
+
+	// Main navbar (HOME, TRENDING AND SUSCRIPTIONS)
+	#masthead-appbar {
+		@include fixBG()
+	}
+
+	// Footer
+	body #footer-container {
+		@include fixBG()
+	}
+
+	// Footer
+	#yt-picker-safetymode-footer {
+		@include fixBG()
+	}
+
+	//
+	#yt-masthead-logo-container .yt-uix-button {
+		background: $theme-textbox-background !important;
+	}
+
+	// Youtube playlist thumbnail background
+	.yt-pl-thumb .sidebar {
+		background: $theme-textbox-background !important;
+	}
+
+	// Left sidebar menu links when hovered
+	.guide-item:hover .display-name span {
+		color: $theme-button-text !important;
+	}
+
+	// left sidebar menu background background
+	.guide-item:hover {
+		background: $theme-background !important;
+	}
+
+	// left sidebar menu background when selected and hovered
+	.guide-item.guide-item-selected:hover {
+		background: $theme-background !important;
+	}
+
+	// left sidebar menu background when selected
+	.guide-item.guide-item-selected {
+		background: $theme-background !important;
+	}
+
+	// Bottom border color when a page is active in the main navbar (HOME, TRENDING, SUSCRIPTIONS)
+	.epic-nav-item-heading {
+		border-color: $theme-link;
+	}
+
+	// Bottom border color when a menu item is hovered in the main navbar (HOME, TRENDING, SUSCRIPTIONS)
+	a.yt-uix-button-epic-nav-item:hover {
+		border-color: $theme-link;
+	}
+
+	// Buttons in the footer
+	#footer-main .yt-uix-button-default {
+		background: $theme-faint-button-background !important;
+	}
+
+	// Right sidebar links background, upload screen.
+	#page-container .upload-widget-right-column .upload-option-text a {
+		background: $theme-button-background !important;
+	}
+
+	// Video Time in the thumbnails
+	.video-time {
+		@include invert-back()
+	}
+
+	// "Watched" badge on thumbnails
+	.watched-badge {
+		background: #fff !important;
+		color: #000 !important;
+	}
+
+	// X icons in the home page
+	.yt-uix-button-has-icon {
+		background: transparent !important;
+		border: none !important;
+	}
+
+	// Slider buttons, left and right
+	.yt-uix-button-shelf-slider-pager {
+		background: $theme-background !important;
+		border: none !important;
+	}
+
+	// Fix search icon
+	#masthead-search .search-btn-component .yt-uix-button-content {
+		opacity: 1 !important;
+		background: url(https://www.google.com/images/nav_logo242.png) no-repeat -110px -58px !important;
+		//@include invert-back()
+	}
+
+	// Fix orange border search input
+	#masthead-search-term, #masthead-search-term:focus, #masthead-search-term:active,
+	#masthead-search-terms {
+		outline: none !important;
+		outline-style: none !important;
+		box-shadow: none !important;
+		border-color: transparent !important;
+	}
+
+	// Transparent background on searchbar
+	#masthead-search-term {
+		background: transparent !important;
+	}
+
+	.yt-uix-tooltip-tip-content {
+		color: $theme-text !important;
+		background: $theme-background !important;
+	}
+
+	// Fix for "Add to watch later"
+	.addto-watch-later-button, .addto-watch-later-button-success {
+		background-color: #f8f8f8 !important;
+	}
+	.addto-watch-later-button-success:before {
+		-webkit-filter: invert(1) !important;
+	}
+
+	// Fix for "help sprite" and "Live beta"-link
+	.health-and-status .yt-uix-clickcard-target, .live-beta-tag {
+		background: transparent !important;
+	}
+
+	// fix for "Add widget"
+	.add-widget-clickcard > button {
+		background: no-repeat url(//s.ytimg.com/yts/imgbin/www-videomanager-vflTnl7Mo.webp) 0 -228px !important;
+	}
+
+	// Notification top
+	.yt-alert-actionable.yt-alert-info{
+		background-color: $theme-tooltip-background !important;
+		color: $theme-tooltip-text !important;
+	}
+
+	// Language-picker
+	#yt-picker-language-footer button {
+		background-color: transparent !important;
+	}
+
+	// Progress bar on thumbnails
+	.resume-playback-progress-bar {
+		background-color: $theme-button-background !important;
+	}
+
+	// "Remove from playlist"-button
+	.pl-video-edit-options > button {
+		background-color: $theme-button-background !important;
+	}
+	.pl-video-edit-options > button:before {
+		-webkit-filter: invert(1) !important;
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Video page
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// The video player wrapper (and padded background)
+	.html5-video-player {
+		color: $theme-text !important;
+		background: invert-back-color(#000) !important;
+	}
+
+	// Share buttons
+	.share-service-button {
+		@include invert-back();
+	}
+	.share-panel button {
+		background: transparent !important;
+		color: $theme-text !important;
+	}
+	.share-panel button span {
+		color: $theme-text !important;
+	}
+
+	// Tooltips when hover over cogwheel, cc, etc.
+	.ytp-tooltip {
+		@include invert-back();
+	}
+	// Tooltips when hovering over seek bar (with thumbnails)
+	.ytp-tooltip-text-wrapper {
+		@include invert-back();
+	}
+
+	// Captions
+	.html5-video-player .captions-text {
+		@include invert-back();
+	}
+
+	.ytp-volume-panel {
+		@include invert-back();
+	}
+	// Fadeout gradient at the top & bottom of every video
+	.ytp-gradient-top, .ytp-gradient-bottom {
+		// Instead of fadeout to white, make it fadeout to black
+		@include invert-back();
+	}
+
+	// Video time display
+	.ytp-time-display {
+		@include invert-back();
+		.ytp-time-current {
+			color: #eee !important;
+		}
+	}
+
+	// Video progress bar
+	.ytp-progress-bar {
+		@include invert-back();
+	}
+
+	// Any popup (e.g. context menu)
+	.ytp-popup {
+		@include invert-back();
+		.ytp-menuitem, .ytp-menuitem-label {
+			color: invert-back-color($theme-text) !important;
+		}
+	}
+	// Branding image (bottom right corner), like in https://www.youtube.com/watch?v=QTf-HMT7SCg
+	.branding-img-container img {
+		-webkit-filter: none !important;
+	}
+
+	// Badge on cogwheel
+	.ytp-settings-button.ytp-hd-quality-badge:after {
+		@include invert-back();
+	}
+
+	// Transparent BG for the player control buttons
+	#player-api button {
+		background: transparent !important;
+	}
+
+	// Transparent BG for the buttons in the description
+	#watch8-sentiment-actions .yt-uix-button {
+		background: transparent !important;
+	}
+
+	// Color on the comment-button
+	#comment-simplebox .comment-simplebox-buttons > button.comment-simplebox-submit {
+		background: $theme-button-background !important;
+		background-color: $theme-button-background !important;
+	}
+
+	// Black background for comment-box
+	.comment-simplebox-frame, .comment-simplebox-renderer-collapsed-content {
+		background-color: #fff !important;
+	}
+
+	// Transparent BG for the buttons in the comment section
+	#comment-section-renderer button {
+		background: transparent !important;
+	}
+
+	// Transparent BG for the notifications container
+	.notifications-container button {
+		background: transparent !important;
+	}
+
+	// Transparent BG for the search button
+	#channel-search button {
+		background: transparent !important;
+	}
+
+	//
+	.yt-ui-ellipsis {
+		background: transparent !important;
+	}
+
+	//
+	.shelf-item .branded-page-module-title .shelves-play {
+		background: transparent !important;
+	}
+
+	// Trnsparent BG for related channels
+	.related-channels-editor:hover {
+		background: transparent !important;
+	}
+
+	// Change text color for video title links on the sidebar (related videos)
+	#watch7-sidebar-modules span.title {
+		color: $theme-link !important;
+	}
+
+	// Make urls in the description green
+	.yt-lockup-description a {
+		color: $theme-url !important;
+	}
+
+	// Make urls in the description green
+	#watch-description-text a {
+		color: $theme-url !important;
+	}
+
+	// Trying to make emojis work in titles
+	.watch-title {
+		color: invert-back-color($theme-text) !important;
+		-webkit-filter: invert(1) !important;
+		text-rendering: geometricPrecision;
+	}
+
+	// Video likes bar color
+	.video-extras-sparkbars {
+		-webkit-filter: invert(100%) !important;
+	}
+
+	//
+	.yt-lockup-title a {
+		background-color: $theme-background-box !important;
+	}
+
+	// Change BG color for theater mode
+	#theater-background {
+		background-color: invert-back-color(#000) !important;
+	}
+
+	// Autoplay toggle (on off)
+	.yt-uix-checkbox-on-off {
+		@include invert-back()
+	}
+
+	// Fix playlist video titles color
+	#watch-appbar-playlist h4 {
+		color: $theme-link !important;
+	}
+
+	// fix background in playlist sidebar
+	.watch-playlist,
+	#player-playlist .playlist-videos-list {
+		background: $theme-background-box !important;
+	}
+
+	// fix background in playlist sidebar when active and hover
+	#player-playlist :not(.watch-queue-nav) .playlist-videos-list > li.currently-playing,
+	#player-playlist .playlist-videos-list > li:hover {
+		background: $theme-background !important;
+	}
+
+	// fix playlist title color
+	.playlist-title {
+		color: $theme-button-text !important;
+	}
+
+	// fix playlist icons to be white
+	.playlist-mix-icon,
+	#player-playlist .yt-uix-button-player-controls:first-child {
+		@include invert-back()
+	}
+
+	// Fix blue background on add-ticks when adding to playlist
+	.playlist-status {
+		background-color: transparent !important;
+	}
+
+	// Fixe thumbnail preview when skipping video
+	.ytp-preview {
+		@include invert-back()
+	}
+	.ytp-preview > .ytp-tooltip-bg {
+		-webkit-filter: invert(0) !important;
+	}
+
+	// Fix tooltip color
+	.ytp-tooltip-text {
+		background: $theme-background !important;
+	}
+
+	// Grid of videos after playback ends: hover over a single video
+	.videowall-still-info-bg {
+		background: rgba(255, 255, 255, 0.86) !important;
+	}
+
+	// Previewing lang videos
+	.ytp-storyboard,
+	.ytp-storyboard-framepreview {
+		-webkit-filter: invert(1) !important;
+	}
+
+	.ytp-player-content .ytp-sb-text {
+		-webkit-filter: invert(1) !important;
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Video ads
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// "You can skin to video in 3 seconds..." message
+	.videoAdUiPreSkipContainer {
+		background: rgba(255,255,255,0.4) !important;
+	}
+
+	// Advertiser link on the bottom: Ad 1:38 advertiser.com
+	.videoAdUiBottomBar {
+		@include invert-back();
+	}
+
+	// Text inside "Skip ad" messages
+	.videoAdUiRedesign .videoAdUi {
+		text-shadow: 0 0 4px rgba(255,255,255,0.75) !important;
+	}
+	// "Skip Ad" button
+	#player-api button.videoAdUiSkipButton {
+		background: rgba(255,255,255,0.7) !important;
+		.videoAdUiSkipIcon {
+			@include invert-back();
+		}
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Channel/Profile page
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// Invert profile header image
+	#c4-header-bg-container {
+		-webkit-filter: invert(100%) !important;
+	}
+	#header-links {
+		-webkit-filter: invert(100%) !important;
+	}
+	.channel-header-profile-image-container {
+		-webkit-filter: invert(100%) !important;
+	}
+
+	// Invert suscribe button
+	.yt-uix-button-subscribe-branded:before {
+		@include invert-back()
+	}
+	.yt-uix-button-subscription-container > button.yt-uix-button-subscribe-branded {
+		background-color: invert-back-color(#e62117) !important;
+	}
+
+	// Invert devices image in the profile
+	.c4-banner-promo-devices {
+		@include invert-back()
+	}
+
+	// Invert todo icon list in the profile page
+	.todo-icon {
+		@include invert-back()
+	}
+
+	// Change text color for todo list on the channel profile
+	.c4-checklist-module .todo-title-text {
+		color: $theme-link !important;
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Upload video page
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// Invert upload button back to the original youtube red.
+	#start-upload-button-single {
+		@include invert-back()
+	}
+
+	// Invert upload description text
+	#start-upload-button-single h1 {
+		@include invert-back()
+	}
+
+	// Invert Channel logo on video
+	.branding-img-container {
+		@include invert-back()
+	}
+
+	// Invert sharing icons on the upload screen
+	.sharing-networks {
+		@include invert-back()
+	}
+
+	// Google translate logo in the upload video section
+	.orbis-logo {
+		@include invert-back()
+	}
+
+	// Disable border on the upload button/icon
+	#start-upload-button-single button {
+		border: none !important;
+	}
+
+	// Transparent BG for the upload button/icon
+	#start-upload-button-single button {
+		background: transparent !important;
+	}
+
+	// Transparent BG for the upload button/icon container
+	a.upload-option-icon-wrapper {
+		background: transparent !important;
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Video Manager Page
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// Transparent BG for video metrics
+	.vm-list-view .vm-video-metrics a:hover {
+		background: transparent !important;
+	}
+
+	// Transparent BG for metadata textarea box
+	.metadata-container {
+		background: transparent !important;
+	}
+
+	// Transparent BG for video settings form
+	.metadata-editor-container .video-settings-form {
+		background: transparent !important;
+	}
+
+	// Transparent BG for video description
+	.comment-simplebox {
+		background: transparent !important;
+	}
+
+	// hr divider color
+	.vm-list-view .vm-video-item-content-horizontal-divider {
+		background-color: $theme-border !important;
+	}
+
+	// Video Manager background
+	#creator-page #creator-page-content {
+		background-color: $theme-background-box !important;
+	}
+
+	// Video Manager background for each video row
+	#vm-video-list-container {
+		background-color: $theme-background-box !important;
+	}
+
+	// Video Manager background for each video row
+	.vm-list-view .vm-video-list .vm-video-item {
+		background-color: $theme-background-box !important;
+	}
+
+	// Video manager pagination
+	#vm-pagination {
+		background-color: $theme-background-box !important;
+	}
+
+	// video manager navbar
+	#non-appbar-vm-video-actions-bar {
+		background-color: $theme-background-box !important;
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Homepage
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// Left side navigation
+	#guide-container {
+		background-color: $theme-background-box !important;
+	}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+	// Video playing
+	//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	// The entire page
+	#page {
+		background-color: $theme-background !important;
+	}
+
+	// Various boxes: info below video, playlist next to video, etc.
+	.yt-card {
+		background-color: $theme-background-box !important;
+	}
+
+	// Captions
+	.caption-window {
+		color: #eee !important;
+	}
+
+}

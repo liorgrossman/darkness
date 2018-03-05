@@ -1,0 +1,138 @@
+@import "all-google.scss";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+// Save settings button
+.HQ8yf {
+	color: $theme-button-background !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+// Radio buttons in settings
+.N2RpBe .t5nRo.Id5V1, .wEIpqb.nQOrEb {
+	border-color: $theme-highlighted !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Topbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Topbar background
+.gb_zd,
+.gb_yc:not(.gb_tb) .gb_Cd,
+.gb_xc:not(.gb_sb) .gb_Bd {
+	background: $theme-background-toolbar !important;
+}
+.MCcOAc>.pGxpHc {
+	box-shadow: none !important;
+}
+
+// Searchbar
+.gb_7d .gb_Ce {
+	background: $theme-textbox-background !important;
+}
+.VOEIyf .ZAGvjd {
+	border-color: transparent !important;
+}
+.gb_Ce button {
+	background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Sidebar
+.ANsHhf {
+	background: $theme-background-box !important;
+}
+
+// Visited categories
+.jqJLq a:visited {
+	color: $theme-link !important;
+}
+
+// Current list
+.jqJLq.ncJ6qe a,
+.jqJLq.ncJ6qe.jqJLq a:before {
+	color: $theme-highlighted !important;
+}
+.jqJLq:hover,
+.ncJ6qe.jqJLq,
+.UXNHp.jqJLq {
+	background: $theme-background-box !important;
+}
+
+// Edit and delete button background
+.jqJLq:hover .as7S4c,
+.ncJ6qe .as7S4c,
+.UXNHp .as7S4c {
+	background: $theme-background-box !important;
+	-webkit-box-shadow: -16px 0 5px -8px $theme-background-box !important;
+	box-shadow: -16px 0 5px -8px $theme-background-box !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Content
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Each contact in list
+.zYQnTe {
+	background: $theme-background !important;
+}
+.zYQnTe:hover {
+	background: $theme-background-box !important;
+}
+
+// Favorite-star and sort-letters
+.WbfHMb:after,
+.QriV0:after,
+.OQ5Ifc:after {
+	color: $theme-highlighted !important;
+}
+.ipbWab {
+	color: $theme-highlighted-darker !important;
+}
+
+// Create button
+.TRApmc {
+	background-color: $theme-button-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Popups
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Lightbox background
+.llhEMd.llhEMd {
+	background-color: invert-back-color(rgba(0,0,0,0.3)) !important;
+}
+// Lightbox header and footer
+.ONOzI,
+.e2txse,
+.JL8y7c {
+	background-color: $theme-background-toolbar !important;
+}
+// Lightbox content
+.G2PfHe .LAORIe,
+.fDJM7b {
+	background-color: $theme-background-box !important;
+}
+
+// Country selection
+.QMtoke {
+	@include invert-back();
+}

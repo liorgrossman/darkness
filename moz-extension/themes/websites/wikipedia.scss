@@ -1,0 +1,260 @@
+@mixin brightness($brightness) {
+	filter: brightness($brightness) !important;
+}
+
+@mixin grayscale($grayscale) {
+	filter: grayscale($grayscale) !important;
+}
+
+@mixin transition-all($transition) {
+	transition: all ease-in $transition;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+a {
+	&:hover {
+		text-decoration: underline !important;
+	}
+}
+
+a:visited {
+	color: $theme-button-background !important;
+}
+
+ul {
+	list-style-image: none !important;
+	list-style-type: disc;
+}
+
+fieldset {
+  border: 1px solid $theme-border !important;
+	//background-color: $theme-background !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	border-bottom: 1px solid $theme-border !important;
+}
+
+// Some pages have it, but it creates an
+// ugly black bar accross the top of the page
+#mw-page-base {
+	background-image: none !important;
+	background-color: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Logo
+.mw-wiki-logo {
+	filter: brightness(1.1) !important;
+}
+
+// Separator that doesn't look good on inverted page
+div#mw-panel div.portal {
+	background-image: none !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Homepage
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Logo
+.central-textlogo img {
+  @include invert-back()
+	color: white !important;
+	filter: brightness(1.1) !important;
+}
+
+.pure-form input[type=url]:focus,
+.pure-form input[type=date]:focus,
+.pure-form input[type=month]:focus,
+.pure-form input[type=time]:focus,
+.pure-form input[type=datetime]:focus,
+.pure-form input[type=datetime-local]:focus,
+.pure-form input[type=week]:focus,
+.pure-form input[type=tel]:focus,
+.pure-form input[type=color]:focus,
+.pure-form input[type=number]:focus,
+.pure-form input[type=search]:focus,
+.pure-form input[type=text]:focus,
+.pure-form input[type=password]:focus,
+.pure-form input[type=email]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+	@include invert-back()
+	background-color: black !important;
+	color: white !important;
+}
+
+// Language list button
+.lang-list-button {
+	outline: none !important;
+}
+
+// App download links
+.app-badges, .bookshelf span {
+  background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Main Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Page Body
+.MainPageBG {
+	border-color: $theme-border !important;
+	background-color: $theme-background !important;
+}
+
+// Main Body
+.mw-body {
+	border-color: $theme-border !important;
+}
+
+// Top Banner
+#mp-topbanner {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+// Header
+div#mw-head {
+	background-color: $theme-background !important;
+}
+
+// Article Boxes
+#mp-left,
+#mp-right,
+#mp-bottom {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+// Table headers
+#mp-tfa-h2,
+#mp-dyk-h2,
+#mp-itn-h2,
+#mp-otd-h2,
+#mp-tfp-h2 {
+	background-color: $theme-border !important;
+	border-color: $theme-border !important;
+}
+
+// Top Tabs
+div.vectorTabs,
+div.vectorTabs span,
+div.vectorTabs ul li {
+	background-image: none !important;
+	margin-top: -1px !important;
+}
+
+// Top Tabs
+div.vectorTabs ul li {
+	border: 1px solid $theme-border !important;
+}
+
+// Top Tabs
+#p-namespaces {
+	margin-left: -1px !important;
+}
+
+// Top Tabs
+#ca-nstab-main,
+#ca-view,
+#ca-viewsource {
+	border-right: 0 !important;
+}
+
+// Search Button
+div#simpleSearch #searchButton,
+div#simpleSearch #mw-searchButton {
+	background-color: white !important;
+	@include brightness(0.8)
+	@include transition-all(.12s)
+	&:hover {
+		@include brightness(0.7)
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Article Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Featured image title background
+.mergedtoprow td:first-child, .mergedbottomrow td:first-child {
+	background-color: $theme-border !important;
+	border-color: $theme-border !important;
+}
+
+// Table body
+tbody {
+	border-color: $theme-border !important;
+}
+tr {
+	border-color: $theme-border !important;
+}
+
+// Contents box
+#toc, .toc, .mw-warning, .toccolours {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+#content {
+	background-color: $theme-background-box !important;
+}
+
+// Top Notice
+table.ambox-notice {
+  border-left: 10px solid $theme-button-background !important;
+}
+
+// Infobox
+table.infobox.vcard.plainlist {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+	tbody tr:first-child th {
+		background-color: $theme-button-background !important;
+	}
+}
+
+// Authority Control
+.navbox-abovebelow, th.navbox-group, .navbox-subgroup .navbox-title {
+  @include grayscale(1)
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Portal:Contents
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Table Background
+table#portal, #contents-footer {
+	@include grayscale(1)
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Pseudo Elements
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Highlight
+::selection {
+	background-color: $theme-border !important;
+}

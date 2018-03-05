@@ -1,0 +1,256 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Google search skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+@import "all-google.scss";
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Common
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Generic text color
+span,
+div,
+em,
+input
+{
+	color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Homepage
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Big Google Logo
+#hplogo img {
+	@include invert-back()
+}
+#hplogo {
+	@include invert-back()
+}
+
+// But no the "UK / Belgium" underneath the logo
+#hplogo div {
+	@include invert-back()
+}
+
+// Buttons below search (Google Search, I'm feeling lucky)
+.jsb input[type="submit"] {
+	background: $theme-button-background !important;
+	&:hover {
+		background: darken($theme-button-background, 5%) !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search box (homepage / search page)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Search box border
+.sbfcn {
+	border-color: darken($theme-button-background, 10%) !important;
+}
+
+// Search bar
+.sbibod {
+	box-shadow: none !important;
+	background-color: $theme-textbox-background !important;
+}
+
+// Search box fill
+.sbib_a, .sbib_b {
+	background-color: $theme-textbox-background !important;
+}
+
+// Magnifying glass button
+.sbibod button.sbico-c {
+	background-color: $theme-textbox-background !important;
+}
+
+// Magnifying glass icon
+.sbibod button.sbico-c svg {
+	-webkit-filter: none !important;
+	color: $theme-link !important;
+}
+
+// Magnifying glass button
+#sblsbb {
+	background: $theme-button-background !important;
+	// Magnifying glass icon inside
+	.sbico {
+		@include invert-back();
+	}
+
+}
+
+// Microphone icon
+.gsri_a {
+	opacity: 0.8 !important;
+	@include invert-back()
+}
+
+// Camera icon
+.gsst_e {
+	opacity: 0.3 !important;
+}
+
+// Autocomplete box border
+.sbdd_b {
+	background-color: $theme-border !important;
+	border-color: solid 1px $theme-border !important;
+	box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2) !important;
+}
+
+// Autocomplete box fill
+.sbsb_a {
+	background-color: $theme-textbox-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar with search bar
+.sfbgg {
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border !important;
+}
+
+// About 222,222 results (0.2 seconds)
+#appbar {
+	background-color: $theme-background !important;
+}
+
+// Header: All | Videos | Images | News | Maps...
+#hdtbSum {
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border !important;
+	a:hover {
+		color: darken($theme-link, 10%) !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Footer
+#fbar {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+// Gooooooogle pagination on bottom
+#foot #navcnt span.csb {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search results
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// URLs
+cite {
+	color: $theme-url !important;
+}
+
+// Down arrow next to URL
+.ab_button {
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border !important;
+}
+
+.ab_button span {
+	border-color: $theme-url transparent !important;
+}
+
+// Colorpicker
+._k3m,
+._p4n,
+._Nzn, ._EBn,
+.kyN4Jf3TGqF__slider-background {
+	@include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Knowledge graph box on the right
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// "More images" link
+._iH {
+	background: rgba(255, 255, 255, 0.4) !important;
+	a {
+		text-shadow: 0 0 2px white, 0 0 3px white !important;
+	}
+}
+
+// The box itself
+.kp-blk {
+	background: $theme-background-box !important;
+	box-shadow: 0px 1px 4px 0px rgba(255, 255, 255, 0.2) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Knowledge graph box on top (e.g. list of actors
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// "More images" link
+.kappbar {
+	background: $theme-background-box !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Color Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+._p4n {
+	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Image Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Image preview when clicking it
+#irc_cc {
+	background-color: $theme-background-box !important;
+}
+
+// Arrow to image preview (when clicking image)
+#irc_pc {
+	border-color: $theme-background-box !important;
+}
+
+// Buttons: visit page, view image, save
+.irc_but {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// Preview box: next / prev navigation arrows
+._GKb div {
+	@include invert-back()
+}
+
+// Image info line, when hovering over an image
+.rg_anbg, .rg_ilmbg {
+	background: rgba(220, 220, 220, 0.8) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// 3rd Party Extensions Support
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+// WOT (Web of Trust)
+// https://chrome.google.com/webstore/detail/wot-web-of-trust-website/bhmmomiinigofkjcapegjjndpbikblnp
+//-------------------------------------------------------------------------
+a ~ [wotsearchtarget] {
+	@include invert-back();
+}
+
+.wot-rep {
+	@include invert-back();
+}
+
+#wot-cat-list .cat-item:before {
+	@include invert-back();
+}

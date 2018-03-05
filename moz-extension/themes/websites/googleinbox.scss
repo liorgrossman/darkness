@@ -1,0 +1,231 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Google Inbox skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+@import "all-google.scss";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	//background-color: $theme-button-background !important;
+	background-color: transparent !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// Background when scrolling
+.c4 {
+	background: $theme-background !important;
+}
+// Left menu
+.lQ {
+	background: $theme-background-box !important;
+}
+// a bessage or group of messages
+.an {
+	background: $theme-background-box !important;
+}
+.az .an {
+	background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar areas
+.hn.b4, .bB {
+	background: $theme-background-toolbar !important;
+}
+// When accessing "done" mails, the toolbar changes class and color
+.cb {
+	background: $theme-url !important;
+}
+// Toolbar shadow
+.hn:before {
+	box-shadow: 0 0 4px rgba(255,255,255,.14),0 4px 8px rgba(255,255,255,.28) !important;
+}
+// Reverts the different google-logos
+.gb_2, .gb_M {
+	-webkit-filter: invert(100%) !important;
+}
+
+// "Inbox" (the word inbox)
+.bl { 
+	color: #272727 !important; 
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Icons & buttons
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Changes the color of icons to a visible one
+.gN, .du > img, .iG > .Kc > img, .iK > li > img, .g-aq-al > img, .bG > img, .qY, .e6 > img, .tD > img,.b6 > img {
+	-webkit-filter: invert(0%) !important;
+}
+.iK > li.itemIconPinned > img {
+	-webkit-filter: invert(100%) !important;
+}
+// breaker between text formatting icons
+.g-W-Cw{
+ background: rgba(175, 172, 172, 0.74) !important;
+}
+// send button
+.qj:not([disabled]) {
+	background-color: $theme-secondary-button-background !important;
+	color: $theme-button-text !important;
+}
+// new mail button
+.hC, .oX{
+	background-color: $theme-button-background !important;
+	box-shadow: 0 0 4px rgba(255,255,255,.14),0 4px 8px rgba(255,255,255,.28) !important;
+}
+// Button shadows
+.dy {
+	box-shadow: 0 0 2px rgba(255,255,255,.12),0 2px 4px rgba(255,255,255,.24);
+}
+// Option button on a single email
+img.FK {
+	-webkit-filter: invert(0%) !important;
+}
+.qE {
+	-webkit-filter: invert(0) !important;
+}
+img.ld.mm{
+    -webkit-filter: invert(0) !important;
+}
+
+// "show more"-button
+.e2 > .dy {
+	background-color: $theme-secondary-button-background !important;
+	color: $theme-button-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background on the buttons near the search bar
+.b4 .at {
+	background-color: $theme-background-toolbar !important;
+}
+// Button on the left of the search field
+.b4 .at::before, .cb .at::before, .bB .at::before {
+	box-shadow: inset 0px 0 0px 0px $theme-button-background !important;
+}
+// Button on the right of the search field
+.b2, .gH {
+	background-color: $theme-secondary-button-background !important;
+}
+.rj, .k5, .sc.qW, div[role="search"] input {
+	background: $theme-background-box !important;
+}
+// Placeholder text
+input.gc::-webkit-input-placeholder {
+	color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Statusboxes
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// The statusbox in the lower right corner
+.ov {
+	background-color: $theme-button-background !important;
+	box-shadow: 0 0 2px rgba(255,255,255,.12),0 2px 4px rgba(255,255,255,.24) !important;
+}
+.ov > span{
+	color: $theme-text !important;
+}
+.ov > div > span{
+	color: $theme-highlighted !important;
+}
+
+// Errorbox in the middle of the screen
+.k7 {
+	background: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+.k7 *[role="button"] {
+	background: $theme-secondary-button-background !important;
+	color: $theme-button-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Message content
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.b5 {
+	-webkit-filter: invert(0) !important;
+	color:#8a8a8a;
+}
+.b5 img {
+	-webkit-filter: invert(100%) !important;
+}
+// Inputboxes when sending messages
+input.dm {
+	background: #fff !important;
+}
+// Top bar on send-message box
+.pr {
+	background: $theme-background-toolbar !important;
+}
+.p2 > img {
+	-webkit-filter: invert(0) !important;
+}
+
+// "View entiry email"-link
+a.H.dH {
+	color: $theme-link !important;
+    -webkit-filter: invert(1) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Message summaries
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Summaries of 
+.m0 {
+	background-color: $theme-highlighted !important;
+}
+.m0 span{
+	color: $theme-text !important;
+}
+.ko, .aL.ko {
+	color: $theme-tooltip-background !important;
+}
+.cf.ko {
+	color: $theme-tooltip-text !important;
+	background-color: $theme-tooltip-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Message composing
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.l1 {
+	background-color: #d6d6d6 !important;
+}
+.hc {
+	-webkit-filter: invert(0) !important;
+}
+.g-eA-jX {
+	-webkit-filter: invert(1) !important;
+}
+.aR {
+	-webkit-filter: invert(1) !important;
+	background-color: white !important;
+}
+.b6 > img {
+	-webkit-filter: invert(0) !important;
+}

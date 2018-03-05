@@ -1,0 +1,96 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Common styling that is applied to all Google websites (currently Google search, Gmail, Inbox, and YouTube)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Skin blackout while loading
+.flyr-o, .flyr-w {
+	background-color: $theme-background !important;
+	color: White !important;
+}
+
+// Sign in
+.gb_Ha,
+.gb_Fa {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// Site name, eg. "Calendar" or "Drive"
+.gb_ee {
+	@include invert-back();
+}
+
+// User avatar on toolbar
+.gb_7a::before, 
+.gb_8a::before, 
+.gbii::before,
+body[data-drk-site="googleinbox"] .gbii,
+body[data-drk-site="googlephotos"] .gbii {
+	@include invert-back();
+}
+// Menu, App-drawer and Notification icons
+.gb_yc svg,
+.gb_kc svg {
+	color: invert-back-color($theme-text) !important;
+}
+.gb_cc {
+	@include invert-back();
+}
+
+// Google logo
+.uuRyud {
+	@include invert-back();
+}
+
+// OLD!! 
+// Profile image and Google logo
+#gb#gb a.gb_b.gb_cb.gb_R,
+.gbip,
+.gb_9b .gb_bc,
+span.gb_6b,
+.gb_9b .gb_zc,
+.gb_ac .gb_Ac,
+.gb_vf .gb_b:not(.gb_fb),
+.gb_ec,
+.gb_ac .gb_Bc:before,
+#mainlogo {
+	@include invert-back();
+}
+.gb_vc svg, .gb_hc svg {
+	color: white !important;
+}
+
+// User avatar on the menu (when clicking the avatar on the toolbar)
+.gbip {
+	@include invert-back();
+}
+
+// "My account" button
+.gb_xb .gb_Db,
+.gb_sb .gb_yb {
+	background: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+	color: black !important;
+	&:hover {
+		filter: brightness(0.9) !important;
+	}
+}
+
+// Nofitications popup
+.gb_Xb, #gbsfw.gb_g {
+	filter: invert(0) !important;
+}
+
+// Grid popup in toolbar
+.gb_ga .gb_2,
+.gb_ga .gb_M {
+	@include invert-back();
+}
+.gb_O .gb_2,
+.gb_M {
+	@include invert-back();
+}
+.gb_ha {
+	box-shadow: 0 2px 10px transparentize($theme-button-background, 0.8) !important;
+}

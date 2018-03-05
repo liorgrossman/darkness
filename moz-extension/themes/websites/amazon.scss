@@ -1,0 +1,33 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Personal Variables
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//No color
+$noColor: transparent;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// z-index manipulation messes up with the look of Amazon's header when scrolling, so I disabled it
+.cropped-image-map, .image-map, .shogun-widget, .cropped-image-map-center-alignment{
+  z-index: -100;
+}*/
+
+header, #navFooter, #a-page i, .a-color-success, .acsux-hsb-container li, .acsux-menu, .acs-tiles-wrapfix{
+  @include invert-back()
+}
+
+
+// All inputs
+input[type="submit"]{
+  background-color: $noColor !important;
+}
+
+//NavFlyoutBar
+#nav-flyout-shopAll{
+  background-color: $theme-background-box !important;
+}
+#nav-subnav, #nav-iss-attach , #searchDropdownBox{
+  background-color: $theme-background !important;
+}

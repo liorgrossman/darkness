@@ -1,0 +1,968 @@
+//====================================================================================================================================================
+// CSS for Darkness settings panel (shown when clicking the moon icon), and all other darkness dialogs
+//====================================================================================================================================================
+
+$darkness-z-index-base: 2147400000;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// PALETTE AND CONFIGURATION
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+$darkness-background: #333;
+$darkness-text: #999;
+$darkness-yellow: #ffd400;
+$darkness-blue: #86cdff;
+
+$darkness-toolbar-background: #666;
+
+$darkness-button-background: $darkness-background;
+//$darkness-button-text: #c5a950;
+$darkness-button-text: $darkness-blue;
+$darkness-button-text-hover: $darkness-yellow;
+$darkness-button-active-background: lighten($darkness-background, 10%);
+$darkness-button-active-text: $darkness-yellow;
+$darkness-button-active-text-hover: $darkness-yellow;
+
+$darkness-dialogbutton-background: lighten($darkness-background, 10%);
+$darkness-dialogbutton-text: #999;
+$darkness-dialogbutton-text-hover: #fff !important;
+$darkness-dialogbutton-active-background: lighten($darkness-background, 15%);
+$darkness-dialogbutton-active-text: $darkness-yellow;
+$darkness-dialogbutton-active-text-hover: $darkness-yellow;
+$darkness-dialogbutton-hover-lighten: 3%;
+
+
+$darkness-listbutton-background: lighten($darkness-background, 5%);
+$darkness-listbutton-border: $darkness-background;
+$darkness-listbutton-text: #aaa;
+$darkness-listbutton-active-background: lighten($darkness-background, 15%);
+$darkness-listbutton-active-text: $darkness-yellow;
+$darkness-listbutton-hover-lighten: 3%;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// LOAD OPEN SANS GOOGLE FONTS LOCALLY (FROM /FONTS)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: url('moz-extension://__MSG_@@extension_id__/fonts/OpenSans-Light.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('moz-extension://__MSG_@@extension_id__/fonts/OpenSans.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: url('moz-extension://__MSG_@@extension_id__/fonts/OpenSans-Semibold.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// STYLE FOR ICONS (FONTELLO)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Disable Darkness' Fontello icon across the entire website (so we do not affect other websites that use Fontello like Trello)
+body [class^="icon-"]:before, body [class*=" icon-"]:before {
+	font-family: inherit !important;
+}
+
+// Enable Darkness' Fontello icons only within Darkness HTML
+#drk_settings_html [class^="icon-"]:before, #drk_settings_html [class*=" icon-"]:before {
+	font-family: "fontello" !important;
+}
+
+
+a.drk_icon {
+	text-decoration: none !important;
+	i {
+		color: #888 !important;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) !important;
+		transition: all .1s ease-in-out !important;
+	}
+	&:hover {
+		i {
+			color: #ddd !important;
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8) !important;
+			transition: all 0s ease-in-out !important;
+		}
+	}
+	&.active {
+		i {
+			color: #eee !important;
+			transition: all .1s ease-in-out !important;
+		}
+		&:hover {
+			i {
+				color: #fff !important;
+				transition: all 0s ease-in-out !important;
+			}
+		}
+	}
+
+	&.drk_icon_close {
+		i {
+			color: #ccc !important;
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3) !important;
+			transition: all .1s ease-in-out !important;
+		}
+		&:hover {
+			i {
+				color: #fff !important;
+				text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) !important;
+				transition: all 0s ease-in-out !important;
+			}
+		}
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// BUTTONS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Buttons in the bottom of Darkness settings dialog (actually look like links)
+div.drk_button {
+	background: $darkness-button-background !important;
+	color: $darkness-button-text !important;
+	cursor: pointer !important;
+	padding: 6px 0 6px 2px !important;
+	margin: 0 !important;
+	display: block !important;
+	font-weight: 300 !important;
+	transition: all .1s ease-in-out !important;
+	text-align: left !important;
+	&.hidden {
+		display: none !important;
+	}
+	&.disabled {
+		opacity: 0.5 !important;
+		cursor: not-allowed !important;
+	}
+	&:not(.disabled):hover {
+		color: $darkness-button-text-hover !important;
+		transition: all 0s ease-in-out !important;
+	}
+	&.drk_inline {
+		display: inline-block !important;
+	}
+	&.drk_bold {
+		color: lighten($darkness-button-text, 12%) !important;
+	}
+	&.drk_active {
+		background: $darkness-button-active-background !important;
+		color: $darkness-button-active-text !important;
+		&:hover {
+			color: $darkness-button-active-text-hover !important;
+			transition: all 0s ease-in-out !important;
+		}
+	}
+	span {
+		cursor: pointer !important;
+	}
+	i { // Icons
+		margin-right: 5px !important;
+		opacity: 0.7 !important;
+	}
+	small {
+		font-size: 0.8em !important;
+		text-align: center !important;
+		font-weight: 300 !important;
+		color: #bbb !important;
+		cursor: pointer !important;
+	}
+}
+
+// Buttons inside dialogs (OK, Cancel, etc.)
+div.drk_button_dialog {
+	background: $darkness-dialogbutton-background !important;
+	color: $darkness-dialogbutton-text !important;
+	cursor: pointer !important;
+	padding: 8px 15px !important;
+	margin: 10px 10px 5px !important;
+	display: block !important;
+	font-weight: 400 !important;
+	transition: all .1s ease-in-out !important;
+	text-align: center !important;
+	border-radius: 3px !important;
+	line-height: 1.5em !important;
+	min-width: 50px;
+
+	&.hidden {
+		display: none !important;
+	}
+	&.disabled {
+		opacity: 0.5 !important;
+		cursor: not-allowed !important;
+	}
+	&:not(.disabled):hover {
+		background: lighten($darkness-dialogbutton-background, $darkness-dialogbutton-hover-lighten) !important;
+		color: $darkness-dialogbutton-text-hover !important;
+		transition: all 0s ease-in-out !important;
+	}
+	&.drk_inline {
+		display: inline-block !important;
+	}
+	&.drk_bold {
+		font-weight: 700 !important;
+		background: #357 !important;
+		color: #eee !important;
+		&:not(.disabled):hover {
+			background: lighten(#357, $darkness-dialogbutton-hover-lighten) !important;
+			color: $darkness-dialogbutton-text-hover !important;
+			transition: all 0s ease-in-out !important;
+		}
+	}
+	&.drk_active {
+		background: $darkness-dialogbutton-active-background !important;
+		color: $darkness-dialogbutton-active-text !important;
+		&:hover {
+			background: lighten($darkness-dialogbutton-active-background, $darkness-dialogbutton-hover-lighten) !important;
+			color: $darkness-dialogbutton-active-text-hover !important;
+			transition: all 0s ease-in-out !important;
+		}
+	}
+	i { // Icons
+		margin-right: 5px !important;
+		opacity: 0.7 !important;
+	}
+	small {
+		font-size: 0.8em !important;
+		text-align: center !important;
+		font-weight: 300 !important;
+		color: rgba(240, 240, 240, 0.65) !important;
+		cursor: pointer !important;
+	}
+}
+
+// Buttons to select a theme
+.cleanslate ul li {
+	margin: 0 !important;
+}
+
+ul li.drk_button_li {
+	background: $darkness-listbutton-background !important;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.4) !important;
+	color: $darkness-listbutton-text !important;
+	cursor: pointer !important;
+	padding: 10px !important;
+	margin: 8px 9px !important;
+	display: block !important;
+	font-size: 14px !important;
+	font-weight: 200 !important;
+	line-height: 1.4em !important;
+	transition: all .1s ease-in-out !important;
+	text-align: left !important;
+	float: left !important;
+	width: 110px !important;
+	height: 40px !important;
+	position: relative !important;
+	opacity: 0.9 !important;
+	border: solid 1px $darkness-background !important;
+	.color {
+		position: absolute !important;
+		top: 85% !important;
+		bottom: 0 !important;
+		width: 33.333% !important;
+	}
+	.color1 {
+		right: 0 !important;
+	}
+	.color2 {
+		right: 33.333% !important;
+	}
+	.color3 {
+		right: 66.666% !important;
+	}
+	&.none {
+		background: linear-gradient(#fff 95%, #000 100%) !important;
+		color: #000 !important;
+		.color1 { background: #e5e5e5 !important; }
+		.color2 { background: #365899 !important; }
+		.color3 { background: #1a0dab !important; }
+	}
+	&.iceberg {
+		background: #28292A !important;
+		color: #c5c8c6 !important;
+		.color1 { background: #404142 !important; }
+		.color2 { background: desaturate(darken(#65D7EF, 20%), 20%) !important; }
+		.color3 { background: #65D7EF !important; }
+	}
+	&.base16tomorrow {
+		background: #1d1f21 !important;
+		color: #c5c8c6 !important;
+		.color1 { background: #373b41 !important; }
+		.color3 { background: darken(#b294bb, 10%) !important; }
+		.color2 { background: #81a2be !important; }
+	}
+	&.material {
+		background: #151515 !important;
+		color: #EEEEEE !important;
+		.color1 { background: #424242 !important; }
+		.color3 { background: #E53935 !important; }
+		.color2 { background: #64B5F6 !important; }
+	}
+	&.dusk {
+		background: #153555 !important;
+		color: #fff !important;
+		.color1 { background: #15497f !important; }
+		.color2 { background: #009bde !important; }
+		.color3 { background: #6FC8EF !important; }
+	}
+	&.redalert {
+		background: #000 !important;
+		color: #fff !important;
+		.color1 { background: #600500 !important; }
+		.color3 { background: #CF4F4F !important; }
+		.color2 { background: #DD0000 !important; }
+	}
+	&.youtubedark {
+		background: #111111 !important;
+		color: rgb(255,255,255) !important;
+		.color1 { background: rgb(64,64,64) !important; }
+		.color2 { background: rgb(136,136,136) !important; }
+		.color3 { background: rgb(255,0,0) !important; }
+		display: none !important;
+	}
+	.selected {
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.7), 0 0 3px rgba(0, 0, 0, 0.6) !important;
+		position: absolute !important;
+		right: -5px !important;
+		top: -5px !important;
+		width: 21px !important;
+		height: 21px !important;
+		background: $darkness-yellow !important;
+		color: Black !important;
+		border-radius: 50% !important;
+		display: none !important;
+		i {
+			position: absolute !important;
+			left: 1px !important;
+			top: 5px !important;
+			font-size: 13px !important;
+			line-height: 1em !important;
+		}
+	}
+	.drk_theme_title {
+		padding: 0 !important;
+		margin: 5px !important;
+		cursor: pointer !important;
+		display: block !important;
+	}
+	&.hidden {
+		display: none !important;
+	}
+	&:hover {
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.7) !important;
+		transition: all 0s ease-in-out !important;
+		border-color: lighten($darkness-background, 12%) !important;
+		opacity: 1 !important;
+	}
+	&.drk_active {
+		transition: all 0s ease-in-out !important;
+		border-color: lighten($darkness-background, 30%) !important;
+		.selected {
+			display: block !important;
+		}
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// SETTINGS PANEL
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+div.drk_settings {
+	z-index: $darkness-z-index-base !important;
+	position: fixed !important;
+	top: 10px !important;
+	right: 10px !important;
+	font-family: 'Open Sans' !important;
+	font-weight: 400 !important;
+	font-size: 13px !important;
+	-webkit-user-select: none !important;
+	cursor: default !important;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25), 0 2px 3px 0 rgba(0, 0, 0, 0.5) !important;
+	border-radius: 3px !important;
+	background: $darkness-background !important;
+	color: $darkness-text !important;
+	width: 340px !important;
+	display: none !important;
+	&.visible {
+		display: block !important;
+	}
+
+	div.drk_toolbar {
+		background: $darkness-toolbar-background !important;
+		border-radius: 3px 3px 0 0 !important;
+		color: White !important;
+		margin-bottom: 2px !important;
+		div.drk_app_icon {
+			position: absolute !important;
+			top: 8px !important;
+			left: 10px !important;
+			width: 19px !important;
+			height: 19px !important;
+			background: Transparent url("moz-extension://__MSG_@@extension_id__/images/darkness-icon-19px.png") no-repeat center !important;
+		}
+		div.drk_app_name {
+			margin: 0 20px !important;
+			padding: 10px !important;
+			font-weight: 300 !important;
+			text-align: center !important;
+			font-size: 15px !important;
+		}
+		span.drk_close {
+			float: right !important;
+			font-size: 14px !important;
+			padding: 10px !important;
+			cursor: pointer !important;
+		}
+	}
+
+	ul.drk_theme_list {
+		margin: 5px 0 0 0 !important;
+		padding: 0 !important;
+		li.drk_button {
+			margin: 2px 0 !important;
+			.drk_theme_title {
+				cursor: pointer !important;
+			}
+		}
+	}
+
+	div.drk_button.drk_use_this_for_all_button {
+		margin-top: 10px !important;
+	}
+
+	section {
+		clear: both !important;
+		float: left !important;
+		width: 100% !important;
+		padding: 14px 0 10px !important;
+		border-bottom: solid 1px lighten($darkness-background, 10%) !important;
+		&:last-of-type {
+			border-bottom: none !important;
+			//padding: 20px 0 5px !important;
+		}
+		div.drk_title {
+			padding: 0 20px !important;
+			font-size: 14px !important;
+			font-weight: 300 !important;
+			color: #ddd !important;
+			a {
+				color: #eee !important;
+				text-decoration: none !important;
+				&:hover {
+					color: #fff !important;
+				}
+			}
+		}
+		div.drk_subtitle {
+			padding: 5px 20px 0 !important;
+			font-size: 11px !important;
+			font-weight: 300 !important;
+			color: darken($darkness-text, 10%)  !important;
+			display: none !important;
+			&.visible {
+				display: block !important;
+			}
+			a {
+				color: lighten($darkness-text, 5%) !important;
+				text-decoration: none !important;
+				&:hover {
+					color: lighten($darkness-text, 15%) !important;
+				}
+			}
+		}
+		div.drk_content {
+			padding: 6px 20px 1px !important;
+			&.drk_theme_list_content {
+				float: left !important;
+				padding: 2px 20px !important;
+			}
+		}
+	}
+
+	.drk_footer {
+		padding: 7px 0px 12px !important;
+		border-top: solid 1px rgba(255, 255, 255, 0.2) !important;
+		font-size: 22px !important;
+		a {
+			margin: 0 32px !important;
+		}
+	}
+}
+
+div.drk_settings section.drk_section_pro {
+	height: 133px !important;
+	padding: 0 !important;
+	opacity: 0.9 !important;
+	cursor: pointer !important;
+	transition: opacity 0.2s ease-in-out !important;
+}
+
+div.drk_settings section.drk_section_pro.sku-1 {
+	background: Transparent url("moz-extension://__MSG_@@extension_id__/images/upgrade-tile-1.png") no-repeat center !important;
+}
+
+div.drk_settings section.drk_section_pro.sku-2 {
+	background: Transparent url("moz-extension://__MSG_@@extension_id__/images/upgrade-tile-2.png") no-repeat center !important;
+}
+
+div.drk_settings section.drk_section_pro:hover {
+	opacity: 1.0 !important;
+	transition: opacity 0.1s ease-in-out !important;
+}
+
+div.drk_share_placeholder {
+	display: none !important;
+	margin-left: 25px !important;
+	height: 37px !important;
+	width: 252px !important;
+	&.on {
+		display: block !important;
+	}
+	.drk_img_loader_small {
+		margin-top: 10px !important;
+		margin-left: 2px !important;
+	}
+}
+
+.addthis_sharing_toolbox {
+	display: none !important;
+	position: fixed !important;
+	z-index: $darkness-z-index-base+1 !important;
+	&.on {
+		display: block !important;
+	}
+	svg {
+		-webkit-filter: none !important; // Undo the inversion done in all-websites.scss
+	}
+}
+
+// AddThis lightbox when sharing a URL
+#at-expanded-menu-host .at-expanded-menu-mask {
+	background-color: rgba(180, 180, 180, .95) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// ALL DIALOGS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+div.drk_dialog {
+	z-index: $darkness-z-index-base+10 !important;
+	position: fixed !important;
+	top: 50% !important;
+	left: 50% !important;
+	display: none !important;
+
+	div.drk_dialog_inner {
+		position: relative !important;
+		width: 600px !important;
+		margin-left: -300px !important;
+		height: auto !important;
+		margin-top: -200px !important;
+		border-radius: 3px !important;
+		box-shadow: 2px 2px 50px Black !important;
+		background: $darkness-background !important;
+		color: $darkness-text !important;
+		font-family: 'Open Sans' !important;
+		font-weight: 400 !important;
+		font-size: 13px !important;
+		-webkit-user-select: none !important;
+		cursor: default !important;
+	}
+
+	&.visible {
+		display: block !important;
+	}
+
+	div.drk_toolbar {
+		background: $darkness-toolbar-background !important;
+		color: White !important;
+		margin-bottom: 10px !important;
+		border-radius: 3px 3px 0 0 !important;
+		div.drk_title {
+			padding: 10px !important;
+			font-weight: 300 !important;
+			font-size: 15px !important;
+		}
+		span.drk_close {
+			float: right !important;
+			font-size: 14px !important;
+			padding: 10px !important;
+			cursor: pointer !important;
+		}
+	}
+
+	.drk_content {
+		padding: 20px !important;
+		line-height: 1.7em !important;
+		color: #d0d0d0 !important;
+		font-size: 14px !important;
+		font-weight: 300 !important;
+		&.drk_sale {
+			font-size: 16px !important;
+			text-align: center !important;
+		}
+		b {
+			font-weight: 400 !important;
+			color: #dddddd !important;
+		}
+		h1 {
+			text-align: center !important;
+			font-size: 32px !important;
+			padding-top: 0 !important;
+			color: #fff !important;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 1) !important;
+		}
+		h2 {
+			text-align: center !important;
+			font-size: 20px !important;
+			font-weight: 300 !important;
+			padding-bottom: 7px !important;
+		}
+		.centered {
+			text-align: center !important;
+		}
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// UPGRADE DIALOG
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+div.drk_dialog.drk_get_pro.sku-1 {
+	.drk_content {
+		background: Transparent url("moz-extension://__MSG_@@extension_id__/images/upgrade-dialog-1.png") no-repeat center !important;
+	}
+}
+
+div.drk_dialog.drk_get_pro.sku-2 {
+	.drk_content {
+		background: Transparent url("moz-extension://__MSG_@@extension_id__/images/upgrade-dialog-2.png") no-repeat center !important;
+	}
+}
+
+div.drk_dialog.drk_get_pro {
+	div.drk_dialog_inner {
+		border-radius: 7px !important;
+		box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.8), 0 0 100px rgba(255, 230, 225, 0.5), 0 0 10px rgba(255, 230, 225, 0.2) !important;
+		background: Black !important;
+	}
+	span.drk_close {
+		position: absolute !important;
+		right: 0px !important;
+		top: 0px !important;
+		font-size: 14px !important;
+		padding: 10px !important;
+		cursor: pointer !important;
+		a.drk_icon.drk_icon_close i {
+			color: rgba(249, 255, 233, 0.4) !important;
+		}
+		a.drk_icon.drk_icon_close:hover i {
+			color: rgba(249, 255, 233, 0.6) !important;
+		}
+
+	}
+	.drk_content {
+		border-radius: 7px !important;
+		overflow: hidden !important;
+		padding: 0 !important;
+		margin: 0 !important;		
+		width: 600px !important;
+		height: 326px !important;
+	}
+
+	.drk_button_dialog_wrapper {
+		position: absolute !important;
+		bottom: 25px !important;
+		left: 163px !important;
+		background: Black !important;
+		border-radius: 4px !important;
+	}
+
+	.drk_show_feature_comparison {
+		position: absolute !important;
+		top: 120px !important;
+		left: 430px !important;
+		width: 80px !important;
+		height: 24px !important;
+		cursor: pointer !important;
+	}
+	.drk_button_dialog {
+        background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
+		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) !important;
+		border-radius: 4px !important;
+		width: 244px !important;
+		transition: all .2s ease-in-out !important;
+		opacity: 0.9 !important;
+		margin: 0 !important;
+
+		.upg_btn1 {
+			font-size: 32px !important;
+			text-align: center !important;
+			font-weight: 600 !important;
+    		letter-spacing: -1px !important;
+			color: #fff !important;
+			cursor: pointer !important;
+			padding: 5px 0 7px !important;
+			-webkit-font-smoothing: antialiased;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+		}
+		.upg_btn2 {
+			font-size: 16px !important;
+			text-align: center !important;
+			font-weight: 400 !important;
+			letter-spacing: -0.2px !important;
+			-webkit-font-smoothing: antialiased;
+			color: #e5adae !important;
+			padding: 3px 0 0 !important;
+			cursor: pointer !important;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+		}
+		&:hover {
+			background: linear-gradient(180deg, #cf0010 30%, #87000a 110%) !important;
+			opacity: 1 !important;
+			transition: all .1s ease-in-out !important;
+			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
+		}
+	}
+
+	.drk_promo_link:hover, .drk_promo_caption:hover, .drk_hide_link:hover {
+		color: #70b0ff !important;
+	}
+
+	.drk_promo_link, .drk_promo_caption, .drk_hide_link {
+		font-size: 11px !important;
+		font-weight: 400 !important;
+		position: absolute !important;
+		color: #60a5e0 !important;
+	}
+
+	.drk_promo_link {
+		bottom: 1px !important;
+		right: 0px !important;
+		cursor: pointer !important;
+		transition: color .2s ease-in-out !important;
+		padding: 4px 10px !important;
+		&:hover {
+			color: #70b0ff !important;
+			transition: color .0s ease-in-out !important;
+		}
+		display: none !important;
+		&.visible {
+			display: block !important;
+		}
+	}
+
+	.drk_hide_link {
+		bottom: 1px !important;
+		left: 0px !important;
+		cursor: pointer !important;
+		transition: color .2s ease-in-out !important;
+		padding: 4px 10px !important;
+		&:hover {
+			color: #70b0ff !important;
+			transition: color .0s ease-in-out !important;
+		}
+		display: block !important;
+	}
+
+	.drk_promo_form {
+		display: none !important;
+		&.visible {
+			display: block !important;
+		}
+	}
+
+	.drk_promo_caption {
+		bottom: 56px !important;
+		right: 15px !important;
+		width: 120px !important;
+		text-align: center !important;
+		color: #70b0ff !important;
+		font-size: 12px !important;
+		line-height: 1.3em !important;
+	}
+
+	.drk_promo_input {
+		position: absolute !important;
+		bottom: 34px !important;
+		right: 15px !important;
+		width: 118px !important;
+		padding: 0 !important;
+		font-size: 12px !important;
+		margin: 0 !important;
+		line-height: 18px !important;
+		color: #eee !important;
+		font-family: 'Open Sans' !important;
+		font-weight: 400 !important;
+		border-radius: 1px !important;
+		background: #252525 !important;
+		border: solid 1px #444 !important;
+	}
+	.drk_promo_submit {
+		position: absolute !important;
+		bottom: 10px !important;
+		right: 15px !important;
+		width: 120px !important;
+		padding: 0 !important;
+		font-size: 12px !important;
+		margin: 0 !important;
+		line-height: 18px !important;
+		color: #fff !important;
+		font-family: 'Open Sans' !important;
+		font-weight: 200 !important;
+        background: linear-gradient(180deg, #cf0010 0%, #87000a 150%) !important;
+		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) !important;
+		border-radius: 3px !important;
+		border: none !important;
+		cursor: pointer !important;
+		opacity: 0.9 !important;
+		&:hover {
+			background: linear-gradient(180deg, #cf0010 0%, #87000a 150%) !important;
+			opacity: 1 !important;
+			transition: all .1s ease-in-out !important;
+			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
+		}
+	}
+
+}
+
+// Hide PayPal payment form
+#drk_paypal_form {
+	display: none !important;
+}
+
+// Preview watermark on Pro theme
+div.drk_preview_mark {
+	display: none !important;
+	font-size: 72px !important;
+	font-family: 'Open Sans' !important;
+	font-weight: 300 !important;
+	position: fixed !important;
+	top: -10000px !important;
+	left: -10000px !important;
+	color: #666 !important;
+	opacity: 0.1 !important;
+	transform: rotate(-30deg) !important;
+	transform-origin: 0 2000px !important;
+	z-index: $darkness-z-index-base - 1 !important;
+	pointer-events: none !important; /* Allow click-through */
+	&.visible {
+		top: 0px !important;
+		left: 0px !important;
+		display: block !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// DRAW DIALOG
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+@-webkit-keyframes flash_input {
+	0% {
+		background-color: White;
+	}
+	25% {
+		background-color: #fff2a9;
+	}
+	50% {
+		background-color: White;
+	}
+	75% {
+		background-color: #fff2a9;
+	}
+	100% {
+		background-color: White;
+	}
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// INSTALL DARKNESS DEVELOPERS EDITION
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+div.drk_dialog.drk_join_developers {
+	div.drk_dialog_inner {
+		border-radius: 7px !important;
+		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25), 0 0 200px rgba(100, 100, 100, 0.7) !important;
+		background: Black !important;
+	}
+	span.drk_close {
+		position: absolute !important;
+		right: 3px !important;
+		top: 7px !important;
+		font-size: 14px !important;
+		padding: 10px !important;
+		cursor: pointer !important;
+		a.drk_icon.drk_icon_close i {
+			color: rgba(255, 255, 255, 0.7) !important;
+			&::before {
+				font-size: 18px;
+			}
+		}
+		a.drk_icon.drk_icon_close:hover i {
+			color: rgba(255, 255, 255, 0.9) !important;
+		}
+
+	}
+	.drk_content {
+		border-radius: 7px !important;
+		overflow: hidden !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		background: Transparent url("moz-extension://__MSG_@@extension_id__/images/join-dev-community-dialog.png") no-repeat center !important;
+		width: 600px !important;
+		height: 373px !important;
+	}
+
+	.drk_button_dialog_wrapper {
+		position: absolute !important;
+		bottom: 36px !important;
+		left: 128px !important;
+		background: Black !important;
+		border-radius: 4px !important;
+	}
+
+	.drk_button_dialog {
+		border-radius: 4px !important;
+		width: 300px !important;
+		opacity: 1 !important;
+		margin: 0 !important;
+		font-size: 24px !important;
+		text-align: center !important;
+		font-weight: 600 !important;
+		color: #fff !important;
+		cursor: pointer !important;
+		padding: 6px 0 6px 44px !important;
+		-webkit-font-smoothing: antialiased;
+		letter-spacing: -0.5px !important;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+		background: linear-gradient(180deg, #0096ff 30%, #0078cc) !important;
+		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) !important;
+		transition: all .2s ease-in-out !important;
+		position: relative;
+		i {
+			position: absolute !important;
+			left: 10px !important;
+			top: 5px !important;
+			width: 36px !important;
+			height: 36px !important;
+			opacity: 1 !important;
+			background: Transparent url("moz-extension://__MSG_@@extension_id__/images/github-icon.png") no-repeat center !important;
+			background-size: cover !important;
+		}
+		&:hover {
+			background: linear-gradient(180deg, #00a8ff 30%, #0085e1) !important;
+			transition: all 1s ease-in-out !important;
+			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
+		}
+
+	}
+
+}

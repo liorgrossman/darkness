@@ -1,0 +1,3 @@
+@import "themes/material.scss";
+// We don't import "websites/all-websites.scss" since YouTube already has dark skin, and we don't want to destroy it
+@import "websites/youtube.scss";

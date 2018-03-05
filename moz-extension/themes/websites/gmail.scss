@@ -1,0 +1,527 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Gmail skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+@import "all-google.scss";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// GENERAL
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Generic text color
+span,
+div,
+em,
+input
+{
+	color: $theme-text !important;
+}
+
+// Loading progress bar
+.lpb {
+	@include invert-back();
+}
+
+// Loading links on the bottom-right corner
+#stb {
+	// Remove the "buttonization" of the link
+	input[type="submit"] {
+		background-color: Transparent !important;
+		border-color: Transparent !important;
+		color: inherit !important;
+	}
+}
+
+// Toolbar areas
+.nH {
+	background: $theme-background !important;
+}
+
+// Tooltips (from buttons)
+.T-ays {
+	-webkit-filter: none !important;
+	background: $light-gray !important; // Must use regular color code WITHOUT invert filter to prevent blurry text glitch in Chrome.
+
+	> div {
+		-webkit-filter: none !important;
+		color: #000 !important;
+	}
+}
+
+// Triangle on tooltips
+.T-ays-atC {
+	@include invert();
+	border-color: $theme-tooltip-background transparent !important;
+}
+
+// Alerts and notices (near top of page)
+.vh,
+.vh,
+.vh {
+	background-color: $theme-notices !important;
+	border: 0 !important;
+	box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2) !important;
+	color: #fff !important;
+	text-shadow: none !important;
+	a {
+		@include invert();
+		text-shadow: none !important;
+		color: #000 !important;
+	}
+	span {
+		@include invert();
+		text-shadow: none !important;
+		color: #000 !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// TOP TOOLBAR
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Google logo
+.gb_Rb, .gb_Sb, .gb_Xa {
+	-webkt-filter: none !important;
+}
+.gb_Za.gb_Wb {
+	-webkit-filter: invert(100%) !important;
+}
+
+// Search bar
+.gb_ue {
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border !important;
+}
+
+// Search bar border highlight on click
+.gbqfqw.gbqfqw:active,
+.gbqfqw.gbqfqwf.gbqfqwf {
+	border-color: $theme-button-background !important;
+}
+
+// Search button
+#gbqfb {
+	background: $theme-button-background !important;
+}
+
+// Search button in advanced search dropdown menu
+.ZZ .T-I-atl {
+	background: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+
+	&:hover {
+		background: lighten($theme-button-background, 10%) !important;
+		border-color: $theme-button-background !important;
+	}
+}
+
+// "Google apps" and notifications buttons (in upper-right corner)
+.gb_pc, .gb_M {
+	@include invert-back();
+}
+
+// User avatar on toolbar
+.gb_7a, .gb_8a, .gbii {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// LEFT SIDEBAR
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// "Gmail" link
+.akh span {
+	color: $theme-secondary-button-background !important;
+}
+
+// Small down-pointing triangle by "Gmail" link
+.asT-asx {
+	-webkit-filter: grayscale(100%);
+}
+
+// "COMPOSE" button
+.T-I.T-I-KE {
+	background: $theme-secondary-button-background !important;
+
+	&:hover {
+		background: lighten($theme-secondary-button-background, 10%) !important;
+	}
+}
+
+// Main sidebar links (Inbox, Starred, etc.)
+.nZ .n0,
+.n3 .n0 {
+	color: $theme-text !important;
+}
+
+// Visited main sidebar links
+.nU a:visited {
+	color: $theme-text !important;
+	outline: 2px dashed #0ff;
+}
+
+// Currently selected link in sidebar
+.ain {
+	border-color: $theme-secondary-button-background !important;
+
+	.nZ .n0 {
+		color: $theme-secondary-button-background !important;
+	}
+}
+
+// Label colorful boxes
+.p6 {
+	@include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// BUTTONS ABOVE EMAIL LIST
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Buttons above email list (Select, Refresh, etc.)
+.T-I,
+.d-Na-JX-I {
+	background: $theme-faint-button-background !important;
+}
+
+// Dropdown menu from buttons
+.J-M,
+.d-Na-JG-M {
+	background: $theme-background !important;
+}
+
+// Disabled option in dropdown menu
+.J-N-JE div.J-N-Jz {
+	color: $theme-text-faint !important;
+}
+
+// Newer/older arrow buttons
+.T-I-J3 {
+	-webkit-filter: none !important;
+}
+
+// Tip in dropdown menu
+.asd.ja {
+	color: $theme-text-faint !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// EMAIL LIST
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background inside the list of mails
+.aeJ,
+.Bu {
+	background: $theme-background !important;
+}
+
+// Labels on mails
+.at {
+	@include invert-back();
+}
+
+// Excerpt of email contents
+.y2 {
+	color: $theme-text-faint !important;
+}
+
+// Icons for starred and important emails
+.T-KT,
+.pG {
+	@include invert-back();
+}
+
+// Unread emails in list
+.zE {
+	background: $theme-faint-button-background !important;
+}
+
+// Selected emails in list
+.x7,
+.zE.x7 {
+	background: $theme-highlighted !important;
+}
+
+// Category tabs
+.aKo {
+	@include invert-back();
+}
+
+// Gmail internal scrollbar for email list
+.Tm {
+	&::-webkit-scrollbar {
+		background: $theme-background;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: invert($track-background);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: lighten(invert($theme-background-toolbar), 5%);
+		border-left: 2px solid $track-background;
+		border-right: 1px solid $track-background;
+		box-shadow: inset 1px 1px 0 rgba(100, 100, 100, 0.2), inset -1px -1px 0 rgba(0, 0, 0, 0.4);
+	}
+
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// OPENED EMAIL
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Content of emails
+.a3s.aXjCH {
+	-webkit-filter: none !important;
+
+	a {
+		-webkit-filter: none !important;
+		color: inherit !important;
+	}
+	img {
+		-webkit-filter: none !important;
+		@include invert-back();
+	}
+}
+
+// Star button in email (next to reply button)
+.zd {
+	-webkit-filter: none !important;
+}
+
+// Icons in reply dropdown menu
+.mI,
+.mK,
+.mL {
+	-webkit-filter: none !important;
+}
+
+// Show/hide expanded content button ("...")
+.ajT {
+	background-color: darken($theme-background, 10%) !important;
+	@include invert-back();
+}
+
+// Reply text box
+.I5 {
+	@include invert-back();
+
+	a {
+		@include invert-back();
+	}
+	img {
+		-webkit-filter: none !important;
+	}
+}
+
+// Text color selection table
+.T-Kw {
+	@include invert-back();
+}
+
+// Emoji category selection table
+.a8E .Je {
+	@include invert-back();
+	background-color: $theme-highlighted !important;
+}
+
+// Emoji selection table
+.a8F button,
+.a8m {
+	background-color: transparent !important;
+}
+
+// Send button
+.J-J5-Ji .T-I-atl {
+	@include invert-back();
+	background: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+
+	&:hover {
+		background: lighten($theme-button-background, 10%) !important;
+		border-color: $theme-button-background !important;
+	}
+}
+
+// Email divider in conservsation
+.hx .Bk .G2 {
+	border-color: $theme-background-toolbar !important;
+}
+
+// Lock icon (encryption)
+.bat {
+	@include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// COMPOSING NEW MESSAGE BOX
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Title bar of new message box
+.nH.Hy.aXJ * {
+	background-color: $theme-secondary-button-background !important;
+}
+
+// Minimize, Fullscreen, and Close buttons
+.Hm > img {
+	-webkit-filter: none !important;
+}
+
+// "To" and "Subject" inputs
+.I5 > form {
+	@include invert-back();
+
+	.o1 {
+		color: $theme-text !important;
+	}
+}
+
+// Recipient tabs in "To" input box
+.vN {
+	background: $theme-background-toolbar !important;
+}
+
+// Images of recepients
+.aFf .ak {
+	@include invert-back();
+}
+
+// Selected item in autocomplete (e.g. when typing in "To" input box)
+.ah .Jd-Je {
+	background: $theme-background-toolbar !important;
+}
+
+// "X" button on recipient tabs
+.vM {
+	@include invert-back();
+}
+
+// Background overlay in full-screen mode
+.aSs {
+	background-color: rgba(#f8f8f8, .5) !important;
+}
+
+// Toolbars (for font formatting and other email composition options)
+.gU,
+.J-Z {
+	@include invert-back();
+	background-color: $theme-background !important;
+}
+
+// Compose box border
+.aDh {
+	border-color: #000 !important;
+}
+
+// Send button
+.HE .T-I {
+	-webkit-filter: none !important;
+}
+
+// Other button borders
+.wG,
+.oi,
+.J-Z-I-JW,
+.J-Z-M-I-JW {
+	border-color: $theme-background !important;
+
+	&:hover {
+		border-color: $theme-background-toolbar !important;
+	}
+	&:focus {
+		border-color: $theme-button-background !important;
+	}
+}
+
+// Toolbar button backgrounds on hover
+.oi,
+.J-Z-I-JW,
+.J-Z-M-I-JW {
+	background: $theme-background !important;
+}
+
+// Triangle below font formatting toolbar
+.aA4 {
+	display: none;
+}
+
+// Attachment in email
+.dL {
+	@include invert-back();
+	background: $theme-background !important;
+}
+
+// Attachment's file name
+.vI {
+	@include invert();
+	color: $theme-button-background !important;
+}
+
+// Attachment's file size
+.vJ {
+	@include invert();
+	color: $theme-text-faint !important;
+}
+
+// Attachment's file name and file size while uploading
+.dT {
+	@include invert-back();
+}
+
+// Attachment's progress bar {
+.dR {
+	@include invert-back();
+}
+
+// #:bp is the contenteditable
+#\:bp {
+	a {
+		span {
+			@include invert-back();
+			color: #3D84D7 !important; // Sensible link color for white background
+		}
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// GOOGLE PLUS
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Background
+.gb_ga {
+	-webkit-filter: none !important;
+	background: $theme-background !important;
+}
+
+// Links
+.gb_hb,
+#gb a.gb_hb.gb_hb,
+.gb_ib a,
+#gb .gb_ib.gb_ib a,
+.gb_lb .gb_rb a {
+	color: $theme-link !important;
+}
+
+// User image
+.gbip {
+	@include invert-back();
+}
+
+// "My Account" button {
+.gb_lb .gb_rb {
+	background: $theme-button-background !important;
+	border-color: lighten($theme-button-background, 10%) !important;
+	color: $theme-text !important;
+
+	&:hover,
+	&:focus {
+		background: lighten($theme-button-background, 10%) !important;
+	}
+}
+
+.gb_ha.gb_ga.gb_Aa.gb_ia.gb_g {
+	//	@include invert-back();
+
+	.gb_3 {
+		@include invert-back();
+	}
+}

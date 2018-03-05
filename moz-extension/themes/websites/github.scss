@@ -1,0 +1,938 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Github skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+body {
+    background-color: $theme-background !important;
+}
+
+// All buttons
+button {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+// All inputs
+textarea,input,input[type="text"] {
+    color: $theme-textbox-text !important;
+    background-color: $theme-textbox-background !important;
+    border-color: $theme-border !important;
+}
+
+// All logos and icons
+svg {
+    color: $theme-faint-button-background !important;
+}
+// All counters
+.counter {
+    background: $theme-url !important;
+    color: #fff !important;
+}
+
+// Links
+a:not(.label) {
+    color: $theme-link !important;
+    &:visited:not(.label) {
+        color: $theme-link-visited !important;
+    }
+    &:active:not(.label) {
+        color: $theme-link-active !important;
+    }
+}
+
+// buttonlinks
+.btn-link {
+    background-color: transparent !important;
+    color: $theme-link !important;
+}
+
+// Close buttons
+.close-button {
+    background-color: transparent !important;
+}
+
+// Pagination
+.pagination .current,
+.pagination .current:hover {
+    background-color: $theme-highlighted !important;
+    border-color: $theme-highlighted !important;
+}
+.pagination a:hover,
+.pagination a:focus,
+.pagination span:hover,
+.pagination span:focus,
+.pagination em:hover,
+.pagination em:focus {
+    background-color: $theme-highlighted-darker !important;
+    border-color: $theme-highlighted-darker !important;
+}
+
+// Emojies
+.emoji-inner {
+    @include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//top toolbar
+.header,
+.header > div,
+.js-header-wrapper > .Header {
+    background-color: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+// "This repository"
+.js-header-wrapper > .Header .header-search-scope,
+.header .header-search-scope {
+	color: rgba(0,0,0,0.7) !important;
+	border-right-color: #ddd !important;
+}
+
+// Search bar
+.js-header-wrapper > .Header input[type="text"].header-search-input,
+.header input[type="text"].header-search-input {
+	background: #cbc9c8 !important;
+}
+.js-header-wrapper > .Header input[type="text"].header-search-input::-webkit-input-placeholder,
+.header input[type="text"].header-search-input::-webkit-input-placeholder {
+	color: #444 !important;
+	
+}
+
+// Links on top right of bar
+#user-links li.dropdown a.dropdown-item {
+    color: $theme-textbox-text !important;
+    svg {
+		@include invert-back();
+	}
+	// Tooltips like notifications
+	&.tooltipped-s::after {
+		-webkit-filter: invert(100%) !important;
+	}
+	&.tooltipped-n::after {
+		-webkit-filter: invert(100%) !important;
+	}
+}
+#user-links li.dropdown a.dropdown-item:hover {
+    background-color: $theme-highlighted !important;
+}
+.header-nav-link:hover .dropdown-caret,
+.header-nav-link:focus .dropdown-caret {
+	border-top-color: #000 !important;
+}
+
+//dropdowns
+.dropdown-menu,
+.dropdown-menu form > button {
+    background-color: $theme-background-box !important;
+}
+
+.svg-tip {
+    background: $theme-tooltip-background !important;
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// dashboard page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// right side repositories sidebar
+.dashboard-sidebar > div,
+.dashboard-sidebar > div > h3,
+.dashboard-sidebar > div > div,
+.dashboard-sidebar > div > div > ul > li,
+.dashboard-sidebar > div > div > div
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//filter buttons for repos
+.repo-filterer > li > button,
+.repo-filterer > li > a {
+    &.filter-selected {
+        color: $theme-link-active !important;
+        border-color: $theme-border !important;
+    }
+    &:hover {
+        background: $theme-tooltip-text !important;
+    }
+    &:active {
+        background-color: $theme-highlighted-darker !important;
+    }
+    background: $theme-background-box !important;
+}
+
+// private repos work differently  
+.dashboard-sidebar > div > div > ul > .private > a {
+    background-color: $theme-background !important;
+}
+
+//Switch dashboard context
+.js-menu-content div,
+.js-menu-content .select-menu-list > div > a,
+.js-menu-content .select-menu-list > a {
+    color: $theme-textbox-text !important;
+    border-color: $theme-border !important;
+    &.selected {
+        background-color: $theme-highlighted !important;
+        color: $theme-link-active !important;
+    }
+}
+
+//dashboard context button
+.select-menu > button {
+    background: $theme-faint-button-background !important;
+    color: $theme-text !important;
+    //fix text in button
+    span {
+        color: $theme-text !important;
+    }
+}
+
+// news feed | pull requests | issues
+nav > a {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+    }
+    &:visited {
+        svg {
+            color: $theme-text !important;
+        }
+    }
+}
+
+//view organization button
+nav > div > a {
+    background: $theme-faint-button-background !important;
+    color: $theme-text !important;
+}
+
+.boxed-group-action > a {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+//News column
+.news .alert .body {
+    color: $theme-text !important;
+}
+
+.news .alert .body .title,
+.news .alert .body .time,
+.news blockquote
+{
+    color: $theme-text-faint !important;
+}
+
+h3.bg-white {
+    background-color: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Main Home Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//main image
+.sn-jumbotron,
+.jumbotron-home {
+    @include invert-back();
+}
+
+//sign in logo
+.header-logo > svg {
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.user-profile-nav,
+.profile-timeline-year-list, // time line list at bottom
+.user-profile-sticky-bar, //username and image when scrolling
+.user-profile-sticky-bar:after,
+.profile-timeline-month-heading,
+.contributions-setting-link,
+.profile-rollup-toggle {
+    background-color: $theme-background !important;
+}
+
+.site-header //user not logged in 
+{
+    background-color: $theme-background-toolbar !important;
+}
+
+//pinned repos
+.pinned-repo-item {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+//time line cards 
+.profile-timeline-card-wrapper > .profile-timeline-card, 
+//contribution frame
+.mb-5 {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.profile-timeline-card-wrapper {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+//conttribution settings
+.edit_user button {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//select year
+.filter-item.selected {
+    background: $theme-faint-button-background !important;
+}
+
+//edit profile button
+.btn,
+a.btn,a.btn:visited,a.btn:hover,
+.social-count,
+.btn-block.mb-3 {
+    background: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+//contributions legend undo the tile colors
+.legend > li {
+    @include invert-back();
+}
+
+//fix star button
+.starred > button,
+//fix follow and unfollow button
+.user-following-container button {
+    background: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+// The contributionstab
+// Most
+rect[fill="#1e6823"] { // Old color (Active until Q1 2017)
+    fill: invert-back-color(#1e6823) !important;
+}
+rect[fill="#196127"] {
+    fill: invert-back-color(#196127) !important;
+}
+.legend > li:nth-child(5) {
+    // background-color: invert-back-color(#1e6823) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#196127) !important;
+}
+// 2nd most
+rect[fill="#44a340"] { // Old color (Active until Q1 2017)
+    fill: invert-back-color(#44a340) !important;
+}
+rect[fill="#239a3b"] {
+    fill: invert-back-color(#239a3b) !important;
+}
+.legend > li:nth-child(4) {
+    // background-color: invert-back-color(#44a340) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#239a3b) !important;
+}
+// 3rd most
+rect[fill="#8cc665"] { // Old color (Active until Q1 2017)
+    fill: invert-back-color(#8cc665) !important;
+}
+rect[fill="#7bc96f"] {
+    fill: invert-back-color(#7bc96f) !important;
+}
+.legend > li:nth-child(3) {
+    // background-color: invert-back-color(#8cc665) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#7bc96f) !important;
+}
+// 4th most
+rect[fill="#d6e685"] { // Old color (Active until Q1 2017)
+    fill: invert-back-color(#d6e685) !important;
+}
+rect[fill="#c6e48b"] {
+    fill: invert-back-color(#c6e48b) !important;
+}
+.legend > li:nth-child(2) {
+    // background-color: invert-back-color(#d6e685) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#c6e48b) !important;
+}
+// 5th most
+rect[fill="#eeeeee"] { // Old color (Active until Q1 2017)
+    fill: invert-back-color(#eeeeee) !important;
+}
+rect[fill="#ebedf0"] {
+    fill: invert-back-color(#ebedf0) !important;
+}
+.legend > li:nth-child(1) {
+    // background-color: invert-back-color(#eeeeee) !important; // Old color (Active until Q1 2017)
+    background-color: invert-back-color(#ebedf0) !important;
+}
+
+// Remove background color
+.profile-timeline-card-footer > a.muted-link,
+.pinned-repo-item a.muted-link {
+    background: transparent !important;
+}
+div.profile-timeline-year-list {
+    background-color: transparent !important;
+}
+div.profile-timeline-year-list .filter-item:hover {
+    background-color: $theme-highlighted-darker !important;
+}
+button.muted-link {
+    background-color: transparent !important;
+}
+
+// Remove background on dropdown
+.contributions-setting .contributions-setting-link {
+    background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Repo Main Page 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.pagehead.repohead, //main repo head 
+.overall-summary, //stats of repo
+.commit-tease, //last commit message
+.file-wrap > .files // file directory for repo
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//readme
+.readme,
+.readme > h3,
+.readme > .markdown-body,
+.readme > .plain {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+// Images inside readmy
+.readme > .markdown-body img {
+	background-color: Transparent !important;
+}
+
+//edit link shows up as a button change background
+.muted-link {
+    background: $theme-background !important;
+}
+
+//change how the nav selction looks and the svgs
+.reponav-item {
+    &.selected {
+        background: $theme-faint-button-background !important;
+    }
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+.branch-infobar a.muted-link {
+    background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Repo selecting a file to view 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.commit-tease-contributors,
+.file,
+.file-header //header of file selected
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// list of Issues in repo
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.table-list-header,
+.Box-body,
+.blankslate //milestones blank slate 
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//fix table list header icon colors
+.table-list-header {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// specific issue of repo
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.timeline-comment-wrapper,
+.discussion-timeline-actions {
+    background-color: $theme-background !important;
+}
+
+.timeline-comment-wrapper {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.timeline-comment,
+.comment-form-head, //comment header
+.form-control, //text area for comments
+.drag-and-drop,
+.comment-body {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.timeline-comment {
+    background: none !important;
+}
+
+//selecting them
+.drag-and-drop {
+    .btn-link {
+        background: $theme-background-box !important;
+    }
+}
+
+//header for timeline
+.timeline-comment > .timeline-comment-header,
+.timeline-comment-action {
+    background: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//reactions
+.timeline-comment-action {
+    background: $theme-background-toolbar !important;
+    svg {
+        -webkit-filter: none !important;
+        background: transparent !important;
+        color: $theme-text !important;
+    }
+}
+
+//icons for comments
+.toolbar-group > button,
+.menu-target {
+    background: $theme-background-box !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//mark down icon
+.toolbar-help {
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+.thread-subscription-status {
+    background-color: transparent !important;
+}
+
+//subcribe color 
+.thread-subscription-status .reason {
+    background: $theme-background !important;
+}
+
+// Issue state
+.State, .label {
+    @include invert-back();
+}
+a.label {
+    color: white !important
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// pull requests
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.mergeability-details,
+.merge-status-list > div {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//change how the nav selction looks and the svgs
+.tabnav-tab {
+    &.selected {
+        background: $theme-faint-button-background !important;
+    }
+}
+
+.pr-toolbar,
+.diffbar {
+    background: $theme-background-toolbar !important;
+}
+
+.commit-icon svg {
+    background-color: transparent !important;
+}
+
+.navigation-focus .muted-link {
+    background-color: transparent !important;
+}
+
+.subnav-item.selected {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+    border-color: $theme-border !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Projects
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.project-header, //main project header bar
+//project headers for columns
+.col-project-custom > .project-column-header {
+    background: $theme-background-toolbar !important;
+}
+
+//cards, columns
+.project-column-inner,
+.issue-card,
+.project-card {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//background of whole page
+.project-columns {
+    background: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Wikipage 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.wiki-pages-box,
+.filter-bar,
+.wiki-auxiliary-content,
+.wiki-pages {
+    background-color: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Pulse 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.boxed-group >h3 {
+    background: $theme-background-toolbar !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.boxed-group > div
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//
+.repository-content .select-menu-item .selected {
+    background: $theme-highlighted-darker !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Graphs 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.capped-card-content {
+    -webkit-filter: invert(0) !important;
+}
+.capped-card-content .axis line {
+    stroke: invert-back-color(#aaa) !important;
+}
+.contributors-graph .capped-card .midlabel {
+    fill: invert-back-color(#aaa) !important;
+}
+.contributors-graph .capped-card path {
+    fill: invert-back-color(#f17f49) !important;
+    fill-opacity: 0.75 !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Settings
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//sidebar
+.pagehead,
+.column > nav {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//sidebar headings
+.column .menu-heading {
+    background: $theme-background-toolbar !important;
+}
+
+//fix selected blank link
+.menu-item.selected {
+    background: $theme-background-box !important;
+}
+
+//security tap
+.boxed-group-list >li {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//repositories
+.listgroup > div {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//organization selected tab
+.orgnav > a.selected {
+    background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Organization View all repos
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//header bar
+.orghead {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//member box
+.org-module,
+.simple-box-footer //footer
+{
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+//small box on right side top bar
+.org-module-title {
+    background: $theme-background-toolbar !important;
+}
+
+//people sub tab
+.table-list-header,
+.table-list-header-toggle .select-menu > button
+{
+    background: $theme-background-toolbar !important;
+}
+
+//people table list
+.table-list-item {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+    svg {
+        -webkit-filter: none !important;
+        background: $theme-background !important;
+        color: $theme-text !important;
+    }
+}
+
+//team header
+//teams sub tab
+.team-members {
+    background: $theme-background-box !important;
+    border-color: $theme-border !important;
+    color: $theme-text !important;
+}
+
+.boxed-group input {
+    color: $theme-textbox-text;
+    background: $theme-textbox-background;
+    border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile Settings
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.flash {
+    background: $theme-notices !important;
+    border-color: $theme-border !important;
+    color: $theme-tooltip-text !important;
+}
+
+.column > nav.menu {
+    .menu-heading {
+        background: $theme-background-toolbar !important;
+        border-color: $theme-border !important;
+        color: $theme-text !important;
+    }
+    a {
+        background-color: $theme-background-box !important;
+        border-color: $theme-border !important;
+    }
+}
+
+button.flash-close {
+    background-color: transparent !important;
+}
+button.flash-close svg {
+    color: $theme-button-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Misc
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// "Learn Git and GitHub without any code!" message on the homepage
+.intro-shelf, .intro-shelf .shelf-lead {
+    color: $theme-text !important;
+}
+
+// Removing background on some images
+.toolbar-group > button svg,
+.menu-target svg,
+.reponav-item svg,
+nav > a:visited svg,
+a.btn-link > svg,
+svg.octicon.octicon-code,
+svg.octicon.octicon-clippy,
+svg.octicon.octicon-check {
+    background: transparent !important;
+}
+
+// Fix for the broadcast on front-page
+.octofication .broadcast-icon-mask {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+// Working colors for states and tags
+.state {
+    -webkit-filter: invert(1) !important;
+}
+.table-list-item svg {
+    background: transparent !important;
+}
+.labels-list-item .label {
+    -webkit-filter: invert(1) !important;
+}
+.labels-list-item .label span {
+    -webkit-filter: invert(1) !important;
+}
+.label-edit label {
+    -webkit-filter: invert(1) !important;
+}
+.color-chooser .color-cooser-color {
+    -webkit-filter: invert(1) !important;
+}
+.select-menu-item-text span.color {
+    -webkit-filter: invert(1) !important;
+}
+.labels .label {
+    -webkit-filter: invert(1) !important;
+    color: white !important;
+}
+.discussion-item .label-color {
+    -webkit-filter: invert(1) !important;
+}
+.discussion-item .label-color a {
+    color: white !important;
+}
+
+.closed-banner {
+    height: 0 !important;
+    border-bottom: 0 !important;
+    overflow: hidden !important;
+}
+
+// Working colors for line addition and removal
+.blob-num-addition {
+    background-color: invert-back-color(#095409) !important;
+    border-color: invert-back-color(#045104) !important;
+}
+.blob-code-addition {
+    background-color: invert-back-color(#082b08) !important;
+}
+.blob-code-addition .x {
+    background-color: invert-back-color(#067206) !important;
+}
+.text-green,
+.cmeta > .a,
+.cadd {
+    color: invert-back-color(#2cbe4e) !important;
+}
+.block-diff-added {
+    background-color: invert-back-color(#2cbe4e) !important;
+}
+.blob-num-deletion {
+    background-color: invert-back-color(#4f0707) !important;
+    border-color: invert-back-color(#681414) !important;
+}
+.blob-code-deletion {
+    background-color: invert-back-color(#3f0808) !important;
+}
+.blob-code-deletion .x {
+    background-color: invert-back-color(#b2450e) !important;
+}
+.text-red,
+.cmeta > .d,
+.cdel {
+    color: invert-back-color(#cb2431) !important;
+}
+.block-diff-deleted {
+    background-color: invert-back-color(#cb2431) !important;
+}
+
+// Blog footer
+.site-footer-marketing a {
+    background-color: transparent !important;
+}
+
+// Overlay background
+.facebox-overlay-active {
+    @include  invert-back();
+}
+// Overlay close
+.facebox-close {
+    background-color: transparent !important;
+}
+.facebox-close svg {
+    color: invert-back-color($theme-button-background) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Explore Github
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.showcase-page-pattern, .exploregrid-item-header {
+        -webkit-filter: invert(0) !important;
+}

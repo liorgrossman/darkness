@@ -1,0 +1,1242 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Facebook skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+body {
+	background-color: $theme-background !important;
+}
+
+// Buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// Faint (gray) buttons
+._517h {
+	background-color: $theme-faint-button-background !important;
+	color: $theme-text !important;
+	i {
+		-webkit-filter: none !important;
+	}
+}
+
+// Boxes in homepage and timeline (boxes with posts, sidebar, etc.)
+._4-u8 {
+	background-color: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+}
+
+// Preview for links (it has white background by default)
+._6m2 {
+	background-color: $theme-background !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+}
+
+// Facebook logo
+._2md {
+	@include invert-back();
+}
+
+// Input
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// Links
+a {
+	color: $theme-link !important;
+	&:visited {
+		color: $theme-link-visited !important;
+	}
+	&:active {
+		color: $theme-link-active !important;
+	}
+}
+
+// Dropdowns and scrollable areas
+.uiScrollableAreaContent {
+	background-color: $theme-background-box !important;
+}
+
+// background when viewing images
+._4d3w .stageWrapper {
+	background-color: $theme-background !important;
+}
+
+// Link to newsfeed
+._4q39 > a._2s25 {
+	color: $theme-link !important;
+}
+
+// Polls
+._3com {
+	background-color: $theme-highlighted-darker !important;
+}
+._58an { // add an option
+	background: transparent !important;
+	background-color: transparent !important;
+}
+
+// Something that shouldn't have a background
+._23aq {
+	background: transparent !important;
+}
+
+// Alert about notifications being turned off/on
+._5ww7._5ww9 {
+	background-color: $theme-highlighted-darker !important;
+	border-color: $theme-highlighted !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Un-invert icons
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+i {
+	@include invert-back();
+}
+
+.cleanslate i {
+	-webkit-filter: none !important;
+}
+
+//path {
+//	@include invert-back();
+//}
+
+// Page admin stuff
+._4h_-[style*="color: rgb(66, 183, 42)"],
+._za4,
+._4ocz._2x0y:hover,
+._su9,
+._sua,
+._hav,
+._haw {
+	@include invert-back()
+}
+
+._2-x8 {
+	padding-top: 112px !important;
+	margin-top: 0px !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Homepage / Feed
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Homepage - middle content column
+#contentCol {
+	background-color: $theme-background !important;
+}
+
+// Homepage - top navbar
+#blueBarDOMInspector > div,
+#blueBarDOMInspector > div > div {
+	background-color: $theme-background-toolbar !important;
+	border-color: $theme-border !important;
+	color: $theme-text !important;
+}
+
+// Homepage - searchbar
+._585- {
+	background-color: $theme-textbox-background !important;
+	border-color: $theme-border !important;
+	._585_ { // Search button picture
+		@include invert-back();
+	}
+}
+.searchIcon {
+	padding-right: 14px !important;
+}
+
+// Homepage - user buttons
+._2s25 {
+	//background-color: $theme-button-background !important;
+	color: $theme-link !important;
+}
+
+// Home page - new notifications
+._2n_9 {
+	@include invert-back();
+}
+
+.__tw {
+	background: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+	.jewelHeader, .jewelFooter {
+		background-color: $theme-background-box !important;
+		color: $theme-text !important;
+		border-color: $theme-border !important;
+	}
+}
+
+._ors .__tw .jewelFooter.jewelFooter a {
+	background-color: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+}
+
+._33c {
+	background: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+}
+
+._ors ._3nzk .fbRequestList .listGray {
+	background: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+}
+
+//-------------------------------------------------------------------------
+// Homepage - new posts
+
+.uiIconText { // buttons
+	i {
+		@include invert-back();
+	}
+}
+
+.uiTextareaAutogrow._3en1 { //post section
+	background-color: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+}
+
+._4d6h._1kvc._tqc { // borders
+	* {
+		border-color: $theme-border !important;
+	}
+}
+
+._559p { // borders
+	* {
+		border-color: $theme-border !important;
+	}
+}
+
+#pagelet_composer { // borders
+	* {
+		border-color: $theme-border !important;
+	}
+}
+
+
+.__MenuItem { // dropdown list
+	background-color: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-background-box !important;
+	&.selected {
+		background-color: $theme-highlighted !important;
+		color: $theme-link-active !important;
+	}
+}
+
+li._54ne, .__MenuItem.selected {
+	background-color: $theme-background-box !important;
+}
+
+._54nc { // dropdown elements
+	border-color: $theme-background-box !important;
+}
+
+._54ng { // dropdown elements
+	border-color: $theme-background-box !important;
+	background-color: $theme-background-box !important;
+}
+
+//-------------------------------------------------------------------------
+// Homepage posts
+._3399._1f6t._4_dr {
+	i {
+		@include invert-back();
+	}
+}
+
+._4ar- ._3emk { // icons background
+	background-color: $theme-background-box !important;
+}
+
+._4arz { // likes
+	background-color: $theme-background-box !important;
+}
+
+._ipo { // comments
+	background-color: $theme-background-box !important;
+}
+
+._iuw { // reactions
+	@include invert-back();
+}
+
+.fcg { // post title
+	color: $theme-text-faint !important;
+	.fwb { // post author
+		color: $theme-url !important;
+	}
+}
+
+._4xev { // more
+	color: $theme-highlighted !important;
+}
+
+._a7s {
+	border-color: $theme-border !important;
+}
+
+.UFIList { // comments container
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+.UFIRow { // comments
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+.UFILinkBright::before { // Likes images
+	-webkit-filter: invert(100%) hue-rotate(-30deg) brightness(0.7) !important
+}
+
+//-------------------------------------------------------------------------
+// Homepage right bar
+._4-u8 {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._4ks > li {
+	border-color: $theme-border !important;
+}
+
+//-------------------------------------------------------------------------
+// Boost post button
+._4jy1 {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+//-------------------------------------------------------------------------
+// Users notifications
+.displayedTickerToggleWrapper .tickerLineToggle { // small ticker
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+.tickerStoryClickable { //ticker Story
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._5vb_ .home_right_column .fbFeedTicker .tickerStoryActive, ._5vb_ .home_right_column .fbFeedTicker .tickerStoryClickable:hover {
+	background-color: $theme-highlighted !important;
+}
+
+.fbRemindersTitle {
+	color: $theme-link !important;
+}
+
+._50f8 {
+	color: $theme-text !important;
+}
+
+.tickerFeedMessage {
+	color: $theme-text !important;
+	.fwb {
+		color: $theme-link !important;
+	}
+}
+
+//-------------------------------------------------------------------------
+// Trending news
+._3pra._5nns {
+	border-color: $theme-highlighted-darker !important;
+}
+
+._4-u8 {
+	border-color: $theme-border !important;
+}
+
+._5mym > div {
+	border-color: $theme-border !important;
+}
+
+._5v0s {
+	color: $theme-url !important;
+}
+
+._19_3 {
+	background-color: $theme-background-box !important;
+}
+
+//-------------------------------------------------------------------------
+// Games
+.uiHeaderTopBorder {
+	border-color: $theme-border !important;
+}
+
+._194u {
+	border-color: $theme-border !important;
+}
+
+._194v:hover {
+	background-color: $theme-highlighted !important;
+}
+
+._3pra:hover {
+	background-color: $theme-highlighted !important;
+}
+
+//-------------------------------------------------------------------------
+// Previews
+._3-8h {
+	background-color: $theme-background !important;
+}
+
+._53ij {
+	background-color: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Timeline (mine or other people's profiles)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Compose post
+#pagelet_composer textarea {
+	background-color: transparent !important;
+}
+
+// Wish a happy birthday
+.mentionsTextarea {
+	background-color: transparent !important;
+}
+
+// Timeline - middle content column
+.fbTimelineTimePeriod {
+	background-color: $theme-background !important;
+}
+
+//-------------------------------------------------------------------------
+// Cover: User's name
+#fb-timeline-cover-name {
+	color: #fff !important;
+	@include invert-back();
+}
+
+#fbProfileCover .coverNoImage, #fbProfileCover .coverBorder {
+	@include invert-back();
+}
+
+//-------------------------------------------------------------------------
+// Title bar
+._70k {
+	background-color: $theme-background-box !important;
+}
+
+._513x { // page marker
+	background: $theme-highlighted !important;
+}
+
+._6-6:hover, ._9rx.openToggler, ._9ry:hover, html ._9rw._54ne ._54nc {
+	background: $theme-highlighted-darker !important;
+}
+
+//-------------------------------------------------------------------------
+// New Post
+._57d8 {
+	background-color: $theme-background !important;
+}
+
+._1tm3 ._4-h7:hover {
+	background: $theme-highlighted !important;
+}
+
+//-------------------------------------------------------------------------
+// Textarea
+textarea._4h98 {
+	background-color: $theme-background-box !important;
+}
+
+//-------------------------------------------------------------------------
+// Boxes (about, friends, etc...)
+._2w3 > ._30f {
+	background: $theme-background-box !important;
+	color: $theme-text !important;
+	border-color: $theme-background-box !important;
+}
+
+//-------------------------------------------------------------------------
+// Page in a box, hover
+._54ay button {
+	background: $theme-background !important;
+}
+
+//-------------------------------------------------------------------------
+// Friends box in profile -> individual friend box
+._3s6x {
+	background: linear-gradient(transparent, rgba(255, 255, 255, .8)) !important;
+	text-shadow: 0 0 0 #000 !important;
+	color: $theme-text !important;
+	// Green dot after "10 new posts"
+	._34mw:after {
+		@include invert-back()
+	}
+}
+
+._3cz { // header
+	background: darken($theme-background-box, 10%) !important;
+	color: $theme-text !important;
+	border-color: $theme-background-box !important;
+}
+
+._3t3 { // see all
+	background: darken($theme-background-box, 5%) !important;
+	color: $theme-text !important;
+	border-color: $theme-background-box !important;
+}
+
+._28vg ._5b1w { // Search box dropdon list on focus
+	@include invert-back();
+}
+
+//-------------------------------------------------------------------------
+// About
+._5y02:hover {
+	background: $theme-highlighted-darker !important;
+}
+
+._21ok {
+	color: $theme-link !important;
+}
+
+._u08 {
+	color: $theme-link !important;
+	border-color: $theme-link !important;
+}
+
+._5wn5 {
+	color: $theme-link !important;
+}
+
+._47__::before {
+	background: $theme-highlighted !important;
+}
+
+//-------------------------------------------------------------------------
+//Friends
+.uiMenu {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+	.uiMenuItem {
+		.itemAnchor {
+			border-color: $theme-background-box !important;
+		}
+	}
+}
+
+.uiBoxGray {
+	background-color: $theme-background-box !important;
+}
+
+._qbs ._53ad {
+	color: $theme-link !important;
+}
+
+//-------------------------------------------------------------------------
+// Manage Sections
+._1yw {
+	background-color: $theme-background-toolbar !important;
+	color: $theme-link !important;
+	border-color: $theme-border !important;
+}
+
+._d3b {
+	background-color: darken($theme-background-box, 10%) !important;
+}
+
+._6wt {
+	border-color: $theme-border !important;
+}
+
+._6wq {
+	background: $theme-background-box !important;
+}
+
+._6ws {
+	background-color: $theme-background-box !important;
+}
+
+._t {
+	background-color: $theme-background !important;
+}
+
+//-------------------------------------------------------------------------
+// Activity Log
+._6z- .uiSideNav .selectedItem > .item, ._6z- .uiSideNav .selectedItem > .subitem {
+	background-color: $theme-highlighted !important;
+}
+
+._kj3, ._z6j, ._2o49, .fbTimelineSection { // Header and boxes
+	background-color: $theme-background !important;
+}
+
+._4lh ._2-d1 { // Years
+	background-color: $theme-background !important;
+}
+
+//-------------------------------------------------------------------------
+// Unfollow notification
+._57uu, ._57uu ._57uy, ._5jkw, ._4p6i {
+	background-color: $theme-background-box !important;
+}
+
+//-------------------------------------------------------------------------
+// Verified badge and other similar badges next to profile name
+._5dz- {
+	@include invert-back();
+}
+
+//-------------------------------------------------------------------------
+// [person] likes [site]
+._6lh ._6lp ._6lo {
+	color: $theme-button-background !important;
+	text-shadow: 0 1px 2px rgba(255, 255, 255, .4) !important;
+}
+._6lh ._6ln a {
+	text-shadow: 0 1px 2px rgba(255, 255, 255, .4) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Chat sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Chat sidebar
+.fbChatSidebar {
+	background-color: $theme-background !important;
+	color: $theme-text !important;
+	border-color: $theme-border !important;
+}
+
+// Chat minified
+.fbNubButton .wrap {
+	@include invert-back();
+	.name {
+		@include invert-back();
+	}
+}
+
+// Globe symbol
+.sp_JD0L4jI4KYp {
+	border-radius: 100%;
+}
+
+// Green "online" status dot - in chat sidebar
+._568z {
+	@include invert-back();
+}
+
+// Chat search
+input[type="text"]._58al {
+	background-color: transparent !important;
+}
+._3rh8 {
+	background-color: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Chat window (incl. emoticons, stickers etc.)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Titlebar
+.fbNubFlyoutTitlebar.titlebar {
+	border-color: $theme-border !important;
+	background-color: $theme-background-toolbar !important;
+}
+
+// Sent messages
+._1nc6 ._5w1r {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+// Received messages
+._1nc7 ._5w1r {
+	background-color: lighten($theme-background-box, 10%) !important;
+	border-color: $theme-border !important;
+}
+
+._5w1r._31xx, ._3__- ._5w1r._31xx { //emoticon fix
+	background-color: transparent !important;
+}
+
+// Functional button below chat window
+._6gd {
+	a {
+		@include invert-back();
+	}
+}
+
+._6h1 {
+	@include invert-back();
+}
+
+// Sticker (big blue like in chat window)
+div[aria-label*="sticker"] {
+	@include invert-back();
+}
+
+// Your emojis
+._1nc6 ._d97 img, ._1nc6 ._d97 a img {
+	-webkit-filter:invert(0) !important;
+}
+// Bubble: yours
+._1nc6 ._d97, ._1nc6 ._d97 a {
+	//background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
+	//color: invert-back-color(#ffffff) !important;
+	-webkit-filter:invert(1) !important;
+}
+
+// Bubble: the other side
+._1nc7 ._5w1r, ._1nc7 ._5w1r a {
+	background-color: invert-back-color(#404040) !important;
+	color: invert-back-color(#ffffff) !important;
+}
+
+// Big like emoticon
+._576q svg {
+	-webkit-filter: none !important;
+}
+
+// Don't show bubble background for lines which are emoticons only
+._1nc6 ._d97._31xy {
+	background: none !important;
+}
+
+// Bottom bar of emoticons, when inserting emoticons
+._1uw- > img._1ift._2560 {
+	-webkit-filter: invert(100%) !important;
+}
+
+// Like / love / etc. button in the bottom right side of chat
+._5ep3 {
+	@include invert-back();
+	// Like button or others that are not represented by IMG but by SVG PATH
+	svg {
+		@include invert-back();
+	}
+}
+
+// Green "online" status dot - in chat windows
+.minimized ._3olv._2nlt{
+	// -webkit-filter: invert(0%) !important;
+}
+._2nlt, ._3olv._2nlt {
+	@include invert-back();
+}
+
+// Earth button on bottom for translations
+.sp_7uF0Nxk6_De.sx_5f8e6c {
+	border-radius: 50% !important; // Otherwise earth looks aliased
+}
+
+// "Your post"-chat-box
+.fbNubFlyoutTitlebar {
+	border-color: $theme-border !important;
+	background-color: $theme-background-toolbar !important;
+}
+
+// New messages
+._5ugg {
+	background-color: $theme-notices !important;
+}
+.fbNub._50mz.highlightTitle .fbNubFlyoutTitlebar.titlebar {
+	border-color: $theme-highlighted !important;
+	background-color: $theme-highlighted-darker !important;
+}
+
+// online indidcator
+.presenceIndicator.presenceActive {
+	@include invert-back()
+}
+
+// Videos
+._1wno ._ox1 {
+	-webkit-filter: invert(0) !important;
+}
+
+._ccq[style*="background-image:"] {
+	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Lightboxes (photos, posts, etc.)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// lightbox background
+._3qx ._3ixn, ._1oye, ._4-of, ._1oyf, ._1oyh, ._3ixn, ._3u15 {
+	background-color: rgba(darken($theme-background-box, 10%), 0.9) !important;
+	border-color: $theme-border !important;
+}
+
+// live video lightbox background
+body ._19u- ._3ixn {
+	background: rgba(darken($theme-background-box, 10%), 0.9) !important;
+}
+
+// live video movie padding background
+._2u7 {
+	background-color: #fff !important;
+}
+
+// live video shadow (glow) around player
+._2e_p, ._21mb {
+	box-shadow: 0 4px 80px 6px rgba(255, 255, 255, .85) !important;
+}
+
+._4d3w._u77 ._3t09 { // photo panel
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+._4d3w .snowliftOverlayBar { // lower bar
+	color: $theme-text-faint !important;
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+._39n * { // impressions
+	@include invert-back();
+}
+
+._4qo2 ._4x9_._48-k::before {
+	@include invert-back();
+}
+
+._4oyq { // Add photo
+	background-color: rgba($theme-background-box, 0.9) !important;
+	border-color: $theme-border !important;
+}
+
+// Full screen YouTube video
+.iframeEmbed iframe:-webkit-full-screen {
+	-webkit-filter: none !important; // Don't invert
+}
+
+// Video background, faded image
+._5-g_ ._4lpe {
+	background-color: $theme-background-box !important;
+}
+
+// Video, action bar in the bottom
+._1e8c {
+	background-color: $theme-background-box !important;
+}
+
+// Video, right sidebar with comments and such
+._17am, ._5-lm {
+	background: $theme-background !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Messages (full conversation view)
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Headers
+._3j5 {
+	background-color: $theme-background-box !important;
+}
+
+.uiList {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+// Hovering over a person in chat-sidebar
+.pam .uiList {
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+
+.ul._281 {
+	border-color: $theme-border !important;
+}
+
+._3b {
+	border-color: $theme-border !important;
+}
+
+// Message threads
+._k- {
+	text-shadow: none !important;
+}
+
+._kv:hover, ._kv { //Active thread
+	background-color: $theme-highlighted !important;
+	border-color: $theme-border !important;
+}
+
+._k-:hover {
+	background-color: $theme-highlighted-darker !important;
+}
+
+._3db {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._35 { // Message time
+	color: $theme-text-faint !important;
+}
+
+._9h { // Message time image
+	@include invert-back();
+}
+
+._1rs { // Lower section
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+._2pt {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._1rs .emoticonsPanel .emoteTogglerImg {
+	-webkit-filter: invert(0%) !important;
+}
+
+._1rt {
+	background-color: $theme-textbox-background !important;
+	color: $theme-textbox-text !important;
+}
+
+._1rw {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+.uiHeaderSection, .uiSideHeader {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._1ri.uiButton.uiButtonConfirm { // Reply button
+	background-color: $theme-button-background !important;
+	border-color: $theme-border !important;
+	color: $theme-button-text !important;
+}
+
+._nd_ ._hh7 {
+	-webkit-filter: invert(1) !important;
+}
+._nd_ ._hh7 ._1ift {
+	-webkit-filter: invert(0) !important;
+}
+
+// Emoticons
+.emoticonsPanel .panelFlyout {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+// Day delimiter
+._2nb ._2n3 {
+	border-color: $theme-border !important;
+	.timestamp {
+		background-color: $theme-border !important;
+		color: $theme-text-faint !important;
+	}
+}
+
+._3quh {
+	background: transparent !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Tweaks to Pages / Groups / Events
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Page headers
+._juy, ._58gc ._5otg, ._3i1j ._5otg, ._g3h, ._5vg-, ._5vgz, .sidebarMode #globalContainer ._5vgz.fixed_elem {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._5vx4._5vx6 ._5vwy ._13xf { // Active tab
+	background-color: $theme-highlighted !important;
+}
+
+// Group title
+._5r2h {
+	text-shadow: 0 0 3px rgba(255, 255, 255, .8) !important;
+}
+
+// "Public Group" label below Group title
+._5mo6, ._5mo6 a {
+	text-shadow: 0 0 3px rgba(255, 255, 255, .8) !important;
+}
+
+._ubn { // Page statistics
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._5y4p {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+// Page Messages
+._14vf ._33v2 { // Header
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+._33vf li._3wxb, ._33vf li._3wxb:hover, ._33vf li._1hgw, ._33vf li._1a_0:hover, ._33vf li._1a_0._4vb9 { //Highlighted
+	background-color: $theme-highlighted !important;
+	border-color: $theme-border !important;
+}
+
+._33v2, ._4vb8 {
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+// About header
+._tum {
+	background-color: darken($theme-background-box, 10%) !important;
+	border-color: $theme-border !important;
+}
+
+// About box
+._tun {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+.selected ._tuq:before {
+	background-color: $theme-highlighted !important;
+}
+
+._47ol {
+	color: $theme-link !important;
+}
+
+// Photos
+._3jk {
+	input {
+		background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
+	}
+}
+
+._3910, ._5vh1 {
+	color: $theme-link !important;
+}
+
+// Likes
+._1lor, ._20h0 { // header
+	background-color: darken($theme-background-box, 10%) !important;
+	border-color: $theme-border !important;
+}
+
+._1lot {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+// Like / Message / Contact us on Pages
+#pages_actions_pagelet button {
+	color: $theme-text !important;
+}
+
+// Create group button
+._4jy2 {
+	background-color: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+
+// Search group
+.uiSearchInput button {
+	background-color: transparent !important;
+}
+input.inputtext {
+	background-color: transparent !important;
+}
+
+// Coverphoto
+.groupsCoverPhoto img.scaledImageFitHeight {
+	-webkit-filter: invert(0) !important;
+}
+
+// Giong - status
+._2nsx, ._2nsu {
+	@include invert-back();
+}
+._2nsx i, ._2nsu i {
+	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Misc
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Menu items
+li.__MenuItem._54ne.selected {
+	._54nc {
+		background-color: $theme-background !important;
+	}
+}
+
+.fbTimelineSelector .wrap a.fbTimelineSelectorButton, .fbTimelineSelector .wrap a.fbTimelineSelectorButton:hover {
+	@include invert-back();
+}
+
+.sp_YCWnpXxU8mE {
+	@include invert-back();
+}
+
+// Boxes
+.uiBoxWhite {
+	background: $theme-background-box !important;
+}
+
+.fbTimelineStickyHeader .back {
+	background: darken($theme-background-box, 10%) !important;
+}
+
+// Tooltips
+._21es {
+	background: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+
+.uiTooltipX .tooltipContent {
+	background: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+
+// Emoticons
+.emoticon {
+	@include invert-back();
+}
+
+// Emoticons in statuses
+i._lew {
+	-webkit-filter: invert(0%) !important;
+}
+
+// Button Groups
+.uiButtonGroup {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+	.uiButtonGroupItem {
+		border-color: $theme-border !important;
+	}
+}
+
+._23fw:before, ._23fw:after { // Change picture
+	background-image: linear-gradient(transparent, $theme-background-box 50%, rgba($theme-background-box, 0.6) 100%);
+}
+
+.hasLeftCol #pageFooter { // Page footer in settings
+	background-color: $theme-background !important;
+	border-color: $theme-border !important;
+}
+
+.uiSideNav .selectedItem .item, .uiSideNav .selectedItem .item:hover, .uiSideNav ul .selectedItem .subitem, .uiSideNav ul .selectedItem .subitem:hover { // Settings headers
+	background-color: $theme-highlighted-darker !important;
+}
+
+.uiSideNav .item:hover, .uiSideNav .item:active, .uiSideNav .item:focus, .uiSideNav .subitem:hover, .uiSideNav .subitem:active, .uiSideNav .subitem:focus, .uiSideNav .highlighted .item:hover, .uiSideNav ul .highlighted .subitem:hover {
+	background-color: $theme-highlighted !important;
+}
+
+.fbSettingsList a.fbSettingsListLink:hover {
+	background-color: $theme-highlighted !important;
+}
+
+.fbSettingsList .fbSettingsListItemSaved, .fbSettingsList .fbSettingsListItemEdit {
+	color: $theme-link !important;
+}
+
+.uiSideNav .item, .uiSideNav .subitem {
+	border-color: $theme-border !important;
+}
+
+// Privacy Setup
+._8-b ._26y1 {
+	background-color: darken($theme-background-box, 10%) !important;
+	border-color: $theme-border !important;
+}
+
+._1bgx { // highlighted element
+	background-color: $theme-highlighted !important;
+	text-shadow: none;
+}
+
+._9ot:hover { // li elements
+	background-color: rgba($theme-highlighted, 0.7) !important;
+}
+
+._26y3 { // footer
+	background-color: darken($theme-background-box, 10%) !important;
+	border-color: $theme-border !important;
+}
+
+// Page Loader
+._2iwq {
+	opacity: 0.2;
+}
+
+// notification count for administered page
+._5ugf {
+	background-color: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+
+// Timeline videos
+._2mbj ._3u33 {
+	background-color: transparent !important;
+}
+._2mbj ._3u33 i {
+	-webkit-filter: invert(50%) !important;
+}
+
+// Close hints
+._50zz._50z-, ._3soc {
+	-webkit-filter: invert(1) !important;
+    background-color: transparent !important;
+}
+
+// no background on close-button in groups
+._50-0._50z- {
+	background-color: transparent !important;
+}
+
+._1kf_ ._1yst {
+	background-color: rgba(255,255,255,.6) !important;
+}
+
+// Pointer to display what type of post is being made
+#pagelet_composer span._4-h8 {
+	border-color: transparent !important;
+}
+span._4-h8::after {
+	border-bottom: 8px solid $theme-background-box !important;
+}
+
+// Links at the top of notification overview
+._1sdi {
+	background-color: transparent !important;
+}

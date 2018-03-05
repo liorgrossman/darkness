@@ -1,0 +1,138 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Facebook Messenger skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+body {
+	background-color: $theme-background !important;
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.toolbarClass {
+	background: $theme-background !important;
+}
+
+// Left buttons (Settings and new message) - invert back from orange to blue
+a[role="button"] {
+	@include invert-back();
+}
+a[role="button"] svg {
+	-webkit-filter: none !important;
+}
+
+
+//toolbar of chat
+._5742,
+._36ic //messenger settings
+{
+	border-color: $theme-border !important;
+	background:  $theme-background-toolbar !important;
+}
+
+//drop down for settings
+._54nf
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+	li:hover {
+		background: $theme-highlighted !important;
+		span{
+			background: $theme-highlighted !important;
+		}
+	}
+}
+._4eby //settings popup
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+._2xhi , //converstations on side
+{
+	._5l-3 
+	{
+		background-color: $theme-background-box !important;
+		border-color: $theme-border !important;
+	}
+}
+._3rh8, //underneath messenger settings 
+._4_j5 // right side bar for conversational settings
+{
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// List of chats
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Small messenger (lightening) icon next to chats
+._2poo {
+	@include invert-back();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Chat windows
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// turn videos back to normal
+._1c_u {
+	@include invert-back();
+}
+
+
+
+// Bubble: theirs
+._29_7 >._hh7 {
+	background-color: $theme-background-box !important;
+	color: invert-back-color(#f0f0f0) !important;
+	a {
+		color: invert-back-color(#f0f0f0) !important;
+	}
+} 
+
+
+// Bubble: yours
+// _-5k _3i_m _nd_
+._nd_ ._hh7 {
+	-webkit-filter: invert(1) !important;
+}
+._nd_ ._hh7 img{
+	-webkit-filter: invert(0) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// New message
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//drop down select to message
+._4p-s>._29hk:nth-child(1),
+._4p-s>._29hk:nth-child(2) {
+	background-color: $theme-background-box !important;
+	border-color: $theme-border !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// 3rd Party Extensions Support
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+

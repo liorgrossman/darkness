@@ -1,0 +1,304 @@
+@import "all-google.scss";
+// Only used for the Google Drive logo
+$red: #EA4335;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: black !important;
+	border-color: $theme-border !important;
+	&:hover {
+		filter: brightness(0.9) !important;
+	}
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+:focus:not(.l-t-T-j:focus) {
+	outline: $theme-button-background solid 1px !important;
+}
+
+// Background
+.a-nEbBXb .a-qc-La,
+.a-nEbBXb .a-da-Mf-B-ji-j {
+	background-color: $theme-background !important;
+}
+
+// Notification
+.a-la-B.g-Yd.a-Ff-B .la-r {
+	color: invert-back-color($theme-tooltip-text) !important;
+}
+.a-la-B.g-Yd.a-Ff-B {
+	background-color: $theme-tooltip-background !important;
+	color: invert-back-color($theme-tooltip-text) !important;
+}
+
+// Popup darken overlay
+.a-b-L .a-b-jl {
+	background-color: rgba(255, 255, 255, 0.65) !important;
+}
+.a-b-L .a-b-K {
+	background: linear-gradient(to bottom,rgba(100,100,100,0.65) 0%,transparent 100%) !important;
+}
+.a-b-Ma-d.a-b-Da-d.h-sb-Ic.a-b-d {
+	margin-right: 38px !important;
+}
+.a-b-L .a-b-Ma-d .a-b-c,
+.a-b-L .a-b-od-d .a-b-od-d-c,
+.a-b-L .a-b-va-d .a-b-da-c,
+.a-b-L .a-b-K-Jc {
+	@include invert-back()
+}
+.a-b:not(.a-b-Od) .a-b-ma-Nd,
+.a-b-tb-Ce,
+.a-b-yb-ac,
+.a-b-tb-Ce,
+.a-b-r-x {
+	box-shadow: none !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.gb_xd,
+.gb_9d,
+.a-nEbBXb .a-D-B.a-D-B-gc-WErN3d {
+	background: $theme-background-toolbar !important;
+}
+.gb_0d {
+	background: transparent !important;
+}
+
+// "New" button box shadow
+.x6jRSb:not(.VuWATc):hover,
+.x6jRSb:not(.VuWATc).sXaDqb-W,
+.x6jRSb:not(.VuWATc):focus,
+.x6jRSb:not(.VuWATc).sXaDqb-Pb {
+    box-shadow: 0 2px 2px 0 transparentize($theme-button-background, 0.8),
+				0 3px 1px -2px transparentize($theme-button-background, 0.8),
+				0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
+}
+
+// "My Drive" dropdown icons
+.a-s-fa-Ha-pa {
+	fill: white !important;
+}
+
+.gb_xe {
+	background: $theme-textbox-background !important;
+}
+
+// Searchbar
+.gb_Ce,
+.gb_He,
+.gb_Je,
+.gb_Ee {
+	background: $theme-textbox-background !important;
+}
+
+// Search dropdown
+.a-s-yd-Zj {
+    border: 1px solid $theme-border;
+    border-top-color: $theme-border;
+    -webkit-box-shadow: 0 2px 4px transparentize($theme-button-background, 0.8) !important;
+    box-shadow: 0 2px 4px transparentize($theme-button-background, 0.8) !important;
+}
+
+// Search dropdown hover left border
+.a-s-yd-J.a-s-yd-Sa>* {
+	border-left: 2px solid $theme-button-background !important;
+}
+
+// More search tools dropdown underline
+.a-nEbBXb .h-R-w-d.g-Qb:focus, .a-nEbBXb .h-R-w-d.g-Qb:hover {
+    box-shadow: inset 0 -2px 0 0 $theme-button-background !important;
+}
+
+// More search tools buttons
+.a-nEbBXb .a-Ws-nb-Oh-Ma-A {
+	color: $theme-button-background !important;
+}
+
+// More search tools buttons
+.a-nEbBXb .g-d-Y:not(.g-d-db),
+.a-nEbBXb .g-d-Y:not(.g-d-db):focus,
+.a-nEbBXb .g-d-Y:not(.g-d-db).g-d-Pb {
+    background: $theme-button-background !important;
+}
+
+// More search tools input field hover/focus
+.a-nEbBXb .a-Va-Zb-vb:focus, .a-nEbBXb .a-Va-Zb-vb:hover {
+    box-shadow: inset 0 -2px 0 0 $theme-button-background !important;
+}
+
+// Toolbar box shadow
+.a-nEbBXb .a-D-B.a-D-B-gc-WErN3d {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+// Toolbar box shadow
+.a-D-B.a-D-B-gc-WErN3d {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+// Icon separator
+.a-d-vc {
+    @include invert()
+		opacity: .1 !important;
+}
+
+// Tooltips
+.g-Ca {
+	@include invert-back()
+}
+
+// "3 Folders" icon
+.kc-A,
+.a-i-ab-S-Z-gc-tj {
+	@include invert-back()
+}
+
+// Settings dropdown
+.a-nEbBXb .a-w,
+.a-nEbBXb .a-mb-w {
+	box-shadow: none !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Sidebar icons
+.a-Ng-c-ha,
+.a-da-U .a-U-ye-ha .a-U-xc-J .a-Ng-c-wk {
+	opacity: .7 !important;
+}
+
+// "My Drive" arrow icon
+.a-U-Vf>.a-U-Ze-c-Vf,
+.a-U-Vg>.a-U-Ze-c-Vg {
+	@include invert-back()
+	svg {
+		fill: black !important;
+		opacity: .7 !important;
+	}
+}
+
+// Upgrade Storage icon
+.xd-ml-c {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Main Content Area
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.a-nEbBXb .a-t-j .a-gd-j,
+.a-nEbBXb .a-t-D {
+	background-color: $theme-background-box !important;
+}
+
+// "Name" arrow icon
+.a-nEbBXb .a-s-Xc-ag-fa-Te .a-t-hd-mhHukc-aa svg {
+    fill: rgba(255, 255, 255, 0.54) !important;
+	&:hover {
+		fill: rgb(255, 255, 255) !important;
+	}
+}
+
+// Folder Focused/Active
+.a-nEbBXb .a-t-J-ha,
+.a-nEbBXb .l-u-ha {
+	@include invert-back()
+}
+.a-nEbBXb .a-t-J-ha img,
+.a-nEbBXb .l-u-ha img{
+	-webkit-filter: invert(0) !important;
+}
+
+// Folder icons
+.a-nEbBXb .l-t-T-c-j::before {
+    background: transparent !important;
+}
+
+// Notification
+.a-la-B-x {
+	@include invert-back()
+}
+
+// "My Drive" flyout
+.a-nEbBXb .a-ub-ra-B>.h-ra-B>.h-ra.h-ra-ha>.a-ra-Mb-j>.a-ra-Mb {
+    border-bottom-color: $theme-button-background !important;
+}
+
+// Flyout and file box shadows
+.a-nEbBXb .y-E-gh-D .y-C-Ed-V,
+.a-nEbBXb .l-u-xb {
+	box-shadow: 0 2px 2px 0 transparentize($theme-button-background, 0.8),
+				0 3px 1px -2px transparentize($theme-button-background, 0.8),
+				0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
+	-webkit-box-shadow: 0 2px 2px 0 transparentize($theme-button-background, 0.8),
+						0 3px 1px -2px transparentize($theme-button-background, 0.8),
+						0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
+}
+
+.a-nEbBXb .a-ub-ra-B>.h-ra-B>.h-ra-ha {
+	color: $theme-button-background !important;
+}
+
+.a-Mg-V:focus>.a-Mg-V-T, .a-Mg-V:hover>.a-Mg-V-T {
+    color: $theme-button-background !important;
+}
+
+// Folder box shadow
+.a-nEbBXb .l-u-xb.l-u-o {
+	box-shadow: none !important;
+}
+
+// Image file focus
+.l-u-ha .l-u-Ab-zb,
+.Hb-ja-Na .a-u-xb-j:focus .l-u-Ab-zb {
+	@include invert-back()
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Pseudo Elements
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+::selection {
+	background-color: $theme-button-background !important;
+}
+
+::-webkit-scrollbar-track {
+    background: $theme-background !important;
+    border-width: 0 !important;
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: $theme-background !important;
+    box-shadow: none !important;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-width: 1px 1px 1px 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $theme-button-background !important;
+    border-left: 2px solid $theme-button-background !important;
+    border-right: 1px solid $theme-button-background !important;
+    box-shadow: none !important;
+}
