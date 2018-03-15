@@ -417,41 +417,9 @@ var initializeTab = function(tab, startUpRetroactiveLoad) {
 
 
 // Called when a tab has been loaded
-var onTabComplete = function(tab) {
-	// Don't run on Darkness Developer Edition
-	if (ENVIRONMENT != 'development') {
-		try {
-			if (tab.url.indexOf(".") > -1) {
-				var url = new URL(tab.url);
-				if (url) {
-					// Detect book-related articles
-					var title = tab.title.toLowerCase();
-					if ((title.indexOf(" book") > -1 || title.indexOf("read") > -1)) {
-						// But not in popular domains (analytics will explode)
-						var hostname = url.hostname || "";
-						var sendStats = true;
-						const POPULAR_DOMAINS = ["google.com", "facebook.com", "www.instagram.com", "www.reddit.com", "twitter.com", "vk.com", "www.twitch.tv", "www.amazon.com", "www.netflix.com", "outlook.live.com", "live.com", "imgur.com", "en.wikipedia.org", "www.hulu.com", "www.messenger.com", "yandex.ru", "www.imdb.com", "www.baidu.com", "www.ebay.com", "bookauthority.org", "local.bookauthority.org"];
-						if (POPULAR_DOMAINS.indexOf(hostname) > -1) {
-							sendStats = false;
-						}
-						if (hostname.indexOf(".google.") > -1 || hostname.indexOf(".amazon.") > -1 || hostname.indexOf(".facebook.com") > -1 || hostname.indexOf(".wikipedia.org") > -1) {
-							sendStats = false;
-						}
-						if (sendStats) {
-							// Send anonymous analytics about the page, without sending any user-identifying info
-							var url = "https://bookauthority.org/api/ext/found-page-about-books?url=" + encodeURIComponent(tab.url) + "&title="+encodeURIComponent(tab.title);
-							var xmlhttp = new XMLHttpRequest();
-							xmlhttp.open("GET", url, true);
-							xmlhttp.send();	
-						}			
-					}
-				}
-			}
-		} catch (e) {
-			logError(e);
-		}
-	}
+var onTabComplete = function(tab) {	
 };
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Initialization Helpers
 //----------------------------------------------------------------------------------------------------------------------------------------------------
