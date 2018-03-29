@@ -108,8 +108,9 @@ body[data-drk-site="googledrive"] {
 	.gb_rc,
 	.gb_yc.gb_Zd,
 	.gb_Ac.gb_1d,
-	.gb_zc {
-	  padding-right: 38px;
+	.gb_zc,
+	.gb_Dc {
+		padding-right: 38px;
 	}
 	div.drk_settings_icon {
 		top: 17px !important;
@@ -186,7 +187,8 @@ body[data-drk-site="googlecalendar"] {
 		top: 16px !important;
 	}
 	.gb_hb,
-	.gb_zc {
+	.gb_zc,
+	.gb_Dc {
 		padding-right: 32px !important;
 	}
 }
@@ -198,7 +200,8 @@ body[data-drk-site="googlecontacts"] {
 	ul li.drk_button_li {
 		opacity: 1 !important;
 	}
-	.gb_zc {
+	.gb_zc,
+	.gb_Dc {
 		margin-right: 30px !important;
 	}
 }
