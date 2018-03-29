@@ -30,6 +30,27 @@ a, a:visited, body .btn-link, body .btn-link:focus, body .icon-btn, body .pretty
 	background: rgba(200,200,200,0.55) !important;
 }
 
+// Tweets
+.tweet {
+	background-color: $theme-background-box !important;
+}
+.home-tweet-box {
+	background-color: $theme-background-toolbar !important;
+}
+
+// Sidebar boxes
+.flex-module, .module {
+	background-color: $theme-background-box !important;
+}
+
+// Activities
+.NotificationsHeadingContent {
+	background-color: $theme-background-toolbar !important;
+}
+.stream-item {
+	background-color: $theme-background-box !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Override user color (colors that are based on a Twitter profile's color theme)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -191,8 +212,8 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Dialogs
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-.modal-overlay {
-	background: rgba(200,200,200,0.9) !important;
+.modal-overlay, .modal-container {
+	background: rgba(255,255,255,0.3) !important;
 }
 
 .Icon--report,
@@ -204,16 +225,20 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	-webkit-filter: invert(0) !important;
 }
 
-.DirectMessage-media {
-	-webkit-filter: invert(1) !important;
-}
 .DirectMessage-media .Media-photo {
-	-webkit-filter: invert(1) !important;
+	-webkit-filter: invert(0) !important;
 }
 
 .EmojiPicker > button,
 .DirectMessage-action > button {
 	background-color: transparent !important;
+}
+
+.DMActivity-header {
+	background-color: $theme-background-toolbar !important;
+}
+.DMActivity-body {
+	background-color: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
