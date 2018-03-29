@@ -409,6 +409,12 @@ var CONFIG = {
 			name: 'FontAwesome',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^fontawesome\.com$', 'i')
+		},
+		'linkedin': {
+			key: 'linkedin', // Must be the same as the object key
+			name: 'LinkedIn',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i')
 		}
 	}
 };
