@@ -403,6 +403,12 @@ var CONFIG = {
 			name: 'Box',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^www\.box\.com$', 'i')
+		},
+		'fontawesome': {
+			key: 'fontawesome', // Must be the same as the object key
+			name: 'FontAwesome',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^fontawesome\.com$', 'i')
 		}
 	}
 };
