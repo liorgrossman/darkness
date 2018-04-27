@@ -252,7 +252,7 @@ var CONFIG = {
 		'trello': {
 			key: 'trello', // Must be the same as the object key
 			name: 'Trello',
-			support: 'full', // Show a call to action for developers to join our community (don't show it in dev mode)
+			support: 'in-development', // Show a call to action for developers to join our community (don't show it in dev mode)
 			hostRegExp: new RegExp('^trello\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
@@ -272,11 +272,11 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'reddit': {
-			key: 'reddit', // Must be the same as the object key
-			name: 'Reddit',
+		'oldreddit': {
+			key: 'oldreddit', // Must be the same as the object key
+			name: 'oldReddit',
 			support: 'full',
-			hostRegExp: new RegExp('^www\.reddit\.com$', 'i'),
+			hostRegExp: new RegExp('^old\.reddit\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
@@ -415,6 +415,12 @@ var CONFIG = {
 			name: 'LinkedIn',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i')
+		},
+		'reddit': {
+			key: 'reddit', // Must be the same as the object key
+			name: 'Reddit',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
 		}
 	}
 };
