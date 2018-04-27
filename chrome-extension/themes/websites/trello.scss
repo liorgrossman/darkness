@@ -2,12 +2,15 @@
 // Storing the Trello colors as variables for ease of use
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// For some reason, some things have to me re-inverted
-.body-dark-board-background{
+// For some reason, some things have to be re-inverted
+.body-dark-board-background,
+.body-light-board-background,
+.body-gray-board-background{
 	.boards-drawer {
 		background-color: invert-back-color($theme-background-toolbar) !important;
 	}
 	.board-drawer-content,
+	.pop-over,
 	.window-overlay,
 	#surface {
 		@include invert-back();
