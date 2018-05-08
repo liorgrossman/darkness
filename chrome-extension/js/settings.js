@@ -696,6 +696,14 @@ if (!DarknessSettingsLoader) {
 				win.focus();
 			});
 
+			// Privacy policy button
+			$('.drk_settings .drk_privacy_btn').unbind('click').click(function(e) {
+				repEventByUser('user-action', 'feedback-privacy-click');
+				var url = 'http://lifehacklabs.org/darkness/darkness-privacy-policy.pdf';
+				var win = window.open(url, '_blank');
+				win.focus();
+			});
+
 			// Rate button
 			$('.drk_settings .drk_rate_btn').unbind('click').click(function() {
 				repEventByUser('user-action', 'rate-btn-click');
