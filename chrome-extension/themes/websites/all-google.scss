@@ -8,6 +8,11 @@
 	color: White !important;
 }
 
+// Topbar
+.gb_be {
+	background-color: $theme-background-toolbar !important;
+}
+
 // Sign in
 .gb_Ha,
 .gb_Fa {
@@ -17,7 +22,8 @@
 }
 
 // Site name, eg. "Calendar" or "Drive"
-.gb_ee {
+.gb_ee,
+.gb_ge {
 	@include invert-back();
 }
 
@@ -31,7 +37,9 @@ body[data-drk-site="googlephotos"] .gbii {
 }
 // Menu, App-drawer and Notification icons
 .gb_yc svg,
-.gb_kc svg {
+.gb_kc svg,
+.gb_Xa svg,
+.gb_oc svg {
 	color: invert-back-color($theme-text) !important;
 }
 .gb_cc {
@@ -68,7 +76,8 @@ span.gb_6b,
 
 // "My account" button
 .gb_xb .gb_Db,
-.gb_sb .gb_yb {
+.gb_sb .gb_yb,
+.gb_Cb .gb_Jb {
 	background: $theme-button-background !important;
 	border-color: $theme-button-background !important;
 	color: black !important;

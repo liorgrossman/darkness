@@ -43,6 +43,7 @@ a[role="button"] svg {
 
 //toolbar of chat
 ._5742,
+._673w,
 ._36ic //messenger settings
 {
 	border-color: $theme-border !important;
@@ -90,6 +91,14 @@ a[role="button"] svg {
 ._2poo {
 	@include invert-back();
 }
+// Background
+._1wfr {
+	background: $theme-background !important;
+}
+// Searchbar
+._1nq2 {
+	background: $theme-background-box !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Chat windows
@@ -127,9 +136,14 @@ a[role="button"] svg {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 //drop down select to message
 ._4p-s>._29hk:nth-child(1),
+._4rv3,
 ._4p-s>._29hk:nth-child(2) {
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
+}
+._kmc ._1p1t {
+	color: $theme-text-faint !important;
+	-webkit-text-fill-color: $theme-text-faint !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

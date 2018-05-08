@@ -272,11 +272,11 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'reddit': {
-			key: 'reddit', // Must be the same as the object key
-			name: 'Reddit',
+		'oldreddit': {
+			key: 'oldreddit', // Must be the same as the object key
+			name: 'oldReddit',
 			support: 'full',
-			hostRegExp: new RegExp('^www\.reddit\.com$', 'i'),
+			hostRegExp: new RegExp('^old\.reddit\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
@@ -403,6 +403,24 @@ var CONFIG = {
 			name: 'Box',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^www\.box\.com$', 'i')
+		},
+		'fontawesome': {
+			key: 'fontawesome', // Must be the same as the object key
+			name: 'FontAwesome',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^fontawesome\.com$', 'i')
+		},
+		'linkedin': {
+			key: 'linkedin', // Must be the same as the object key
+			name: 'LinkedIn',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i')
+		},
+		'reddit': {
+			key: 'reddit', // Must be the same as the object key
+			name: 'Reddit',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
 		}
 	}
 };
