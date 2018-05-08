@@ -65,4 +65,4 @@ Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and ex
 * Check out our other projects: [BookAuthority](https://bookauthority.org/) and [Select New Tab](https://chrome.google.com/webstore/detail/select-beautiful-photos-f/gidbhaipbdimcjbjkpnhkdhghpbghena)
 
 ##  Misc
-Darkness is licensed [GPLv3](./LICENSED). Please read our privacy policy [here](http://lifehacklabs.org/darkness/darkness-privacy-policy.pdf).
+Darkness is licensed [GPLv3](./LICENSE). Please read our privacy policy [here](http://lifehacklabs.org/darkness/darkness-privacy-policy.pdf).
