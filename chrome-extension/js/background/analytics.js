@@ -29,7 +29,10 @@ var initializeAnalyticsOnStart = function() {
 
 		// Initialize analytics to work properly in a background script
 		ga('set', 'checkProtocolTask', function() {}); // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
-		ga('require', 'displayfeatures');
+
+		// Keep users' privacy
+		ga('set', 'anonymizeIp', true); // Anonymize users' IP
+		ga('set', 'displayFeaturesTask', null); // Turn off advertising reporting features
 
 		// Set a different campaignSource for staging and for production (to avoid polluting the production analytics)
 		// No analytics are sent in Darkness Developer Edition
