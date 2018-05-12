@@ -236,8 +236,18 @@ var CONFIG = {
 				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
 			]
 		},
-
-
+		'coinmarketcap': {
+			key: 'coinmarketcap', // Must be the same as the object key
+			name: 'Coinmarketcap',
+			support: 'full',
+			hostRegExp: new RegExp('^coinmarketcap\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Maylor Taylor', link: 'https://github.com/maylortaylor/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
+			]
+		},
 		'stackoverflow': {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
@@ -305,7 +315,7 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		
+
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
@@ -364,7 +374,7 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		
+
 		//--------------------------------------------------------------------
 		// Ask developers for help on the following websites
 		//--------------------------------------------------------------------
