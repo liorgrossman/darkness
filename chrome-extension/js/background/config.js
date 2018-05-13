@@ -186,6 +186,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'googlekeep': {
+			key: 'googlekeep', // Must be the same as the object key
+			name: 'Google Keep',
+			support: 'full',
+			hostRegExp: new RegExp('^keep\.google\.com$', 'i'),
+			creators: [
+				{ name: 'Maylor Taylor', link: 'https://github.com/maylortaylor/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'youtube': {
 			key: 'youtube', // Must be the same as the object key
 			name: 'YouTube',
