@@ -132,6 +132,12 @@ i {
 // Homepage / Feed
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Green online marker in feed
+._354z {
+	@include invert-back();
+	border-color: invert-back-color($theme-background-box) !important;
+}
+
 // Homepage - middle content column
 #contentCol {
 	background-color: $theme-background !important;
@@ -663,12 +669,6 @@ input[type="text"]._58al {
 	background-color: $theme-background-toolbar !important;
 }
 
-// Sent messages
-._1nc6 ._5w1r {
-	background-color: $theme-background-box !important;
-	border-color: $theme-border !important;
-}
-
 // Received messages
 ._1nc7 ._5w1r {
 	background-color: lighten($theme-background-box, 10%) !important;
@@ -696,11 +696,11 @@ div[aria-label*="sticker"] {
 }
 
 // Your emojis
-._1nc6 ._d97 img, ._1nc6 ._d97 a img {
+._1nc6 ._d97 img, ._1nc6 ._d97 a img, ._1nc6 ._1aa6 img {
 	-webkit-filter:invert(0) !important;
 }
 // Bubble: yours
-._1nc6 ._d97, ._1nc6 ._d97 a {
+._1nc6 ._d97, ._1nc6 ._d97 a, ._1nc6 ._1aa6 {
 	//background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
 	//color: invert-back-color(#ffffff) !important;
 	-webkit-filter:invert(1) !important;
