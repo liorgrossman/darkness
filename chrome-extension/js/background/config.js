@@ -245,7 +245,28 @@ var CONFIG = {
 				{ name: 'Maylor Taylor', link: 'https://github.com/maylortaylor/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
+			]
+		},
+		'discover': {
+			key: 'discover', // Must be the same as the object key
+			name: 'Discover',
+			support: 'full',
+			hostRegExp: new RegExp('^www\.discover\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Maylor Taylor', link: 'https://github.com/maylortaylor/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'discovercard': {
+			key: 'discovercard', // Must be the same as the object key
+			name: 'DiscoverCard',
+			support: 'full',
+			hostRegExp: new RegExp('^card\.discover\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Maylor Taylor', link: 'https://github.com/maylortaylor/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
 		'stackoverflow': {
