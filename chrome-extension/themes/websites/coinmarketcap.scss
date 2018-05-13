@@ -45,9 +45,7 @@ input {
 // Toolbar background
 
 .navbar-brand {
-	img {
-		background: $theme-highlighted-darker !important;
-	}
+	@include invert-back();
 }
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Homepage
