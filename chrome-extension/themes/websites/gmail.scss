@@ -534,3 +534,18 @@ input
 .gb_Va * {
 	@include invert-back();	
 }
+
+// Labels in email list
+.ar.as .at {
+	@include invert-back();
+}
+
+// Labels in sidebar
+.qj {
+	@include invert-back();	
+}
+
+// Default (uncolored) label in sidebar
+.qj.qr {
+	border-color:#fff;
+}
