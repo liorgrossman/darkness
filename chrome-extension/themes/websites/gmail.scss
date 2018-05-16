@@ -549,3 +549,8 @@ input
 .qj.qr {
 	border-color:#fff;
 }
+
+// "Add / remove" star in email list
+td.apU>.T-KT.aXw::before {
+	@include invert();
+}
