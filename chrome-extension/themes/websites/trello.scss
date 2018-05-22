@@ -112,6 +112,24 @@ a:visited {
 	color: $theme-link !important;
 }
 
+// The homepage when logged in
+.up-next-card-list-item > div, .dhmfCv {
+	background: $theme-background-box !important;
+}
+.sc-VigVT .sc-bxivhb, 
+.sc-gqjmRU .sc-gZMcBi {
+	@include invert-back();
+}
+.home-activity .atMention.me {
+	color: $theme-highlighted !important;
+}
+.board-tile[style*="background-image:"] .board-tile-details-name {
+	color: invert-back-color($theme-highlighted) !important;
+}
+.board-tile-details-name {
+	color: $theme-highlighted !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Handling setting darker trello colors
 //----------------------------------------------------------------------------------------------------------------------------------------------------

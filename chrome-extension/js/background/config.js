@@ -347,6 +347,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'hackernews': {
+			key: 'hackernews', // Must be the same as the object key
+			name: 'Hacker News ',
+			support: 'full',
+			hostRegExp: new RegExp('^news\.ycombinator\.com', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Łukasz Wójcik', link: 'https://lukaszwojcik.net' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
