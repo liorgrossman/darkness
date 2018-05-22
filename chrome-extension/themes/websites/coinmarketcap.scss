@@ -68,3 +68,6 @@ button.dropdown-toggle {
 .toolbar-tool-icon {
 	background-color: $theme-highlighted-darker !important;
 }
+.percent-change {
+	@include invert-back();
+}
