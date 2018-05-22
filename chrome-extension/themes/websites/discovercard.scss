@@ -49,7 +49,7 @@ a, a:visited, input[type=submit] {
 }
 
 .discover-logo {
-	@include invert();
+	@include invert-back();
 }
 .merchant-name, .amount-val, .transaction-item, .credits-payments-link {
 	color: $theme-notices !important;

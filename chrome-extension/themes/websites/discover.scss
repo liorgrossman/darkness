@@ -42,8 +42,15 @@ a, a:visited, input[type=submit] {
 	// @include invert();
 	color: #000 !important;
 }
-
-.discover-logo {
+.card-art {
+	@include invert();
+}
+.subnav--wide__link {
+	button {
+		background: $theme-background-toolbar !important;
+	}
+}
+.discover-logo, .feature-banner {
 	@include invert();
 }
 .item-image {
