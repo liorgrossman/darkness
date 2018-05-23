@@ -132,6 +132,7 @@ a:visited {
 .sc-gqjmRU .sc-gZMcBi {
 	@include invert-back();
 }
+.up-next-card-list-item .atMention.me,
 .home-activity .atMention.me {
 	color: $theme-highlighted !important;
 }
@@ -141,7 +142,7 @@ a:visited {
 .board-tile-details-name {
 	color: $theme-highlighted !important;
 }
-.cMpGUA {
+.canonical-stretch {
 	@include invert-back();
 }
 .cMpGUA > * {
