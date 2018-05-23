@@ -30,6 +30,19 @@ Edit `/themes/themes/[THEME].scss` (e.g. `/themes/themes/material.scss`)
 #### Create a new color theme (in addition to Monokai, Tomorrow, etc.)
 Open `/themes/themes/THEME-TEMPLATE.scss` in your code editor and follow the instructions.
 
+#### Change the location of the darkness logo on a supported page, even when the theme isn't loaded
+Edit the `/chrome-extension/stylepage.scss` file.  
+Either find the page you are looking for by key or add the one you are adding, eg:  
+
+```css
+body[data-drk-site="sharelatex"] {
+	div.drk_settings_icon {
+		top: 6px !important;
+		right: 8px !important;
+	}
+}
+```
+
 
 ## How to push code back to Darkness?
 1. Please test your changes locally in Chrome
