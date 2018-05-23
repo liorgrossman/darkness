@@ -94,6 +94,14 @@ a.job-listing{
 .js-star-board {
 	@include invert-back();
 }
+.dialog-close-button,
+.dialog-close-button span,
+.visibility-filter span,
+.visibility-filter {
+	background: transparent !important;
+	background-color: transparent !important;
+	color: $theme-button-background !important;
+}
 
 // Login with google
 #google-link, #google {
@@ -113,10 +121,14 @@ a:visited {
 }
 
 // The homepage when logged in
-.up-next-card-list-item > div, .dhmfCv {
+.body-tabbed-page {
+	background: $theme-background !important;
+}
+.up-next-card-list-item > div, .dhmfCv, .hiqYnm {
 	background: $theme-background-box !important;
 }
 .sc-VigVT .sc-bxivhb, 
+.ipgIDX .sc-bxivhb, 
 .sc-gqjmRU .sc-gZMcBi {
 	@include invert-back();
 }
@@ -128,6 +140,21 @@ a:visited {
 }
 .board-tile-details-name {
 	color: $theme-highlighted !important;
+}
+.cMpGUA {
+	@include invert-back();
+}
+.cMpGUA > * {
+	@include invert-back();
+}
+.deRXfE {
+	background: $theme-background-box !important;
+}
+.cXkHdx .sc-ifAKCX {
+	@include invert-back();
+}
+.home-left-sidebar-container .home-tab-container .home-tab.selected {
+	background: $theme-highlighted !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
