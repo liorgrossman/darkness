@@ -127,9 +127,7 @@ a:visited {
 .up-next-card-list-item > div, .dhmfCv, .hiqYnm {
 	background: $theme-background-box !important;
 }
-.sc-VigVT .sc-bxivhb, 
-.ipgIDX .sc-bxivhb, 
-.sc-gqjmRU .sc-gZMcBi {
+.canonical-comment > div > div > span {
 	@include invert-back();
 }
 .up-next-card-list-item .atMention.me,
@@ -145,10 +143,13 @@ a:visited {
 .canonical-stretch {
 	@include invert-back();
 }
+.canonical-stretch .sc-bxivhb {
+	@include invert-back();
+}
 .cMpGUA > * {
 	@include invert-back();
 }
-.deRXfE {
+.canonical-comment > div {
 	background: $theme-background-box !important;
 }
 .cXkHdx .sc-ifAKCX {
