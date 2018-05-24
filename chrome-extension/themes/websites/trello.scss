@@ -121,7 +121,9 @@ a:visited {
 }
 
 // The homepage when logged in
-.body-tabbed-page {
+.body-tabbed-page,
+.member-boards-view, 
+.member-boards-view.super-home {
 	background: $theme-background !important;
 }
 .up-next-card-list-item > div, .dhmfCv, .hiqYnm {
