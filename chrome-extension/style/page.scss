@@ -80,7 +80,7 @@ body[data-drk-site="google"] {
 	}
 }
 body[data-drk-site="quora"] {
-	div.drk_settings_icon {		
+	div.drk_settings_icon {
 		top: 12px !important;
 		right: 10px !important;
 	}
@@ -89,7 +89,7 @@ body[data-drk-site="jsfiddle"] {
 	#actions .right {
 		margin-right: 47px !important;
 	}
-	div.drk_settings_icon {		
+	div.drk_settings_icon {
 		top: 12px !important;
 		right: 12px !important;
 	}
@@ -142,6 +142,22 @@ body[data-drk-site="mint"] {
 	.login-signup-menu {
 		padding-right: 38px !important;
 	}
+}
+body[data-drk-site="coinmarketcap"] {
+	div.drk_settings_icon {
+		top: 6px !important;
+		right: 12px !important;
+	}
+	.global-stats {
+		padding-right: 20px !important;
+	}
+}
+body[data-drk-site="googlekeep"] {
+	div.drk_settings_icon {
+		top: 6px !important;
+		right: 12px !important;
+	}
+	
 }
 body[data-drk-site="twitch"] {
 	.top-nav__menu > div:last-child {
