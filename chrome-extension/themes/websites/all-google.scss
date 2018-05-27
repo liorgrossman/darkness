@@ -9,7 +9,7 @@
 }
 
 // Topbar
-.gb_be {
+.gb_be, .gb_de {
 	background-color: $theme-background-toolbar !important;
 }
 
@@ -22,7 +22,7 @@
 }
 
 // Site name, eg. "Calendar" or "Drive"
-.gb_ee,
+// .gb_ee,
 .gb_ge {
 	@include invert-back();
 }

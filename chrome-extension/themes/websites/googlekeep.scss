@@ -22,10 +22,6 @@ input {
 		color: $theme-text !important;
 	}
 }
-// User image
-.gb_b.gb_ib.gb_R, .gb_Eb.gbip {
-	@include invert-back();
-}
 
 // status bar under edit modal/dialog box. "Got it"
 .Ng57nc.EfADOe.ti6hGc {

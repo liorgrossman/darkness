@@ -40,6 +40,20 @@ body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
 // Position the moon icon in the toolbar, adjust the toolbar (based on website)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 body[data-drk-site="google"],
+body[data-drk-site="gmail"],
+body[data-drk-site="googlecalendar"],
+body[data-drk-site="googlecontacts"],
+body[data-drk-site="googledrive"],
+body[data-drk-site="googledocs"],
+body[data-drk-site="googlekeep"] {
+	.gb_hb,
+	.gb_zc,
+	.gb_Dc,
+	.gb_Fc {
+		padding-right: 32px !important;
+	}
+}
+body[data-drk-site="google"],
 body[data-drk-site="gmail"] {
 	// If logged in: the avatar on the right side of toolbar
 	.gb_R {
@@ -105,13 +119,6 @@ body[data-drk-site="wikipedia"] {
 	}
 }
 body[data-drk-site="googledrive"] {
-	.gb_rc,
-	.gb_yc.gb_Zd,
-	.gb_Ac.gb_1d,
-	.gb_zc,
-	.gb_Dc {
-		padding-right: 38px;
-	}
 	div.drk_settings_icon {
 		top: 17px !important;
 		right: 12px !important;
@@ -157,9 +164,6 @@ body[data-drk-site="googlekeep"] {
 		top: 17px !important;
 		right: 5px !important;
 	}
-	.gb_Hd.gb_de.gb_Nd.gb_ee {
-		padding-right: 30px !important;
-	}
 }
 body[data-drk-site="twitch"] {
 	.top-nav__menu > div:last-child {
@@ -204,11 +208,6 @@ body[data-drk-site="googlecalendar"] {
 	div.drk_settings_icon {
 		top: 16px !important;
 	}
-	.gb_hb,
-	.gb_zc,
-	.gb_Dc {
-		padding-right: 32px !important;
-	}
 }
 
 body[data-drk-site="googlecontacts"] {
@@ -217,10 +216,6 @@ body[data-drk-site="googlecontacts"] {
 	}
 	ul li.drk_button_li {
 		opacity: 1 !important;
-	}
-	.gb_zc,
-	.gb_Dc {
-		margin-right: 30px !important;
 	}
 }
 

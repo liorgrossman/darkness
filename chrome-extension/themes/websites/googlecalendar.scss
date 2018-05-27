@@ -68,7 +68,6 @@ input, textarea, input[type="text"] {
 .gb_yf,
 .gb_xc:not(.gb_sb) .gb_Bd,
 .gb_yc:not(.gb_tb) .gb_Cd,
-.gb_Be,
 #calmaster{
 	background: $theme-background !important;
 	background-color: $theme-background !important;
@@ -83,6 +82,14 @@ input, textarea, input[type="text"] {
 }
 .gstl_50.gstt input {
 	background: transparent !important;
+}
+
+// Logo
+.gb_Be img {
+	-webkit-filter: invert(0) !important;
+}
+.gb_Be span {
+	color: $theme-text !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
