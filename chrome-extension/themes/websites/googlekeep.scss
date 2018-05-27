@@ -1,0 +1,41 @@
+@import "all-google.scss";
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// upper navigation and toolbar
+.gb_Hd.gb_de.gb_Nd.gb_ee {
+	background-color: $gray !important;
+	// "Keep"
+	.gb_ne.gb_ie {
+		color: $theme-text !important;
+	}
+}
+// User image
+.gb_b.gb_ib.gb_R, .gb_Eb.gbip {
+	@include invert-back();
+}
+
+// status bar under edit modal/dialog box. "Got it"
+.Ng57nc.EfADOe.ti6hGc {
+	background-color: $theme-highlighted !important;
+	color: #000 !important;
+	& div[role=button] {
+		color: #000 !important;
+	}
+}
+// icons
+a svg{
+	color: $theme-link !important;
+}
