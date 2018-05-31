@@ -12,7 +12,8 @@
 	.board-drawer-content,
 	.pop-over,
 	.window-overlay,
-	#surface {
+	#surface,
+	.is-due-past {
 		@include invert-back();
 	}
 }
