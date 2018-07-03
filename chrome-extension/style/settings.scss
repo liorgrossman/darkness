@@ -380,15 +380,16 @@ ul li.drk_button_li {
 div.drk_settings {
 	z-index: $darkness-z-index-base !important;
 	position: fixed !important;
-	top: 10px !important;
-	right: 10px !important;
+	top: 0px !important;
+	right: 0px !important;
 	font-family: 'Open Sans' !important;
 	font-weight: 400 !important;
 	font-size: 13px !important;
 	-webkit-user-select: none !important;
+	text-rendering: auto !important;
 	cursor: default !important;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25), 0 2px 3px 0 rgba(0, 0, 0, 0.5) !important;
-	border-radius: 3px !important;
+	border-radius: 3px 0 3px 3px !important;
 	background: $darkness-background !important;
 	color: $darkness-text !important;
 	width: 340px !important;
@@ -399,7 +400,7 @@ div.drk_settings {
 
 	div.drk_toolbar {
 		background: $darkness-toolbar-background !important;
-		border-radius: 3px 3px 0 0 !important;
+		border-radius: 3px 0 0 0 !important;
 		color: White !important;
 		margin-bottom: 2px !important;
 		div.drk_app_icon {

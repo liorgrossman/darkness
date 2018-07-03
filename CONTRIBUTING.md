@@ -30,21 +30,6 @@ Edit `/themes/themes/[THEME].scss` (e.g. `/themes/themes/material.scss`)
 #### Create a new color theme (in addition to Monokai, Tomorrow, etc.)
 Open `/themes/themes/THEME-TEMPLATE.scss` in your code editor and follow the instructions.
 
-#### Change the position of the Darkness moon icon
-The Darkness moon icon is shown on every supported site, whether a theme is loaded or not.
-The icon's position is different for every site, so it doesn't block out the site's toolbar elements.
-To change the icon position, simply edit `/style/page.scss`.
-Find the site by key (same key used on `/js/background/config.js`), or add a new site, for example:
-```css
-body[data-drk-site="sharelatex"] {
-	div.drk_settings_icon {
-		top: 6px !important;
-		right: 8px !important;
-	}
-}
-```
-
-
 ## How to push code back to Darkness?
 1. Please test your changes locally in Chrome
 1. Commit and push:
