@@ -249,7 +249,7 @@ var CONFIG = {
 		},
 		'coinmarketcap': {
 			key: 'coinmarketcap', // Must be the same as the object key
-			name: 'Coinmarketcap',
+			name: 'CoinMarketCap',
 			support: 'full',
 			hostRegExp: new RegExp('^coinmarketcap\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
