@@ -43,12 +43,12 @@ div.drk_settings_icon {
 }
 
 body[data-drk-promo="s"] div.drk_settings_icon {
-	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-promo.png') no-repeat center !important;
+	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-promo.png?v=2') no-repeat center !important;
 	background-size: cover !important;
 }
 
 body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
-	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-ask-developers.png') no-repeat center !important;
+	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-ask-developers.png?v=2') no-repeat center !important;
 	background-size: cover !important;
 }
 
