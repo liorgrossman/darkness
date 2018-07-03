@@ -20,13 +20,13 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 * Select from 5 color themes: Iceberg, Tomorrow, Material Design, Dusk, Red Alert ([help us add more](./CONTRIBUTING.md))
 * Written in JavaScript, uses SASS
 * Self-hosted. Easy to install on Windows, Mac, Linux
-* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm).  
+* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm)
 
 
 
 ## Installation
 ####  Installing Darkness Developer Edition:
-1. Recommended: [join our developers community](https://www.facebook.com/groups/darkness-developers) to discuss and ask questions.
+1. Recommended: [join our developers community](https://www.facebook.com/groups/darkness-developers) to discuss and ask questions
 1. Fork the Darkness repo: https://github.com/liorgrossman/darkness/fork
 1. Clone your fork locally:
 	* If you use SSH: `git clone git@github.com:YOUR_GITHUB_USER/darkness.git`
@@ -56,7 +56,7 @@ npm install
 
 ## Contributing fixes and new themes
 **Pull requests are welcome!**
-Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and extend Darkness.
+Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and extend Darkness
 
 
 ## Be in touch
@@ -65,4 +65,4 @@ Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and ex
 * Check out our other projects: [BookAuthority](https://bookauthority.org/) and [Select New Tab](https://chrome.google.com/webstore/detail/select-beautiful-photos-f/gidbhaipbdimcjbjkpnhkdhghpbghena)
 
 ##  Misc
-Darkness is licensed [GPLv3](./LICENSE). Please read our privacy policy [here](http://lifehacklabs.org/darkness/darkness-privacy-policy.pdf).
+Darkness is licensed [GPLv3](./LICENSE). Please read our privacy policy [here](http://lifehacklabs.org/darkness/darkness-privacy-policy.pdf)
