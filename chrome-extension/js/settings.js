@@ -673,6 +673,7 @@ if (!DarknessSettingsLoader) {
 				var subj = 'Darkness Bug Report';
 				var body = '[Please send your bug report in English]\n\n________\nSystem Information:\nDarkness Version: ' +
 					chrome.runtime.getManifest().version +
+					"\nBrowser: " + navigator.userAgent +
 					(ASSETS.TYPE == 'p' ? '[2]' : '[1]') + '\nCurrent Website: ' + SITE + '\nCurrent URL: ' + document.location.href +
 					'\nCurrent Theme: ' + THEME;
 				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
