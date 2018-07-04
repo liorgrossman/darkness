@@ -554,6 +554,15 @@ if (!DarknessSettingsLoader) {
 				$('.drk_skin_contributors_line').removeClass('visible');
 			}
 
+			// CTA for developers
+			if (siteInfo.siteForDevelopers) {
+				$('.drk_developer_add .text').html("Developer? Get all Darkness Pro features");
+				$('.drk_developer_add').addClass('drk_bold');
+			} else {
+				$('.drk_developer_add .text').html("Developer? Add skins to more websites");
+				$('.drk_developer_add').removeClass('drk_bold');
+			}
+
 			// Show/hide youtube theme
 			if (SITE == 'youtube') {
 				// Check for <HTML style> to determine whether it's the old or new YouTube design

@@ -141,18 +141,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'googledrive': {
-			key: 'googledrive', // Must be the same as the object key
-			name: 'Google Drive',
-			support: 'in-development',
-			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
-			creators: [
-				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			]
-		},
 		'googlecalendar': {
 			key: 'googlecalendar', // Must be the same as the object key
 			name: 'Google Calendar',
@@ -215,6 +203,7 @@ var CONFIG = {
 			key: 'github', // Must be the same as the object key
 			name: 'GitHub',
 			support: 'full',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^(gist\.|)github\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' },
@@ -228,6 +217,7 @@ var CONFIG = {
 			key: 'sharelatex', // Must be the same as the object key
 			name: 'ShareLaTeX',
 			support: 'full',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('\.sharelatex\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
@@ -284,6 +274,7 @@ var CONFIG = {
 			key: 'stackoverflow', // Must be the same as the object key
 			name: 'StackOverflow',
 			support: 'full',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
@@ -295,6 +286,7 @@ var CONFIG = {
 			key: 'trello', // Must be the same as the object key
 			name: 'Trello',
 			support: 'full', // Show a call to action for developers to join our community (don't show it in dev mode)
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^trello\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
@@ -329,6 +321,7 @@ var CONFIG = {
 			key: 'jsfiddle', // Must be the same as the object key
 			name: 'JSFiddle',
 			support: 'full',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^jsfiddle\.net$', 'i'),
 			creators: [
 				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
@@ -340,6 +333,7 @@ var CONFIG = {
 			key: 'cloudflare', // Must be the same as the object key
 			name: 'Cloudflare',
 			support: 'full',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^www\.cloudflare\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
@@ -351,6 +345,7 @@ var CONFIG = {
 			key: 'hackernews', // Must be the same as the object key
 			name: 'Hacker News ',
 			support: 'full',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^news\.ycombinator\.com', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Łukasz Wójcik', link: 'https://lukaszwojcik.net' }
@@ -362,6 +357,18 @@ var CONFIG = {
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
+		'googledrive': {
+			key: 'googledrive', // Must be the same as the object key
+			name: 'Google Drive',
+			support: 'in-development',
+			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
+			creators: [
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			]
+		},
 		'wikipedia': {
 			key: 'wikipedia', // Must be the same as the object key
 			name: 'Wikipedia',
@@ -425,30 +432,35 @@ var CONFIG = {
 			key: 'bitbucket', // Must be the same as the object key
 			name: 'Bitbucket',
 			support: 'ask-developers',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^bitbucket\.org$', 'i')
 		},
 		'gitlab': {
 			key: 'gitlab', // Must be the same as the object key
 			name: 'GitLab',
 			support: 'ask-developers',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^gitlab\.com$', 'i')
 		},
 		'serverfault': {
 			key: 'serverfault', // Must be the same as the object key
 			name: 'ServerFault',
 			support: 'ask-developers',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^serverfault\.com$', 'i')
 		},
 		'askubuntu': {
 			key: 'askubuntu', // Must be the same as the object key
 			name: 'askUbuntu',
 			support: 'ask-developers',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^askubuntu\.com$', 'i')
 		},
 		'w3schools': {
 			key: 'w3schools', // Must be the same as the object key
 			name: 'w3schools',
 			support: 'ask-developers',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^www\.w3schools\.com$', 'i')
 		},
 		'box': {
@@ -461,6 +473,7 @@ var CONFIG = {
 			key: 'fontawesome', // Must be the same as the object key
 			name: 'FontAwesome',
 			support: 'ask-developers',
+			siteForDevelopers: true,
 			hostRegExp: new RegExp('^fontawesome\.com$', 'i')
 		},
 		'linkedin': {
