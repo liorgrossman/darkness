@@ -24,6 +24,7 @@ div.drk_settings_icon {
 	background-size: cover !important;
 	opacity: 0.8 !important;
 	transition: opacity .25s !important;
+	overflow: hidden !important;
 	&:hover {
 		opacity: 1 !important;
 		transition: opacity 0.03s !important;
