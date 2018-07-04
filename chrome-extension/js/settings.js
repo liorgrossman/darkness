@@ -467,7 +467,7 @@ if (!DarknessSettingsLoader) {
 			document.head.appendChild(s);
 		};
 
-		// Append or replace the HTML in the BODY with ASSETS.HTML
+		// Append or replace the HTML in the BODY with the HTML provided directly from the background script
 		var putHtmlInBody = function() {
 			var prev = document.getElementById(ID_SETTINGS_HTML);
 			if (prev) {

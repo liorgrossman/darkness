@@ -171,6 +171,7 @@ if (!DarknessLoader) { // Don't load twice
 
 		// Helper: show a message in the bottom of the screen. Nicer than alert()
 		var showAlert = function(msg) {
+			// msg can be safely assigned to innerHTML because showAlert is only called internally with predetermined texts
 			document.getElementsByClassName('drk_settings_global_msg_text')[0].innerHTML = msg;
 			document.getElementsByClassName('drk_settings_global_msg_close')[0].onclick = function(e) {
 				e.stopPropagation();
@@ -237,6 +238,7 @@ if (!DarknessLoader) { // Don't load twice
 			var d = document.createElement('div');
 			d.setAttribute('id', ID_FOR_INJECTED_DIV);
 			d.setAttribute('class', SITE);
+			// Append the HTML of the moon icon, provided directly from the background script
 			d.innerHTML = ASSETS.HTML;
 			document.body.appendChild(d);
 		};
