@@ -306,7 +306,7 @@ var injectSettingsScriptToTab = function(tab) {
 
 		// Inject jQuery
 		chrome.tabs.executeScript(tab.id, {
-			file: 'libs/jquery-2.2.3.min.js',
+			file: 'libs/jquery.min.js',
 			runAt: 'document_start',
 			allFrames: false // not in iframes
 		}, function() {

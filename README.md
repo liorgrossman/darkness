@@ -20,7 +20,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 * Select from 5 color themes: Iceberg, Tomorrow, Material Design, Dusk, Red Alert ([help us add more](./CONTRIBUTING.md))
 * Written in JavaScript, uses SASS
 * Self-hosted. Easy to install on Windows, Mac, Linux
-* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm)
+* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm) and [Firefox Add-on Store](https://addons.mozilla.org/en-US/firefox/addon/darkness-dark-themes/)
 
 
 
