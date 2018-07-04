@@ -5,10 +5,15 @@ var ENVIRONMENT = 'development';
 
 // Important - don't touch this:
 if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production'; // Chrome Web Store version
+if (chrome.runtime.id == 'darkness@darkness.app') ENVIRONMENT = 'production'; // Firefox Add-on Store version
 
-// Local testing versions
-if (chrome.runtime.id == 'koobfbhnpdijhobcdllfkmlgngbpgjep') ENVIRONMENT = 'development'; // Local version (development)
-if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging'; // Local testing version before deploying (staging)
+// Development version
+if (chrome.runtime.id == 'koobfbhnpdijhobcdllfkmlgngbpgjep') ENVIRONMENT = 'development';
+if (chrome.runtime.id == 'development@darkness.app') ENVIRONMENT = 'development';
+
+// Staging (local testing before depoyment to stores)
+if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging';
+if (chrome.runtime.id == 'staging@darkness.app') ENVIRONMENT = 'staging';
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global vars

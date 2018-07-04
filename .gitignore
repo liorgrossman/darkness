@@ -2,6 +2,9 @@
 # Ignores specific to Darkness
 /chrome-production
 /chrome-zips
+/firefox-extension
+/firefox-production
+/firefox-zips
 *.zip
 /.idea
 

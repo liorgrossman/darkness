@@ -8,11 +8,25 @@ var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 var del = require('del');
 var zip = require('gulp-zip');
+var jsonTransform = require('gulp-json-transform');
+var replace = require('gulp-replace');
 
-const zipFilename = 'Darkness-CWS-latest.zip';
 const chromeDevelopmentDir = 'chrome-extension';
 const chromeProductionDir = 'chrome-production';
 const chromeZipsDir = 'chrome-zips';
+const chromeZipFilename = 'Darkness-CWS-latest.zip';
+
+const firefoxDevelopmentDir = 'firefox-extension';
+const firefoxProductionDir = 'firefox-production';
+const firefoxZipsDir = 'firefox-zips';
+const firefoxZipFilename = 'Darkness-FF-latest.zip';
+
+const firefoxAddonIds = {
+	development: 'development@darkness.app',
+	staging: 'staging@darkness.app',
+	production: 'darkness@darkness.app',
+}
+
 var manifestJson = JSON.parse(fs.readFileSync(chromeDevelopmentDir + '/manifest.json'));
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -35,7 +49,7 @@ function fileExists(filePath) {
 gulp.task('cws:replicate', function() {
 	gutil.log("Replicate started");
 	// Delete any existing production dir
-	var deletedFiles = del.sync([chromeProductionDir, chromeZipsDir + '/' + zipFilename], { force: true, dryRun: false });
+	var deletedFiles = del.sync([chromeProductionDir, chromeZipsDir + '/' + chromeZipFilename], { force: true, dryRun: false });
 	for (var i in deletedFiles) gutil.log("Deleted: ", deletedFiles[i]);
 	// Copy dev dir recursively to production dir
 	return gulp.src([chromeDevelopmentDir + '/**/*']).pipe(gulp.dest(chromeProductionDir));
@@ -62,20 +76,130 @@ gulp.task('cws:zip', ['cws:cleanup'], function() {
 	gutil.log("Zipping...");
 	// Create a zip file
 	return gulp.src(chromeProductionDir + '/**/*')
-		.pipe(zip(zipFilename))
+		.pipe(zip(chromeZipFilename))
 		.pipe(gulp.dest(chromeZipsDir));
 });
 
-// Zip the production directory
+// Copy and name the zip file
 gulp.task('cws:archive', ['cws:zip'], function() {
 	var archiveFilename = 'Darkness-CWS-v' + manifestJson.version + '_(' + (new Date()).toISOString().slice(0, 19).replace('T', '__').replace(/:/g, '-') + ').zip';
 	gutil.log("Copying to archive: " + archiveFilename);
 	// Copy to archive
-	return gulp.src(chromeZipsDir + '/' + zipFilename).pipe(rename(archiveFilename)).pipe(gulp.dest(chromeZipsDir));
+	return gulp.src(chromeZipsDir + '/' + chromeZipFilename).pipe(rename(archiveFilename)).pipe(gulp.dest(chromeZipsDir));
 });
 
 gulp.task('cws', ['cws:replicate', 'cws:cleanup', 'cws:zip', 'cws:archive']);
 gulp.task('precws', ['cws:replicate', 'cws:cleanup']);
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Preapre a ZIP that is uploaded to Firefox Addon store:
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Replicate dev to production
+gulp.task('ffa:replicate', function() {
+	gutil.log("Replicate started");
+	// Delete any existing production dir
+	var deletedFiles = del.sync([firefoxProductionDir, firefoxZipsDir + '/' + firefoxZipFilename], { force: true, dryRun: false });
+	for (var i in deletedFiles) gutil.log("Deleted: ", deletedFiles[i]);
+	// Copy dev dir recursively to production dir
+	return gulp.src([firefoxDevelopmentDir + '/**/*']).pipe(gulp.dest(firefoxProductionDir));
+});
+
+gulp.task('ffa:manifest', ['ffa:replicate'], function() {
+	return gulp.src(firefoxProductionDir + '/manifest.json')
+		.pipe(jsonTransform(function(manifest, file) {
+			// Transform the Firefox manifest from dev to production
+			manifest.applications = {
+				gecko: {
+					id: firefoxAddonIds.production
+				}
+			};
+			return manifest;
+		}, "\t"))
+		.pipe(gulp.dest(firefoxProductionDir));
+});
+
+// Clean up unnecessary files
+gulp.task('ffa:cleanup', ['ffa:manifest'], function() {
+	gutil.log("Cleanup started");
+	var deletedFiles = del.sync(
+		[firefoxProductionDir + '/themes',
+			firefoxProductionDir + '/style'
+		], { force: true, dryRun: false });
+	for (var i in deletedFiles) gutil.log("Deleted directory: ", deletedFiles[i]);
+
+	deletedFiles = del.sync(
+		[firefoxProductionDir + '/**/*.scss',
+			firefoxProductionDir + '/**/*.map'
+		], { force: true, dryRun: false });
+	for (var i in deletedFiles) gutil.log("Deleted file: ", deletedFiles[i]);
+});
+
+// Zip the production directory
+gulp.task('ffa:zip', ['ffa:cleanup'], function() {
+	gutil.log("Zipping...");
+	// Create a zip file
+	return gulp.src(firefoxProductionDir + '/**/*')
+		.pipe(zip(firefoxZipFilename))
+		.pipe(gulp.dest(firefoxZipsDir));
+});
+
+// Copy and name the zip file
+gulp.task('ffa:archive', ['ffa:zip'], function() {
+	var archiveFilename = 'Darkness-FF-v' + manifestJson.version + '_(' + (new Date()).toISOString().slice(0, 19).replace('T', '__').replace(/:/g, '-') + ').zip';
+	gutil.log("Copying to archive: " + archiveFilename);
+	// Copy to archive
+	return gulp.src(firefoxZipsDir + '/' + firefoxZipFilename).pipe(rename(archiveFilename)).pipe(gulp.dest(firefoxZipsDir));
+});
+
+gulp.task('ffa', ['ffa:replicate', 'ffa:cleanup', 'ffa:zip', 'ffa:archive']);
+gulp.task('preffa', ['ffa:replicate', 'ffa:cleanup']);
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Port Darkness Chrome Extension to a Firefox add-on
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Replicate dev to production
+gulp.task('ff:replicate', function() {
+	gutil.log("Replicate to Firefox started");
+	// Delete any existing production dir
+	var deletedFiles = del.sync([firefoxDevelopmentDir], { force: true, dryRun: false });
+	for (var i in deletedFiles) gutil.log("Deleted: ", deletedFiles[i]);
+	// Copy dev dir recursively to production dir
+	return gulp.src([chromeDevelopmentDir + '/**/*']).pipe(gulp.dest(firefoxDevelopmentDir));
+});
+
+gulp.task('ff:manifest', ['ff:replicate'], function() {
+	return gulp.src(firefoxDevelopmentDir + '/manifest.json')
+		.pipe(jsonTransform(function(manifest, file) {
+			// Transform the Chrome manifest to a Firefox manifest
+			delete manifest.background.persistent;
+			delete manifest.options_page;
+			manifest.applications = {
+				gecko: {
+					id: firefoxAddonIds.development
+				}
+			};
+			return manifest;
+		}, "\t"))
+		.pipe(gulp.dest(firefoxDevelopmentDir));
+});
+
+
+gulp.task('ff:replace', ['ff:manifest'], function() {
+	return gulp.src([
+			firefoxDevelopmentDir + '/**/*.js',
+			firefoxDevelopmentDir + '/**/*.css',
+			firefoxDevelopmentDir + '/**/*.scss',
+			firefoxDevelopmentDir + '/**/*.html',
+		])
+		.pipe(replace(/chrome-extension:\/\//g, 'moz-extension://'))
+		.pipe(gulp.dest(firefoxDevelopmentDir));
+});
+
+gulp.task('ff', ['ff:replicate', 'ff:manifest', 'ff:replace']);
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // SASS compilation

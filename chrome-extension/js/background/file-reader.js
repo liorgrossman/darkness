@@ -29,6 +29,7 @@ var _readFileUsingHttp = function(debug, filename, callback) {
 			}
 		}
 	};
+	httpRequest.responseType = 'text';
 	httpRequest.open('GET', url);
 	httpRequest.send();
 };
