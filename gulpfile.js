@@ -75,6 +75,7 @@ gulp.task('cws:archive', ['cws:zip'], function() {
 });
 
 gulp.task('cws', ['cws:replicate', 'cws:cleanup', 'cws:zip', 'cws:archive']);
+gulp.task('precws', ['cws:replicate', 'cws:cleanup']);
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // SASS compilation
