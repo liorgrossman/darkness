@@ -196,6 +196,7 @@ gulp.task('ff:replace', ['ff:manifest'], function() {
 			firefoxDevelopmentDir + '/**/*.html',
 		])
 		.pipe(replace(/chrome-extension:\/\//g, 'moz-extension://'))
+		.pipe(replace(/\-webkit\-/g, ''))
 		.pipe(gulp.dest(firefoxDevelopmentDir));
 });
 

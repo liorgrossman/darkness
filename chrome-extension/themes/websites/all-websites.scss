@@ -15,8 +15,26 @@ body {
 	background-color: $theme-background !important;
 	// min-height is important so there is no white padding below the page
 	min-height: 100% !important;
-	// Invert the colors of the entire page (as a baseline)
-	@include invert();
+}
+
+// For Firefox, make the HTML instead of the BODY inverted
+// Adding a filter to the BODY in firefox causes all 'fixed' elements to behave like 'absolute' (bug)
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1311070
+@-moz-document url-prefix() {
+	html {
+		// Invert the colors of the entire page (as a baseline)
+		@include invert();
+		height: 100vh !important;
+	}
+	
+	body {
+		-webkit-filter: none !important;
+
+		// Causes horizontal scrollbar, don't show on Firefox
+		div.drk_preview_mark.visible {
+			display: none !important;
+		}
+	}
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

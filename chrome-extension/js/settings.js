@@ -692,6 +692,7 @@ if (!DarknessSettingsLoader) {
 				}
 				var body = '[Please send your feedback in English]\n\n________\nSystem Information (for bug reports):\nDarkness Version: ' +
 					chrome.runtime.getManifest().version +
+					"\nBrowser: " + navigator.userAgent +
 					(ASSETS.TYPE == 'p' ? '[2]' : '[1]') + '\nCurrent Website: ' + SITE + '\nCurrent URL: ' + document.location.href +
 					'\nCurrent Theme: ' + THEME;
 				if (e.altKey) {
