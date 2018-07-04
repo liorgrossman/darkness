@@ -133,7 +133,7 @@ div.drk_button {
 	background: $darkness-button-background !important;
 	color: $darkness-button-text !important;
 	cursor: pointer !important;
-	padding: 6px 0 6px 2px !important;
+	padding: 7px 0 7px 2px !important;
 	margin: 0 !important;
 	display: block !important;
 	font-weight: 300 !important;
@@ -261,7 +261,7 @@ ul li.drk_button_li {
 	transition: all .1s ease-in-out !important;
 	text-align: left !important;
 	float: left !important;
-	width: 110px !important;
+	width: 114px !important;
 	height: 40px !important;
 	position: relative !important;
 	opacity: 0.9 !important;
@@ -445,14 +445,17 @@ div.drk_settings {
 		clear: both !important;
 		float: left !important;
 		width: 100% !important;
-		padding: 14px 0 10px !important;
-		border-bottom: solid 1px lighten($darkness-background, 10%) !important;
-		&:last-of-type {
-			border-bottom: none !important;
-			//padding: 20px 0 5px !important;
+		padding: 0 0 20px !important;
+		&.drk_section_website {
+			padding-top: 20px !important;
+		}
+		&.drk_section_skin {
+			border-top: solid 1px rgba(255,255,255,0.1) !important;
+			padding-top: 10px !important;
+			padding-bottom: 12px !important;
 		}
 		div.drk_title {
-			padding: 0 20px !important;
+			padding: 0 25px !important;
 			font-size: 14px !important;
 			font-weight: 300 !important;
 			color: #ddd !important;
@@ -465,10 +468,11 @@ div.drk_settings {
 			}
 		}
 		div.drk_subtitle {
-			padding: 5px 20px 0 !important;
+			padding: 0 25px !important;
 			font-size: 11px !important;
+			line-height: 16px !important;
 			font-weight: 300 !important;
-			color: darken($darkness-text, 10%)  !important;
+			color: darken($darkness-text, 5%)  !important;
 			display: none !important;
 			&.visible {
 				display: block !important;
@@ -482,10 +486,10 @@ div.drk_settings {
 			}
 		}
 		div.drk_content {
-			padding: 6px 20px 1px !important;
+			padding: 0 20px !important;
 			&.drk_theme_list_content {
 				float: left !important;
-				padding: 2px 20px !important;
+				padding: 2px 16px !important;
 			}
 		}
 	}
@@ -502,18 +506,19 @@ div.drk_settings {
 
 div.drk_settings section.drk_section_pro {
 	height: 133px !important;
-	padding: 0 !important;
+	padding: 0 0 10px 0 !important;
 	opacity: 0.9 !important;
+	border-bottom: solid 1px rgba(255,255,255,0.1) !important;
 	cursor: pointer !important;
 	transition: opacity 0.2s ease-in-out !important;
 }
 
 div.drk_settings section.drk_section_pro.sku-1 {
-	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-1.png") no-repeat center !important;
+	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-1.png") no-repeat top !important;
 }
 
 div.drk_settings section.drk_section_pro.sku-2 {
-	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-2.png") no-repeat center !important;
+	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-2.png") no-repeat top !important;
 }
 
 div.drk_settings section.drk_section_pro:hover {
