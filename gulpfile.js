@@ -89,7 +89,7 @@ gulp.task('cws:archive', ['cws:zip'], function() {
 });
 
 gulp.task('cws', ['cws:replicate', 'cws:cleanup', 'cws:zip', 'cws:archive']);
-gulp.task('precws', ['cws:replicate', 'cws:cleanup']);
+gulp.task('cws0', ['cws:replicate', 'cws:cleanup']);
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ gulp.task('ffa:archive', ['ffa:zip'], function() {
 });
 
 gulp.task('ffa', ['ffa:replicate', 'ffa:cleanup', 'ffa:zip', 'ffa:archive']);
-gulp.task('preffa', ['ffa:replicate', 'ffa:cleanup']);
+gulp.task('ffa0', ['ffa:replicate', 'ffa:cleanup']);
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

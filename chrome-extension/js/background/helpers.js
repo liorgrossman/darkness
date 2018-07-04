@@ -15,6 +15,11 @@ if (chrome.runtime.id == 'development@darkness.app') ENVIRONMENT = 'development'
 if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging';
 if (chrome.runtime.id == 'staging@darkness.app') ENVIRONMENT = 'staging';
 
+var BROWSER = 'chrome';
+if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+	BROWSER = 'firefox';
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global vars
 //----------------------------------------------------------------------------------------------------------------------------------------------------
