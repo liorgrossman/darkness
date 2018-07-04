@@ -41,7 +41,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 
 #### Loading it in Chrome:
 1. Open Chrome and browse to [chrome://extensions](chrome://extensions)
-1. If you have already Darkness installed, disable it
+1. If you already Darkness installed Darkness from Chrome Web Store, disable it
 1. Check **Developer mode** in the top of the Extensions page
 1. Click **Load unpacked extension...**
 1. Choose the sub-directory **darkness/darkness-chrome** (where manifest.json resides)
@@ -49,7 +49,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 #### Loading it in Firefox:
 1. Run `gulp ff` to transform the **darkness-chrome** directory to **darkness-firefox**
 1. Open Firefox and browse to [about:debugging](about:debugging)
-1. If you have already Darkness installed, disable it
+1. If you already Darkness installed Darkness from Firefox Add-on store, disable it
 1. Click **Load Temporary Add-on**
 1. Choose the file **darkness/darkness-firefox/manifest.json**
 
@@ -59,7 +59,7 @@ git checkout master
 git pull upstream master
 npm install
 ```
-and if you use firefox: `gulp ff`
+If you use it on Firefox, also run: `gulp ff`
 
 ## Contributing fixes and new themes
 **Pull requests are welcome!**

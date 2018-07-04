@@ -5,10 +5,11 @@ Please help us **improve existing skins and create new ones**. Pull requests are
 
 ## Getting started
 1. If you haven't yet, [install Darkness locally](./README.md#installation)
-1. Open Chrome and use Darkness regularly (e.g. open Google and switch to a dark theme)
-1. Run `npm start` to **watch and compile SCSS files to CSS** in real-time
-1. Make changes to SCSS or JS files inside the **chrome-extension** directory
+1. Open Chrome and use Darkness regularly (e.g. open [Google](https://www.google.com/) and switch to a dark theme)
+1. Run `npm start` to watch and auto-compile all SCSS files to CSS in real-time
+1. Edit any SCSS or JS file you wish inside the **chrome-extension** directory
 1. Refresh the tab (e.g. Google) to see the changes you've made
+
 Note that development and debugging should be done on Chrome. To test your changes on Firefox, run `gulp ff` and [install Darkness on Firefox](./README.md#installation).
 
 ## How do I...
