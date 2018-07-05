@@ -177,6 +177,7 @@ gulp.task('ff:manifest', ['ff:replicate'], function() {
 			// Transform the Chrome manifest to a Firefox manifest
 			delete manifest.background.persistent;
 			delete manifest.options_page;
+			delete manifest.content_security_policy;
 			manifest.applications = {
 				gecko: {
 					id: firefoxAddonIds.development
