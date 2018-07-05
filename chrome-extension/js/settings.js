@@ -14,6 +14,7 @@ if (!DarknessSettingsLoader) {
 		var PRINT_LOGS = (ENVIRONMENT != 'production') || document.location.href.indexOf('debug_darkness=1') > -1;
 		var CONFIG = JSON.parse('@@CONFIG@@');
 		var MACHINE_ID = '@@MACHINEID@@';
+		var BROWSER = (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? 'firefox' : 'chrome';
 
 		// Currently shown theme & site keys
 		var THEME = '@@THEME@@';
@@ -175,7 +176,7 @@ if (!DarknessSettingsLoader) {
 			var now = new Date();
 			var transactionId = 'tid_' + now.getFullYear() + '_' + ('0'+(now.getMonth()+1)).slice(-2) + '_' + now.getDate();
 			if (ENVIRONMENT != 'production') transactionId += '_n' + Math.floor(Math.random()*10000);
-			var custom = { dialog_reason: dialogReason, theme: THEME, site: SITE, machine_id: MACHINE_ID, transaction_id: transactionId };
+			var custom = { dialog_reason: dialogReason, theme: THEME, site: SITE, browser: BROWSER, machine_id: MACHINE_ID, transaction_id: transactionId };
 			$('#drk_paypal_custom').attr('value', JSON.stringify(custom));
 
 			// Hide upgrade dialog, and show "waiting" dialog instead
