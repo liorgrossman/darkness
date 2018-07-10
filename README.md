@@ -68,8 +68,8 @@ Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and ex
 
 ## Be in touch
 * Join the [Darkness Developers Community on Facebook](https://www.facebook.com/groups/darkness-developers)
-* Contact us at: contact@lifehacklabs.org
+* Contact us at: contact@darkness.app
 * Check out our other projects: [BookAuthority](https://bookauthority.org/) and [Select New Tab](https://chrome.google.com/webstore/detail/select-beautiful-photos-f/gidbhaipbdimcjbjkpnhkdhghpbghena)
 
 ##  Misc
-Darkness is licensed [GPLv3](./LICENSE). Please read our privacy policy [here](http://lifehacklabs.org/darkness/darkness-privacy-policy.pdf)
+Darkness is licensed [GPLv3](./LICENSE). Please read our privacy policy [here](https://darkness.app/privacy/darkness-privacy-policy.pdf)
