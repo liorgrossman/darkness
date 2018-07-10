@@ -172,12 +172,15 @@ gulp.task('ff:replicate', function() {
 });
 
 gulp.task('ff:manifest', ['ff:replicate'], function() {
+	var buyJs = 'libs/buy.js';
+	del.sync([firefoxDevelopmentDir + '/' + buyJs ], { force: true, dryRun: false })
 	return gulp.src(firefoxDevelopmentDir + '/manifest.json')
 		.pipe(jsonTransform(function(manifest, file) {
 			// Transform the Chrome manifest to a Firefox manifest
 			delete manifest.background.persistent;
 			delete manifest.options_page;
 			delete manifest.content_security_policy;
+			manifest.background.scripts = manifest.background.scripts.filter(s => s != buyJs);
 			manifest.applications = {
 				gecko: {
 					id: firefoxAddonIds.development
