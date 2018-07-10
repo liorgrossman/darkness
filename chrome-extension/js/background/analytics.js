@@ -59,19 +59,23 @@ var DEBUG_ANALYTICS = false;
 
 // Private helper method: report a pageview to Google Analytics
 var _reportPageview = function(path, title) {
-	var analyticsLoaded = typeof(ga) != 'undefined';
-	if (DEBUG_ANALYTICS) logWarn((analyticsLoaded ? 'Sending pageview:' : 'Not sending pageview:'), path);
-	if (analyticsLoaded) {
-		ga('send', { hitType: 'pageview', page: path, title: title });
+	if (getBrowser() != 'firefox') {
+		var analyticsLoaded = typeof(ga) != 'undefined';
+		if (DEBUG_ANALYTICS) logWarn((analyticsLoaded ? 'Sending pageview:' : 'Not sending pageview:'), path);
+		if (analyticsLoaded) {
+			ga('send', { hitType: 'pageview', page: path, title: title });
+		}
 	}
 };
 
 // Private helper method: report an event to Google Analytics
 var _reportEvent = function(category, action, label, value) {
-	var analyticsLoaded = typeof(ga) != 'undefined';
-	if (DEBUG_ANALYTICS) logWarn((analyticsLoaded ? 'Sending event:' : 'Not sending event:'), category, action, label, value);
-	if (analyticsLoaded) {
-		if (ga) ga('send', 'event', category, action, label, value);
+	if (getBrowser() != 'firefox') {
+		var analyticsLoaded = typeof(ga) != 'undefined';
+		if (DEBUG_ANALYTICS) logWarn((analyticsLoaded ? 'Sending event:' : 'Not sending event:'), category, action, label, value);
+		if (analyticsLoaded) {
+			if (ga) ga('send', 'event', category, action, label, value);
+		}
 	}
 };
 
@@ -101,11 +105,10 @@ var _reportUserActiveInternal = function() {
 
 	var installDate = stats.get('installDate') || 0;
 	var daysSinceInstall = getDaysSinceInstall(installDate, true);
-	
+
 	if (stats.get('type') == 'p') {
 		repEvent('users', 'user-days-pro', daysSinceInstall);
-	}
-	else {
+	} else {
 		repEvent('users', 'user-days-free', daysSinceInstall);
 	}
 
