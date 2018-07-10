@@ -234,7 +234,7 @@ var PaymentsFactory = function() {
 	// Check Google Payments for the current user (based on the Chrome's user account)
 	// Callback returns: errorString, paidBoolean
 	var _checkGooglePayments = function(callback) {
-		if (BROWSER != 'chrome') {
+		if (getBrowser() != 'chrome') {
 			return callback(null, false);
 		}
 		google.payments.inapp.getPurchases({

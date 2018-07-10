@@ -11,7 +11,7 @@
 // Initializer #1: right when background script is loaded
 var initializeAnalyticsOnStart = function() {
 	// Not on developer edition
-	if (ENVIRONMENT != 'development' && BROWSER != 'firefox') {
+	if (ENVIRONMENT != 'development' && getBrowser() != 'firefox') {
 
 		// Google Universal Analytics loader
 		(function(i, s, o, g, r, a, m) {

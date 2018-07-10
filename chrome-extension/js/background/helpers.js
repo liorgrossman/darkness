@@ -15,8 +15,7 @@ if (chrome.runtime.id == 'development@darkness.app') ENVIRONMENT = 'development'
 if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging';
 if (chrome.runtime.id == 'staging@darkness.app') ENVIRONMENT = 'staging';
 
-var BROWSER = (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? 'firefox' : 'chrome';
-	
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Global vars
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -27,6 +26,13 @@ var stats; // An object with user stats (e.g. install time, install version)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Helper functions
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Get browser name
+// Returns either 'chrome' or 'firefox'
+var getBrowser = function() {
+	return (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? 'firefox' : 'chrome';
+}
+
 // Get tab name: helper method for debug prints
 var getTabName = function(tab) {
 	return '"' + tab.url.substr(0, 35).replace('https://', '').replace('http://', '') + '...' + '"';
