@@ -1010,6 +1010,11 @@ if (!DarknessSettingsLoader) {
 					loadUpgradeDialogEventHandlers();
 					loadOtherDialogsEventHandlers();
 
+					if ($('body').attr('drk-on-start') == 'upgrade-dialog') {
+						console.log('Loading upgrade dialog on start');
+						$('.drk_settings .drk_upgrade_btn').trigger('click');
+					}
+
 					if (onlyAskDevelopers) {
 						// Show the developers dialog
 						$('.drk_join_developers').addClass('visible');
