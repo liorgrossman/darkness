@@ -343,12 +343,24 @@ var CONFIG = {
 		},
 		'hackernews': {
 			key: 'hackernews', // Must be the same as the object key
-			name: 'Hacker News ',
+			name: 'Hacker News',
 			support: 'full',
 			siteForDevelopers: true,
-			hostRegExp: new RegExp('^news\.ycombinator\.com', 'i'),
+			hostRegExp: new RegExp('^news\.ycombinator\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Łukasz Wójcik', link: 'https://lukaszwojcik.net' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'darkness': {
+			key: 'darkness', // Must be the same as the object key
+			name: 'Darkness Website',
+			support: 'full',
+			siteForDevelopers: false,
+			hostRegExp: new RegExp('^(darkness.app|local.darkness.com)$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' },
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
