@@ -29,7 +29,7 @@ var stats; // An object with user stats (e.g. install time, install version)
 
 // Get browser name
 // Returns either 'chrome' or 'firefox'
-var getBrowser = function() {
+const getBrowser = function() {
 	return (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? 'firefox' : 'chrome';
 }
 
