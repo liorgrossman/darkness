@@ -51,10 +51,10 @@ var StatsFactory = function() {
 		}
 		var statsJson = JSON.stringify(statsToSave);
 		var cookie = {
-			url: "http://lifehacklabs.org",
+			url: "https://darkness.app",
 			name: "darkness_stats",
 			value: statsJson,
-			domain: "lifehacklabs.org",
+			domain: "darkness.app",
 			path: "/",
 			expirationDate: 2051222400,
 			/* Year 2035 */
