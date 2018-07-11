@@ -18,7 +18,7 @@ var getSiteKeyForUrl = function(url) {
 		// log("Unsupported protocol " + urlParts.protocol + ", skipping");
 		return null;
 	}
-	if (urlParts.port != '' && urlParts.protocol != ':80' && urlParts.protocol != ':443') {
+	if (urlParts.port != '' && urlParts.port != '80' && urlParts.port != '443' && urlParts.port != '3000') {
 		// log("Unsupported port " + urlParts.port + ", skipping");
 		return null;
 	}
@@ -46,7 +46,7 @@ var getSiteKeyForUrl = function(url) {
 			}
 		}
 	}
-	// log("Unsupported hostname " + urlParts.hostname + ", skipping");
+	log("Unsupported hostname " + urlParts.hostname + ", skipping");
 	return null;
 };
 
@@ -511,12 +511,12 @@ var loadAllAssetsToCache = function(debug, callback) {
 // Initialize Darkness' configuration
 var initializeConfiguration = function() {
 	// Chrome runtime configuration setup
-	chrome.runtime.setUninstallURL("https://darkness.app/uninstalled/");
+	chrome.runtime.setUninstallURL("https://darkness.app/uninstalled");
 
 	chrome.runtime.onInstalled.addListener(function(details) {
 		log("Chrome invoked onInstalled: ", details);
 		if (details && details.reason == "install") {
-			chrome.tabs.create({ url: "https://darkness.app/thank-you/" }, function(tab) {
+			chrome.tabs.create({ url: "https://darkness.app/thank-you" }, function(tab) {
 				log("Thank you page opened");
 			});
 		}
