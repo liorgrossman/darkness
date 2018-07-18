@@ -499,6 +499,12 @@ var CONFIG = {
 			name: 'Reddit',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
+		},
+		'slack': {
+			key: 'slack', // Must be the same as the object key
+			name: 'Slack',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^*slack\.com$', 'i')
 		}
 	}
 };
