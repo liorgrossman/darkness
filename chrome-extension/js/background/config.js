@@ -504,7 +504,7 @@ var CONFIG = {
 			key: 'slack', // Must be the same as the object key
 			name: 'Slack',
 			support: 'ask-developers',
-			hostRegExp: new RegExp('^*slack\.com$', 'i')
+			hostRegExp: new RegExp('^(.+)?slack\.com$', 'i')
 		}
 	}
 };
