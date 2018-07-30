@@ -312,9 +312,9 @@ var CONFIG = {
 		},
 		'oldreddit': {
 			key: 'oldreddit', // Must be the same as the object key
-			name: 'oldReddit',
+			name: 'Reddit',
 			support: 'full',
-			hostRegExp: new RegExp('^old\.reddit\.com$', 'i'),
+			hostRegExp: new RegExp('^(www|old)\.reddit\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
@@ -497,12 +497,6 @@ var CONFIG = {
 			name: 'LinkedIn',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i')
-		},
-		'reddit': {
-			key: 'reddit', // Must be the same as the object key
-			name: 'Reddit',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^www\.reddit\.com$', 'i')
 		},
 		'slack': {
 			key: 'slack', // Must be the same as the object key
