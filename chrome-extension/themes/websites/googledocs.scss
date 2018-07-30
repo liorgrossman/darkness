@@ -61,7 +61,8 @@ iframe {
 .docs-homescreen-gb-container header > div,
 .gb_xc:not(.gb_sb) .gb_Bd, 
 .gb_2d,
-.docs-material-appbar #docs-header .docs-titlebar-buttons {
+.docs-material-appbar #docs-header .docs-titlebar-buttons,
+.docs-material #docs-header .docs-titlebar-buttons {
 	background-color: $theme-background-toolbar !important;
 }
 
@@ -116,6 +117,14 @@ iframe {
 }
 .gb_Hd.gb_Sd .gb_Dd .gb_xe {
 	margin: 0 auto !important;
+}
+
+// Collab
+.docs-presence-plus-collab-widget-container {
+	@include invert-back();
+}
+.docs-presence-plus-collab-widget-image {
+	-webkit-filter: invert(0) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
