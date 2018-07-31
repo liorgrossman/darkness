@@ -30,9 +30,9 @@ var CONFIG = {
 			key: 'redalert',
 			name: 'Red Alert'
 		},
-		'sunset': {
-			key: 'sunset',
-			name: 'Sunset'
+		'coffee': {
+			key: 'coffee',
+			name: 'Coffee'
 		},
 		'youtubedark': {
 			key: 'youtubedark',
