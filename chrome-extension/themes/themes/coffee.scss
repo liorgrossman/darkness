@@ -56,7 +56,7 @@ $theme-link-visited: invert-back-color(desaturate(darken($link-color, 10%), 20%)
 $theme-link-active: invert-back-color($link-color);
 
 // Special text colors
-$theme-url: invert-back-color($c9);
+$theme-url: invert-back-color($c7);
 
 // Text highlights (e.g. selected row)
 $theme-highlighted: invert-back-color($c4);
