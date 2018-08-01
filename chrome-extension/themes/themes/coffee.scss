@@ -52,7 +52,7 @@ $theme-text-faint: invert-back-color(darken($text-color, 5%));
 
 // Links color
 $theme-link: invert-back-color($link-color);
-$theme-link-visited: invert-back-color(desaturate(darken($link-color, 10%), 20%));
+$theme-link-visited: invert-back-color(desaturate(darken($link-color, 15%), 20%));
 $theme-link-active: invert-back-color($link-color);
 
 // Special text colors
@@ -74,7 +74,7 @@ $theme-button-background: invert-back-color($c2);
 $theme-secondary-button-background: invert-back-color($c1);
 
 // Faint buttons (close to background color)
-$theme-faint-button-background: invert-back-color(lighten($c2, 10%));
+$theme-faint-button-background: invert-back-color(darken($c1, 10%));
 
 // Textboxes, Textareas, Inputs
 $theme-textbox-background: invert-back-color(darken($c2, 10%));
