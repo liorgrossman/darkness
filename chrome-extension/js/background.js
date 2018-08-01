@@ -60,6 +60,10 @@ var whichThemeForSite = function(debug, siteKey, canPreview) {
 	if (CONFIG.sites[siteKey]) {
 		var themeFromSettings = settings.sites.get(siteKey, 'theme');
 		if (themeFromSettings) {
+			// Migrate users who chose 'sunset' theme to 'coffee'
+			if (themeFromSettings == 'sunset') {
+				themeFromSettings = 'coffee';
+			}
 			// Has user settings
 			if (debug) log('Which theme for ' + siteKey + '?' + ' User settings says ' + themeFromSettings);
 			themeKey = themeFromSettings;
