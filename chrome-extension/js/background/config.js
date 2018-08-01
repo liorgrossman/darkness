@@ -34,6 +34,10 @@ var CONFIG = {
 			key: 'coffee',
 			name: 'Coffee'
 		},
+		'matrix': {
+			key: 'matrix',
+			name: 'matrix'
+		},
 		'youtubedark': {
 			key: 'youtubedark',
 			name: 'YouTube Dark'

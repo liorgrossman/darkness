@@ -373,6 +373,19 @@ ul li.drk_button_li {
 			background: #907C75 !important;
 		}
 	}
+	&.matrix {
+		background: #000000 !important;
+		color: #fff !important;
+		.color1 {
+			background: #095209 !important;
+		}
+		.color2 {
+			background: #0B9D07 !important;
+		}
+		.color3 {
+			background: #5DFF5A !important;
+		}
+	}
 	&.youtubedark {
 		background: #111111 !important;
 		color: rgb(255, 255, 255) !important;
