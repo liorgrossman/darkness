@@ -35,6 +35,29 @@ Edit `/themes/themes/[THEME].scss` (e.g. `/themes/themes/material.scss`)
 #### Create a new color theme (in addition to Monokai, Tomorrow, etc.)
 Open `/themes/themes/THEME-TEMPLATE.scss` in your code editor and follow the instructions.
 
+#### Fix an inverted UI element (appears like negative)
+Darkness works by inverting the <HTML> with `filter:invert(1)`, then inverts back all the element that must their original colors (e.g. img, video, svg, canvas, etc.)
+
+Start by inspecting the inverted element using Chrome Developer Tools. You will find find one of the following:
+
+1. **invert-back is necessary and missing**: the element needs to be inverted back, but isn't. Inverting the element colors back is done by adding a selector in [SITENAME].scss, e.g.
+```
+.elementSelector { 
+  @include invert-back();
+}
+```
+1. **invert-back is unnecessarily used**: sometimes invert-back() is applied for this element, although it doesn't need to be inverted back.
+This happens when overly-wide selector is is used, for example: img { @include invert-back() }
+In such case, you can exclude this specific element from being inverted back:
+```
+img { 
+  @include invert-back();
+  .elementSelector {
+    filter: none !important;
+  }
+}
+```
+
 ## How to push code back to Darkness?
 1. Please test your changes locally in Chrome
 1. Commit and push:
