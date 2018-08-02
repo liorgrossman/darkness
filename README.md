@@ -10,7 +10,8 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 
 
 **→ [Submit fixes and improvements to Darkness](./CONTRIBUTING.md)**
-**→ [Join our growing developers community on Facebook](https://www.facebook.com/groups/darkness-developers) to stay in the loop!**
+
+**→ [Join the Darkness developers community on Facebook](https://www.facebook.com/groups/darkness-developers)**
 
 
 <div style="text-align:center">
