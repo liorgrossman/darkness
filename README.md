@@ -6,9 +6,11 @@
 
 Using dark themes reduces the eye strain and fatigue caused by a bright screen, helps you sleep faster and better at night, and generally makes you awesome!
 
-**Major contributors (10+ commits):** [Lior Grossman](http://liorgrossman.com/), [Theis Villumsen](https://folkmann.it/), [Nicolas Botello](http://nicolasbotello.com/), [Derek Bytheway](https://github.com/derekbtw/) ([submit fixed and improvements](./CONTRIBUTING.md))
+**Major contributors (10+ commits):** [Lior Grossman](http://liorgrossman.com/), [Theis Villumsen](https://folkmann.it/), [Nicolas Botello](http://nicolasbotello.com/), [Derek Bytheway](https://github.com/derekbtw/), [Matt Tayler](https://github.com/maylortaylor)
 
-**[Join our growing developers community on Facebook](https://www.facebook.com/groups/darkness-developers) to stay in the loop!**
+
+**→ [Submit fixes and improvements to Darkness](./CONTRIBUTING.md)**
+**→ [Join our growing developers community on Facebook](https://www.facebook.com/groups/darkness-developers) to stay in the loop!**
 
 
 <div style="text-align:center">
