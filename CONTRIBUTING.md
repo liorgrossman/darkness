@@ -46,7 +46,7 @@ Start by inspecting the inverted element using Chrome Developer Tools. You will 
   @include invert-back();
 }
 ```
-1. **invert-back is unnecessarily used**: sometimes invert-back() is applied for this element, although it doesn't need to be inverted back.
+2. **invert-back is unnecessarily used**: sometimes invert-back() is applied for this element, although it doesn't need to be inverted back.
 This happens when overly-wide selector is is used, for example: `img { @include invert-back() }`.
 In such case, you can exclude this specific element from being inverted back:
 ```
