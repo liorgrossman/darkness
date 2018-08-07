@@ -34,12 +34,12 @@ svg {
 }
 
 // Links
-a:not(.label) {
+a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
     color: $theme-link !important;
-    &:visited:not(.label) {
+    &:visited:not(.label), &:visited:not(.IssueLabel), &:visited:not(.IssueLabel--big) {
         color: $theme-link-visited !important;
     }
-    &:active:not(.label) {
+    &:active:not(.label), &:active:not(.IssueLabel), &:active:not(.IssueLabel--big) {
         color: $theme-link-active !important;
     }
 }
@@ -569,10 +569,10 @@ button.muted-link {
 }
 
 // Issue state
-.State, .label {
+.State, .label, .IssueLabel, .IssueLabel--big {
     @include invert-back();
 }
-a.label {
+a.label, a.IssueLabel, a.IssueLabel--big {
     color: white !important
 }
 
@@ -843,10 +843,10 @@ svg.octicon.octicon-check {
 .table-list-item svg {
     background: transparent !important;
 }
-.labels-list-item .label {
+.labels-list-item .label, .IssueLabel, .IssueLabel--big {
     -webkit-filter: invert(1) !important;
 }
-.labels-list-item .label span {
+.labels-list-item .label span, .IssueLabel span, .IssueLabel--big span {
     -webkit-filter: invert(1) !important;
 }
 .label-edit label {
@@ -858,9 +858,12 @@ svg.octicon.octicon-check {
 .select-menu-item-text span.color {
     -webkit-filter: invert(1) !important;
 }
-.labels .label {
+.labels .label, .IssueLabel, .IssueLabel--big {
     -webkit-filter: invert(1) !important;
     color: white !important;
+}
+.js-new-label-swatches button{
+    -webkit-filter: invert(1) !important;
 }
 .discussion-item .label-color {
     -webkit-filter: invert(1) !important;
