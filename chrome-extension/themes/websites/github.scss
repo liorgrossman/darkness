@@ -871,6 +871,9 @@ svg.octicon.octicon-check {
 .discussion-item .label-color a {
     color: white !important;
 }
+.label-select-menu-item .color {
+    -webkit-filter: invert(1) !important;
+}
 
 .closed-banner {
     height: 0 !important;
