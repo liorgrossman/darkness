@@ -31,8 +31,7 @@
 .gb_7a::before, 
 .gb_8a::before, 
 .gbii::before,
-body[data-drk-site="googleinbox"] .gbii,
-body[data-drk-site="googlephotos"] .gbii {
+body[data-drk-site="googleinbox"] .gbii {
 	@include invert-back();
 }
 // Menu, App-drawer and Notification icons
