@@ -30,10 +30,16 @@ input {
 // Topbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// The "name"
+.gb_he.gb_me {
+	@include invert-back();
+}
+
 // Topbar background
 .gb_zd,
 .gb_yc:not(.gb_tb) .gb_Cd,
-.gb_xc:not(.gb_sb) .gb_Bd {
+.gb_xc:not(.gb_sb) .gb_Bd,
+.gb_Ta:not(.gb_Ua) .gb_Dd {
 	background: $theme-background-toolbar !important;
 }
 .MCcOAc>.pGxpHc {
