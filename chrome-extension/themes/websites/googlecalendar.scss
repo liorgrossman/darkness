@@ -63,6 +63,7 @@ input, textarea, input[type="text"] {
 
 // Toolbar background
 .gb_uf,
+.gb_ce,
 #vr-nav,
 #mainnav,
 .gb_yf,
@@ -89,7 +90,7 @@ input, textarea, input[type="text"] {
 	-webkit-filter: invert(0) !important;
 }
 .gb_Be span {
-	color: $theme-text !important;
+	color: invert-back-color($theme-text) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -309,4 +310,9 @@ input, textarea, input[type="text"] {
 .qmv2fc.KKjvXb,
 .sIyjR {
 	@include invert-back()
+}
+
+.dT3uCc,
+.g3VIld {
+	background: $theme-background-box !important;
 }
