@@ -285,6 +285,15 @@ input, textarea, input[type="text"] {
 	@include invert-back()
 }
 
+// Arrow indicating that a event is longer than the view
+.zWcBU {
+	color: invert-back-color($theme-background-box) !important;
+	right: 0px !important;
+}
+.g3dbUc {
+	border: 0 !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Add/create event
 //----------------------------------------------------------------------------------------------------------------------------------------------------
