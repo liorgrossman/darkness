@@ -31,6 +31,11 @@ button, .gb_qb .gb_wb {
 .docs-material-appbar #docs-titlebar-share-client-button .jfk-button {
 	-webkit-filter: invert(0) !important;
 }
+// Cancel-button
+.docos-input-cancel {
+	background-color: $theme-faint-button-background !important;
+	background-image: none !important;
+}
 
 // All inputs
 input {
@@ -80,7 +85,8 @@ iframe {
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-#docs-chrome {
+#docs-chrome,
+.docs-material #docs-toolbar-wrapper {
 	background-color: $theme-background-toolbar !important;
 }
 #docs-branding-container {
@@ -125,6 +131,44 @@ iframe {
 }
 .docs-presence-plus-collab-widget-image {
 	-webkit-filter: invert(0) !important;
+}
+
+// Share-button
+.docs-material #docs-titlebar-share-client-button .jfk-button {
+	-webkit-filter: invert(0) !important;
+}
+
+// The edit-bar
+.docs-material .goog-toolbar-button, 
+.docs-material .goog-toolbar-combo-button, 
+.docs-material .goog-toolbar-menu-button {
+	background-color: $theme-background-box !important;
+}
+// Edit popup boxes
+.goog-menu {
+	background-color: $theme-background-box !important;
+}
+
+// Virtual keyboard
+.vk-box {
+	background-color: $theme-background-box !important;
+}
+.vk-btn,
+.vk-btn span {
+	background-color: darken($theme-background-box, 15) !important;
+	background-image: none !important;
+	color: $theme-text !important;
+}
+
+// Comments
+.docos-anchoreddocoview,
+.docos-anchoredreplyview, 
+.docos-showrepliesbutton,
+.docos-anchoreddocoview .docos-draftdiscussionview-input-pane {
+	background-color: $theme-background-box !important;
+}
+.docos-layout-vertical .docos-anchoreddocoview .docos-anchoreddocoview-arrow-inner {
+	border-right-color: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

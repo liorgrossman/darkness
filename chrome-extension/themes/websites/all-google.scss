@@ -9,7 +9,7 @@
 }
 
 // Topbar
-.gb_be, .gb_de {
+.gb_be, .gb_de, .gb_ce {
 	background-color: $theme-background-toolbar !important;
 }
 
@@ -43,7 +43,8 @@ body[data-drk-site="googleinbox"] .gbii {
 .gb_oc svg {
 	color: invert-back-color($theme-text) !important;
 }
-.gb_cc {
+.gb_cc,
+.gb_W {
 	@include invert-back();
 }
 
