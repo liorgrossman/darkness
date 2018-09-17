@@ -13,7 +13,10 @@
 	.pop-over,
 	.window-overlay,
 	#surface,
-	.is-due-past {
+	.is-due-past,
+	.button-link .on,
+	.is-due-complete,
+	.quick-card-editor {
 		@include invert-back();
 	}
 }
@@ -160,6 +163,12 @@ a:visited {
 }
 .home-left-sidebar-container .home-tab-container .home-tab.selected {
 	background: $theme-highlighted !important;
+}
+.home-right-sidebar-container button{
+	background-color: transparent !important;
+}
+span.tile__selected__1yvgN {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -373,6 +382,9 @@ body[style*="background-image:"] > #boards-drawer {
 .window {
 	background-color: $theme-background !important;
 }
+.deRXfE {
+	background-color: $theme-background-box !important;
+}
 
 // Card and list titles
 .mod-card-back-title,
@@ -423,6 +435,11 @@ body[style*="background-image:"] > #boards-drawer {
 // Viewing attatchments
 iframe.attachment-viewer-frame-preview-iframe {
 	-webkit-filter: invert(0) !important;
+}
+
+// React-buttons on home
+.eykGfP {
+	background: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
