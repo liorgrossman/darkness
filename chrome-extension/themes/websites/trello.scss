@@ -13,9 +13,9 @@
 	.pop-over,
 	.window-overlay,
 	#surface,
-	.is-due-past,
+	.badge.is-due-past,
 	.button-link .on,
-	.is-due-complete,
+	.badge.is-due-complete,
 	.quick-card-editor {
 		@include invert-back();
 	}
