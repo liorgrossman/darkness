@@ -14,8 +14,10 @@
 	.window-overlay,
 	#surface,
 	.badge.is-due-past,
+	.card-detail-badge.is-due-past,
 	.button-link .on,
 	.badge.is-due-complete,
+	.card-detail-badge.is-due-complete,
 	.quick-card-editor {
 		@include invert-back();
 	}
