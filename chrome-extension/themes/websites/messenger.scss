@@ -36,7 +36,8 @@ body {
 a[role="button"] {
 	@include invert-back();
 }
-a[role="button"] svg {
+a[role="button"] svg,
+a[role="button"] img {
 	-webkit-filter: none !important;
 }
 
@@ -129,6 +130,16 @@ a[role="button"] svg {
 }
 ._nd_ ._hh7 img{
 	-webkit-filter: invert(0) !important;
+}
+
+// Checks marking delivery status
+._3i_m ._2her {
+	@include invert-back();
+}
+
+// Missed calls
+._1k2j {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
