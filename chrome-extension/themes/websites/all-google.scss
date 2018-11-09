@@ -9,8 +9,15 @@
 }
 
 // Topbar
-.gb_be, .gb_de, .gb_ce {
+.gb_be, 
+.gb_de, 
+.gb_ce,
+header.gb_Ta,
+header.gb_Ta > div {
 	background-color: $theme-background-toolbar !important;
+}
+header.gb_Ta {
+	@include invert-back();
 }
 
 // Sign in
