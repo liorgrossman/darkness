@@ -18,7 +18,8 @@
 	.button-link .on,
 	.badge.is-due-complete,
 	.card-detail-badge.is-due-complete,
-	.quick-card-editor {
+	.quick-card-editor,
+	.ui-droppable.ui-sortable-helper {
 		@include invert-back();
 	}
 }
@@ -132,7 +133,10 @@ a:visited {
 .member-boards-view.super-home {
 	background: $theme-background !important;
 }
-.up-next-card-list-item > div, .dhmfCv, .hiqYnm {
+.up-next-card-list-item > div,
+.dhmfCv,
+.hiqYnm,
+.krepCm {
 	background: $theme-background-box !important;
 }
 .canonical-comment > div > div > span {
@@ -166,14 +170,18 @@ a:visited {
 .home-left-sidebar-container .home-tab-container .home-tab.selected {
 	background: $theme-highlighted !important;
 }
-.home-right-sidebar-container button{
+.home-right-sidebar-container button {
 	background-color: transparent !important;
 }
 span.tile__selected__1yvgN {
 	@include invert-back();
 }
+.idhQuy,
 .hEURDk {
 	@include invert-back();
+}
+.cXRfpp {
+	background: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
