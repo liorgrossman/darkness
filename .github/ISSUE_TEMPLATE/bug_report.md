@@ -1,20 +1,21 @@
 ---
 name: Bug report
-about: Report a bug or issue in Darkness
+about: Report a bug in Darkness
 labels: 
 
 ---
 
-**Bug information**
-(Browse to the affected website → click the moon icon → click "Send Feedback" → paste info here)
-Website: 
+**Bug Information**
+(visit the affected website → click the moon icon → "Send Feedback" → "Bug Report" → paste here)
+Site: 
+Theme: 
 URL: 
-Theme used: 
 Darkness Version: 
 Browser: 
+Operating System: 
 
 **Bug Description**
-Please provide a clear and concise description of what the bug or issue is.
+Please provide a clear description of what the bug or issue is.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+If necessary, add screenshots to help explain your problem.
