@@ -667,45 +667,22 @@ if (!DarknessSettingsLoader) {
 				toggleShare();
 			});
 
-			// Send skin bug report button
-			$('.drk_settings .drk_bug_report_btn').unbind('click').click(function() {
-				repEventByUser('user-action', 'bug-report-btn-click');
-				var to = 'Darkness Support <support@darkness.app>';
-				var subj = 'Darkness Bug Report';
-				var body = '[Please send your bug report in English]\n\n________\nSystem Information:\nDarkness Version: ' +
-					chrome.runtime.getManifest().version + (ASSETS.TYPE == 'p' ? '[2]' : '[1]') +
-					"\nBrowser: " + navigator.userAgent +
-					'\nCurrent Website: ' + SITE + 
-					'\nCurrent URL: ' + document.location.href +
-					'\nCurrent Theme: ' + THEME;
-				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
-					'&body=' +
-					encodeURIComponent(body);
-				var win = window.open(url, '_blank');
-				win.focus();
-			});
-
 			// Send feedback button
 			$('.drk_settings .drk_feedback_btn').unbind('click').click(function(e) {
 				repEventByUser('user-action', 'feedback-btn-click');
-				var to = 'Darkness Support <support@darkness.app>';
-				var subj = 'Darkness Feedback';
+				var params = {};
+				params['format'] = 1;
+				params['drkVer'] = chrome.runtime.getManifest().version;
+				params['drkType'] = ASSETS.TYPE;
+				params['drkEnv'] = ENVIRONMENT;
+				params['curSite'] = SITE;
+				params['curUrl'] = document.location.href.slice(0, 1000);
+				params['curTheme'] = THEME;
 				if (e.altKey) {
-					subj = 'Darkness System Report';
+					document.write("Debugging Information:\n\n" + JSON.stringify(params) + '\n\n' + JSON.stringify(settings) + '\n\n' + JSON.stringify(STATS));
+					return;
 				}
-				var body = '[Please send your feedback in English]\n\n________\nSystem Information (for bug reports):\nDarkness Version: ' +
-					chrome.runtime.getManifest().version + (ASSETS.TYPE == 'p' ? '[2]' : '[1]') +
-					"\nBrowser: " + navigator.userAgent +
-					'\nCurrent Website: ' + SITE + 
-					'\nCurrent URL: ' + document.location.href +
-					'\nCurrent Theme: ' + THEME;
-				if (e.altKey) {
-					body += '\n\n________\nDebugging Information:\n' + JSON.stringify(settings);
-					body += '\n\n' + JSON.stringify(STATS);
-				}
-				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
-					'&body=' +
-					encodeURIComponent(body);
+				var url = 'https://darkness.app/contact/?darkness_info=' + encodeURIComponent(JSON.stringify(params));
 				var win = window.open(url, '_blank');
 				win.focus();
 			});
