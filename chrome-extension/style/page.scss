@@ -44,8 +44,12 @@ div.drk_settings_icon {
 }
 
 body[data-drk-promo="s"] div.drk_settings_icon {
+	opacity: 1 !important;
 	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-promo.png?v=2') no-repeat center !important;
 	background-size: cover !important;
+	&:hover {
+		opacity: 0.8 !important;
+	}
 }
 
 body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
