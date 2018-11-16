@@ -325,6 +325,24 @@ var injectSettingsScriptToTab = function(tab) {
 	})
 };
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Holiday promos
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+var getHoliday = function(date) {
+	var dayOfMonth = date.getDate();
+	var month = date.getMonth() + 1;
+	var dateString = month + '/' + dayOfMonth;
+	if (dateString == '1/1' ) return "New Year's Day";
+	if (dateString == '6/14') return "Flag Day";
+	if (dateString == '7/4')  return "Independence Day";
+	if (dateString == '11/11') return "Veterans Day";
+	if (dateString == '10/31') return "Halloween";
+	if (dateString == '12/24') return "Christmas Eve";
+	if (dateString == '12/25') return "Christmas Day";
+	if (dateString == '12/31') return "New Year's Eve";
+	if (month == 11 && (dayOfMonth >=19 && dayOfMonth <= 27)) return "Thanksgiving, Black Friday, Cyber Monday"
+	return null;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Page Initialization (initialized for all supported sites upon load)
@@ -370,8 +388,18 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 		var passedMs = Date.now() - installDate;
 		passedDays = Math.floor(passedMs / 1000 / 3600 / 24);
 	}
+
+	var correctType = stats.get('type') != 'p';
+	var correctSku = Payments.getSku() > 1;
+	const DAY = 24 * 60 * 60 * 1000;
+	const TOMORROW = new Date(new Date().getTime() + DAY);
+	const YESTERDAY = new Date(new Date().getTime() - DAY);
+	var shouldShow = passedDays % 18 < 3;
+	if (getHoliday(new Date()) || getHoliday(TOMORROW) || getHoliday(YESTERDAY)) {
+		shouldShow = true;
+	}
 	var promo = 'h';
-	if (Payments.getSku() > 1 && passedDays % 18 < 3) {
+	if (correctType && correctSku && shouldShow) {
 		promo = 's';		
 	}
 
