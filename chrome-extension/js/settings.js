@@ -477,6 +477,7 @@ if (!DarknessSettingsLoader) {
 			log(prev ? "Replacing HTML" : "Appending HTML");
 			var d = document.createElement('div');
 			d.setAttribute('id', ID_SETTINGS_HTML);
+			// Assignment to innerHTML is safe since the HTML is provided directly from the background script
 			d.innerHTML = ASSETS.HTML;
 			document.body.appendChild(d);
 		};
@@ -679,8 +680,7 @@ if (!DarknessSettingsLoader) {
 				params['curUrl'] = document.location.href.slice(0, 1000);
 				params['curTheme'] = THEME;
 				if (e.altKey) {
-					document.write("Debugging Information:\n\n" + JSON.stringify(params) + '\n\n' + JSON.stringify(settings) + '\n\n' + JSON.stringify(STATS));
-					return;
+					console.log("Debugging Information:\n\n" + JSON.stringify(params) + '\n\n' + JSON.stringify(settings) + '\n\n' + JSON.stringify(STATS));
 				}
 				var url = 'https://darkness.app/contact/?darkness_info=' + encodeURIComponent(JSON.stringify(params));
 				var win = window.open(url, '_blank');
@@ -698,7 +698,10 @@ if (!DarknessSettingsLoader) {
 			// Rate button
 			$('.drk_settings .drk_rate_btn').unbind('click').click(function() {
 				repEventByUser('user-action', 'rate-btn-click');
-				var url = 'https://goo.gl/oMLASO';
+				var url = 'https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm/reviews';
+				if (BROWSER == 'firefox') {
+					url = 'https://addons.mozilla.org/en-US/firefox/addon/darkness-dark-themes/';
+				}
 				var win = window.open(url, '_blank');
 				win.focus();
 			});
