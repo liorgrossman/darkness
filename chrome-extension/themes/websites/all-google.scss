@@ -60,7 +60,7 @@ header.gb_Ta {
 .gb_7a::before, 
 .gb_8a::before, 
 // .gbii::before,
-body[data-drk-site="googleinbox"] .gbii {
+body[data-drk-site="google"] .gbii {
 	@include invert-back();
 }
 // Menu, App-drawer and Notification icons
