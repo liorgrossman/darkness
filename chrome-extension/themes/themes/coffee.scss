@@ -27,6 +27,9 @@ $c7: #907C75;
 $c8: #C29F83;
 $c9: #1C1211;
 
+// Color from WordPress-Coffee theme, for popups and notifications
+$c10: #9ea476;
+
 $text-color: white;
 $link-color: lighten($c8, 10%);
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -88,8 +91,8 @@ $theme-border: invert-back-color($c1);
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Tooltips (on hover)
-$theme-tooltip-background: invert-back-color($c9);
+$theme-tooltip-background: invert-back-color($c10);
 $theme-tooltip-text: invert-back-color($c4);
 
 // Notices (usually appearing in the top of page for few seconds after user action)
-$theme-notices: invert-back-color($c9);
+$theme-notices: invert-back-color($c10);
