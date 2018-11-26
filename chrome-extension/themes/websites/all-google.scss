@@ -11,7 +11,9 @@
 // Topbar
 .gb_be, 
 .gb_de, 
-.gb_ce,
+// .gb_ce,
+header.gb_Va,
+header.gb_Va > div,
 header.gb_Ta,
 header.gb_Ta > div {
 	background-color: $theme-background-toolbar !important;
@@ -28,6 +30,26 @@ header.gb_Ta {
 	border-color: $theme-border !important;
 }
 
+// User drawer
+.gb_ge .gb_vb {
+	@include invert-back();
+}
+.gb_vb {
+	background: $theme-background-box !important;
+}
+.gb_vb > div,
+.gb_vb > div > a,
+.gb_vb > div > div{
+	background: $theme-background-box !important;
+}
+
+// "Google account" button
+.gb_Ab .gb_Hb {
+	background: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+	color: black !important;
+}
+
 // Site name, eg. "Calendar" or "Drive"
 // .gb_ee,
 .gb_ge {
@@ -37,7 +59,7 @@ header.gb_Ta {
 // User avatar on toolbar
 .gb_7a::before, 
 .gb_8a::before, 
-.gbii::before,
+// .gbii::before,
 body[data-drk-site="googleinbox"] .gbii {
 	@include invert-back();
 }
