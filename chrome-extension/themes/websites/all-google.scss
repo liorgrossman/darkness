@@ -59,20 +59,21 @@ header.gb_Ta {
 // User avatar on toolbar
 .gb_7a::before, 
 .gb_8a::before, 
-// .gbii::before,
-body[data-drk-site="google"] .gbii {
+.gbii {
 	@include invert-back();
 }
 // Menu, App-drawer and Notification icons
 .gb_yc svg,
 .gb_Ta svg, 
-.gb_lc svg
+.gb_jc svg,
+.gb_lc svg,
+.gb_fe svg,
 .gb_kc svg,
 .gb_Xa svg,
 .gb_oc svg {
 	color: invert-back-color($theme-text) !important;
 }
-.gb_cc,
+// .gb_cc,
 .gb_W {
 	@include invert-back();
 }
