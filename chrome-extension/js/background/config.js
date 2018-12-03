@@ -138,6 +138,18 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'googledrive': {
+			key: 'googledrive', // Must be the same as the object key
+			name: 'Google Drive',
+			support: 'full',
+			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
+			creators: [
+				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			]
+		},
 		'googledocs': {
 			key: 'googledocs', // Must be the same as the object key
 			name: 'Google Docs',
@@ -377,18 +389,6 @@ var CONFIG = {
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
-		'googledrive': {
-			key: 'googledrive', // Must be the same as the object key
-			name: 'Google Drive',
-			support: 'in-development',
-			hostRegExp: new RegExp('^drive\.google\.com$', 'i'),
-			creators: [
-				{ name: 'Derek Bytheway', link: 'https://github.com/derekbtw/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			]
-		},
 		'wikipedia': {
 			key: 'wikipedia', // Must be the same as the object key
 			name: 'Wikipedia',
