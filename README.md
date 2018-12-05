@@ -46,7 +46,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 1. Open Chrome and browse to [chrome://extensions](chrome://extensions)
 1. If you already Darkness installed Darkness from Chrome Web Store, disable it
 1. Check **Developer mode** in the top of the Extensions page
-1. Click **Load unpacked extension...**
+1. Click **Load unpacked**
 1. Choose the sub-directory **darkness/darkness-chrome** (where manifest.json resides)
 
 #### Loading it in Firefox:
