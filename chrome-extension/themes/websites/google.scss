@@ -46,6 +46,17 @@ input
 // Search box (homepage / search page)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// New Google fixed toolbar: fixed background
+.minidiv .sfbg {
+	background: $theme-background-toolbar !important;
+	box-shadow: 0 1px 6px 0 rgba(255,255,255,0.22) !important;
+}
+
+// New Google fixed toolbar: logo
+.logo > a > img {
+	opacity: 0.5 !important;
+}
+
 // Search box border
 .sbfcn {
 	border-color: darken($theme-button-background, 10%) !important;
@@ -83,11 +94,25 @@ input
 
 }
 
+// New Google fixed toolbar: magnifying glass icon
+.Tg7LZd {
+	background-color: transparent !important;
+	svg {
+		-webkit-filter: none !important;
+	}
+}
+
+input.gLFyf {
+	background-color: transparent !important;
+}
+
 // Microphone icon
-.gsri_a {
+.gsri_a,
+.hb2Smf {
 	opacity: 0.8 !important;
 	@include invert-back()
 }
+
 
 // Camera icon
 .gsst_e {
