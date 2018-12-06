@@ -76,6 +76,13 @@ input {
 .a-nEbBXb .a-D-B.a-D-B-gc-WErN3d {
 	background: $theme-background-toolbar !important;
 }
+
+// Centered toolbar box around search box and buttons
+.gb_ge {
+	filter: none !important;
+	background: transparent !important;
+}
+
 .gb_0d {
 	background: transparent !important;
 }
@@ -90,6 +97,11 @@ input {
 				0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
 }
 
+// "New" button icon
+.a-D-gc-wKOTTc .a-ec-Gd button.RTMQvb::before {
+	filter: saturate(0) contrast(1) brightness(0.3) !important
+}
+
 // "My Drive" dropdown icons
 .a-s-fa-Ha-pa {
 	fill: white !important;
@@ -101,6 +113,7 @@ input {
 
 // Searchbar
 .gb_Ce,
+.gb_Jf,
 .gb_Ee {
 	background: $theme-textbox-background !important;
 }
@@ -230,6 +243,11 @@ input {
 // Folder icons
 .a-nEbBXb .l-t-T-c-j::before {
     background: transparent !important;
+}
+
+// Root folder icons
+.a-Ng-c-ha {
+	filter: saturate(0);
 }
 
 // Notification
