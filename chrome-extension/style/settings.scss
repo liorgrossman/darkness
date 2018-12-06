@@ -587,10 +587,12 @@ div.drk_settings section.drk_section_pro {
 
 div.drk_settings section.drk_section_pro.sku-1 {
 	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-1.png") no-repeat top !important;
+	background-size: contain !important;
 }
 
 div.drk_settings section.drk_section_pro.sku-2 {
 	background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-tile-2.png") no-repeat top !important;
+	background-size: contain !important;
 }
 
 div.drk_settings section.drk_section_pro:hover {
@@ -717,12 +719,14 @@ div.drk_dialog {
 div.drk_dialog.drk_get_pro.sku-1 {
 	.drk_content {
 		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-dialog-1.png") no-repeat center !important;
+		background-size: contain !important;
 	}
 }
 
 div.drk_dialog.drk_get_pro.sku-2 {
 	.drk_content {
 		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/upgrade-dialog-2.png") no-repeat center !important;
+		background-size: contain !important;
 	}
 }
 
