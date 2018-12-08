@@ -36,10 +36,10 @@ svg {
 // Links
 a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
     color: $theme-link !important;
-    &:visited:not(.label), &:visited:not(.IssueLabel), &:visited:not(.IssueLabel--big) {
+    &:visited:not(.label), &:visited:not(.IssueLabel), &:visited:not(.IssueLabel--big), &:visited(.btn) {
         color: $theme-link-visited !important;
     }
-    &:active:not(.label), &:active:not(.IssueLabel), &:active:not(.IssueLabel--big) {
+    &:active:not(.label), &:active:not(.IssueLabel), &:active:not(.IssueLabel--big), &:active(.btn) {
         color: $theme-link-active !important;
     }
 }
