@@ -54,7 +54,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 1. Open Firefox and browse to [about:debugging](about:debugging)
 1. If you already Darkness installed Darkness from Firefox Add-on store, disable it
 1. Click **Load Temporary Add-on**
-1. Choose the file **darkness/darkness-firefox/manifest.json**
+1. Choose the file **darkness/firefox-extension/manifest.json**
 
 #### To keep Darkness up-to-date, please pull occasionally:
 ```bash
