@@ -14,7 +14,9 @@
 	.window-overlay,
 	#surface,
 	.badge.is-due-past,
+	.badge.is-due-now,
 	.card-detail-badge.is-due-past,
+	.card-detail-badge.is-due-now,
 	.button-link .on,
 	.badge.is-due-complete,
 	.card-detail-badge.is-due-complete,
@@ -453,6 +455,40 @@ iframe.attachment-viewer-frame-preview-iframe {
 // React-buttons on home
 .eykGfP {
 	background: transparent !important;
+}
+
+// Notification drawer
+.window.mod-notifications.mod-cards {
+	background-color: $theme-background-toolbar !important;
+}
+.notification-actions span {
+	color: $theme-url !important;
+}
+
+// Notifications
+.phenom.mod-is-card, 
+.phenom.mod-is-card.mod-unread, 
+.phenom.mod-is-not-card, 
+.phenom.mod-is-not-card.mod-unread {
+	background: $theme-background-box !important;
+}
+
+.phenom.mod-is-card .canonical-card div:first-child, 
+.phenom.mod-is-card.mod-unread .canonical-card div:first-child, 
+.phenom.mod-is-not-card .canonical-card div:first-child, 
+.phenom.mod-is-not-card.mod-unread .canonical-card div:first-child {
+	@include invert-back();
+}
+.phenom.mod-is-card .canonical-card div:first-child > *, 
+.phenom.mod-is-card.mod-unread .canonical-card div:first-child > *, 
+.phenom.mod-is-not-card .canonical-card div:first-child > *, 
+.phenom.mod-is-not-card.mod-unread .canonical-card div:first-child > * {
+	@include invert-back();
+}
+
+// Due soon on notifications
+.jjCnMv {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
