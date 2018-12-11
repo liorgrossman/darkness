@@ -20,7 +20,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 
 ## Features
 * Supports over 20 websites: Google, Facebook, YouTube, Gmail, Inbox, Google Drive, Google Photos, Google Keep, Google Calendar and Contacts, Dropbox, Twitter, Reddit, Quora, Facebook Messenger, **StackOverflow, GitHub, Trello, CloudFlare, ShareLaTeX** and others ([help us add more](./CONTRIBUTING.md))
-* Select from 5 dark color themes: Iceberg, Tomorrow, Material Design, Dusk, Red Alert ([help us add more](./CONTRIBUTING.md))
+* Select from 7 dark color themes: Iceberg, Tomorrow, Material Design, Dusk, Red Alert, Coffee, The Matrix ([help us add more](./CONTRIBUTING.md))
 * Written in JavaScript, uses SASS
 * Self-hosted. Easy to install on Windows, Mac, Linux
 * Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm) and [Firefox Add-on Store](https://addons.mozilla.org/en-US/firefox/addon/darkness-dark-themes/)
