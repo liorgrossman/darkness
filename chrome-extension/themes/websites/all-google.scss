@@ -9,11 +9,14 @@
 }
 
 // Topbar
-.gb_be, 
+// .gb_be, 
 .gb_de, 
+.eU5T0b, 
 // .gb_ce,
 header.gb_Va,
 header.gb_Va > div,
+header.gb_Wa,
+header.gb_Wa > div,
 header.gb_Ta,
 header.gb_Ta > div {
 	background-color: $theme-background-toolbar !important;
@@ -52,9 +55,9 @@ header.gb_Ta {
 
 // Site name, eg. "Calendar" or "Drive"
 // .gb_ee,
-.gb_ge {
-	@include invert-back();
-}
+// .gb_ge {
+// 	@include invert-back();
+// }
 
 // User avatar on toolbar
 .gb_7a::before, 
