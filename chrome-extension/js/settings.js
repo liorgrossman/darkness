@@ -168,8 +168,8 @@ if (!DarknessSettingsLoader) {
 			
 			// What's the PayPal button ID?
 			var paypalButtonId = '';
-			if (SKU == "1") paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
-			if (SKU == "2") paypalButtonId = prod ? 'U59U55TCYJMHQ' : 'LMQAHVFLAGHK2';
+			if (SKU == "1") paypalButtonId = prod ? 'MX3GCPAJT965S' : 'JFYWCRAJW64EN';
+			if (SKU == "2") paypalButtonId = prod ? 'K2X39YZV72VFC' : 'LMQAHVFLAGHK2';
 			$('#drk_paypal_button_id').attr('value', paypalButtonId);
 
 			// Add custom data to each PayPal transaction
@@ -864,6 +864,21 @@ if (!DarknessSettingsLoader) {
 				repToFunnel('pay-cancel-' + cancelReason);
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
+
+				// Send a support email
+				var to = 'Darkness Support <support@darkness.app>';
+				var paymentMethodName = 'PayPal';
+				var subj = 'Cannot pay with PayPal';
+				var body =
+					"Please help us solve this problem by answering the following questions:\n\n" +
+					"1. Did the PayPal window load properly? (If not, did it show any error message?)\n\n" +
+					"2. Can you please describe why you weren't able to pay?\n\n" +
+					"3. Are there any other payment methods/services you would prefer over PayPal?\n\n" +
+					'Thank you!';
+				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
+					'&body=' +
+					encodeURIComponent(body);
+				var win = window.open(url, '_blank');
 
 				/* if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
 					// PayPal failed? Let user pay with Google Payments
