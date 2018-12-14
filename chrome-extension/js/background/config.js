@@ -377,7 +377,6 @@ var CONFIG = {
 			key: 'darkness', // Must be the same as the object key
 			name: 'Darkness Website',
 			support: 'full',
-			siteForDevelopers: false,
 			hostRegExp: new RegExp('^(darkness.app|local.darkness.com)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' },
@@ -464,21 +463,21 @@ var CONFIG = {
 		},
 		'serverfault': {
 			key: 'serverfault', // Must be the same as the object key
-			name: 'ServerFault',
+			name: 'Server Fault',
 			support: 'ask-developers',
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^serverfault\.com$', 'i')
 		},
 		'askubuntu': {
 			key: 'askubuntu', // Must be the same as the object key
-			name: 'askUbuntu',
+			name: 'Ask Ubuntu',
 			support: 'ask-developers',
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^askubuntu\.com$', 'i')
 		},
 		'w3schools': {
 			key: 'w3schools', // Must be the same as the object key
-			name: 'w3schools',
+			name: 'W3Schools',
 			support: 'ask-developers',
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^www\.w3schools\.com$', 'i')
@@ -491,7 +490,7 @@ var CONFIG = {
 		},
 		'fontawesome': {
 			key: 'fontawesome', // Must be the same as the object key
-			name: 'FontAwesome',
+			name: 'Font Awesome',
 			support: 'ask-developers',
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^fontawesome\.com$', 'i')
