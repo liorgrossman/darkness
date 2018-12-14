@@ -557,12 +557,11 @@ if (!DarknessSettingsLoader) {
 			}
 
 			// CTA for developers
-			if (siteInfo.siteForDevelopers) {
-				$('.drk_developer_add .text').html("Developer? Get all Darkness Pro features");
-				$('.drk_developer_add').addClass('drk_bold');
+			$('.drk_developer_add').removeClass('drk_bold');
+			if (ENVIRONMENT == 'development') {
+				$('.drk_developer_add .text').html("Fix CSS / skin your favorite sites");
 			} else {
-				$('.drk_developer_add .text').html("Developer? Add skins to more websites");
-				$('.drk_developer_add').removeClass('drk_bold');
+				$('.drk_developer_add .text').html("Developer? Fix CSS or add more skins");
 			}
 
 			// Show/hide youtube theme
@@ -750,11 +749,18 @@ if (!DarknessSettingsLoader) {
 
 			// Developer Button #2 ("Develop skins for more website")
 			$('.drk_settings .drk_developer_add').unbind('click').click(function() {
-				repEventByUser('user-action', 'dev-add-btn-fix');
-				// Close all dialogs
-				$('.drk_dialog').removeClass('visible');
-				// Open developer dialog
-				$('.drk_join_developers').addClass('visible');
+				if (ENVIRONMENT == 'development') {
+					repEventByUser('user-action', 'dev-contribute-btn-fix');
+					var url = 'https://github.com/liorgrossman/darkness/blob/master/CONTRIBUTING.md';
+					var win = window.open(url, '_blank');
+					win.focus();
+				} else {
+					repEventByUser('user-action', 'dev-add-btn-fix');
+					// Close all dialogs
+					$('.drk_dialog').removeClass('visible');
+					// Open developer dialog
+					$('.drk_join_developers').addClass('visible');
+				}
 			});
 
 			// "Use this skin for all websites" button
