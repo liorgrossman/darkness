@@ -59,7 +59,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 git checkout master
 git pull upstream master
 npm install
-gulp ff (necessary only for the Firefox version)
+Firefox version only: gulp ff
 ```
 
 ## Contributing fixes and new themes
