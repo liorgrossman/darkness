@@ -38,12 +38,11 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 	* If you use SSH: `git remote add upstream git@github.com:liorgrossman/darkness.git`
  	* If you use HTTPS: `git remote add upstream https://github.com/liorgrossman/darkness.git`
 1. Fetch the code: `git fetch upstream`
-1. If you don't have Node.js installed, [install it](https://nodejs.org/)
-1. Run `npm install` from the same directory as package.json to install dependencies and compile all SCSS to CSS.
+1. Run `npm install` from the same directory as package.json to install dependencies and compile all SCSS to CSS ([Node.js](https://nodejs.org/) required)
 
 #### Loading it in Chrome:
 1. Open Chrome and browse to [chrome://extensions](chrome://extensions)
-1. If you already Darkness installed Darkness from Chrome Web Store, disable it
+1. If you've previously installed Darkness from Chrome Web Store, disable it
 1. Check **Developer mode** in the top of the Extensions page
 1. Click **Load unpacked**
 1. Choose the sub-directory **darkness/chrome-extension** (where manifest.json resides)
@@ -51,7 +50,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 #### Loading it in Firefox:
 1. Run `gulp ff` to replicate and transform the **chrome-extension** directory to **firefox-extension**
 1. Open Firefox and browse to [about:debugging](about:debugging)
-1. If you already Darkness installed Darkness from Firefox Add-on store, disable it
+1. If you've previously installed Darkness from Firefox Add-on store, disable it
 1. Click **Load Temporary Add-on**
 1. Choose the file **darkness/firefox-extension/manifest.json**
 
@@ -65,7 +64,7 @@ gulp ff (necessary only for the Firefox version)
 
 ## Contributing fixes and new themes
 **Pull requests are welcome!**
-Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and extend Darkness
+Please see our [contribution guide](./CONTRIBUTING.md) to learn how to quickly improve and extend Darkness
 
 
 ## Be in touch
@@ -74,4 +73,4 @@ Please see our [contribution guide](./CONTRIBUTING.md) to quickly improve and ex
 * Check out our other projects: [BookAuthority](https://bookauthority.org/) and [Select New Tab](https://chrome.google.com/webstore/detail/select-beautiful-photos-f/gidbhaipbdimcjbjkpnhkdhghpbghena)
 
 ##  Misc
-Darkness is licensed [GPLv3](./LICENSE). Please read our privacy policy [here](https://darkness.app/privacy/darkness-privacy-policy.pdf)
+Darkness is licensed [GPLv3](./LICENSE). Privacy policy available [here](https://darkness.app/privacy/darkness-privacy-policy.pdf)
