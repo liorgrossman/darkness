@@ -482,6 +482,20 @@ var CONFIG = {
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^www\.w3schools\.com$', 'i')
 		},
+		'codepen': {
+			key: 'codepen', // Must be the same as the object key
+			name: 'Codepen',
+			support: 'ask-developers',
+			siteForDevelopers: true,
+			hostRegExp: new RegExp('^codepen\.io$', 'i')
+		},
+		'jsbin': {
+			key: 'jsbin', // Must be the same as the object key
+			name: 'JS Bin',
+			support: 'ask-developers',
+			siteForDevelopers: true,
+			hostRegExp: new RegExp('^jsbin\.com$', 'i')
+		},
 		'box': {
 			key: 'box', // Must be the same as the object key
 			name: 'Box',
