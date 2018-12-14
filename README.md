@@ -29,18 +29,17 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 
 ## Installation
 ####  Installing Darkness Developer Edition:
-1. Recommended: [join our developers community](https://www.facebook.com/groups/darkness-developers) to discuss and ask questions
-1. Fork the Darkness repo: https://github.com/liorgrossman/darkness/fork
-1. Clone your fork locally:
+1. Fork the Darkness repository: https://github.com/liorgrossman/darkness/fork
+1. Clone the fork on your machine:
 	* If you use SSH: `git clone git@github.com:YOUR_GITHUB_USER/darkness.git`
- 	* or using HTTPS: `git clone https://github.com/YOUR_GITHUB_USER/darkness.git`
-1. Go to the root Darkness directory: `cd darkness`
-1. Set up a the original repo as a remote:
+ 	* If you use HTTPS: `git clone https://github.com/YOUR_GITHUB_USER/darkness.git`
+1. Go to the Darkness root directory: `cd darkness`
+1. Add the original repository as a remote:
 	* If you use SSH: `git remote add upstream git@github.com:liorgrossman/darkness.git`
- 	* or using HTTPS: `git remote add upstream https://github.com/liorgrossman/darkness.git`
-1. Get the code: `git fetch upstream`
-1. [Install Node.js](https://nodejs.org/), unless you already have it installed
-1. Install packages and compile all SCSS files to CSS: `npm install` (run it from the same directory as package.json)
+ 	* If you use HTTPS: `git remote add upstream https://github.com/liorgrossman/darkness.git`
+1. Fetch the code: `git fetch upstream`
+1. If you don't have Node.js installed, [install it](https://nodejs.org/)
+1. Run `npm install` from the same directory as package.json to install dependencies and compile all SCSS to CSS.
 
 #### Loading it in Chrome:
 1. Open Chrome and browse to [chrome://extensions](chrome://extensions)
@@ -61,8 +60,8 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 git checkout master
 git pull upstream master
 npm install
+gulp ff (necessary only for the Firefox version)
 ```
-If you use it on Firefox, also run: `gulp ff`
 
 ## Contributing fixes and new themes
 **Pull requests are welcome!**
