@@ -871,41 +871,27 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
-				// Send a support email
-				var to = 'Darkness Support <support@darkness.app>';
-				var paymentMethodName = 'PayPal';
-				var subj = 'Cannot pay with PayPal';
-				var body =
-					"Please help us solve this problem by answering the following questions:\n\n" +
-					"1. Did the PayPal window load properly? (If not, did it show any error message?)\n\n" +
-					"2. Can you please describe why you weren't able to pay?\n\n" +
-					"3. Are there any other payment methods/services you would prefer over PayPal?\n\n" +
-					'Thank you!';
-				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
-					'&body=' +
-					encodeURIComponent(body);
-				var win = window.open(url, '_blank');
+				var win = window.open('https://darkness.app/payment-canceled/?reason=payment-problem', '_blank');
 
 				/* if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
 					// PayPal failed? Let user pay with Google Payments
 					PAYMENT_PLATFORM = 'google';
 					buyClick();
 				} else {
-					// PayPal AND Google failed? Send a support email
-					var to = 'Darkness Support <support@darkness.app>';
-					var paymentMethodName = PAYMENT_PLATFORM == 'paypal' ? 'PayPal' : 'Google Payment';
-					var subj = 'Problem paying with ' + paymentMethodName;
-					var body =
-						"Please help us solve this problem by answering the following questions (in English, please):\n\n" +
-						"1. Did the " + paymentMethodName + " window load properly? (If not, what error message did you receive?)\n\n" +
-						"2. Can you please describe your problem with payment?\n\n" +
-						"3. Is there any other payment platform you would prefer instead?\n\n" +
-						'Darkness version: ' + chrome.runtime.getManifest().version + (ASSETS.TYPE == 'p' ? '[2]' : '[1]');
-					var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
-						'&body=' +
-						encodeURIComponent(body);
-					var win = window.open(url, '_blank');
+					// Send feedback
 				} */
+			});
+
+			// Why did you cancel payment dialog -> dialog closed
+			$('.drk_cancel_payment_close').unbind('click').click(function(e) {
+				closeActiveDialog(e);
+
+				var cancelReason = 'dialog-closed';
+				repToFunnel('pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
+
+				var win = window.open('https://darkness.app/payment-canceled/?reason=dialog-closed', '_blank');
 			});
 		};
 
