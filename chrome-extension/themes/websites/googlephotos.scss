@@ -115,7 +115,7 @@ button.material-icons-extended{
 
 // "Select all" button
 .R4HkWb .JUQOtc {
-	fill: $theme-secondary-button-background !important;
+	fill: invert-back-color($theme-secondary-button-background) !important;
 }
 
 // Boxes that don't need a background
