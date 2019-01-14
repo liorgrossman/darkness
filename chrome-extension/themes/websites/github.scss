@@ -5,7 +5,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-body {
+body, .gh-header {
     background-color: $theme-background !important;
 }
 
@@ -82,7 +82,8 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 //top toolbar
 .header,
 .header > div,
-.js-header-wrapper > .Header {
+.js-header-wrapper > .Header,
+.gh-header .gh-header-sticky.is-stuck+.gh-header-shadow {
     background-color: $theme-background-toolbar !important;
     border-color: $theme-border !important;
     color: $theme-text !important;
@@ -97,7 +98,8 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 
 // Search bar
 .js-header-wrapper > .Header input[type="text"].header-search-input,
-.header input[type="text"].header-search-input {
+.header input[type="text"].header-search-input,
+.Header .header-search-wrapper{
 	background: #cbc9c8 !important;
 }
 .js-header-wrapper > .Header input[type="text"].header-search-input::-webkit-input-placeholder,
@@ -237,6 +239,10 @@ nav > div > a {
 
 h3.bg-white {
     background-color: transparent !important;
+}
+
+.Box {
+    background-color: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -574,6 +580,9 @@ button.muted-link {
 }
 a.label, a.IssueLabel, a.IssueLabel--big {
     color: white !important
+}
+.discussion-item-closed .discussion-item-icon, .discussion-item-review.is-rejected.is-writer .discussion-item-icon {
+    @include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
