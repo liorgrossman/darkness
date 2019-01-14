@@ -710,6 +710,9 @@ div[aria-label*="sticker"] {
 	//color: invert-back-color(#ffffff) !important;
 	-webkit-filter: invert(1) !important;
 }
+.fbNubFlyoutOuter div[style*="background-color:"] {
+	background-color: invert-back-color(#0084ff) !important;
+}
 
 // Bubble: the other side
 ._1nc7 ._5w1r, ._1nc7 ._5w1r a {
