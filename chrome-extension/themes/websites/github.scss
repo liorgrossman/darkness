@@ -578,9 +578,6 @@ button.muted-link {
 .State, .label, .IssueLabel, .IssueLabel--big {
     @include invert-back();
 }
-a.label, a.IssueLabel, a.IssueLabel--big {
-    color: white !important
-}
 .discussion-item-closed .discussion-item-icon, .discussion-item-review.is-rejected.is-writer .discussion-item-icon {
     @include invert-back();
 }
@@ -855,9 +852,6 @@ svg.octicon.octicon-check {
 .labels-list-item .label, .IssueLabel, .IssueLabel--big {
     -webkit-filter: invert(1) !important;
 }
-.labels-list-item .label span, .IssueLabel span, .IssueLabel--big span {
-    -webkit-filter: invert(1) !important;
-}
 .label-edit label {
     -webkit-filter: invert(1) !important;
 }
@@ -869,7 +863,12 @@ svg.octicon.octicon-check {
 }
 .labels .label, .IssueLabel, .IssueLabel--big {
     -webkit-filter: invert(1) !important;
+}
+.label[style*="color: #ffffff"], .IssueLabel[style*="color: #ffffff"], .IssueLabel a[style*="color: #ffffff"], .IssueLabel--big[style*="color: #ffffff"] {
     color: white !important;
+}
+.label[style*="color: #000000"], .IssueLabel[style*="color: #000000"], .IssueLabel a[style*="color: #000000"], .IssueLabel--big[style*="color: #000000"] {
+    color: black !important;
 }
 .js-new-label-swatches button{
     -webkit-filter: invert(1) !important;
@@ -882,6 +881,9 @@ svg.octicon.octicon-check {
 }
 .label-select-menu-item .color {
     -webkit-filter: invert(1) !important;
+}
+.label-description .muted-link {
+    background: transparent !important;
 }
 
 .closed-banner {
