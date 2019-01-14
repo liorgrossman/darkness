@@ -276,7 +276,7 @@ li._54ne, .__MenuItem.selected {
 	background-color: $theme-background-box !important;
 }
 
-._ipo { // comments
+._ipo, ._3w53 { // comments
 	background-color: $theme-background-box !important;
 }
 
@@ -411,6 +411,11 @@ li._54ne, .__MenuItem.selected {
 
 ._53ij {
 	background-color: $theme-background !important;
+}
+
+// Online status on a commenter
+._6bi7 {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -703,7 +708,7 @@ div[aria-label*="sticker"] {
 ._1nc6 ._d97, ._1nc6 ._d97 a, ._1nc6 ._1aa6 {
 	//background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
 	//color: invert-back-color(#ffffff) !important;
-	-webkit-filter:invert(1) !important;
+	-webkit-filter: invert(1) !important;
 }
 
 // Bubble: the other side
@@ -740,8 +745,11 @@ div[aria-label*="sticker"] {
 .minimized ._3olv._2nlt{
 	// -webkit-filter: invert(0%) !important;
 }
-._2nlt, ._3olv._2nlt {
+._2nlt, ._3olv._2nlt, ._1gyx {
 	@include invert-back();
+}
+._1gyx {
+	border-color: $theme-background !important;
 }
 
 // Earth button on bottom for translations
@@ -766,7 +774,7 @@ div[aria-label*="sticker"] {
 
 // online indidcator
 .presenceIndicator.presenceActive {
-	@include invert-back()
+	@include invert-back();
 }
 
 // Videos
@@ -776,6 +784,40 @@ div[aria-label*="sticker"] {
 
 ._ccq[style*="background-image:"] {
 	-webkit-filter: invert(0) !important;
+}
+
+// Fix for #89
+._3hx- ._1nc7 ._1aa6:after {
+	border: 30px solid $theme-background !important;
+}
+._3hx- ._1nc6 ._1aa6:after {
+	border: 30px solid invert-back-color($theme-background) !important;
+}
+._3hx- ._2cnu:only-of-type ._5wdf {
+	border-bottom: 0px solid transparent !important;
+	border-top: 0px solid transparent !important;
+}
+
+.titlebar ._69pt{
+	background: $theme-background-box !important;
+}
+._3hx- ._ua1,
+._3hx- ._40qi,
+._3hx- ._40fu,
+._3hx- ._1a6y,
+._4gd0,
+._3hx- ._31o4{
+	background: $theme-background !important;
+}
+._3hx- ._5wd4,
+._3hx- ._1nc7:not(:last-of-type) ._5z-5, ._3hx- ._1nc6:not(:last-of-type) ._5z-5, ._3hx- ._3erg:not(:last-of-type) ._5z-5,
+._3__-._3hx- ._4tdt,
+._3hx- ._6vu5 ._31o4,
+._3hx- ._5z-5{
+	border-color: $theme-background !important;
+}
+.fbNub._50mz .fbNubFlyoutFooter {
+	background: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1120,9 +1162,18 @@ li.__MenuItem._54ne.selected {
 	color: $theme-tooltip-text !important;
 }
 
-.uiTooltipX .tooltipContent {
+.uiTooltipX .tooltipContent,
+.uiTooltipX .tooltipContent * {
 	background: $theme-tooltip-background !important;
 	color: $theme-tooltip-text !important;
+}
+// The names of the people who reacted
+._3dlg+._3dli {
+	background: transparent !important;
+}
+// What people reacted
+._1n9k{
+	background: transparent !important;
 }
 
 // Emoticons
