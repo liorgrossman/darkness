@@ -219,6 +219,15 @@ input {
 .vote-accepted-on {
 	@include invert-back();
 }
+// upvote / downvote / favorite next to a question
+.js-vote-up-btn, .js-vote-down-btn, .js-favorite-btn {
+	background-color: transparent !important;
+	border-color: transparent !important;
+	svg {
+		color: invert-back-color($theme-button-background) !important;
+	}
+}
+
 //switch context
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Question switch context
