@@ -40,8 +40,33 @@ button,
 .coreSpriteMobileNavSettings,
 .coreSpritePagingChevron,
 .coreSpritePlayIconSmall,
-._dcj9f {
+._dcj9f,
+.bKWx4,
+.ckWGn,
+.yWX7d._8A5w5, a.yWX7d._8A5w5, a.yWX7d._8A5w5:visited,
+._2ic5v {
 	background-color: transparent !important;
+}
+
+// White buttons
+.ckWGn::before {
+	color: black !important;
+}
+
+// Buttons as links
+button.Z4IfV,
+button.afkep,
+button.PoNcp,
+button._6CZji,
+button.POSa_,
+button.M8zL6,
+.XX1Wc>button,
+.zVbeI button.sqdOP,
+button.B-R4p,
+button.ow3u_,
+button.-jHC6 {
+	background-color: transparent !important;
+	color: $theme-button-background !important;
 }
 
 // All inputs
@@ -56,13 +81,15 @@ input {
 }
 
 // Background
-._2v79o {
+._2v79o,
+._3Laht, .o64aR {
 	background-color: $theme-background !important;
 }
 
 // Lightbox
 ._lz8g1,
-._pfyik {
+._pfyik,
+._2dDPU {
 	background-color: rgba(darken($theme-background-box, 10%), 0.75) !important;
 }
 ._rebbv {
@@ -72,12 +99,26 @@ input {
 	background-color: transparent !important;
 }
 
+// Stories
+.lXJWB {
+	background-color: rgba(darken($theme-background-box, 10%), 0.75) !important;
+}
+
+// Fix for emojies #122
+.C4VMK > span{
+	@include invert-back();
+	color: invert-back-color($theme-text) !important;
+}
+.C4VMK > span a {
+	@include invert-back();
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Toolbar background
-._gft4l, ._tpnch {
+._gft4l, ._tpnch, ._lz6s {
 	background-color: $theme-background-toolbar !important;
 }
 
@@ -93,12 +134,12 @@ input {
 
 // Cirkle that show new notifications
 ._3pzlm::after {
-	@include invert-back()
+	@include invert-back();
 }
 
 // Invert mark that a post is liked
 .coreSpriteHeartFull {
-	@include invert-back()
+	@include invert-back();
 }
 
 // Marker, that shows what image out of the collection is being viewed
@@ -106,7 +147,31 @@ input {
 	background: $theme-highlighted !important;
 }
 
-// Emojis
+// Emojis from Chromoji
+.C4VMK .emoji-outer {
+	-webkit-filter: invert(0) !important;
+}
 .emoji-outer {
-	@include invert-back()
+	@include invert-back();
+}
+
+// a post
+.AcVnq, .KQA-S, ._1MzIy, ._3MPWk, ._8Rm4L, .zMhqu {
+	background-color: $theme-background-box !important;
+}
+
+// Boxes to the right
+.b2rUF,
+.DPiy6 {
+	background-color: $theme-background-box !important;
+}
+
+// Edit-account box
+.BvMHM {
+	background-color: $theme-background-box !important;
+}
+
+// Stories-list
+.jQgLo {
+	color: $theme-text !important;
 }
