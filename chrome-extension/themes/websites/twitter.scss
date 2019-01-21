@@ -325,6 +325,11 @@ body .u-bgUserColor, body .u-bgUserColorHover:hover, body .u-bgUserColorHover:fo
 	-webkit-filter: invert(180%) !important;
 }
 
+// Commenting a gif
+.FoundMediaSearch-item img {
+	-webkit-filter: invert(0%) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Polls
 //----------------------------------------------------------------------------------------------------------------------------------------------------
