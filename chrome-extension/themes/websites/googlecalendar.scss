@@ -106,13 +106,18 @@ input, textarea, input[type="text"] {
 .calListRow[aria-selected="true"] .calListSquare,
 .uVccjd[aria-checked="true"],
 .hsrazb {
-	@include invert-back()
+	@include invert-back();
 }
 .uVccjd[aria-checked="false"] {
-	@include invert-back()
+	@include invert-back();
 }
 .uVccjd[aria-checked="false"] .uHMk6b {
 	border-color: black !important;
+}
+
+// Color identifier on event detail popup
+.yyi9pc {
+	@include invert-back();
 }
 
 // Create event button
@@ -150,13 +155,13 @@ input, textarea, input[type="text"] {
 .ccc-text,
 .goog-hsv-palette-sm-swatch,
 .goog-hsv-palette-sm-v-image {
-	@include invert-back()
+	@include invert-back();
 }
 .fM9vSd .FKhct,
 .SQaQVd,
 .rgXNVe,
 .kUwJrc.R4GWv {
-	@include invert-back()
+	@include invert-back();
 }
 .g3VIld {
 	box-shadow: none !important;
@@ -227,17 +232,17 @@ div[role="main"] > div {
 .wgIOqb-XPtOyb,
 .g3dbUc:not(.smECzc),
 .QNFxAc {
-	@include invert-back()
+	@include invert-back();
 }
 // Week-view & Day-view
 .chip dl,
 .EfQccc {
-	@include invert-back()
+	@include invert-back();
 }
 // Agenda-view
 .lv-event-title,
 .Oxm52e {
-	@include invert-back()
+	@include invert-back();
 }
 
 // Darken past event
@@ -320,7 +325,7 @@ div[role="main"] > div {
 
 .qmv2fc.KKjvXb,
 .sIyjR {
-	@include invert-back()
+	@include invert-back();
 }
 
 .dT3uCc,
