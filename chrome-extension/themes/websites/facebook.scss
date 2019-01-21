@@ -708,10 +708,13 @@ div[aria-label*="sticker"] {
 ._1nc6 ._d97, ._1nc6 ._d97 a, ._1nc6 ._1aa6 {
 	//background-color: invert-back-color(desaturate(darken(#4080ff, 10%), 20%)) !important;
 	//color: invert-back-color(#ffffff) !important;
-	-webkit-filter: invert(1) !important;
+	@include invert-back();
 }
 .fbNubFlyoutOuter div[style*="background-color:"] {
-	background-color: invert-back-color(#0084ff) !important;
+	@include invert-back();
+}
+.fbNubFlyoutOuter div[style*="background-color:"] > * {
+	@include invert-back();
 }
 
 // Bubble: the other side
@@ -809,8 +812,17 @@ div[aria-label*="sticker"] {
 ._3hx- ._40fu,
 ._3hx- ._1a6y,
 ._4gd0,
-._3hx- ._31o4{
+._3hx- ._31o4,
+._3hx- ._4tdt ._4tdx,
+._3hx- ._5w-5{
 	background: $theme-background !important;
+}
+._3hx- ._5w-5 {
+	border-color: $theme-background !important;
+}
+._3hx- ._4tdt ._4tdx {
+	border-bottom: 1px solid $theme-background !important;
+    border-left: 10px solid $theme-background !important;
 }
 ._3hx- ._5wd4,
 ._3hx- ._1nc7:not(:last-of-type) ._5z-5, ._3hx- ._1nc6:not(:last-of-type) ._5z-5, ._3hx- ._3erg:not(:last-of-type) ._5z-5,
