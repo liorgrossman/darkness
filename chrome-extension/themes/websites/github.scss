@@ -5,7 +5,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-body, .gh-header {
+body, .gh-header, div[role="main"] > div {
     background-color: $theme-background !important;
 }
 
@@ -88,6 +88,10 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
     border-color: $theme-border !important;
     color: $theme-text !important;
 }
+// Dashboard sidemenu
+.dashboard-sidebar {
+    background-color: $theme-background-box !important;
+}
 
 // "This repository"
 .js-header-wrapper > .Header .header-search-scope,
@@ -145,7 +149,7 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // dashboard page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// right side repositories sidebar
+// right side repositories sidebar and left dashboard-menu
 .dashboard-sidebar > div,
 .dashboard-sidebar > div > h3,
 .dashboard-sidebar > div > div,
@@ -243,6 +247,18 @@ h3.bg-white {
 
 .Box {
     background-color: $theme-background-box !important;
+}
+
+// Notice
+.js-notice.Box,
+.js-notice {
+    border-color: darken($theme-tooltip-background, 10%) !important;
+    background-color: $theme-tooltip-background !important;
+    color: $theme-tooltip-text !important;
+}
+.js-notice a,
+.js-notice h2 {
+    color: darken($theme-tooltip-text, 15%) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
