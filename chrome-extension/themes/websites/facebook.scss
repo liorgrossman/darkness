@@ -834,6 +834,13 @@ div[aria-label*="sticker"] {
 .fbNub._50mz .fbNubFlyoutFooter {
 	background: $theme-background-box !important;
 }
+// Emoji background
+._3hx- ._1nc6 ._1aa6._31xy {
+	background-color: invert-back-color($theme-background) !important;
+}
+._3hx- ._1aa6._31xy {
+	background: transparent !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Lightboxes (photos, posts, etc.)
