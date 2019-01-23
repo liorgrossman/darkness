@@ -6,20 +6,21 @@ $darkness-z-index-base: 2147400000;
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // PALETTE AND CONFIGURATION
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-$darkness-background: #333;
-$darkness-text: #999;
+$darkness-background: #202020;
+$darkness-text: #eee;
+$darkness-text-bright: #fff;
+$darkness-footer-text: #757575;
 $darkness-yellow: #ffd400;
 $darkness-blue: #86cdff;
 
-$darkness-toolbar-background: #666;
+$darkness-toolbar-background: #303030;
 
 $darkness-button-background: $darkness-background;
-//$darkness-button-text: #c5a950;
-$darkness-button-text: $darkness-blue;
-$darkness-button-text-hover: $darkness-yellow;
+$darkness-button-text: $darkness-text;
+$darkness-button-text-hover: $darkness-text-bright;
 $darkness-button-active-background: lighten($darkness-background, 10%);
-$darkness-button-active-text: $darkness-yellow;
-$darkness-button-active-text-hover: $darkness-yellow;
+$darkness-button-active-text: $darkness-text-bright;
+$darkness-button-active-text-hover: $darkness-text-bright;
 
 $darkness-dialogbutton-background: lighten($darkness-background, 10%);
 $darkness-dialogbutton-text: #999;
@@ -37,6 +38,7 @@ $darkness-listbutton-active-background: lighten($darkness-background, 15%);
 $darkness-listbutton-active-text: $darkness-yellow;
 $darkness-listbutton-hover-lighten: 3%;
 
+$letter-spacing: 0.35px;
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // LOAD OPEN SANS GOOGLE FONTS LOCALLY (FROM /FONTS)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,13 +86,11 @@ a.drk_icon {
 	text-decoration: none !important;
 	i {
 		color: #888 !important;
-		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) !important;
 		transition: all .1s ease-in-out !important;
 	}
 	&:hover {
 		i {
 			color: #ddd !important;
-			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8) !important;
 			transition: all 0s ease-in-out !important;
 		}
 	}
@@ -110,13 +110,11 @@ a.drk_icon {
 	&.drk_icon_close {
 		i {
 			color: #ccc !important;
-			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3) !important;
 			transition: all .1s ease-in-out !important;
 		}
 		&:hover {
 			i {
 				color: #fff !important;
-				text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) !important;
 				transition: all 0s ease-in-out !important;
 			}
 		}
@@ -128,7 +126,7 @@ a.drk_icon {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Buttons in the bottom of Darkness settings dialog (actually look like links)
 div.drk_button {
-	background: $darkness-button-background !important;
+	background: transparent !important;
 	color: $darkness-button-text !important;
 	cursor: pointer !important;
 	padding: 7px 0 7px 2px !important;
@@ -137,6 +135,7 @@ div.drk_button {
 	font-weight: 300 !important;
 	transition: all .1s ease-in-out !important;
 	text-align: left !important;
+	letter-spacing: $letter-spacing !important;
 	&.hidden {
 		display: none !important;
 	}
@@ -165,11 +164,13 @@ div.drk_button {
 	}
 	span {
 		cursor: pointer !important;
+		letter-spacing: $letter-spacing !important;
 	}
 	i {
 		// Icons
 		margin-right: 5px !important;
 		opacity: 0.7 !important;
+		font-size: 1.2em !important;
 	}
 	small {
 		font-size: 0.8em !important;
@@ -250,28 +251,38 @@ div.drk_button_dialog {
 
 ul li.drk_button_li {
 	background: $darkness-listbutton-background !important;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.4) !important;
+	border: solid 1px #000 !important;
+	box-shadow: inset 0 2px 2px -2px rgba(200, 200, 200, 0.2), 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
 	color: $darkness-listbutton-text !important;
 	cursor: pointer !important;
 	padding: 10px !important;
-	margin: 8px 9px !important;
+	margin: 10px 9px !important;
 	display: block !important;
-	font-size: 14px !important;
+	font-size: 13.5px !important;
 	font-weight: 200 !important;
 	line-height: 1.4em !important;
-	transition: all .1s ease-in-out !important;
+	transition: all 30ms ease-in-out !important;
 	text-align: left !important;
 	float: left !important;
 	width: 114px !important;
-	height: 30px !important;
+	height: 27px !important;
+	border-radius: 2px !important;
+	overflow: hidden !important;
 	position: relative !important;
-	opacity: 0.9 !important;
-	border: solid 1px $darkness-background !important;
+	opacity: 0.85 !important;
+
+	.selected {		
+		position: absolute !important;
+		right: 10px !important;
+		top: 10px !important;
+		opacity: 0 !important;
+		transition: all 30ms ease-in-out !important;
+	}
 	.color {
 		position: absolute !important;
-		top: 85% !important;
+		top: 38px !important;
 		bottom: 0 !important;
-		width: 33.333% !important;
+		width: 33.3333% !important;
 	}
 	.color1 {
 		right: 0 !important;
@@ -400,45 +411,29 @@ ul li.drk_button_li {
 		}
 		display: none !important;
 	}
-	.selected {
-		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.7), 0 0 3px rgba(0, 0, 0, 0.6) !important;
-		position: absolute !important;
-		right: -5px !important;
-		top: -5px !important;
-		width: 21px !important;
-		height: 21px !important;
-		background: $darkness-yellow !important;
-		color: Black !important;
-		border-radius: 50% !important;
-		display: none !important;
-		i {
-			position: absolute !important;
-			left: 1px !important;
-			top: 5px !important;
-			font-size: 13px !important;
-			line-height: 1em !important;
-		}
-	}
 	.drk_theme_title {
 		padding: 0 !important;
 		margin: 0 5px !important;
 		cursor: pointer !important;
 		display: block !important;
+		letter-spacing: $letter-spacing !important;
 	}
 	&.hidden {
 		display: none !important;
 	}
 	&:hover {
-		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.7) !important;
-		transition: all 0s ease-in-out !important;
-		border-color: lighten($darkness-background, 12%) !important;
 		opacity: 1 !important;
+		transition: all 0s ease-in-out !important;
 	}
 	&.drk_active {
+		border-radius: 1px !important;
+		border-color: #aaa !important;
+		box-shadow: inset 0 2px 2px -2px rgba(200, 200, 200, 0.2), 0 10px 20px rgba(0,0,0,0.39), 0 6px 6px rgba(0,0,0,0.46) !important;
+		opacity: 1 !important;
 		transition: all 0s ease-in-out !important;
-		border-color: lighten($darkness-background, 30%) !important;
-		.selected {
-			display: block !important;
+		.selected {		
+			opacity: 1 !important;
+			transition: all 0s ease-in-out !important;
 		}
 	}
 }
@@ -457,7 +452,7 @@ div.drk_settings {
 	-webkit-user-select: none !important;
 	text-rendering: auto !important;
 	cursor: default !important;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25), 0 2px 3px 0 rgba(0, 0, 0, 0.5) !important;
+	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 1), -1px 1px 4px 0 rgba(0, 0, 0, 0.9) !important;
 	border-radius: 3px 0 3px 3px !important;
 	background: $darkness-background !important;
 	color: $darkness-text !important;
@@ -474,24 +469,28 @@ div.drk_settings {
 		margin-bottom: 2px !important;
 		div.drk_app_icon {
 			position: absolute !important;
-			top: 8px !important;
-			left: 10px !important;
-			width: 19px !important;
-			height: 19px !important;
-			background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/darkness-icon-19px.png") no-repeat center !important;
+			top: 7px !important;
+			left: 8px !important;
+			width: 24px !important;
+			height: 24px !important;
+			background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/darkness-icon-48px.png") no-repeat center !important;
+			background-size: cover !important;
 		}
 		div.drk_app_name {
 			margin: 0 20px !important;
 			padding: 10px !important;
-			font-weight: 300 !important;
+			font-weight: 400 !important;
 			text-align: center !important;
-			font-size: 15px !important;
+			font-size: 17px !important;
+			letter-spacing: 0.13px !important;
+			color: white !important;
 		}
 		span.drk_close {
 			float: right !important;
 			font-size: 14px !important;
-			padding: 10px !important;
+			padding: 11px 8px !important;
 			cursor: pointer !important;
+			opacity: 0.6 !important;
 		}
 	}
 
@@ -529,31 +528,26 @@ div.drk_settings {
 				}
 			}
 		}
-		div.drk_title {
+		div.drk_section_title {
+			letter-spacing: $letter-spacing !important;
 			padding: 0 25px !important;
 			font-size: 14px !important;
 			font-weight: 300 !important;
-			color: #ddd !important;
-			a {
-				color: #eee !important;
-				text-decoration: none !important;
-				&:hover {
-					color: #fff !important;
-				}
-			}
 		}
 		div.drk_subtitle {
 			padding: 0 25px !important;
-			font-size: 11px !important;
+			font-size: 10.5px !important;
 			line-height: 16px !important;
 			font-weight: 300 !important;
-			color: darken($darkness-text, 5%) !important;
+			color: $darkness-footer-text !important;
+			letter-spacing: 0 !important;
 			display: block !important;
 			a {
-				color: lighten($darkness-text, 5%) !important;
+				letter-spacing: $letter-spacing !important;
+				color: lighten($darkness-footer-text, 8%) !important;
 				text-decoration: none !important;
 				&:hover {
-					color: lighten($darkness-text, 15%) !important;
+					color: lighten($darkness-footer-text, 15%) !important;
 				}
 			}
 		}
