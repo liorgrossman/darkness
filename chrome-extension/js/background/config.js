@@ -520,6 +520,12 @@ var CONFIG = {
 			name: 'Slack',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^(.+)?slack\.com$', 'i')
+		},
+		'googlescript': {
+			key: 'googlescript', // Must be the same as the object key
+			name: 'Google Script',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('script\.google\.com$', 'i')
 		}
 	}
 };
