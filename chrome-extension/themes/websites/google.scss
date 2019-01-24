@@ -205,6 +205,18 @@ cite {
 	background-color: white !important;
 }
 
+// Stories
+g-inner-card {
+	background-color: $theme-background-box !important;
+}
+g-right-button,
+g-left-button {
+	g-fab {
+		background-color: $theme-background-toolbar !important;
+		box-shadow: 0 0 0 1px rgba(200,200,200,0.04), 0 4px 8px 0 rgba(200,200,200,0.20) !important;
+	}
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Knowledge graph box on the right
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -220,6 +232,16 @@ cite {
 .kp-blk {
 	background: $theme-background-box !important;
 	box-shadow: 0px 1px 4px 0px rgba(255, 255, 255, 0.2) !important;
+}
+
+// Product showcase
+.jackpot-main-content-container {
+	img {
+		background-color: white !important;
+	}
+}
+.commercial-unit-desktop-rhs {
+	background-color: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
