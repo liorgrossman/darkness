@@ -225,16 +225,20 @@ gulp.task('sass:cleanup', function() {
 });
 
 // Compile all SCSS files to CSS & map files
-gulp.task('sass:compile', function() {
+gulp.task('sass:compile', function() { 
 	gulp.src(chromeDevelopmentDir + '/style/*.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass().on('error', (err) => {
+			gutil.log(gutil.colors.yellow(err));
+		}))
 		.pipe(sourcemaps.write("./"))
 		.pipe(gulp.dest(chromeDevelopmentDir + '/style-css'));
 
 	gulp.src(chromeDevelopmentDir + '/themes/*.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass().on('error', (err) => {
+			gutil.log(gutil.colors.yellow(err));
+		}))
 		.pipe(sourcemaps.write("./"))
 		.pipe(gulp.dest(chromeDevelopmentDir + '/themes-css'));
 });
