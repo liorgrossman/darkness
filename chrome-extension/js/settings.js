@@ -181,7 +181,9 @@ if (!DarknessSettingsLoader) {
 
 			// Hide upgrade dialog, and show "waiting" dialog instead
 			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
-			$('.drk_pay_waiting').addClass('visible');
+			setTimeout(function() {
+				$('.drk_pay_waiting').addClass('visible');
+			}, 500);			
 
 			// Submit the form
 			$("#drk_paypal_form").trigger("submit");
@@ -502,11 +504,11 @@ if (!DarknessSettingsLoader) {
 
 		// Fill and initialize all the elements of the settings panel
 		var initializeSettingsPanelInterfaceElements = function() {
-			var title = 'Darkness';
-			if (ENVIRONMENT == 'development') title = 'Darkness Developer Edition';
-			else if (ENVIRONMENT == 'staging') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '') + '*';
-			else if (ENVIRONMENT == 'production') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '');
-			$('.drk_app_name').html(title);
+			var ver = 'regular';
+			if (ENVIRONMENT == 'development') ver = 'dev';
+			else ver = (ASSETS.TYPE == 'p' ? 'pro' : 'regular');
+			$('.drk_app_logo').attr('data-version', ver);
+
 			$('.drk_settings .sku_replace').addClass('sku-'+SKU).removeClass('sku_replace');
 			if (ENVIRONMENT == 'development')  { 
 				// Darkness Development Edition users:

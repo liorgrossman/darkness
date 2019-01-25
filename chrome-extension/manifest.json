@@ -34,6 +34,7 @@
 		"images/*.png",
 		"images/*.gif",
 		"images/*.jpg",
+		"images/*.svg",
 		"fonts/*.woff2",
 		"icons/css/*.css",
 		"icons/font/*.*"
