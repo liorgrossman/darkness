@@ -523,7 +523,6 @@ button.muted-link {
 }
 
 .timeline-comment,
-.comment-form-head, //comment header
 .form-control, //text area for comments
 .drag-and-drop,
 .comment-body {
@@ -532,8 +531,23 @@ button.muted-link {
     color: $theme-text !important;
 }
 
-.timeline-comment {
-    background: none !important;
+.timeline-comment-wrapper .timeline-comment.current-user:before,
+.timeline-comment-wrapper>.timeline-comment:before, 
+.timeline-new-comment .timeline-comment:before {
+    border-right-color: $theme-background-box !important;
+}
+.timeline-comment-wrapper .timeline-comment.current-user:after,
+.timeline-comment-wrapper>.timeline-comment:after, 
+.timeline-new-comment .timeline-comment:after {
+    border-right-color: $theme-background-toolbar !important;
+}
+
+.comment-form-head .tabnav-tab.selected{
+    background: $theme-background-box !important;
+}
+
+.author {
+    background-color: transparent !important;
 }
 
 //selecting them
@@ -545,6 +559,7 @@ button.muted-link {
 
 //header for timeline
 .timeline-comment > .timeline-comment-header,
+.comment-form-head, //comment header
 .timeline-comment-action {
     background: $theme-background-toolbar !important;
     border-color: $theme-border !important;
@@ -594,7 +609,9 @@ button.muted-link {
 .State, .label, .IssueLabel, .IssueLabel--big {
     @include invert-back();
 }
-.discussion-item-closed .discussion-item-icon, .discussion-item-review.is-rejected.is-writer .discussion-item-icon {
+.discussion-item-closed .discussion-item-icon, 
+.discussion-item-review.is-rejected.is-writer .discussion-item-icon,
+.discussion-item-reopened .discussion-item-icon {
     @include invert-back();
 }
 
