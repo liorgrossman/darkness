@@ -236,6 +236,7 @@ div.drk_button_dialog {
 		font-weight: 700 !important;
 		background: $darkness-yellow !important;
 		color: #000 !important;
+
 		&:not(.disabled):hover {
 			background: darken($darkness-yellow, 5%) !important;
 			transition: all 0s ease-in-out !important;
@@ -831,6 +832,7 @@ div.drk_dialog.drk_get_pro {
 
 	.drk_show_only_on_sku {
 		display: none !important;
+
 		&.show {
 			display: block !important;
 		}
@@ -860,7 +862,7 @@ div.drk_dialog.drk_get_pro {
 		padding: 0 !important;
 		margin: 0 !important;
 		width: 600px !important;
-		height: 450px !important;
+		height: 443px !important;
 		color: $darkness-text !important;
 		font-size: 14px !important;
 		font-weight: 300 !important;
@@ -869,7 +871,7 @@ div.drk_dialog.drk_get_pro {
 	.drk_gp_title {
 		font-size: 2.3em !important;
 		font-weight: 400 !important;
-		padding: 20px 0 10px !important;
+		padding: 25px 0 12px !important;
 		color: $darkness-text-bright !important;
 	}
 
@@ -879,17 +881,17 @@ div.drk_dialog.drk_get_pro {
 	}
 
 	.drk_gp_section {
-		padding: 20px 0 !important;
+		padding: 22px 0 15px !important;
 
 		&.themes {
 			padding-top: 0 !important;
 		}
 
 		.drk_gp_section_title {
-			font-size: 1.4em !important;
+			font-size: 1.3em !important;
 			font-weight: 400 !important;
 			margin-bottom: 15px !important;
-			color: $darkness-text-bright !important;
+			color: $darkness-text !important;
 		}
 
 		.drk_gp_list {
@@ -903,14 +905,14 @@ div.drk_dialog.drk_get_pro {
 				align-items: center !important;
 				margin: 0 8px !important;
 				width: 40px !important;
-				height: 60px !important;
+				height: 68px !important;
 				position: relative !important;
 
-				.drk_gp_item_icon {
-					width: 30px !important;
-					height: 30px !important;
-					opacity: 0.9 !important;
-					filter: drop-shadow( 0 3px 6px rgba(0,0,0,0.32), 0 3px 6px rgba(0,0,0,0.46)), saturate(0.75) !important;
+				svg.drk_gp_item_icon {
+					width: 35px !important;
+					height: 35px !important;
+					// Important to prevent the svg invert in Google etc.
+					filter: saturate(0.85) !important;
 				}
 
 				.drk_gp_item_label {
@@ -919,7 +921,7 @@ div.drk_dialog.drk_get_pro {
 					font-weight: 400 !important;
 					text-align: center !important;
 					line-height: 1.25em !important;
-					text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+					text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
 				}
 
 				&.theme {
@@ -928,7 +930,8 @@ div.drk_dialog.drk_get_pro {
 					padding: 0 !important;
 					border-radius: 2px !important;
 					overflow: hidden !important;
-					box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+					box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+					opacity: 0.95 !important;
 
 					.drk_gp_item_label {
 						margin-top: 12px !important;
@@ -940,27 +943,27 @@ div.drk_dialog.drk_get_pro {
 						height: 7px !important;
 						width: 33.3333% !important;
 					}
-		
+
 					.color1 {
 						right: 0 !important;
 					}
-		
+
 					.color2 {
 						right: 33.333% !important;
 					}
-		
+
 					.color3 {
 						right: 66.666% !important;
 					}
 				}
 			}
 
-			
+
 		}
 	}
 
 	.drk_gp_price {
-		padding: 10px 0 !important;
+		padding: 18px 0 10px !important;
 		font-size: 1.2em !important;
 
 		.drk_gp_price_old {
@@ -972,6 +975,7 @@ div.drk_dialog.drk_get_pro {
 		.drk_gp_price_new {
 			color: $darkness-text-bright !important;
 			display: inline !important;
+
 			b {
 				font-weight: 600 !important;
 			}
@@ -988,6 +992,7 @@ div.drk_dialog.drk_get_pro {
 		cursor: pointer !important;
 		filter: brightness(1.0) !important;
 		transition: filter .2s ease-in-out !important;
+
 		&:hover {
 			filter: brightness(1.2) !important;
 		}
