@@ -247,7 +247,7 @@ chrome.runtime.onMessage.addListener(
 // This is useful for development, when you want those files to reload each time the moon icon is clicked
 var getAssetsForSettingsPanel = function(callback) {
 	// First, load all files from disk to cache
-	var filesToPreload = ["js/settings.js", "style-css/cleanslate.css", "icons/css/fontello.css", "style-css/settings.css", "html/settings.html"];
+	var filesToPreload = ["js/settings.js", "style-css/cleanslate.css", "icons/css/fontello.css", "style-css/settings.css", "html/settings.html", "flaticon/darkness-SVG-sprite.svg"];
 	readFilesFromDisk(true, filesToPreload, function() {
 
 		// Load all CSS files from cache and concatenate (extremely quick, from memory)
@@ -258,7 +258,12 @@ var getAssetsForSettingsPanel = function(callback) {
 		cssContent = cssContent.replace(/\.\.\/font\/fontello/g, chrome.extension.getURL('icons/font/fontello'));
 
 		// Load other files from cache (extremely quick, from memory)
-		var htmlContent = readFileFromCache("html/settings.html");
+		var htmlContent =
+			"\n\n" +
+			"<div hidden>" + readFileFromCache("flaticon/darkness-SVG-sprite.svg") + "</div>" +
+			"\n\n" +
+			readFileFromCache("html/settings.html") +
+			"\n\n";
 		var noThemeCssContent = readFileFromCache("style-css/page.css");
 
 		// Return all the assets
@@ -332,15 +337,15 @@ var getHoliday = function(date) {
 	var dayOfMonth = date.getDate();
 	var month = date.getMonth() + 1;
 	var dateString = month + '/' + dayOfMonth;
-	if (dateString == '1/1' ) return "New Year's Day";
+	if (dateString == '1/1') return "New Year's Day";
 	if (dateString == '6/14') return "Flag Day";
-	if (dateString == '7/4')  return "Independence Day";
+	if (dateString == '7/4') return "Independence Day";
 	if (dateString == '11/11') return "Veterans Day";
 	if (dateString == '10/31') return "Halloween";
 	if (dateString == '12/24') return "Christmas Eve";
 	if (dateString == '12/25') return "Christmas Day";
 	if (dateString == '12/31') return "New Year's Eve";
-	if (month == 11 && (dayOfMonth >=19 && dayOfMonth <= 27)) return "Thanksgiving, Black Friday, Cyber Monday"
+	if (month == 11 && (dayOfMonth >= 19 && dayOfMonth <= 27)) return "Thanksgiving, Black Friday, Cyber Monday"
 	return null;
 }
 
@@ -400,7 +405,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	}
 	var promo = 'h';
 	if (correctType && correctSku && shouldShow) {
-		promo = 's';		
+		promo = 's';
 	}
 
 	// All the arguments required by page.js
@@ -449,8 +454,7 @@ var initializeTab = function(tab, startUpRetroactiveLoad) {
 
 
 // Called when a tab has been loaded
-var onTabComplete = function(tab) {	
-};
+var onTabComplete = function(tab) {};
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Initialization Helpers
@@ -462,8 +466,7 @@ var onTabUpdate = function(tabId, info, tab) {
 		log("=========================");
 		log("Tab updated: " + getTabName(tab) + ", status: " + info.status);
 		initializeTab(tab, false);
-	}
-	else if (info.status == 'complete') {
+	} else if (info.status == 'complete') {
 		onTabComplete(tab);
 	}
 };

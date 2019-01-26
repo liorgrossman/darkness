@@ -180,7 +180,7 @@ if (!DarknessSettingsLoader) {
 			$('#drk_paypal_custom').attr('value', JSON.stringify(custom));
 
 			// Hide upgrade dialog, and show "waiting" dialog instead
-			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
+			$('.drk_get_pro').removeClass('visible');
 			setTimeout(function() {
 				$('.drk_pay_waiting').addClass('visible');
 			}, 500);			
@@ -271,7 +271,7 @@ if (!DarknessSettingsLoader) {
 
 		// Payment Step 3 (alternative): Called when a user submits a promo code
 		var submitPromoCode = function() {
-			var $dialog = $('.drk_get_pro.sku-'+SKU)
+			var $dialog = $('.drk_get_pro')
 			var promo = $dialog.find('.drk_promo_input').val().trim();			
 			$dialog.find('.drk_promo_submit').val('Checking...');
 			// Ask the background to check with the code with the server
@@ -305,7 +305,7 @@ if (!DarknessSettingsLoader) {
 			log('pay finished', success, ASSETS.TYPE);
 
 			// Hide all open dialogs
-			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
+			$('.drk_get_pro').removeClass('visible');
 			$('.drk_pay_waiting').removeClass('visible');
 			$('.drk_settings').removeClass('visible');
 
@@ -413,6 +413,14 @@ if (!DarknessSettingsLoader) {
 			});
 		};
 
+		// Show the upgrade dialog
+		var showUpgradeDialog = function() {
+			// Hide/show SKU-specific elements
+			$('.drk_get_pro .drk_show_only_on_sku').removeClass('show');
+			$('.drk_get_pro .drk_show_only_on_sku.drk_sku'+SKU).addClass('show');
+			// Show the dialog
+			$('.drk_get_pro').addClass('visible');
+		}
 
 		// Start theme preview mode
 		var startPreviewMode = function() {
@@ -420,7 +428,7 @@ if (!DarknessSettingsLoader) {
 
 			// Show preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').addClass('visible');
-			$('.drk_get_pro.sku-'+SKU).addClass('visible');
+			showUpgradeDialog();
 			$('.drk_use_this_for_all_button').addClass('disabled');
 
 			// Analytics
@@ -437,7 +445,7 @@ if (!DarknessSettingsLoader) {
 
 			// Hide preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').removeClass('visible');
-			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
+			$('.drk_get_pro').removeClass('visible');
 			$('.drk_use_this_for_all_button').removeClass('disabled');
 
 			if (switchToAllowedTheme) {
@@ -737,7 +745,7 @@ if (!DarknessSettingsLoader) {
 				// Close all dialogs
 				$('.drk_dialog').removeClass('visible');
 				// Open upgrade dialog
-				$('.drk_get_pro.sku-'+SKU).addClass('visible');
+				showUpgradeDialog();
 			});
 
 			// Developer Button #1 ("Developer? Help us fix the CSS")
@@ -809,7 +817,7 @@ if (!DarknessSettingsLoader) {
 		var loadUpgradeDialogEventHandlers = function() {
 
 			// Buy button
-			$('.drk_get_pro.sku-'+SKU+' .drk_buy_life').unbind('click').click(function() {
+			$('.drk_get_pro .drk_buy_life').unbind('click').click(function() {
 				// Analytics
 				dialogAmount = '4.99life';
 				if (SKU == 2) dialogAmount = '2.99life';
@@ -910,7 +918,7 @@ if (!DarknessSettingsLoader) {
 
 
 			// X button clicked (for Upgrade Dialog)
-			$('.drk_get_pro.sku-'+SKU+' .drk_dialog_close').unbind('click').click(function(e) {
+			$('.drk_get_pro .drk_dialog_close').unbind('click').click(function(e) {
 				$('.drk_promo_form').removeClass('visible');
 				$('.drk_promo_link').addClass('visible');
 				closeActiveDialog(e);
