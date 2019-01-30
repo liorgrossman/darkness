@@ -815,9 +815,7 @@ if (!DarknessSettingsLoader) {
 		};
 
 		var loadUpgradeDialogEventHandlers = function() {
-
-			// Buy button
-			$('.drk_get_pro .drk_buy_life').unbind('click').click(function() {
+			var openPaypal = () => {
 				// Analytics
 				dialogAmount = '4.99life';
 				if (SKU == 2) dialogAmount = '2.99life';
@@ -828,7 +826,21 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-all');
 				// Trigger purchase dialog
 				buyClick();
+			};
+
+			// Buy with Credit Card button
+			$('.drk_get_pro .drk_buy_credit').unbind('click').click(function() {
+				repEventByUser('user-action', 'pay-btn-click', 'credit');
+				alert("PayPal is about to open...\nClick the gray 'Pay with Debit or Credit Card' button at the bottom of the page.\nNo PayPal account is necessary!")
+				openPaypal();
 			});
+
+			// Buy with PayPal button
+			$('.drk_get_pro .drk_buy_paypal').unbind('click').click(function() {
+				repEventByUser('user-action', 'pay-btn-click', 'paypal');
+				openPaypal();
+			});
+
 			// Upgrade dialog -> Got promo?
 			$('.drk_show_feature_comparison').unbind('click').click(function(e) {
 				var url = "https://darkness.app/upgrade/";
