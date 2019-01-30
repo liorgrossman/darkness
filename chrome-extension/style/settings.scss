@@ -211,7 +211,8 @@ div.drk_button_dialog {
 	text-align: center !important;
 	border-radius: 3px !important;
 	line-height: 1.5em !important;
-	min-width: 50px;
+	min-width: 50px !important;
+	position: relative !important;
 
 	&.hidden {
 		display: none !important;
@@ -847,14 +848,47 @@ div.drk_dialog.drk_get_pro {
 		cursor: pointer !important;
 
 		a.drk_icon.drk_icon_close i {
-			color: rgba(249, 255, 233, 0.4) !important;
+			color: $darkness-text-dark !important;
 		}
 
 		a.drk_icon.drk_icon_close:hover i {
-			color: rgba(249, 255, 233, 0.6) !important;
+			color: $darkness-text-bright !important;
 		}
-
 	}
+
+
+	.drk_hide_link {
+		top: -2px !important;
+		right: 26px !important;
+		font-weight: 700 !important;
+		position: absolute !important;
+		font-family: Arial, Helvetica, sans-serif !important;
+		cursor: pointer !important;
+		font-size: 18px !important;
+		transition: color .2s ease-in-out !important;
+		padding: 4px 10px !important;
+		display: block !important;
+	}
+
+
+	.drk_promo_link:hover,
+	.drk_promo_caption:hover,
+	.drk_hide_link:hover {
+		color: $darkness-text-bright !important;
+	}
+
+	.drk_promo_link,
+	.drk_promo_caption,
+	.drk_hide_link {
+		color: $darkness-text-dark !important;
+	}
+
+	.drk_promo_link {
+		font-size: 11px !important;
+		font-weight: 400 !important;
+		position: absolute !important;
+	}
+
 
 	.drk_content {
 		border-radius: 7px !important;
@@ -862,21 +896,21 @@ div.drk_dialog.drk_get_pro {
 		padding: 0 !important;
 		margin: 0 !important;
 		width: 600px !important;
-		height: 443px !important;
+		height: 445px !important;
 		color: $darkness-text !important;
 		font-size: 14px !important;
 		font-weight: 300 !important;
 	}
 
 	.drk_gp_title {
-		font-size: 2.3em !important;
-		font-weight: 400 !important;
+		font-size: 32px !important;
+		font-weight: 600 !important;
 		padding: 25px 0 12px !important;
 		color: $darkness-text-bright !important;
 	}
 
 	.drk_gp_subtitle {
-		font-size: 1em !important;
+		font-size: 14px !important;
 		color: $darkness-text-dark !important;
 	}
 
@@ -888,10 +922,10 @@ div.drk_dialog.drk_get_pro {
 		}
 
 		.drk_gp_section_title {
-			font-size: 1.3em !important;
+			font-size: 22px !important;
 			font-weight: 400 !important;
 			margin-bottom: 15px !important;
-			color: $darkness-text !important;
+			color: darken($darkness-text, 5%) !important;
 		}
 
 		.drk_gp_list {
@@ -917,7 +951,7 @@ div.drk_dialog.drk_get_pro {
 
 				.drk_gp_item_label {
 					margin-top: 5px !important;
-					font-size: 0.7em !important;
+					font-size: 10px !important;
 					font-weight: 400 !important;
 					text-align: center !important;
 					line-height: 1.25em !important;
@@ -964,7 +998,7 @@ div.drk_dialog.drk_get_pro {
 
 	.drk_gp_price {
 		padding: 18px 0 10px !important;
-		font-size: 1.2em !important;
+		font-size: 17px !important;
 
 		.drk_gp_price_old {
 			color: $darkness-text-dark !important;
@@ -984,7 +1018,6 @@ div.drk_dialog.drk_get_pro {
 
 	.drk_button_dialog_wrapper {
 		display: inline-block !important;
-		background: Black !important;
 		border-radius: 4px !important;
 	}
 
@@ -1004,30 +1037,17 @@ div.drk_dialog.drk_get_pro {
 		border-radius: 2px !important;
 		transition: all .2s ease-in-out !important;
 		opacity: 0.95 !important;
-		margin: 0 !important;
+		margin: 0 18px !important;
 
 		.upg_btn1 {
 			font-size: 18px !important;
 			text-align: center !important;
 			font-weight: 700 !important;
-			color: #000 !important;
+			color: #1e1e76 !important;
 			letter-spacing: -0.3px !important;
 			cursor: pointer !important;
-			padding: 5px 20px 7px !important;
+			padding: 5px 0px 7px !important;
 			-webkit-font-smoothing: antialiased;
-		}
-
-		.upg_btn2 {
-			font-size: 14px !important;
-			text-align: center !important;
-			font-weight: 400 !important;
-			letter-spacing: -0.2px !important;
-			-webkit-font-smoothing: antialiased;
-			color: #555 !important;
-			padding: 3px 0 0 !important;
-			cursor: pointer !important;
-			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
-			display: none !important;
 		}
 
 		&:hover {
@@ -1036,96 +1056,101 @@ div.drk_dialog.drk_get_pro {
 			transition: all .1s ease-in-out !important;
 			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
 		}
-	}
 
-	.drk_promo_link:hover,
-	.drk_promo_caption:hover,
-	.drk_hide_link:hover {
-		color: $darkness-text-bright !important;
-	}
+		&.drk_button_paypal {
+			padding-right: 80px !important;
+			width: 140px !important;
+		}
+		.drk_button_paypal_img {
+			position: absolute !important;
+			top: 15px !important;
+			right: 41px !important;
+			width: 67px !important;
+			height: 18px !important;
+			background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/paypal-logo.svg") no-repeat center !important;
+			background-size: cover !important;	
+			cursor: pointer !important;
+		}
 
-	.drk_promo_link,
-	.drk_promo_caption,
-	.drk_hide_link {
-		font-size: 11px !important;
-		font-weight: 400 !important;
-		position: absolute !important;
-		color: $darkness-text-dark !important;
+		&.drk_button_credit {
+			padding-right: 100px !important;
+			width: 120px !important;
+		}
+		.drk_button_credit_img {
+			position: absolute !important;
+			top: 14px !important;
+			right: 15px !important;
+			width: 72px !important;
+			height: 18px !important;
+			background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/pay-credit.png") no-repeat center !important;
+			background-size: cover !important;	
+			cursor: pointer !important;
+		}
 	}
 
 	.drk_promo_link {
-		bottom: 1px !important;
+		bottom: 0px !important;
 		right: 0px !important;
+		opacity: 0.85 !important;
+		font-size: 10px !important;
+		margin-left: -40px !important;
+		text-align: center !important;
 		cursor: pointer !important;
 		transition: color .2s ease-in-out !important;
-		padding: 4px 10px !important;
+		padding: 1px 7px !important;
+		display: none !important;
 
 		&:hover {
 			color: $darkness-text-bright !important;
 			transition: color .0s ease-in-out !important;
 		}
-
-		display: none !important;
 
 		&.visible {
 			display: block !important;
 		}
-	}
-
-	.drk_hide_link {
-		bottom: 1px !important;
-		left: 0px !important;
-		cursor: pointer !important;
-		transition: color .2s ease-in-out !important;
-		padding: 4px 10px !important;
-
-		&:hover {
-			color: $darkness-text-bright !important;
-			transition: color .0s ease-in-out !important;
-		}
-
-		display: block !important;
 	}
 
 	.drk_promo_form {
 		display: none !important;
-
+		background: #222 !important;
+		position: absolute !important;
+		padding: 5px 10px !important;
+		right: 0px !important;
+		left: 0px !important;
+		bottom: 0px !important;
+		flex-direction: row;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
 		&.visible {
-			display: block !important;
+			display: flex !important;
 		}
 	}
 
 	.drk_promo_caption {
-		bottom: 56px !important;
-		right: 15px !important;
-		width: 120px !important;
-		text-align: center !important;
 		color: $darkness-text !important;
 		font-size: 12px !important;
-		line-height: 1.3em !important;
+		line-height: 18px !important;
+		font-weight: 400 !important;
+		display: block !important;
 	}
 
 	.drk_promo_input {
-		position: absolute !important;
-		bottom: 34px !important;
-		right: 15px !important;
 		width: 118px !important;
 		padding: 0 !important;
+		text-align: left !important;
 		font-size: 12px !important;
-		margin: 0 !important;
+		margin: 0 5px !important;
 		line-height: 18px !important;
 		color: #eee !important;
 		font-family: 'Open Sans' !important;
 		font-weight: 400 !important;
 		border-radius: 1px !important;
-		background: #252525 !important;
-		border: solid 1px #444 !important;
+		background: #151515 !important;
+		border: solid 1px #555 !important;
 	}
 
 	.drk_promo_submit {
-		position: absolute !important;
-		bottom: 10px !important;
-		right: 15px !important;
 		width: 120px !important;
 		padding: 0 !important;
 		font-size: 12px !important;
