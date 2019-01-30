@@ -830,14 +830,14 @@ if (!DarknessSettingsLoader) {
 
 			// Buy with Credit Card button
 			$('.drk_get_pro .drk_buy_credit').unbind('click').click(function() {
-				repEventByUser('user-action', 'pay-btn-click', 'credit');
+				repEventByUser('user-action', 'pay-btn-click-credit');
 				alert("PayPal is about to open...\nClick the gray 'Pay with Debit or Credit Card' button at the bottom of the page.\nNo PayPal account is necessary!")
 				openPaypal();
 			});
 
 			// Buy with PayPal button
 			$('.drk_get_pro .drk_buy_paypal').unbind('click').click(function() {
-				repEventByUser('user-action', 'pay-btn-click', 'paypal');
+				repEventByUser('user-action', 'pay-btn-click-paypal');
 				openPaypal();
 			});
 
