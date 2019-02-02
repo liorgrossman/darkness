@@ -615,6 +615,13 @@ button.muted-link {
     @include invert-back();
 }
 
+// Edited comment
+.js-comment-edit-history summary.js-notice {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: $theme-link !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // pull requests
 //----------------------------------------------------------------------------------------------------------------------------------------------------
