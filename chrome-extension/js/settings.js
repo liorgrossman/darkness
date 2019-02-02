@@ -37,9 +37,6 @@ if (!DarknessSettingsLoader) {
 
 		// Determine the payment platform to use
 		var PAYMENT_PLATFORM = 'paypal';
-		if (location.hash.indexOf('darkness_force_payment=google') > -1) PAYMENT_PLATFORM = 'google';
-		if (location.hash.indexOf('darkness_force_payment=paypal') > -1) PAYMENT_PLATFORM = 'paypal';
-
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------
 		// Helper Functions
@@ -148,18 +145,20 @@ if (!DarknessSettingsLoader) {
 		var dialogReason = 'unknown'; // Why was the upgrade dialog invoked? (for analytics)
 		var dialogAmount = 0; // How much the user paid? (for analytics)
 
-		// Payment Step 1: Called when a user clicks the "buy" button
-		var buyClick = function() {
-			if (PAYMENT_PLATFORM == 'paypal') {
-				loadPayPalPaymentDialog();
-			} else {
-				loadGooglePaymentDialog();
+		// Helper function
+		var getHashCode = function(str) {
+			var hash = 0, i, chr;
+			if (str.length === 0) return hash;
+			for (i = 0; i < str.length; i++) {
+				chr = str.charCodeAt(i);
+				hash = ((hash << 5) - hash) + chr;
+				hash |= 0; // Convert to 32bit integer
 			}
+			return hash;
 		};
 
-
 		// Payment Step 2: Load PayPal's payment dialog for the specified product SKU
-		var loadPayPalPaymentDialog = function() {
+		var openCheckoutPage = function() {
 			var prod = ENVIRONMENT == 'production';
 
 			// Where to submit the form to?
@@ -186,43 +185,31 @@ if (!DarknessSettingsLoader) {
 			}, 500);			
 
 			// Submit the form
-			$("#drk_paypal_form").trigger("submit");
+			if (PAYMENT_PLATFORM == 'paypal') {
+				$("#drk_paypal_form").trigger("submit");
+			} else if (PAYMENT_PLATFORM == 'stripe') {
+				var checkoutParams = {custom: custom, checksum: SKU};
+				var checkoutDomain = ENVIRONMENT != 'production' ? "http://local.darkness.com:3000" : "https://darkness.app"
+				var token = window.btoa(unescape(encodeURIComponent(JSON.stringify(checkoutParams))));
+				var hash = window.btoa(unescape(encodeURIComponent(getHashCode(token.toString()))));
+				var checkoutPage = checkoutDomain + "/secure/pay/?token=" + encodeURIComponent(token+'_'+hash);
+				window.open(checkoutPage, '_blank');
+			}
 
 			// Then start polling for PayPal's answer
-			chrome.runtime.sendMessage({ action: "startPollingPayPal", transactionId: transactionId }, function(response) {
-				log('background response', response);
-				// Check if response from the IPN server is 'Completed'
-				if (response.status == 'Completed') {
-					onPayResponse(true, response);
-				} else {
-					var failureReason = response.status + '(' + response.reason + ')';
-					onPayResponse(false, response, failureReason);
-				}
-			});
-		};
-
-		// Payment Step 2: Load Google Payment's payment dialog for the specified product SKU
-		var loadGooglePaymentDialog = function(sku) {
-			google.payments.inapp.buy({
-				'parameters': { 'env': 'prod' }, // prod / sandbox / test
-				'sku': sku,
-				'success': function(buyResponse) {
-					onPaySuccess(buyResponse);
-				},
-				'failure': function(buyResponse) {
-					// Google Payment bug: it often returns failure even though payment was successful
-					// Who do we know? If buyResponse contains checkoutOrderId it means the payment was successful
-					if (buyResponse.checkoutOrderId && typeof(buyResponse.checkoutOrderId) == "string" &&
-						buyResponse.checkoutOrderId.length > 3) {
-						onPayResponse(true, buyResponse);
+			if (PAYMENT_PLATFORM == 'paypal') {
+				chrome.runtime.sendMessage({ action: "startPollingPayPal", transactionId: transactionId }, function(response) {
+					log('background response', response);
+					// Check if response from the IPN server is 'Completed'
+					if (response.status == 'Completed') {
+						onPayResponse(true, response);
 					} else {
-						var failureReason = (buyResponse && buyResponse.response) ? buyResponse.response.errorType : JSON.stringify(buyResponse);
-						onPayResponse(false, buyResponse, failureReason);
+						var failureReason = response.status + '(' + response.reason + ')';
+						onPayResponse(false, response, failureReason);
 					}
-				}
-			});
+				});
+			}
 		};
-
 
 		// Payment Step 3: Called when a user payment has either succeeded or failed (any platform)
 		var onPayResponse = function(success, buyResponse, failureReason) {
@@ -815,8 +802,10 @@ if (!DarknessSettingsLoader) {
 		};
 
 		var loadUpgradeDialogEventHandlers = function() {
-			var openPaypal = () => {
+			var openPayment = (paymentPlatform) => {
+				PAYMENT_PLATFORM = paymentPlatform;
 				// Analytics
+				repEventByUser('user-action', 'pay-button-click-' + paymentPlatform);
 				dialogAmount = '4.99life';
 				if (SKU == 2) dialogAmount = '2.99life';
 				repToFunnel('buy-now-clicked');
@@ -824,21 +813,17 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-' + dialogAmount);
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-now-click-all');
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-all');
-				// Trigger purchase dialog
-				buyClick();
+				openCheckoutPage();
 			};
 
 			// Buy with Credit Card button
-			$('.drk_get_pro .drk_buy_credit').unbind('click').click(function() {
-				repEventByUser('user-action', 'pay-btn-click-credit');
-				alert("PayPal is about to open...\nClick the gray 'Pay with Debit or Credit Card' button at the bottom of the page.\nNo PayPal account is necessary!")
-				openPaypal();
+			$('.drk_get_pro .drk_buy_stripe').unbind('click').click(function() {
+				openPayment('stripe');
 			});
 
 			// Buy with PayPal button
 			$('.drk_get_pro .drk_buy_paypal').unbind('click').click(function() {
-				repEventByUser('user-action', 'pay-btn-click-paypal');
-				openPaypal();
+				openPayment('paypal');
 			});
 
 			// Upgrade dialog -> Got promo?
@@ -894,14 +879,6 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
 				var win = window.open('https://darkness.app/payment-canceled/?reason=payment-problem', '_blank');
-
-				/* if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
-					// PayPal failed? Let user pay with Google Payments
-					PAYMENT_PLATFORM = 'google';
-					buyClick();
-				} else {
-					// Send feedback
-				} */
 			});
 
 			// Why did you cancel payment dialog -> dialog closed
