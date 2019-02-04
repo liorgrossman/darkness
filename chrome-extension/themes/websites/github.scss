@@ -72,7 +72,7 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 }
 
 // Emojies
-.emoji-inner {
+.emoji-inner, g-emoji {
     @include invert-back();
 }
 
