@@ -443,6 +443,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'martinfowler': {
+			key: 'martinfowler', // Must be the same as the object key
+			name: 'MartinFowler.com',
+			support: 'in-development',
+			hostRegExp: new RegExp('martinfowler\.com$', 'i'),
+			creators: [
+				{ name: 'Hosam Aly', link: 'https://github.com/hosamaly' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 
 		//--------------------------------------------------------------------
 		// Ask developers for help on the following websites
