@@ -45,15 +45,25 @@ input {
 	}
 }
 
+div#banner {
+	background-color: invert-back-color($theme-background) !important;
+}
+div#banner > * {
+	@include invert-back();
+}
+#content {
+	background-color: $theme-background !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Toolbar background
-.toolbarClass {
-	background: $theme-background-toolbar !important;
+// Search 
+button[title="Search"] {
+	background-color: transparent !important;
+	color: $theme-button-background !important;
 }
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -90,6 +100,18 @@ input {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Other Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Gallery
+.pswp__bg {
+	background: $theme-background !important;
+}
+.pswp__button,
+.pswp__button:before {
+	background-color: transparent !important;
+}
+.pswp__button--arrow--left:before, .pswp__button--arrow--right:before {
+	@include invert-back();
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // 3rd Party Extensions Support
