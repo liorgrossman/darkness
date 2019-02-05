@@ -336,6 +336,11 @@ a.btn,a.btn:visited,a.btn:hover,
     border-color: $theme-border !important;
 }
 
+// social buttons (watch, star, fork)
+a.social-count {
+    color: $theme-text !important;
+}
+
 //contributions legend undo the tile colors
 .legend > li {
     @include invert-back();
