@@ -73,7 +73,6 @@
 		"default_title": "__MSG_appShortName__",
 		"default_popup": "html/options.html"
 	},
-	"options_page": "html/options.html",
 	"options_ui": {
 		"chrome_style": true,
 		"page": "html/options.html"
