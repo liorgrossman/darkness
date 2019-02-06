@@ -878,6 +878,8 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
+				showUpgradeDialog();
+
 				var win = window.open('https://darkness.app/payment-canceled/?reason=payment-problem', '_blank');
 			});
 
