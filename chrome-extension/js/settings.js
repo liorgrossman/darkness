@@ -197,18 +197,16 @@ if (!DarknessSettingsLoader) {
 			}
 
 			// Then start polling for PayPal's answer
-			if (PAYMENT_PLATFORM == 'paypal') {
-				chrome.runtime.sendMessage({ action: "startPollingPayPal", transactionId: transactionId }, function(response) {
-					log('background response', response);
-					// Check if response from the IPN server is 'Completed'
-					if (response.status == 'Completed') {
-						onPayResponse(true, response);
-					} else {
-						var failureReason = response.status + '(' + response.reason + ')';
-						onPayResponse(false, response, failureReason);
-					}
-				});
-			}
+			chrome.runtime.sendMessage({ action: "startPollingPayPal", transactionId: transactionId }, function(response) {
+				log('background response', response);
+				// Check if response from the IPN server is 'Completed'
+				if (response.status == 'Completed') {
+					onPayResponse(true, response);
+				} else {
+					var failureReason = response.status + '(' + response.reason + ')';
+					onPayResponse(false, response, failureReason);
+				}
+			});
 		};
 
 		// Payment Step 3: Called when a user payment has either succeeded or failed (any platform)
