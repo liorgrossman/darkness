@@ -419,7 +419,9 @@ if (!DarknessSettingsLoader) {
 			// Analytics
 			repToFunnel('buy-dialog-shown');
 			repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
-			repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
+			// Account for both paypal and stripe in the buy dialog analytics
+			repEventByUser(FUNNEL_PREFIX + 'paypal', 'buy-dialog-shown');
+			repEventByUser(FUNNEL_PREFIX + 'stripe', 'buy-dialog-shown');
 		};
 
 		// Revert from preview mode to no preview
@@ -726,7 +728,9 @@ if (!DarknessSettingsLoader) {
 				dialogReason = 'upgrade-btn';
 				repToFunnel('buy-dialog-shown');
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
-				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
+				// Account for both paypal and stripe in the buy dialog analytics
+				repEventByUser(FUNNEL_PREFIX + 'paypal', 'buy-dialog-shown');
+				repEventByUser(FUNNEL_PREFIX + 'stripe', 'buy-dialog-shown');
 				// Close all dialogs
 				$('.drk_dialog').removeClass('visible');
 				// Open upgrade dialog
