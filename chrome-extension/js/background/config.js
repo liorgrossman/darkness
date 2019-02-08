@@ -388,6 +388,17 @@ var CONFIG = {
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
+		'googletranslate': {
+			key: 'googletranslate', // Must be the same as the object key
+			name: 'Google Translate',
+			support: 'in-development',
+			hostRegExp: new RegExp('^translate\.google\.(.*)$', 'i'),
+			creators: [
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'wikipedia': {
 			key: 'wikipedia', // Must be the same as the object key
 			name: 'Wikipedia',

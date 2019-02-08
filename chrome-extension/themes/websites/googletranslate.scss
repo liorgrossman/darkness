@@ -1,0 +1,120 @@
+@import "all-google.scss";
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+#maia-header,
+#maia-nav-x, 
+#maia-nav-x.maia-compact h1 {
+	background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.gb_Fc {
+	background-color: $theme-background-toolbar !important;
+}
+
+.history-page,
+.history-container,
+.history-top-header {
+	background-color: $theme-background-toolbar !important;
+	background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Homepage
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.header-button {
+	color: $theme-button-background !important;
+}
+
+.input-button.text-icon::before, 
+.input-button.documents-icon::before {
+	@include invert-back();
+}
+
+.homepage.translate-text .input-button.text-icon, 
+.homepage.translate-docs .input-button.documents-icon {
+	background-color: rgba(red($theme-button-background), green($theme-button-background), blue($theme-button-background), 0.12) !important;
+	border: lighten($theme-button-background, 15%) !important;
+}
+
+.sl-sugg .goog-inline-block.jfk-button-checked, 
+.tl-sugg .goog-inline-block.jfk-button-checked {
+	color: $theme-button-background !important;
+}
+.goog-inline-block.jfk-button-checked:after {
+	border-bottom: solid 3px $theme-button-background !important;
+}
+
+.swap.jfk-button, .swap-wrap {
+	background-color: $theme-background-box !important;
+}
+
+.ls-wrap {
+	background-color: $theme-background-box !important;
+}
+.ls-wrap .sugg-fade {
+	background: transparent !important;
+}
+
+.source-wrap, 
+.source-input,
+.source-input textarea {
+	background-color: $theme-background-box !important;
+}
+
+.results-container, 
+.result {
+	background-color: $theme-background-box !important;
+}
+
+.language-list-search-box {
+	background: $theme-textbox-background !important;
+}
+.language-list, 
+.language_list_sl_list, 
+.language_list_tl_list, 
+.language_list_section, 
+.language_list_item_wrapper {
+	background-color: $theme-background-box !important;
+}
+
+.language_list_item_wrapper.item-selected .language_list_item_icon {
+	@include invert-back();
+}
+.language_list_item_wrapper.item-selected .language_list_item {
+	color: $theme-button-background !important;
+}
+
+div.gt-lc.gt-lc-mobile .gt-cc-r-i {
+	background-color: $theme-background !important;
+}
+.gt-lc.gt-lc-mobile .gt-cd {
+	background-color: $theme-background-box !important;
+}
+.gt-lc.gt-lc-mobile .gt-cd-pos {
+	color: $theme-button-background !important;
+}
+
+.ft-icon-oval {
+	background-color: $theme-secondary-button-background !important;
+}
