@@ -63,13 +63,14 @@ input
 }
 
 // Search bar
-.sbibod {
+.sbibod,
+.RNNXgb {
 	box-shadow: none !important;
 	background-color: $theme-textbox-background !important;
 }
 
 // Search box fill
-.sbib_a, .sbib_b {
+.sbib_a, .sbib_b, .aajZCb {
 	background-color: $theme-textbox-background !important;
 }
 
@@ -214,6 +215,14 @@ g-left-button {
 	g-fab {
 		background-color: $theme-background-toolbar !important;
 		box-shadow: 0 0 0 1px rgba(200,200,200,0.04), 0 4px 8px 0 rgba(200,200,200,0.20) !important;
+	}
+}
+
+// Rich cards
+.cu-container .mnr-c {
+	&,
+	.pla-unit-img-container {
+		background-color: $theme-background-box !important;
 	}
 }
 
