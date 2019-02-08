@@ -823,12 +823,13 @@ div.drk_dialog {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // UPGRADE DIALOG
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 div.drk_dialog.drk_get_pro {
 	div.drk_dialog_inner {
 		border-radius: 7px !important;
 		box-shadow: 0 0 100px rgba(230, 230, 230, 0.5), 0 0 10px rgba(230, 230, 230, 0.2) !important;
 		background: $darkness-background !important;
+		width: 610px !important;
+		margin-top: -230px !important;
 	}
 
 	.drk_show_only_on_sku {
@@ -841,9 +842,9 @@ div.drk_dialog.drk_get_pro {
 
 	span.drk_close {
 		position: absolute !important;
-		right: 0px !important;
-		top: 0px !important;
-		font-size: 14px !important;
+		right: 4px !important;
+		top: 7px !important;
+		font-size: 16px !important;
 		padding: 10px !important;
 		cursor: pointer !important;
 
@@ -858,13 +859,13 @@ div.drk_dialog.drk_get_pro {
 
 
 	.drk_hide_link {
-		top: -2px !important;
-		right: 26px !important;
+		top: 7px !important;
+		right: 33px !important;
 		font-weight: 700 !important;
 		position: absolute !important;
 		font-family: Arial, Helvetica, sans-serif !important;
 		cursor: pointer !important;
-		font-size: 18px !important;
+		font-size: 20px !important;
 		transition: color .2s ease-in-out !important;
 		padding: 4px 10px !important;
 		display: block !important;
@@ -895,41 +896,66 @@ div.drk_dialog.drk_get_pro {
 		overflow: hidden !important;
 		padding: 0 !important;
 		margin: 0 !important;
-		width: 600px !important;
-		height: 445px !important;
+		width: 610px !important;
+		height: 492px !important;
 		color: $darkness-text !important;
 		font-size: 14px !important;
 		font-weight: 300 !important;
 	}
 
 	.drk_gp_title {
-		font-size: 32px !important;
+		font-size: 25px !important;
 		font-weight: 600 !important;
-		padding: 25px 0 12px !important;
 		color: $darkness-text-bright !important;
+		background: rgba(255, 255, 255, 0.06) !important;
 	}
 
-	.drk_gp_subtitle {
-		font-size: 14px !important;
-		color: $darkness-text-dark !important;
+	.drk_gp_section, .drk_gp_title {
+		padding: 14px 0 !important;
 	}
 
 	.drk_gp_section {
-		padding: 22px 0 15px !important;
-
-		&.themes {
-			padding-top: 0 !important;
+		border-bottom: solid 1px #353535 !important;
+		&.devices {
+			// background: rgba(255, 255, 255, 0.08) !important;
+			.drk_gp_section_title {
+				margin-bottom: 0 !important;
+			}
+		}
+		&.drk_gp_price {
+			border-bottom: none !important;
 		}
 
 		.drk_gp_section_title {
-			font-size: 22px !important;
+			font-size: 16px !important;
 			font-weight: 400 !important;
-			margin-bottom: 15px !important;
-			color: darken($darkness-text, 5%) !important;
+			margin-bottom: 8px !important;
+			text-align: left !important;
+			margin-left: 21px !important;
+			color: $darkness-text-bright !important;
+
+			.drk_gp_bullet {
+				margin-right: 9px !important;
+				background: #444444 !important;
+				font-size: 0 !important;
+				line-height: 0 !important;
+				padding: 5px !important;
+				border-radius: 50% !important;
+				display: inline-block !important;
+				svg {
+					width: 13px !important;
+					height: 13px !important;
+					fill: $darkness-text-bright !important;
+					margin-bottom: 0px !important;
+					// Important to prevent the svg invert in Google etc.
+					filter: none !important;
+				}
+			}
+
 		}
 
 		.drk_gp_list {
-			color: $darkness-text-dark !important;
+			color: rgb(180, 180, 180) !important;
 
 			.drk_gp_item {
 				display: inline-flex !important;
@@ -937,44 +963,50 @@ div.drk_dialog.drk_get_pro {
 				justify-content: flex-start !important;
 				align-content: center !important;
 				align-items: center !important;
-				margin: 0 8px !important;
+				margin: 0 11px 12px 12px !important;
 				width: 40px !important;
-				height: 68px !important;
+				height: 52px !important;
 				position: relative !important;
 
+				&.drk_last_row {
+					margin-bottom: 0 !important;
+				}
+
 				svg.drk_gp_item_icon {
-					width: 35px !important;
-					height: 35px !important;
+					width: 32px !important;
+					height: 32px !important;
 					// Important to prevent the svg invert in Google etc.
-					filter: saturate(0.85) !important;
+					filter: saturate(0.85) brightness(0.9) !important;
 				}
 
 				.drk_gp_item_label {
-					margin-top: 5px !important;
-					font-size: 10px !important;
+					margin-top: 6px !important;
+					font-size: 10.5px !important;
 					font-weight: 400 !important;
 					text-align: center !important;
-					line-height: 1.25em !important;
-					text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+					line-height: 1.3em !important;
+					white-space: nowrap !important;
+					// text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
 				}
 
 				&.theme {
-					width: 56px !important;
-					height: 29px !important;
+					width: 58px !important;
+					height: 27px !important;
+					margin: 0 6px !important;
 					padding: 0 !important;
 					border-radius: 2px !important;
 					overflow: hidden !important;
-					box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+					box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.23) !important;
 					opacity: 0.95 !important;
 
 					.drk_gp_item_label {
-						margin-top: 12px !important;
+						margin: 4px 0 0 !important;
 					}
 
 					.color {
 						position: absolute !important;
-						top: 0 !important;
-						height: 7px !important;
+						bottom: 0 !important;
+						height: 5px !important;
 						width: 33.3333% !important;
 					}
 
@@ -997,20 +1029,26 @@ div.drk_dialog.drk_get_pro {
 	}
 
 	.drk_gp_price {
-		padding: 18px 0 10px !important;
-		font-size: 17px !important;
+		font-size: 16px !important;
+		font-weight: 400 !important;
+		color: #ffd400 !important;
 
-		.drk_gp_price_old {
-			color: $darkness-text-dark !important;
-			text-decoration: line-through !important;
+		.drk_gp_price_prefix {
 			display: inline !important;
 		}
 
+		.drk_gp_price_old {
+			text-decoration: line-through !important;
+			display: inline !important;
+			opacity: 0.8 !important;
+		}
+
 		.drk_gp_price_new {
-			color: $darkness-text-bright !important;
 			display: inline !important;
 
 			b {
+				color: #ffd400 !important;
+				font-size: 19px !important;
 				font-weight: 600 !important;
 			}
 		}
@@ -1046,7 +1084,7 @@ div.drk_dialog.drk_get_pro {
 			color: #1e1e76 !important;
 			letter-spacing: -0.3px !important;
 			cursor: pointer !important;
-			padding: 5px 0px 7px !important;
+			padding: 5px 0px !important;
 			-webkit-font-smoothing: antialiased;
 		}
 
@@ -1061,6 +1099,7 @@ div.drk_dialog.drk_get_pro {
 			padding-right: 80px !important;
 			width: 140px !important;
 		}
+
 		.drk_button_paypal_img {
 			position: absolute !important;
 			top: 15px !important;
@@ -1068,7 +1107,7 @@ div.drk_dialog.drk_get_pro {
 			width: 67px !important;
 			height: 18px !important;
 			background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/paypal-logo.svg") no-repeat center !important;
-			background-size: cover !important;	
+			background-size: cover !important;
 			cursor: pointer !important;
 		}
 
@@ -1076,6 +1115,7 @@ div.drk_dialog.drk_get_pro {
 			padding-right: 100px !important;
 			width: 120px !important;
 		}
+
 		.drk_button_credit_img {
 			position: absolute !important;
 			top: 14px !important;
@@ -1083,31 +1123,29 @@ div.drk_dialog.drk_get_pro {
 			width: 72px !important;
 			height: 18px !important;
 			background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/pay-credit.png") no-repeat center !important;
-			background-size: cover !important;	
+			background-size: cover !important;
 			cursor: pointer !important;
 		}
 	}
 
 	.drk_promo_link {
-		bottom: 0px !important;
-		right: 0px !important;
 		opacity: 0.85 !important;
 		font-size: 10px !important;
-		margin-left: -40px !important;
 		text-align: center !important;
 		cursor: pointer !important;
 		transition: color .2s ease-in-out !important;
 		padding: 1px 7px !important;
-		display: none !important;
+		display: inline !important;
+		margin-left: 10px !important;
 
 		&:hover {
 			color: $darkness-text-bright !important;
 			transition: color .0s ease-in-out !important;
 		}
 
-		&.visible {
-			display: block !important;
-		}
+		// &.visible {
+		// 	display: block !important;
+		// }
 	}
 
 	.drk_promo_form {
@@ -1122,6 +1160,7 @@ div.drk_dialog.drk_get_pro {
 		justify-content: center;
 		align-content: center;
 		align-items: center;
+
 		&.visible {
 			display: flex !important;
 		}
@@ -1246,7 +1285,7 @@ div.drk_dialog.drk_join_developers {
 		margin: 0 !important;
 		background: Transparent url("chrome-extension://__MSG_@@extension_id__/images/join-dev-community-dialog.png") no-repeat center !important;
 		width: 600px !important;
-		height: 373px !important;
+		height: 371px !important;
 	}
 
 	.drk_button_dialog_wrapper {

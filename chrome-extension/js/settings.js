@@ -836,9 +836,15 @@ if (!DarknessSettingsLoader) {
 
 			// Upgrade dialog -> Got promo?
 			$('.drk_promo_link').unbind('click').click(function(e) {
-				$('.drk_promo_link').removeClass('visible');
-				$('.drk_promo_form').addClass('visible');
-				$('.drk_promo_input').focus();
+				var isVisible = $('.drk_promo_form').hasClass('visible');
+				if (isVisible) {
+					$('.drk_promo_link').addClass('visible');
+					$('.drk_promo_form').removeClass('visible');
+				} else {
+					$('.drk_promo_link').removeClass('visible');
+					$('.drk_promo_form').addClass('visible');
+					$('.drk_promo_input').focus();
+				}
 			});
 
 			// Hide link
