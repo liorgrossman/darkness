@@ -904,14 +904,15 @@ div.drk_dialog.drk_get_pro {
 	}
 
 	.drk_gp_title {
-		font-size: 25px !important;
-		font-weight: 600 !important;
+		font-size: 26px !important;
+		font-weight: 400 !important;
 		color: $darkness-text-bright !important;
 		background: rgba(255, 255, 255, 0.06) !important;
+		padding: 14px 0 !important;
 	}
 
-	.drk_gp_section, .drk_gp_title {
-		padding: 14px 0 !important;
+	.drk_gp_section {
+		padding: 13px 0 15px !important;
 	}
 
 	.drk_gp_section {
@@ -929,23 +930,23 @@ div.drk_dialog.drk_get_pro {
 		.drk_gp_section_title {
 			font-size: 16px !important;
 			font-weight: 400 !important;
-			margin-bottom: 8px !important;
+			margin-bottom: 10px !important;
 			text-align: left !important;
 			margin-left: 21px !important;
-			color: $darkness-text-bright !important;
+			color: $darkness-text !important;
 
 			.drk_gp_bullet {
 				margin-right: 9px !important;
 				background: #444444 !important;
 				font-size: 0 !important;
 				line-height: 0 !important;
-				padding: 5px !important;
+				padding: 4px !important;
 				border-radius: 50% !important;
 				display: inline-block !important;
 				svg {
-					width: 13px !important;
-					height: 13px !important;
-					fill: $darkness-text-bright !important;
+					width: 12px !important;
+					height: 12px !important;
+					fill: $darkness-text !important;
 					margin-bottom: 0px !important;
 					// Important to prevent the svg invert in Google etc.
 					filter: none !important;
@@ -1155,12 +1156,13 @@ div.drk_dialog.drk_get_pro {
 		padding: 5px 10px !important;
 		right: 0px !important;
 		left: 0px !important;
-		bottom: 0px !important;
+		bottom: -23px !important;
+		border-radius: 0 0 7px 7px !important;
 		flex-direction: row;
 		justify-content: center;
 		align-content: center;
 		align-items: center;
-
+		border-top: solid 1px #353535 !important;
 		&.visible {
 			display: flex !important;
 		}
@@ -1175,11 +1177,11 @@ div.drk_dialog.drk_get_pro {
 	}
 
 	.drk_promo_input {
-		width: 118px !important;
+		width: 140px !important;
 		padding: 0 !important;
+		margin: 0 0 0 5px !important;
 		text-align: left !important;
 		font-size: 12px !important;
-		margin: 0 5px !important;
 		line-height: 18px !important;
 		color: #eee !important;
 		font-family: 'Open Sans' !important;
@@ -1189,17 +1191,17 @@ div.drk_dialog.drk_get_pro {
 		border: solid 1px #555 !important;
 	}
 
-	.drk_promo_submit {
-		width: 120px !important;
+	.drk_promo_submit,
+	.drk_promo_cancel {
+		width: 80px !important;
 		padding: 0 !important;
 		font-size: 12px !important;
-		margin: 0 !important;
+		margin: 0 0 0 5px !important;
 		line-height: 18px !important;
 		color: #000 !important;
 		font-family: 'Open Sans' !important;
 		font-weight: 600 !important;
 		background: $darkness-yellow !important;
-		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) !important;
 		border-radius: 3px !important;
 		border: none !important;
 		cursor: pointer !important;
@@ -1209,7 +1211,18 @@ div.drk_dialog.drk_get_pro {
 			background: $darkness-yellow !important;
 			opacity: 1 !important;
 			transition: all .1s ease-in-out !important;
-			box-shadow: 0 4px 5px rgba(0, 0, 0, 1) !important;
+		}
+	}
+
+	.drk_promo_cancel {
+		width: 55px !important;
+		color: #777 !important;
+		border: solid 1px #555 !important;
+		font-weight: 400 !important;
+		background: transparent !important;
+		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) !important;
+		&:hover {
+			background: transparent !important;
 		}
 	}
 

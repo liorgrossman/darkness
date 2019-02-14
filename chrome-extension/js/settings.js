@@ -866,6 +866,10 @@ if (!DarknessSettingsLoader) {
 			$('.drk_promo_submit').unbind('click').click(function(e) {
 				submitPromoCode();
 			});
+			$('.drk_promo_cancel').unbind('click').click(function(e) {
+				$('.drk_promo_link').addClass('visible');
+				$('.drk_promo_form').removeClass('visible');
+			});
 
 			// Why did you cancel payment dialog -> I don't want to upgrade
 			$('.drk_cancel_dont_want').unbind('click').click(function(e) {

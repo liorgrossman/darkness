@@ -4,7 +4,7 @@
 	"name": "__MSG_appFullName__",
 	"short_name": "__MSG_appShortName__",
 	"description": "__MSG_appDescription__",
-	"version": "2.0.13",
+	"version": "2.0.14",
 	"author": "Darkness",
 	"homepage_url": "https://darkness.app",
 	"default_locale": "en",
