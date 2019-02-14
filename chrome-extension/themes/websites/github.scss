@@ -14,6 +14,10 @@ button {
     background-color: $theme-button-background !important;
     color: $theme-button-text !important;
     border-color: $theme-border !important;
+
+    &.btn-octicon {
+        background-color: transparent !important;
+    }
 }
 
 // All inputs
@@ -72,7 +76,7 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 }
 
 // Emojies
-.emoji-inner {
+.emoji-inner, g-emoji {
     @include invert-back();
 }
 
@@ -334,6 +338,11 @@ a.btn,a.btn:visited,a.btn:hover,
     background: $theme-button-background !important;
     color: $theme-button-text !important;
     border-color: $theme-border !important;
+}
+
+// social buttons (watch, star, fork)
+a.social-count {
+    color: $theme-text !important;
 }
 
 //contributions legend undo the tile colors
@@ -616,7 +625,7 @@ button.muted-link {
 }
 
 // Edited comment
-.js-comment-edit-history summary.js-notice {
+summary.js-notice {
     background-color: transparent !important;
     border-color: transparent !important;
     color: $theme-link !important;

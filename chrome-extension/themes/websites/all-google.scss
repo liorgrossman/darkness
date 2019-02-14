@@ -58,6 +58,9 @@ header.gb_Ta {
 // .gb_ge {
 // 	@include invert-back();
 // }
+.gb_vc .gb_0c:before {
+	@include invert-back();
+}
 
 // User avatar on toolbar
 .gb_7a::before, 

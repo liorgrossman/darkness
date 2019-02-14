@@ -79,7 +79,7 @@ var CONFIG = {
 			key: 'facebook', // Must be the same as the object key
 			name: 'Facebook',
 			support: 'full',
-			hostRegExp: new RegExp('^(www|web|beta)\.facebook\.com$', 'i'),
+			hostRegExp: new RegExp('^(www|web|beta|apps)\.facebook\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Marco Cazzaro', link: 'http://www.marcocazzaro.com/' }
 			],
@@ -388,6 +388,17 @@ var CONFIG = {
 		//--------------------------------------------------------------------
 		// Skins that still need additional work (support: 'in-development')
 		//--------------------------------------------------------------------
+		'googletranslate': {
+			key: 'googletranslate', // Must be the same as the object key
+			name: 'Google Translate',
+			support: 'in-development',
+			hostRegExp: new RegExp('^translate\.google\.(.*)$', 'i'),
+			creators: [
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'wikipedia': {
 			key: 'wikipedia', // Must be the same as the object key
 			name: 'Wikipedia',
