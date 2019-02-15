@@ -721,6 +721,8 @@ if (!DarknessSettingsLoader) {
 				win.focus();
 			});
 
+			
+			
 			// Upgrade button
 			$('.drk_settings .drk_upgrade_btn').unbind('click').click(function() {
 				// Analytics
@@ -1012,7 +1014,20 @@ if (!DarknessSettingsLoader) {
 
 					if ($('body').attr('data-drk-on-start') == 'upgrade-dialog') {
 						console.log('Loading upgrade dialog on start');
-						$('.drk_settings .drk_upgrade_btn').trigger('click');
+						// Analytics
+						repEventByUser('user-action', 'thank-you-btn-click');
+						dialogReason = 'thank-you-btn';
+						repToFunnel('buy-dialog-shown');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
+						// Account for both paypal and stripe in the buy dialog analytics
+						repEventByUser(FUNNEL_PREFIX + 'paypal', 'buy-dialog-shown');
+						repEventByUser(FUNNEL_PREFIX + 'stripe', 'buy-dialog-shown');
+						// Close all dialogs
+						$('.drk_dialog').removeClass('visible');
+						// Open upgrade dialog
+						showUpgradeDialog();
+						// Hide settings dialog
+						$('.drk_settings .drk_close').trigger('click');
 					}
 
 					if (onlyAskDevelopers) {
