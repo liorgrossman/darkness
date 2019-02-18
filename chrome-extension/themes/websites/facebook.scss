@@ -283,6 +283,12 @@ li._54ne, .__MenuItem.selected {
 ._iuw { // reactions
 	@include invert-back();
 }
+._3dlh[data-hover="tooltip"] {
+	display: none !important;
+}
+._3dlg+._3dli {
+	margin-left: 0 !important;
+}
 
 .fcg { // post title
 	color: $theme-text-faint !important;
