@@ -862,7 +862,7 @@ button.flash-close {
     background-color: transparent !important;
 }
 button.flash-close svg {
-    color: $theme-button-background !important;
+    color: invert-back-color($theme-tooltip-text) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
