@@ -469,6 +469,13 @@ var CONFIG = {
 		//--------------------------------------------------------------------
 		// Ask developers for help on the following websites
 		//--------------------------------------------------------------------
+		'cloudcraft': {
+			key: 'cloudcraft', // Must be the same as the object key
+			name: 'Cloudcraft',
+			support: 'ask-developers',
+			siteForDevelopers: true,
+			hostRegExp: new RegExp('^cloudcraft\.co$', 'i')
+		},
 		'bitbucket': {
 			key: 'bitbucket', // Must be the same as the object key
 			name: 'Bitbucket',
