@@ -443,6 +443,17 @@ li._54ne, .__MenuItem.selected {
 	background-color: $theme-background !important;
 }
 
+// Popup notification with new about feature
+._-6b ._-6h, ._2x6q ._53in ._53io {
+	border-right: 9px solid invert-back-color($theme-notices) !important;
+}
+._-6d ._-6h, ._2x6q ._53il ._53io {
+	border-bottom: 9px solid invert-back-color($theme-notices) !important;
+}
+._21es button {
+	background-color: transparent !important;
+}
+
 //-------------------------------------------------------------------------
 // Cover: User's name
 #fb-timeline-cover-name {
@@ -680,6 +691,15 @@ input[type="text"]._58al {
 	background-color: $theme-background-toolbar !important;
 }
 
+// Timestamps when a long time has passed bewteen messages
+._3hx- ._6vu5 ._5w-6 {
+	color: $theme-text-faint !important;
+}
+// "Seen" timestamp
+._510g {
+	color: $theme-text-faint !important;
+}
+
 // Received messages
 ._1nc7 ._5w1r {
 	background-color: lighten($theme-background-box, 10%) !important;
@@ -846,6 +866,9 @@ div[aria-label*="sticker"] {
 }
 ._3hx- ._1aa6._31xy {
 	background: transparent !important;
+}
+._3hx- ._16ys._3e7u {
+	border-top-color: $theme-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

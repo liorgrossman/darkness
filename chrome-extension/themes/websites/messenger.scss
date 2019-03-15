@@ -139,7 +139,7 @@ a[role="button"] img {
 	background-color: $theme-background-box !important;
 	color: invert-back-color(#f0f0f0) !important;
 	a {
-		color: invert-back-color(#f0f0f0) !important;
+		color: invert-back-color($theme-url) !important;
 	}
 } 
 

@@ -100,6 +100,7 @@ a.job-listing{
 	background: $theme-button-background !important;
 	box-shadow: 0 0 0 $theme-button-background !important;
 }
+._2Xk8hpIqkjJ49i._1yvgNxMUZtEUOI,
 .js-star-board {
 	@include invert-back();
 }
@@ -341,8 +342,16 @@ body[style*="background-image:"] > #boards-drawer {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Icons
-.icon-search {
+.icon-search,
+span.pv4EOUnR9L6jBk,
+._3Equ0AwjtQdiIh,
+.blnwmcZ7xZI8tg ._1ueCKUcugKYqhU {
 	color: black !important;
+}
+
+// User avatar
+.bXFhPW {
+	@include invert-back();
 }
 
 // Logos
@@ -429,6 +438,19 @@ body[style*="background-image:"] > #boards-drawer {
 .body-board-view #header {
 	background: rgba(255,255,255,.15) !important;
 }
+// Boards-menu
+._1uIlQNJLg02V8T {
+	background-color: $theme-background-toolbar !important;
+}
+
+// User-menu
+._3MObgarisLfMFh,
+._2b-xS2onqCL250 {
+	background-color: $theme-background-toolbar !important;
+}
+._2b-xS2onqCL250:active, ._2b-xS2onqCL250:hover {
+	background-color: lighten($theme-background-toolbar, 10%) !important;
+}
 
 // Download section
 .promo-platforms-app-item-image,
@@ -437,6 +459,9 @@ body[style*="background-image:"] > #boards-drawer {
 }
 
 // Notifications
+._3x-nkpDCkyBbHg, .notification-actions {
+	background-color: $theme-background-toolbar !important;
+}
 #notification div.app-alert-item {
 	background-color: $theme-notices !important;
 	color: $theme-tooltip-text !important;
