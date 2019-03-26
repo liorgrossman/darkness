@@ -66,7 +66,7 @@ Please see our [contribution guide](./CONTRIBUTING.md) to learn how to quickly i
 ## Be in touch
 * Join the [Darkness Developers Community on Facebook](https://www.facebook.com/groups/darkness-developers)
 * [Contact us](https://darkness.app/contact/)
-* Check out our other projects: [BookAuthority](https://bookauthority.org/), [The Master List](https://themasterlist.org/) and [Select](https://chrome.google.com/webstore/detail/select-beautiful-photos-f/gidbhaipbdimcjbjkpnhkdhghpbghena)
+* Check out our other projects: [Pure](https://purehq.io/), [Wikiwand](https://www.wikiwand.com/), [BookAuthority](https://bookauthority.org/), [The Master List](https://themasterlist.org/) 
 
 ##  Misc
 Darkness is licensed [GPLv3](./LICENSE). Privacy policy available [here](https://darkness.app/privacy/darkness-privacy-policy.pdf)
