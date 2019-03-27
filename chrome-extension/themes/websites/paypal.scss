@@ -1,0 +1,123 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
+This is a template for easily creating skins for new websites!
+The variables in this skin (e.g. $theme-background, $theme-color) are imported from the various color themes in /themes/themes
+
+Darkness loads /themes-css/[SITE]-[THEME].css (e.g. facebook-iceberg.css, google-iceberg.css, google-material.css...).
+Those CSS are built by combining 3 files:
+1. The color scheme defined by variables like $theme-text, $theme-background (themes/themes/[THEME].scss)
+2. A skin common to all websites (themes/websites/all-websites.scss)
+3. A site-specific skin (themes/websites/[SITE].scss) - THIS FILE
+
+Guidelines:
+* Please avoid hard-coding #rrggbb colors. Use the variables in themes/monokai.scss instead.
+* Please add short comments before each CSS selector to indicate what UI element it refers to
+* Before starting, take a look at google.scss, facebook.scss to see how a skin should look like
+
+You should know: all the website's colors are inverted before skinning even starts!
+* To make skinning easier, the entire website is inverted ("negative") by adding -webkit-filter: invert(100%) to <body> (done in all-websites.scss)
+* In order to compensate for that, all the theme colors (in monokai.scss) are inverted back! e.g. $theme-link: invert-back-color($blue);
+* This generally shouldn't affect you, since you should always use variables such as $theme-color or $theme-border, and not absolute #rrggbb colors
+* Sometimes you'll want to invert elements back to their original color (e.g. negative images). Use invert-back: .elm { @include invert-back() }
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Toolbar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Toolbar background
+.toolbarClass {
+	background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Search
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Homepage
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Profile Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Other Page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// 3rd Party Extensions Support
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.theme-background-image-white {
+	// @include invert-back();
+	background: rgba(34,34,34,1) !important;
+	@include invert-back();
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.pypl-logo,
+.paypal-logo,
+.paypal-logo-long {
+	@include invert-back();
+}
+
+.four-panel2 {
+	background: #222 !important;
+	@include invert-back();
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.pypl-btn--blue {
+	background: #cbc9c8;
+}
+
+.pypl-btn--blue:hover {
+	background: #cbc9c8;
+}
+
+.pp-header--submenu-open {
+	@include invert-back();
+	// background-color: #009cde;
+	// background-image: radial-gradient(circle farthest-side at center bottom,#009cde ,#003087 125%);
+	// border-bottom: 1px solid rgba(255,255,255,.3);
+}
+
+.theme-background-color-blue {
+	@include invert-back();
+}
+
+.vx_globalNav-main,
+.globalNav-main,
+.js_globalNavView,
+.js_ppLogo {
+	@include invert-back();
+	background: rgba(34,34,34,1) !important;
+	border-bottom: 1px solid black !important;
+}
