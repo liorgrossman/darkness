@@ -15,12 +15,10 @@
     "install": "gulp install",
     "start": "gulp sass:watch"
   },
-  "dependencies": {
-    "natives": "^1.1.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "del": "2.2.1",
-    "gulp": "^3.9.1",
+    "gulp": "3.9.1",
     "gulp-json-transform": "0.4.5",
     "gulp-rename": "1.2.2",
     "gulp-replace": "0.5.4",
