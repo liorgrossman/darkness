@@ -465,6 +465,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'paypal': {
+			key: 'paypal', // Must be the same as the object key
+			name: 'PayPal',
+			support: 'in-development',
+			hostRegExp: new RegExp('^(.+)?paypal\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Bartosz Zalewski', link: 'https://github.com/reveur404' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 
 		//--------------------------------------------------------------------
 		// Ask developers for help on the following websites

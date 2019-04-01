@@ -79,7 +79,7 @@ div#mw-panel div.portal {
 
 // Logo
 .central-textlogo img {
-  @include invert-back()
+  @include invert-back();
 	color: white !important;
 	filter: brightness(1.1) !important;
 }
@@ -100,7 +100,7 @@ div#mw-panel div.portal {
 .pure-form input[type=email]:focus,
 .pure-form select:focus,
 .pure-form textarea:focus {
-	@include invert-back()
+	@include invert-back();
 	background-color: black !important;
 	color: white !important;
 }
@@ -169,7 +169,7 @@ div.vectorTabs ul li {
 
 // Top Tabs
 div.vectorTabs ul li {
-	border: 1px solid $theme-border !important;
+	border: 1px solid rgba($theme-border, .18) !important;
 }
 
 // Top Tabs
@@ -188,8 +188,8 @@ div.vectorTabs ul li {
 div#simpleSearch #searchButton,
 div#simpleSearch #mw-searchButton {
 	background-color: white !important;
-	@include brightness(0.8)
-	@include transition-all(.12s)
+	@include brightness(0.8);
+	@include transition-all(.12s);
 	&:hover {
 		@include brightness(0.7)
 	}
