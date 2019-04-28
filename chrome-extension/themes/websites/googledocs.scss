@@ -56,6 +56,16 @@ iframe {
 	-webkit-filter: invert(0) !important;
 }
 
+// Modal-background
+.modal-dialog-bg.docs-homescreen-modaldialog-bg {
+	background-color: white !important;
+}
+// Modal
+.docs-homescreen-modaldialog,
+.docs-homescreen-modaldialog > div {
+	background-color: $theme-background-box !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Overview
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -71,7 +81,14 @@ iframe {
 	background-color: $theme-background-toolbar !important;
 }
 
+// Menu drawer
+.gb_4b,
+.gb_ac .goog-menu {
+	background: $theme-background-toolbar !important;
+}
+
 // Undo color-change in menu on some icons
+.gb_Tb .gb_oc:before,
 .docs-homescreen-nav-settings-24, .docs-homescreen-nav-help-24 {
 	-webkit-filter: invert(1) !important;
 }
@@ -79,6 +96,20 @@ iframe {
 // Action buttons when viewing list of documents
 .docs-homescreen-floater-header-buttons {
 	-webkit-filter: invert(1) !important;
+}
+
+// Background
+.docs-homescreen-fcc-content,
+.docs-homescreen-item-container,
+.docs-homescreen-container .docs-homescreen-floater-grid-header .docs-homescreen-floater-header,
+.docs-homescreen-grid-header, 
+.docs-homescreen-list-header {
+	background: $theme-background !important;
+}
+
+// Item
+.docs-homescreen-grid-item {
+	background: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -110,6 +141,9 @@ iframe {
 	-webkit-filter: invert(100%) !important;
 }
 // Searchbar
+.gb_ne.gb_la {
+	background: $theme-textbox-background !important;
+}
 .gb_ae .gb_0e::-webkit-input-placeholder,
 .gb_2d .gb_Pe::-webkit-input-placeholder {
 	color: $theme-textbox-text !important;
@@ -169,6 +203,20 @@ iframe {
 }
 .docos-layout-vertical .docos-anchoreddocoview .docos-anchoreddocoview-arrow-inner {
 	border-right-color: $theme-background-box !important;
+}
+
+// Create document
+.docs-homescreen-fcc-inlinecontainer-docked .docs-homescreen-fcc-flex .docs-homescreen-fcc-content {
+	background-color: $theme-background !important;
+}
+.docs-homescreen-fcc-flex .docs-homescreen-fcc-content {
+	background-color: $theme-background-toolbar !important;
+}
+
+// Sub-header
+.docs-homescreen-floater-header-shadow,
+.docs-homescreen-floater-grid-header .docs-homescreen-floater-header {
+	background: $theme-background-toolbar !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

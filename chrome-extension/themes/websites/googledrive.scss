@@ -75,6 +75,9 @@ input {
 .a-nEbBXb .a-D-B.a-D-B-gc-WErN3d {
 	background: $theme-background-toolbar !important;
 }
+.a-nEbBXb .a-D-B {
+	background-color: $theme-background !important;
+}
 
 // Centered toolbar box around search box and buttons
 .gb_ge {
@@ -114,7 +117,7 @@ input {
 .gb_Ce,
 .gb_Jf,
 .gb_Ee,
-.gb_hf {
+.gb_ne {
 	background: $theme-textbox-background !important;
 }
 
@@ -124,6 +127,9 @@ input {
     border-top-color: $theme-border;
     -webkit-box-shadow: 0 2px 4px transparentize($theme-button-background, 0.8) !important;
     box-shadow: 0 2px 4px transparentize($theme-button-background, 0.8) !important;
+}
+.h-uj {
+	background: $theme-background-box !important;
 }
 
 // Search dropdown hover left border
@@ -292,7 +298,7 @@ input {
 
 // Table-view header
 .N7iPof {
-	background-color: $theme-background-box !important;
+	background-color: $theme-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
