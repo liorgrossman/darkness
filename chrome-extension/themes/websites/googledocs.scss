@@ -354,19 +354,79 @@ div.active-cell-border,
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Colored bar in the top
-.freebirdHeaderMastWithOverlay {
-	-webkit-filter: invert(1) !important;
+.freebirdFormviewerViewFormBanner,
+.freebirdHeaderMastWithOverlay,
+.freebirdThemedTab .exportIndicator,
+.freebirdThemedDialog .exportTitleBarFullScreen, 
+.freebirdThemedMobileDialog .exportTitleBarFullScreen, 
+.freebirdThemedDialog .exportTitleBar, 
+.freebirdThemedDialog .exportDialogClose, 
+.freebirdThemedMobileDialog .exportDialogClose,
+.freebirdThemedDarkTab,
+.freebirdThemedToggleSwitch.isChecked,
+.freebirdThemedTab .exportTab.isSelected .freebirdThemedBadge {
+	background-color: $theme-highlighted !important;
+}
+.freebirdThemedTab .exportTab.isSelected,
+.freebirdThemedText,
+.freebirdThemedDialog .exportDefaultDialogButton {
+	color: $theme-highlighted !important;
+}
+.freebirdThemedCheckbox.isChecked:not(.isDisabled), 
+.freebirdThemedCheckbox.isIndeterminate:not(.isDisabled),
+.freebirdThemedToggle.isChecked .exportThumb,
+.freebirdThemedRadio.isChecked:not(.isDisabled) .exportOuterCircle, 
+.freebirdThemedRadio .exportInnerCircle,
+.freebirdThemedToggleSwitch {
+	border-color: $theme-highlighted !important;
+}
+// Edit button and Colored line on the top of form
+.freebirdAccentBackground {
+	background-color: $theme-highlighted-darker !important;
 }
 // The form
-.freebirdFormeditorViewEditingsurfaceCentered {
-	-webkit-filter: invert(1) !important;
+.freebirdFormviewerViewFormCard,
+.freebirdFormeditorViewTabLightTabList,
+.freebirdFormeditorViewPagePageHeader,
+.freebirdFormeditorViewPagePageFields,
+.freebirdFormeditorViewItemRoot,
+.docssharedWizOmnilistItemRoot,
+.freebirdFormeditorViewFatCard,
+.freebirdFormeditorViewResponsesResponsesTabHeaderContainer,
+.freebirdFormeditorViewResponsesSummaryEl {
+	background: $theme-background-box !important;
+}
+.freebirdAnalyticsViewChartContainer rect[fill="#ffffff"] {
+	fill: invert-back-color($theme-background-box) !important;
+}
+.freebirdAnalyticsViewChartContainer text {
+	fill: invert-back-color($theme-text) !important;
+	stroke-width: 0 !important;
 }
 // Color-picker
 .freebirdFormeditorViewColorpaletteContainer {
-	-webkit-filter: invert(1) !important;
+	@include invert-back();
 }
-iframe img {
-	-webkit-filter: invert(1) !important;
+// Export results to sheets-button
+.freebirdMaterialIconIconImage:before {
+	@include invert-back();
+}
+// Submit and send button
+.freebirdFormviewerViewNavigationSubmitButton,
+.freebirdFormeditorViewHeaderSendButton.freebirdFormeditorViewHeaderHeaderMenu {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+// Dialog
+.quantumWizDialogBackground {
+	background-color: rgba(255,255,255,0.502) !important;
+}
+.freebirdFormeditorDialogSettingsGeneralSecureQuizDisabledControlsMessage, 
+.freebirdFormeditorDialogSettingsGeneralBusinessFormDisabledControlsMessage,
+.freebirdThemedDarkTab .freebirdThemedDarkTabContent,
+.quantumWizDialogPaperdialogEl {
+	background-color: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
