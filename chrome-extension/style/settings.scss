@@ -1130,17 +1130,19 @@ div.drk_dialog.drk_get_pro {
 	}
 
 	.drk_promo_link {
-		opacity: 0.85 !important;
-		font-size: 10px !important;
+		opacity: 0.95 !important;
+		font-size: 12px !important;
 		text-align: center !important;
 		cursor: pointer !important;
 		transition: color .2s ease-in-out !important;
 		padding: 1px 7px !important;
 		display: inline !important;
 		margin-left: 10px !important;
+		color: $darkness-yellow !important;
 
 		&:hover {
-			color: $darkness-text-bright !important;
+			color: $darkness-yellow !important;
+			opacity: 1 !important;
 			transition: color .0s ease-in-out !important;
 		}
 
