@@ -691,6 +691,15 @@ input[type="text"]._58al {
 	background-color: $theme-background-toolbar !important;
 }
 
+// More chats open, than there is space for
+._6cj2 {
+	border-color: $theme-border !important;
+	background-color: $theme-background-box !important;
+}
+.__MenuItem button {
+	background-color: transparent !important;
+}
+
 // Timestamps when a long time has passed bewteen messages
 ._3hx- ._6vu5 ._5w-6 {
 	color: $theme-text-faint !important;
@@ -719,6 +728,12 @@ input[type="text"]._58al {
 
 ._6h1 {
 	@include invert-back();
+}
+
+// Send arrow
+._6wm5 ._21u1 svg {
+	-webkit-filter: invert(0) !important;
+	// @include invert-back();
 }
 
 // Sticker (big blue like in chat window)
@@ -830,7 +845,8 @@ div[aria-label*="sticker"] {
 	border-top: 0px solid transparent !important;
 }
 
-.titlebar ._69pt{
+.titlebar ._69pt,
+._1sk6{
 	background: $theme-background-box !important;
 }
 ._3hx- ._ua1,
@@ -849,6 +865,11 @@ div[aria-label*="sticker"] {
 ._3hx- ._4tdt ._4tdx {
 	border-bottom: 1px solid $theme-background !important;
     border-left: 10px solid $theme-background !important;
+}
+._3hx- ._5w0o {
+	background: $theme-background !important;
+	border-bottom: 8px solid $theme-background !important;
+	border-top: 8px solid $theme-background !important;
 }
 ._3hx- ._5wd4,
 ._3hx- ._1nc7:not(:last-of-type) ._5z-5, ._3hx- ._1nc6:not(:last-of-type) ._5z-5, ._3hx- ._3erg:not(:last-of-type) ._5z-5,
