@@ -150,10 +150,10 @@ a:visited {
 	color: $theme-highlighted !important;
 }
 .board-tile[style*="background-image:"] .board-tile-details-name {
-	color: invert-back-color($theme-highlighted) !important;
+	color: white !important;
 }
 .board-tile-details-name {
-	color: $theme-highlighted !important;
+	color: black !important;
 }
 .canonical-stretch {
 	@include invert-back();
