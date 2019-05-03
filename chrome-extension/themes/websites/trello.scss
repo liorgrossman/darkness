@@ -150,10 +150,10 @@ a:visited {
 	color: $theme-highlighted !important;
 }
 .board-tile[style*="background-image:"] .board-tile-details-name {
-	color: invert-back-color($theme-highlighted) !important;
+	color: white !important;
 }
 .board-tile-details-name {
-	color: $theme-highlighted !important;
+	color: black !important;
 }
 .canonical-stretch {
 	@include invert-back();
@@ -211,6 +211,7 @@ body, .body-tabbed-page {
 
 // Blue elements
 body[style*="background-color: rgb(#{$trello-rgb-blue});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-blue});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-blue});"],
 .background-box[style*="background-color: #{$trello-blue};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-blue});"],
@@ -222,6 +223,7 @@ body[style*="background-color: rgb(#{$trello-rgb-blue});"],
 }
 // Yellow elements
 body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 .background-box[style*="background-color: #{$trello-yellow};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-yellow});"],
@@ -233,6 +235,7 @@ body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 }
 // Green elements
 body[style*="background-color: rgb(#{$trello-rgb-green});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-green});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-green});"],
 .background-box[style*="background-color: #{$trello-green};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-green});"],
@@ -244,6 +247,7 @@ body[style*="background-color: rgb(#{$trello-rgb-green});"],
 }
 // Red elements
 body[style*="background-color: rgb(#{$trello-rgb-red});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-red});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-red});"],
 .background-box[style*="background-color: #{$trello-red};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-red});"],
@@ -255,6 +259,7 @@ body[style*="background-color: rgb(#{$trello-rgb-red});"],
 }
 // Purple elements
 body[style*="background-color: rgb(#{$trello-rgb-purple});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-purple});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-purple});"],
 .background-box[style*="background-color: #{$trello-purple};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-purple});"],
@@ -266,6 +271,7 @@ body[style*="background-color: rgb(#{$trello-rgb-purple});"],
 }
 // Pink elements
 body[style*="background-color: rgb(#{$trello-rgb-pink});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-pink});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-pink});"],
 .background-box[style*="background-color: #{$trello-pink};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-pink});"],
@@ -277,6 +283,7 @@ body[style*="background-color: rgb(#{$trello-rgb-pink});"],
 }
 // Mint elements
 body[style*="background-color: rgb(#{$trello-rgb-mint});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-mint});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-mint});"],
 .background-box[style*="background-color: #{$trello-mint};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-mint});"],
@@ -288,6 +295,7 @@ body[style*="background-color: rgb(#{$trello-rgb-mint});"],
 }
 // Cyan elements
 body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 .background-box[style*="background-color: #{$trello-cyan};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-cyan});"],
@@ -299,6 +307,7 @@ body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 }
 // Gray elements
 body[style*="background-color: rgb(#{$trello-rgb-gray});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-gray});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-gray});"],
 .background-box[style*="background-color: #{$trello-gray};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-gray});"],
