@@ -34,6 +34,7 @@ if (!DarknessSettingsLoader) {
 		// User settings & stats
 		var settings = JSON.parse('@@SETTINGS@@');
 		var STATS = JSON.parse('@@STATS@@');
+		var DEV_RATING = parseInt('@@DEV_RATING@@') || 0;
 
 		// Determine the payment platform to use
 		var PAYMENT_PLATFORM = 'paypal';
@@ -558,7 +559,12 @@ if (!DarknessSettingsLoader) {
 			if (ENVIRONMENT == 'development') {
 				$('.drk_developer_add .text').html("Fix CSS / skin your favorite sites");
 			} else {
-				$('.drk_developer_add .text').html("Developer? Fix CSS or add more skins");
+				if (DEV_RATING > 1) {
+					$('.drk_developer_add').addClass('drk_bold');
+					$('.drk_developer_add .text').html("Edit CSS / skin your favorite sites!");
+				} else {
+					$('.drk_developer_add .text').html("Developer? Fix CSS or add more skins");
+				}
 			}
 
 			// Show/hide youtube theme

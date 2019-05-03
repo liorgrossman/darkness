@@ -280,8 +280,10 @@ var getCodeForInjection = function(filename, replacements) {
 	for (var key in replacements) {
 		if (replacements.hasOwnProperty(key)) {
 			var val = replacements[key];
-			// Encode \ to \\, ' to \', trim all unnecessary white space and line breaks
-			val = val.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/[\t\n\r]+/g, ' ');
+			if (typeof(val) == "string") {
+				// Encode \ to \\, ' to \', trim all unnecessary white space and line breaks
+				val = val.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/[\t\n\r]+/g, ' ');
+			}
 			// Replace @@PLACEHOLDER@@ with value
 			code = code.replace('@@' + key + '@@', val);
 		}
@@ -306,6 +308,7 @@ var injectSettingsScriptToTab = function(tab) {
 		args['THEME'] = themeKey;
 		args['SITE'] = siteKey;
 		args['SITE_SUPPORT'] = CONFIG.sites[siteKey].support;
+		args['DEV_RATING'] = getDeveloperConfidence();
 		args['SETTINGS'] = JSON.stringify(settings.getAllSettingsClone());
 		args['STATS'] = JSON.stringify(stats.getAllStatsClone());
 		args['CONFIG'] = JSON.stringify(CONFIG);
@@ -420,6 +423,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 		'SITE': siteKey,
 		'THEME': themeKey,
 		'SITE_SUPPORT': CONFIG.sites[siteKey].support,
+		'DEV_RATING': getDeveloperConfidence(),
 
 		'ENVIRONMENT': ENVIRONMENT,
 		'MACHINEID': stats.get('userId')
@@ -433,6 +437,42 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	});
 };
 
+// Save indications that current user is developer
+var saveDeveloperIndications = function(tab) {
+	// Check if domain visited is developers' domain
+	var domain = '';
+	try {
+		var urlObj = parseUrl(tab.url);
+		if (urlObj) {
+			domain = urlObj.hostname || "";
+		}
+	} catch (e) {}
+	const devDomains = [
+		'github.com',
+		'gist.github.com',
+		'gitlab.com',
+		'bitbucket.org',
+		'stackoverflow.com',
+		'jsfiddle.net',
+		'codepen.io',
+		'jsbin.com',
+		'www.w3schools.com',
+		'www.npmjs.com',
+		'www.npmtrends.com',
+		'stackshare.io',
+		'localhost',
+		'127.0.0.1',
+	];
+	var isDevDomain = devDomains.indexOf(domain) > -1 || domain.endsWith('.github.io')  || domain.endsWith('.libhunt.com');
+	if (isDevDomain) {
+		// Save timestamp of dev domain visited
+		var devIndications = stats.get('devIndications') || [];
+		devIndications.unshift(Date.now());
+		devIndications = devIndications.slice(0, 50);
+		stats.set('devIndications', devIndications);
+	}
+}
+
 // Initialize Darkness on the specified tab
 // startUpRetroactiveLoad == true : Darkness retroactively initializes all tabs with supported sites that were already loaded in Chrome
 // startUpRetroactiveLoad == false: a user actively navigates to a supported site when Darkness is on
@@ -444,6 +484,7 @@ var initializeTab = function(tab, startUpRetroactiveLoad) {
 		// Send analytics
 		repVisitedTabAnonymously(tab);
 		repTopThemes(siteKey, themeKey);
+		saveDeveloperIndications(tab);
 	}
 
 	if (!themeKey) return log('Not initializing tab'); // Quit if site is not supported

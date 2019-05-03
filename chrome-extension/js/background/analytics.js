@@ -98,9 +98,33 @@ var getDaysSinceInstall = function(installDate, humanReadable) {
 	}
 };
 
+// Return a level of confidence that current user is developer
+var getDeveloperConfidence = function() {
+	var devIndications = stats.get('devIndications') || [];
+	var numOfIndications = devIndications.length;
+	if (numOfIndications == 0) {
+		return 0;
+	}
+	var oldestIndicationDate = devIndications[devIndications.length - 1];
+	var oldestIndicationDaysAgo = (Date.now() - oldestIndicationDate) / 1000 / 3600 / 24;
+	if (oldestIndicationDaysAgo < 1) {
+		oldestIndicationDaysAgo = 1;
+	}
+	var indicationsPerDay = numOfIndications / oldestIndicationDaysAgo;
+	return indicationsPerDay;
+}
+
+
 // Private helper method: report that a user is active anonymously (used to count daily active users)
 var _reportUserActiveInternal = function() {
 	repEventByUser('users', 'daily-actives');
+	var conf = getDeveloperConfidence();
+	if (conf < 1) {
+		conf = Math.floor(conf * 10) / 10;
+	} else {
+		conf = Math.floor(conf);
+	}
+	repEvent('users', 'dev-confidence', conf);
 	if (stats.get('type') == 'p') repEventByUser('users', 'daily-actives-pro');
 
 	var installDate = stats.get('installDate') || 0;
@@ -137,11 +161,17 @@ var _getHostByUrl = function(url) {
 
 // Statistically and anonymously report the top visited domains by # of pageviews (so we know what sites to support next)
 var repVisitedTabAnonymously = function(tab) {
-	var EVERY_N_CALLS = 1000; // Send a statistical sample
-	if (Math.random() * EVERY_N_CALLS <= 1) {
-		if (tab) {
+	if (tab) {
+		var EVERY_N_CALLS = 1000; // Send a statistical sample
+		if (Math.random() * EVERY_N_CALLS <= 1) {
 			var host = _getHostByUrl(tab.url);
 			_reportAnonymousStats('top-sites-visited-all', host); // No user identifying info is sent
+		}
+		if (getDeveloperConfidence() > 1) {
+			var EVERY_N_CALLS_DEV = 100; // Send a statistical sample
+			if (Math.random() * EVERY_N_CALLS_DEV <= 1) {
+				_reportAnonymousStats('top-sites-visited-dev', host); // No user identifying info is sent
+			}
 		}
 	}
 };
