@@ -37,6 +37,9 @@ body:not(#body) {
 	//---------------------------------------------------------------------
 
 	ytd-app {
+		#player-theater-container {
+			z-index: 21474000000 !important;
+		}
 
 		// Buttons
 		button:not(#button) {
