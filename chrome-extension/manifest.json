@@ -1,80 +1,75 @@
 {
-	"manifest_version": 2,
-
-	"name": "__MSG_appFullName__",
-	"short_name": "__MSG_appShortName__",
-	"description": "__MSG_appDescription__",
-	"version": "2.0.24",
-	"author": "Darkness",
-	"homepage_url": "https://darkness.app",
-	"default_locale": "en",
-
-	"icons": {
-		"16": "images/darkness-icon-16px.png",
-		"19": "images/darkness-icon-19px.png",
-		"32": "images/darkness-icon-32px.png",
-		"38": "images/darkness-icon-38px.png",
-		"48": "images/darkness-icon-48px.png",
-		"64": "images/darkness-icon-64px.png",
-		"128": "images/darkness-icon-128px.png"
-	},
-
-	"permissions": [
-		"tabs",
-		"storage",
-		"cookies",
-		"http://*/",
-		"https://*/"
-	],
-	"content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
-	"web_accessible_resources": [
-		"themes-css/*.css",
-		"themes-css/*.map",
-		"style-css/*.css",
-		"style-css/*.map",
-		"js/*.js",
-		"libs/*.js",
-		"html/*.html",
-		"images/*.png",
-		"images/*.gif",
-		"images/*.jpg",
-		"images/*.svg",
-		"fonts/*.woff2",
-		"icons/css/*.css",
-		"icons/font/*.*"
-	],
-
-	"background": {
-		"scripts": [
-			"libs/buy.js",
-			"js/background/helpers.js",
-			"js/background/config.js",
-			"js/background/user-stats.js",
-			"js/background/user-settings.js",
-			"js/background/file-reader.js",
-			"js/background/analytics.js",
-			"js/background/payments.js",
-			"js/background/promo.js",
-			"js/background.js"
-		],
-		"persistent": true
-	},
-
-	"browser_action": {
-		"default_icon": {
-			"16": "images/darkness-icon-16px.png",
-			"19": "images/darkness-icon-19px.png",
-			"32": "images/darkness-icon-32px.png",
-			"38": "images/darkness-icon-38px.png",
-			"48": "images/darkness-icon-48px.png",
-			"64": "images/darkness-icon-64px.png",
-			"128": "images/darkness-icon-128px.png"
-		},
-		"default_title": "__MSG_appShortName__",
-		"default_popup": "html/options.html"
-	},
-	"options_ui": {
-		"chrome_style": true,
-		"page": "html/options.html"
-	}
+    "manifest_version": 2,
+    "name": "__MSG_appFullName__",
+    "short_name": "__MSG_appShortName__",
+    "description": "__MSG_appDescription__",
+    "version": "2.0.25",
+    "author": "Darkness",
+    "homepage_url": "https://darkness.app",
+    "default_locale": "en",
+    "icons": {
+        "16": "images/darkness-icon-16px.png",
+        "19": "images/darkness-icon-19px.png",
+        "32": "images/darkness-icon-32px.png",
+        "38": "images/darkness-icon-38px.png",
+        "48": "images/darkness-icon-48px.png",
+        "64": "images/darkness-icon-64px.png",
+        "128": "images/darkness-icon-128px.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "cookies",
+        "http://*/",
+        "https://*/"
+    ],
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+    "web_accessible_resources": [
+        "themes-css/*.css",
+        "themes-css/*.map",
+        "style-css/*.css",
+        "style-css/*.map",
+        "js/*.js",
+        "libs/*.js",
+        "html/*.html",
+        "images/*.png",
+        "images/*.gif",
+        "images/*.jpg",
+        "images/*.svg",
+        "fonts/*.woff2",
+        "icons/css/*.css",
+        "icons/font/*.*"
+    ],
+    "background": {
+        "scripts": [
+            "libs/buy.js",
+            "js/background/helpers.js",
+            "js/background/config.js",
+            "js/background/user-stats.js",
+            "js/background/user-settings.js",
+            "js/background/file-reader.js",
+            "js/background/analytics.js",
+            "js/background/payments.js",
+            "js/background/promo.js",
+            "js/background.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "images/darkness-icon-16px.png",
+            "19": "images/darkness-icon-19px.png",
+            "32": "images/darkness-icon-32px.png",
+            "38": "images/darkness-icon-38px.png",
+            "48": "images/darkness-icon-48px.png",
+            "64": "images/darkness-icon-64px.png",
+            "128": "images/darkness-icon-128px.png"
+        },
+        "default_title": "__MSG_appShortName__",
+        "default_popup": "html/options.html"
+    },
+    "options_ui": {
+        "chrome_style": true,
+        "page": "html/options.html"
+    }
 }
