@@ -58,7 +58,8 @@ body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
 }
 
 // Hide the moon icon in YouTube fullscreen mode
-html[hide-scrollbar=true] body[data-drk-site="youtube"] div.drk_settings_icon
+html[hide-scrollbar=true] body[data-drk-site="youtube"] div.drk_settings_icon,
+body.no-scroll[data-drk-site="youtube"] div.drk_settings_icon
 {
 	display: none !important;
 }
