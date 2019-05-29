@@ -1,0 +1,1099 @@
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// PayPal skin for Darkness
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// General Elements Styling
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// All buttons
+button {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+	border-color: $theme-border !important;
+}
+
+// All inputs
+input {
+	color: $theme-textbox-text;
+	background-color: $theme-textbox-background;
+	border-color: $theme-border;
+}
+
+// Toolbar background
+.toolbarClass {
+	background: $theme-background-toolbar !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Styling for Polish version + some EU countries
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Dark wallpaper on main page (under the navbar)
+.theme-background-image-white {
+	background: rgba(34,34,34,1) !important;
+	@include invert-back();
+}
+
+// White PayPal logo
+.pypl-logo,
+.paypal-logo,
+.paypal-logo-long {
+	@include invert-back();
+}
+
+// Mainpage "Why paypal" section
+.four-panel2 {
+	background: rgba(34,34,34, 1) !important;
+	@include invert-back();
+	color: rgba(255, 255, 255, 0.5);
+}
+
+// Mainpage buttons fixed styles like paypal's
+a.pypl-btn--blue {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+a.pypl-btn--blue:hover {
+	background: lighten($theme-button-background, 10%) !important;
+}
+
+// Mainpage navbar
+.pp-header--submenu-open {
+	@include invert-back();
+}
+
+// For "Why paypal" (mainpage) section again
+.theme-background-color-blue {
+	@include invert-back();
+}
+
+// Navbar more styles
+.vx_globalNav-main,
+.globalNav-main,
+.js_globalNavView,
+.js_ppLogo {
+	@include invert-back();
+	background: rgba(34,34,34,1) !important;
+	border-bottom: 1px solid black !important;
+}
+
+// "Why paypal" section (mainpage) links
+p.no-image-panel__paragraph a {
+	@include invert-back();
+}
+
+// Fixed bugged background color to buttons on mainpage
+button.generic-tabs__tabs__links,
+button.selected {
+	background: transparent !important;
+}
+
+.panels.device-image {
+	border-color: rgba(34,34,34, 1) !important;
+}
+
+.theme-background-color-blue {
+	background-color: rgba(102,102,102, 1) !important;
+	background-image: radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+}
+
+p.no-image-panel__hatch-text > a {
+	@include invert-back();	
+}
+
+.parallax-bg, .scroll-animate {
+	// @include invert-back();
+	background: rgba(34,34,34,1) !important;
+	@include invert-back();
+	color: rgba(255, 255, 255, 0.5);
+}
+
+section.dark {
+	@include invert-back();
+}
+
+section.blue {
+	@include invert-back();
+	background-color: rgba(102,102,102, 1);
+	background-image: radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+}
+
+img.icon-panel__image {
+	visibility: hidden !important;
+	margin-bottom: -50px;
+}
+
+a.home-hero__btn {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+	@include invert-back();
+}
+
+a.home-hero__btn:hover {
+	background: lighten($theme-button-background, 10%) !important;
+}
+
+p.home-hero__hatch-text {
+	@include invert-back();
+}
+
+// Default border color <blue> is now invisible
+a.pypl-btn--outline-blue {
+	color: $theme-button-text !important;
+	border-color: $theme-button-background !important;
+}
+
+// White header and subheader (better contrast)
+section#three-panel > div > div > div > h2.panels__headline,
+section#three-panel > div > div > div > h3.panels__subheadline {
+	color: black !important;
+}
+
+// Navbar login visibility fixes
+div#header-buttons > div > a#ul-btn {
+	border: 1px solid white !important;
+}
+
+// Navbar
+header.pp-header--submenu-close,
+header.pp-header--submenu-open {
+	@include invert-back();
+	color: white !important;
+	background-color: rgba(102,102,102, 1) !important;
+	background-image: radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+}
+
+// Navbar logo to white
+header.pp-header--submenu-open > div > div > div > a.pypl-logo,
+header.pp-header--submenu-close > div > div > div > a.pypl-logo {
+	filter: none !important;
+}
+
+ul.submenu-col > li > a {
+	color: white !important;
+}
+
+// ul.main-menu-list > li > a.pypl-header__subnav-control--is-active,
+// ul.main-menu-list > li > a.mainpypl-header__subnav-control--is-highlighted {
+// 	color: white !important;
+// }
+
+button.closer {
+	@include invert-back();
+}
+
+header.pp-header--submenu-open > div > div > div#header-buttons > div > a,
+header.pp-header--submenu-close > div > div > div#header-buttons > div > a {
+	@include invert-back();
+}
+
+header.pp-header--submenu-open > div > div > nav#main-menu > ul > li > a,
+header.pp-header--submenu-close > div > div > nav#main-menu > ul > li > a {
+	@include invert-back();
+}
+
+header.pp-header--submenu-close::before {
+	background-color: rgba(102,102,102, 1) !important;
+	background-image: radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+}
+
+section#three-panel {
+	background: rgba(255, 255, 255, 0.5) !important;
+}
+
+// PayPal logo to white (register page)
+.containerCentered > a.paypal-img-logo {
+	@include invert-back();
+}
+
+// Login button (register page)
+.containerCentered > #header-buttons > a {
+	border: 1px solid white !important;	
+}
+
+// Buttons in register page
+form > a#cta-btn {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+
+form > span.radio-over::after {
+	background: $theme-button-background !important;
+}
+
+// No image in register page + positioned h2
+.containerCentered > .span7 > img.social-img {
+	display: none;
+}
+
+.containerCentered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+// Removed bugged border-top from footer
+.footer, .footerNav {
+	border-top: none !important;
+}
+
+.signup > .signup-page-header > a.signup-page-header-logo {
+	@include invert-back();
+}
+
+.signup > .signup-page-header > a:nth-child(2) {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+}
+
+span.country-selector > button.country {
+	@include invert-back();
+}
+
+header.table-row {
+	@include invert-back();
+}
+
+header.table-row > div > div > a.paypal-img-logo {
+	filter: none !important;
+}
+
+header.table-row > div > div > .header-buttons > a#ul-btn {
+	color: $theme-button-background !important;
+	@include invert-back();
+	border: 1px solid white !important;
+}
+
+header.table-row > div > div > .header-buttons > a#signup-button {
+	// background: transparent !important;
+	color: $theme-button-background !important;
+	@include invert-back();
+	border: 1px solid white !important;
+}
+
+.vx_globalNav-navContainer > nav.vx_globalNav-nav > ul > li {
+	@include invert-back();
+}
+
+section.fiModule-container > div > div > a.vx_btn-medium {
+	border-color: $theme-button-background !important;
+}
+
+span.fiModule-icon_attention {
+	@include invert-back();
+}
+
+a.vx_btn-medium {
+	border-color: $theme-button-background !important;
+}
+
+a.vx_btn {
+	border-color: $theme-button-background !important;
+	background: $theme-button-background !important;
+}
+
+.css-1b5y9c2 > a.active {
+	border-bottom-color: $theme-button-background !important;
+}
+
+i.icon-svg {
+	@include invert-back();
+}
+
+span.multiCurrency-flag {
+	@include invert-back();
+}
+
+span.buttonLink-regularFontSize {
+	padding: 5px;
+}
+
+.containerCentered > nav > ul > li > a {
+	color: $theme-button-background !important;
+	@include invert-back();
+}
+
+ul#header-Personal-menu > li > a,
+ul#header-business-menu > li > a {
+	color: white !important;
+}
+
+header.table-row.pp-header {
+	background-image: radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+}
+
+header[role=banner].pp-header+#main>section:not(.hero-pop-out):first-of-type {
+	padding-top: 60px !important;
+}
+
+div.containerMobileFullWidth > section:nth-child(9) > div > div > div > h2,
+div.containerMobileFullWidth > section:nth-child(9) > div > div > div > p {
+	@include invert-back();
+}
+
+div.containerMobileFullWidth > section:nth-child(9) {
+	filter: none !important;
+}
+
+div.containerMobileFullWidth > section:nth-child(8) > div > div > div > a.contentLink {
+	@include invert-back();
+}
+
+section.product-hero-organism > div.theme-background-image-dark > div {
+	background-image:radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+}
+
+.theme-background-image-dark > .container > div > div > div > h1.product-hero__headline,
+.theme-background-image-dark > .container > div > div > div > p.product-hero__paragraph {
+	@include invert-back();
+}
+
+ul.in-page-anchors__link-list {
+	background-color: transparent !important;
+}
+
+// Some buttons
+.theme-background-image-dark > .container > div > div > div > a.product-hero__cta {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+
+// Transparent line from mobile-apps page
+.device-hero-organism .device-hero {
+	border-bottom: 72px solid transparent !important;
+}
+
+.lightContent {
+	@include invert-back();
+}
+
+a.heroBtn {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+
+p.hatch > a {
+	@include invert-back();
+}
+
+a.pullout__btn--center {
+	@include invert-back();
+}
+
+p.pullout__hatch-text > a {
+	@include invert-back();
+}
+
+.band {
+	background: $theme-background-box !important;
+}
+
+p.no-image-panel__hatch-text > a {
+	@include invert-back();
+}
+
+.panels.device-image {
+	border-color: transparent !important;
+}
+
+.panels__device-image {
+	@include invert-back();
+}
+
+.panelCTA > .legal-notes > a {
+	display: none;
+}
+
+span.tick-icon {
+	@include invert-back();
+}
+
+section.closing-section > div > div > a.closing-cta {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+
+a.small {
+	@include invert-back();
+}
+
+section.no-parallax {
+	background-image: radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+
+}
+
+p.icon-panel__paragraph > a {
+	@include invert-back();
+}
+
+div > section:nth-child(6) > div > div > div > a {
+	filter: none !important;
+}
+
+div > section:nth-child(5) > div > div > div > a {
+	filter: none !important;
+}
+
+a#hero-btn {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+
+div#BlueNav {
+	@include invert-back();
+}
+
+span.icon-email-solid {
+	@include invert-back();
+}
+
+div.containerMobileFullWidth > section:nth-child(1).lightContent > div.parallax-bg {
+	filter: none !important;
+}
+
+.hero-selection-hcr {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+
+button.folder-inbox,
+button.folder-sent {
+	background-color: transparent !important;
+}
+
+button.profile-updatePhotoLink {
+	background-color: transparent !important;
+}
+
+span.icon-checkmark-small {
+	background-color: transparent !important;
+}
+
+span.setupStep-stateContent {
+	color: $theme-button-background !important;
+}
+
+.innerCircle {
+	border-color: $theme-button-background !important;
+}
+
+.engagementActions a:hover .icon {
+	background-color: $theme-button-text !important;
+}
+
+.engagementActions a .icon {
+	border-color: $theme-button-background !important;
+	color: $theme-button-background !important;
+}
+
+.fiModule-icon-arrow::before {
+	color: $theme-button-background !important;
+}
+
+button.vx-btn_toggleProfileStatus:hover {
+	border-color: $theme-button-text !important;
+}
+
+.transactionRowHover:hover {
+	border-left-color: $theme-button-background !important;
+}
+
+.setupStep-overlayCta {
+	color: $theme-button-background !important;
+}
+
+.setupStep-overlayIconContainer {
+	color: $theme-button-background !important;
+}
+
+.setupStep-icon {
+	color: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+}
+
+.setupStep-cta {
+	color: $theme-button-background !important;
+}
+
+.isPositive {
+	@include invert-back();
+}
+
+.nemo_currencyCode {
+	@include invert-back();	
+}
+
+.item-heading {
+	color: $theme-button-text !important;
+}
+
+.icon-callus,
+.icon-emailus {
+	@include invert-back();
+}
+
+h1.hero-search-header-replacement {
+	@include invert-back();
+}
+
+.containerMobileFullWidth > section#security > div.parallax-bg {
+	filter: none !important;
+}
+
+.containerMobileFullWidth > section:nth-of-type(7).fPanel {
+	@include invert-back();
+}
+
+.stickyContainer > .btn-section > a.btn {
+	color: $theme-button-text !important;
+	background: $theme-button-background !important;
+}
+
+section#A8 > div > div > div > a {
+	filter: none !important;
+}
+
+section#partners > div.containerCentered > div.span10 > a {
+	@include invert-back();
+}
+
+.containerMobileFullWidth > section:nth-of-type(5).pullout > div > div > a.contentLink {
+	@include invert-back();
+}
+
+.containerMobileFullWidth > section:nth-child(8) > div.container > div.col-sm-6 > div.editorial-cell > a.contentLink {
+	filter: none !important;
+}
+
+.containerMobileFullWidth > section:nth-child(10) > div > div > a.contentLink {
+	@include invert-back();
+}
+
+.containerMobileFullWidth > section:nth-child(1).hero-bg > div > div > div > p.hatch > a {
+	filter: none !important;
+}
+
+#login-btn {
+	color: $theme-button-text !important;
+}
+
+.containerMobileFullWidth > section:nth-child(1).no-parallax > div.container > div > div > p.hatch > a {
+	@include invert-back();
+}
+
+.containerMobileFullWidth > section:nth-child(1) > div.container > div > div > p.hatch > a {
+	@include invert-back();
+}
+
+.vx_foreground-container > .smarthelp-react-app > div > header.pp-header::before {
+	background-image:radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+	@include invert-back();
+}
+
+.icon-resolution,
+.icon-tax,
+.icon-contact {
+	@include invert-back();
+}
+
+.containerMobileFullWidth > section:nth-child(5).callout > div > p.flexible-fees-callout {
+	color: $theme-button-text !important;
+}
+
+// Bugged section in paypal-fees
+section#send-money {
+	display: none !important;
+}
+
+section#sticky-nav > .containerCentered {
+	padding-bottom: 0px !important;
+	padding-top: 0px !important;
+}
+
+.containerMobileFullWidth > section:nth-of-type(5).n1 {
+	background-image: none !important;
+}
+
+div.content-toggle-container .tabs-container .tabs-panel .tab .active {
+	border-bottom-color: $theme-button-background !important;
+}
+
+.topic-tree-container-home .topic-selected {
+	border-left-color: $theme-button-background !important;
+}
+
+.containerMobileFullWidth > section > .containerCentered > .span7,
+.containerMobileFullWidth > section > .containerCentered > .form-container {
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+.containerMobileFullWidth > section:nth-child(2) > div > div > a.contentLink {
+	@include invert-back();
+}
+
+#gdprCookieBanner {
+	background: rgba(34,34,34, 1) !important;
+	@include invert-back();
+}
+
+a#manageCookiesLink {
+	color: $theme-button-text !important;
+	@include invert-back();
+}
+
+a#acceptAllButton {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	@include invert-back();
+}
+
+header#header > a.header__brand {
+	@include invert-back();
+}
+
+header#header > div > div.header__nav--right > div > div > a.dx-auth-login {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+
+section.section--grad-blue {
+	@include invert-back();
+	background-image: radial-gradient(circle at 0 0, rgba(85,85,85, 1),rgba(34,34,34, 1)) !important;
+}
+
+.homepage-products > .homepage-product {
+	background-color: black !important;
+}
+
+.homepage-product div.grid {
+	background-color: transparent !important;
+}
+
+.grid > h3.homepage-product-title {
+	color: $theme-button-background !important;
+	@include invert-back();
+}
+
+.dx-main-nav {
+	background-image: linear-gradient(167deg, rgba(85,85,85, 1),rgba(34,34,34, 1) 40rem) !important;
+	@include invert-back();
+}
+
+nav.tip-nav > ul > li > a {
+	@include invert-back();
+}
+
+pre.dx-pre-hljs {
+	@include invert-back();
+}
+
+.tip-nav-active > a {
+	@include invert-back();
+}
+
+.tip-nav .tip-nav-active:not(.tip-nav-hash) > a {
+	background: $theme-button-text !important;
+}
+
+li.tip-nav-active > ul > li.tip-nav-hash-parent > a {
+	color: $theme-button-background !important;
+	@include invert-back();
+}
+
+li.tip-nav-active > ul > li > a {
+	color: $theme-button-background !important;
+	@include invert-back();
+}
+
+.tip-nav-active-hash .tip-nav-sub-hash {
+	background: rgb(202, 202, 202) !important;
+}
+
+blockquote.dx-blockquote-note {
+	border-color: $theme-button-background !important;
+}
+
+blockquote.dx-blockquote-note::before {
+	color: $theme-button-background !important;
+}
+
+a.dx-anchor__icon::before {
+	color: $theme-button-background !important;
+}
+
+blockquote.dx-blockquote-tip {
+	border-color: $theme-button-background !important;
+}
+
+blockquote.dx-blockquote-tip::before {
+	color: $theme-button-background !important;
+}
+
+ul.js-displayedCountryList > li > label > span.country-flag {
+	@include invert-back();
+}
+
+.product__content > header > ul > li > a > h4 {
+	color: $theme-button-text !important;
+}
+
+nav#main-menu > ul > li > a.main-link:hover {
+	border-bottom-color: $theme-button-background !important;
+}
+
+a.search-link::after {
+	color: $theme-button-background !important;
+}
+
+.pp-subnav .pypl-subnav__subnav-control--is-active+.submenu-wrapper {
+	background-image:radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;	
+	@include invert-back();
+}
+
+.stamp {
+	@include invert-back();
+}
+
+section#four-panel2.panels.theme-background-color-blue.four-panel2 > div > .panels__container > div > div > div > div > p.no-image-panel__paragraph > a {
+	@include invert-back();
+}
+
+section#four-panel2.panels.theme-background-color-blue.four-panel2 > div > .panels__container > div > div > div > .no-image-panel__top {
+	@include invert-back();
+}
+
+div > section:nth-of-type(4) > div > .panels__container > div > div > div > div > p.no-image-panel__hatch-text > a {
+	filter: none !important;
+}
+
+// Navbar on hover blue collapse fix (actually it's still buggy)
+@keyframes headerclose {
+	0% {
+		background-color:rgba(85,85,85, 1) !important;
+		background-image:radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+	}
+	40% {
+		background-color:rgba(85,85,85, 1) !important;
+		background-image:radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+	}
+	50% {
+		background-image:radial-gradient(circle farthest-side at left top,rgba(85,85,85, .5),rgba(34,34,34, .75) 125%) !important;
+	}
+	65% {
+		background-image:radial-gradient(circle farthest-side at left top,rgba(85,85,85, .65),rgba(34,34,34, .5) 125%) !important;
+	}
+	80% {
+		background-image:radial-gradient(circle farthest-side at left top,rgba(85,85,85, .3),rgba(34,34,34, .25) 125%) !important;
+	}
+	90% {
+		background-image:radial-gradient(circle farthest-side at left top,rgba(85,85,85, .1),rgba(34,34,34, 0.05) 125%) !important;
+	}
+	100% {
+		background-image: none !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// US VERSION  |  https://www.paypal.com/us/brc/ - this site isn't working good
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+li.country-selector > a.country {
+	@include invert-back();
+}
+
+.mainContainer > a.btn {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	@include invert-back();
+}
+
+.hatchContainer > a.btn-white-border {
+	color: $theme-button-background !important;
+	border-color: $theme-button-text !important;
+	@include invert-back();
+}
+
+a.flipper > .back {
+	background-image: radial-gradient(circle farthest-side at center bottom,rgba(85,85,85, 1),rgba(34,34,34, 1) 125%) !important;
+	@include invert-back();
+}
+
+// No background in sign-up
+body {
+	background-image: none !important;
+}
+
+ul#header-personal-menu > li > a,
+ul#header-business-menu > li > ul > li > a {
+	color: white !important;
+}
+
+.vertical-nav__sections>li.highlight a {
+	border-left-color: $theme-button-background !important;
+}
+
+.containerMobileFullWidth > section:nth-child(1).cookied-hero-flip-tile {
+	background-image: none !important;
+	background: rgba(34,34,34,1) !important;
+}
+
+section#hero1 > div.theme-background-image-dark {
+	background-image: none !important;
+	background: rgba(34,34,34,1) !important;
+}
+
+.containerMobileFullWidth > section:nth-child(1).hero-pop-out > div.containerCentered > div > div.editorial-cell > a.signup-post-done {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	@include invert-back();
+}
+
+// Bugged laptop image in mpp/pay-online
+.ui-hidden-mobile > img.skrollable,
+.ui-hidden-mobile > img.skrollable-before,
+.ui-hidden-mobile > img {
+	display: none;
+}
+
+.containerMobileFullWidth > section:nth-of-type(6)#navTest {
+	filter: none !important;
+}
+
+.containerMobileFullWidth > section:nth-of-type(6)#navTest > .containerCentered {
+	@include invert-back();
+}
+
+section#A57 > div:nth-child(1) {
+	background-color: rgba(34,34,34,1) !important;
+	background-image: none !important;
+}
+
+section#A9 {
+	@include invert-back();
+	background-color: rgba(34,34,34,1) !important;
+}
+
+a#heroCTA {
+	background: $theme-button-background !important;
+}
+
+.panels__footer > div > p > a.image-panel__cta {
+	@include invert-back();
+}
+
+a.generic-tabs__tabs__links.selected {
+	background-color: $theme-button-background !important;
+}
+
+section.accordion-tab-panel-content > div > div.panels__footer > div > p > span.legal-notes > a {
+	@include invert-back();
+}
+
+a > span.social-module-icon__facebook,
+a > span.social-module-icon__twitter,
+a > span.social-module-icon__youtube {
+	@include invert-back();
+}
+
+p.image-panel__hatch-text > a {
+	@include invert-back();
+}
+
+a.product-hero__cta {
+	background-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+
+section#hero2 > div:nth-child(1) {
+	background-color: rgba(34,34,34,1) !important;
+	background-image: none !important;
+}
+
+.no-image-panel {
+	@include invert-back();
+}
+
+section#flexibleFundingMod {
+	background-color: rgba(34,34,34,1) !important;
+	background-image: none !important;
+	@include invert-back();
+}
+
+a.video-section__btn {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+
+a.in-page-anchors__cta {
+	background: $theme-button-background !important;
+}
+
+section#A16 > div:nth-child(1) {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+}
+
+.video-image {
+	filter: none !important;
+	background: transparent !important;
+}
+
+section#A12 > div > div > div > a.pypl-btn--outline-blue {
+	background: $theme-button-background !important;
+	color: $theme-button-text !important;
+	filter: none !important;	
+}
+
+section#A6 {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+}
+
+section#A22 > div:nth-child(1) {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+}
+
+section#A23,
+section#A24,
+section#A25 {
+	filter: none !important;
+}
+
+section#A1 > div:nth-child(1) {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+	color: white !important;
+}
+
+section#A4 {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+	color: white !important;
+}
+
+section#A17 {
+	filter: none !important;
+}
+
+section#A4.panels.theme-background-color-white {
+	@include invert-back();
+}
+
+section.faq {
+	@include invert-back();
+}
+
+section#A6.editorial.theme-background-color-light {
+	@include invert-back();
+	color: white !important;
+}
+
+section#A14 {
+	filter: none !important;
+}
+
+section#A10 {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+	color: white !important;
+}
+
+section#A10.editorial.theme-background-color-light {
+	@include invert-back();
+}
+
+section.disclosure {
+	@include invert-back();
+	color: white !important;
+}
+
+section#A36 {
+	filter: none !important;
+	color: black !important;
+}
+
+a.phone-line-white {
+	@include invert-back();
+}
+
+section#A2 > div > div.panels__container > div > div > div > div > p.icon-panel__paragraph > a {
+	filter: none !important;
+}
+
+p.faq-content__paragraph > a {
+	@include invert-back();
+}
+
+section#A6 > div > div.features__footer > div > p > a {
+	@include invert-back();
+}
+
+section#A4.simple-panels-accordion {
+	@include invert-back();
+}
+
+section#A6.statement.text-xs-center.theme-background-color-light {
+	@include invert-back();
+}
+
+section#A14.disclosure.theme-background-color-white {
+	color: black !important;
+}
+
+section.info-hero {
+	@include invert-back();
+}
+
+section#A26.disclosure.theme-background-color-white {
+	filter: none !important;
+	color: black !important;
+}
+
+section#A12.disclosure.theme-background-color-white {
+	filter: none !important;
+	color: black !important;
+}
+
+section#A20.pullout.theme-background-image-light {
+	filter: none !important;
+}
+
+section#A5.editorial.theme-background-image-dark {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+	@include invert-back();
+}
+
+section#A6.editorial.theme-background-color-white {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+	color: white !important;
+	@include invert-back();
+}
+
+section#A7.editorial.theme-background-image-dark {
+	background-image: none !important;
+	background-color: rgba(34,34,34,1) !important;
+	color: white !important;
+	@include invert-back();
+}
+
+section#A11 > div > div > div > a.pullout__btn--center {
+	filter: none !important;
+}
+
+.Alert--help {
+	border-color: $theme-button-background !important;
+}
+
+span.GlyphIcon::before {
+	color: $theme-button-background !important;
+}
+
+.icon-community {
+	@include invert-back();
+}

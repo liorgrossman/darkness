@@ -5,7 +5,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-body {
+body, .gh-header, div[role="main"] > div {
     background-color: $theme-background !important;
 }
 
@@ -14,6 +14,10 @@ button {
     background-color: $theme-button-background !important;
     color: $theme-button-text !important;
     border-color: $theme-border !important;
+
+    &.btn-octicon {
+        background-color: transparent !important;
+    }
 }
 
 // All inputs
@@ -34,12 +38,12 @@ svg {
 }
 
 // Links
-a:not(.label) {
+a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
     color: $theme-link !important;
-    &:visited:not(.label) {
+    &:visited:not(.label), &:visited:not(.IssueLabel), &:visited:not(.IssueLabel--big), &:visited(.btn) {
         color: $theme-link-visited !important;
     }
-    &:active:not(.label) {
+    &:active:not(.label), &:active:not(.IssueLabel), &:active:not(.IssueLabel--big), &:active(.btn) {
         color: $theme-link-active !important;
     }
 }
@@ -72,7 +76,7 @@ a:not(.label) {
 }
 
 // Emojies
-.emoji-inner {
+.emoji-inner, g-emoji {
     @include invert-back();
 }
 
@@ -81,11 +85,17 @@ a:not(.label) {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 //top toolbar
 .header,
+.Header-old,
 .header > div,
-.js-header-wrapper > .Header {
+.js-header-wrapper > .Header,
+.gh-header .gh-header-sticky.is-stuck+.gh-header-shadow {
     background-color: $theme-background-toolbar !important;
     border-color: $theme-border !important;
     color: $theme-text !important;
+}
+// Dashboard sidemenu
+.dashboard-sidebar {
+    background-color: $theme-background-box !important;
 }
 
 // "This repository"
@@ -97,7 +107,8 @@ a:not(.label) {
 
 // Search bar
 .js-header-wrapper > .Header input[type="text"].header-search-input,
-.header input[type="text"].header-search-input {
+.header input[type="text"].header-search-input,
+.Header .header-search-wrapper{
 	background: #cbc9c8 !important;
 }
 .js-header-wrapper > .Header input[type="text"].header-search-input::-webkit-input-placeholder,
@@ -143,7 +154,7 @@ a:not(.label) {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // dashboard page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-// right side repositories sidebar
+// right side repositories sidebar and left dashboard-menu
 .dashboard-sidebar > div,
 .dashboard-sidebar > div > h3,
 .dashboard-sidebar > div > div,
@@ -239,6 +250,22 @@ h3.bg-white {
     background-color: transparent !important;
 }
 
+.Box {
+    background-color: $theme-background-box !important;
+}
+
+// Notice
+.js-notice.Box,
+.js-notice {
+    border-color: darken($theme-tooltip-background, 10%) !important;
+    background-color: $theme-tooltip-background !important;
+    color: $theme-tooltip-text !important;
+}
+.js-notice a,
+.js-notice h2 {
+    color: darken($theme-tooltip-text, 15%) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Main Home Page
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -312,6 +339,11 @@ a.btn,a.btn:visited,a.btn:hover,
     background: $theme-button-background !important;
     color: $theme-button-text !important;
     border-color: $theme-border !important;
+}
+
+// social buttons (watch, star, fork)
+a.social-count {
+    color: $theme-text !important;
 }
 
 //contributions legend undo the tile colors
@@ -501,7 +533,6 @@ button.muted-link {
 }
 
 .timeline-comment,
-.comment-form-head, //comment header
 .form-control, //text area for comments
 .drag-and-drop,
 .comment-body {
@@ -510,8 +541,23 @@ button.muted-link {
     color: $theme-text !important;
 }
 
-.timeline-comment {
-    background: none !important;
+.timeline-comment-wrapper .timeline-comment.current-user:before,
+.timeline-comment-wrapper>.timeline-comment:before, 
+.timeline-new-comment .timeline-comment:before {
+    border-right-color: $theme-background-box !important;
+}
+.timeline-comment-wrapper .timeline-comment.current-user:after,
+.timeline-comment-wrapper>.timeline-comment:after, 
+.timeline-new-comment .timeline-comment:after {
+    border-right-color: $theme-background-toolbar !important;
+}
+
+.comment-form-head .tabnav-tab.selected{
+    background: $theme-background-box !important;
+}
+
+.author {
+    background-color: transparent !important;
 }
 
 //selecting them
@@ -523,6 +569,7 @@ button.muted-link {
 
 //header for timeline
 .timeline-comment > .timeline-comment-header,
+.comment-form-head, //comment header
 .timeline-comment-action {
     background: $theme-background-toolbar !important;
     border-color: $theme-border !important;
@@ -569,11 +616,20 @@ button.muted-link {
 }
 
 // Issue state
-.State, .label {
+.State, .label, .IssueLabel, .IssueLabel--big {
     @include invert-back();
 }
-a.label {
-    color: white !important
+.discussion-item-closed .discussion-item-icon, 
+.discussion-item-review.is-rejected.is-writer .discussion-item-icon,
+.discussion-item-reopened .discussion-item-icon {
+    @include invert-back();
+}
+
+// Edited comment
+summary.js-notice {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: $theme-link !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -807,7 +863,7 @@ button.flash-close {
     background-color: transparent !important;
 }
 button.flash-close svg {
-    color: $theme-button-background !important;
+    color: invert-back-color($theme-tooltip-text) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -843,10 +899,7 @@ svg.octicon.octicon-check {
 .table-list-item svg {
     background: transparent !important;
 }
-.labels-list-item .label {
-    -webkit-filter: invert(1) !important;
-}
-.labels-list-item .label span {
+.labels-list-item .label, .IssueLabel, .IssueLabel--big {
     -webkit-filter: invert(1) !important;
 }
 .label-edit label {
@@ -858,15 +911,29 @@ svg.octicon.octicon-check {
 .select-menu-item-text span.color {
     -webkit-filter: invert(1) !important;
 }
-.labels .label {
+.labels .label, .IssueLabel, .IssueLabel--big {
     -webkit-filter: invert(1) !important;
+}
+.label[style*="color: #ffffff"], .IssueLabel[style*="color: #ffffff"], .IssueLabel a[style*="color: #ffffff"], .IssueLabel--big[style*="color: #ffffff"] {
     color: white !important;
+}
+.label[style*="color: #000000"], .IssueLabel[style*="color: #000000"], .IssueLabel a[style*="color: #000000"], .IssueLabel--big[style*="color: #000000"] {
+    color: black !important;
+}
+.js-new-label-swatches button{
+    -webkit-filter: invert(1) !important;
 }
 .discussion-item .label-color {
     -webkit-filter: invert(1) !important;
 }
 .discussion-item .label-color a {
     color: white !important;
+}
+.label-select-menu-item .color {
+    -webkit-filter: invert(1) !important;
+}
+.label-description .muted-link {
+    background: transparent !important;
 }
 
 .closed-banner {

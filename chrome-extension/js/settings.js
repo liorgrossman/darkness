@@ -34,12 +34,10 @@ if (!DarknessSettingsLoader) {
 		// User settings & stats
 		var settings = JSON.parse('@@SETTINGS@@');
 		var STATS = JSON.parse('@@STATS@@');
+		var DEV_RATING = parseInt('@@DEV_RATING@@') || 0;
 
 		// Determine the payment platform to use
 		var PAYMENT_PLATFORM = 'paypal';
-		if (location.hash.indexOf('darkness_force_payment=google') > -1) PAYMENT_PLATFORM = 'google';
-		if (location.hash.indexOf('darkness_force_payment=paypal') > -1) PAYMENT_PLATFORM = 'paypal';
-
 
 		//--------------------------------------------------------------------------------------------------------------------------------------------
 		// Helper Functions
@@ -148,18 +146,20 @@ if (!DarknessSettingsLoader) {
 		var dialogReason = 'unknown'; // Why was the upgrade dialog invoked? (for analytics)
 		var dialogAmount = 0; // How much the user paid? (for analytics)
 
-		// Payment Step 1: Called when a user clicks the "buy" button
-		var buyClick = function() {
-			if (PAYMENT_PLATFORM == 'paypal') {
-				loadPayPalPaymentDialog();
-			} else {
-				loadGooglePaymentDialog();
+		// Helper function
+		var getHashCode = function(str) {
+			var hash = 0, i, chr;
+			if (str.length === 0) return hash;
+			for (i = 0; i < str.length; i++) {
+				chr = str.charCodeAt(i);
+				hash = ((hash << 5) - hash) + chr;
+				hash |= 0; // Convert to 32bit integer
 			}
+			return hash;
 		};
 
-
 		// Payment Step 2: Load PayPal's payment dialog for the specified product SKU
-		var loadPayPalPaymentDialog = function() {
+		var openCheckoutPage = function() {
 			var prod = ENVIRONMENT == 'production';
 
 			// Where to submit the form to?
@@ -168,8 +168,8 @@ if (!DarknessSettingsLoader) {
 			
 			// What's the PayPal button ID?
 			var paypalButtonId = '';
-			if (SKU == "1") paypalButtonId = prod ? 'Z9BBUN4PDFGKQ' : 'JFYWCRAJW64EN';
-			if (SKU == "2") paypalButtonId = prod ? 'U59U55TCYJMHQ' : 'LMQAHVFLAGHK2';
+			if (SKU == "1") paypalButtonId = prod ? 'MX3GCPAJT965S' : 'JFYWCRAJW64EN';
+			if (SKU == "2") paypalButtonId = prod ? 'K2X39YZV72VFC' : 'LMQAHVFLAGHK2';
 			$('#drk_paypal_button_id').attr('value', paypalButtonId);
 
 			// Add custom data to each PayPal transaction
@@ -180,11 +180,22 @@ if (!DarknessSettingsLoader) {
 			$('#drk_paypal_custom').attr('value', JSON.stringify(custom));
 
 			// Hide upgrade dialog, and show "waiting" dialog instead
-			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
-			$('.drk_pay_waiting').addClass('visible');
+			$('.drk_get_pro').removeClass('visible');
+			setTimeout(function() {
+				$('.drk_pay_waiting').addClass('visible');
+			}, 500);			
 
 			// Submit the form
-			$("#drk_paypal_form").trigger("submit");
+			if (PAYMENT_PLATFORM == 'paypal') {
+				$("#drk_paypal_form").trigger("submit");
+			} else if (PAYMENT_PLATFORM == 'stripe') {
+				var checkoutParams = {custom: custom, checksum: SKU};
+				var checkoutDomain = ENVIRONMENT != 'production' ? "http://local.darkness.com:3000" : "https://darkness.app"
+				var token = window.btoa(unescape(encodeURIComponent(JSON.stringify(checkoutParams))));
+				var hash = window.btoa(unescape(encodeURIComponent(getHashCode(token.toString()))));
+				var checkoutPage = checkoutDomain + "/secure/pay/?token=" + encodeURIComponent(token+'_'+hash);
+				window.open(checkoutPage, '_blank');
+			}
 
 			// Then start polling for PayPal's answer
 			chrome.runtime.sendMessage({ action: "startPollingPayPal", transactionId: transactionId }, function(response) {
@@ -198,29 +209,6 @@ if (!DarknessSettingsLoader) {
 				}
 			});
 		};
-
-		// Payment Step 2: Load Google Payment's payment dialog for the specified product SKU
-		var loadGooglePaymentDialog = function(sku) {
-			google.payments.inapp.buy({
-				'parameters': { 'env': 'prod' }, // prod / sandbox / test
-				'sku': sku,
-				'success': function(buyResponse) {
-					onPaySuccess(buyResponse);
-				},
-				'failure': function(buyResponse) {
-					// Google Payment bug: it often returns failure even though payment was successful
-					// Who do we know? If buyResponse contains checkoutOrderId it means the payment was successful
-					if (buyResponse.checkoutOrderId && typeof(buyResponse.checkoutOrderId) == "string" &&
-						buyResponse.checkoutOrderId.length > 3) {
-						onPayResponse(true, buyResponse);
-					} else {
-						var failureReason = (buyResponse && buyResponse.response) ? buyResponse.response.errorType : JSON.stringify(buyResponse);
-						onPayResponse(false, buyResponse, failureReason);
-					}
-				}
-			});
-		};
-
 
 		// Payment Step 3: Called when a user payment has either succeeded or failed (any platform)
 		var onPayResponse = function(success, buyResponse, failureReason) {
@@ -269,7 +257,7 @@ if (!DarknessSettingsLoader) {
 
 		// Payment Step 3 (alternative): Called when a user submits a promo code
 		var submitPromoCode = function() {
-			var $dialog = $('.drk_get_pro.sku-'+SKU)
+			var $dialog = $('.drk_get_pro')
 			var promo = $dialog.find('.drk_promo_input').val().trim();			
 			$dialog.find('.drk_promo_submit').val('Checking...');
 			// Ask the background to check with the code with the server
@@ -303,7 +291,7 @@ if (!DarknessSettingsLoader) {
 			log('pay finished', success, ASSETS.TYPE);
 
 			// Hide all open dialogs
-			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
+			$('.drk_get_pro').removeClass('visible');
 			$('.drk_pay_waiting').removeClass('visible');
 			$('.drk_settings').removeClass('visible');
 
@@ -411,6 +399,14 @@ if (!DarknessSettingsLoader) {
 			});
 		};
 
+		// Show the upgrade dialog
+		var showUpgradeDialog = function() {
+			// Hide/show SKU-specific elements
+			$('.drk_get_pro .drk_show_only_on_sku').removeClass('show');
+			$('.drk_get_pro .drk_show_only_on_sku.drk_sku'+SKU).addClass('show');
+			// Show the dialog
+			$('.drk_get_pro').addClass('visible');
+		}
 
 		// Start theme preview mode
 		var startPreviewMode = function() {
@@ -418,13 +414,15 @@ if (!DarknessSettingsLoader) {
 
 			// Show preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').addClass('visible');
-			$('.drk_get_pro.sku-'+SKU).addClass('visible');
+			showUpgradeDialog();
 			$('.drk_use_this_for_all_button').addClass('disabled');
 
 			// Analytics
 			repToFunnel('buy-dialog-shown');
 			repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
-			repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
+			// Account for both paypal and stripe in the buy dialog analytics
+			repEventByUser(FUNNEL_PREFIX + 'paypal', 'buy-dialog-shown');
+			repEventByUser(FUNNEL_PREFIX + 'stripe', 'buy-dialog-shown');
 		};
 
 		// Revert from preview mode to no preview
@@ -435,7 +433,7 @@ if (!DarknessSettingsLoader) {
 
 			// Hide preview mode UI (upgrade dialog, watermark, etc.)
 			$('.drk_preview_mark').removeClass('visible');
-			$('.drk_get_pro.sku-'+SKU).removeClass('visible');
+			$('.drk_get_pro').removeClass('visible');
 			$('.drk_use_this_for_all_button').removeClass('disabled');
 
 			if (switchToAllowedTheme) {
@@ -477,6 +475,7 @@ if (!DarknessSettingsLoader) {
 			log(prev ? "Replacing HTML" : "Appending HTML");
 			var d = document.createElement('div');
 			d.setAttribute('id', ID_SETTINGS_HTML);
+			// Assignment to innerHTML is safe since the HTML is provided directly from the background script
 			d.innerHTML = ASSETS.HTML;
 			document.body.appendChild(d);
 		};
@@ -501,11 +500,11 @@ if (!DarknessSettingsLoader) {
 
 		// Fill and initialize all the elements of the settings panel
 		var initializeSettingsPanelInterfaceElements = function() {
-			var title = 'Darkness';
-			if (ENVIRONMENT == 'development') title = 'Darkness Developer Edition';
-			else if (ENVIRONMENT == 'staging') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '') + '*';
-			else if (ENVIRONMENT == 'production') title = 'Darkness' + (ASSETS.TYPE == 'p' ? ' Pro' : '');
-			$('.drk_app_name').html(title);
+			var ver = 'regular';
+			if (ENVIRONMENT == 'development') ver = 'dev';
+			else ver = (ASSETS.TYPE == 'p' ? 'pro' : 'regular');
+			$('.drk_app_logo').attr('data-version', ver);
+
 			$('.drk_settings .sku_replace').addClass('sku-'+SKU).removeClass('sku_replace');
 			if (ENVIRONMENT == 'development')  { 
 				// Darkness Development Edition users:
@@ -556,12 +555,16 @@ if (!DarknessSettingsLoader) {
 			}
 
 			// CTA for developers
-			if (siteInfo.siteForDevelopers) {
-				$('.drk_developer_add .text').html("Developer? Get all Darkness Pro features");
-				$('.drk_developer_add').addClass('drk_bold');
+			$('.drk_developer_add').removeClass('drk_bold');
+			if (ENVIRONMENT == 'development') {
+				$('.drk_developer_add .text').html("Fix CSS / skin your favorite sites");
 			} else {
-				$('.drk_developer_add .text').html("Developer? Add skins to more websites");
-				$('.drk_developer_add').removeClass('drk_bold');
+				if (DEV_RATING > 1) {
+					$('.drk_developer_add').addClass('drk_bold');
+					$('.drk_developer_add .text').html("Edit CSS / skin your favorite sites!");
+				} else {
+					$('.drk_developer_add .text').html("Developer? Fix CSS or add more skins");
+				}
 			}
 
 			// Show/hide youtube theme
@@ -667,45 +670,21 @@ if (!DarknessSettingsLoader) {
 				toggleShare();
 			});
 
-			// Send skin bug report button
-			$('.drk_settings .drk_bug_report_btn').unbind('click').click(function() {
-				repEventByUser('user-action', 'bug-report-btn-click');
-				var to = 'Darkness Support <support@darkness.app>';
-				var subj = 'Darkness Bug Report';
-				var body = '[Please send your bug report in English]\n\n________\nSystem Information:\nDarkness Version: ' +
-					chrome.runtime.getManifest().version + (ASSETS.TYPE == 'p' ? '[2]' : '[1]') +
-					"\nBrowser: " + navigator.userAgent +
-					'\nCurrent Website: ' + SITE + 
-					'\nCurrent URL: ' + document.location.href +
-					'\nCurrent Theme: ' + THEME;
-				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
-					'&body=' +
-					encodeURIComponent(body);
-				var win = window.open(url, '_blank');
-				win.focus();
-			});
-
 			// Send feedback button
 			$('.drk_settings .drk_feedback_btn').unbind('click').click(function(e) {
 				repEventByUser('user-action', 'feedback-btn-click');
-				var to = 'Darkness Support <support@darkness.app>';
-				var subj = 'Darkness Feedback';
+				var params = {};
+				params['format'] = 1;
+				params['drkVer'] = chrome.runtime.getManifest().version;
+				params['drkType'] = ASSETS.TYPE;
+				params['drkEnv'] = ENVIRONMENT;
+				params['curSite'] = SITE;
+				params['curUrl'] = document.location.href.slice(0, 1000);
+				params['curTheme'] = THEME;
 				if (e.altKey) {
-					subj = 'Darkness System Report';
+					console.log("Debugging Information:\n\n" + JSON.stringify(params) + '\n\n' + JSON.stringify(settings) + '\n\n' + JSON.stringify(STATS));
 				}
-				var body = '[Please send your feedback in English]\n\n________\nSystem Information (for bug reports):\nDarkness Version: ' +
-					chrome.runtime.getManifest().version + (ASSETS.TYPE == 'p' ? '[2]' : '[1]') +
-					"\nBrowser: " + navigator.userAgent +
-					'\nCurrent Website: ' + SITE + 
-					'\nCurrent URL: ' + document.location.href +
-					'\nCurrent Theme: ' + THEME;
-				if (e.altKey) {
-					body += '\n\n________\nDebugging Information:\n' + JSON.stringify(settings);
-					body += '\n\n' + JSON.stringify(STATS);
-				}
-				var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
-					'&body=' +
-					encodeURIComponent(body);
+				var url = 'https://darkness.app/contact/?darkness_info=' + encodeURIComponent(JSON.stringify(params));
 				var win = window.open(url, '_blank');
 				win.focus();
 			});
@@ -721,7 +700,10 @@ if (!DarknessSettingsLoader) {
 			// Rate button
 			$('.drk_settings .drk_rate_btn').unbind('click').click(function() {
 				repEventByUser('user-action', 'rate-btn-click');
-				var url = 'https://goo.gl/oMLASO';
+				var url = 'https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm/reviews';
+				if (BROWSER == 'firefox') {
+					url = 'https://addons.mozilla.org/en-US/firefox/addon/darkness-dark-themes/';
+				}
 				var win = window.open(url, '_blank');
 				win.focus();
 			});
@@ -745,6 +727,8 @@ if (!DarknessSettingsLoader) {
 				win.focus();
 			});
 
+			
+			
 			// Upgrade button
 			$('.drk_settings .drk_upgrade_btn').unbind('click').click(function() {
 				// Analytics
@@ -752,11 +736,13 @@ if (!DarknessSettingsLoader) {
 				dialogReason = 'upgrade-btn';
 				repToFunnel('buy-dialog-shown');
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
-				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-dialog-shown');
+				// Account for both paypal and stripe in the buy dialog analytics
+				repEventByUser(FUNNEL_PREFIX + 'paypal', 'buy-dialog-shown');
+				repEventByUser(FUNNEL_PREFIX + 'stripe', 'buy-dialog-shown');
 				// Close all dialogs
 				$('.drk_dialog').removeClass('visible');
 				// Open upgrade dialog
-				$('.drk_get_pro.sku-'+SKU).addClass('visible');
+				showUpgradeDialog();
 			});
 
 			// Developer Button #1 ("Developer? Help us fix the CSS")
@@ -770,11 +756,18 @@ if (!DarknessSettingsLoader) {
 
 			// Developer Button #2 ("Develop skins for more website")
 			$('.drk_settings .drk_developer_add').unbind('click').click(function() {
-				repEventByUser('user-action', 'dev-add-btn-fix');
-				// Close all dialogs
-				$('.drk_dialog').removeClass('visible');
-				// Open developer dialog
-				$('.drk_join_developers').addClass('visible');
+				if (ENVIRONMENT == 'development') {
+					repEventByUser('user-action', 'dev-contribute-btn-fix');
+					var url = 'https://github.com/liorgrossman/darkness/blob/master/CONTRIBUTING.md';
+					var win = window.open(url, '_blank');
+					win.focus();
+				} else {
+					repEventByUser('user-action', 'dev-add-btn-fix');
+					// Close all dialogs
+					$('.drk_dialog').removeClass('visible');
+					// Open developer dialog
+					$('.drk_join_developers').addClass('visible');
+				}
 			});
 
 			// "Use this skin for all websites" button
@@ -819,10 +812,10 @@ if (!DarknessSettingsLoader) {
 		};
 
 		var loadUpgradeDialogEventHandlers = function() {
-
-			// Buy button
-			$('.drk_get_pro.sku-'+SKU+' .drk_buy_life').unbind('click').click(function() {
+			var openPayment = (paymentPlatform) => {
+				PAYMENT_PLATFORM = paymentPlatform;
 				// Analytics
+				repEventByUser('user-action', 'pay-button-click-' + paymentPlatform);
 				dialogAmount = '4.99life';
 				if (SKU == 2) dialogAmount = '2.99life';
 				repToFunnel('buy-now-clicked');
@@ -830,9 +823,19 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-' + dialogAmount);
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-now-click-all');
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'buy-now-click-all');
-				// Trigger purchase dialog
-				buyClick();
+				openCheckoutPage();
+			};
+
+			// Buy with Credit Card button
+			$('.drk_get_pro .drk_buy_stripe').unbind('click').click(function() {
+				openPayment('stripe');
 			});
+
+			// Buy with PayPal button
+			$('.drk_get_pro .drk_buy_paypal').unbind('click').click(function() {
+				openPayment('paypal');
+			});
+
 			// Upgrade dialog -> Got promo?
 			$('.drk_show_feature_comparison').unbind('click').click(function(e) {
 				var url = "https://darkness.app/upgrade/";
@@ -841,9 +844,15 @@ if (!DarknessSettingsLoader) {
 
 			// Upgrade dialog -> Got promo?
 			$('.drk_promo_link').unbind('click').click(function(e) {
-				$('.drk_promo_link').removeClass('visible');
-				$('.drk_promo_form').addClass('visible');
-				$('.drk_promo_input').focus();
+				var isVisible = $('.drk_promo_form').hasClass('visible');
+				if (isVisible) {
+					$('.drk_promo_link').addClass('visible');
+					$('.drk_promo_form').removeClass('visible');
+				} else {
+					$('.drk_promo_link').removeClass('visible');
+					$('.drk_promo_form').addClass('visible');
+					$('.drk_promo_input').focus();
+				}
 			});
 
 			// Hide link
@@ -865,6 +874,10 @@ if (!DarknessSettingsLoader) {
 			$('.drk_promo_submit').unbind('click').click(function(e) {
 				submitPromoCode();
 			});
+			$('.drk_promo_cancel').unbind('click').click(function(e) {
+				$('.drk_promo_link').addClass('visible');
+				$('.drk_promo_form').removeClass('visible');
+			});
 
 			// Why did you cancel payment dialog -> I don't want to upgrade
 			$('.drk_cancel_dont_want').unbind('click').click(function(e) {
@@ -885,26 +898,21 @@ if (!DarknessSettingsLoader) {
 				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
 				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
 
-				/* if (PAYMENT_PLATFORM == 'paypal' && SKU == 1) {
-					// PayPal failed? Let user pay with Google Payments
-					PAYMENT_PLATFORM = 'google';
-					buyClick();
-				} else {
-					// PayPal AND Google failed? Send a support email
-					var to = 'Darkness Support <support@darkness.app>';
-					var paymentMethodName = PAYMENT_PLATFORM == 'paypal' ? 'PayPal' : 'Google Payment';
-					var subj = 'Problem paying with ' + paymentMethodName;
-					var body =
-						"Please help us solve this problem by answering the following questions (in English, please):\n\n" +
-						"1. Did the " + paymentMethodName + " window load properly? (If not, what error message did you receive?)\n\n" +
-						"2. Can you please describe your problem with payment?\n\n" +
-						"3. Is there any other payment platform you would prefer instead?\n\n" +
-						'Darkness version: ' + chrome.runtime.getManifest().version + (ASSETS.TYPE == 'p' ? '[2]' : '[1]');
-					var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subj) +
-						'&body=' +
-						encodeURIComponent(body);
-					var win = window.open(url, '_blank');
-				} */
+				showUpgradeDialog();
+
+				var win = window.open('https://darkness.app/payment-canceled/?reason=payment-problem', '_blank');
+			});
+
+			// Why did you cancel payment dialog -> dialog closed
+			$('.drk_cancel_payment_close').unbind('click').click(function(e) {
+				closeActiveDialog(e);
+
+				var cancelReason = 'dialog-closed';
+				repToFunnel('pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + dialogReason, 'pay-cancel-' + cancelReason);
+				repEventByUser(FUNNEL_PREFIX + PAYMENT_PLATFORM, 'pay-cancel-' + cancelReason);
+
+				var win = window.open('https://darkness.app/payment-canceled/?reason=dialog-closed', '_blank');
 			});
 		};
 
@@ -921,7 +929,7 @@ if (!DarknessSettingsLoader) {
 
 
 			// X button clicked (for Upgrade Dialog)
-			$('.drk_get_pro.sku-'+SKU+' .drk_dialog_close').unbind('click').click(function(e) {
+			$('.drk_get_pro .drk_dialog_close').unbind('click').click(function(e) {
 				$('.drk_promo_form').removeClass('visible');
 				$('.drk_promo_link').addClass('visible');
 				closeActiveDialog(e);
@@ -1010,9 +1018,22 @@ if (!DarknessSettingsLoader) {
 					loadUpgradeDialogEventHandlers();
 					loadOtherDialogsEventHandlers();
 
-					if ($('body').attr('drk-on-start') == 'upgrade-dialog') {
+					if ($('body').attr('data-drk-on-start') == 'upgrade-dialog') {
 						console.log('Loading upgrade dialog on start');
-						$('.drk_settings .drk_upgrade_btn').trigger('click');
+						// Analytics
+						repEventByUser('user-action', 'thank-you-btn-click');
+						dialogReason = 'thank-you-btn';
+						repToFunnel('buy-dialog-shown');
+						repEventByUser(FUNNEL_PREFIX + dialogReason, 'buy-dialog-shown');
+						// Account for both paypal and stripe in the buy dialog analytics
+						repEventByUser(FUNNEL_PREFIX + 'paypal', 'buy-dialog-shown');
+						repEventByUser(FUNNEL_PREFIX + 'stripe', 'buy-dialog-shown');
+						// Close all dialogs
+						$('.drk_dialog').removeClass('visible');
+						// Open upgrade dialog
+						showUpgradeDialog();
+						// Hide settings dialog
+						$('.drk_settings .drk_close').trigger('click');
 					}
 
 					if (onlyAskDevelopers) {

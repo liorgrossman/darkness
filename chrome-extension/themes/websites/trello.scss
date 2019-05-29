@@ -13,7 +13,15 @@
 	.pop-over,
 	.window-overlay,
 	#surface,
-	.is-due-past {
+	.badge.is-due-past,
+	.badge.is-due-now,
+	.card-detail-badge.is-due-past,
+	.card-detail-badge.is-due-now,
+	.button-link .on,
+	.badge.is-due-complete,
+	.card-detail-badge.is-due-complete,
+	.quick-card-editor,
+	.ui-droppable.ui-sortable-helper {
 		@include invert-back();
 	}
 }
@@ -92,6 +100,7 @@ a.job-listing{
 	background: $theme-button-background !important;
 	box-shadow: 0 0 0 $theme-button-background !important;
 }
+._2Xk8hpIqkjJ49i._1yvgNxMUZtEUOI,
 .js-star-board {
 	@include invert-back();
 }
@@ -127,7 +136,10 @@ a:visited {
 .member-boards-view.super-home {
 	background: $theme-background !important;
 }
-.up-next-card-list-item > div, .dhmfCv, .hiqYnm {
+.up-next-card-list-item > div,
+.dhmfCv,
+.hiqYnm,
+.krepCm {
 	background: $theme-background-box !important;
 }
 .canonical-comment > div > div > span {
@@ -138,10 +150,10 @@ a:visited {
 	color: $theme-highlighted !important;
 }
 .board-tile[style*="background-image:"] .board-tile-details-name {
-	color: invert-back-color($theme-highlighted) !important;
+	color: white !important;
 }
 .board-tile-details-name {
-	color: $theme-highlighted !important;
+	color: black !important;
 }
 .canonical-stretch {
 	@include invert-back();
@@ -160,6 +172,19 @@ a:visited {
 }
 .home-left-sidebar-container .home-tab-container .home-tab.selected {
 	background: $theme-highlighted !important;
+}
+.home-right-sidebar-container button {
+	background-color: transparent !important;
+}
+span.tile__selected__1yvgN {
+	@include invert-back();
+}
+.idhQuy,
+.hEURDk {
+	@include invert-back();
+}
+.cXRfpp {
+	background: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -186,6 +211,7 @@ body, .body-tabbed-page {
 
 // Blue elements
 body[style*="background-color: rgb(#{$trello-rgb-blue});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-blue});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-blue});"],
 .background-box[style*="background-color: #{$trello-blue};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-blue});"],
@@ -197,6 +223,7 @@ body[style*="background-color: rgb(#{$trello-rgb-blue});"],
 }
 // Yellow elements
 body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 .background-box[style*="background-color: #{$trello-yellow};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-yellow});"],
@@ -208,6 +235,7 @@ body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
 }
 // Green elements
 body[style*="background-color: rgb(#{$trello-rgb-green});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-green});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-green});"],
 .background-box[style*="background-color: #{$trello-green};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-green});"],
@@ -219,6 +247,7 @@ body[style*="background-color: rgb(#{$trello-rgb-green});"],
 }
 // Red elements
 body[style*="background-color: rgb(#{$trello-rgb-red});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-red});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-red});"],
 .background-box[style*="background-color: #{$trello-red};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-red});"],
@@ -230,6 +259,7 @@ body[style*="background-color: rgb(#{$trello-rgb-red});"],
 }
 // Purple elements
 body[style*="background-color: rgb(#{$trello-rgb-purple});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-purple});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-purple});"],
 .background-box[style*="background-color: #{$trello-purple};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-purple});"],
@@ -241,6 +271,7 @@ body[style*="background-color: rgb(#{$trello-rgb-purple});"],
 }
 // Pink elements
 body[style*="background-color: rgb(#{$trello-rgb-pink});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-pink});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-pink});"],
 .background-box[style*="background-color: #{$trello-pink};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-pink});"],
@@ -252,6 +283,7 @@ body[style*="background-color: rgb(#{$trello-rgb-pink});"],
 }
 // Mint elements
 body[style*="background-color: rgb(#{$trello-rgb-mint});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-mint});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-mint});"],
 .background-box[style*="background-color: #{$trello-mint};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-mint});"],
@@ -263,6 +295,7 @@ body[style*="background-color: rgb(#{$trello-rgb-mint});"],
 }
 // Cyan elements
 body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 .background-box[style*="background-color: #{$trello-cyan};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-cyan});"],
@@ -274,6 +307,7 @@ body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
 }
 // Gray elements
 body[style*="background-color: rgb(#{$trello-rgb-gray});"],
+#trello-root[style*="background-color: rgb(#{$trello-rgb-gray});"],
 #classic-body[style*="background-color: rgb(#{$trello-rgb-gray});"],
 .background-box[style*="background-color: #{$trello-gray};"],
 .js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-gray});"],
@@ -317,8 +351,16 @@ body[style*="background-image:"] > #boards-drawer {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Icons
-.icon-search {
+.icon-search,
+span.pv4EOUnR9L6jBk,
+._3Equ0AwjtQdiIh,
+.blnwmcZ7xZI8tg ._1ueCKUcugKYqhU {
 	color: black !important;
+}
+
+// User avatar
+.bXFhPW {
+	@include invert-back();
 }
 
 // Logos
@@ -373,6 +415,9 @@ body[style*="background-image:"] > #boards-drawer {
 .window {
 	background-color: $theme-background !important;
 }
+.deRXfE {
+	background-color: $theme-background-box !important;
+}
 
 // Card and list titles
 .mod-card-back-title,
@@ -402,6 +447,19 @@ body[style*="background-image:"] > #boards-drawer {
 .body-board-view #header {
 	background: rgba(255,255,255,.15) !important;
 }
+// Boards-menu
+._1uIlQNJLg02V8T {
+	background-color: $theme-background-toolbar !important;
+}
+
+// User-menu
+._3MObgarisLfMFh,
+._2b-xS2onqCL250 {
+	background-color: $theme-background-toolbar !important;
+}
+._2b-xS2onqCL250:active, ._2b-xS2onqCL250:hover {
+	background-color: lighten($theme-background-toolbar, 10%) !important;
+}
 
 // Download section
 .promo-platforms-app-item-image,
@@ -410,6 +468,9 @@ body[style*="background-image:"] > #boards-drawer {
 }
 
 // Notifications
+._3x-nkpDCkyBbHg, .notification-actions {
+	background-color: $theme-background-toolbar !important;
+}
 #notification div.app-alert-item {
 	background-color: $theme-notices !important;
 	color: $theme-tooltip-text !important;
@@ -423,6 +484,45 @@ body[style*="background-image:"] > #boards-drawer {
 // Viewing attatchments
 iframe.attachment-viewer-frame-preview-iframe {
 	-webkit-filter: invert(0) !important;
+}
+
+// React-buttons on home
+.eykGfP {
+	background: transparent !important;
+}
+
+// Notification drawer
+.window.mod-notifications.mod-cards {
+	background-color: $theme-background-toolbar !important;
+}
+.notification-actions span {
+	color: $theme-url !important;
+}
+
+// Notifications
+.phenom.mod-is-card, 
+.phenom.mod-is-card.mod-unread, 
+.phenom.mod-is-not-card, 
+.phenom.mod-is-not-card.mod-unread {
+	background: $theme-background-box !important;
+}
+
+.phenom.mod-is-card .canonical-card div:first-child, 
+.phenom.mod-is-card.mod-unread .canonical-card div:first-child, 
+.phenom.mod-is-not-card .canonical-card div:first-child, 
+.phenom.mod-is-not-card.mod-unread .canonical-card div:first-child {
+	@include invert-back();
+}
+.phenom.mod-is-card .canonical-card div:first-child > *, 
+.phenom.mod-is-card.mod-unread .canonical-card div:first-child > *, 
+.phenom.mod-is-not-card .canonical-card div:first-child > *, 
+.phenom.mod-is-not-card.mod-unread .canonical-card div:first-child > * {
+	@include invert-back();
+}
+
+// Due soon on notifications
+.jjCnMv {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

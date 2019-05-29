@@ -1,24 +1,25 @@
 # Contriburing to Darkness
-Please help us **improve existing skins and create new ones**. Pull requests are welcome!
+Please help us **improve the quality of existing skins and create new ones**. Pull requests are welcome!
 
 
 
 ## Getting started
-1. If you haven't yet, [install Darkness locally](./README.md#installation)
-1. Open Chrome and use Darkness regularly (e.g. open [Google](https://www.google.com/) and switch to a dark theme)
-1. Run `npm start` to watch and auto-compile all SCSS files to CSS in real-time
-1. Edit any SCSS or JS file you wish inside the **chrome-extension** directory
-1. Refresh the tab (e.g. Google) to see the changes you've made
+1. If you haven't yet, [install Darkness Developer Edition](./README.md#installation)
+1. Open any supported websites (e.g. [Google](https://www.google.com/)) and switch to a dark theme
+1. Run `npm start` to watch and compile all SCSS files to CSS in real-time
+1. Edit any SCSS/JS file in the **chrome-extension** directory (e.g. /chrome-extension/themes/websites/google.scss)
+1. Refresh the website to see the changes you've made
+1. Once finish, [push your changes and send a pull request](#how-to-push-code-back-to-darkness)
 
-Note that development and debugging should be done on Chrome. To test your changes on Firefox, run `gulp ff` and [install Darkness on Firefox](./README.md#installation).
+Development and debugging are be done on Chrome. To test your changes on Firefox, run `gulp ff` and [install Darkness on Firefox](./README.md#installation).
 
 ## How do I...
 #### Fix or improve an existing skin
 Edit `/themes/websites/[KEY].scss` (e.g. `/themes/websites/youtube.scss`)
 
 
-#### Add a skin for an new website (e.g. BBC, Google Drive)
-Just run `gulp skin:create --key=[KEY]` where [KEY] is lowercase and alphanumeric (e.g. bbc, googledrive).
+#### Add a skin for an new website (e.g. BBC, Yahoo Finance)
+Just run `gulp skin:create --key=[KEY]` where [KEY] is lowercase and alphanumeric (e.g. bbc, yahoofinance).
 
 Then follow the instructions:
 
@@ -34,6 +35,29 @@ Edit `/themes/themes/[THEME].scss` (e.g. `/themes/themes/material.scss`)
 
 #### Create a new color theme (in addition to Monokai, Tomorrow, etc.)
 Open `/themes/themes/THEME-TEMPLATE.scss` in your code editor and follow the instructions.
+
+#### Fix an inverted UI element (appears like negative)
+Darkness works by inverting the `<HTML>` with `filter:invert(1)`, then inverts back all the element that must their original colors (e.g. img, video, svg, canvas, etc.)
+
+Start by inspecting the inverted element using Chrome Developer Tools. You will find find one of the following:
+
+1. **invert-back is necessary and missing**: the element needs to be inverted back, but isn't. Inverting the element colors back is done by adding a selector in `[SITENAME].scss`, e.g.
+```
+.elementSelector { 
+  @include invert-back();
+}
+```
+2. **invert-back is unnecessarily used**: sometimes invert-back() is applied for this element, although it doesn't need to be inverted back.
+This happens when overly-wide selector is is used, for example: `img { @include invert-back() }`.
+In such case, you can exclude this specific element from being inverted back:
+```
+img { 
+  @include invert-back();
+  .elementSelector {
+    filter: none !important;
+  }
+}
+```
 
 ## How to push code back to Darkness?
 1. Please test your changes locally in Chrome

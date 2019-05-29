@@ -163,6 +163,9 @@ input {
 			color: $theme-text-faint !important;
 	}*/
 }
+#sidebar .answer-votes {
+	color: $theme-text !important;
+}
 //icon with answered accepted
 .answered-accepted {
 	background-color: invert-back-color(#5fba7d) !important;
@@ -219,6 +222,30 @@ input {
 .vote-accepted-on {
 	@include invert-back();
 }
+// upvote / downvote / favorite next to a question
+.js-vote-up-btn, .js-vote-down-btn, .js-favorite-btn, .js-accept-answer-btn {
+	background-color: transparent !important;
+	border-color: transparent !important;
+	svg {
+		color: invert-back-color($theme-faint-button-background) !important;
+	}
+}
+.js-vote-up-btn.fc-theme-primary svg {
+	color: invert-back-color($theme-button-background) !important;
+}
+.js-accept-answer-btn.fc-green-500 svg {
+	color: #45A163 !important;
+}
+.js-comment svg.svg-icon {
+	-webkit-filter: invert(0) !important;
+	color: $theme-faint-button-background !important;
+}
+.comment-up-off, .comment-flag{
+	&:hover svg.svg-icon {
+		color: $theme-secondary-button-background !important;
+	}
+}
+
 //switch context
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Question switch context
@@ -363,4 +390,36 @@ tr.comment > td,
 .listResults .-item.-job,
 .tag-cell {
 	border-color: $theme-border !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// User page
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+.s-progress__privilege .s-progress--label{
+	& {
+		border-color: invert-back-color(#5fba7d) !important;
+		color: invert-back-color(#ffffff) !important;
+	}
+	.svg-icon {
+		-webkit-filter: invert(0) !important;
+	}
+}
+.s-progress__privilege .s-progress--bar{
+	background-color: invert-back-color(#5fba7d) !important;
+	color: invert-back-color(#ffffff) !important;
+}
+.bg-green-400 {
+	@include invert-back();
+}
+
+.badge1-alternate, .badge2-alternate, .badge3-alternate, .badge-how-to {
+	&{
+		@include invert-back();
+	}
+	.badge1, .badge2, .badge3 {
+		-webkit-filter: invert(0) !important;
+	}
+}
+.s-progress__bronze .s-progress--label {
+	border-color: invert-back-color(#D1A684) !important;
 }

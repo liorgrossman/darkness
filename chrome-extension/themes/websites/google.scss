@@ -46,19 +46,31 @@ input
 // Search box (homepage / search page)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// New Google fixed toolbar: fixed background
+.minidiv .sfbg {
+	background: $theme-background-toolbar !important;
+	box-shadow: 0 1px 6px 0 rgba(255,255,255,0.22) !important;
+}
+
+// New Google fixed toolbar: logo
+.logo > a > img {
+	opacity: 0.5 !important;
+}
+
 // Search box border
 .sbfcn {
 	border-color: darken($theme-button-background, 10%) !important;
 }
 
 // Search bar
-.sbibod {
+.sbibod,
+.RNNXgb {
 	box-shadow: none !important;
 	background-color: $theme-textbox-background !important;
 }
 
 // Search box fill
-.sbib_a, .sbib_b {
+.sbib_a, .sbib_b, .aajZCb {
 	background-color: $theme-textbox-background !important;
 }
 
@@ -83,11 +95,25 @@ input
 
 }
 
+// New Google fixed toolbar: magnifying glass icon
+.Tg7LZd {
+	background-color: transparent !important;
+	svg {
+		-webkit-filter: none !important;
+	}
+}
+
+input.gLFyf {
+	background-color: transparent !important;
+}
+
 // Microphone icon
-.gsri_a {
+.gsri_a,
+.hb2Smf {
 	opacity: 0.8 !important;
 	@include invert-back()
 }
+
 
 // Camera icon
 .gsst_e {
@@ -167,9 +193,42 @@ cite {
 // Colorpicker
 ._k3m,
 ._p4n,
+.kdPwrb,
+.NYcQFd,
+.rnt3Ze,
 ._Nzn, ._EBn,
 .kyN4Jf3TGqF__slider-background {
 	@include invert-back();
+}
+
+// Product images
+.pla-unit-img-container img {
+	background-color: white !important;
+}
+
+// Stories
+g-inner-card {
+	background-color: $theme-background-box !important;
+}
+g-right-button,
+g-left-button {
+	g-fab {
+		background-color: $theme-background-toolbar !important;
+		box-shadow: 0 0 0 1px rgba(200,200,200,0.04), 0 4px 8px 0 rgba(200,200,200,0.20) !important;
+	}
+}
+
+// Rich cards
+.cu-container .mnr-c {
+	&,
+	.pla-unit-img-container {
+		background-color: $theme-background-box !important;
+	}
+}
+
+// Hightlights
+.s .st em, .st.s.std em {
+	color: $theme-url !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -187,6 +246,16 @@ cite {
 .kp-blk {
 	background: $theme-background-box !important;
 	box-shadow: 0px 1px 4px 0px rgba(255, 255, 255, 0.2) !important;
+}
+
+// Product showcase
+.jackpot-main-content-container {
+	img {
+		background-color: white !important;
+	}
+}
+.commercial-unit-desktop-rhs {
+	background-color: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -233,6 +302,17 @@ cite {
 // Image info line, when hovering over an image
 .rg_anbg, .rg_ilmbg {
 	background: rgba(220, 220, 220, 0.8) !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Google Charts
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Chart legend color
+.Zd1D1e {
+	.E2u4Dc {
+		@include invert-back()
+	}
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

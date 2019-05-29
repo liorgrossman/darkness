@@ -30,10 +30,16 @@ input {
 // Topbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// The "name"
+.gb_he.gb_me {
+	@include invert-back();
+}
+
 // Topbar background
 .gb_zd,
 .gb_yc:not(.gb_tb) .gb_Cd,
-.gb_xc:not(.gb_sb) .gb_Bd {
+.gb_xc:not(.gb_sb) .gb_Bd,
+.gb_Ta:not(.gb_Ua) .gb_Dd {
 	background: $theme-background-toolbar !important;
 }
 .MCcOAc>.pGxpHc {
@@ -41,7 +47,8 @@ input {
 }
 
 // Searchbar
-.gb_7d .gb_Ce {
+.gb_7d .gb_Ce,
+.gb_ne.gb_la {
 	background: $theme-textbox-background !important;
 }
 .VOEIyf .ZAGvjd {
@@ -51,12 +58,19 @@ input {
 	background: transparent !important;
 }
 
+// Search results
+.VOEIyf .jBmls {
+	background-color: $theme-background-box !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Sidebar
-.ANsHhf {
+.ANsHhf,
+.k831u,
+.tuQOVc {
 	background: $theme-background-box !important;
 }
 
@@ -88,6 +102,11 @@ input {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Content
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Contact list header
+.dFPtBe {
+	background: $theme-background !important;
+}
 
 // Each contact in list
 .zYQnTe {

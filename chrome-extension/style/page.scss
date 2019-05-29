@@ -44,8 +44,12 @@ div.drk_settings_icon {
 }
 
 body[data-drk-promo="s"] div.drk_settings_icon {
+	opacity: 1 !important;
 	background: Transparent url('chrome-extension://__MSG_@@extension_id__/images/darkness-icon-in-page-promo.png?v=2') no-repeat center !important;
 	background-size: cover !important;
+	&:hover {
+		opacity: 0.8 !important;
+	}
 }
 
 body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
@@ -53,11 +57,17 @@ body[data-drk-site-support="ask-developers"] div.drk_settings_icon {
 	background-size: cover !important;
 }
 
+// Hide the moon icon in YouTube fullscreen mode
+html[hide-scrollbar=true] body[data-drk-site="youtube"] div.drk_settings_icon,
+body.no-scroll[data-drk-site="youtube"] div.drk_settings_icon
+{
+	display: none !important;
+}
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Position the moon icon in the toolbar, adjust the toolbar (based on website)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-body[data-drk-site="google"],
 body[data-drk-site="wikipedia"],
 body[data-drk-site="amazon"],
 body[data-drk-site="reddit"] {

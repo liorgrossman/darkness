@@ -72,10 +72,19 @@ input {
 
 // Toolbar background
 .gb_xd,
-.gb_9d,
 .a-nEbBXb .a-D-B.a-D-B-gc-WErN3d {
 	background: $theme-background-toolbar !important;
 }
+.a-nEbBXb .a-D-B {
+	background-color: $theme-background !important;
+}
+
+// Centered toolbar box around search box and buttons
+.gb_ge {
+	filter: none !important;
+	background: transparent !important;
+}
+
 .gb_0d {
 	background: transparent !important;
 }
@@ -90,20 +99,25 @@ input {
 				0 1px 5px 0 transparentize($theme-button-background, 0.8) !important;
 }
 
+// "New" button icon
+.a-D-gc-wKOTTc .a-ec-Gd button.RTMQvb::before {
+	filter: saturate(0) contrast(1) brightness(0.3) !important
+}
+
 // "My Drive" dropdown icons
 .a-s-fa-Ha-pa {
 	fill: white !important;
 }
 
 .gb_xe {
-	background: $theme-textbox-background !important;
+	// background: $theme-textbox-background !important;
 }
 
 // Searchbar
 .gb_Ce,
-.gb_He,
-.gb_Je,
-.gb_Ee {
+.gb_Jf,
+.gb_Ee,
+.gb_ne {
 	background: $theme-textbox-background !important;
 }
 
@@ -113,6 +127,9 @@ input {
     border-top-color: $theme-border;
     -webkit-box-shadow: 0 2px 4px transparentize($theme-button-background, 0.8) !important;
     box-shadow: 0 2px 4px transparentize($theme-button-background, 0.8) !important;
+}
+.h-uj {
+	background: $theme-background-box !important;
 }
 
 // Search dropdown hover left border
@@ -234,6 +251,11 @@ input {
     background: transparent !important;
 }
 
+// Root folder icons
+.a-Ng-c-ha {
+	filter: saturate(0);
+}
+
 // Notification
 .a-la-B-x {
 	@include invert-back()
@@ -272,6 +294,11 @@ input {
 .l-u-ha .l-u-Ab-zb,
 .Hb-ja-Na .a-u-xb-j:focus .l-u-Ab-zb {
 	@include invert-back()
+}
+
+// Table-view header
+.N7iPof {
+	background-color: $theme-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

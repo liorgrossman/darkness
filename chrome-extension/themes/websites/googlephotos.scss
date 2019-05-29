@@ -25,6 +25,11 @@
 	color: $theme-button-background !important;
 }
 
+// Menu button
+button.material-icons-extended{
+	background-color: transparent !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar and sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -82,9 +87,18 @@
 }
 
 // SVG buttons in menu
-.DOAbib .JUQOtc {
+body .DOAbib .JUQOtc {
 	fill: invert-back-color($theme-secondary-button-background) !important;
 }
+
+// Back SVG button in menu - fix:
+// From some reason, it stops responding to clicks when inverted
+// To fix it, we disable the filter
+body .rMGHCb .JUQOtc {
+	filter: none !important;
+	fill: black !important;
+}
+
 // SVG buttons in sidebar and active in menu
 .mJ5jI .di0KJd .JUQOtc,
 .G6iPcb .JUQOtc,
@@ -104,13 +118,14 @@
 	background-color: $theme-notices !important;
 }
 
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Content
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // "Select all" button
 .R4HkWb .JUQOtc {
-	fill: $theme-secondary-button-background !important;
+	fill: invert-back-color($theme-secondary-button-background) !important;
 }
 
 // Boxes that don't need a background
@@ -156,6 +171,11 @@
 .vqsmne,
 .Rxunzd {
 	background-color: $theme-background !important;
+}
+
+// Image view
+.b4qJMd {
+	background: transparent !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

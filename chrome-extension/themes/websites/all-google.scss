@@ -9,46 +9,117 @@
 }
 
 // Topbar
-.gb_be, .gb_de {
+// .gb_be, 
+.gb_de, 
+.eU5T0b, 
+// .gb_ce,
+header.gb_Va,
+header.gb_Va > div,
+header.gb_Wa,
+header.gb_Wa > div,
+header.gb_ja,
+header.gb_ja > div,
+header.gb_Ta,
+header.gb_Ta > div {
 	background-color: $theme-background-toolbar !important;
+}
+header.gb_Ta {
+	@include invert-back();
 }
 
 // Sign in
-.gb_Ha,
+//.gb_Ha,
 .gb_Fa {
 	background: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
 
+// User drawer, when signed in to an enterprise account
+.gb_fa {
+	background-color: $theme-background-box !important;
+}
+// Company logo
+.gb_fa img.gb_ma {
+	background-color: white !important;
+	border-radius: 3px !important;
+}
+
+// User drawer
+.gb_ge .gb_vb {
+	@include invert-back();
+}
+.gb_vb,
+.gb_z {
+	background: $theme-background-box !important;
+}
+.gb_vb > div,
+.gb_vb > div > a,
+.gb_vb > div > div{
+	background: $theme-background-box !important;
+}
+// List of signed in users
+.gb_sb .gb_yb {
+	background-color: $theme-background-box !important;
+}
+// Add account and signout part
+.gb_jb {
+	background-color: $theme-background-box !important;
+}
+.gb_0 {
+	background: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+
+// "Google account" button
+.gb_Ab .gb_Hb,
+.gb_3a .gb_0,
+.gb_3a .gb_0:hover {
+	background: $theme-button-background !important;
+	border-color: $theme-button-background !important;
+	color: $theme-button-text !important;
+}
+
 // Site name, eg. "Calendar" or "Drive"
-// .gb_ee,
-.gb_ge {
+.gb_vc .gb_0c:before {
 	@include invert-back();
 }
 
 // User avatar on toolbar
-.gb_7a::before, 
-.gb_8a::before, 
-.gbii::before,
-body[data-drk-site="googleinbox"] .gbii,
-body[data-drk-site="googlephotos"] .gbii {
+.gbii {
 	@include invert-back();
+}
+// Menu drawer
+.gb_C,
+.gb_D {
+	background: $theme-background-box !important;
 }
 // Menu, App-drawer and Notification icons
 .gb_yc svg,
+.gb_Ta svg, 
+.gb_jc svg,
+.gb_lc svg,
+.gb_fe svg,
 .gb_kc svg,
 .gb_Xa svg,
 .gb_oc svg {
 	color: invert-back-color($theme-text) !important;
 }
-.gb_cc {
+.gb_c .gb_k,
+.gb_c .gb_a,
+.gb_W {
 	@include invert-back();
 }
 
 // Google logo
 .uuRyud {
 	@include invert-back();
+}
+
+// Left sidepanel
+.Kk7lMc-Yb-Il-j {
+	background-color: $theme-background-toolbar !important;
 }
 
 // OLD!! 
@@ -76,7 +147,6 @@ span.gb_6b,
 
 // "My account" button
 .gb_xb .gb_Db,
-.gb_sb .gb_yb,
 .gb_Cb .gb_Jb {
 	background: $theme-button-background !important;
 	border-color: $theme-button-background !important;

@@ -36,7 +36,8 @@ body {
 a[role="button"] {
 	@include invert-back();
 }
-a[role="button"] svg {
+a[role="button"] svg,
+a[role="button"] img {
 	-webkit-filter: none !important;
 }
 
@@ -83,6 +84,22 @@ a[role="button"] svg {
 
 }
 
+// Image overlay
+._4-of {
+	background-color: transparent !important;
+}
+._3qx ._3ixn {
+	background-color: rgba(255, 255, 255, .8) !important;
+}
+// History of images
+._16zz{
+	._463g,
+	._463h,
+	._463j {
+		background: transparent !important;
+	}
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // List of chats
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,6 +115,11 @@ a[role="button"] svg {
 // Searchbar
 ._1nq2 {
 	background: $theme-background-box !important;
+}
+
+// Errors
+._p0g.error, ._p0g.offline, ._p0g.notice {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -117,7 +139,7 @@ a[role="button"] svg {
 	background-color: $theme-background-box !important;
 	color: invert-back-color(#f0f0f0) !important;
 	a {
-		color: invert-back-color(#f0f0f0) !important;
+		color: invert-back-color($theme-url) !important;
 	}
 } 
 
@@ -129,6 +151,16 @@ a[role="button"] svg {
 }
 ._nd_ ._hh7 img{
 	-webkit-filter: invert(0) !important;
+}
+
+// Checks marking delivery status
+._3i_m ._2her {
+	@include invert-back();
+}
+
+// Missed calls
+._1k2j {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -145,8 +177,3 @@ a[role="button"] svg {
 	color: $theme-text-faint !important;
 	-webkit-text-fill-color: $theme-text-faint !important;
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-// 3rd Party Extensions Support
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-

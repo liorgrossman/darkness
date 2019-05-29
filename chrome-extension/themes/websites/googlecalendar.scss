@@ -63,6 +63,7 @@ input, textarea, input[type="text"] {
 
 // Toolbar background
 .gb_uf,
+// .gb_ce,
 #vr-nav,
 #mainnav,
 .gb_yf,
@@ -89,7 +90,7 @@ input, textarea, input[type="text"] {
 	-webkit-filter: invert(0) !important;
 }
 .gb_Be span {
-	color: $theme-text !important;
+	color: invert-back-color($theme-text) !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -105,13 +106,18 @@ input, textarea, input[type="text"] {
 .calListRow[aria-selected="true"] .calListSquare,
 .uVccjd[aria-checked="true"],
 .hsrazb {
-	@include invert-back()
+	@include invert-back();
 }
 .uVccjd[aria-checked="false"] {
-	@include invert-back()
+	@include invert-back();
 }
 .uVccjd[aria-checked="false"] .uHMk6b {
 	border-color: black !important;
+}
+
+// Color identifier on event detail popup
+.yyi9pc {
+	@include invert-back();
 }
 
 // Create event button
@@ -149,13 +155,13 @@ input, textarea, input[type="text"] {
 .ccc-text,
 .goog-hsv-palette-sm-swatch,
 .goog-hsv-palette-sm-v-image {
-	@include invert-back()
+	@include invert-back();
 }
 .fM9vSd .FKhct,
 .SQaQVd,
 .rgXNVe,
 .kUwJrc.R4GWv {
-	@include invert-back()
+	@include invert-back();
 }
 .g3VIld {
 	box-shadow: none !important;
@@ -175,7 +181,9 @@ input, textarea, input[type="text"] {
 .listv,
 .lv-row,
 .wk-dummyth,
-.tNDBE {
+.tNDBE,
+.v83gc,
+div[role="main"] > div {
 	background-color: $theme-background-box !important;
 }
 #mainbody,
@@ -224,17 +232,17 @@ input, textarea, input[type="text"] {
 .wgIOqb-XPtOyb,
 .g3dbUc:not(.smECzc),
 .QNFxAc {
-	@include invert-back()
+	@include invert-back();
 }
 // Week-view & Day-view
 .chip dl,
 .EfQccc {
-	@include invert-back()
+	@include invert-back();
 }
 // Agenda-view
 .lv-event-title,
 .Oxm52e {
-	@include invert-back()
+	@include invert-back();
 }
 
 // Darken past event
@@ -284,6 +292,15 @@ input, textarea, input[type="text"] {
 	@include invert-back()
 }
 
+// Arrow indicating that a event is longer than the view
+.zWcBU {
+	color: invert-back-color($theme-background-box) !important;
+	right: 0px !important;
+}
+.g3dbUc {
+	border: 0 !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Add/create event
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -308,5 +325,10 @@ input, textarea, input[type="text"] {
 
 .qmv2fc.KKjvXb,
 .sIyjR {
-	@include invert-back()
+	@include invert-back();
+}
+
+.dT3uCc,
+.g3VIld {
+	background: $theme-background-box !important;
 }

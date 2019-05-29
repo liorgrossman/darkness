@@ -1,15 +1,16 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Set the environment
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-var ENVIRONMENT = 'development';
+const DEFAULT_LOCAL_ENVIRONMENT = 'development';
+var ENVIRONMENT = DEFAULT_LOCAL_ENVIRONMENT;
 
 // Important - don't touch this:
 if (chrome.runtime.id == 'imilbobhamcfahccagbncamhpnbkaenm') ENVIRONMENT = 'production'; // Chrome Web Store version
 if (chrome.runtime.id == 'darkness@darkness.app') ENVIRONMENT = 'production'; // Firefox Add-on Store version
 
 // Development version
-if (chrome.runtime.id == 'koobfbhnpdijhobcdllfkmlgngbpgjep') ENVIRONMENT = 'development';
-if (chrome.runtime.id == 'development@darkness.app') ENVIRONMENT = 'development';
+if (chrome.runtime.id == 'koobfbhnpdijhobcdllfkmlgngbpgjep') ENVIRONMENT = DEFAULT_LOCAL_ENVIRONMENT;
+if (chrome.runtime.id == 'development@darkness.app') ENVIRONMENT = DEFAULT_LOCAL_ENVIRONMENT;
 
 // Staging (local testing before depoyment to stores)
 if (chrome.runtime.id == 'blbbhmfjigkmkkobabbgppbhaaeehfjn') ENVIRONMENT = 'staging';

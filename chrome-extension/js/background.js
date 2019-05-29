@@ -60,6 +60,10 @@ var whichThemeForSite = function(debug, siteKey, canPreview) {
 	if (CONFIG.sites[siteKey]) {
 		var themeFromSettings = settings.sites.get(siteKey, 'theme');
 		if (themeFromSettings) {
+			// Migrate users who chose 'sunset' theme to 'coffee'
+			if (themeFromSettings == 'sunset') {
+				themeFromSettings = 'coffee';
+			}
 			// Has user settings
 			if (debug) log('Which theme for ' + siteKey + '?' + ' User settings says ' + themeFromSettings);
 			themeKey = themeFromSettings;
@@ -243,7 +247,7 @@ chrome.runtime.onMessage.addListener(
 // This is useful for development, when you want those files to reload each time the moon icon is clicked
 var getAssetsForSettingsPanel = function(callback) {
 	// First, load all files from disk to cache
-	var filesToPreload = ["js/settings.js", "style-css/cleanslate.css", "icons/css/fontello.css", "style-css/settings.css", "html/settings.html"];
+	var filesToPreload = ["js/settings.js", "style-css/cleanslate.css", "icons/css/fontello.css", "style-css/settings.css", "html/settings.html", "flaticon/darkness-SVG-sprite.svg"];
 	readFilesFromDisk(true, filesToPreload, function() {
 
 		// Load all CSS files from cache and concatenate (extremely quick, from memory)
@@ -254,7 +258,12 @@ var getAssetsForSettingsPanel = function(callback) {
 		cssContent = cssContent.replace(/\.\.\/font\/fontello/g, chrome.extension.getURL('icons/font/fontello'));
 
 		// Load other files from cache (extremely quick, from memory)
-		var htmlContent = readFileFromCache("html/settings.html");
+		var htmlContent =
+			"\n\n" +
+			"<div hidden>" + readFileFromCache("flaticon/darkness-SVG-sprite.svg") + "</div>" +
+			"\n\n" +
+			readFileFromCache("html/settings.html") +
+			"\n\n";
 		var noThemeCssContent = readFileFromCache("style-css/page.css");
 
 		// Return all the assets
@@ -271,8 +280,10 @@ var getCodeForInjection = function(filename, replacements) {
 	for (var key in replacements) {
 		if (replacements.hasOwnProperty(key)) {
 			var val = replacements[key];
-			// Encode \ to \\, ' to \', trim all unnecessary white space and line breaks
-			val = val.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/[\t\n\r]+/g, ' ');
+			if (typeof(val) == "string") {
+				// Encode \ to \\, ' to \', trim all unnecessary white space and line breaks
+				val = val.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/[\t\n\r]+/g, ' ');
+			}
 			// Replace @@PLACEHOLDER@@ with value
 			code = code.replace('@@' + key + '@@', val);
 		}
@@ -297,6 +308,7 @@ var injectSettingsScriptToTab = function(tab) {
 		args['THEME'] = themeKey;
 		args['SITE'] = siteKey;
 		args['SITE_SUPPORT'] = CONFIG.sites[siteKey].support;
+		args['DEV_RATING'] = getDeveloperConfidence();
 		args['SETTINGS'] = JSON.stringify(settings.getAllSettingsClone());
 		args['STATS'] = JSON.stringify(stats.getAllStatsClone());
 		args['CONFIG'] = JSON.stringify(CONFIG);
@@ -321,6 +333,24 @@ var injectSettingsScriptToTab = function(tab) {
 	})
 };
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Holiday promos
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+var getHoliday = function(date) {
+	var dayOfMonth = date.getDate();
+	var month = date.getMonth() + 1;
+	var dateString = month + '/' + dayOfMonth;
+	if (dateString == '1/1') return "New Year's Day";
+	if (dateString == '6/14') return "Flag Day";
+	if (dateString == '7/4') return "Independence Day";
+	if (dateString == '11/11') return "Veterans Day";
+	if (dateString == '10/31') return "Halloween";
+	if (dateString == '12/24') return "Christmas Eve";
+	if (dateString == '12/25') return "Christmas Day";
+	if (dateString == '12/31') return "New Year's Eve";
+	if (month == 11 && (dayOfMonth >= 19 && dayOfMonth <= 27)) return "Thanksgiving, Black Friday, Cyber Monday"
+	return null;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Page Initialization (initialized for all supported sites upon load)
@@ -366,9 +396,19 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 		var passedMs = Date.now() - installDate;
 		passedDays = Math.floor(passedMs / 1000 / 3600 / 24);
 	}
+
+	var correctType = stats.get('type') != 'p';
+	var correctSku = Payments.getSku() > 1;
+	const DAY = 24 * 60 * 60 * 1000;
+	const TOMORROW = new Date(new Date().getTime() + DAY);
+	const YESTERDAY = new Date(new Date().getTime() - DAY);
+	var shouldShow = passedDays % 18 < 3;
+	if (getHoliday(new Date()) || getHoliday(TOMORROW) || getHoliday(YESTERDAY)) {
+		shouldShow = true;
+	}
 	var promo = 'h';
-	if (Payments.getSku() > 1 && passedDays % 18 < 3) {
-		promo = 's';		
+	if (correctType && correctSku && shouldShow) {
+		promo = 's';
 	}
 
 	// All the arguments required by page.js
@@ -383,6 +423,7 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 		'SITE': siteKey,
 		'THEME': themeKey,
 		'SITE_SUPPORT': CONFIG.sites[siteKey].support,
+		'DEV_RATING': getDeveloperConfidence(),
 
 		'ENVIRONMENT': ENVIRONMENT,
 		'MACHINEID': stats.get('userId')
@@ -396,6 +437,42 @@ var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	});
 };
 
+// Save indications that current user is developer
+var saveDeveloperIndications = function(tab) {
+	// Check if domain visited is developers' domain
+	var domain = '';
+	try {
+		var urlObj = parseUrl(tab.url);
+		if (urlObj) {
+			domain = urlObj.hostname || "";
+		}
+	} catch (e) {}
+	const devDomains = [
+		'github.com',
+		'gist.github.com',
+		'gitlab.com',
+		'bitbucket.org',
+		'stackoverflow.com',
+		'jsfiddle.net',
+		'codepen.io',
+		'jsbin.com',
+		'www.w3schools.com',
+		'www.npmjs.com',
+		'www.npmtrends.com',
+		'stackshare.io',
+		'localhost',
+		'127.0.0.1',
+	];
+	var isDevDomain = devDomains.indexOf(domain) > -1 || domain.endsWith('.github.io')  || domain.endsWith('.libhunt.com');
+	if (isDevDomain) {
+		// Save timestamp of dev domain visited
+		var devIndications = stats.get('devIndications') || [];
+		devIndications.unshift(Date.now());
+		devIndications = devIndications.slice(0, 50);
+		stats.set('devIndications', devIndications);
+	}
+}
+
 // Initialize Darkness on the specified tab
 // startUpRetroactiveLoad == true : Darkness retroactively initializes all tabs with supported sites that were already loaded in Chrome
 // startUpRetroactiveLoad == false: a user actively navigates to a supported site when Darkness is on
@@ -407,6 +484,7 @@ var initializeTab = function(tab, startUpRetroactiveLoad) {
 		// Send analytics
 		repVisitedTabAnonymously(tab);
 		repTopThemes(siteKey, themeKey);
+		saveDeveloperIndications(tab);
 	}
 
 	if (!themeKey) return log('Not initializing tab'); // Quit if site is not supported
@@ -417,8 +495,7 @@ var initializeTab = function(tab, startUpRetroactiveLoad) {
 
 
 // Called when a tab has been loaded
-var onTabComplete = function(tab) {	
-};
+var onTabComplete = function(tab) {};
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Initialization Helpers
@@ -430,8 +507,7 @@ var onTabUpdate = function(tabId, info, tab) {
 		log("=========================");
 		log("Tab updated: " + getTabName(tab) + ", status: " + info.status);
 		initializeTab(tab, false);
-	}
-	else if (info.status == 'complete') {
+	} else if (info.status == 'complete') {
 		onTabComplete(tab);
 	}
 };
@@ -511,12 +587,12 @@ var loadAllAssetsToCache = function(debug, callback) {
 // Initialize Darkness' configuration
 var initializeConfiguration = function() {
 	// Chrome runtime configuration setup
-	chrome.runtime.setUninstallURL("https://darkness.app/uninstalled");
+	chrome.runtime.setUninstallURL("https://darkness.app/uninstalled/");
 
 	chrome.runtime.onInstalled.addListener(function(details) {
 		log("Chrome invoked onInstalled: ", details);
 		if (details && details.reason == "install") {
-			chrome.tabs.create({ url: "https://darkness.app/thank-you" }, function(tab) {
+			chrome.tabs.create({ url: "https://darkness.app/thank-you/" }, function(tab) {
 				log("Thank you page opened");
 			});
 		}
