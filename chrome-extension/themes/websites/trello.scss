@@ -15,8 +15,10 @@
 	#surface,
 	.badge.is-due-past,
 	.badge.is-due-now,
+	.badge.is-due-soon,
 	.card-detail-badge.is-due-past,
 	.card-detail-badge.is-due-now,
+	.card-detail-badge.is-due-soon,
 	.button-link .on,
 	.badge.is-due-complete,
 	.card-detail-badge.is-due-complete,
@@ -77,10 +79,18 @@ a.button-link:hover,
 input[type="submit"].primary,
 input[type="button"],
 .quick-card-editor-buttons-item,
-a.job-listing {
+a.job-listing,
+._1WD42rQsKIT-I6 {
 	background-color: $theme-button-background !important;
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
+}
+
+// "New team"-button
+button._33CvMKqfH4Yf0j {
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: $theme-button-background !important;
 }
 
 input[type="submit"].primary,
@@ -351,11 +361,14 @@ body[style*="background-image:"] > #boards-drawer {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Icons
-.icon-search,
-span.pv4EOUnR9L6jBk,
-._3Equ0AwjtQdiIh,
+.icon-search, 
+span.pv4EOUnR9L6jBk, 
+._3Equ0AwjtQdiIh, 
+span._1iYprMLTeGpyW9, 
+._2baX9YmlCebcUG .jsFZPPoodAkUaL, 
+._3Xj1tqB73NcWn3, 
 .blnwmcZ7xZI8tg ._1ueCKUcugKYqhU {
-	color: black !important;
+	color: $theme-text !important;
 }
 
 // User avatar
@@ -367,6 +380,7 @@ span.pv4EOUnR9L6jBk,
 .header-logo-default, 
 .header-logo-loading,
 .header-btn-icon,
+._1q-xxtNvcdFBca, 
 .global-header-section-logo.mod-black {
 	@include invert-back();
 }
@@ -447,9 +461,33 @@ span.pv4EOUnR9L6jBk,
 .body-board-view #header {
 	background: rgba(255,255,255,.15) !important;
 }
+// Board name
+.board-header-btn-name .board-header-btn-text {
+	color: $theme-text !important;
+}
 // Boards-menu
-._1uIlQNJLg02V8T {
+._1uIlQNJLg02V8T,
+.khihAkM9Ux6EHW {
 	background-color: $theme-background-toolbar !important;
+}
+// Boards
+._3LO8BCnYMEeBzC:before {
+	background: black !important;
+	opacity: 0.6 !important;
+}
+// star board
+._1Iv-11Wutx7UNK button {
+	background-color: transparent !important;
+}
+._2wu8NkXkdivxpw._2XH3eISfyp3NpN span[name=star] {
+	color: invert-back-color(#f2d600) !important;
+}
+
+
+// Active home
+._2OJyF5qancPNze._2wv_gyeqs9bKWb, 
+._2OJyF5qancPNze._8N7ns-Iq6PpYlR {
+	background-color: $theme-highlighted !important;
 }
 
 // User-menu
