@@ -25,6 +25,7 @@ $blue:            #03A9F4;
 $dark-blue:		  #01579B;
 $purple:          #3F51B5;
 $brown:           #795548;
+$transparent:     rgba(0, 0, 0, 0);
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -35,10 +36,10 @@ $brown:           #795548;
 $theme-background: invert-back-color(#151515);
 
 // Background of content boxes
-$theme-background-box: invert-back-color(mix($dark-gray, $very-dark-gray, 20%));
+$theme-background-box: invert-back-color(mix($dark-gray, $transparent, 20%));
 
 // Toolbar background
-$theme-background-toolbar: invert-back-color($dark-gray);
+$theme-background-toolbar: invert-back-color($transparent);
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // TEXT COLORS
@@ -46,7 +47,7 @@ $theme-background-toolbar: invert-back-color($dark-gray);
 
 // Text color
 $theme-text: invert-back-color($almost-white);
-$theme-text-faint: invert-back-color($light-gray);
+$theme-text-faint: invert-back-color($transparent); //($light-gray);
 
 // Links color
 $theme-link: invert-back-color(#64B5F6);
@@ -66,7 +67,7 @@ $theme-highlighted-darker: lighten($theme-highlighted, 10%);
 
 // Primary buttons (usually originally blue)
 $theme-button-text: invert-back-color($dark-gray);
-$theme-button-background: invert-back-color($blue);
+$theme-button-background: invert-back-color($transparent);
 
 // Secondary buttons (usually originally red / orange)
 $theme-secondary-button-background: invert-back-color($red);
@@ -76,7 +77,7 @@ $theme-faint-button-background: invert-back-color($very-dark-gray);
 
 // Textboxes, Textareas, Inputs
 $theme-textbox-text: invert-back-color($almost-white);
-$theme-textbox-background: invert-back-color($very-dark-gray);
+$theme-textbox-background: invert-back-color($transparent);
 
 // Border color
 $theme-border: invert-back-color(rgba(255,255,255,0.15));
