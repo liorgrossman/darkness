@@ -18,6 +18,10 @@ button {
     &.btn-octicon {
         background-color: transparent !important;
     }
+    &[disabled] {
+        background-color: lighten($theme-button-background, 15%) !important;
+        color: lighten($theme-button-text, 15%) !important;
+    }
 }
 
 // All inputs
@@ -49,6 +53,10 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 }
 a.Header-link {
     background: transparent !important;
+}
+a.muted-link {
+    background: transparent !important;
+    color: $theme-link-visited !important;
 }
 
 // buttonlinks
@@ -683,6 +691,20 @@ summary.js-notice {
 
 .commit-icon svg {
     background-color: transparent !important;
+}
+
+// Pull-state
+.branch-action-state-clean .branch-action-icon {
+    @include invert-back();
+}
+.branch-action-state-clean .branch-action-body:before {
+    border-right-color: invert-back-color(#34d058) !important;
+}
+.branch-action-state-clean .branch-action-body {
+    border-color: invert-back-color(#34d058) !important;
+}
+.branch-action-body:before {
+    border-right-color: $theme-background-box !important;
 }
 
 .navigation-focus .muted-link {

@@ -108,10 +108,6 @@ i {
 	-webkit-filter: none !important;
 }
 
-//path {
-//	@include invert-back();
-//}
-
 // Page admin stuff
 ._4h_-[style*="color: rgb(66, 183, 42)"],
 ._za4,
@@ -892,6 +888,16 @@ div[aria-label*="sticker"] {
 	border-top-color: $theme-background !important;
 }
 
+// profile pics in chat
+._1gyw > img {
+	border-radius: 50% !important;
+}
+
+// Fix for #176
+._3hx- ._4a0v:after {
+	border: 30px solid $theme-background !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Lightboxes (photos, posts, etc.)
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1240,7 +1246,7 @@ li.__MenuItem._54ne.selected {
 }
 
 .uiTooltipX .tooltipContent,
-.uiTooltipX .tooltipContent * {
+.uiTooltipX .tooltipContent *:not(i) {
 	background: $theme-tooltip-background !important;
 	color: $theme-tooltip-text !important;
 }
