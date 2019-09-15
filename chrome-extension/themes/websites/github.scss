@@ -47,6 +47,9 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
         color: $theme-link-active !important;
     }
 }
+a.Header-link {
+    background: transparent !important;
+}
 
 // buttonlinks
 .btn-link {
@@ -78,6 +81,15 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 // Emojies
 .emoji-inner, g-emoji {
     @include invert-back();
+}
+
+// Popups
+.Popover-message {
+    color: $theme-text !important;
+}
+.Popover-message:before,
+.Popover-message:after {
+    border-bottom-color: $theme-background-box !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -143,6 +155,10 @@ a:not(.label), a:not(.IssueLabel), a:not(.IssueLabel--big)  {
 .dropdown-menu,
 .dropdown-menu form > button {
     background-color: $theme-background-box !important;
+}
+.dropdown-item:focus, 
+.dropdown-item:hove {
+    background-color: $theme-highlighted-darker !important;
 }
 
 .svg-tip {
@@ -450,6 +466,12 @@ button.muted-link {
     color: $theme-text !important;
 }
 
+// Topic tags
+a.topic-tag {
+    background-color: $theme-button-background !important;
+    color: $theme-button-text !important;
+}
+
 //readme
 .readme,
 .readme > h3,
@@ -503,11 +525,16 @@ button.muted-link {
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 .table-list-header,
 .Box-body,
+.Box-row,
+.Box-header,
 .blankslate //milestones blank slate 
 {
     background: $theme-background-box !important;
     border-color: $theme-border !important;
     color: $theme-text !important;
+}
+.Box-row--focus-gray.navigation-focus {
+    background-color: lighten($theme-background-box, 5%) !important;
 }
 
 //fix table list header icon colors
