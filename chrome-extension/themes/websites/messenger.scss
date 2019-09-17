@@ -181,11 +181,25 @@ svg._7oal path,
 	fill: $theme-faint-button-background !important;
 }
 
+// Reactions
+._576q {
+	svg {
+		-webkit-filter: invert(0) !important;
+		// fill: invert-back-color($theme-background) !important;
+		// rect {
+		// 	fill: invert-back-color($theme-background) !important;
+		// }
+	}
+	div {
+		background-color: #FF6600 !important;
+	}
+}
+
 
 // Bubble: yours
 // _-5k _3i_m _nd_
 ._nd_ ._hh7 {
-	-webkit-filter: invert(1) !important;
+	@include invert-back();
 }
 ._nd_ ._hh7 img{
 	-webkit-filter: invert(0) !important;
