@@ -10,7 +10,6 @@
 
 // Topbar
 // .gb_be, 
-.gb_de, 
 .eU5T0b, 
 // .gb_ce,
 header.gb_Va,
@@ -22,9 +21,29 @@ header.gb_ja > div,
 header.gb_Ta,
 header.gb_Ta > div {
 	background-color: $theme-background-toolbar !important;
+	border-top: 1px solid #dadce0 !important;
+}
+.gb_de, 
+header.gb_na,
+header.gb_na > div {
+	background-color: $theme-background-toolbar !important;
 }
 header.gb_Ta {
 	@include invert-back();
+}
+
+// Searchbar
+.gb_0e {
+	background: $theme-textbox-background !important;
+}
+// Search buttons
+.gb_0e:not(.gb_Me) button {
+	background: transparent !important;
+}
+
+// Right toolbar
+.companion-app-switcher-container {
+	background-color: $theme-background-toolbar !important;
 }
 
 // Sign in
@@ -45,11 +64,20 @@ header.gb_Ta {
 	border-radius: 3px !important;
 }
 
+// Menu and user "buttons"
+#gb#gb a.gb_C {
+	background-color: transparent !important;
+}
+#gb#gb a.gb_C:hover {
+	background-color: rgba(60,64,67,.08) !important;
+}
+
 // User drawer
 .gb_ge .gb_vb {
 	@include invert-back();
 }
 .gb_vb,
+.gb_E, 
 .gb_z {
 	background: $theme-background-box !important;
 }
@@ -59,14 +87,17 @@ header.gb_Ta {
 	background: $theme-background-box !important;
 }
 // List of signed in users
-.gb_sb .gb_yb {
+.gb_sb .gb_yb, 
+.gb_Mb {
 	background-color: $theme-background-box !important;
 }
 // Add account and signout part
-.gb_jb {
+.gb_jb, 
+.gb_sb {
 	background-color: $theme-background-box !important;
 }
-.gb_0 {
+.gb_0, 
+.gb_4, #gb a.gb_4.gb_4, .gb_5 {
 	background: $theme-button-background !important;
 	border-color: $theme-button-background !important;
 	color: $theme-button-text !important;
@@ -75,6 +106,7 @@ header.gb_Ta {
 // "Google account" button
 .gb_Ab .gb_Hb,
 .gb_3a .gb_0,
+.gb_8a .gb_4, 
 .gb_3a .gb_0:hover {
 	background: $theme-button-background !important;
 	border-color: $theme-button-background !important;
@@ -92,8 +124,14 @@ header.gb_Ta {
 }
 // Menu drawer
 .gb_C,
-.gb_D {
+.gb_D, 
+.gb_I,
+.gb_J {
 	background: $theme-background-box !important;
+}
+.gb_d .gb_p,
+.gb_d .gb_b {
+	@include invert-back();
 }
 // Menu, App-drawer and Notification icons
 .gb_yc svg,
@@ -103,8 +141,12 @@ header.gb_Ta {
 .gb_fe svg,
 .gb_kc svg,
 .gb_Xa svg,
+.gb_na svg,
+.gb_Ec svg,
+.gb_Rc .gb_de,
 .gb_oc svg {
 	color: invert-back-color($theme-text) !important;
+	fill: invert-back-color($theme-text) !important;
 }
 .gb_c .gb_k,
 .gb_c .gb_a,
@@ -162,14 +204,14 @@ span.gb_6b,
 }
 
 // Grid popup in toolbar
-.gb_ga .gb_2,
-.gb_ga .gb_M {
-	@include invert-back();
-}
-.gb_O .gb_2,
-.gb_M {
-	@include invert-back();
-}
+// .gb_ga .gb_2,
+// .gb_ga .gb_M {
+// 	@include invert-back();
+// }
+// .gb_O .gb_2,
+// .gb_M {
+// 	@include invert-back();
+// }
 .gb_ha {
 	box-shadow: 0 2px 10px transparentize($theme-button-background, 0.8) !important;
 }

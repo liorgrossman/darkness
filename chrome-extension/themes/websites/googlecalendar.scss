@@ -90,7 +90,13 @@ input, textarea, input[type="text"] {
 	-webkit-filter: invert(0) !important;
 }
 .gb_Be span {
-	color: invert-back-color($theme-text) !important;
+	color: $theme-text !important;
+}
+
+// Dropdowns
+.Cd9hpd, 
+.GXlaye.qRI4pc {
+	border: 1px solid $theme-text !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -288,8 +294,15 @@ div[role="main"] > div {
 
 // See event details
 .i5a7ie,
+.T7dzVe,
 .XHsn7e.Wbs5sd {
 	@include invert-back()
+}
+.JtukPc {
+	background-color: $theme-background !important;
+}
+.RDlrG {
+	box-shadow: 0 24px 38px 3px rgba(255,255,255,0.14), 0 9px 46px 8px rgba(255,255,255,0.12), 0 11px 15px -7px rgba(255,255,255,0.2)
 }
 
 // Arrow indicating that a event is longer than the view

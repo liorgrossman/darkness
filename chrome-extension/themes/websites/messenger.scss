@@ -13,6 +13,17 @@ button {
 	color: $theme-button-text !important;
 	border-color: $theme-border !important;
 }
+// Buttons that chould look like links
+._3quh,
+._6ufm {
+	background-color: transparent !important;
+	color: $theme-button-background !important;
+	border-color: transparent !important;
+}
+// Toggles
+._6ufo {
+	background-color: $theme-button-background !important;
+}
 
 // All inputs
 input {
@@ -27,11 +38,6 @@ body {
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Toolbar background
-.toolbarClass {
-	background: $theme-background !important;
-}
-
 // Left buttons (Settings and new message) - invert back from orange to blue
 a[role="button"] {
 	@include invert-back();
@@ -41,14 +47,26 @@ a[role="button"] img {
 	-webkit-filter: none !important;
 }
 
+// Different icon-button
+svg._7oal,
+svg._7oal path,
+._30yy svg,
+._30yy svg path {
+	fill: invert-back-color($theme-button-background) !important;
+}
 
 //toolbar of chat
 ._5742,
 ._673w,
+._6-xk,
 ._36ic //messenger settings
 {
-	border-color: $theme-border !important;
+	border-color: $theme-background-toolbar !important;
 	background:  $theme-background-toolbar !important;
+}
+
+._7sli {
+	border-left: 1px solid $theme-background-toolbar !important;
 }
 
 //drop down for settings
@@ -88,7 +106,8 @@ a[role="button"] img {
 ._4-of {
 	background-color: transparent !important;
 }
-._3qx ._3ixn {
+._3qx ._3ixn,
+._4-hy ._3ixn {
 	background-color: rgba(255, 255, 255, .8) !important;
 }
 // History of images
@@ -117,6 +136,13 @@ a[role="button"] img {
 	background: $theme-background-box !important;
 }
 
+// Active chat
+._1ht1._1ht2 ._6zkc,
+._1ht1._1ht2 ._6zkc ._5l-3,
+._1ht1._1ht2 ._2j6 {
+	background-color: $theme-highlighted-darker !important;
+}
+
 // Errors
 ._p0g.error, ._p0g.offline, ._p0g.notice {
 	@include invert-back();
@@ -132,7 +158,14 @@ a[role="button"] img {
 	@include invert-back();
 }
 
-
+// Button to change chat color
+._6yme {
+	@include invert-back();
+}
+// Colorselecter
+._gs3 ._gs0 {
+	@include invert-back();
+}
 
 // Bubble: theirs
 ._29_7 >._hh7 {
@@ -141,16 +174,40 @@ a[role="button"] img {
 	a {
 		color: invert-back-color($theme-url) !important;
 	}
-} 
+}
+// options next to theis bubble
+._2u_d svg,
+._2u_d svg path {
+	fill: $theme-faint-button-background !important;
+}
+
+// Reactions
+._576q {
+	svg {
+		-webkit-filter: invert(0) !important;
+		// fill: invert-back-color($theme-background) !important;
+		// rect {
+		// 	fill: invert-back-color($theme-background) !important;
+		// }
+	}
+	div {
+		background-color: #FF6600 !important;
+	}
+}
 
 
 // Bubble: yours
 // _-5k _3i_m _nd_
 ._nd_ ._hh7 {
-	-webkit-filter: invert(1) !important;
+	@include invert-back();
 }
 ._nd_ ._hh7 img{
 	-webkit-filter: invert(0) !important;
+}
+// options next to your bubble
+._nd_ ._2u_d svg,
+._nd_ ._2u_d svg path {
+	fill: invert-back-color($theme-faint-button-background) !important;
 }
 
 // Checks marking delivery status
@@ -161,6 +218,15 @@ a[role="button"] img {
 // Missed calls
 ._1k2j {
 	@include invert-back();
+}
+
+// "more"-popup and "readt"-popup
+._53ij {
+	background: $theme-tooltip-background !important;
+	color: $theme-tooltip-text !important;
+}
+._53ij a {
+	color: $theme-tooltip-text !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------

@@ -183,17 +183,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'googlephotos': {
-			key: 'googlephotos', // Must be the same as the object key
-			name: 'Google Photos',
-			support: 'full',
-			hostRegExp: new RegExp('^photos\.google\.com$', 'i'),
-			creators: [
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
 		'googlekeep': {
 			key: 'googlekeep', // Must be the same as the object key
 			name: 'Google Keep',
@@ -393,6 +382,17 @@ var CONFIG = {
 			name: 'Google Translate',
 			support: 'in-development',
 			hostRegExp: new RegExp('^translate\.google\.(.*)$', 'i'),
+			creators: [
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'googlephotos': {
+			key: 'googlephotos', // Must be the same as the object key
+			name: 'Google Photos',
+			support: 'in-development',
+			hostRegExp: new RegExp('^photos\.google\.com$', 'i'),
 			creators: [
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
