@@ -40,6 +40,7 @@ $trello-pink:	#CD5A91;
 $trello-mint:	#4BBF6B;
 $trello-cyan:	#00AECC;
 $trello-gray:	#838C91;
+$star: #f2d600;
 
 // Original colors in RGB from HEX
 $trello-rgb-blue: red($trello-blue) + ", " + green($trello-blue) + ", " + blue($trello-blue);
@@ -195,6 +196,9 @@ span.tile__selected__1yvgN {
 }
 .cXRfpp {
 	background: transparent !important;
+}
+.XwjoIA6WQIxxgb._38Hb42Tqr7ZDDK {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -462,27 +466,54 @@ span._1iYprMLTeGpyW9,
 	background: rgba(255,255,255,.15) !important;
 }
 // Board name
-.board-header-btn-name .board-header-btn-text {
-	color: $theme-text !important;
+.board-header-btn-name .board-header-btn-text,
+._2sW4tjfiXjrots {
+	color: rgba(256,256,256,0.5) !important;
+}
+// Board team
+._1-vN8NL177VLaD {
+	color: rgba(200,200,200,0.5) !important;
+}
+// Team groups, headers
+._3VPAPxMuDaGlU3 {
+	color: $theme-url !important;
 }
 // Boards-menu
 ._1uIlQNJLg02V8T,
 .khihAkM9Ux6EHW {
-	background-color: $theme-background-toolbar !important;
+	background-color: invert-back-color($theme-background-toolbar) !important;
 }
 // Boards
-._3LO8BCnYMEeBzC:before {
+._3LO8BCnYMEeBzC:before,
+._26ZVKC32nK5LUz:before {
 	background: black !important;
 	opacity: 0.6 !important;
 }
+// Board backgroundimage
+._1-xqt-RbCBt-Sv div[style*="background-image:"] {
+	-webkit-filter: invert(0) !important;
+}
 // star board
-._1Iv-11Wutx7UNK button {
+._1Iv-11Wutx7UNK button,
+._1-xqt-RbCBt-Sv button {
 	background-color: transparent !important;
 }
+.j3V1IT4DDVNieg span[name=star] {
+	color: $star !important;
+}
 ._2wu8NkXkdivxpw._2XH3eISfyp3NpN span[name=star] {
-	color: invert-back-color(#f2d600) !important;
+	color: invert-back-color($star) !important;
+}
+// Minimize button
+._2nlCooRQipe5Hi {
+	background-color: transparent !important;
 }
 
+// Buttons at the bottom of boards-menu
+.bHF9FML4QxCHFM {
+	background: transparent !important;
+	color: $theme-url !important;
+}
 
 // Active home
 ._2OJyF5qancPNze._2wv_gyeqs9bKWb, 
