@@ -141,6 +141,18 @@ a:visited {
 	color: $theme-link !important;
 }
 
+// Homepage left menu
+.home-left-sidebar-container {
+	// Active page
+	.AqhrxyGOPcyvoq._1hc34_9rc6xcjf, 
+	.AqhrxyGOPcyvoq._2StUnMlO8T43Gd {
+		background-color: $theme-highlighted-darker !important;
+		span:first-child {
+			color: $theme-notices !important;
+		}
+	}
+}
+
 // The homepage when logged in
 .body-tabbed-page,
 .member-boards-view, 
@@ -375,6 +387,20 @@ span._1iYprMLTeGpyW9,
 	color: $theme-text !important;
 }
 
+// Upgrade-button for teams
+.upgrade-prompt-button {
+	background-color: $theme-highlighted !important;
+	> div:first-child {
+		background-color: darken($theme-highlighted, 15%) !important;
+		span {
+			color: black !important;
+		}
+	}
+	> div:last-child {
+		color: black !important;
+	}
+}
+
 // User avatar
 .bXFhPW {
 	@include invert-back();
@@ -400,17 +426,6 @@ span._1iYprMLTeGpyW9,
 }
 .checklist-progress-bar-current.js-checklist-progress-bar.checklist-progress-bar-current-complete {
 	@include invert-back();
-}
-
-// Board menu
-.board-wrapper.is-show-menu .board-menu {
-	box-shadow: none !important;
-}
-.board-menu-tab-content {
-	background-color: $theme-background-toolbar !important;
-}
-.boards-drawer{
-	background-color: $theme-background-toolbar !important;
 }
 
 // Lists
@@ -478,10 +493,21 @@ span._1iYprMLTeGpyW9,
 ._3VPAPxMuDaGlU3 {
 	color: $theme-url !important;
 }
+
+// Boards-popover-menu 
+div[data-test-id="header-boards-menu-popover"] {
+	form {
+		@include invert-back();
+	}
+}
+
 // Boards-menu
 ._1uIlQNJLg02V8T,
 .khihAkM9Ux6EHW {
 	background-color: invert-back-color($theme-background-toolbar) !important;
+}
+.khihAkM9Ux6EHW {
+	@include invert-back();
 }
 // Boards
 ._3LO8BCnYMEeBzC:before,
@@ -560,12 +586,32 @@ iframe.attachment-viewer-frame-preview-iframe {
 	background: transparent !important;
 }
 
-// Notification drawer
-.window.mod-notifications.mod-cards {
-	background-color: $theme-background-toolbar !important;
+// Popup drawers
+.js-react-root {
+	#layer-manager-popover > div {
+		background-color: $theme-background-toolbar !important;
+		> div:first-child,
+		> div:last-child {
+			button {
+				background-color: transparent !important;
+			}
+		}
+		button[data-test-id="view-all"],
+		button[data-test-id="mark-all-read-button"] {
+			background-color: transparent !important;
+		}
+		div[data-test-id="unread-notification"] {
+			background: transparent !important;
+		}
+	}
 }
-.notification-actions span {
-	color: $theme-url !important;
+// Notification highlight in toolbar
+button._3W-zkl4-bnVKzJ,
+button._3W-zkl4-bnVKzJ:hover {
+	background: $theme-tooltip-background !important;
+	span {
+		color: $theme-tooltip-text !important;
+	}
 }
 
 // Notifications
