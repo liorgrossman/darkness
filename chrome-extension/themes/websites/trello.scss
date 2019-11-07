@@ -403,20 +403,18 @@ span._1iYprMLTeGpyW9,
 }
 
 // Boards-popover-menu 
-div[data-test-id="header-boards-menu-popover"] {
+.khihAkM9Ux6EHW {
+	background-color: invert-back-color($theme-background-toolbar) !important;
 	form {
 		@include invert-back();
 	}
 }
+#trello-root:not(.body-dark-board-background):not(.body-light-board-background):not(.body-gray-board-background) {
+	.khihAkM9Ux6EHW {
+		@include invert-back();
+	}
+}
 
-// Boards-menu
-._1uIlQNJLg02V8T,
-.khihAkM9Ux6EHW {
-	background-color: invert-back-color($theme-background-toolbar) !important;
-}
-.khihAkM9Ux6EHW {
-	@include invert-back();
-}
 // Boards
 ._3LO8BCnYMEeBzC:before,
 ._26ZVKC32nK5LUz:before {
