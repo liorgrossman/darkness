@@ -67,6 +67,16 @@ $trello-dark-mint:		invert-back-color(darken($trello-mint, $percent));
 $trello-dark-cyan:		invert-back-color(darken($trello-cyan, $percent));
 $trello-dark-gray:		invert-back-color(darken($trello-gray, $percent));
 
+$trello-rgb: 	($trello-blue, $trello-rgb-blue, $trello-dark-blue), 
+				($trello-yellow, $trello-rgb-yellow, $trello-dark-yellow),
+				($trello-green, $trello-rgb-green, $trello-dark-green),
+				($trello-red, $trello-rgb-red, $trello-dark-red),
+				($trello-purple, $trello-rgb-purple, $trello-dark-purple),
+				($trello-pink, $trello-rgb-pink, $trello-dark-pink),
+				($trello-mint, $trello-rgb-mint, $trello-dark-mint),
+				($trello-cyan, $trello-rgb-cyan, $trello-dark-cyan),
+				($trello-gray, $trello-rgb-gray, $trello-dark-gray);
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -222,126 +232,24 @@ body, .body-tabbed-page {
 	background-color: $theme-background !important;
 }
 
-// Color change preview
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-blue});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-yellow});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-green});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-red});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-purple});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-pink});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-mint});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-cyan});'],
-.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$trello-rgb-gray});'] {
-	-webkit-filter: invert(0) !important;
-}
-
-// Blue elements
-body[style*="background-color: rgb(#{$trello-rgb-blue});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-blue});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-blue});"],
-.background-box[style*="background-color: #{$trello-blue};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-blue});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-blue};"],
-.compact-board-tile-background[style*="background-color: #{$trello-blue};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-blue});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-blue});"] {
-	background-color: $trello-dark-blue !important;
-}
-// Yellow elements
-body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-yellow});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-yellow});"],
-.background-box[style*="background-color: #{$trello-yellow};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-yellow});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-yellow};"],
-.compact-board-tile-background[style*="background-color: #{$trello-yellow};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-yellow});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-yellow});"] {
-	background-color: $trello-dark-yellow !important;
-}
-// Green elements
-body[style*="background-color: rgb(#{$trello-rgb-green});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-green});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-green});"],
-.background-box[style*="background-color: #{$trello-green};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-green});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-green};"],
-.compact-board-tile-background[style*="background-color: #{$trello-green};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-green});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-green});"] {
-	background-color: $trello-dark-green !important;
-}
-// Red elements
-body[style*="background-color: rgb(#{$trello-rgb-red});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-red});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-red});"],
-.background-box[style*="background-color: #{$trello-red};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-red});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-red};"],
-.compact-board-tile-background[style*="background-color: #{$trello-red};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-red});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-red});"] {
-	background-color: $trello-dark-red !important;
-}
-// Purple elements
-body[style*="background-color: rgb(#{$trello-rgb-purple});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-purple});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-purple});"],
-.background-box[style*="background-color: #{$trello-purple};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-purple});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-purple};"],
-.compact-board-tile-background[style*="background-color: #{$trello-purple};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-purple});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-purple});"] {
-	background-color: $trello-dark-purple !important;
-}
-// Pink elements
-body[style*="background-color: rgb(#{$trello-rgb-pink});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-pink});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-pink});"],
-.background-box[style*="background-color: #{$trello-pink};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-pink});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-pink};"],
-.compact-board-tile-background[style*="background-color: #{$trello-pink};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-pink});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-pink});"] {
-	background-color: $trello-dark-pink !important;
-}
-// Mint elements
-body[style*="background-color: rgb(#{$trello-rgb-mint});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-mint});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-mint});"],
-.background-box[style*="background-color: #{$trello-mint};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-mint});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-mint};"],
-.compact-board-tile-background[style*="background-color: #{$trello-mint};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-mint});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-mint});"] {
-	background-color: $trello-dark-mint !important;
-}
-// Cyan elements
-body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-cyan});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-cyan});"],
-.background-box[style*="background-color: #{$trello-cyan};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-cyan});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-cyan};"],
-.compact-board-tile-background[style*="background-color: #{$trello-cyan};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-cyan});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-cyan});"] {
-	background-color: $trello-dark-cyan !important;
-}
-// Gray elements
-body[style*="background-color: rgb(#{$trello-rgb-gray});"],
-#trello-root[style*="background-color: rgb(#{$trello-rgb-gray});"],
-#classic-body[style*="background-color: rgb(#{$trello-rgb-gray});"],
-.background-box[style*="background-color: #{$trello-gray};"],
-.js-fill-background-preview[style*="background-color: rgb(#{$trello-rgb-gray});"],
-.compact-board-tile-link-thumbnail[style*="background-color: #{$trello-gray};"],
-.compact-board-tile-background[style*="background-color: #{$trello-gray};"],
-.board-tile[style*="background-color: rgb(#{$trello-rgb-gray});"],
-.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$trello-rgb-gray});"] {
-	background-color: $trello-dark-gray !important;
+@each $color, $rgb, $dark in $trello-rgb {
+	.js-fill-background-preview[style='background-image: url("undefined"); background-color: rgb(#{$rgb});'] {
+		-webkit-filter: invert(0) !important;
+	}
+	div[data-test-id="header-boards-menu-popover"] div[style='background-image: url("null"); background-color: rgb(#{$rgb});'] {
+		background-color: invert-back-color($dark) !important;
+	}
+	body[style*="background-color: rgb(#{$rgb});"],
+	#trello-root[style*="background-color: rgb(#{$rgb});"],
+	#classic-body[style*="background-color: rgb(#{$rgb});"],
+	.background-box[style*="background-color: #{$rgb};"],
+	.js-fill-background-preview[style*="background-color: rgb(#{$rgb});"],
+	.compact-board-tile-link-thumbnail[style*="background-color: #{$color};"],
+	.compact-board-tile-background[style*="background-color: #{$color};"],
+	.board-tile[style*="background-color: rgb(#{$rgb});"],
+	.board-backgrounds-section-tile > .image[style*="background-color: rgb(#{$rgb});"] {
+		background-color: $dark !important;
+	}
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
