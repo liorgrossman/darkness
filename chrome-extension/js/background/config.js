@@ -345,7 +345,7 @@ var CONFIG = {
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^news\.ycombinator\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Łukasz Wójcik', link: 'https://lukaszwojcik.net' }
+				{ name: 'Łukasz Wójcik', link: 'https://www.lukaszwojcik.net/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
