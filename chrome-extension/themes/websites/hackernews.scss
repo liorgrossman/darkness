@@ -24,6 +24,14 @@ You should know: all the website's colors are inverted before skinning even star
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+html {
+    background: none !important;
+}
+
+body {
+    min-height: auto !important;
+}
+
 // All buttons
 button {
     background-color: $theme-button-background !important;
