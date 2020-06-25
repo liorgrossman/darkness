@@ -281,6 +281,124 @@ body[style*="background-image:"] > #boards-drawer {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+// Card covers
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+$cover-green: invert-back-color(darken(#7bc86c, $percent));
+$cover-yellow: invert-back-color(darken(#f5dd29, $percent));
+$cover-orange: invert-back-color(darken(#ffaf3f, $percent));
+$cover-red: invert-back-color(darken(#ef7564, $percent));
+$cover-purple: invert-back-color(darken(#cd8de5, $percent));
+$cover-blue: invert-back-color(darken(#5ba4cf, $percent));
+$cover-cyan: invert-back-color(darken(#29cce5, $percent));
+$cover-lime: invert-back-color(darken(#6deca9, $percent));
+$cover-pink: invert-back-color(darken(#ff8ed4, $percent));
+$cover-dark: invert-back-color(#172b4d);
+
+// Colorselection
+._9HlyjDStZT9Tkt {
+	&._VjutK-Uakd6Op {
+		background-color: $cover-green !important;
+	}
+	&._3wmQ8lVe3zahD9 {
+		background-color: $cover-yellow !important;
+	}
+	&._3IxJVmJ52SXvxO {
+		background-color: $cover-orange !important;
+	}
+	&._2hOM7AmVdl8C7W {
+		background-color: $cover-red !important;
+	}
+	&.Ds0H9CqAfcVFSh {
+		background-color: $cover-purple !important;
+	}
+	&._3qziXoVq3vOoB- {
+		background-color: $cover-blue !important;
+	}
+	&._2sAsAnMyJDuTix {
+		background-color: $cover-cyan !important;
+	}
+	&._2zEv5Z_t8hhaSh {
+		background-color: $cover-lime !important;
+	}
+	&._3wVGI--mpmR634 {
+		background-color: $cover-pink !important;
+	}
+	&._36HiOr-q2SnKP7 {
+		background-color: $cover-dark !important;
+	}
+}
+
+// Previews
+._1a8LrtkAQTAK-j ._2n6YBcAzfBM_0a,
+._1a8LrtkAQTAK-j._4FN7X40rw25a6Q._2WIiiCSEst2vV- {
+	&._321rwMEtxUkyai {
+		background-color: $cover-green !important;
+	}
+	&._3-cGT-dmFxAOWZ {
+		background-color: $cover-yellow !important;
+	}
+	&._38m8iXWeuTH6JJ {
+		background-color: $cover-orange !important;
+	}
+	&._236Jd26UD4Nbd6 {
+		background-color: $cover-red !important;
+	}
+	&._207qy-0OdXObOR {
+		background-color: $cover-purple !important;
+	}
+	&._3olFfJuileHTzu {
+		background-color: $cover-blue !important;
+	}
+	&._3JuPs6NSLdDUI- {
+		background-color: $cover-cyan !important;
+	}
+	&._1xziIBKUmhwNSJ {
+		background-color: $cover-lime !important;
+	}
+	&._17lSFoKyYAkApk {
+		background-color: $cover-pink !important;
+	}
+	&._2-5M3mLJVdgvRI {
+		background-color: $cover-dark !important;
+	}
+}
+
+// Actual color
+.color-card-cover {
+	&.color-card-cover-green {
+		background-color: $cover-green !important;
+	}
+	&.color-card-cover-yellow {
+		background-color: $cover-yellow !important;
+	}
+	&.color-card-cover-orange {
+		background-color: $cover-orange !important;
+	}
+	&.color-card-cover-red {
+		background-color: $cover-red !important;
+	}
+	&.color-card-cover-purple {
+		background-color: $cover-purple !important;
+	}
+	&.color-card-cover-blue {
+		background-color: $cover-blue !important;
+	}
+	&.color-card-cover-sky {
+		background-color: $cover-cyan !important;
+	}
+	&.color-card-cover-lime {
+		background-color: $cover-lime !important;
+	}
+	&.color-card-cover-pink {
+		background-color: $cover-pink !important;
+	}
+	&.color-card-cover-black {
+		background-color: $cover-dark !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 // Icons and misc
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
