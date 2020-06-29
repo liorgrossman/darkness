@@ -104,6 +104,17 @@ button._33CvMKqfH4Yf0j {
 	color: $theme-button-background !important;
 }
 
+// Delete button
+.button-link.negate {
+	& {
+		@include invert-back();
+	}
+	&:hover {
+		background-color: #eb5a46 !important;
+		color: #fff !important;
+	}
+}
+
 input[type="submit"].primary,
 input[type="submit"],
 input[type="button"],
