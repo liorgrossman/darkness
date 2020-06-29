@@ -26,7 +26,8 @@
     "gulp-sourcemaps": "1.6.0",
     "gulp-util": "3.0.7",
     "gulp-zip": "3.2.0",
-    "yargs": "6.4.0"
+    "yargs": "6.4.0",
+    "natives": "^1.1.6"
   },
   "repository": {
     "type": "git",
