@@ -34,6 +34,7 @@ input {
 body {
 	background-color: $theme-background !important;
 }
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,11 +108,12 @@ svg._7oal path,
 	background-color: transparent !important;
 }
 ._3qx ._3ixn,
-._4-hy ._3ixn {
-	background-color: rgba(255, 255, 255, .8) !important;
+._4-hy ._3ixn,
+._99rc ._3ixn {
+	background-color: rgba(255, 255, 255, .75) !important;
 }
 // History of images
-._16zz{
+._16zz {
 	._463g,
 	._463h,
 	._463j {
@@ -126,6 +128,10 @@ svg._7oal path,
 // Small messenger (lightening) icon next to chats
 ._2poo {
 	@include invert-back();
+}
+// "New chat" marking
+._6zv_._6zv_ {
+	background-color: $theme-highlighted !important;
 }
 // Background
 ._1wfr {
@@ -152,7 +158,6 @@ svg._7oal path,
 // Chat windows
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 // turn videos back to normal
 ._1c_u {
 	@include invert-back();
@@ -165,17 +170,24 @@ svg._7oal path,
 // Colorselecter
 ._gs3 ._gs0 {
 	@include invert-back();
+	& > div[style*="background-image"] {
+		-webkit-filter: invert(0) !important;
+	}
+}
+// "More actions" buttons
+._1li_ svg {
+	-webkit-filter: invert(0) !important;
 }
 
 // Bubble: theirs
-._29_7 >._hh7 {
+._29_7 > ._hh7 {
 	background-color: $theme-background-box !important;
 	color: invert-back-color(#f0f0f0) !important;
 	a {
 		color: invert-back-color($theme-url) !important;
 	}
 }
-// options next to theis bubble
+// Options next to their bubble
 ._2u_d svg,
 ._2u_d svg path {
 	fill: $theme-faint-button-background !important;
@@ -195,20 +207,25 @@ svg._7oal path,
 	}
 }
 
-
 // Bubble: yours
 // _-5k _3i_m _nd_
 ._nd_ ._hh7 {
 	@include invert-back();
-}
-._nd_ ._hh7 img{
-	-webkit-filter: invert(0) !important;
+	& img {
+		-webkit-filter: invert(0) !important;
+	}
+	& button {
+		-webkit-filter: invert(1) !important;
+		& svg {
+			-webkit-filter: invert(0) !important;
+		}
+	}
 }
 // options next to your bubble
-._nd_ ._2u_d svg,
-._nd_ ._2u_d svg path {
-	fill: invert-back-color($theme-faint-button-background) !important;
-}
+// ._nd_ ._2u_d svg,
+// ._nd_ ._2u_d svg path {
+// 	fill: invert-back-color($theme-faint-button-background) !important;
+// }
 
 // Checks marking delivery status
 ._3i_m ._2her {
@@ -232,7 +249,8 @@ svg._7oal path,
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // New message
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-//drop down select to message
+
+// Drop down select to message
 ._4p-s>._29hk:nth-child(1),
 ._4rv3,
 ._4p-s>._29hk:nth-child(2) {
