@@ -206,6 +206,9 @@ svg._7oal path,
 		background-color: #FF6600 !important;
 	}
 }
+._yav {
+	background: transparent !important;
+}
 
 // Bubble: yours
 // _-5k _3i_m _nd_
@@ -217,7 +220,7 @@ svg._7oal path,
 	& button {
 		-webkit-filter: invert(1) !important;
 		& svg {
-			-webkit-filter: invert(0) !important;
+			// -webkit-filter: invert(0) !important;
 		}
 	}
 }
