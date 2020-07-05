@@ -68,6 +68,7 @@ svg._7oal path,
 
 ._7sli {
 	border-left: 1px solid $theme-background-toolbar !important;
+	background:  $theme-background !important;
 }
 
 //drop down for settings
@@ -163,6 +164,11 @@ svg._7oal path,
 	@include invert-back();
 }
 
+// Likes
+._8rsr {
+	fill: $theme-background !important;
+}
+
 // Button to change chat color
 ._6yme {
 	@include invert-back();
@@ -176,7 +182,12 @@ svg._7oal path,
 }
 // "More actions" buttons
 ._1li_ svg {
-	-webkit-filter: invert(0) !important;
+	& {
+		-webkit-filter: invert(0) !important;
+	}
+	& path[fill="#0099ff"] {
+		fill: $theme-button-background !important;
+	}
 }
 
 // Bubble: theirs
@@ -225,10 +236,9 @@ svg._7oal path,
 	}
 }
 // options next to your bubble
-// ._nd_ ._2u_d svg,
-// ._nd_ ._2u_d svg path {
-// 	fill: invert-back-color($theme-faint-button-background) !important;
-// }
+._nd_ ._2u_d svg {
+	fill: invert-back-color($theme-faint-button-background) !important;
+}
 
 // Checks marking delivery status
 ._3i_m ._2her {
@@ -247,6 +257,11 @@ svg._7oal path,
 }
 ._53ij a {
 	color: $theme-tooltip-text !important;
+}
+
+// Input to message
+._5irm._7mkm {
+	background-color: $theme-background !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
