@@ -24,6 +24,25 @@ You should know: all the website's colors are inverted before skinning even star
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Fix for Chrome: removing unstyled page margin and vertical scrollbars
+
+html {
+    background: none !important;
+}
+
+html, body {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+// like above, but for Firefox
+
+@-moz-document url-prefix() {
+    html {
+        background: invert($theme-background) !important;
+    }
+}
+
 // All buttons
 button {
     background-color: $theme-button-background !important;
