@@ -378,7 +378,7 @@ var getPageCssContent = function(siteKey, themeKey) {
 var injectPageJsToTab = function(tab, siteKey, themeKey) {
 	log("Injecting loader script");
 
-	// Analytics	
+	// Analytics
 	if (Math.random() < 0.01) {
 		repToFunnel('pageview-x100', Payments.getSku());
 		repEventByUser('pageviews-x100', siteKey + '-' + themeKey);
@@ -603,10 +603,19 @@ var initializeConfiguration = function() {
 		var key = CONFIG.themes[i].key;
 		CONFIG.themes[i].p = (key != 'iceberg' && key != 'youtubedark');
 	}
+	const urls = {};
 	for (i in CONFIG.sites) {
 		var key = CONFIG.sites[i].key;
+		var domain = CONFIG.sites[i].hostRegExp.source;
+		domain = domain.replace(/[\^\$]/g, '');
+		domain = domain.replace(/www\./g, '');
+		domain = domain.replace(/[\(\)\|a-zA-Z0-9]+\.([a-zA-Z0-9]+\.com)$/g, '$1');
+		domain = "*://" + domain + "/*";
+		urls[domain] = true;
 		CONFIG.sites[i].p = (key != 'google' && key != 'facebook');
+
 	}
+	// log("Domains:\n", JSON.stringify(Object.keys(urls), null, "\t"));
 };
 
 

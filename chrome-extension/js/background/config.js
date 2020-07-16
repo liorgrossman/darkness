@@ -183,17 +183,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'googlephotos': {
-			key: 'googlephotos', // Must be the same as the object key
-			name: 'Google Photos',
-			support: 'full',
-			hostRegExp: new RegExp('^photos\.google\.com$', 'i'),
-			creators: [
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
 		'googlekeep': {
 			key: 'googlekeep', // Must be the same as the object key
 			name: 'Google Keep',
@@ -231,18 +220,6 @@ var CONFIG = {
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
-			]
-		},
-		'sharelatex': {
-			key: 'sharelatex', // Must be the same as the object key
-			name: 'ShareLaTeX',
-			support: 'full',
-			siteForDevelopers: true,
-			hostRegExp: new RegExp('\.sharelatex\.com$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
 		'twitter': {
@@ -399,6 +376,17 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'googlephotos': {
+			key: 'googlephotos', // Must be the same as the object key
+			name: 'Google Photos',
+			support: 'in-development',
+			hostRegExp: new RegExp('^photos\.google\.com$', 'i'),
+			creators: [
+				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'wikipedia': {
 			key: 'wikipedia', // Must be the same as the object key
 			name: 'Wikipedia',
@@ -548,6 +536,12 @@ var CONFIG = {
 			support: 'ask-developers',
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^fontawesome\.com$', 'i')
+		},
+		'overleaf': {
+			key: 'overleaf', // Must be the same as the object key
+			name: 'Overleaf',
+			support: 'ask-developers',
+			hostRegExp: new RegExp('^overleaf\.com$', 'i')
 		},
 		'linkedin': {
 			key: 'linkedin', // Must be the same as the object key

@@ -63,7 +63,7 @@ $theme-url: invert-back-color($c7);
 
 // Text highlights (e.g. selected row)
 $theme-highlighted: invert-back-color($c4);
-$theme-highlighted-darker: invert-back-color(darken($c4, 10%));
+$theme-highlighted-darker: invert-back-color(darken($c4, 5%));
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // UI COMPONENTS COLORS
