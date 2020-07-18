@@ -38,6 +38,53 @@ input {
 	border-color: $theme-border;
 }
 
+// All horizontal lines
+hr {
+	@include invert-back();
+}
+
+// All overlays
+*[class*="overlay"] {
+	@include invert-back();
+}
+
+// Muting buttons that blend with their surrounding
+button {
+	&.feed-shared-interest-package__expand-collapse-cta-icon,
+	&.package__expand-collapse-cta-icon,
+	&.artdeco-button--muted,
+	&.share-box-feed-entry__trigger,
+	&.share-box-feed-entry__media-trigger,
+	&.search-global-typeahead__button,
+	&.social-details-social-counts__count-value,
+	&.see-more {
+		background-color: inherit !important;
+	}
+
+	&.share-box-feed-entry__trigger,
+	&.share-box-feed-entry__media-trigger,
+	&.artdeco-button,
+	.artdeco-button__text {
+		svg path {
+			color: #fff !important;
+		}
+	}
+
+	&.share-box-feed-entry__trigger,
+	&.share-box-feed-entry__media-trigger {
+		&:hover,
+		&:focus {
+			background: $theme-background-toolbar !important;
+		}
+	}
+}
+
+// Muting fake buttons
+.artdeco-button__text,
+.feed-shared-first-prompt-block button {
+	background-color: inherit !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Toolbar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,8 +95,38 @@ input {
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+// Header
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.extended-nav {
+	// @include invert-back();
+	background: $theme-background-toolbar !important;
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Feed
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.artdeco-dropdown__trigger {
+	background: $theme-background-toolbar !important;	
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sidebar
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+.feed-shared-interest-package__section-header:hover,
+.feed-shared-interest-package__section-header:focus {
+	.feed-shared-interest-package__expand-collapse-cta-icon {
+		color: #fff !important;
+	}
+}
+
+.link-without-visited-state.link-without-visited-state {
+	// @include invert-back();
+	color: $theme-link !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer
