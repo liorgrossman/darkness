@@ -350,6 +350,18 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
+		'linkedin': {
+			key: 'linkedin', // Must be the same as the object key
+			name: 'LinkedIn',
+			support: 'full',
+			siteForDevelopers: true,
+			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Łukasz Wójcik', link: 'https://www.lukaszwojcik.net/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
 		'darkness': {
 			key: 'darkness', // Must be the same as the object key
 			name: 'Darkness Website',
@@ -542,12 +554,6 @@ var CONFIG = {
 			name: 'Overleaf',
 			support: 'ask-developers',
 			hostRegExp: new RegExp('^overleaf\.com$', 'i')
-		},
-		'linkedin': {
-			key: 'linkedin', // Must be the same as the object key
-			name: 'LinkedIn',
-			support: 'ask-developers',
-			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i')
 		},
 		'slack': {
 			key: 'slack', // Must be the same as the object key
