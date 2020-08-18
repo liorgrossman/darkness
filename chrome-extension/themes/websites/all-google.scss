@@ -34,7 +34,8 @@ header.gb_Ta {
 }
 
 // Searchbar
-.gb_0e {
+.gb_0e:not(.gb_3c),
+.gb_af {
 	background: $theme-textbox-background !important;
 }
 // Search buttons
@@ -114,9 +115,16 @@ header.gb_Ta {
 	color: $theme-button-text !important;
 }
 
+// Site logo
+.gb_Be img {
+	filter: invert(1) !important;
+}
 // Site name, eg. "Calendar" or "Drive"
 .gb_vc .gb_0c:before {
 	@include invert-back();
+}
+.gb_ne {
+	color: $theme-text !important;
 }
 
 // User avatar on toolbar
@@ -124,8 +132,6 @@ header.gb_Ta {
 	@include invert-back();
 }
 // Menu drawer
-.gb_C,
-.gb_D, 
 .gb_I,
 .gb_J {
 	background: $theme-background-box !important;
