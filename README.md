@@ -14,7 +14,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 <img alt="Screenshot" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-screenshot.png">
 </div>
 
-## Features
+## Features and innovations
 * Supports over 25 websites: Google, Facebook, YouTube, Gmail, Google Drive, Twitter, Facebook Messenger, Instagram, Reddit, Google Keep, Google Photos, Google Calendar, Dropbox, Quora, **GitHub, StackOverflow, Trello, JSFiddle** and others ([help us add more](./CONTRIBUTING.md))
 * Select from 7 dark color themes: Iceberg, Tomorrow, Material, Dusk, Red Alert, Coffee, Matrix ([help us add more](./CONTRIBUTING.md))
 * Written in JavaScript, uses SASS
