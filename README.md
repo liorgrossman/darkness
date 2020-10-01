@@ -4,7 +4,7 @@
 
 **Darkness** is a browser extension for Chrome and Firefox that provides **dark themes** for many popular websites, such as Google, Facebook, Gmail and YouTube.
 
-Using dark themes reduces the eye strain and fatigue caused by a bright screen, helps you sleep faster and better at night, and generally makes you awesome!
+Using dark themes reduces the eye strain and fatigue caused by a bright flash screen, helps you sleep peacefully  and better at night, and generally it looks attractive!
 
 **[Pull requests are welcome! Help us improve Darkness by contributing fixes and new themes](./CONTRIBUTING.md)**
 
