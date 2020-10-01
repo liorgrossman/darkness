@@ -1,4 +1,4 @@
-# Darkness: Dark Themes for Cosmosic planet
+# Darkness: Dark Themes of Solar Planet
 
 <img alt="Darkness Logo" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-icon-48px.png?v=2" align="left" style="padding: 0 10px 5px 0; background-color: transparent">
 
