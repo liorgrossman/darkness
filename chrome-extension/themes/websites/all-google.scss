@@ -10,7 +10,7 @@
 
 // Topbar
 // .gb_be, 
-.eU5T0b, 
+// .eU5T0b, 
 // .gb_ce,
 header.gb_Va,
 header.gb_Va > div,
@@ -34,9 +34,10 @@ header.gb_Ta {
 }
 
 // Searchbar
-.gb_0e:not(.gb_3c),
+// .gb_0e:not(.gb_3c),
+input.gb_pf,
 .gb_af {
-	background: $theme-textbox-background !important;
+	background-color: transparent !important;
 }
 // Search buttons
 .gb_0e:not(.gb_Me) button {
