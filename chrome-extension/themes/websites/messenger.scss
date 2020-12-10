@@ -4,6 +4,67 @@
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
+// Update december 2020
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+*[style*="background-image: linear-gradient"] > * {
+	@include invert-back();
+}
+
+.jllm4f4h {
+	@include invert-back();
+}
+
+.nred35xi {
+	background-color: $theme-background !important;
+}
+form .nred35xi {
+	background-color: $theme-background-box !important;
+}
+
+.tqsryivl {
+	background-color: white !important;
+}
+
+.hybvsw6c {
+	background-color: $theme-background-box !important;
+}
+
+svg path {
+	fill: invert-back-color($theme-button-background) !important;
+}
+
+.qbubdy2e {
+	fill: invert-back-color($theme-background-box) !important;
+}
+
+.bafdgad4 {
+	background-color: $theme-background-box !important;
+}
+
+.hn33210v {
+	background-color: $theme-background-toolbar !important;
+}
+
+.tdjehn4e.thwo4zme {
+	background-color: $theme-background-toolbar !important;
+}
+
+.nwpbqux9 {
+	box-shadow: 0 12px 28px 0 rgba(250, 250, 250, 0.1), 0 2px 4px 0 rgba(250, 250, 250, 0.2), inset 0 0 0 1px rgba(250, 250, 250, 0.5) !important;
+}
+.cwj9ozl2 {
+	background-color: $theme-background-box !important;
+}
+.np69z8it {
+	border-top-color: $theme-background-box !important;
+}
+.et4y5ytx {
+	border-right-color: $theme-background-box !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
