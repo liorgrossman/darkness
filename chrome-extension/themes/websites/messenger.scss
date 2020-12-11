@@ -31,7 +31,7 @@ form .nred35xi {
 	background-color: $theme-background-box !important;
 }
 
-svg path {
+svg path:not([fill="none"]) {
 	fill: invert-back-color($theme-button-background) !important;
 }
 
@@ -63,6 +63,21 @@ svg path {
 .et4y5ytx {
 	border-right-color: $theme-background-box !important;
 }
+
+div[data-scope="messages_table"] div[style*="background-color:"] {
+	& {
+		@include invert-back();
+	}
+	> * {
+		@include invert-back();
+		color: $theme-text !important;
+	}
+}
+
+.is6700om {
+	background-color: $theme-button-background !important;
+}
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
