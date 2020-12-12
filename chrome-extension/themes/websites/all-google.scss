@@ -100,7 +100,10 @@ input.gb_pf,
 	background-color: $theme-background-box !important;
 }
 .gb_0, 
-.gb_4, #gb a.gb_4.gb_4, .gb_5 {
+.gb_Db.gb_Db, .gb_Eb.gb_Eb,
+.gb_4, 
+#gb a.gb_4.gb_4, 
+.gb_5 {
 	background: $theme-button-background !important;
 	border-color: $theme-button-background !important;
 	color: $theme-button-text !important;
@@ -117,7 +120,8 @@ input.gb_pf,
 }
 
 // Site logo
-.gb_Be img {
+.gb_Be img,
+img.gb_uc {
 	filter: invert(1) !important;
 }
 // Site name, eg. "Calendar" or "Drive"
@@ -134,6 +138,8 @@ input.gb_pf,
 }
 // Menu drawer
 .gb_I,
+.gb_l.gb_1a.gb_2a,
+.gb_wb.gb_wb,
 .gb_J {
 	background: $theme-background-box !important;
 }

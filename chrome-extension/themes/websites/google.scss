@@ -17,6 +17,10 @@ input
 	color: $theme-text !important;
 }
 
+body {
+	background: $theme-background !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Homepage
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,6 +56,11 @@ input
 	box-shadow: 0 1px 6px 0 rgba(255,255,255,0.22) !important;
 }
 
+// December 2020 fix
+#top_nav, #top_nav > div, #hdtb, .yg51vc, .sfbg, .s8GCU, .Lj9fsd, .jZWadf {
+	background: $theme-background-toolbar !important;
+}
+
 // New Google fixed toolbar: logo
 .logo > a > img {
 	opacity: 0.5 !important;
@@ -70,7 +79,7 @@ input
 }
 
 // Search box fill
-.sbib_a, .sbib_b, .aajZCb {
+.sbib_a, .sbib_b, .aajZCb, .zthhpf {
 	background-color: $theme-textbox-background !important;
 }
 
@@ -92,7 +101,9 @@ input
 	.sbico {
 		@include invert-back();
 	}
-
+}
+.KXJfe {
+	background-color: transparent !important;
 }
 
 // New Google fixed toolbar: magnifying glass icon
@@ -167,7 +178,7 @@ input.gLFyf {
 }
 
 // Gooooooogle pagination on bottom
-#foot #navcnt span.csb {
+#foot #navcnt span.csb, .SJajHc {
 	@include invert-back()
 }
 
@@ -231,6 +242,11 @@ g-left-button {
 	color: $theme-url !important;
 }
 
+// Video results, summary
+.Xeztj, .MGqjK, .YSlUOe {
+	background: $theme-background !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Knowledge graph box on the right
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -243,7 +259,7 @@ g-left-button {
 }
 
 // The box itself
-.kp-blk {
+.kp-blk, .I6TXqe {
 	background: $theme-background-box !important;
 	box-shadow: 0px 1px 4px 0px rgba(255, 255, 255, 0.2) !important;
 }
@@ -256,6 +272,14 @@ g-left-button {
 }
 .commercial-unit-desktop-rhs {
 	background-color: $theme-background-box !important;
+}
+
+// Review-summaries
+.l2gNXd {
+	@include invert-back();
+}
+.tPhRLe span {
+	@include invert-back();
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -302,6 +326,30 @@ g-left-button {
 // Image info line, when hovering over an image
 .rg_anbg, .rg_ilmbg {
 	background: rgba(220, 220, 220, 0.8) !important;
+}
+
+// Related searches
+.hjTnPc .F9PbJd {
+	background: $theme-background-toolbar !important;
+}
+.ndYZfc + div:not([class*=""]) {
+	background-color: $theme-background-box !important;
+}
+.cEW58 {
+	background-color: $theme-background-toolbar !important;
+}
+
+// Results-background
+body > .T1diZc.KWE8qe {
+	background: $theme-background !important;
+}
+// Preview background
+.WaWKOe, .mfkH6e, .qdnLaf, .QnfS4e {
+	background-color: $theme-background-box !important;
+}
+// Preview buttons
+.h04bR, .dJcyOc {
+	background-color: $theme-highlighted-darker !important;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
