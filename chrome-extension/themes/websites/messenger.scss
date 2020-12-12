@@ -19,8 +19,14 @@
 .nred35xi {
 	background-color: $theme-background !important;
 }
+
+// Input bar at bottom of chat
 form .nred35xi {
-	background-color: $theme-background-box !important;
+	background-color: $theme-background !important;
+}
+// The rounded corners on the input-field
+.qbubdy2e {
+	fill: invert-back-color($theme-background) !important;
 }
 
 .tqsryivl {
@@ -35,9 +41,6 @@ svg path:not([fill="none"]) {
 	fill: invert-back-color($theme-button-background) !important;
 }
 
-.qbubdy2e {
-	fill: invert-back-color($theme-background-box) !important;
-}
 
 .bafdgad4 {
 	background-color: $theme-background-box !important;
@@ -57,6 +60,7 @@ svg path:not([fill="none"]) {
 .cwj9ozl2 {
 	background-color: $theme-background-box !important;
 }
+
 .np69z8it {
 	border-top-color: $theme-background-box !important;
 }
