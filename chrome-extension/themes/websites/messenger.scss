@@ -82,6 +82,15 @@ div[data-scope="messages_table"] div[style*="background-color:"] {
 	background-color: $theme-button-background !important;
 }
 
+// Likes
+._576q div[data-testid="messenger_hotlike_svg"] {
+	& {
+		background-color: transparent !important;
+	}
+	path {
+		fill: $theme-button-background !important;
+	}
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // General Elements Styling
