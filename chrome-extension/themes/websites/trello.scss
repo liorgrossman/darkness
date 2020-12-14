@@ -675,6 +675,31 @@ button._3W-zkl4-bnVKzJ:hover {
 	@include invert-back();
 }
 
+// "Up next" cards
+._2kkT-Lhc7Rnxuf {
+	background-color: $theme-background-box !important;
+}
+
+// "Up next" labels
+._2d9CvjIeYdc-B8 {
+	@include invert-back();
+}
+
+// Create new card
+._2WhIqhRFBTG7Ry {
+	background: rgba(250, 250, 250, .75) !important;
+}
+._3BALbHgNWTvWKk,
+._1M_EMpudtiBs4b {
+	background-color: $theme-background-box !important;
+}
+._3BALbHgNWTvWKk ._3Cnio1oR4iJKRE {
+	color: $theme-link !important;
+}
+._3BALbHgNWTvWKk ._3Uplc-pCxrlRyl {
+	color: $theme-text !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sites not requiring login
 //----------------------------------------------------------------------------------------------------------------------------------------------------
