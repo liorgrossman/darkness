@@ -69,7 +69,7 @@ var CONFIG = {
 			name: 'Quora',
 			support: 'full',
 			hostRegExp: new RegExp('^www\.quora\.com$', 'i'),
-			creators: [ // 
+			creators: [ //
 				{ name: 'Abhishek Bhasker', link: 'http://Abhinickz.github.io' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
@@ -350,18 +350,6 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-		'linkedin': {
-			key: 'linkedin', // Must be the same as the object key
-			name: 'LinkedIn',
-			support: 'full',
-			siteForDevelopers: true,
-			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i'),
-			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Łukasz Wójcik', link: 'https://www.lukaszwojcik.net/' }
-			],
-			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-			]
-		},
 		'darkness': {
 			key: 'darkness', // Must be the same as the object key
 			name: 'Darkness Website',
@@ -373,26 +361,38 @@ var CONFIG = {
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
 		},
-
-		//--------------------------------------------------------------------
-		// Skins that still need additional work (support: 'in-development')
-		//--------------------------------------------------------------------
-		'googletranslate': {
-			key: 'googletranslate', // Must be the same as the object key
-			name: 'Google Translate',
-			support: 'in-development',
-			hostRegExp: new RegExp('^translate\.google\.(.*)$', 'i'),
+		'googlephotos': {
+			key: 'googlephotos', // Must be the same as the object key
+			name: 'Google Photos',
+			support: 'full',
+			hostRegExp: new RegExp('^photos\.google\.com$', 'i'),
 			creators: [
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
-		},
-		'googlephotos': {
-			key: 'googlephotos', // Must be the same as the object key
-			name: 'Google Photos',
+    },
+
+		//--------------------------------------------------------------------
+		// Skins that still need additional work (support: 'in-development')
+		//--------------------------------------------------------------------
+		'linkedin': {
+			key: 'linkedin', // Must be the same as the object key
+			name: 'LinkedIn',
 			support: 'in-development',
-			hostRegExp: new RegExp('^photos\.google\.com$', 'i'),
+			siteForDevelopers: true,
+			hostRegExp: new RegExp('^www\.linkedin\.com$', 'i'),
+			creators: [ // Who wrote the 80%+ of the skin?
+				{ name: 'Łukasz Wójcik', link: 'https://www.lukaszwojcik.net/' }
+			],
+			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
+			]
+		},
+		'googletranslate': {
+			key: 'googletranslate', // Must be the same as the object key
+			name: 'Google Translate',
+			support: 'in-development',
+			hostRegExp: new RegExp('^translate\.google\.(.*)$', 'i'),
 			creators: [
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
@@ -424,7 +424,7 @@ var CONFIG = {
 		'amazon': {
 			key: 'amazon', // Must be the same as the object key
 			name: 'Amazon',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			support: 'in-development', // This skin still requires further improvement, help us by improving it!
 			hostRegExp: new RegExp('\.amazon\.(co.uk|com|es|de|co.jp)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Guillermo Muela', link: 'https://github.com/Gmuela' }
@@ -435,7 +435,7 @@ var CONFIG = {
 		'mint': {
 			key: 'mint', // Must be the same as the object key
 			name: 'Mint',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			support: 'in-development', // This skin still requires further improvement, help us by improving it!
 			hostRegExp: new RegExp('^www\.mint\.com', 'i'),
 			creators: [
 				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
@@ -446,7 +446,7 @@ var CONFIG = {
 		'craigslist': {
 			key: 'craigslist', // Must be the same as the object key
 			name: 'Craigslist ',
-			support: 'in-development', // This skin still requires further improvement, help us by improving it! 
+			support: 'in-development', // This skin still requires further improvement, help us by improving it!
 			hostRegExp: new RegExp('craigslist\.*$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'EJ Seay', link: 'https://github.com/earlseay' }
