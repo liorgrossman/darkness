@@ -256,6 +256,11 @@ iframe {
 	background: $theme-background-toolbar !important;
 }
 
+// Active propperties
+.goog-toolbar-button-checked .docs-icon-img-container {
+	-webkit-filter: invert(0) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Docs
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -306,6 +311,18 @@ iframe {
 	-webkit-filter: invert(0) !important;
 }
 
+// The ruler
+.docs-ruler-indent-first-line,
+.docs-ruler-indent-start,
+.docs-ruler-indent-end {
+	-webkit-filter: invert(0) !important;
+}
+
+// ToC
+.outline-refresh .location-indicator-highlight.navigation-item {
+	-webkit-filter: invert(1) !important;
+}
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Sheets
 //----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -323,7 +340,13 @@ div.input-box[aria-hidden="false"] {
 	-webkit-filter: invert(1) !important;
 }
 .waffle-sidebar-title {
-	background-color: $theme-highlighted !important;
+	background-color: $theme-background-box !important;
+}
+.waffle-sidebar-content,
+.waffle-conditionalformat-warning,
+.waffle-conditionalformat-view-pill,
+.waffle-conditionalformat-add-rule-button {
+	background-color: $theme-background !important;
 }
 .goog-color-menu-button-indicator {
 	-webkit-filter: invert(1) !important;
@@ -359,6 +382,25 @@ div.input-box[aria-hidden="false"] {
 .waffle-conditionalformat-format-preview[style*='color: rgb(197, 57, 41)'], 
 .waffle-conditionalformat-default-style-button[style*='color: rgb(197, 57, 41)'] {
 	color: invert-back-color(rgb(197, 57, 41)) !important;
+}
+.waffle-conditionalformat-format-button {
+	-webkit-filter: invert(1) !important;
+}
+.docs-sidebar-toggle-tabs .jfk-button.docs-sidebar-toggle-tab-active,
+.waffle-conditionalformat-add-another-rule-button,
+#waffle-named-ranges-add-range,
+.waffle-conditionalformat-add-rule-button {
+	background-color: transparent !important;
+	color: $theme-highlighted !important;
+}
+.docs-sidebar-toggle-tabs .jfk-button.docs-sidebar-toggle-tab-active>div::after {
+	border-bottom-color: $theme-highlighted !important;
+}
+.waffle-sidebar-container .jfk-button-standard {
+	color: $theme-button-background !important;
+}
+.waffle-sidebar-container .jfk-button-action {
+	background: invert-back-color($theme-button-background) !important;
 }
 
 // Collab

@@ -36,10 +36,12 @@ header.gb_Ta {
 // Searchbar
 // .gb_0e:not(.gb_3c),
 input.gb_pf,
+form[role="search"] input,
 .gb_af {
 	background-color: transparent !important;
 }
 // Search buttons
+form[role="search"] button,
 .gb_0e:not(.gb_Me) button {
 	background: transparent !important;
 }
@@ -73,6 +75,17 @@ input.gb_pf,
 }
 #gb#gb a.gb_C:hover {
 	background-color: rgba(60,64,67,.08) !important;
+}
+header {
+	a[role="button"] svg,
+	div.rF3YF svg {
+		color: invert-back-color($theme-text) !important;
+		fill: invert-back-color($theme-text) !important;
+	}
+	div.rF3YF span {
+		color: $theme-text !important;
+		fill: $theme-text !important;
+	}
 }
 
 // User drawer
