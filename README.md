@@ -2,7 +2,7 @@
 
 <img alt="Darkness Logo" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-icon-48px.png?v=2" align="left" style="padding: 0 10px 5px 0; background-color: transparent">
 
-**Darkness** is a browser extension for Chrome and Firefox that provides **dark themes** for many popular websites, such as Google, Facebook, Gmail and YouTube.
+**Darkness** is a browser extension that provides **dark themes** for many popular websites, such as Google, Facebook, Gmail and YouTube.
 
 Using dark themes reduces the eye strain and fatigue caused by a bright screen, helps you sleep faster and better at night, and generally makes you awesome!
 
@@ -19,7 +19,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 * Select from 7 dark color themes: Iceberg, Tomorrow, Material, Dusk, Red Alert, Coffee, Matrix ([help us add more](./CONTRIBUTING.md))
 * Written in JavaScript, uses SASS
 * Self-hosted. Easy to install on Windows, Mac, Linux
-* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm) and [Firefox Add-on Store](https://addons.mozilla.org/en-US/firefox/addon/darkness-dark-themes/)
+* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm)
 
 
 
