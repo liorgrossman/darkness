@@ -2,11 +2,26 @@
 // Facebook Messenger skin for Darkness
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+// Update august 2021
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+div[style*="background-color: var(--wash)"] {
+	background-color: invert($theme-background-toolbar) !important;
+}
+div[style*="background-color: var(--comment-footer-background)"] {
+	background-color: invert($theme-background-box) !important;
+}
+div.odn2s2vf:not([style*="background-color: var(--wash)"]) .qsbzbi57 {
+	color: $theme-text !important;
+}
+.t6p9ggj4.tkr6xdv7 {
+	background-color: $theme-background-box !important;
+}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Update december 2020
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 *[style*="background-image: linear-gradient"] > * {
 	@include invert-back();
@@ -84,9 +99,7 @@ div[data-scope="messages_table"] div[style*="background-color:"] {
 
 // Likes
 ._576q div[data-testid="messenger_hotlike_svg"] {
-	& {
-		background-color: transparent !important;
-	}
+	background-color: transparent !important;
 	path {
 		fill: $theme-button-background !important;
 	}
@@ -134,7 +147,7 @@ a[role="button"] {
 }
 a[role="button"] svg,
 a[role="button"] img {
-	-webkit-filter: none !important;
+	@include filter(none);
 }
 
 // Different icon-button
@@ -177,7 +190,7 @@ svg._7oal path,
 	background-color: $theme-background-box !important;
 	border-color: $theme-border !important;
 }
-._2xhi , //converstations on side
+._2xhi //converstations on side
 {
 	._5l-3 
 	{
@@ -266,15 +279,13 @@ svg._7oal path,
 ._gs3 ._gs0 {
 	@include invert-back();
 	& > div[style*="background-image"] {
-		-webkit-filter: invert(0) !important;
+		@include filter(invert(0));
 	}
 }
 // "More actions" buttons
 ._1li_ svg {
-	& {
-		-webkit-filter: invert(0) !important;
-	}
-	& path[fill="#0099ff"] {
+	@include filter(invert(0));
+	path[fill="#0099ff"] {
 		fill: $theme-button-background !important;
 	}
 }
@@ -296,7 +307,7 @@ svg._7oal path,
 // Reactions
 ._576q {
 	svg {
-		-webkit-filter: invert(0) !important;
+		@include filter(invert(0));
 		// fill: invert-back-color($theme-background) !important;
 		// rect {
 		// 	fill: invert-back-color($theme-background) !important;
@@ -314,13 +325,13 @@ svg._7oal path,
 // _-5k _3i_m _nd_
 ._nd_ ._hh7 {
 	@include invert-back();
-	& img {
-		-webkit-filter: invert(0) !important;
+	img {
+		@include filter(invert(0));
 	}
-	& button {
-		-webkit-filter: invert(1) !important;
-		& svg {
-			// -webkit-filter: invert(0) !important;
+	button {
+		@include filter(invert(1));
+		svg {
+			// @include filter(invert(0));
 		}
 	}
 }
