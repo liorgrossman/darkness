@@ -2,6 +2,12 @@
 // Common styling that is applied to ALL websites, before any other styling
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 
+@mixin filter($args...) {
+	filter: $args !important;
+	-webkit-filter: $args !important;
+	-ms-filter: $args !important;
+}
+
 html {
 	// Set the HTML background. Since only the BODY is inverted, we need to invert the background here manually
 	background-color: invert($theme-background) !important;
