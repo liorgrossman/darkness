@@ -29,9 +29,6 @@ header.gb_na,
 header.gb_na > div {
 	background-color: $theme-background-toolbar !important;
 }
-header.gb_Ta {
-	@include invert-back();
-}
 
 // Searchbar
 // .gb_0e:not(.gb_3c),
