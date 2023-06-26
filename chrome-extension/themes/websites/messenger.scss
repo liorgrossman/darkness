@@ -14,7 +14,7 @@ div[style*="background-color: var(--comment-footer-background)"] {
 }
 div.odn2s2vf:not([style*="background-color: var(--wash)"]) .qsbzbi57,
 .ljqsnud1 {
-	color: $theme-text !important;
+	color: invert($theme-text) !important;
 }
 .t6p9ggj4.tkr6xdv7 {
 	background-color: $theme-background-box !important;
@@ -84,13 +84,26 @@ svg path:not([fill="none"]) {
 	border-right-color: $theme-background-box !important;
 }
 
-div[data-scope="messages_table"] div[style*="background-color:"] {
-	& {
-		@include invert-back();
+div[data-scope="messages_table"] {
+	div[style*="background-color:"] {
+		& {
+			@include invert-back();
+		}
+		> * {
+			color: $theme-text !important;
+		}
 	}
-	> * {
-		@include invert-back();
-		color: $theme-text !important;
+	div[style="background-color: var(--mwp-reply-background-color);"] {
+		@include filter(invert(0));
+	}
+}
+
+div[data-testid="message-container"] {
+	.hybvsw6c {
+		background-color: $theme-background !important;
+		.hybvsw6c {
+			background-color: $theme-background-box !important;
+		}
 	}
 }
 
