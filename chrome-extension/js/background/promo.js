@@ -88,9 +88,9 @@ var PromoFactory = function() {
 
 	// Retreive the promo config remotely using Ajax. Don't call this directly, but use _retreivePromoConfigIfNecessary instead
 	var _retreivePromoConfig = function() {
-		var url = "http://files.lifehacklabs.org/common/configuration/promo.json";
+		var url = "https://lhlabs.io/promotions/darkness/promo.json";
 		if (ENVIRONMENT != 'production') {
-			url = "http://files.lifehacklabs.org/common/configuration/promo.dev.json";
+			url = "https://lhlabs.io/promotions/darkness/promo.dev.json";
 		}
 		url += "?ts=" + Date.now();
 		_sendHttpGetRequest(true, url, function(err, response) {
