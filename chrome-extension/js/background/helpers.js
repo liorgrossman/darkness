@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 // Set the environment
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-const DEFAULT_LOCAL_ENVIRONMENT = 'development';
+const DEFAULT_LOCAL_ENVIRONMENT = 'production';
 var ENVIRONMENT = DEFAULT_LOCAL_ENVIRONMENT;
 
 // Important - don't touch this:
@@ -92,7 +92,7 @@ var sendHttpPostRequest = function(url, params, callback) {
 			}
 		}
 	};
-	
+
 	xhr.send(paramsString);
 };
 
