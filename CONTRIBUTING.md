@@ -43,7 +43,7 @@ Start by inspecting the inverted element using Chrome Developer Tools. You will 
 
 1. **invert-back is necessary and missing**: the element needs to be inverted back, but isn't. Inverting the element colors back is done by adding a selector in `[SITENAME].scss`, e.g.
 ```
-.elementSelector { 
+.elementSelector {
   @include invert-back();
 }
 ```
@@ -51,7 +51,7 @@ Start by inspecting the inverted element using Chrome Developer Tools. You will 
 This happens when overly-wide selector is is used, for example: `img { @include invert-back() }`.
 In such case, you can exclude this specific element from being inverted back:
 ```
-img { 
+img {
   @include invert-back();
   .elementSelector {
     filter: none !important;
@@ -68,7 +68,7 @@ git add .
 git commit -m "Description of Changes"
 git push origin master
 ```
-3. Go to [GitHub](https://github.com) and navigate to **your fork of Darkness**. 
+3. Go to [GitHub](https://github.com) and navigate to **your fork of Darkness**.
 1. Click the **New pull request** button (above the file list)
 1. Click the **Create pull request** button.
 1. Add a description for your pull request and click **Create pull request**
@@ -81,4 +81,4 @@ git push origin master
 
 #### Git Configuration
 After [installling Darkness locally](./README.MD), the 1st remote is **origin**, which points to your fork on GitHub (use it to push and pull).
-The 2nd remote that is added by you is **upstream** that points to the original Darkness repo (use it to fetch and make pull requests). [See diagram](http://i.stack.imgur.com/cEJjT.png).
+The 2nd remote that is added by you is **upstream** that points to the original Darkness repo (use it to fetch and make pull requests). [See diagram](https://i.stack.imgur.com/cEJjT.png).

@@ -28,7 +28,7 @@ var initializeAnalyticsOnStart = function() {
 		ga('create', 'UA-76391501-2', 'auto');
 
 		// Initialize analytics to work properly in a background script
-		ga('set', 'checkProtocolTask', function() {}); // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
+		ga('set', 'checkProtocolTask', function() {}); // Removes failing protocol check. @see: https://stackoverflow.com/a/22152353/1958200
 
 		// Keep users' privacy
 		ga('set', 'anonymizeIp', true); // Anonymize users' IP

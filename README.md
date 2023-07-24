@@ -8,7 +8,7 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 
 **[Pull requests are welcome! Help us improve Darkness by contributing fixes and new themes](./CONTRIBUTING.md)**
 
-**Major contributors (10+ commits):** [Lior Grossman](http://liorgrossman.com/), [Theis Villumsen](https://folkmann.it/), [Nicolas Botello](http://nicolasbotello.com/), [Derek Bytheway](https://github.com/derekbtw/), [Matt Tayler](https://github.com/maylortaylor)
+**Major contributors (10+ commits):** [Lior Grossman](https://liorgrossman.com/), [Theis Villumsen](https://folkmann.it/), [Nicolas Botello](https://nicolasbotello.com/), [Derek Bytheway](https://github.com/derekbtw/), [Matt Tayler](https://github.com/maylortaylor)
 
 <div style="text-align:center">
 <img alt="Screenshot" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-screenshot.png">
