@@ -57,10 +57,10 @@ var CONFIG = {
 			hostRegExp: new RegExp(GOOGLE_HOST_REGEXP, 'i'),
 			pathRegExp: new RegExp('^/(search|webhp)?$'), // pathRegExp is optional and unnecessary for most websites
 			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
+				{ name: 'Lior Grossman', link: 'https://liorgrossman.com' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Itay Klein', link: 'http://itiktech.blogspot.co.il/' },
+				{ name: 'Itay Klein', link: 'https://itiktech.blogspot.co.il/' },
 				{ name: 'Arseny Gurevich', link: 'https://www.facebook.com/Arseny.Gurevich' }
 			]
 		},
@@ -70,7 +70,7 @@ var CONFIG = {
 			support: 'full',
 			hostRegExp: new RegExp('^www\.quora\.com$', 'i'),
 			creators: [ //
-				{ name: 'Abhishek Bhasker', link: 'http://Abhinickz.github.io' }
+				{ name: 'Abhishek Bhasker', link: 'https://Abhinickz.github.io' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
@@ -81,11 +81,11 @@ var CONFIG = {
 			support: 'full',
 			hostRegExp: new RegExp('^(www|web|beta|apps|upload)\.facebook\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Marco Cazzaro', link: 'http://www.marcocazzaro.com/' }
+				{ name: 'Marco Cazzaro', link: 'https://www.marcocazzaro.com/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Itamar Ostricher', link: 'http://www.ostricher.com/' },
-				{ name: 'Oded Noam', link: 'http://www.odednoam.com/' },
+				{ name: 'Itamar Ostricher', link: 'https://www.ostricher.com/' },
+				{ name: 'Oded Noam', link: 'https://www.odednoam.com/' },
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			]
 		},
@@ -95,10 +95,10 @@ var CONFIG = {
 			support: 'full',
 			hostRegExp: new RegExp('^(www|web|beta)\.messenger\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
+				{ name: 'Nicolas Botello', link: 'https://nicolasbotello.com/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' },
+				{ name: 'Lior Grossman', link: 'https://liorgrossman.com' },
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			]
 		},
@@ -119,11 +119,11 @@ var CONFIG = {
 			support: 'full',
 			hostRegExp: new RegExp('^mail\.google\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Damian Schmidt', link: 'http://iristormdesign.com/' }
+				{ name: 'Damian Schmidt', link: 'https://iristormdesign.com/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Alon Diamant', link: 'http://www.alondiamant.com/' },
-				{ name: 'Gilad Sasson', link: 'http://www.nekuda.co.il/en/' },
+				{ name: 'Alon Diamant', link: 'https://www.alondiamant.com/' },
+				{ name: 'Gilad Sasson', link: 'https://www.nekuda.co.il/en/' },
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			]
 		},
@@ -203,8 +203,8 @@ var CONFIG = {
 				{ name: 'Kevin Mata' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Mayrun Digmi', link: 'http://www.mayrundigmi.com/' },
-				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' },
+				{ name: 'Mayrun Digmi', link: 'https://www.mayrundigmi.com/' },
+				{ name: 'Lior Grossman', link: 'https://liorgrossman.com' },
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			]
 		},
@@ -216,10 +216,10 @@ var CONFIG = {
 			hostRegExp: new RegExp('^(gist\.|)github\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' },
-				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
+				{ name: 'Nicolas Botello', link: 'https://nicolasbotello.com/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
+				{ name: 'Lior Grossman', link: 'https://liorgrossman.com' }
 			]
 		},
 		'twitter': {
@@ -231,7 +231,7 @@ var CONFIG = {
 				{ name: 'Theis Villumsen', link: 'https://folkmann.it/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
-				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' }
+				{ name: 'Lior Grossman', link: 'https://liorgrossman.com' }
 			]
 		},
 		'coinmarketcap': {
@@ -274,7 +274,7 @@ var CONFIG = {
 			siteForDevelopers: true,
 			hostRegExp: new RegExp('^stackoverflow\.com$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Nicolas Botello', link: 'http://nicolasbotello.com/' }
+				{ name: 'Nicolas Botello', link: 'https://nicolasbotello.com/' }
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
@@ -356,7 +356,7 @@ var CONFIG = {
 			support: 'full',
 			hostRegExp: new RegExp('^(darkness.app|local.darkness.com)$', 'i'),
 			creators: [ // Who wrote the 80%+ of the skin?
-				{ name: 'Lior Grossman', link: 'http://liorgrossman.com' },
+				{ name: 'Lior Grossman', link: 'https://liorgrossman.com' },
 			],
 			topContributors: [ // Top 3 contributors of fixes & improvements, excluding the creator
 			]
