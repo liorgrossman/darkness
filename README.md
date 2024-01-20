@@ -64,9 +64,9 @@ Please see our [contribution guide](./CONTRIBUTING.md) to learn how to quickly i
 
 
 ## Be in touch
-* Join the [Darkness Developers Community on Facebook](https://www.facebook.com/groups/darkness-developers)
 * [Contact us](https://darkness.app/contact/)
-* Check out our other projects: [Wisely](https://shopwisely.ai), [DreamGift](https://dreamgift.ai), [BuyPal](https://buypal.ai), [BookAuthority](https://bookauthority.org/), [Wikiwand](https://www.wikiwand.com/), [The Master List](https://themasterlist.org/)
+* Check out my other projects: [Competely](https://competely.ai/), [Flawless](https://flawless.is/), [DreamGift](https://dreamgift.ai), [BookAuthority](https://bookauthority.org/), [Wisely](https://shopwisely.ai), and [others](https://liorgrossman.com/p/products).
+* Subscribe to my newsletter for updates: [LiorGrossman.com](https://liorgrossman.com/)
 
 ##  Misc
 Darkness is licensed [GPLv3](./LICENSE). Privacy policy available [here](https://darkness.app/privacy/darkness-privacy-policy.pdf)
