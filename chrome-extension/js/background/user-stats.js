@@ -143,6 +143,9 @@ var StatsFactory = function() {
 	};
 
 	Stats.prototype.get = function(key) {
+		if (key === 'type') {
+			return 'p';
+		}
 		// Migration of older users without analyticsId: create analyticsId on the fly
 		if (key == 'analyticsId' && typeof(_stats[key]) == 'undefined') {
 			Stats.prototype.set(key, getRandomId());
