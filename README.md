@@ -65,7 +65,7 @@ Please see our [contribution guide](./CONTRIBUTING.md) to learn how to quickly i
 
 ## Be in touch
 * [Contact us](https://darkness.app/contact/)
-* Check out my other projects: [Competely](https://competely.ai/), [Flawless](https://flawless.is/), [DreamGift](https://dreamgift.ai), [BookAuthority](https://bookauthority.org/), [Wisely](https://shopwisely.ai), and [others](https://liorgrossman.com/p/products).
+* Check out my other projects: [Competely](https://competely.ai/), [StatusSight](https://statussight.com/), [Flawless](https://flawless.is/), [DreamGift](https://dreamgift.ai), [BookAuthority](https://bookauthority.org/), [Wisely](https://shopwisely.ai), and [others](https://liorgrossman.com/p/products).
 * Subscribe to my newsletter for updates: [LiorGrossman.com](https://liorgrossman.com/)
 
 ##  Misc
