@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 📚 Deprecation Notice
+  - name: ⚠️ Project Deprecated - Extension No Longer Works
     url: https://github.com/liorgrossman/darkness/blob/master/DEPRECATION_NOTICE.md
-    about: Read about why this project is deprecated
+    about: This project is deprecated and does not accept new issues. Read why here.
