@@ -1,12 +1,17 @@
-# Darkness: Dark Themes for Popular Websites
+# ⚠️ DEPRECATED: Darkness Extension No Longer Supported
+
+**IMPORTANT NOTICE:** This extension is **no longer functional** as of July 2025. Google has deprecated Manifest V2 extensions, meaning Darkness cannot be installed or used anymore. This project is now deprecated. [Learn more](./DEPRECATION_NOTICE.md)
+
+---
+
+## About Darkness (Historical Information)
 
 <img alt="Darkness Logo" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-icon-48px.png?v=2" align="left" style="padding: 0 10px 5px 0; background-color: transparent">
 
-**Darkness** is a browser extension that provides **dark themes** for many popular websites, such as Google, Facebook, Gmail and YouTube.
+**Darkness** was a browser extension that provided **dark themes** for many popular websites, such as Google, Facebook, Gmail and YouTube.
+
 
 Using dark themes reduces the eye strain and fatigue caused by a bright screen, helps you sleep faster and better at night, and generally makes you awesome!
-
-**[Pull requests are welcome! Help us improve Darkness by contributing fixes and new themes](./CONTRIBUTING.md)**
 
 **Major contributors (10+ commits):** [Lior Grossman](https://liorgrossman.com/), [Theis Villumsen](https://folkmann.it/), [Nicolas Botello](https://nicolasbotello.com/), [Derek Bytheway](https://github.com/derekbtw/), [Matt Tayler](https://github.com/maylortaylor)
 
@@ -14,16 +19,19 @@ Using dark themes reduces the eye strain and fatigue caused by a bright screen, 
 <img alt="Screenshot" src="https://raw.githubusercontent.com/liorgrossman/darkness/master/assets/documentation/darkness-screenshot.png">
 </div>
 
-## Features
-* Supports over 25 websites: Google, Facebook, YouTube, Gmail, Google Drive, Twitter, Facebook Messenger, Instagram, Reddit, Google Keep, Google Photos, Google Calendar, Dropbox, Quora, **GitHub, StackOverflow, Trello, JSFiddle** and others ([help us add more](./CONTRIBUTING.md))
-* Select from 7 dark color themes: Iceberg, Tomorrow, Material, Dusk, Red Alert, Coffee, Matrix ([help us add more](./CONTRIBUTING.md))
+## Features (Historical)
+* Supported over 25 websites: Google, Facebook, YouTube, Gmail, Google Drive, Twitter, Facebook Messenger, Instagram, Reddit, Google Keep, Google Photos, Google Calendar, Dropbox, Quora, **GitHub, StackOverflow, Trello, JSFiddle** and others
+* 7 dark color themes: Iceberg, Tomorrow, Material, Dusk, Red Alert, Coffee, Matrix
 * Written in JavaScript, uses SASS
-* Self-hosted. Easy to install on Windows, Mac, Linux
-* Also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm)
+* Was self-hosted and available on Chrome Web Store
 
+## Installation (No Longer Works)
 
+> **This extension cannot be installed or used anymore** due to Chrome's deprecation of Manifest V2 extensions. The instructions below are kept for historical reference only.
 
-## Installation
+<details>
+<summary>Historical Installation Instructions (Non-functional)</summary>
+
 ####  Installing Darkness Developer Edition:
 1. Fork the Darkness repository: https://github.com/liorgrossman/darkness/fork
 1. Clone the fork on your machine:
@@ -58,14 +66,15 @@ npm install
 Firefox version only: gulp ff
 ```
 
-## Contributing fixes and new themes
-**Pull requests are welcome!**
-Please see our [contribution guide](./CONTRIBUTING.md) to learn how to quickly improve and extend Darkness
+</details>
+
+## Contributing (Project Deprecated)
+
+**This project is no longer accepting contributions** as it has been deprecated due to the Manifest V2 deprecation. The codebase remains available for historical reference and learning purposes.
 
 
 ## Be in touch
-* [Contact us](https://darkness.app/contact/)
-* Check out my other projects: [TailoredRead](https://tailoredread.com), [Competely](https://competely.ai/), [Flawless](https://flawless.is/), [DreamGift](https://dreamgift.ai), , [BookAuthority](https://bookauthority.org/), [StatusSight](https://statussight.com/), and [others](https://liorgrossman.com/p/products).
+* Check out my other projects: [TailoredRead](https://tailoredread.com), [Competely](https://competely.ai/), [Earlytap](https://earlytap.com/), [Flawless](https://flawless.is/), [DreamGift](https://dreamgift.ai), [BookAuthority](https://bookauthority.org/), [StatusSight](https://statussight.com/), and [others](https://liorgrossman.com/p/products).
 * Subscribe to my newsletter for updates: [LiorGrossman.com](https://liorgrossman.com/)
 
 ##  Misc

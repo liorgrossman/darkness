@@ -1,9 +1,15 @@
-# Contriburing to Darkness
-Please help us **improve the quality of existing skins and create new ones**. Pull requests are welcome!
+# ⚠️ Contributing to Darkness (DEPRECATED PROJECT)
 
+**🚨 IMPORTANT:** This project is **no longer accepting contributions** as of July 2025. Darkness has been deprecated due to Chrome's deprecation of Manifest V2 extensions. The extension is no longer functional and cannot be installed or used. [Learn more](./DEPRECATION_NOTICE.md)
 
+This repository is kept for **historical reference only**. The information below is kept for educational purposes and for anyone interested in understanding how the extension worked.
 
-## Getting started
+---
+
+## Getting started (Historical - No Longer Works)
+
+> **Note:** These instructions are non-functional as the extension cannot be installed in modern browsers.
+
 1. If you haven't yet, [install Darkness Developer Edition](./README.md#installation)
 1. Open any supported websites (e.g. [Google](https://www.google.com/)) and switch to a dark theme
 1. Run `npm start` to watch and compile all SCSS files to CSS in real-time

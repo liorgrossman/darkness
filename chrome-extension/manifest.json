@@ -1,11 +1,12 @@
 {
+  "_comment": "DEPRECATED: This extension uses Manifest V2 which is no longer supported by Chrome. Extension is non-functional as of July 2025.",
   "manifest_version": 2,
   "name": "__MSG_appFullName__",
   "short_name": "__MSG_appShortName__",
   "description": "__MSG_appDescription__",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Darkness",
-  "homepage_url": "https://darkness.app",
+  "homepage_url": "https://github.com/liorgrossman/darkness",
   "default_locale": "en",
   "icons": {
     "16": "images/darkness-icon-16px.png",

@@ -1,13 +1,11 @@
 {
   "name": "Darkness",
-  "description": "Dark themes for popular websites",
+  "description": "[DEPRECATED] Dark themes for popular websites - No longer functional due to Manifest V2 deprecation",
   "version": "1.0.0",
   "private": true,
   "author": "Lior Grossman",
-  "homepage": "https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm",
-  "contributors": [
-    "Lior Grossman <lior@liorgrossman.com> (https://github.com/liorgrossman)"
-  ],
+  "homepage": "https://github.com/liorgrossman/darkness",
+
   "bugs": {
     "url": ""
   },
